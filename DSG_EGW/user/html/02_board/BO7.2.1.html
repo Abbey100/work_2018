@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>임시보관함</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>게시판</h1>
+                <div class="aside">
+                    <fieldset>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>게시판</option>
+                                <option>통합</option>
+                            </select>
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>				
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>	
+            </div>
+            <!-- //header -->
+
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->
+            <!-- body -->
+            <div class="body"> 
+                <!-- LnB-->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action">
+                            <a class="action_btn">게시하기</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">
+                                <!-- 즐겨찾기 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">즐겨찾는 게시판</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">카드 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 전체게시판 -->
+                                <div class="lnb_menu tree divide open">
+                                    <a class="menu_title category">전체 게시판</a>
+                                    <fieldset>
+                                        <div class="srch_group on">
+                                            <input type="text" placeholder="검색" />
+                                            <a class="btn_srch">검색</a>
+                                            <a class="btn_return">이전</a>
+                                        </div>
+                                    </fieldset>
+                                    <div class="folder">
+                                        <div class="group">
+                                            <a class="text_btn">모두접기</a>
+                                            <a class="text_btn">모두펴기</a>
+                                            <a class="text_btn">새로고침</a>
+                                        </div>
+                                        <ul class="dynatree-container handy-scroll">
+                                            <li class="">
+                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                    <span class="dynatree-expander"></span>
+                                                    <span class="dynatree-icon"></span>
+                                                    <a href="#" class="dynatree-title">
+                                                        <span class="node-folder" >EGW As-Is</span>
+                                                    </a>
+                                                </div>
+                                                <ul style="">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">회의 내용</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="dynatree-lastsib">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                            </a>
+                                                        </div></li>
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </div>                
+                                <div class="lnb_menu">
+                                    <a class="menu_title">임시 보관함</a><span class="count">4</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title">플래그 게시판</a><span class="count">7</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">키워드 게시물</a>
+                                    <ul class="sub_lst">
+                                        <li><a>MFC 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title">게시판 신청</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="container_area handy-scroll" >
+                    <div class="">
+                        <!-- 본문 영역 -->
+                        <div class="container">
+                            <!-- 상세 검색 영역 -->
+                            <div class="srch_area detail">
+                            </div>
+                            <!-- // 상세 검색 영역 -->
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup">
+                                <h2>임시 보관함</h2>
+                            </div>
+                            <!-- // 타이틀 영역 -->	
+                            <!-- 기본 버튼 영역 -->
+                            <div class="btns_area">
+                                <div class="align_lf">
+                                    <a href="#" class="btn">목록</a>
+                                    <a href="#" class="action_btn">게시</a>
+                                    <a href="#" class="btn">미리보기</a>
+                                </div>
+                                <div class="align_rg">
+                                    <!-- 예약발송 옵션 -->
+                                    <div class="group">
+                                        <!-- open 클래스 추가시 달력 오픈 -->
+                                        <a class="btn select">예약게시</a>
+                                        <div class="datepicker" style="top:30px; right:0; z-index: 100">
+                                            <dl>
+                                                <dt><a href="#">2017년 11월</a></dt>
+                                                <dd class="day">
+                                                    <table>						
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">일</th>
+                                                                <th scope="col">월</th>
+                                                                <th scope="col">화</th>
+                                                                <th scope="col">수</th>
+                                                                <th scope="col">목</th>
+                                                                <th scope="col">금</th>
+                                                                <th scope="col">토</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td class="disable"><a href="#">1</a></td>
+                                                                <td class="disable"><a href="#">2</a></td>
+                                                                <td class="disable"><a href="#">3</a></td>
+                                                                <td class="disable"><a href="#">4</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="disable"><a href="#">5</a></td>
+                                                                <td class="disable"><a href="#">6</a></td>
+                                                                <td class="disable"><a href="#">7</a></td>
+                                                                <td class="disable"><a href="#">8</a></td>
+                                                                <td class="disable"><a href="#">9</a></td>
+                                                                <td class="disable"><a href="#">10</a></td>
+                                                                <td class="today"><a href="#">11</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#">12</a></td>
+                                                                <td><a href="#">13</a></td>
+                                                                <td><a href="#">14</a></td>
+                                                                <td><a href="#">15</a></td>
+                                                                <td><a href="#">16</a></td>
+                                                                <td><a href="#">17</a></td>
+                                                                <td><a href="#">18</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#">19</a></td>
+                                                                <td><a href="#">20</a></td>
+                                                                <td><a href="#">21</a></td>
+                                                                <td><a href="#">22</a></td>
+                                                                <td><a href="#">23</a></td>
+                                                                <td><a href="#">24</a></td>
+                                                                <td><a href="#">25</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><a href="#">26</a></td>
+                                                                <td><a href="#">27</a></td>
+                                                                <td><a href="#">28</a></td>
+                                                                <td><a href="#">29</a></td>
+                                                                <td><a href="#">30</a></td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </dd>
+                                            </dl>
+                                            <div class="booking">
+                                                <span>예약시간 </span>
+                                                <div class="selectbox">
+                                                    <select title="시 선택">
+                                                        <option value="">00시</option>
+                                                        <option value="">01시</option>
+                                                        <option value="">02시</option>
+                                                        <option value="">03시</option>
+                                                        <option value="">05시</option>
+                                                        <option value="">06시</option>
+                                                        <option value="">07시</option>
+                                                        <option value="">08시</option>
+                                                        <option value="">09시</option>
+                                                        <option value="">10시</option>
+                                                        <option value="">11시</option>
+                                                        <option value="">12시</option>
+                                                        <option value="">13시</option>
+                                                        <option value="">14시</option>
+                                                        <option value="">15시</option>
+                                                        <option value="">16시</option>
+                                                        <option value="">17시</option>
+                                                        <option value="">18시</option>
+                                                        <option value="">19시</option>
+                                                        <option value="">20시</option>
+                                                        <option value="">21시</option>
+                                                        <option value="">22시</option>
+                                                        <option value="">23시</option>
+                                                        <option value="">24시</option>
+                                                    </select>
+                                                </div>
+                                                <div class="selectbox">
+                                                    <select title="분 선택">
+                                                        <option value="">00분</option>
+                                                        <option value="">05분</option>
+                                                        <option value="">10분</option>
+                                                        <option value="">15분</option>
+                                                        <option value="">20분</option>
+                                                        <option value="">25분</option>
+                                                        <option value="">30분</option>
+                                                        <option value="">35분</option>
+                                                        <option value="">40분</option>
+                                                        <option value="">45분</option>
+                                                        <option value="">50분</option>
+                                                        <option value="">55분</option>
+                                                    </select>
+                                                </div>
+                                                <p>
+                                                    <a href="#" class="action_btn">확인</a>
+                                                    <a href="#" class="btn">취소</a>
+                                                </p>
+                                            </div>
+                                            <a href="#" class="pre">이전</a>
+                                            <a href="#" class="next">다음</a>
+                                        </div>
+                                    </div>
+                                </div>	
+                            </div>
+                            <!-- // 기본 버튼 영역 -->
+                            <!-- 리스트 영역 -->
+                            <div class="scroll_area handy-scroll">
+                                <div class="form_table">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th class="form_th">게시판 위치</th>
+                                                <td>
+                                                    <div class="input_group has_btn">
+                                                        <input type="text" class="basic_input" value="EGW 프로젝트 관련 커뮤니케이션" readonly="readonly">
+                                                        <a class="ico group" href="#">조직도</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="form_th">제목</th>
+                                                <td>
+                                                    <div class="input_group has_select multi">
+                                                        <div class="selectbox" style="width:114px">
+                                                            <select>
+                                                                <option>머리글 선택</option>
+                                                            </select>
+                                                        </div>
+                                                        <input type="text" class="basic_input" value="[EGW] 최종 Draft 디자인 작업시 참고할 파일들 입니다." readonly="readonly" />
+                                                        <div class="group">
+                                                            <span class="form">
+                                                                <input type="checkbox" id="check001" />
+                                                                <label for="check001" class="emergency">긴급</label></span>
+                                                            <span class="form">
+                                                                <input type="checkbox" id="check002" />
+                                                                <label for="check002">보안</label></span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>                
+                                                <th class="form_th">조회/의견 권한 설정</th>
+                                                <td>
+                                                    <span class="form"><input type="radio" id="r1" name="real_name"/><label for="r1">모두실명</label></span>
+                                                    <span class="form"><input type="radio" id="r2" name="real_name" /><label for="r2">작성자만 (실명)</label></span>
+                                                    <span class="form"><input type="radio" id="r3" name="real_name" /><label for="r3">비실명</label></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="form_th">만료일</th>
+                                                <td>
+                                                    <span class="form"><input type="radio" id="no" name="ex_date" /><label for="no">설정안함(영구게시)</label></span>
+                                                    <span class="form"><input type="radio" id="set" name="ex_date" /><label for="set">설정</label></span>
+                                                    <div class="datepic_box">
+                                                        <input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly=""> ~  <input type="text" class="date_input" value="2017.12.02" style="width:118px;" readonly="">
+                                                    </div>
+                                                </td>
+                                            </tr>								
+                                            <tr>
+                                                <th class="form_th"><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+                                                <td>
+										<div class="group file_input">
+											<a class="btn small" >
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small">스토리지</a>
+										</div>
+										<dl class="file_info">
+											<dt>일반첨부 </dt>
+											<dd>2(<em>7.93MB</em>/100MB)</dd>
+											<dt>대용량 </dt>
+											<dd>1(<em>2GB</em>)</dd>
+										</dl>
+										<a class="text_btn all_delete">전체삭제</a>
+										<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+										<div class="file_lst upload handy-scroll">
+											<ul class="">
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">9,999 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+										</div>
+
+									</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="content">
+                                    <img class="" src="../../src/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다." style="width:100%">
+                                </div>
+                            </div>
+                            <!-- // 리스트 영역 -->
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

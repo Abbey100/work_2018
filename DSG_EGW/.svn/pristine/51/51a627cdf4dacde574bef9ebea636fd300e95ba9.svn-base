@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+h1 {font-size: 16px; padding-top:20px; color:#000;}
+h2 {font-size: 13px;padding:20px 0 0 10px; color:#ff0000;}
+
+#header {padding:0 30px 20px 30px; }
+#header h1 {color:#ff0000;}
+#header ul {padding-top:10px;}
+#header ul li {padding:3px 0; list-style:decimal;}
+#header ul li a {color:#111; font-weight:bold;}
+#header ul li a:hover {color:#111; text-decoration: underline;}
+
+
+.guide_box { padding:0 20px 20px 20px; border-top:1px solid #bfbfbf;}
+.guide_box .ex {padding:10px 0 10px 10px;}

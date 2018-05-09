@@ -1,0 +1,36 @@
+.textcomplete-dropdown {position:absolute; left:0; width: 100%;
+	padding:0 15px; box-sizing: border-box; max-width: 714px; top:153px;}
+
+.textcomplete-dropdown.top { top:0;}
+
+.textcomplete-dropdown ul {position:relative; width: 100%;
+	border: 1px solid #d8d8d8;	background: #fff;	z-index: 99999992;
+	overflow-y:auto;max-height:180px;height:auto;list-style: none;padding: 7px 10px;margin: 0; box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1); box-sizing: border-box;}
+
+.textcomplete-dropdown li {position:relative; height:50px; padding:4px 6px; box-sizing: border-box; display: block;}
+.textcomplete-dropdown li img {position:absolute; height:38px; width:38px; border-radius: 50%; top:6px; left:6px;}
+.textcomplete-dropdown li > span {position:relative; height:42px; width:42px; width:100%; box-sizing: border-box; height:42px; padding: 4px 0 4px 42px; }
+.textcomplete-dropdown li > span > span:first-child {font-weight: bold; display: block; height:20px; font-size: 13px; color:#555; line-height: 20px; width:100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.textcomplete-dropdown li > span > span:last-child {display: block; height: 14px; font-size:11px; color: #787878; line-height: 14px;width:100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+
+
+.textcomplete-dropdown .active { background: #f5f6f8}
+.textcomplete-dropdown li:hover {cursor:pointer; background: #f5f6f8;}
+
+
+.textcomplete-dropdown a:hover {cursor: pointer;}
+
+.placeholder {color: #a9a9a9;}
+
+.textComplete .selectedMention,
+.textComplete .selectedTag {border:0; background:0 none; color: #7086d3; font-style: normal; font-weight: bold;}
+
+.textComplete .selectedMention:hover,
+.textComplete .selectedTag:hover {cursor: pointer; text-decoration: underline;}
+
+/*
+.write_box .textComplete .selectedMention,
+.write_box .textComplete .selectedTag {border:0; background:#d8def0; color: #7086d3; font-style: normal; font-weight: normal;padding:0 2px;}*/
+
+.write_box .textComplete .selectedMention:hover,
+.write_box .textComplete .selectedTag:hover {cursor:default; text-decoration: none;}

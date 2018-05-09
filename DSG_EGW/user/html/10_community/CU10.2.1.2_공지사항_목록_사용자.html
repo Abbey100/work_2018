@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>동호회_공지사항_목록_운영자</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">
+			<!-- header -->
+			<div class="header">
+				<h1 class="">동호회</h1>
+				<span class="gohome" title="동호회홈으로"><a href="#">홈으로가기</a></span>
+				<div class="aside">
+					<fieldset>
+						<legend>search_box</legend>
+						<div class="selectbox">
+							<select>
+								<option selected>동호회</option>
+								<option>통합</option>
+							</select>
+
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a>
+					</div>
+				</div>
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->      
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">게시하기</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">							
+								<ul class="tab">
+									<li><a>정보</a></li>
+									<li><a class="selected">내 활동</a></li>	
+								</ul>
+								<div class="club_info divide">
+									<div class="group">
+										<a class="name">강소연소연소연오샤하아</a>
+										<a class="btn small">정보수정</a>
+									</div>
+									<!-- // 종류 : 일반, 우수 -->
+									<dl>
+										<dt>가입일</dt>
+										<dd>2016-08-10</dd>
+									</dl>
+									<dl>
+										<dt>출석수</dt>
+										<dd>40회</dd>
+									</dl>
+									<dl>
+										<dt>게시글수</dt>
+										<dd><a href="#" class="text_btn fnt_bold">82개</a></dd>
+									</dl>
+
+									<dl>
+										<dt>댓글수</dt>
+										<dd><a href="#" class="text_btn fnt_bold">82개</a></dd>
+									</dl>
+								</div>		
+								<!--
+<div class="lnb_menu divide">
+<a class="menu_title">홈으로</a>
+</div>
+-->
+								<ul class="lnb_menu divide type2">
+									<li class="dott"><a class="">전체 게시물</a>
+										<span class="count">4</span></li>
+									<li class="dott"><a class="">공지사항</a>
+										<span class="count">4</span></li>
+									<li><a>일반게시판</a></li>
+									<li><a>자료실</a></li>
+									<li><a>승인게시판</a></li>
+									<li><a>앨범게시판</a></li>
+									<li class="dott"><a>네이버 카페 이동</a></li>
+									<li><a >토론실</a></li>
+								</ul>
+								<ul class="lnb_menu">
+									<li><a class="">회원목록</a>
+									</li>
+									<li><a class="">회원탈퇴</a>
+									</li>
+								</ul>	
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- content -->
+				<div class="container_area handy-scroll" >
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>공지사항</h2>
+							</div>
+							<!-- // 타이틀 영역 -->	
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group">
+										<span>농구동호회 공지사항 입니다.</span>
+									</div>
+								</div>
+								<div class="align_rg">
+									<!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+									<div class="selectbox page_num">
+										<select> 
+											<option> 15개 </option>
+											<option> 20개 </option>
+											<option> 30개 </option>
+											<option> 40개 </option>
+											<option> 50개 </option>
+										</select>
+									</div>
+								</div>
+								<div class="new_lst_info align_rg">		
+									<span class="new">8</span>
+									<span>/ 450</span>
+									<a href="#" class="ico_btn rfsh">새로고침</a>
+									<a class="btn_d_search open" onclick="$(this).toggleClass('open');$('.d_srch_layer').toggleClass('open')">검색</a>
+											<!-- detail srch layer -->
+											<div class="d_srch_layer open" >
+												<!-- 간편 탭 -->
+												<div class="s_cont open">
+													<div class="input_group has_select has_btn small">
+														<div class="selectbox">
+															<select><option>작성자</option></select>
+														</div>
+														<input class="basic_input" type="text" value="" >
+														<a class="ico search"  href="#">검색</a>
+													</div>	
+												</div>
+											</div>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							<!-- 리스트 영역 -->
+							<div class="content_table">
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:50px;">
+											<col style="width:*;">
+											<col style="width:120px;">
+											<col style="width:137px;">
+											<col style="width:87px;">
+										</colgroup>
+										<thead>
+										<tr>
+											<th><span>번호</span></th>
+											<th><span class="title">제목</span></th>
+											<th class="ascend"><a class="name" href="#">작성자</a></th>
+											<th class="descend"><a class="date" href="#">작성일</a></th>
+											<th><span>조회수</span></th>
+										</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table_body scroll_area handy-scroll">
+									<table>
+										<colgroup>
+											<col style="width:44px;">
+											<col style="width:*;">
+											<col style="width:120px;">
+											<col style="width:137px;">
+											<col style="width:87px;">
+										</colgroup>
+										<tbody>
+										<!-- 공지는 항상 상단 -->
+										<tr class="unread">
+											<td>322</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														[공지] 농구 왕초보 강좌 개설</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="read">
+											<td>19</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														실력항상 도움된는 방법</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="commented modified">
+											<td>18</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<span class="ico file">첨부</span>
+													<a class="subject" href="#">
+														단독 실전 연습</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">김핸디</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="unread">
+											<td>322</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														[공지] 농구 왕초보 강좌 개설</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="read">
+											<td>19</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														실력항상 도움된는 방법</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="commented modified">
+											<td>18</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<span class="ico file">첨부</span>
+													<a class="subject" href="#">
+														단독 실전 연습</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">김핸디</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="unread">
+											<td>322</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														[공지] 농구 왕초보 강좌 개설</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="read">
+											<td>19</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														실력항상 도움된는 방법</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="commented modified">
+											<td>18</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<span class="ico file">첨부</span>
+													<a class="subject" href="#">
+														단독 실전 연습</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">김핸디</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="unread">
+											<td>322</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														[공지] 농구 왕초보 강좌 개설</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="read">
+											<td>19</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														실력항상 도움된는 방법</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="commented modified">
+											<td>18</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<span class="ico file">첨부</span>
+													<a class="subject" href="#">
+														단독 실전 연습</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">김핸디</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="unread">
+											<td>322</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														[공지] 농구 왕초보 강좌 개설</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="read">
+											<td>19</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<!-- // 뱃지 -->
+													<a class="subject" href="#">
+														실력항상 도움된는 방법</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">홍길동</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										<!-- 공지는 항상 상단 -->
+										<tr class="commented modified">
+											<td>18</td>
+											<td>
+												<div class="title">
+													<span class="badge notice">공지</span>
+													<span class="ico file">첨부</span>
+													<a class="subject" href="#">
+														단독 실전 연습</a>
+												</div>
+											</td>
+											<td>
+												<a class="name" href="#">김핸디</a>
+											</td>
+											<td class="date">21:55</td>
+											<td class="count">153</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="paginate_area">
+									<div class="paginate">
+										<a class="first disabled">처음 페이지</a>
+										<a class="pre disabled">이전 페이지</a>
+										<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+										<a class="selected">1</a>
+										<a>2</a>
+										<a>3</a>
+										<a>4</a>
+										<a>5</a>
+										<a>6</a>
+										<a>7</a>
+										<a>8</a>
+										<a>9</a>
+										<a>10</a>
+										<a class="next">다음 페이지</a>
+										<a class="last">마지막 페이지</a>
+									</div>
+									<div class="page_num">
+										<input type="text" value="1"> / 118
+									</div>
+								</div>
+							</div>
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

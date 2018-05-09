@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>문서 비교</title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 1720 x 950 -->
+	<body>
+		<!-- header -->
+		<h1>문서 비교</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->
+			<div class="btns_area">
+				<div class="align_lf">
+					<span class="help_txt">필터 :</span>
+					<div class="selectbox" style="width:100px;">
+						<select> 
+							<option>100%</option>
+							<option>80%</option>
+						</select>
+					</div>
+					<input class="basic_inp">
+					<a class="btn">확인</a>
+				</div>
+			</div>
+			<div class="vertical_ui">
+				<div class="vertical_lf compare">
+					<dl class="dfine_info">
+						<dt>원본</dt>
+						<dd>홍길동 사원</dd>
+						<dd class="date">2018-01-30 12:55</dd>
+					</dl>
+					<div class="doc_area handy-scroll">
+						<img src="../../img/sample/sample_app.png" >
+					</div>
+				</div>	
+				<div class="vertical_rg compare">
+					<dl class="dfine_info">
+						<dt>수정</dt>
+						<dd>홍길동 사원</dd>
+						<dd class="date">2018-01-30 12:55</dd>
+					</dl>
+					<div class="doc_area handy-scroll">
+						<img src="../../img/sample/sample_app.png" >
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

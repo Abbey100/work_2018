@@ -1,0 +1,267 @@
+<html lang="ko"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script language="javascript" src="/js/COMMON.JS"></script>
+	<script>
+	
+	preViewId = "";
+	retObj = "";
+	txtObj = "";
+
+	function OpenImgWin(Id, obj, obj2, idx)
+	{
+		eval("preViewId = " + Id);
+		if (idx == '0')
+		{
+			eval("retObj = document.forms[0]." + obj);
+			eval("txtObj = document.forms[0]." + obj2);
+
+			if (retObj.length > 1)
+			{
+				eval("retObj = document.forms[0]." + obj + "[" + idx + "]");
+				eval("txtObj = document.forms[0]." + obj2 + "[" + idx + "]");
+			}
+		}
+		else
+		{
+			eval("retObj = document.forms[0]." + obj + "[" + idx + "]");
+			eval("txtObj = document.forms[0]." + obj2 + "[" + idx + "]");
+		}
+
+		var url = "/servlet/EIPServlet?SLET=com.hs.hip.rsch.RschImgAttachCmd&EIPJSP=/jsp/rsch/RschImgAttachWindow.jsp&K=003sH1EiZ1";
+		popupWinScroll(url, "RschImg", "460", "300");
+	}
+
+	// 상태창비우기
+	function SetDefaultStatus()
+	{
+		window.status = "";
+	}
+	// 상태창에 표시하기
+	function ChangeStatus(value)
+	{
+		window.status = value;
+	}
+	
+	$(document).ready(function() {
+		window_resize();
+	});
+	
+	$(window).resize(function() {
+		window_resize();
+	});
+	
+	function window_resize() {
+		$('.view_body_contents').css('height', $('body').outerHeight());
+	}
+	</script>
+</head>
+
+<body marginwidth="0" marginheight="0">
+<div class="container_box mg_lft_0">
+<div class="write_wrap view_body_contents" style="height: 445px;">
+<div class="research_table"> <!-- write_area 대신 research_table 사용 -->
+<form id="PblmInpt" name="PblmInpt" method="POST" action="/jsp/rsch/RschMakeBody.jsp">
+<input id="SLET" type="hidden" name="SLET">
+<input id="EIPJSP" type="hidden" name="EIPJSP">
+<input id="no" type="hidden" name="no" value="">
+<input id="addNew" type="hidden" name="addNew" value="TRUE">
+<input id="all_pblm_type_cl" type="hidden" name="all_pblm_type_cl" value="1,">
+<input id="all_etc_fl" type="hidden" name="all_etc_fl" value="0,">
+<input id="all_item_slct_cnt" type="hidden" name="all_item_slct_cnt" value="1,">
+<input id="all_item_cnt" type="hidden" name="all_item_cnt" value="4,">
+<input id="add_pblm_no" type="hidden" name="add_pblm_no">
+<input id="add_item_cnt" type="hidden" name="add_item_cnt">
+<input id="all_pblm" type="hidden" name="all_pblm" value="질문^">
+<input id="all_item" type="hidden" name="all_item" value="1 ^ 2 ^ 3 ^ 4 ^ ">
+<input id="all_pblm_img" type="hidden" name="all_pblm_img" value=". ^ ">
+<input id="all_item_img" type="hidden" name="all_item_img" value=". ^ . ^ . ^ . ^ ">
+<input id="vldt_pblm_cnt" type="hidden" name="vldt_pblm_cnt">
+<input id="SFLAG" type="hidden" name="SFLAG" value="">
+<input id="RSCH_NO" type="hidden" name="RSCH_NO" value="">
+<input id="prps" type="hidden" name="prps">
+<input id="ttl" type="hidden" name="ttl">
+
+
+<input id="PN" type="hidden" name="PN" value="">
+<input id="LS" type="hidden" name="LS" value="">
+<input id="RC" type="hidden" name="RC" value="0">
+<input id="OF" type="hidden" name="OF" value="">
+<input id="OT" type="hidden" name="OT" value="">
+<input id="SD" type="hidden" name="SD" value="">
+<input id="ED" type="hidden" name="ED" value="">
+<input id="SF" type="hidden" name="SF" value="">
+<input id="SV" type="hidden" name="SV" value="">
+<input id="TABFLAG" type="hidden" name="TABFLAG" value="">
+<input id="RSCH_TYPE" type="hidden" name="RSCH_TYPE" value="1">
+<input id="add_img_fl" type="hidden" name="add_img_fl">
+<input id="nCnt" type="hidden" name="nCnt" value="1">
+
+
+<!-- 작성된 문제 Start -->
+
+<table class="resaerch_q" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <colgroup>
+        <col style="width:100px;">
+        <col style="width:*;">
+        <col style="width:120px;">
+        
+    </colgroup>
+<tbody>
+    <tr class="question">
+    <th width="100" nowrap="">
+        <input id="slct_pblm" type="checkbox" name="slct_pblm" value="1" onclick="parent.TInput.SlctPblmDel('1')">        
+        <b>1.[객관식]</b>
+    </th>
+    
+    <td>        
+        <input id="pblmImgInfo" type="hidden" name="pblmImgInfo" value=".">
+        <input id="pblm" type="text" name="pblm" nowrap="" value="질문">        
+        <input id="item_slct_cnt" type="hidden" name="item_slct_cnt" value="1">
+    </td>
+    <td class="info">(응답수 : 111 )</td>    
+    <input id="pblm_type_cl" type="hidden" name="pblm_type_cl" value="1">
+    <input id="etc_fl" type="hidden" name="etc_fl" value="0">
+    <input id="item_cnt" type="hidden" name="item_cnt" value="4">
+</tr>
+
+<tr>
+	<th>
+	<input id="slct_item" type="checkbox" name="slct_item" value="1" onclick="parent.TInput.SlctItemDel('1')">1)
+	</th>
+	<td>
+		<input id="itemImgInfo" type="hidden" name="itemImgInfo" value=".">
+		<input id="item_unit" type="text" name="item_unit" value="1" >
+	</td>
+    <td></td>
+</tr>
+<tr>
+	<th>
+	<input id="slct_item" type="checkbox" name="slct_item" value="1" onclick="parent.TInput.SlctItemDel('1')">2)
+	</th>
+	<td>
+	<input id="itemImgInfo" type="hidden" name="itemImgInfo" value=".">
+	<input id="item_unit" type="text" name="item_unit" value="2" >
+	</td>
+    <td></td>
+</tr>
+
+<tr>
+	<th>
+	<input id="slct_item" type="checkbox" name="slct_item" value="1" onclick="parent.TInput.SlctItemDel('1')">3)
+	</th>
+	<td>
+		<input id="itemImgInfo" type="hidden" name="itemImgInfo" value=".">
+		<input id="item_unit" type="text" name="item_unit" value="3" >
+	</td>
+    <td></td>
+</tr>
+
+<tr>
+	<th>
+	<input id="slct_item" type="checkbox" name="slct_item" value="1" onclick="parent.TInput.SlctItemDel('1')">4)
+	</th>
+	<td>
+		<input id="itemImgInfo" type="hidden" name="itemImgInfo" value=".">
+		<input id="item_unit" type="text" name="item_unit" >
+	</td>
+    <td></td>
+</tr>
+</tbody></table>
+<!-- 작성된 문제 End -->
+
+
+<input id="pblm_cnt" type="hidden" name="pblm_cnt" value="1">
+<input id="total_pblm_cnt" type="hidden" name="total_pblm_cnt" value="1">
+</form>
+<form id="PreView" name="PreView" method="POST" action="/jsp/rsch/RschMakePreView.jsp">
+<input id="all_pblm_type_cl" type="hidden" name="all_pblm_type_cl" value="1,">
+<input id="all_etc_fl" type="hidden" name="all_etc_fl" value="0,">
+<input id="all_item_slct_cnt" type="hidden" name="all_item_slct_cnt" value="1,">
+<input id="all_item_cnt" type="hidden" name="all_item_cnt" value="4,">
+<input id="add_pblm_no" type="hidden" name="add_pblm_no">
+<input id="add_item_cnt" type="hidden" name="add_item_cnt" value="4">
+<input id="all_pblm" type="hidden" name="all_pblm" value="질문^">
+<input id="all_item" type="hidden" name="all_item" value="1 ^ 2 ^ 3 ^ 4 ^ ">
+<input id="all_pblm_img" type="hidden" name="all_pblm_img" value=". ^ ">
+<input id="all_item_img" type="hidden" name="all_item_img" value=". ^ . ^ . ^ . ^ ">
+<input id="RSLT_OPEN_FLAG" type="hidden" name="RSLT_OPEN_FLAG">
+<input id="RGST_CL" type="hidden" name="RGST_CL">
+<input id="RSCH_NO" type="hidden" name="RSCH_NO" value="">
+<input id="prps" type="hidden" name="prps">
+<input id="ttl" type="hidden" name="ttl">
+</form>
+
+<script language="javascript">
+	if ('1' == '1')
+	{
+		var frm = document.forms[0];
+		var pblmCnt = 0;
+		var pblmNo = 0;
+		var cmntNo = 0;
+		if (frm.slct_pblm)
+		{
+			pblmCnt = frm.slct_pblm.length;
+			if (!(pblmCnt > 1))
+			{
+				pblmCnt = 1;
+			}
+		}
+
+		parent.TInput.PblmType.add_pblm_no.length = pblmCnt + 1;
+
+		var nCnt = document.forms[0].nCnt.value;
+
+		parent.TInput.PblmType.add_pblm_no.length = nCnt;
+
+		if (nCnt == 0)
+		{
+			parent.TInput.PblmType.add_pblm_no.length = 1;
+			parent.TInput.PblmType.add_pblm_no[0].text = '';
+			parent.TInput.PblmType.add_pblm_no[0].value = '';
+		}
+		else if (nCnt == 1)
+		{
+			if (frm.pblm_type_cl.value == '5')
+			{
+				parent.TInput.PblmType.add_pblm_no[0].text = '지문' + (1);
+			}
+			else
+			{
+				parent.TInput.PblmType.add_pblm_no[0].text = 1;
+			}
+			parent.TInput.PblmType.add_pblm_no[0].value = 1;
+		}
+		else
+		{
+			for (var i = 0; i < nCnt; i++)
+			{
+				if (frm.pblm_type_cl[i].value == '5')
+				{
+					cmntNo++;
+					parent.TInput.PblmType.add_pblm_no[i].text = '지문' + (cmntNo);
+				}
+				else
+				{
+					pblmNo++;
+					parent.TInput.PblmType.add_pblm_no[i].text = pblmNo;
+				}
+				parent.TInput.PblmType.add_pblm_no[i].value = i + 1;
+			}
+		}
+
+		if (pblmCnt > 1)
+		{
+			parent.TInput.PblmType.add_pblm_no[pblmCnt - 1].selected = true;
+		}
+	}
+</script>
+</div>
+</div>
+</div>
+
+
+</body></html>

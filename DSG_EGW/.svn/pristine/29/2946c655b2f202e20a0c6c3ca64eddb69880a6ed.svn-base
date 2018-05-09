@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>대용량첨부</title>
+    </head>
+    <body>
+        <!-- 파일다운로드 정보 영역 -->
+        <div>
+            <h4 style="font-size: 13px; padding:0; margin: 12px 0 8px;">대용량 첨부파일&nbsp;<span style="color:#3858ed;">2</span></h4>
+            <!-- 파일 전체 박스 -->
+            <div style="padding: 10px 15px; margin-bottom: 30px; border: 1px solid #eee;">                
+                <!-- 파일 1개 단위 : 기본형 말줄임-->
+                <div style="padding: 2px">
+                     <!-- pc 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_download.png" style="display:inline-block; width:17px; height:17px; font-size: 0; vertical-align: middle;" alt="PC다운로드" /></a>
+                     <!-- 내파일 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_mybox.png" style="height:17px; width:17px; display:inline-block; font-size: 0; vertical-align: middle;"  alt="내파일다운로드" /></a>
+                    <!-- 대용량 뱃지 -->
+                    <span style="display:inline-block; height:17px; line-height: 17px; border-radius:2px; margin:0; font-size: 11px; background-color:#5a79ec; padding:0 2px; color: #fff; vertical-align: middle;">대용량</span>   
+                    <!-- 파일 제목 -->
+                    <a style="display:inline-block; max-width: calc(100% - 270px); height:17px; line-height:1.4; font-size: 12px;  color:#333; white-space: nowrap; word-break: break-all; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; cursor: pointer"> EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                    <!-- 다운로드 기간 -->
+                    <span style="font-size: 12px;color: #666;margin:0 4px;">
+                        (<span style="color:red" title="다운로드 가능 기간: ~2017-09-03">~2017-09-03</span>)
+                    </span>
+                     <!-- 파일 용량 -->
+                    <span style="font-size: 12px;color: #969696; margin: 0 4px;">88,888.88KB</span>
+                </div>
+                
+                 <!-- 파일 1개 단위 : 기본형 2 말줄임 -->
+                <div style="padding: 2px">
+                     <!-- pc 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_download.png" style="display:inline-block; width:17px; height:17px; font-size: 0; vertical-align: middle;" alt="PC다운로드" /></a>
+                     <!-- 내파일 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_mybox.png" style="height:17px; width:17px; display:inline-block; font-size: 0; vertical-align: middle;"  alt="내파일다운로드" /></a>
+                    <!-- 대용량 뱃지 -->
+                    <span style="display:inline-block; height:17px; line-height: 17px; border-radius:2px; margin:0; font-size: 11px; background-color:#5a79ec; padding:0 2px; color: #fff; vertical-align: middle;">대용량</span>  
+                    <!-- 파일 제목 -->
+                   <a style="display:inline-block; max-width: calc(100% - 270px); height:17px; line-height:1.4; font-size: 12px;  color:#333; white-space: nowrap; word-break: break-all; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; cursor: pointer"> EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                    <!-- 다운로드 기간 -->
+                    <span style="font-size: 12px;color: #666;margin:0 4px;">
+                        (<span style="color:red" title="다운로드 가능 기간: ~무제한">~무제한</span>)
+                    </span>
+                     <!-- 파일 용량 -->
+                    <span style="font-size: 12px;color: #969696; margin: 0 4px;">88KB</span>
+                </div>
+                
+                <!-- 파일 1개 단위 : 기본형 말줄임 x -->
+                <div style="padding: 2px">
+                    <!-- pc 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_download.png" style="display:inline-block; width:17px; height:17px; font-size: 0; vertical-align: middle;" alt="PC다운로드" /></a>
+                     <!-- 내파일 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_mybox.png" style="height:17px; width:17px; display:inline-block; font-size: 0; vertical-align: middle;"  alt="내파일다운로드" /></a>
+                    <!-- 대용량 뱃지 -->
+                    <span style="display:inline-block; height:17px; line-height: 17px; border-radius:2px; margin:0; font-size: 11px; background-color:#5a79ec; padding:0 2px; color: #fff; vertical-align: middle;">대용량</span>  
+                    <!-- 파일 제목 -->
+                    <a style="display:inline-block; max-width: calc(100% - 270px); height:17px; line-height:1.4; font-size: 12px;  color:#333; white-space: nowrap; word-break: break-all; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; cursor: pointer">한글파일이다요.jpg</a>
+                    <!-- 다운로드 기간 -->
+                    <span style="font-size: 12px;color: #666;margin:0 4px;">
+                        (<span style="color:red" title="다운로드 가능 기간: ~무제한">~무제한</span>)
+                    </span>
+                     <!-- 파일 용량 -->
+                    <span style="font-size: 12px;color: #969696; margin: 0 4px;">88KB</span>
+                </div>
+                
+                <!-- 파일 1개 단위 : 외부 첨부용 - 내파일 버튼 없음 - 말줄임 -->
+                <div style="padding: 2px">
+                    <!-- pc 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_download.png" style="display:inline-block; width:17px; height:17px; font-size: 0; vertical-align: middle;" alt="PC다운로드" /></a>            
+                    <!-- 대용량 뱃지 -->
+                    <span style="display:inline-block; height:17px; line-height: 17px; border-radius:2px; margin:0; font-size: 11px; background-color:#5a79ec; padding:0 2px; color: #fff; vertical-align: middle;">대용량</span>  
+                    <!-- 파일 제목 -->
+                    <a style="display:inline-block; max-width: calc(100% - 270px); height:17px; line-height:1.4; font-size: 12px;  color:#333; white-space: nowrap; word-break: break-all; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; cursor: pointer"> 한글파일이다요한글파일이다요한글파일이다요한글파일이다요한글파일이다요한글파일이다요한글파일이다요한글파일이다요.jpg</a>
+                    <!-- 다운로드 기간 -->
+                    <span style="font-size: 12px;color: #666;margin:0 4px;">
+                        (<span style="color:red" title="다운로드 가능 기간: ~2017-09-03">~2017-09-03</span>)
+                    </span>
+                     <!-- 파일 용량 -->
+                    <span style="font-size: 12px;color: #969696;margin: 0 4px;">311KB</span>
+                </div>
+                
+                <!-- 파일 1개 단위 : 외부 첨부용 - 내파일 버튼 없음 - 말줄임 x -->
+                <div style="padding: 2px">
+                    <!-- pc 다운로드 버튼 -->
+                    <a href="" style="cursor: pointer;"><img src="../../img/ico_download.png" style="display:inline-block; width:17px; height:17px; font-size: 0; vertical-align: middle;" alt="PC다운로드" /></a>             
+                    <!-- 대용량 뱃지 -->
+                    <span style="display:inline-block; height:17px; line-height: 17px; border-radius:2px; margin:0; font-size: 11px; background-color:#5a79ec; padding:0 2px; color: #fff; vertical-align: middle;">대용량</span>  
+                    <!-- 파일 제목 -->
+                    <a style="display:inline-block; max-width: calc(100% - 270px); height:17px; line-height:1.4; font-size: 12px;  color:#333; white-space: nowrap; word-break: break-all; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; cursor: pointer">한글파일이다요한글파일이다.jpg</a>
+                    <!-- 다운로드 기간 -->
+                    <span style="font-size: 12px;color: #666;margin:0 4px;">
+                        (<span style="color:red" title="다운로드 가능 기간: ~무제한">~무제한</span>)
+                    </span>
+                     <!-- 파일 용량 -->
+                    <span style="font-size: 12px;color: #969696;margin: 0 4px;">311KB</span>
+                </div>
+                
+                
+            </div>
+        </div>
+        <!-- // 파일다운로드 정보 영역 -->
+    </body>
+</html>

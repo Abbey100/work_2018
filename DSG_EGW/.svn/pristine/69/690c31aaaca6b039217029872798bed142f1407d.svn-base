@@ -1,0 +1,246 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+
+<body>
+<div id="wrap_organ"> 
+  <!-- communicator -->
+  <div id="communicator" class="communicator" tabindex="5000" style=""> 
+    <!-- search -->
+    <div class="srch_coworker">
+      <input id="search_value" type="text" onkeyup="searchSelect(event);" onclick="searchSelect(event);" onmouseout="searchHide();">
+      <a class="btn_search" href="#">btn search</a>
+      <ul id="search_div" class="dsp_blck" onmouseover="searchShow();" onmouseout="searchHide();">
+        <!-- 비활성 dsp_none 활성 dsp_blck -->
+        <!--
+		<li><a id="search_webmail" href="javascript:searchHead('webmail');"></a></li>
+		<li><a id="search_bbs" href="javascript:searchHead('bbs');"></a></li>
+		<li><a id="search_dcs" href="javascript:searchHead('dcs');"></a></li>
+		<li><a id="search_aprv" href="javascript:searchHead('aprv');"></a></li>
+			-->
+        <li><a id="search_user_name" href="javascript:searchHead('user_name');">"이ㅂ" 이름</a></li>
+        <li><a id="search_user_alias" href="javascript:searchHead('user_alias');">"이ㅂ" 별칭</a></li>
+        <li><a id="search_user_pos" href="javascript:searchHead('user_pos');">"이ㅂ" 직위</a></li>
+        <li><a id="search_user_rank" href="javascript:searchHead('user_rank');">"이ㅂ" 직급</a></li>
+        <li><a id="search_user_duty" href="javascript:searchHead('user_duty');">"이ㅂ" 직책</a></li>
+        <li><a id="search_user_dept" href="javascript:searchHead('user_dept');">"이ㅂ" 부서</a></li>
+        <li><a id="search_user_business" href="javascript:searchHead('user_business');">"이ㅂ" 담당업무</a></li>
+        <li><a id="search_user_phone" href="javascript:searchHead('user_phone');">"이ㅂ" 전화번호</a></li>
+        <li><a id="search_user_mobilephone" href="javascript:searchHead('user_mobilephone');">"이ㅂ" 휴대폰번호</a></li>
+        <li><a id="search_user_mail" href="javascript:searchHead('user_mail');">"이ㅂ" 메일</a></li>
+      </ul>
+    </div>
+    <!-- //search --> 
+    <!-- search result(user) -->
+    <div id="mainUserSearchResult"> </div>
+    <!-- //search result(user) -->
+    
+    <div class="viewer_org no_pic"><!-- 브라우저 크기제어 resize height -->
+    <!-- 사진정보 없는 옵션 작동시 no_pic 클래스 추가,  -->
+        <!-- 검색 결과 -->
+       <div id="div_recently_search_user" class="myceleb">
+        <h2> <a href="javascript:;" class="acco_arr">검색결과<span class="btn_search_clse" title="닫기">닫기</span></a></h2>
+        
+        <ul id="recently_search_user" class="picz_lst">
+          <span class="cmmnt dsp_blck">사용자가 없습니다.</span>
+          <!-- 비활성 dsp_none 활성 dsp_blck -->
+          
+        </ul>
+      </div>
+      <div id="div_recently_search_user" class="myceleb">
+        <h2> <a href="javascript:;" class="acco_arr">나에게연락한동료<span class="btn_org_clse">open </span></a></h2>
+        <!-- 나에게연락한동료 제목 라인에서 span으로 btn_org_clse(닫힘상태) 또는 btn_org_open(열림상태) 추가 -->
+        
+        <ul id="recently_search_user" class="picz_lst ">
+          <span class="cmmnt dsp_none">나에게 연락한 동료가 없습니다.</span>
+          <!-- 비활성 dsp_none 활성 dsp_blck -->
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+        </ul>
+      </div>    
+      <div id="div_recently_search_user" class="myceleb">
+        <h2> <a href="javascript:;" class="acco_arr">최근검색한동료<span class="btn_org_clse">open </span></a></h2>
+        <!-- 촤근검색한동료 및 주소록, 조직도 등의 제목 라인에서 span으로 btn_org_clse(닫힘상태) 또는 btn_org_open(열림상태) 추가 -->
+        
+        <ul id="recently_search_user" class="picz_lst dsp_blck">
+          <span class="cmmnt dsp_blck">최근 검색한 동료가 없습니다.</span>
+          <!-- 비활성 dsp_none 활성 dsp_blck -->
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+          
+        </ul>
+      </div>
+      <!-- //my favorite coworker --> 
+      
+      <!-- contact group -->
+      <div class="myceleb">
+        <h2> <a href="javascript:;" class="acco_arr">주소록<span class="btn_org_open">open </span></a></h2>
+        <ul class="lst_wrap brdr_bttm">
+          <li class="depth">
+            <div class="h_group"> <a id="favorite_list_a" class="g_name depth_open" href="javascript:toggle_favorite();">즐겨찾기</a><a href="javascript:showPopDeptInfo('000024006');" class="mail_org"></a> <a href="javascript:showPopSms('OD', '000024006');" class="sms_org"></a> </div>
+            <ul id="favorite_list"  class="picz_lst">
+              <span class="cmmnt dsp_blck">즐겨찾기 설정을 해주세요.</span>
+          <!-- 비활성 dsp_none 활성 dsp_blck -->
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+            </ul>
+          </li>
+        </ul>
+        <ul id="group_list" class="lst_wrap">
+          <li class="depth">
+            <div class="h_group"><a id="group_list_a" class="g_name depth_clse" href="javascript:toggle_group();">그룹</a></div>
+            <ul id="favorite_list"  class="picz_lst" style="display:none;">
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+              <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- //contact group --> 
+      
+      <!-- organization -->
+      <div id="mainOrgTree">
+        <div id="ui-id-org-top" class="orgnz_open">
+          <h2> <a href="javascript:mainOrgTopAcco();" class="acco_arr">조직도<span class="btn_org_open">open </span></a> </h2>
+          <ul class="lst_wrap">
+            <li id="ui-id-org-000000101" acco="open" class="depth">
+              <div class="h_group"> <a href="javascript:mainOrgAcco('000000101');" class="g_name depth_open">system</a> <a href="javascript:showPopDeptInfo('000000101');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000000101');" class="sms_org"></a> </div>
+              
+              <!-- user -->
+              <ul class="picz_lst">
+                <li class="co_worker"> <a href="#"> <span class="co_name">관리자a</span> </a> </li>
+                <li class="co_worker"> <a href="#"> <span class="co_name">관리자b</span> </a> </li>
+              </ul>
+              
+              <!-- dept -->
+              <ul class="lst_wrap_1st">
+                <li id="ui-id-org-000011502" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000011502');" class="g_name depth_clse" title="다산네트웍스">다산네트웍스</a> <a href="javascript:showPopDeptInfo('000011502');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000011502');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-500000468" acco="open" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('500000468');" class="g_name depth_open" title="핸디소프트">핸디소프트</a> <a href="javascript:showPopDeptInfo('500000468');" class="group_info"></a> <a href="javascript:showPopSms('OD', '500000468');" class="sms_org"></a> </div>
+                  
+                  <!-- user -->
+                  <ul class="picz_lst">
+                    <li class="co_worker"> <a href="#"> <span class="co_name">Ramyun</span> </a> </li>
+                    <li class="co_worker"> <a href="#"> <span class="co_name">Ramyun</span> </a> </li>
+                    <li class="co_worker"> <a href="#"> <span class="co_name">Ramyun</span> </a> </li>
+                    <li class="co_worker"> <a href="#"> <span class="co_name">Ramyun</span> </a> </li>
+                    <li class="co_worker"> <a href="#"> <span class="co_name">Ramyun</span> </a> </li>
+                  </ul>
+                  
+                  <!-- dept -->
+                  <ul class="lst_wrap_1st">
+                    <li id="ui-id-org-000023109" acco="clse" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('000023109');" class="g_name depth_clse" title="고문">고문</a> <a href="javascript:showPopDeptInfo('000023109');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000023109');" class="sms_org"></a> </div>
+                    </li>
+                    <li id="ui-id-org-000023800" acco="clse" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('000023800');" class="g_name depth_clse" title="대표이사Staff">대표이사Staff</a> <a href="javascript:showPopDeptInfo('000023800');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000023800');" class="sms_org"></a> </div>
+                    </li>
+                    <li id="ui-id-org-000024000" acco="clse" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('000024000');" class="g_name depth_clse" title="정보전략실">정보전략실</a> <a href="javascript:showPopDeptInfo('000024000');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024000');" class="sms_org"></a> </div>
+                    </li>
+                    <li id="ui-id-org-000024704" acco="open" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('000024704');" class="g_name depth_open" title="제품전략실">제품전략실</a> <a href="javascript:showPopDeptInfo('000024704');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024704');" class="sms_org"></a> </div>
+                      
+                      <!-- user -->
+                      <ul class="picz_lst">
+                        <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                      </ul>
+                      
+                      <!-- dept -->
+                      <ul class="lst_wrap_1st">
+                        <li id="ui-id-org-000022721" acco="clse" class="depth">
+                          <div class="h_group"> <a href="javascript:mainOrgAcco('000022721');" class="g_name depth_clse" title="제품기획팀">제품기획팀</a> <a href="javascript:showPopDeptInfo('000022721');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000022721');" class="sms_org"></a> </div>
+                        </li>
+                        <li id="ui-id-org-000024006" acco="open" class="depth">
+                          <div class="h_group"> <a href="javascript:mainOrgAcco('000024006');" class="g_name depth_open" title="UX디자인팀">UX디자인팀</a> <a href="javascript:showPopDeptInfo('000024006');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024006');" class="sms_org"></a> </div>
+                          
+                          <!-- user -->
+                          <ul class="picz_lst">
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                            <li class="co_worker"> <a href="#"> <span class="co_name">김이름</span> </a> </li>
+                          </ul>
+                          
+                          <!-- dept -->
+                          <ul class="lst_wrap_1st">
+                          </ul>
+                        </li>
+                        <li id="ui-id-org-000011305" acco="clse" class="depth">
+                          <div class="h_group"> <a href="javascript:mainOrgAcco('000011305');" class="g_name depth_clse" title="마케팅팀">마케팅팀</a> <a href="javascript:showPopDeptInfo('000011305');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000011305');" class="sms_org"></a> </div>
+                        </li>
+                      </ul>
+                    </li>
+                    <li id="ui-id-org-500609344" acco="clse" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('500609344');" class="g_name depth_clse" title="경영지원팀">경영지원팀</a> <a href="javascript:showPopDeptInfo('500609344');" class="group_info"></a> <a href="javascript:showPopSms('OD', '500609344');" class="sms_org"></a> </div>
+                    </li>
+                    <li id="ui-id-org-000024706" acco="clse" class="depth">
+                      <div class="h_group"> <a href="javascript:mainOrgAcco('000024706');" class="g_name depth_clse" title="SW사업부">SW사업부</a> <a href="javascript:showPopDeptInfo('000024706');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024706');" class="sms_org"></a> </div>
+                    </li>
+                  </ul>
+                </li>
+                <li id="ui-id-org-000011800" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000011800');" class="g_name depth_clse" title="다산RND">다산RND</a> <a href="javascript:showPopDeptInfo('000011800');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000011800');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-000021707" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000021707');" class="g_name depth_clse" title="차산네트웍스">차산네트웍스</a> <a href="javascript:showPopDeptInfo('000021707');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000021707');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-000021900" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000021900');" class="g_name depth_clse" title="디엠씨">디엠씨</a> <a href="javascript:showPopDeptInfo('000021900');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000021900');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-000024601" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000024601');" class="g_name depth_clse" title="DYTS">DYTS</a> <a href="javascript:showPopDeptInfo('000024601');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024601');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-000022102" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000022102');" class="g_name depth_clse" title="팬더미디어">팬더미디어</a> <a href="javascript:showPopDeptInfo('000022102');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000022102');" class="sms_org"></a> </div>
+                </li>
+                <li id="ui-id-org-000010600" acco="clse" class="depth">
+                  <div class="h_group"> <a href="javascript:mainOrgAcco('000010600');" class="g_name depth_clse" title="유통테스트">유통테스트</a> <a href="javascript:showPopDeptInfo('000010600');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000010600');" class="sms_org"></a> </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- //organization --> 
+    </div>
+  </div>
+  <!-- //communicator --> 
+</div>
+</div>
+</body>
+</html>

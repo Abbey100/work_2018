@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 설비 예약 정보 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>일정 정보</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area">
+                <div class="handy-scroll">
+                    <div>
+                        <div class="form_table">
+                            <table>
+                                <col style="width: 110px">
+                                <col style="width:*">
+                                <tbody>
+                                    <tr>                
+                                        <th><span>제목</span></th>
+                                        <td><p class="description"><span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>EGW 프로젝트 업무회의</p></td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>작성자</span></th>
+                                        <td><p class="description">홍길동</p></td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>달력</span></th>
+                                        <td>
+                                            <ul class="sche_pop_list">
+                                                <li><div class="sche_dal type05"><span class="dal_ic">달력 구분</span>내 일정</div></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>일시</span></th>
+                                        <td>
+                                            <p class="description">2017-09-20 11:00 ~ 13:00</p>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>공유자</span></th>
+                                        <td>
+                                            <p class="description">이은수, 강미나, 홍길동, 김미나, 이미연, 외 <span class="sche_total"><em>200</em>명</span></p>
+                                            <div class="sche_share_list handy-scroll">
+                                                <div class="inner">
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                    이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>설비</span></th>
+                                        <td>
+                                            <span class="description">1층 Bahama, 노트북1, 노트북2</span>
+                                            <span class="btn small">수정</span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>                    
+                    </div>
+                </div>
+
+            </div>
+            <div class="btns_area bttm border">
+                <div class="align_lf">
+                    <a class="btn">예약취소</a>
+                </div>
+                <div class="align_rg">
+                    <a class="action_btn">승인</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->	
+        <div class="popup open">
+            <!--  open 추가시 모달-->
+            <div>
+                <div class="popup_container" style="width:420px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        설비 예약 수정
+                    </h2>
+                    <div class="form_lst">
+                        <p class="description">
+                            예약정보를 <em class="fnt_blue fnt_bold">수정(취소)</em>할 설비를 선택해 주세요.
+                        </p>
+                        <div class="lst_block">
+                            <div class="handy-scroll">
+
+                                <ul class="multi_opt add_cal_list schedule_lypop">
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check005" />
+                                            <label for="check005">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type06">달력구분</span>
+                                                    UI팀프로젝트 일정일정UI팀프로젝트일정일정팀프로젝트일정일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check006" />
+                                            <label for="check006">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type01">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check007" />
+                                            <label for="check007">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type03">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check008" />
+                                            <label for="check008">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type07">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check009" />
+                                            <label for="check009">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type09">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check009" />
+                                            <label for="check009">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type09">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                    <li>
+                                        <div class="form">
+                                            <input type="checkbox" id="check009" />
+                                            <label for="check009">
+                                                <div class="sche_st5">
+                                                    <span class="dal_color type09">달력구분</span>
+                                                    UI팀프로젝트 일정공유
+                                                </div>
+                                            </label>
+                                        </div>			
+                                    </li>
+                                </ul>                                         
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns_area bttm">
+                        <div class="align_rg">
+                            
+                            <a class="action_btn">수정 완료</a>
+                            <a class="btn">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

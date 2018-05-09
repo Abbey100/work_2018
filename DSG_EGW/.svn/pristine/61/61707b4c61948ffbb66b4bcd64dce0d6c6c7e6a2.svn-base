@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시판 신청</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 450 -->
+	<body>
+		<div class="handy-scroll">
+			<div class="wrapper">
+				<!-- header -->
+				<h1 class="title">게시판 신청</h1>
+				<!-- //header -->
+				<div class="container_area">
+					<!-- btn -->
+					<div class="btns_area">
+						<div class="align_lf">
+							<a class="action_btn">신청</a>	
+								<a href="#" class="btn">취소</a>	
+						</div>
+					</div>
+					<!-- contents -->
+					<div class="scroll_area">
+						<div class="handy-scroll">
+							<div class="form_table">
+									<table>
+										<col style="width: 160px">
+										<col style="width:*">
+										<tbody>
+											<tr>
+												<th>게시판 위치</th>
+												<td>
+													<div class="input_group has_btn">
+														<input type="text" class="basic_input" placeholder="글을 입력해 주세요" />
+														<a class="ico group" href="#">조직도</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>게시판 유형</th>
+												<td>
+													<span class="form"><input type="radio" id="" name=""/><label for="">공개 게시판</label></span>
+													<span class="form"><input type="radio" id="" name="" /><label for="">비공개 게시판</label></span>
+													<span class="form"><input type="radio" id="" name="" /><label for="">앨범 게시판</label></span>	
+													<span class="form"><input type="radio" id="" name="" /><label for="">동영상 게시판</label></span>		
+													<span class="form"><input type="radio" id="" name="" /><label for="">승인 게시판</label></span>
+												</td>
+											</tr>	
+											<tr>
+												<th>게시판명</th>
+												<td>
+													<div class="input_group has_btn">
+														<input type="text" class="basic_input" placeholder="글을 입력해 주세요">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>만료일</th>
+												<td>
+													<span class="form"><input type="radio" id="no" name="ex_date"/><label for="no">설정안함(영구게시)</label></span>
+													<span class="form"><input type="radio" id="set" name="ex_date" /><label for="set">설정</label></span>
+													<div class="datepic_area">
+														<div class="date_box">
+															<input type="text" class="date_input line" value="2017.11.02" style="width:118px;" readonly="">
+															<a class="date_btn" title="">달력</a>
+														</div>
+														~
+														<div class="date_box">  
+															<input type="text" class="date_input line" value="2017.12.02" style="width:118px;" readonly="">
+															<a class="date_btn" title="">달력</a></div>
+													</div>
+												</td>
+											</tr>	
+											<tr>                
+												<th>의견 사용 여부</th>
+												<td>
+													<span class="form"><input type="radio" id="use1" name="use" /><label for="use1">사용함</label></span>
+													<span class="form"><input type="radio" id="use2" name="use" /><label for="use2">사용안함</label></span>
+												</td>
+											</tr>
+											<tr>                
+												<th>답글 방식</th>
+												<td>
+													<span class="form"><input type="radio" id="reply1" name="reply" /><label for="reply1">목록형</label></span>
+													<span class="form"><input type="radio" id="reply2" name="reply" /><label for="reply2">쓰레드</label></span>
+												</td>
+											</tr>		
+										</tbody>
+									</table>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->	
+	</body>
+</html>

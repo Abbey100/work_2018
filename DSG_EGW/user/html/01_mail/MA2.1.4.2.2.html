@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시판 신청 정보 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<!-- header -->
+		<h1>게시판 신청 정보</h1>
+		<div class="util paginate">
+			<a href="#" class="prev">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">			
+			<!-- 본문 영역 -->
+			<div class="vertical_table no_brdr">	
+				<div class="">
+					<table>
+						<colgroup>
+							<col style="width:120px;">
+							<col style="width:*;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><span>제목</span></th>
+								<td>
+									<span class="fnt_grey2">BB 프로젝트 디자인 시안보고 문서</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>상태</span></th>
+								<td>
+									<span class="fnt_grey2">6명 중 3명이 읽었습니다.</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+			<!-- 리스트 영역 -->
+			<div class="content_table">	
+				<div class="btns_area no_brdr">
+					<div class="align_lf">
+						<div class="group"><!-- open 클래스 제거시 레이어 close -->
+							<span class="form"><input type="checkbox"/><label class="blind">선택</label></span> 	
+						</div>
+						<a href="#" class="btn">회수</a>
+					</div>
+				</div>
+				<div class="table_head">
+					<table>
+						<colgroup>
+							<col style="width:45px;">
+							<col style="width:45px;">
+							<col style="width:*;">
+							<col style="width:560px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th></th>
+								<th></th>
+								<th class="">받는사람</th>
+								<th class="">읽은 날짜</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="table_body handy-scroll" style="max-height: 345px;">
+					<table>
+						<colgroup>
+							<col style="width:45px;">
+							<col style="width:45px;">
+							<col style="width:*;">
+							<col style="width:560px;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail open">읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">2017.08.12 14:57</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail ">안읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">김핸디</a>
+									<span class="belong">디자인팀</span>
+								</td>
+								<td class="date">읽지 않음</td>
+							</tr>
+							<tr>
+								<td> 
+									<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+								</td>
+								<td> 
+									<span class="ico_mail ">안읽은메일</span>
+								</td>
+								<td class="usr">
+									<a class="receiver">handy@handy.com</a>
+								</td>
+								<td class="date">회수 완료</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="btns_area bttm border">
+				<div class=" align_rg">
+					<a href="#" class="action_btn">확인</a>
+				</div>
+				</div>
+
+			</div>
+			<!-- // 리스트 영역 -->
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

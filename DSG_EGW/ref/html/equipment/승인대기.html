@@ -1,0 +1,89 @@
+<!doctype html>
+<html xmlns="http:/www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="/css/common.css" type="text/css" />
+<link rel="stylesheet" href="/css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="/js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+</head>
+
+<body><div class="pop_wrap">
+        <div class="container_box">
+            <div class="title_area">
+                설비 승인대기 보기
+            </div>
+            
+            <div id="pop_content" name="pop_content" style="display: block;">
+                <div class="write_form_box brdr_0">
+                    <form name="detail_form" id="detail_form">
+                        <div id="basic" name="basic" style="display:block">
+                            <table class="writting mg_0" style="width:100%">
+                                <colgroup>
+                                    <col class="bg_col">
+                                    <col class="st_col">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th class="item_list">설비</th>
+                                        <td id="td_equipment" name="td_equipment">8888888,6767</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">제목</th>
+                                        <td id="td_title" name="td_title">승인설비 예약해보려구요</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">작성자</th>
+                                        <td id="td_writer" name="td_writer"><a href="javascript:;" onclick="javascript:showUserProperty('001000609')" title="김민우"><span onmouseover="showEngName(this, event, '001000609', '00O153vrc');" onmouseout="hideEngName();">김민우</span></a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">반복</th>
+                                        <td id="td_recur" name="td_recur">반복 없음</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">날짜</th>
+                                        <td id="td_date" name="td_date">2015.04.24 ~ 2015.04.24</td>
+                                    </tr>
+                                    <tr id="tr_time" name="tr_time">
+                                        <th class="item_list">시간</th>
+                                        <td id="td_time" name="td_time">8:00 ~ 10:00</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">공유자</th>
+                                        <td id="td_attendee" name="td_attendee"></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="item_list">설비상태</th>
+                                        <td id="td_approval_return" name="td_approval_return">
+                                            <span id="span_approval" name="span_approval"><input name="approval_return_btn" type="radio" value="1" id="approval_return_btn" onclick="detail_form.status_value.value = this.value">승인</span>
+                                            <span id="span_return" name="span_return"><input name="approval_return_btn" type="radio" value="2" id="approval_return_btn" onclick="detail_form.status_value.value = this.value">반려</span>
+                                            <span id="span_approval_cancel" name="span_approval_cancel" style="display: none;"><input name="approval_return_btn" type="radio" value="0" id="approval_return_btn" onclick="detail_form.status_value.value = this.value">승인취소</span>
+                                            <span id="span_return_cancel" name="span_return_cancel" style="display: none;"><input name="approval_return_btn" type="radio" value="0" id="approval_return_btn" onclick="detail_form.status_value.value = this.value">반려취소</span>
+                                            <input type="hidden" name="status_value" id="status_value" value="0">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="discript" name="discript" class="write_area"><textarea cols="1" rows="8" readonly="" style="width:100%"></textarea></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!--// tab ctt END -->
+<div class="footer layout_bttm full_width" id="pop_bottom" name="pop_bottom">
+            <ul class="btns layout_cnt" id="pop_footer" name="pop_footer">
+                
+                <li><span><a href="javascript:change_status();" class="fnt_bold" title="저장">저장</a></span></li>
+                
+                <li><span><a href="javascript:self.close();" class="f_bold" title="취소">취소</a></span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

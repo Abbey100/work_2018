@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="tooltip_move">총 <span>2</span>개의 메일 이동<!-- 이동범위를 벗어났을 경우 no 클래스 추가해주면됨 --></div>
+<!--컨테이너-->
+<div id="main_content">
+  <!--좌측 메뉴 영역-->
+  <div id="folder_content" class="left_menu">
+    <!--Action Btn start-->
+    <div class="btn_large_half"> <a class="btn_l" href="" title="편지쓰기">편지쓰기</a> <a class="btn_r" href="" title="내게쓰기">내게쓰기</a> </div>
+    <!--Action Btn END-->
+    <!--Quick Btn start-->
+    <ul class="quickbtn_area four">
+      <li class="btn_noread quickbtn_on"><a href="#"> <span>안읽음</span></a></li>
+      <li class="btn_imprt"><a href="#"> <span>중요</span></a></li>
+      <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+      <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+    </ul>
+    <!--Quick Btn END-->
+    <!--Menu List start-->
+    <ul id="folder_list" class="snb_lst">
+      <li class="snb_rcv"> <a id="menu_01" href="javascript:getMessages('INBOX', true);selectFolder('menu_01');" > <span id='INBOX'>받은 편지함<em class="folder_msg_count">97</em></span></a></li>
+      <li class="snb_slf"> <a id="menu_10" class="slct" href="javascript:getMessages('SELFBOX', true);selectFolder('menu_10');" > <span id='SELFBOX'>내게 쓴 편지함 </span></a></li>
+      <li class="snb_snd"> <a id="menu_02" href="javascript:getMessages('보낸 편지함', true);selectFolder('menu_02');" > <span id='보낸 편지함'>보낸 편지함</span></a></li>
+    </ul>
+    <!--Menu List end-->
+    <!--Tree Area-->
+    <div id="folderDiv" class="tree_area bttm_ln">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span class="tree_ttl two close" onclick="javascript:toggle_div(this,'tree_contents_area');">개인메일함</span> <a class="btn_tree_add" href="#"> </a> <a class="btn_tree_cnfg" href="#"> </a> </div>
+      <!--Tree Box-->
+      <div id="tree_contents_area" class="tree_cntnts_area">
+        <div id="webfx-tree-object-4" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);return false;">개인 편지함</a> </div>
+        <div id="webfx-tree-object-4-cont" class="webfx-tree-container">
+          <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);">개인메일함<em class="folder_msg_count">99</em></a> </div>
+          <div id="webfx-tree-object-5-cont" class="webfx-tree-container">
+            <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-indent-0" src="../../img/I.png"><img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" class="selected" onclick="getMessages('개인 편지함.개인메일함.개인부서메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);">개인부서메일함<em class="folder_msg_count">99</em></a> </div>
+            <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-indent-0" src="../../img/I.png"><img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.부서안의부서', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);">부서안의부서</a> </div>
+            <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="webfx-tree-object-8" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-8-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-8-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.부서메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-8-anchor" onfocus="webFXTreeHandler.focus(this);">부서메일</a> </div>
+          <div id="webfx-tree-object-8-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-9" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-9-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-9-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.완전 긴 메일이름으로 한번 지어봅시다완전 긴', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-9-anchor" onfocus="webFXTreeHandler.focus(this);">완전 긴 메일이름으로 한번 지어봅시다완전 긴<span class="folder_msg_count">99</span></a> </div>
+          <div id="webfx-tree-object-9-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-10" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-10-plus" src="../../img/Lplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-10-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.작업메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-10-anchor" onfocus="webFXTreeHandler.focus(this);">작업메일</a> </div>
+        </div>
+      </div>
+    </div>
+    <!--Tree Area END -->
+    <!--Menu List start-->
+    <ul class="snb_lst">
+      <li class="snb_tmp"> <a id="menu_04" href="javascript:getMessages('임시 보관함', true);selectFolder('menu_04');" > <span id='임시 보관함'>임시 보관함</span> </a> </li>
+      <li class="snb_rsrv"> <a id="menu_05" href="javascript:reservedMessages(true);selectFolder('menu_05');" > <span id='예약 편지함'>예약 편지함</span> </a> </li>
+      <li class="snb_trsh"> <a id="menu_03" href="javascript:getMessages('지운 편지함', true);selectFolder('menu_03');" > <span id='지운 편지함'>지운 편지함</span></a> <a class="btn_trshbx_dl" href="#">휴지통비우기</a></li>
+    </ul>
+    <!--Menu List END-->
+    <!--Setting & Info Area start-->
+    <div class="info_area" id="defaultDiv">
+      <ul>
+        <li class="config"> <a href="javascript:managementcapacity();" title='편지함관리'> <span>편지함관리</span></a></li>
+        <li id="quotatable" class="cpcty_area"> <img id="gagequota" src="../../img/BAR_BG_ON.GIF" width="0%" height="12px" style="width:56px;"><img id="gagequotabg" src="../../img/BAR_BG.GIF" width="0%" height="12px" style="width:100px;"> <span class="cpcty_grp"> <span id="usequota">128MB</span> <span class="fnt_gray">/</span> <span id="limitquota">1000</span>MB </span> </li>
+      </ul>
+    </div>
+    <!--Setting & Info Area END-->
+  </div>
+  <!--좌측 메뉴 영역 END-->
+  <!-- 중앙 컨텐츠 영역 Center Contents Area -->
+  <div class="container_box">
+    <div class="title_area">
+      <h2 class="title">받은메일함<span>2개의 메일을 선택했습니다.</span></h2>
+      <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+      <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+    </div>
+    <!-- 검색 영역 -->
+    <div class="srch_area">
+      <fieldset class="search">
+        <input type="text" id="term" name="term" size="15" value="메일검색">
+        <a href="#" title="검색" class="srch_btn" alt="검색">검색</a>
+        <div class="btn_detail_srch"> <a href="#">상세</a> </div>
+      </fieldset>
+    </div>
+    <!-- //검색 영역 -->
+    <!-- 상세 검색 영역 -->
+    <div class="detail_srch_wrap">
+      <div class="detail_srch">
+        <div class="detail_srch_form">
+          <table style="width:646px">
+            <colgroup>
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="*">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">기간</th>
+                <td colspan="3"><label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1주일</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1개월</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    전체</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    지정</label>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                    <a href="#"> <img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                  <span>~</span>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                    <a href="#"> <img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+              </tr>
+              <tr>
+                <th scope="row">메일함</th>
+                <td><div class="inp_box">
+                    <input type="text" class="basic_inp" value="받은메일함" style="width:100%" readonly>
+                    <a href="#" class="ico_doc"><img src="../../img/ico_docment.png" alt="폴더"></a> </div></td>
+                <th scope="row">제목</th>
+                <td><div class="inp_box">
+                    <input type="text" class="basic_inp" style="width:100%">
+                  </div></td>
+              </tr>
+              <tr>
+                <th scope="row">보낸이</th>
+                <td><div class="inp_box"> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box" style="width:226px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div></td>
+                <th scope="row">받는이</th>
+                <td><div class="inp_box"> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box" style="width:226px"> <span class="recipient"><em>이용님</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div></td>
+              </tr>
+              <tr>
+                <th scope="row">참조인</th>
+                <td><div class="inp_box"> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box" style="width:226px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div></td>
+                <th scope="row">상태</th>
+                <td><div class="inp_box">
+                    <label class="pd_rgt_10">
+                      <input type="checkbox">
+                      않읽은 메일</label>
+                    <label class="pd_rgt_10">
+                      <input type="checkbox">
+                      읽은 메일</label>
+                    <label class="pd_rgt_10">
+                      <input type="checkbox">
+                      첨부있음</label>
+                  </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- //상세 검색 영역 -->
+    <!-- 기본 버튼 영역 Button Area -->
+    <div class="btn_area">
+      <ul class="btns">
+        <li><span class="ico_del"> <a href="#"  class="fnt_bold">삭제</a></span></li>
+        <!--[D] del 클래스는 x 아이콘 -->
+        <li class="m_lft_-8"><span><a href="#">완전삭제</a></span></li>
+        <!-- [D] 버튼끼리 붙이기 -->
+        <li><span><a href="#">읽음</a></span></li>
+        <li><span class="slt"><a href="#">이동</a></span></li>
+        <!-- [D] slt 는 셀렉트형태의 버튼 -->
+        <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span>
+          <!-- [D] 추가기능 레이어 팝업 -->
+          <div class="layer_pop" style="display:none;"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+            <ul>
+              <li><a href="#">인쇄하기</a></li>
+              <li><a href="#">PC저장</a></li>
+              <li><a href="#">Excel저장</a></li>
+            </ul>
+          </div>
+          <!-- // [D] 추가기능 레이어 팝업 -->
+        </li>
+      </ul>
+      <div class="layout_rgt">
+        <p class="btn_rfrsh"><a href="#">새로고침</a></p>
+        <p class="btn_lst_cmmn on"><a href="#">메일목록만보기</a></p>
+        <!-- [D] on 클래스 활성화 -->
+        <p class="btn_lst_hrz"><a href="#">좌우분할로보기</a></p>
+      </div>
+    </div>
+    <!-- //버튼 영역 -->
+    <!-- 메일 리스팅 기본형(좌측) -->
+    <!-- 게시판 header -->
+    <div class="content_lst content_lst_head">
+      <table>
+        <colgroup>
+        <col style="width:118px">
+        <col style="width:148px">
+        <col style="width:*">
+        <col style="width:120px">
+        <col style="width:104px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th> <input type="checkbox">
+              <img src="../../img/ico_flag_on.gif" class="lst_flag"> 상태 <img src="../../img/ico_q.gif"> </th>
+            <th>보낸이</th>
+            <th>제목</th>
+            <th><a href="#" class="descend">날짜</a></th>
+            <!-- [D] on 클래스는 활성화 -->
+            <th><a href="#" class="descend">크기</a></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- // 게시판 header -->
+    <!-- 게시판 list -->
+    <div class="content_lst content_lst_body">
+      <table class="move_lst">
+        <colgroup>
+        <col style="width:118px">
+        <col style="width:148px">
+        <col style="width:*">
+        <col style="width:120px">
+        <col style="width:88px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R0AEF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다. 메일 제목이 길면 말줄임이 아이콘 앞에서 생깁니다.</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr class="td_list_bold"><!-- [D] 읽은 게시글은 tr 에 td_list_bold 클래스 추가 -->
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R0AEF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다. 안읽은메일 제목이 길었을때는?</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr class="chck_on"><!-- [D] 체크시 chck_on 클래스 추가 -->
+            <td><input type="checkbox" checked>
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R1A.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr class="chck_on">
+            <td><input type="checkbox" checked>
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_flag_on.gif" class="lst_flag" alt="중요메일표시"><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#"><img src="../../img/ico_flag_off.gif" class="lst_flag" alt="중요메일표시"></a><img src="../../img/wma/status/R2SAERF.GIF"></td>
+            <td class="writer"><div class="writer_box"> <a href="#">이석진</a>
+                <div class="filter_box"> <a href="#">토글열기</a>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="b_card_ttl">
+                        <div class="b_card_pht"><img src="../../img/@thum.jpg"></div>
+                        <div class="b_card_info">
+                          <p class="b_card_name">이석진</p>
+                          <p class="b_card_org">품질관리팀</p>
+                          <p class="b_card_pstn">선임연구원</p>
+                        </div>
+                      </li>
+                      <li><a href="#">전화걸기</a></li>
+                      <li><a href="#" class="bttm_ln">메일보내기</a></li>
+                      <li><a href="#">보낸 메일로 검색</a></li>
+                      <li><a href="#">받은 메일로 검색</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></td>
+            <td class="subj"><a href="#" class="tit">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a><a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></td>
+            <td class="date">2014.03.04 19:07</td>
+            <td class="hit">628 KB</td>
+          </tr>
+          <tr>
+            <td colspan="5" class="no_bg"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // content list END-->
+    <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+      <div class="paginate"><a href="javascript:void(0)" class="first">맨뒤로</a><a href="javascript:void(0)" class="prev">뒤로</a><a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#" class="next on">앞으로</a><a href="#" class="last on">맨앞으로</a></div>
+      <div class="pagi_num">
+        <input type="text" value="1">
+        / 123 </div>
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) -->
+  </div>
+</div>
+</body>
+</html>

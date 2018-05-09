@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 동호회만들기_기본정보입력_팝업 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>동호회만들기</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area handy-scroll">
+                <div class="appr_flow_wrap mg_1">
+                    <div class="inner_wrap">
+                        <ul>
+                            <li><p class="appr_flow">기본정보입력</p></li>
+                            <li class="on"><p class="appr_flow">메뉴구성</p></li>
+                            <li><p class="appr_flow">미리보기 및 작성완료</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- board_menu -->
+                <div class="board_menu">
+                    <!-- left_menu -->
+                    <div class="left_menu ">
+                        <div class="board_list ">
+                            <div class="board_list_header">
+                                <h2 class="tit">제공되는 게시판</h2>
+                                <div class="pos_r">
+                                    <ul class="set_btn_list">
+                                        <li><a href="#" class="set_btn toptop">맨 위로</a></li>
+                                        <li><a href="#" class="set_btn top">위로</a></li>
+                                        <li><a href="#" class="set_btn bot">아래로</a></li>
+                                        <li><a href="#" class="set_btn botbot">맨 아래로</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="setting_cont handy-scroll">
+                                <ul class="set_lst">
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">일반게시판</a></li>
+                                    <li class="on"><a href="#">자료실</a></li><!-- 선택된 영역에 on 클래스 -->
+                                    <li><a href="#">승인게시판</a></li>
+                                    <li><a href="#">앨범게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// left_menu -->
+                    <div class="btns_center_arrow">
+                        <div class="btn_wrap">
+                            <a href="" class="btn_del">삭제</a>
+                            <a href="" class="btn_add">추가</a>
+                        </div>
+                    </div>
+                    <!-- right_menu -->
+                    <div class="right_menu ">
+                        <div class="board_list">
+                            <div class="board_list_header">
+                                <h2 class="tit">선택한 게시판</h2>
+                                <div class="pos_r">
+                                    <ul class="set_btn_list">
+                                        <li><a href="#" class="set_btn toptop">맨 위로</a></li>
+                                        <li><a href="#" class="set_btn top">위로</a></li>
+                                        <li><a href="#" class="set_btn bot">아래로</a></li>
+                                        <li><a href="#" class="set_btn botbot">맨 아래로</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="setting_cont handy-scroll">
+                                <ul class="set_lst">
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">일반게시판</a></li>
+                                    <li class="on"><a href="#">자료실</a></li><!-- 선택된 영역에 on 클래스 -->
+                                    <li><a href="#">승인게시판</a></li>
+                                    <li><a href="#">앨범게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                    <li><a href="#">동영상게시판</a></li>
+                                </ul>
+                            </div>
+                            <div class="rename_board">
+                                <input type="text" name="change_name" class="change_name" />
+                                <a href="#" class="btn btn_change">이름변경</a>
+                                <span class="byte_check">10/100byte</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //board_menu -->   
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="btns_area bttm top_line">
+                <div class="align_lf">
+                    <a class="btn">이전</a>
+                </div>
+                <div class="align_rg">
+                    <a class="action_btn">다음</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

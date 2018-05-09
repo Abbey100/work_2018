@@ -1,0 +1,2316 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 그룹 및 쓰기화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/textcomplete.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/common.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        <script>
+      </script>
+  </head>
+<body class="sq_plus">
+<!-- 컨테이너 -->
+<div class="">
+<!-- 좌측 메뉴 영역 Left Menu Area -->
+<div id="" class="left_menu">
+ 
+<!-- Action Btn -->
+  <div class="btn_large" onclick="javascript:$('.common_layer_pop.make_group.step1').addClass('pop_open'); $('.black_bg').addClass('on');"> <a class="" title="그룹 만들기">그룹 만들기</a></div>
+<!-- // Action Btn --> 
+<!-- Quick Btn -->
+  <ul class="quickbtn_area three">
+      <li class="btn_go_workpeed">
+          <a title="워크피드" href="">
+              <span>워크피드</span>
+          </a>
+      </li>
+      <li class="btn_gathering">
+          <a title="관심글" href="">
+              <span>관심글</span>
+          </a>
+      </li>
+      <li class="btn_mention">
+          <a title="멘션" href="">
+              <span>멘션</span>
+          </a>
+      </li>
+  </ul>
+<!-- // Quick Btn -->
+<!--Tree Area-->  
+  <!--즐겨찾는 그룹-->    
+  <div id="" class="tree_area mg_tp_7 with_del">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> 
+          <span class="tree_ttl" onclick="">즐겨찾기 그룹</span> 
+      </div>
+        <!--// Tree Title Area-->
+        <!-- Group List-->
+       <ul class="tree_cntnts_area">
+            <span class="none"><p>즐겨찾는 그룹이 없습니다.</p></span>
+        <li class="">
+            <span class="group_name fnt_bold">우리그룹</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li class="all_branch">
+            <span class="group_name">재무회계팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li class="">
+            <span class="group_name">프로젝트 그룹웨어 스퀘어 플러스</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li class="all_branch">
+            <span class="group_name">제품기획팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>     
+       </ul>
+      <!-- // Group List-->   
+  </div>
+  <!--// 즐겨찾는 그룹-->
+  <!-- 나의 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl one" onclick="javascript:$('this').toggleClass('tree_close');">나의 그룹</span>
+          <a class="btn_tree_add" href="#"> </a>
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="my_group">
+          <span class="none"><p>생성된 폴더가 없습니다.</p><p>폴더를 추가하여 관리할 수 있습니다.</p></span>
+          <div id="tree">
+          <ul class="dynatree-container">
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2015">기본폴더</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+           <ul>
+           <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="전사공지">전사공지</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>   
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="제품기획팀">제품기획팀</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>          
+         </ul>
+          
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2016">새폴더(1)</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          <ul>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="스퀘어룸01">스퀘어룸01</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="프로젝트 그룹웨어 스퀘어 플러스">
+             프로젝트 그룹웨어 스퀘어 플러스             
+          </span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="우리그룹">우리그룹</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li></ul>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2017">2017</span>
+          <a class="more" href="">more</a> 
+          </a></span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="folder_0">folder</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span></li>
+          </ul></div>      
+      <!-- // Tree Part -->
+      <!-- Group "List" Part -->
+      <ul id="" class="tree_cntnts_area with_move">
+        <li class="">
+            <span class="group_name">프로젝트 그룹웨어 스퀘어 플러스의 다른 그룹</span>
+            <a class="move" href=""> move</a> 
+        </li>  
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>      
+       </ul>
+      <!-- // Group List Part -->   
+      </div>
+      <!-- // 나의 그룹 그룹부분-->
+   </div>
+   <!-- // 나의 그룹-->
+   <!-- 전사 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl tree_close" onclick="">전사 그룹</span> 
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="tree_cntnts_area" style="display:none;">
+			<iframe frameborder="no" scrolling="no" height="100%" width="100%" cellspacing="0" cellpadding="0" src="square_org_All.html"></iframe>
+      </div>
+      <!-- // Tree Part -->            
+   </div>
+   <!-- // 전사 그룹-->
+    <!-- 종료 그룹-->
+  <div id="" class="tree_area with_hide">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl" onclick="">종료 그룹</span> 
+      </div>
+        <!-- Group List-->
+       <ul class="tree_cntnts_area">
+            <span class="none"><p>종료된 그룹이 없습니다.</p></span>
+        <li class="">
+            <span class="group_name">프로젝트 스퀘어</span>
+            <a class="hide" href="">hide</a> 
+        </li>  
+      </ul>
+      <!-- Tree Part -->
+      <div class="tree_cntnts_area" style="display:none;">
+			<iframe frameborder="no" scrolling="no" height="100%" width="100%" cellspacing="0" cellpadding="0" src="square_org_All.html"></iframe>
+      </div>
+      <!-- // Tree Part -->            
+   </div>
+   <!-- // 종료 그룹-->
+   
+ <!-- Config -->
+   <a class="left_config" id="" href="#"><span>환경설정</span></a>
+ <!-- //Config -->
+</div>
+<!-- // 좌측 메뉴 영역 Left Menu Area ->
+
+<!-- 중앙 컨텐츠 영역 Center Contents Area -->
+<div class="container_box container_list_box">  
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글 for 커뮤니케이터</a></div>
+   
+<!-- Title area END-->     
+   <div class="title_area">
+      <h2 class="title">
+           <span class="bookmark" onclick="javascript:$(this).toggleClass('on');">bookmark</span>
+		   <!-- 그룹 이미지 추가 : 2017-03-27 -->
+		   <!-- [D] 등록한 이미지가 있을 때 -->
+		   <span class="group_img"><a onclick="javascript:$('.common_layer_pop.group_info').addClass('pop_open'); $('.black_bg').addClass('on');"><img src="../../img/square_plus/group_img_01.jpg"></a></span>
+		   <!-- [D] 등록한 이미지가 없을 때(기본 이미지), default 클래그명 추가 & a태그 안에 img 제거 -->
+		   <!-- <span class="group_img default"><a onclick="javascript:$('.common_layer_pop.group_info').addClass('pop_open'); $('.black_bg').addClass('on');">그룹 기본 이미지</a></span> -->
+		   <!-- // 그룹 이미지 추가 : 2017-03-27 -->
+            <span class="title_name">UX디자인팀<em class="public">공개</em></span>
+            <span class="group_icon">
+                <div>
+                    <span class="infomation" onclick="javascript:$('.common_layer_pop.infomation').addClass('pop_open'); $('.black_bg').addClass('on');">info</span>
+                </div>
+                <div>
+                    <span class="member" onclick="javascript:$('.common_layer_pop.member').addClass('pop_open'); $('.black_bg').addClass('on');">member</span>
+                </div>
+                <div>
+                    <span class="setting" onclick="javascript:$(this).parent('div').toggleClass('open');">set</span>
+                    <!-- 메뉴 레이어 팝 -->
+                    <div class="layer_pop layer_menu">
+                       <ul>
+                           <li><a onclick="javascript:$('.common_layer_pop.setting').addClass('pop_open'); $('.black_bg').addClass('on'); $(this).parents('div').removeClass('open');">알림설정</a></li>
+                           <li><a>종료</a></li>
+                       </ul>
+                    </div>
+                </div>
+                
+            </span>
+       <!--span class="loading"></span-->
+      </h2>
+     
+   </div>
+<!-- // Title area END-->
+    
+<!-- CONTENTs AREA START -->
+   <div class="content_lst content_lst_body">
+       <!-- CONTENTs 좌측 -->
+       <div class="contents_area">
+           <!-- 글 입력 박스 -->
+           <div class="write_box">            
+               <div class="write_area" onclick="javascript:$('.write_layer_pop').addClass('pop_open'); $('.black_bg').addClass('on'); $('.write_layer_pop .org_tit').focus();">
+                  <span class="placeholder">
+                          새로운 소식을 공유하세요
+                  </span> 
+               </div>
+               <div class="write_btn_area">
+                   <ul class="icon_btns">
+                       <li class="icon_btn img"><span>img_atach</span></li>
+                       <li class="icon_btn file">
+                       <input type="file" class="" value="file" size="1" >
+                       <span>file_atach</span>
+                       </li>
+                       <li class="line"><span></span></li>
+                       <li class="icon_btn notice"><span>set_notice</span></li>
+                       <li class="icon_btn report"><span>work_report</span></li>                       
+                   </ul>
+                   <span class="btn submit" onclick="javascript:$('.write_layer_pop').addClass('pop_open'); $('.black_bg').addClass('on'); ">등록</span>
+               </div>
+           </div>
+           <!-- // 글 입력 박스 -->
+           
+           <!-- 시스템 메세지 1 : 멤버참여 -->
+           <div class="contents_wrap sys_msg">
+           <div class="article_box">
+                <!-- 본문 영역 -->  
+				
+			   <!-- 그룹 이미지 추가 : 2017-03-28 -->
+			   <!-- [D] 등록한 이미지가 있을 때 -->
+			   <!-- <span class="group_img"><img src="../../img/square_plus/group_img_01.jpg"></span> -->
+			   <!-- [D] 등록한 이미지가 없을 때(기본 이미지), default 클래그명 추가 & a태그 안에 img 제거 -->
+			   <span class="group_img default">그룹 기본 이미지</span>
+			   <!-- // 그룹 이미지 추가 : 2017-03-28 -->   
+			   
+               <!-- 스퀘어 아이콘 -->
+               <!-- <img class="ico_sysmsg" src="../../img/square_plus/ico_sysmsg.png"> -->
+               <!-- // 스퀘어 아이콘 -->
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 시스템메세지 -->
+                     <div class="info">
+                         <span class="name_area">
+                             <!-- [D] 구성원관련 메세지는 구성원이름을 넣어줍니다.
+                            <em class="name">김핸디</span>
+                            <em class="name">김디자인</span> -->
+                            <!-- [D] 그룹관련 메세지는 그룹이름을 넣어줍니다.-->
+                            <em class="group_name">디자이노 → 디자이노12</em>
+                         <!-- [D] detail 내용 변경
+                                  그룹종료 : 그룹이 종료되었습니다. 
+                                  그룹재시작 : 그룹이 재시작했습니다.
+                                  그룹명수정 : (으)로 그룹명을 변경했습니다.
+                                  그룹소개수정 : 의 그룹소개를 변경했습니다.
+                                  구성원추가 : 님이 그룹에 참여했습니다.
+                                  구성원제외 : 님이 그룹에서 제외되었습니다.
+                          -->
+                          (으)로 그룹명을 변경했습니다.
+                         </span>
+                         <span class="date">
+                        2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                       <!-- // 본문 -->
+                        <!-- // 텍스트 영역 -->
+                                      
+               </div>                         
+          </div>
+          <!-- // 본문 영역-->                              
+           </div>
+           <!-- // 시스템 메세지 1 : 멤버참여 -->
+           
+           <!-- 앨범 메세지 추가 : 2017-04-10 -->
+		   <!-- 컨텐츠 1 -->
+           <div class="contents_wrap detail">
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../../img/pic_mask_40.png">
+                   <img class="photo" src="../../img/thmb_nopic.gif">
+               </div>
+               <!-- // 사용자 사진 -->
+               <!-- 관심글 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 관심글 -->
+               <!-- 메뉴 -->
+               <div>
+                   <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                     메뉴
+                   </div>
+                   <!-- 메뉴 레이어 팝 -->
+                   <div class="layer_pop layer_menu">
+                       <ul>
+                           <li><a>삭제</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <!-- // 메뉴 --> 
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김핸디
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                      <!-- 본문 -->
+                       <!-- [D] 앨범 제목 클릭시 해당 앨범 상세 페이지로 이동 -->
+					   <p class="article"><em><a href="#">[앨범 제목]</a></em> 앨범이 삭제되었습니다.
+                       </p>
+                       <!-- // 본문 -->
+                                      
+					   <!-- 링크 영역 -->
+					   <div class="album_area">
+						   <!-- 링크 1 -->
+							   <div class="album_wrap">
+								   <!-- 링크 이미지 -->
+								   <div class="album_img">
+										album_icon  
+								   </div>
+								   <!-- // 링크 이미지 -->
+								   <!-- 링크 컨텐츠 -->
+								   <div class="album_cont">
+									   <span class="album_tit">앨범 제목</span>
+									   <span class="album_txt">앨범이 삭제되었습니다.</span>
+								   </div>                           
+								   <!-- // 링크 컨텐츠 -->                           
+							   </div>
+						   <!-- // 링크 1 -->
+					   </div>
+					   <!-- // 링크 영역 -->
+               </div>          
+               <!-- 카운팅 영역 -->
+               <div class="count_wrap">
+                   <div class="face_count">
+                       <!-- [D] 
+                            Case 1. 표정이 선택되지 않았을 경우 span의 string은 표정짓기로 표기합니다.
+                            <span class="face_count_tit">표정짓기</span>
+    
+                            Case 2. 사용자가 표정을 선택했을 경우, .mine 과 표정 클래스를 추가합니다.
+                            span의 string은 표정으로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            .like : 좋아요, .smile : 웃겨요, .best : 최고예요, .surprise 놀랐어요, .sad : 슬퍼요, .angry : 화나요
+                            <span class="face_count_tit mine like">표정<em>1</em></span>
+
+                            Case 3. 사용자 외 다른 사람만 표정을 선택했을 경우, span의 string은 표정짓기로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            <span class="face_count_tit mine like">표정짓기<em>1</em></span>
+                        -->
+                       <span class="face_count_tit mine like" onclick="javascript:$(this).parent('div').toggleClass('open');">표정</span>
+                       <div class="count">
+                           <em>3</em>
+                           <!-- 멤버리스트 툴팁:레이어 -->
+                           <div class="tooltip_layer">
+                                <ul class="have_face_list">
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span class="more">... 외 99999명</span></a></li>
+                                </ul>
+                                <span class="square_tooltip_arr"></span>
+                            </div>
+                           <!-- // 멤버리스트 툴팁:레이어 -->
+                        </div>
+
+                       <!-- 표정짓기 레이어메뉴 -->
+                       <div class="layer_pop layer_menu">
+                           <ul class="face_list">
+                               <li><span class="face like" onclick="javascript:$(this).parent('li').toggleClass('on');">좋아요</span></li>
+                               <li><span class="face smile" onclick="javascript:$(this).parent('li').toggleClass('on');">웃겨요</span></li>
+                               <li><span class="face best" onclick="javascript:$(this).parent('li').toggleClass('on');">최고예요</span></li>
+                               <li><span class="face surprise" onclick="javascript:$(this).parent('li').toggleClass('on');">놀랐어요</span></li>
+                               <li><span class="face sad" onclick="javascript:$(this).parent('li').toggleClass('on');">슬퍼요</span></li>
+                               <li><span class="face angry" onclick="javascript:$(this).parent('li').toggleClass('on');">화나요</dspaniv></li>
+                           </ul>
+                       </div>
+                       <!-- // 표정짓기 레이어메뉴 -->
+
+                   </div>
+                   <!-- // 표정 영역 -->
+                   
+                   <!-- 의견 영역 -->
+                   <div class="comm_count">
+                       <!-- [D] case1. 의견이 달렸을 때, em에 count 표시 -->
+                       <span class="comm_count_tit">의견<em>2</em></span>
+                       <!-- [D] case2. 의견의 갯수가 0일때 
+                                .comm_count_tit string 변경
+                                <span class="comm_count_tit">의견작성</span>
+                        -->
+                   </div>
+                   <!-- // 의견 영역 -->
+                </div>
+               <!-- // 카운팅 영역 -->               
+          </div>
+          <!-- // 본문 영역-->     
+           
+           </div>
+           <!-- // 컨텐츠 1 --> 
+           
+           <!-- 컨텐츠 2 -->
+           <div class="contents_wrap detail">
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../../img/pic_mask_40.png">
+                   <img class="photo" src="../../img/thmb_nopic.gif">
+               </div>
+               <!-- // 사용자 사진 -->
+               <!-- 관심글 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 관심글 -->
+               <!-- 메뉴 -->
+               <div>
+                   <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                     메뉴
+                   </div>
+                   <!-- 메뉴 레이어 팝 -->
+                   <div class="layer_pop layer_menu">
+                       <ul>
+                           <li><a>삭제</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <!-- // 메뉴 --> 
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김핸디
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                      <!-- 본문 -->
+                       <!-- [D] 앨범 제목 클릭시 해당 앨범 상세 페이지로 이동 -->
+					   <p class="article"><em><a href="#">[앨범 제목]</a></em> 새로운 앨범이 생성되었습니다.
+                       </p>
+                       <!-- // 본문 -->
+                                      
+					   <!-- 링크 영역 -->
+					   <div class="album_area">
+						   <!-- 링크 1 -->
+							   <div class="album_wrap">
+								   <!-- 링크 이미지 -->
+								   <div class="album_img">
+										album_icon  
+								   </div>
+								   <!-- // 링크 이미지 -->
+								   <!-- 링크 컨텐츠 -->
+								   <div class="album_cont">
+									   <span class="album_tit">앨범 제목</span>
+									   <span class="album_txt">사진 8장</span>
+								   </div>                           
+								   <!-- // 링크 컨텐츠 -->                           
+							   </div>
+						   <!-- // 링크 1 -->
+					   </div>
+					   <!-- // 링크 영역 -->
+               </div>          
+               <!-- 카운팅 영역 -->
+               <div class="count_wrap">
+                   <div class="face_count">
+                       <!-- [D] 
+                            Case 1. 표정이 선택되지 않았을 경우 span의 string은 표정짓기로 표기합니다.
+                            <span class="face_count_tit">표정짓기</span>
+    
+                            Case 2. 사용자가 표정을 선택했을 경우, .mine 과 표정 클래스를 추가합니다.
+                            span의 string은 표정으로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            .like : 좋아요, .smile : 웃겨요, .best : 최고예요, .surprise 놀랐어요, .sad : 슬퍼요, .angry : 화나요
+                            <span class="face_count_tit mine like">표정<em>1</em></span>
+
+                            Case 3. 사용자 외 다른 사람만 표정을 선택했을 경우, span의 string은 표정짓기로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            <span class="face_count_tit mine like">표정짓기<em>1</em></span>
+                        -->
+                       <span class="face_count_tit mine like" onclick="javascript:$(this).parent('div').toggleClass('open');">표정</span>
+                       <div class="count">
+                           <em>3</em>
+                           <!-- 멤버리스트 툴팁:레이어 -->
+                           <div class="tooltip_layer">
+                                <ul class="have_face_list">
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span class="more">... 외 99999명</span></a></li>
+                                </ul>
+                                <span class="square_tooltip_arr"></span>
+                            </div>
+                           <!-- // 멤버리스트 툴팁:레이어 -->
+                        </div>
+
+                       <!-- 표정짓기 레이어메뉴 -->
+                       <div class="layer_pop layer_menu">
+                           <ul class="face_list">
+                               <li><span class="face like" onclick="javascript:$(this).parent('li').toggleClass('on');">좋아요</span></li>
+                               <li><span class="face smile" onclick="javascript:$(this).parent('li').toggleClass('on');">웃겨요</span></li>
+                               <li><span class="face best" onclick="javascript:$(this).parent('li').toggleClass('on');">최고예요</span></li>
+                               <li><span class="face surprise" onclick="javascript:$(this).parent('li').toggleClass('on');">놀랐어요</span></li>
+                               <li><span class="face sad" onclick="javascript:$(this).parent('li').toggleClass('on');">슬퍼요</span></li>
+                               <li><span class="face angry" onclick="javascript:$(this).parent('li').toggleClass('on');">화나요</dspaniv></li>
+                           </ul>
+                       </div>
+                       <!-- // 표정짓기 레이어메뉴 -->
+
+                   </div>
+                   <!-- // 표정 영역 -->
+                   
+                   <!-- 의견 영역 -->
+                   <div class="comm_count">
+                       <!-- [D] case1. 의견이 달렸을 때, em에 count 표시 -->
+                       <span class="comm_count_tit">의견<em>2</em></span>
+                       <!-- [D] case2. 의견의 갯수가 0일때 
+                                .comm_count_tit string 변경
+                                <span class="comm_count_tit">의견작성</span>
+                        -->
+                   </div>
+                   <!-- // 의견 영역 -->
+                </div>
+               <!-- // 카운팅 영역 -->               
+          </div>
+          <!-- // 본문 영역-->     
+           
+           </div>
+           <!-- // 컨텐츠 2 -->
+		   <!-- // 앨범 메세지 추가 : 2017-04-10 -->
+           
+           <!-- 컨텐츠 3 -->
+           <div class="contents_wrap">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노디자이노</a></span> 
+                  <span class="act"><span class="name">김핸디</span>님이 의견을 남겼습니다.</span> 
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../../img/pic_mask_40.png">
+                   <img class="photo" src="../../img/thmb_nopic.gif">
+               </div>
+               <!-- // 사용자 사진 -->
+               <!-- 관심글 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 관심글 -->
+               <!-- 메뉴 -->
+               <div>
+                   <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                     메뉴
+                   </div>
+                   <!-- 메뉴 레이어 팝 -->
+                   <div class="layer_pop layer_menu">
+                       <ul>
+                           <li><a>복사</a></li>
+                           <li><a>이미지 모두저장</a></li>
+                           <li><a>파일 모두저장</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <!-- // 메뉴 --> 
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김핸디
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                      <!-- 본문 -->
+                       <p class="article">입출력장치의 변화는 
+                                <em class="hash"><a href="#">UX/UI</a></em>
+                                변화에 직결되므로 VR 업계의 변화 양상은 언제나 관심을 두고 있는 영역입니다. 얼마 전 VR 업계 관계자들의 이야기를 들을 수 있
+                       </p>
+                       <!-- // 본문 -->
+                       <a class="p_more">
+                           더보기
+                       </a>
+                       <a class="p_fold">
+                           접기
+                       </a>
+                        <!-- // 텍스트 영역 -->
+                                      
+               <!-- 링크 영역 -->
+               <div class="link_area">
+                   <!-- 링크 1 -->
+                       <div class="link_wrap">
+                           <!-- 링크 이미지 -->
+                           <div class="link_img">
+                                <span>
+                                   <img src="http://coresos.phinf.naver.net/a/2hf099_e/e1jUd015ierprwblkfa_o5t70a.png?type=s150" alt="네이버 메인" class="thumb">
+                               </span>    
+                           </div>
+                           <!-- // 링크 이미지 -->
+                           <!-- 링크 컨텐츠 -->
+                           <div class="link_cont">
+                               <span class="link_tit">네이버 메인</span>
+                               <span class="link_txt">네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요</span>
+                               <span class="link_url">www.naver.com</span>
+                           </div>                           
+                           <!-- // 링크 컨텐츠 -->                           
+                       </div>
+                   <!-- // 링크 1 -->
+               </div>
+               <!-- // 링크 영역 -->
+               <!-- 썸네일 영역 -->
+               <div class="sum_area">
+                   <div class="sum_wrap">
+                    <a class="btn pre">pre</a>
+                       <ul class="sumnails">                  
+                           <!-- 이미지 01 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_01.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 02 -->
+                          <li class="sumnail">
+                               <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_02.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 03 -->
+                           <li class="sumnail">
+                               <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_03.jpg" />
+                              </span>
+                          </li> 
+                           <!-- 이미지 04 -->
+                           <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_04.jpg" />
+                              </span>
+                          </li>  
+                           <!-- 이미지 05 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_05.jpg" />
+                              </span>
+                          </li>
+                          <!-- 이미지 01 -->
+                          <li class="sumnail">
+                             <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_06.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 02 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_02.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 03 -->
+                           <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_03.jpg" />
+                              </span>
+                          </li> 
+                           <!-- 이미지 04 -->
+                           <li class="sumnail">
+                               <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_04.jpg" />
+                              </span>
+                          </li>  
+                           <!-- 이미지 05 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../../img/square_plus/ex_img_05.jpg" />
+                              </span>
+                          </li>
+                       </ul>
+                       <a class="btn next">next</a>
+                       </div>
+                   </div>
+               <!-- // 썸네일 영역 -->
+               <!-- 파일 영역 -->
+               <div class="file_area">
+                   <div class="file_wrap">
+                   <div class="file_list_tit">
+                       <span class="title fold">파일<span>2</span></span>
+                       <a class="check_all">전체선택</a>
+                       <a class="file_save">PC저장</a>
+                      <span class="f_more" onclick="javascript:$(this).parent('div').toggleClass('open');">메뉴</span>
+                        <!-- 메뉴 레이어 팝 -->
+                        <div class="layer_pop layer_menu">
+                           <ul>
+                               <li><a>삭제</a></li>
+                           </ul>
+                        </div>
+                   </div>
+                   <ul class="file_list">
+                       <li class="file">
+                           <input type="checkbox">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">파일UI입니다.</span>
+                               <span class="size">123 KB</span>
+                               <span class="cancel_select">del</span>
+                           </a>
+                           <div>               
+                           <!-- 관심글 -->
+                            <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                                collect
+                           </div>
+                           <!-- // 관심글 -->
+                           </div>
+                       </li>
+                      <li class="file">
+                          <input type="checkbox">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                               <span class="size">123 KB</span>
+                               <span class="cancel_select">del</span>
+                           </a>
+                           <div>               
+                           <!-- 관심글 -->
+                            <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                                collect
+                           </div>
+                           <!-- // 관심글 -->
+                           </div>
+                       </li>
+                   </ul>
+                   </div>
+               </div>
+               <!-- // 파일 영역 -->
+               <!-- 태그 영역 -->
+               <ul class="hash_tag">
+                   <li><a>UX/UI</a></li>
+                   <li><a>2016트렌드</a></li>
+                   <li><a>미니컨퍼런스</a></li>
+               </ul>
+               <!-- // 태그 영역 -->
+               </div>          
+               <!-- 카운팅 영역 -->
+               <div class="count_wrap">
+                   <div class="face_count">
+                       <!-- [D] 
+                            Case 1. 표정이 선택되지 않았을 경우 span의 string은 표정짓기로 표기합니다.
+                            <span class="face_count_tit">표정짓기</span>
+    
+                            Case 2. 사용자가 표정을 선택했을 경우, .mine 과 표정 클래스를 추가합니다.
+                            span의 string은 표정으로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            .like : 좋아요, .smile : 웃겨요, .best : 최고예요, .surprise 놀랐어요, .sad : 슬퍼요, .angry : 화나요
+                            <span class="face_count_tit mine like">표정<em>1</em></span>
+
+                            Case 3. 사용자 외 다른 사람만 표정을 선택했을 경우, span의 string은 표정짓기로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            <span class="face_count_tit mine like">표정짓기<em>1</em></span>
+                        -->
+                       <span class="face_count_tit mine like" onclick="javascript:$(this).parent('div').toggleClass('open');">표정</span>
+                       <div class="count">
+                           <em>3</em>
+                           <!-- 멤버리스트 툴팁:레이어 -->
+                           <div class="tooltip_layer">
+                                <ul class="have_face_list">
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span class="more">... 외 99999명</span></a></li>
+                                </ul>
+                                <span class="square_tooltip_arr"></span>
+                            </div>
+                           <!-- // 멤버리스트 툴팁:레이어 -->
+                        </div>
+
+                       <!-- 표정짓기 레이어메뉴 -->
+                       <div class="layer_pop layer_menu">
+                           <ul class="face_list">
+                               <li><span class="face like" onclick="javascript:$(this).parent('li').toggleClass('on');">좋아요</span></li>
+                               <li><span class="face smile" onclick="javascript:$(this).parent('li').toggleClass('on');">웃겨요</span></li>
+                               <li><span class="face best" onclick="javascript:$(this).parent('li').toggleClass('on');">최고예요</span></li>
+                               <li><span class="face surprise" onclick="javascript:$(this).parent('li').toggleClass('on');">놀랐어요</span></li>
+                               <li><span class="face sad" onclick="javascript:$(this).parent('li').toggleClass('on');">슬퍼요</span></li>
+                               <li><span class="face angry" onclick="javascript:$(this).parent('li').toggleClass('on');">화나요</dspaniv></li>
+                           </ul>
+                       </div>
+                       <!-- // 표정짓기 레이어메뉴 -->
+
+                   </div>
+                   <!-- // 표정 영역 -->
+                   
+                   <!-- 의견 영역 -->
+                   <div class="comm_count">
+                       <!-- [D] case1. 의견이 달렸을 때, em에 count 표시 -->
+                       <span class="comm_count_tit">의견<em>2</em></span>
+                       <!-- [D] case2. 의견의 갯수가 0일때 
+                                .comm_count_tit string 변경
+                                <span class="comm_count_tit">의견작성</span>
+                        -->
+                   </div>
+                   <!-- // 의견 영역 -->
+                </div>
+               <!-- // 카운팅 영역 -->               
+          </div>
+          <!-- // 본문 영역-->      
+
+		  <!-- 의견 쓰기 UI 변경 : 2017-03-21 -->
+               <!-- 의견 영역 -->
+          <div class="comment_box_wrap">
+               <!-- [D] 표정과 의견이 없는 경우 nohave 를 붙여줍니다. -->
+                <div class="comment_box">
+                    <!-- 의견 쓰기 영역 -->
+                    <div class="write_comment" contenteditable="true">
+                       <span class="placeholder">
+                          [Shift] + [Enter]로 줄바꿈이 가능합니다.
+                       </span> 
+					  
+					   <div class="write_btn_area">
+						   <ul class="icon_btns">
+							   <li class="icon_btn img"><span>img_atach</span></li>
+							   <li class="icon_btn file">
+							   <input type="file" class="" value="file" size="1" >
+							   <span>file_atach</span>
+							   </li>                       
+						   </ul>
+					   </div>
+                    </div>
+                    <!-- // 의견 쓰기 영역 -->
+                    <!-- 의견 컨텐츠 1 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>수정</a></li>
+                                               <li><a>삭제</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    입출력장치의 변화
+                                    <em class="at"><a href="#">백은경</a></em>
+                                    공유드립니다.
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 1 -->
+
+                    <!-- 의견 컨텐츠 2 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+							   <ul>
+								   <li><a>다운로드</a></li>
+								   <li><a>삭제</a></li>
+							   </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment_sum">
+                                    <a href="#" onclick="javascript:$('.layer_popup.viewer').addClass('pop_open'); $('.black_bg').addClass('on');">
+										<img src="../../img/square_plus/ex_img_01.jpg" />
+									</a>
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 2 -->
+
+                    <!-- 의견 컨텐츠 3 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+							   <ul>
+								   <li><a>다운로드</a></li>
+								   <li><a>삭제</a></li>
+							   </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment_sum">
+                                    <a href="#" onclick="javascript:$('.layer_popup.viewer').addClass('pop_open'); $('.black_bg').addClass('on');">
+										<img src="../../img/square_plus/ex_img_02.jpg" />
+									</a>
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 3 -->
+
+                    <!-- 의견 컨텐츠 4 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+							   <ul>
+								   <li><a>다운로드</a></li>
+								   <li><a>삭제</a></li>
+							   </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment_file">
+                                   <a class="file_download">
+									  <span class="file_type img"></span>
+									  <span class="file_name">161025다산GW프로젝트.zip</span>
+									  <span class="size">123 KB</span>
+								   </a>
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 4 -->
+
+                    <!-- 의견 컨텐츠 5 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+							   <ul>
+								   <li><a>다운로드</a></li>
+								   <li><a>삭제</a></li>
+							   </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment_file">
+                                   <a class="file_download">
+									  <span class="file_type img"></span>
+									  <span class="file_name">161025다산GW프로젝트.zip</span>
+									  <span class="size">123 KB</span>
+								   </a>
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 5 -->
+           
+                    <!-- 의견 컨텐츠 6 -->
+                    <!-- [D] 수정 모드일 경우 modify를 추가합니다. -->
+                    <div class="comment_cont modify">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../../img/pic_mask_40.png">
+                           <img class="photo" src="../../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                               <div class="modify_comment" contenteditable="true">
+                                   <p>의견 수정</p>
+                               </div>
+                               <div class="comment_btn_area">
+                                   <ul class="btns">
+                                       <li><span class="cancel"><a>취소</a></span></li>
+                                       <li><span class="submit"><a>수정</a></span></li>
+                                   </ul>
+                               </div>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 6 -->
+                </div>
+            </div>
+            <!-- // 의견 영역 -->  
+			<!-- // 의견 쓰기 UI 변경 : 2017-03-21 -->                        
+           
+           </div>
+           <!-- // 컨텐츠 3 -->    
+           
+        </div>
+        <!-- //  CONTENTs 좌측(기본 화면) -->
+        <!-- CONTENTs 우측(기본 화면) -->
+        <div id="" class="right_area" >
+            <div class="right_box">
+			<div class="card search_box">
+			  <input type="search" placeholder="검색어를 입력해 주세요."/> 
+			</div>
+			<!-- 태그 영역 -->
+			
+			    <div class="card tag">
+                    <div class="card_title">
+                       <span class="title">인기태그</span>
+                    </div>
+                    <ul class="card_contents">
+                       <li><a class="top high_lank"><span>업무보고</span></a></li> 
+                        <li><a class="high_lank"><span>그룹웨어</span></a></li> 
+                        <li><a class="high_lank"><span>트렌드</span></a></li> 
+                        <li><a><span>스퀘어플러스스퀘어플러스스스스스스스스퀘</span></a></li> 
+                        <li><a><span>스퀘어맴버</span></a></li> 
+                        <li><a><span>UX/UI</span></a></li> 
+                    </ul>
+                </div>
+			<!-- // 태그 영역 -->
+			<!-- 파일 영역 -->
+			<div class="card latelyfile">
+                    <div class="card_title">
+                        <span class="title">파일</span>
+                        <a class="go_more">
+                            <span>더보기</span>
+                        </a>
+                    </div>
+                     <ul class="card_contents file_list">
+                       <li class="file">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요.jpg</span>
+                           </a>                          
+                       </li>
+                       <li class="file">
+                           <a class="file_download">
+                              <span class="file_type txt"></span>
+                               <span class="file_name">말줄임이 중앙에서 되게 해주세요.jpg</span>
+                           </a>                          
+                       </li>
+                   </ul>
+                </div>
+			<!-- // 파일 영역 -->
+
+			<!-- 앨범 영역 추가 : 2017-04-10 -->  
+			<div class="card album">
+                    <div class="card_title">
+                        <span class="title">앨범</span>
+                        <a class="go_more">
+                            <!-- [D] 더보기 클릭시 앨범 화면(squareplus_group_album.html)으로 이동 -->
+							<span>더보기</span>
+                        </a>
+                    </div>
+                     <ul class="card_contents album_list">
+                       <li class="picture">
+                           <!-- [D] 이미지 클릭시 이미지 상세보기 팝업 노출 -->
+						   <a class="" href="#">
+                              <img src="../../img/square_plus/ex_img_04.jpg" />
+                           </a>                          
+                       </li>
+                       <li class="picture">
+                           <a class="" href="#">
+                              <img src="../../img/square_plus/group_img_01.jpg" />
+                           </a>                          
+                       </li>
+                       <li class="picture">
+                           <a class="" href="#">
+                              <img src="../../img/square_plus/group_img_02.jpg" />
+                           </a>                          
+                       </li>
+                       <li class="picture">
+                           <a class="" href="#">
+                              <img src="../../img/square_plus/ex_img_01.jpg" />
+                           </a>                          
+                       </li>
+                       <li class="picture">
+                           <a class="" href="#">
+                              <img src="../../img/square_plus/ex_img_02.jpg" />
+                           </a>                          
+                       </li>
+                       <li class="picture">
+                           <a class="" href="#">
+                              <img src="../../img/square_plus/ex_img_03.jpg" />
+                           </a>                          
+                       </li>
+                   </ul>
+                </div>
+			<!-- // 앨범 영역 추가 : 2017-04-10 -->     
+
+			<!-- 공지 영역 -->
+			<div class="card notice">
+                    <div class="card_title">
+                        <span class="title">공지사항</span>
+                        <a class="go_more">
+                            <span>더보기</span>
+                        </a>
+                    </div>
+                    <ul class="card_contents">
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                    </ul>
+                </div>
+			<!-- // 공지 영역 -->
+			
+			</div>           
+     </div>
+  </div>
+
+<!-- // 중앙 컨텐츠 영역 Center Contents Area -->                   
+          <!-- 파일 다운로드 -->
+          
+        </div>
+        </div>
+<!-- // 컨테이너 --> 
+    <!-- 그룹정보 -->
+        <div class="common_layer_pop infomation">
+            <div class="inner_box">
+                <div>
+                    <div class="tit">
+                        <p class="on"><span class="fnt_bold">그룹정보</span></p>
+                        <span><a onclick="javascript:$('.common_layer_pop.infomation').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                    </div>
+                    <div class="cont_pop">
+                        <div class="tab01">
+                            <dl>
+                                <dt><strong>그룹명</strong></dt>
+                                <dd><span>UX/UI 디자인</span></dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>그룹명</strong></dt>
+                                <dd><input type="text" class="basic_inp" style="width:100%" placeholder="그룹명을 입력해 주세요."></dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>개설자</strong></dt>
+                                <dd><span class="name"><a>김핸디</a></span></dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>개설일</strong></dt>
+                                <dd><span>2016.12.01</span></dd>
+                            </dl>
+                            <dl>
+                                <dt><strong>소개</strong></dt>
+                                <dd>
+                                    <div class="details">
+                                        <textarea paceholder="그룹소개를 입력해 주세요."></textarea>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <!-- 대표 이미지 추가 : 2017-03-28 -->
+							<dl class="group_img">
+                                <dt><strong>대표이미지</strong></dt>
+                                <dd>
+									<input type="text" class="basic_inp" style="width:100%" value="파일명.jpg" readonly="readonly">
+									<p class="group_img_preview"><img src="../../img/square_plus/group_img_01.jpg"></p>
+								</dd>
+                            </dl>
+							<!-- // 대표 이미지 추가 : 2017-03-28 -->
+                            <dl>
+                                <dt><strong>구분</strong></dt>
+                                <dd>
+                                    <label><input type="checkbox">공개</label>
+                                </dd>
+                            </dl>
+                            <div class="footer">
+                                <ul class="btns">
+                                    <li><span><a>수정</a></span></li>
+                                    <li><span><a onclick="javascript:$('.common_layer_pop.infomation').removeClass('pop_open'); $('.black_bg').removeClass('on');">확인</a></span></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- //그룹정보 -->
+    
+    <!-- 멤버설정 -->
+        <div class="common_layer_pop member">
+            <div class="inner_box">
+                <div>
+                    <div class="tit">
+                        <p class="on"><span class="fnt_bold">구성원정보</span></p>
+                        <span><a onclick="javascript:$('.common_layer_pop.member').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                    </div>
+                    <!-- [D] 관리자의 경우 div.con_pop에 .edit을 추가합니다.-->
+                    <div class="cont_pop edit">
+                        <div class="add_member">
+                            <span class="btn_human"></span>
+                            <span class="info">
+                                <p class="member_count">
+                                    <em>전체구성원</em>
+                                    <span class="fnt_gray fnt_bold_n">(1/100)</span>
+                                </p>
+                                <span class="loading"></span>
+                            </span>
+                        </div>
+                        <div class="tab01">
+                            <div class="input_box">
+                            <!-- 부서 -->
+                            <div class="org_wrap">
+                            <div class="org_area">
+                                <span class="org_tit" onclick="javascript:$('.org_wrap').toggleClass('on');">디자디자인팀</span>
+                                <span class="setting">
+                                   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                     메뉴
+                                   </div>
+                                   <!-- 메뉴 레이어 팝 -->
+                                   <div class="layer_pop layer_menu">
+                                       <ul>
+                                           <li><a>구성원에서 제외</a></li>
+                                       </ul>
+                                   </div>
+                                </span>
+                                </div>
+                                <div class="member_wrap">
+                                <!-- 부서에 속한 멤버 1 -->
+                                <ul class="member_list">
+                                    <li class="member">
+                                        <div class="usr_pic">
+                                            <img class="mask" src="../../img/pic_mask_40.png">
+                                            <img class="photo" src="../../img/thmb_nopic.gif">
+                                        </div>
+                                        <div class="usr_info">
+                                            <span class="name"><a>김디자인</a></span>
+                                            <span class="level admin">관리자</span>
+                                        </div>
+                                        <div class="usr_team">
+                                            <span class="team">UX디자인팀</span>
+                                            <span class="duty">주임연구원</span>
+                                        </div>
+                                        <span class="setting">
+                                           <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                             메뉴
+                                           </div>
+                                           <!-- 메뉴 레이어 팝 -->
+                                           <div class="layer_pop layer_menu">
+                                               <ul>
+                                                   <li><a>관리자 해제</a></li>
+                                                   <li><a>구성원에서 제외</a></li>
+                                               </ul>
+                                           </div>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- // 부서에 속한 멤버 1 -->
+                                <!-- 부서에 속한 멤버 2 -->
+                                <ul class="member_list">
+                                    <li class="member">
+                                        <div class="usr_pic">
+                                            <img class="mask" src="../../img/pic_mask_40.png">
+                                            <img class="photo" src="../../img/thmb_nopic.gif">
+                                        </div>
+                                        <div class="usr_info">
+                                            <span class="name"><a>박디자인</a></span>
+                                        </div>
+                                        <div class="usr_team">
+                                            <span class="team">UX디자인팀</span>
+                                            <span class="duty">주임연구원</span>
+                                        </div>
+                                        <span class="setting">
+                                           <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                             메뉴
+                                           </div>
+                                           <!-- 메뉴 레이어 팝 -->
+                                           <div class="layer_pop layer_menu">
+                                               <ul>
+                                                   <li><a>관리자 지정</a></li>
+                                                   <li><a>참관인 지정</a></li>
+                                                   <li><a>구성원에서 제외</a></li>
+                                               </ul>
+                                           </div>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- // 부서에 속한 멤버 2 -->
+                                </div>
+                            </div>
+                            <!-- // 부서 -->
+
+                        <!-- 멤버 1 -->
+                        <ul class="member_list">
+                            <li class="member">
+                                <div class="usr_pic">
+                                    <img class="mask" src="../../img/pic_mask_40.png">
+                                    <img class="photo" src="../../img/thmb_nopic.gif">
+                                </div>
+                                <div class="usr_info">
+                                    <span class="name"><a>김하나</a></span>
+                                    <span class="level observer">참관인</span>
+                                </div>
+                                <div class="usr_team">
+                                    <span class="team">경영지원팀</span>
+                                    <span class="duty">주임연구원</span>
+                                </div>
+                                <span class="setting">
+                                   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                     메뉴
+                                   </div>
+                                   <!-- 메뉴 레이어 팝 -->
+                                   <div class="layer_pop layer_menu">
+                                       <ul>
+                                           <li><a>참관인 제외</a></li>
+                                           <li><a>구성원에서 제외</a></li>
+                                       </ul>
+                                   </div>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- // 멤버 1 -->
+                        <!-- 멤버 2 -->
+                        <ul class="member_list">
+                            <li class="member">
+                                <div class="usr_pic">
+                                    <img class="mask" src="../../img/pic_mask_40.png">
+                                    <img class="photo" src="../../img/thmb_nopic.gif">
+                                </div>
+                                <div class="usr_info">
+                                    <span class="name"><a>김둘둘</a></span>
+                                    <span class="level admin">관리자</span>
+                                </div>
+                                <div class="usr_team">
+                                    <span class="team">CS팀</span>
+                                    <span class="duty">주임연구원</span>
+                                </div>
+                                <span class="setting">
+                                   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                     메뉴
+                                   </div>
+                                   <!-- 메뉴 레이어 팝 -->
+                                   <div class="layer_pop layer_menu">
+                                       <ul>
+                                           <li><a>관리자 해제</a></li>
+                                           <li><a>구성원에서 제외</a></li>
+                                       </ul>
+                                   </div>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- // 멤버 2 -->
+                    </div>
+                        
+                            <div class="footer">
+                                <ul class="btns">
+                                    <li><span><a onclick="javascript:$('.common_layer_pop.member').removeClass('pop_open'); $('.black_bg').removeClass('on');">확인</a></span></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- //멤버설정 -->
+    
+    <!-- 그룹설정 -->
+        <div class="common_layer_pop setting">
+            <div class="inner_box">
+                <div>
+                    <div class="tit">
+                        <p class="on"><span class="fnt_bold">알림설정</span></p>
+                        <span><a onclick="javascript:$('.common_layer_pop.setting').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                    </div>
+                    <div class="cont_pop">
+                        <div class="tab01">
+                            <ul>
+                                <li>
+                                    <label><input type="checkbox" checked="checked"><span>전체 메세지 알림</span></label>
+                                </li>
+                                <li>
+                                    <label><input type="checkbox" checked="checked"><span>공지 알림</span></label>
+                                </li>
+                                <li>
+                                    <label><input type="checkbox" checked="checked"><span>멘션 알림</span></label>
+                                </li>
+                                <li>
+                                    <label><input type="checkbox" checked="checked"><span>의견 알림</span></label>
+                                </li>
+                            </ul>
+                            <div class="footer">
+                                <ul class="btns">
+                                    <li><span><a onclick="javascript:$('.common_layer_pop.setting').removeClass('pop_open'); $('.black_bg').removeClass('on');">확인</a></span></li>
+                                    <li><span><a onclick="javascript:$('.common_layer_pop.setting').removeClass('pop_open'); $('.black_bg').removeClass('on');">취소</a></span></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+    <!-- //그룹설정 -->
+ 
+   <!-- 그룹 만들기 -->
+    <!-- [D] 기본속성 -->
+    <div class="common_layer_pop make_group step1">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">그룹 만들기</span></p>
+                    <span><a onclick="javascript:$('.common_layer_pop.make_group').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                </div>
+                <div class="cont_pop">
+                    <div class="stepbox">
+                        <div class="box">
+                            <ul>
+                                <li class="step1 active"><span>기본속성</span></li>
+                                <li class="step2"><span>구성원선택</span></li>
+                                <li class="step3"><span>완료</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab01">
+                        <dl>
+                            <dt><strong>그룹명</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:100%" placeholder="그룹명을 입력해 주세요."></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>소개</strong></dt>
+                            <dd>
+                                <div class="details">
+                                    <textarea placeholder="그룹소개를 입력해 주세요."></textarea>
+                                </div>
+                            </dd>
+                        </dl>
+						<!-- 대표 이미지 추가 : 2017-03-28 -->
+						<dl class="group_img">
+							<dt><strong>대표이미지</strong></dt>
+							<dd>
+								<!-- [D] 이미지를 등록하면 파일명 노출 -->
+								<input type="text" class="basic_inp" value="" placeholder="그룹 대표 이미지를 등록하십시오." readonly="readonly">
+								<span class="icon_btn_wrap">
+									<span class="icon_btn img">
+										<input type="file" class="" value="file" size="1">
+										<span>img_atach</span>
+									</span>
+								</span>
+								<p class="guide_msg">* 최적 이미지 크기 : 200px X 150px (5MB), 해상도 : 72dpi</p>
+								<!-- [D] 이미지를 등록하면 미리보기 노출 -->
+								<p class="group_img_preview"><img src="../../img/square_plus/group_img_01.jpg"></p>
+							</dd>
+						</dl>
+						<!-- // 대표 이미지 추가 : 2017-03-28 -->
+                        <dl>
+                            <dt><strong>구분</strong></dt>
+                            <dd>
+                                <!-- [D] 공개체크박스 비활성화 시, 
+                                    <label> 클래스 disabled 추가, checkbox disabled 처리, <span> dsp_none 추가   -->
+                                <label><input type="checkbox">공개</label>
+                                <span>공개그룹 설정 시 전사공개됩니다.</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="footer">
+                        <ul class="btns">
+                            <li><span><a onclick="javascript:$('.common_layer_pop.make_group').removeClass('pop_open'); $('.common_layer_pop.make_group.step2').addClass('pop_open');">다음</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // [D] 기본속성 -->
+    <!-- [D] 구성원선택 -->
+    <div class="common_layer_pop make_group step2">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">그룹 만들기</span></p>
+                    <span><a onclick="javascript:$('.common_layer_pop.make_group').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                </div>
+                <div class="cont_pop">
+                    <div class="stepbox">
+                        <div class="box">
+                            <ul>
+                                <li class="step1"><span>기본속성</span></li>
+                                <li class="step2 active"><span>구성원선택</span></li>
+                                <li class="step3"><span>완료</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab01">
+                    <div class="add_member">
+                        <span class="btn_human"></span>
+                        <span class="info">
+                            <p class="member_count">
+                                <em>전체구성원</em>
+                                <span class="fnt_gray fnt_bold_n">(1/100)</span>
+                            </p>
+                            <p class="nohave">구성원을 선택해주세요</p>
+                            <span class="loading"></span>
+                        </span>
+                    </div>
+                    <div class="input_box">
+                        <!-- 부서 -->
+                        <div class="org_wrap">
+                        <div class="org_area">
+                            <span class="org_tit" onclick="javascript:$('.org_wrap').toggleClass('on');">디자디자인팀</span>
+                            <span class="setting">
+                               <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                 메뉴
+                               </div>
+                               <!-- 메뉴 레이어 팝 -->
+                               <div class="layer_pop layer_menu">
+                                   <ul>
+                                       <li><a>구성원에서 제외</a></li>
+                                   </ul>
+                               </div>
+                            </span>
+                            </div>
+                            <div class="member_wrap">
+                            <!-- 부서에 속한 멤버가 없는 경우 -->
+                            <ul class="member_list none">
+                                <li class="member">
+                                    <span>부서에 사용자가 없습니다.</span>
+                                </li>
+                            </ul>
+                            <!-- // 부서에 속한 멤버가 없는 경우 -->
+                            <!-- 부서에 속한 멤버 1 -->
+                            <ul class="member_list">
+                                <li class="member">
+                                    <div class="usr_pic">
+                                        <img class="mask" src="../../img/pic_mask_40.png">
+                                        <img class="photo" src="../../img/thmb_nopic.gif">
+                                    </div>
+                                    <div class="usr_info">
+                                        <span class="name"><a>김디자인</a></span>
+                                        <span class="level admin">관리자</span>
+                                    </div>
+                                    <div class="usr_team">
+                                        <span class="team">UX디자인팀</span>
+                                        <span class="duty">주임연구원</span>
+                                    </div>
+                                    <span class="setting">
+                                       <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                         메뉴
+                                       </div>
+                                       <!-- 메뉴 레이어 팝 -->
+                                       <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>관리자 해제</a></li>
+                                               <li><a>구성원에서 제외</a></li>
+                                           </ul>
+                                       </div>
+                                    </span>
+                                </li>
+                            </ul>
+                            <!-- // 부서에 속한 멤버 1 -->
+                            <!-- 부서에 속한 멤버 2 -->
+                            <ul class="member_list">
+                                <li class="member">
+                                    <div class="usr_pic">
+                                        <img class="mask" src="../../img/pic_mask_40.png">
+                                        <img class="photo" src="../../img/thmb_nopic.gif">
+                                    </div>
+                                    <div class="usr_info">
+                                        <span class="name"><a>김김김</a></span>
+                                    </div>
+                                    <div class="usr_team">
+                                        <span class="team">UX디자인팀</span>
+                                        <span class="duty">주임연구원</span>
+                                    </div>
+                                    <span class="setting">
+                                       <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                         메뉴
+                                       </div>
+                                       <!-- 메뉴 레이어 팝 -->
+                                       <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>관리자 지정</a></li>
+                                               <li><a>참관인 지정</a></li>
+                                               <li><a>구성원에서 제외</a></li>
+                                           </ul>
+                                           
+                                           
+                                       </div>
+                                    </span>
+                                </li>
+                            </ul>
+                            <!-- // 부서에 속한 멤버 2 -->
+                            </div>
+                        </div>
+                        <!-- // 부서 -->
+                        
+                        <!-- 멤버 1 -->
+                        <ul class="member_list">
+                            <li class="member">
+                                <div class="usr_pic">
+                                    <img class="mask" src="../../img/pic_mask_40.png">
+                                    <img class="photo" src="../../img/thmb_nopic.gif">
+                                </div>
+                                <div class="usr_info">
+                                    <span class="name"><a>김하나</a></span>
+                                    <span class="level observer">참관인</span>
+                                </div>
+                                <div class="usr_team">
+                                    <span class="team">경영지원팀</span>
+                                    <span class="duty">주임연구원</span>
+                                </div>
+                                <span class="setting">
+                                   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                     메뉴
+                                   </div>
+                                   <!-- 메뉴 레이어 팝 -->
+                                   <div class="layer_pop layer_menu">
+                                       <ul>
+                                           <li><a>참관인 제외</a></li>
+                                           <li><a>구성원에서 제외</a></li>
+                                       </ul>
+                                   </div>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- // 멤버 1 -->
+                        <!-- 멤버 2 -->
+                        <ul class="member_list">
+                            <li class="member">
+                                <div class="usr_pic">
+                                    <img class="mask" src="../../img/pic_mask_40.png">
+                                    <img class="photo" src="../../img/thmb_nopic.gif">
+                                </div>
+                                <div class="usr_info">
+                                    <span class="name"><a>김둘둘</a></span>
+                                    <span class="level admin">관리자</span>
+                                </div>
+                                <div class="usr_team">
+                                    <span class="team">CS팀</span>
+                                    <span class="duty">주임연구원</span>
+                                </div>
+                                <span class="setting">
+                                   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+                                     메뉴
+                                   </div>
+                                   <!-- 메뉴 레이어 팝 -->
+                                   <div class="layer_pop layer_menu">
+                                       <ul>
+                                           <li><a>관리자 해제</a></li>
+                                           <li><a>구성원에서 제외</a></li>
+                                       </ul>
+                                   </div>
+                                </span>
+                            </li>
+                        </ul>
+                        <!-- // 멤버 2 -->
+                    </div>
+                    </div>
+                    <div class="footer">
+                        <ul class="btns">
+                            <li><span><a onclick="javascript:$('.step2').removeClass('pop_open'); $('.step1').addClass('pop_open');">이전</a></span></li>
+                            <li><span><a onclick="javascript:$('.step2').removeClass('pop_open'); $('.step3').addClass('pop_open');">다음</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // [D] 구성원선택 -->
+    <!-- [D] 그룹생성 완료-->
+    <div class="common_layer_pop make_group step3">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">그룹 만들기</span></p>
+                    <span><a onclick="javascript:$('.common_layer_pop.make_group').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                </div>
+                <div class="cont_pop">
+                    <div class="stepbox">
+                        <div class="box">
+                            <ul>
+                                <li class="step1"><span>기본속성</span></li>
+                                <li class="step2"><span>구성원선택</span></li>
+                                <li class="step3 active"><span>완료</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab01">
+                        <div>
+                            <div>그룹명</div>
+                            <span>UX디자인팀</span>
+                        </div>
+                        <div class="detail">
+                            <div>소개</div>
+                            <span>스퀘어플러스 그룹의 소개입니다. </span>
+                        </div>
+                        <div class="member">
+                            <div>구성원<span class="fnt_gray">(1/100)</span></div>
+                            <span>
+                                <span>김핸디</span>
+                                <span>김핸디</span>
+                            </span>
+                        </div>
+						<!-- 대표 이미지 추가 : 2017-03-28 -->
+                        <div class="group_img">
+                            <div>대표이미지</div>
+                            <span>파일명.jpg</span>
+							<p class="group_img_preview"><img src="../../img/square_plus/group_img_01.jpg" width="300" height="250"></p>
+                        </div>
+						<!-- // 대표 이미지 추가 : 2017-03-28 -->
+                        <div>
+                            <div>구분</div>
+							<span>공개</span>
+                        </div>
+                    </div>
+                    
+                    <div class="footer">
+                        <ul class="btns">
+                             <li><span><a onclick="javascript:$('.step3').removeClass('pop_open'); $('.step2').addClass('pop_open');">이전</a></span></li>
+                            <li><span><a onclick="javascript:$('.common_layer_pop.make_group').removeClass('pop_open'); $('.black_bg').removeClass('on');">확인</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // [D] 그룹생성 완료-->
+
+    <!-- 그룹정보 팝업 추가 : 2017-03-29 -->
+	<!-- [D] 그룹정보(그룹이미지 클릭) -->
+    <div class="common_layer_pop group_info">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">그룹 정보</span></p>
+                    <span><a onclick="javascript:$('.common_layer_pop.group_info').removeClass('pop_open'); $('.black_bg').removeClass('on');"><img src="../../img/btn_layer_close.gif"></a></span>
+                </div>
+                <div class="cont_pop">
+					<!-- [D] 등록한 이미지가 있을 때 : img 노출 -->
+					<!-- <div class="group_basic_info">
+						<div class="group_title">
+							<h5 class="group_name">스퀘어 TFT<em class="public">공개</em></h5>
+							<div class="group_open_info">
+								<p>지일구</p>
+								<p>2017-03-27</p>
+							</div>
+						</div>
+						<img src="../../img/square_plus/group_img_01.jpg">
+					</div> -->
+					<!-- [D] 등록한 이미지가 없을 때 : default 클래스명 추가 & img 노출 안함 -->
+					<div class="group_basic_info default">
+						<div class="group_title">
+							<h5 class="group_name">스퀘어 TFT<em class="public">공개</em></h5>
+							<div class="group_open_info">
+								<p>지일구</p>
+								<p>2017-03-27</p>
+							</div>
+						</div>
+					</div>
+					<div class="group_detail_info">
+						<ul class="tab_menu_wrap">
+							<li class="on"><a onclick="javascript:$('.group_detail_info .tab_menu_wrap li').removeClass('on'); $(this).parent().addClass('on'); $('.group_detail_info .tab_content > div').css('display','none'); $('.group_detail_info .tab_content .group_introduce').css('display','block');">소개글</a></li>
+							<li><a onclick="javascript:$('.group_detail_info .tab_menu_wrap li').removeClass('on'); $(this).parent().addClass('on'); $('.group_detail_info .tab_content > div').css('display','none'); $('.group_detail_info .tab_content .group_member').css('display','block');">구성원</a></li>
+						</ul>
+						<div class="tab_content">
+							<div class="group_introduce">그룹웨어의 새로운 협업 기능으로 팀 단위의 커뮤니케이션 중심의 협업 도구로 기존 그룹웨어와의 연계 기능을 통해 더욱 강력한 협업 툴로 소개될 예정입니다.</div>
+
+							<div class="group_member" style="display:none;">
+								<!-- 부서 -->
+								<div class="org_wrap">
+									<div class="org_area">
+										<span class="org_tit" onclick="javascript:$('.org_wrap').toggleClass('on');">디자디자인팀</span>
+										<span class="setting">
+										   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+											 메뉴
+										   </div>
+										   <!-- 메뉴 레이어 팝 -->
+										   <div class="layer_pop layer_menu">
+											   <ul>
+												   <li><a>구성원에서 제외</a></li>
+											   </ul>
+										   </div>
+										</span>
+									</div>
+									<div class="member_wrap">
+										<!-- 부서에 속한 멤버가 없는 경우 -->
+										<ul class="member_list none">
+											<li class="member">
+												<span>부서에 사용자가 없습니다.</span>
+											</li>
+										</ul>
+										<!-- // 부서에 속한 멤버가 없는 경우 -->
+										<!-- 부서에 속한 멤버 1 -->
+										<ul class="member_list">
+											<li class="member">
+												<div class="usr_pic">
+													<img class="mask" src="../../img/pic_mask_40.png">
+													<img class="photo" src="../../img/thmb_nopic.gif">
+												</div>
+												<div class="usr_info">
+													<span class="name"><a>김디자인</a></span>
+													<span class="level admin">관리자</span>
+												</div>
+												<div class="usr_team">
+													<span class="team">UX디자인팀</span>
+													<span class="duty">주임연구원</span>
+												</div>
+												<span class="setting">
+												   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+													 메뉴
+												   </div>
+												   <!-- 메뉴 레이어 팝 -->
+												   <div class="layer_pop layer_menu">
+													   <ul>
+														   <li><a>관리자 해제</a></li>
+														   <li><a>구성원에서 제외</a></li>
+													   </ul>
+												   </div>
+												</span>
+											</li>
+										</ul>
+										<!-- // 부서에 속한 멤버 1 -->
+										<!-- 부서에 속한 멤버 2 -->
+										<ul class="member_list">
+											<li class="member">
+												<div class="usr_pic">
+													<img class="mask" src="../../img/pic_mask_40.png">
+													<img class="photo" src="../../img/thmb_nopic.gif">
+												</div>
+												<div class="usr_info">
+													<span class="name"><a>김김김</a></span>
+												</div>
+												<div class="usr_team">
+													<span class="team">UX디자인팀</span>
+													<span class="duty">주임연구원</span>
+												</div>
+												<span class="setting">
+												   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+													 메뉴
+												   </div>
+												   <!-- 메뉴 레이어 팝 -->
+												   <div class="layer_pop layer_menu">
+													   <ul>
+														   <li><a>관리자 지정</a></li>
+														   <li><a>참관인 지정</a></li>
+														   <li><a>구성원에서 제외</a></li>
+													   </ul>
+												   </div>
+												</span>
+											</li>
+										</ul>
+										<!-- // 부서에 속한 멤버 2 -->
+									</div>
+								</div>
+								<!-- // 부서 -->
+								
+								<!-- 멤버 1 -->
+								<ul class="member_list">
+									<li class="member">
+										<div class="usr_pic">
+											<img class="mask" src="../../img/pic_mask_40.png">
+											<img class="photo" src="../../img/thmb_nopic.gif">
+										</div>
+										<div class="usr_info">
+											<span class="name"><a>김하나</a></span>
+											<span class="level observer">참관인</span>
+										</div>
+										<div class="usr_team">
+											<span class="team">경영지원팀</span>
+											<span class="duty">주임연구원</span>
+										</div>
+										<span class="setting">
+										   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+											 메뉴
+										   </div>
+										   <!-- 메뉴 레이어 팝 -->
+										   <div class="layer_pop layer_menu">
+											   <ul>
+												   <li><a>참관인 제외</a></li>
+												   <li><a>구성원에서 제외</a></li>
+											   </ul>
+										   </div>
+										</span>
+									</li>
+								</ul>
+								<!-- // 멤버 1 -->
+								<!-- 멤버 2 -->
+								<ul class="member_list">
+									<li class="member">
+										<div class="usr_pic">
+											<img class="mask" src="../../img/pic_mask_40.png">
+											<img class="photo" src="../../img/thmb_nopic.gif">
+										</div>
+										<div class="usr_info">
+											<span class="name"><a>김둘둘</a></span>
+											<span class="level admin">관리자</span>
+										</div>
+										<div class="usr_team">
+											<span class="team">CS팀</span>
+											<span class="duty">주임연구원</span>
+										</div>
+										<span class="setting">
+										   <div class="a_more" onclick="javascript:$(this).parent('span').toggleClass('open');">
+											 메뉴
+										   </div>
+										   <!-- 메뉴 레이어 팝 -->
+										   <div class="layer_pop layer_menu">
+											   <ul>
+												   <li><a>관리자 해제</a></li>
+												   <li><a>구성원에서 제외</a></li>
+											   </ul>
+										   </div>
+										</span>
+									</li>
+								</ul>
+								<!-- // 멤버 2 -->
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // [D] 그룹정보(그룹이미지 클릭) -->
+	<!-- // 그룹정보 팝업 추가 : 2017-03-29 -->
+    
+           
+  <!-- 블랙 레이어 배경 -->     
+   <div class="black_bg " >               
+   </div> 
+   <!-- // 블랙 레이어 배경 -->
+   
+   
+  <script> // 높이와 넓이 관련
+        var $Content_body = $('.content_lst_body');        
+        var $WriteBox = $('.contents_area .write_box');
+        
+        
+        SquareContent();  // 컨텐츠 영역 관련    
+        $(window).resize(function(e) {
+        SquareContent();
+        });
+      
+    function SquareContent(){
+      var scrollbarWidth = 16;      
+      
+        
+    $('.contents_area').css('width', $Content_body.innerWidth() - scrollbarWidth - $('.right_area').outerWidth());
+        $('.right_area').css('left', $('.contents_area').innerWidth() + 'px');
+        $('.write_layer_pop').css('width', $WriteBox.outerWidth());
+        
+        
+        var WriteBox_top = $WriteBox.offset().top;
+        var WriteBox_left = $WriteBox.offset().left;
+        
+        $('.write_layer_pop').css({top:WriteBox_top, left:WriteBox_left});
+        
+        
+        if ($('body').innerWidth() <= 1024 ){
+            $Content_body.css('overflow-x','scroll');
+        } else {$Content_body.css('overflow-x','hidden');}
+    } 
+      
+  </script>
+</body>
+</html>

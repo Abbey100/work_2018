@@ -1,0 +1,395 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../css/common.css" type="text/css" />
+        <title>HANDY GROUPWARE</title>
+        <script src="../js/jquery-latest.min.js"></script>
+        <script>	
+
+            $(document).ready(function(){
+
+                fn_top_menu();   
+
+                function fn_top_menu(){
+
+                    /* Top Menu  사용 변수 */
+                    /** 기본 요소 **/     
+                    var header_area = $('#header').outerWidth(); // 헤더 전체 영역 넓이
+                    var logo_area = $('#header h1').outerWidth(); // 로고부분 영역 넓이
+                    var info_area = $(".info_wrap").outerWidth(); // 우측 요소 넓이     
+                    var menu_area = header_area - logo_area - info_area; // 메뉴 영역 보이는 공간 넓이
+                    var $menu = $('.menu');  // 메뉴    
+
+
+                    /** 기본 메뉴 관련 **/             
+                    var menu_w = 90; // 기본 메뉴 낱개의 넓이 (90)
+                    var menu_length = $('.menu li').length; // 전체 메뉴 갯수
+                    var menu_total_w = menu_length * menu_w; // 메뉴 각각을 더한 전체에 대한 넓이
+                    var page_n = Math.ceil(menu_total_w/menu_area); // 페이지 수
+
+                    var menu_count =  Math.floor(menu_area/90); // menu_area 에 잘리지 않고 들어가는 menu 갯수
+                    var menu_view =  menu_count * 90; // menu_area 영역 안에 잘리지 않고 들어가는 메뉴의 넓이
+
+
+                    /** 더보기 관련 **/
+                    var $MoreMenu = $('.menu_more'); // more    
+                    var $MoreMenuGr = $('.menu_more_gr'); // more 그레이 모드(링크, 관리자 메뉴에서 사용)  
+                    var $MoreBtn = $('.menu_more a'); // more 버튼     
+                    var $MoreBtnGr = $('.menu_more_gr a'); // more 버튼 그레이 모드(링크, 관리자 메뉴에서 사용)     
+
+
+
+                    /** 링크 메뉴 관련 **/
+                    var $LinkMenu = $('.menu_link'); // 링크 메뉴
+                    var $LinkBtn = $('.menu_link a');
+                    var $LinkMenuArea = $('.link_menu_area'); // 링크 메뉴 전체 영역
+                    var $LinkMenu_list = $('.menu_link_list'); // 링크메뉴들(각 요소들-li의 모음) UL
+                    var linkMenu_total_w = $('.menu_link_list').outerWidth(); // 링크메뉴들의 실재 넓이(각 요소들 모음 넓이)
+
+
+                    /** 관리자 메뉴 관련 **/
+                    var $AdminMenu = $('.menu_admin'); // 관리자 메뉴
+                    var $AdminBtn = $('.menu_admin a');     
+                    var $AdminMenuArea = $('.admin_menu_area'); // 관리자 메뉴 전체영역
+                    var $AdminMenu_list = $('.admin_link_list');   
+                    var adminMenu_total_w = $('.admin_link_list').outerWidth();  
+
+
+
+                    /* 기본 메뉴 */
+
+                    var page = 0;
+
+                    if(menu_total_w < menu_area) { // 전체 메뉴의 넓이가 메뉴 영역보다 짧으면,
+                        $MoreMenu.css('display', 'none'); // 더보기 버튼 감추기       
+                    } 
+                    else { // 전체 메뉴의 넓이가 메뉴 영역을 넘칠 경우,
+                        $MoreMenu.css('display', 'block'); // 더보기 버튼 보이기         
+                        $MoreMenuGr.css('display','none');
+                        /* 더보기가 활성화 된 경우(= 전체 메뉴 넓이 > 메뉴 영역) */	
+
+                        $MoreBtn.click(function(){ // 다음버튼 누르면,
+                            if(page == page_n - 1){ // 끝페이지 이후는 메뉴영역 좌표 리셋
+                                $('#normal_menu').animate({ 
+                                    'left' : 0
+                                }
+                                                          ,400 
+                                                          ,'swing');
+                                page = 0;                  
+                                $MoreMenu.removeClass('turn_back'); // 끝페이지 버튼 제거
+                            } 
+                            else{ // 한 페이지씩 넘기기
+                                $('#normal_menu').animate({                     
+                                    'left' : '-=' + menu_view    
+                                }
+                                                          ,400 
+                                                          ,'swing');
+                                page++;       
+                                if(page == page_n - 1){ // 넘기다가 끝페이지 도달하면 끝페이지 버튼
+                                    $MoreMenu.addClass('turn_back');
+                                }
+                            }
+
+                        }); 
+
+                    }   //  일반 메뉴 더보기  끝
+
+                    /* 링크 메뉴 */
+
+                    $LinkBtn.click(function() {        
+
+                        var link_page = 0; 
+                        var link_page_n = Math.ceil(linkMenu_total_w/menu_area); // 페이지 수      
+
+                        /* link_on 가 있으면 */
+
+                        if($LinkMenu.hasClass('link_on')){           
+                            $LinkMenu.removeClass('link_on');
+                            $MoreMenu.css('display', 'block');
+                            $MoreMenuGr.css('display', 'none'); 
+                            $LinkMenuArea.animate({ 
+                                'left' : '100%'
+                            }
+                                                  ,400 
+                                                  ,'swing');   
+                        }  
+
+                        /* link_on 가 없으면 link_on */
+
+                        else if(linkMenu_total_w > menu_area){ // 만약 페이지 더보기가 필요하면
+
+                            $LinkMenu.addClass('link_on'); // 링크메뉴가 활성화
+                            $MoreMenu.css('display','none'); // 기본 더보기 감추기         
+                            $MoreMenuGr.css('display','block'); // 그레이 더보기 block  
+
+                            $LinkMenuArea.animate({  // 메뉴를 오픈 
+                                'left' : logo_area 
+                            }
+                                                  ,400 
+                                                  ,'swing');   	
+
+                            /* 링크 메뉴의 더보기버튼을 클릭하면 */  
+
+                            $MoreBtnGr.click(function(){
+                                if(link_page == link_page_n - 1){ // 끝페이지 이후는 메뉴영역 좌표 리셋 
+                                    $LinkMenu_list.animate({ 
+                                        'left' : 0
+                                    }
+                                                           ,400 
+                                                           ,'swing');
+                                    link_page = 0;   
+                                    $MoreMenuGr.removeClass('turn_back'); // 끝페이지 버튼 제거            
+                                } 
+                                else{ // 한 페이지씩 넘기기
+                                    $LinkMenu_list.animate({                     
+                                        'left' : '-=' + menu_area    
+                                    }
+                                                           ,400 
+                                                           ,'swing');
+                                    link_page++;    
+
+                                    if(link_page == link_page_n - 1){ // 넘기다가 끝페이지 도달하면 끝페이지 버튼
+                                        $MoreMenuGr.addClass('turn_back');
+                                    }  
+                                }
+                            });
+                        } 
+                        else { // 더보기 필요없을 때              
+
+                            $LinkMenu.addClass('link_on'); // 링크메뉴가 활성화
+                            $MoreMenu.css('display', 'none'); // 더보기 감추기
+                            $MoreMenuGr.css('display', 'none'); // 더보기 감추기		
+
+                            // 메뉴를 오픈  
+                            $LinkMenuArea.animate({ 
+                                'left' : logo_area 
+                            }
+                                                  ,400 
+                                                  ,'swing');  
+                        }
+                    });   // 링크 메뉴 끝
+
+
+                    /* 관리자 메뉴 */
+
+                    $AdminBtn.click(function() {  
+
+                        var admin_page = 0; 
+                        var admin_page_n = Math.ceil(adminMenu_total_w/menu_area); // 페이지 수 
+
+                        /* link_on 가 있으면  */
+                        if($AdminMenu.hasClass('link_on')){ // link_on 가 있으면 원래의 위치로 back~
+
+                            $AdminMenu.removeClass('link_on');
+                            $LinkMenu.css('display','block'); 
+                            $MoreMenu.css('display', 'block');
+                            $MoreMenuGr.css('display', 'none'); 
+                            $AdminMenuArea.animate({ 
+                                'left' : '100%'
+                            }
+                                                   ,400 
+                                                   ,'swing'); 
+
+
+                        }  
+
+                        /* link_on 가 없으면 link_on  */
+
+                        else if(adminMenu_total_w > menu_area){ // 만약 페이지 더보기가 필요하면,
+
+                            $LinkMenu.css('display','none');
+                            $AdminMenu.addClass('link_on'); // 링크메뉴가 활성화 되면
+                            $MoreMenu.css('display','none'); // 기본 더보기 버튼 숨기고          
+                            $MoreMenuGr.css('display','block'); // 그레이 타입으로 block          
+
+
+                            $AdminMenuArea.animate({ // 메뉴를 오픈
+                                'left' : logo_area 
+                            }
+                                                   ,400 
+                                                   ,'swing');          
+
+
+                            /* 메뉴의 더보기버튼을 클릭하면 */
+
+                            $MoreBtnGr.click(function(){
+                                if(admin_page == admin_page_n - 1){ // 끝페이지 이후는 메뉴영역 좌표 리셋				
+                                    $AdminMenu_list.animate({ 
+                                        'left' : 0
+                                    }
+                                                            ,400 
+                                                            ,'swing');
+                                    admin_page = 0;                  
+                                    $MoreMenuGr.removeClass('turn_back'); // 끝페이지 버튼 제거				
+                                } 
+                                else{ // 한 페이지씩 넘기기
+
+                                    $AdminMenu_list.animate({                     
+                                        'left' : '-=' + menu_area    
+                                    }
+                                                            ,400 
+                                                            ,'swing');
+                                    admin_page++;       
+                                    if(admin_page == admin_page_n - 1){ // 넘기다가 끝페이지 도달하면 끝페이지 버튼
+                                        $MoreMenuGr.addClass('turn_back');
+                                    }			  
+                                }
+                            });
+
+                        } 
+                        else {
+                            $AdminMenu.addClass('link_on'); // 링크메뉴가 활성화 되면
+                            $MoreMenu.css('display', 'none');
+                            $MoreMenuGr.css('display', 'none');
+
+                            $AdminMenuArea.animate({ // 메뉴를 오픈
+                                'left' : logo_area 
+                            }
+                                                   ,400 
+                                                   ,'swing');  
+
+                        } 
+
+                    });  // 관리자 메뉴 끝
+
+
+                    /* 알람관련 */
+
+
+                    $('.menu_alarm a').click(function(){
+                        parent.left.$('.alarm_pop').toggleClass('open');
+                        $('.menu_alarm').toggleClass('on');   
+
+                    }); // 알람관련 끝
+
+
+                    /* 사용자 정보 written by mw Kim */
+                    $(".dw_arrw").click(function(){
+                        $(".lst_lgn").slideDown("fast");
+                    });
+
+                    $(".box_cls").click(function(){
+                        $(".lst_lgn").slideUp("fast");
+                    });
+
+
+                } // fn_top_menu FINISHED
+
+            });    
+        </script>
+    </head>
+    <body>
+        <div id="wrap_menu">
+            <div id="header"> 
+                <!-- 로고 영역 -->
+                <h1><a href=""><img src="../img/logo.png" alt="HANDY Groupware" width="175" height="37"></a> </h1>
+                <!-- // 로고 영역 --> 
+                <!-- 기본 네비게이션 영역 -->
+                <div class="nav_area"> 
+                    <!-- 기본 메뉴 -->
+                    <div class="menu_area">
+                        <ul id="normal_menu" class="menu" style="">
+                            <li class="menu_mail menu_on "><a id="menu_0" href="frame.html" target="_parent">메일</a></li>
+                            <li class="menu_board"><a id="menu_1" href="board_frame.html" target="_parent">게시판</a></li>
+                            <li class="menu_work"><a id="menu_2" href="#" target="_parent">업무넷</a></li>
+                            <li class="menu_documentflow"><a id="menu_3" href="document_frame.html" target="_parent">결재</a></li>
+                            <li class="menu_document"><a id="menu_4" href="approval_frame.html" target="_parent">문서함</a></li>
+                            <li class="menu_calendar"><a id="menu_5" href="calendar_frame.html" target="_parent">일정</a></li>
+                            <li class="menu_equipment"><a id="menu_6" href="equipment_frame.html" target="_parent">설비예약</a></li>
+                            <li class="menu_cloud"><a id="menu_7" href="cloud_frame.html" target="_parent">클라우드</a></li>
+                            <li class="menu_contact"><a id="menu_8" href="contact_frame.html" target="_parent">주소록</a></li>
+                            <li class="menu_research"><a id="menu_9" href="research_frame.html" target="_parent">설문</a></li>
+                            <li class="menu_club"><a id="menu_10" href="">동호회</a></li>
+                            <li class="menu_meeting"><a id="menu_11" href="">회의</a></li>
+                            <li class="menu_sns"><a id="menu_12" href="">SNS</a></li>
+                            <li class="menu_ams"><a id="menu_13" href="">근태</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 기본 네비게이션 영역 --> 
+                <!-- 정보 메뉴  -->
+                <div class="info_wrap"> 
+                    <!-- 더보기 버튼 -->
+                    <div class="menu_more"> <a href="#" onclick="">more</a> </div>
+                    <!-- 더보기 버튼Gr -->
+                    <div class="menu_more_gr"> <a href="#" onclick="">more</a> </div>
+                    <!-- 링크메뉴 -->
+                    <div class="menu_link"> <a href="#" onclick="">link</a> </div>
+                    <!-- 관리자 메뉴 -->
+                    <div class="menu_admin"> <a href="#" onclick="">link</a> </div>
+                    <!-- 알람 메뉴 -->
+                    <div class="menu_alarm" style="display:none;"> <a href="#" onclick="">link</a> 
+                        <!-- NEW 가 없으면 사용하지 않음 --> 
+                        <span class="alarm_new">new</span> </div>
+                    <!-- 사용자 정보 영역 -->
+                    <div class="user_area"> 
+                        <!-- 마지막 접속 정보 시작 --> 
+                        <!-- 정보내용 DIV -->
+                        <div class="lst_lgn"> 
+                            <!-- 정보내용 DIV 닫기버튼 --> 
+                            <span><a href="#" class="box_cls" title="닫기"></a></span>
+                            <h3>마지막 접속 정보</h3>
+                            <ul>
+                                <!-- 날짜표시 -->
+                                <li>2014.11.15 12:30</li>
+                                <!-- IP표시 -->
+                                <li>IP. 10.21.3.178</li>
+                            </ul>
+                        </div>
+                        <!-- 정보내용 DIV 열기버튼 --> 
+                        <span><a class="dw_arrw" href="#" title="마지막 접속 정보"></a></span> 
+                        <!-- // 마지막 접속 정보 끝 --> 
+                        <span class="user_pic"><span class="co_pic" style="background: url('../img/@aoi.jpg') 0 0 no-repeat;"></span> <!--<img src="../img/@aoi.jpg" alt="홍길동(주임 연구원)">--></span> <span class="user_inform">
+                        <p class="user_dept">품질관리팀</p>
+                        <p class="user_name">김민우(주임 연구원)aaaa</p>
+                        <p class="add_officer"  style="display:none;">
+                            <select>
+                                <option value="홍길동(주임 연구원)">홍길동(주임 연구원)</option>
+                                <option value="강감찬(책임 연구원)">강감찬(책임 연구원)</option>
+                            </select>
+                        </p>
+                        </span> <span class="user_config">
+                        <ul class="gnb">
+                            <li><a href="" class="config" title="환경설정"></a></li>
+                            <li><a href="" class="logout" title="로그아웃"></a></li>
+                        </ul>
+                        </span> </div>
+                </div>
+                <!-- // 정보 메뉴  -->
+                <div class="link_menu_area">
+                    <ul id="link_menu" class="menu_link_list">
+                        <li><a href="">CSD</a></li>
+                        <li><a href="">EDMS</a></li>
+                        <li class="link_selct"><a href="">Humanest</a></li>
+                        <li><a href="">Insight</a></li>
+                        <li><a href="">KMS</a></li>
+                        <li><a href="">Promise</a></li>
+                        <li><a href="">SPIM</a></li>
+                        <li><a href="">Lukas</a></li>
+                        <li><a href="">QMS</a></li>
+                        <li><a href="">Homepage</a></li>
+                        <li><a href="">식단</a></li>
+                    </ul>
+                </div>
+                <div class="admin_menu_area">
+                    <ul id="admin_menu" class="admin_link_list">
+                        <li><a href="">조직도</a></li>
+                        <li><a href="">결재관리</a></li>
+                        <li class="link_selct"><a href="">자료관</a></li>
+                        <li><a href="">게시판</a></li>
+                        <li><a href="">시스템정보</a></li>
+                        <li><a href="">동호회</a></li>
+                        <li><a href="">BBS</a></li>
+                        <li><a href="">메일</a></li>
+                        <li><a href="">클라우드</a></li>
+                        <li><a href="">엑션로그</a></li>
+                        <li><a href="">결재통계</a></li>
+                        <li><a href="">연동서식</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script>
+$(document).ready(function(e) {
+	 function runEffect() {     
+      $( ".sns_alarm_list" ).toggle( "blind", "", 200 );
+    };
+	$('.sns_left_alarm').on('click', function(){
+		$('.sns_left_alarm').toggleClass('on');		
+		runEffect();
+    	return false;
+	});
+	
+});
+</script>
+</head>
+<body>
+<div class="left_menu">
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'log_in');">로그인</span> </div>
+    <div id="log_in" class="list_tree">
+      <ul>
+        <li> <a> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'board');">게시판</span> </div>
+    <div id="board" class="list_tree">
+      <ul>
+        <li> <a> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'apprvl');">결재</span> </div>
+    <div id="apprvl" class="list_tree">
+      <ul>
+        <li> <a> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>일정 > 설정</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>일정</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>일정</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn selected new">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont handy-scroll">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 -->
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">일정 등록하기</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<!-- 미니달력 -->
+								<div class="calendar divide">
+									<div class="datepicker">
+										<dl>
+											<dt><a href="#">2017년 11월</a></dt>
+											<dd class="day">
+												<table>						
+													<thead>
+														<tr>
+															<th scope="col">일</th>
+															<th scope="col">월</th>
+															<th scope="col">화</th>
+															<th scope="col">수</th>
+															<th scope="col">목</th>
+															<th scope="col">금</th>
+															<th scope="col">토</th>
+														</tr>
+													</thead>
+												</table>
+												<!-- 스케쥴이 있으면 sched / 오늘은 today/ 선택된 날짜는 day_on / 휴일은 holiday -->
+												<table>
+													<tbody>
+														<tr>
+															<td class="passed"><a href="#">29</a></td>
+															<td class="passed"><a href="#">30</a></td>
+															<td class="passed"><a href="#">31</a></td>
+															<td class=""><a href="#">1</a></td>
+															<td class=""><a href="#">2</a></td>
+															<td class=""><a href="#">3</a></td>
+															<td class=""><a href="#">4</a></td>
+														</tr>
+														<tr>
+															<td class="sched"><a href="#">5</a></td>
+															<td class="sched"><a href="#">6</a></td>
+															<td class=""><a href="#">7</a></td>
+															<td class="today"><a href="#">8</a></td>
+															<td><a href="#">9</a></td>
+															<td class="day_on sched"><a href="#">10</a></td>
+															<td><a href="#">11</a></td>
+														</tr>
+														<tr>
+															<td class="sched"><a href="#">12</a></td>
+															<td><a href="#">13</a></td>
+															<td><a href="#">14</a></td>
+															<td class="sched"><a href="#">15</a></td>
+															<td><a href="#">16</a></td>
+															<td><a href="#">17</a></td>
+															<td><a href="#">18</a></td>
+														</tr>
+														<tr>
+															<td><a href="#">19</a></td>
+															<td><a href="#">20</a></td>
+															<td class="sched"><a href="#">21</a></td>
+															<td class="sched"><a href="#">22</a></td>
+															<td class="holiday sched day_on"><a href="#">23</a></td>
+															<td><a href="#">24</a></td>
+															<td><a href="#">25</a></td>
+														</tr>
+														<tr>
+															<td><a href="#">26</a></td>
+															<td><a href="#">27</a></td>
+															<td class="holiday"><a href="#">28</a></td>
+															<td><a href="#">29</a></td>
+															<td class="holiday sched"><a href="#">30</a></td>
+															<td class="passed"><a href="#">1</a></td>
+															<td class="passed"><a href="#">2</a></td>
+														</tr>
+														<tr>
+															<td class="passed"><a href="#">3</a></td>
+															<td class="passed"><a href="#">4</a></td>
+															<td class="passed"><a href="#">5</a></td>
+															<td class="passed"><a href="#">6</a></td>
+															<td class="passed"><a href="#">7</a></td>
+															<td class="passed"><a href="#">8</a></td>
+															<td class="passed"><a href="#">9</a></td>
+														</tr>
+													</tbody>
+												</table>
+											</dd>
+										</dl>
+										<a href="#" class="pre">이전</a>
+										<a href="#" class="next">다음</a>
+									</div>
+								</div>
+								<!-- // 미니달력 -->
+								<div class="lnb_menu mg_t_15">
+									<a class="menu_title">홈으로</a>
+								</div>
+								<div class="lnb_menu pd_l_13 divide">
+									<span class="form">
+										<input type="checkbox">
+										<label>전체 달력</label>
+									</span>
+								</div>								
+								<!-- 개인달력 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">개인 달력</a>
+									<div class="group">
+										<a class="ico_btn small add" href="#">추가</a>
+										<a class="ico_btn small setting">개인 달력</a>
+									</div>
+									<ul class="sub_lst">
+										<li>
+											<div class="pick_cal type13">
+												<input type="checkbox" id="check_type13"/>
+												<label for="check_type13"><span class="color"></span>내 일정</label>
+												<a class="ico info">정보</a></div>
+										</li>
+										<li>
+											<div class="pick_cal type10 shared_cal">
+												<input type="checkbox" id="check_type100"/>
+												<label for="check_type100"><span class="color "></span>김핸디일정
+
+												</label>
+												<span class="shared">공유</span>	
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+
+										<li>
+											<div class="pick_cal type10 shared_cal">
+												<input type="checkbox" id="check_type10"/>
+												<label for="check_type10"><span class="color "></span>
+													김핸디 업무일정업무일정업무일정업무일정업무일정업무일정업무일정
+
+												</label>
+												<span class="shared">공유</span>	
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+										<li>
+											<div class="pick_cal type08">
+												<input type="checkbox" id="check_type08"/>			
+												<label for="check_type08"><span class="color"></span>공유받은 일정<span class="count">4</span></label>
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- 공유받은 달력 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">공유받은 달력</a>
+									<a class="ico_btn small setting">공유받은 달력 설정</a>
+									<ul class="sub_lst">
+										<li>
+											<div class="pick_cal type05">
+												<input type="checkbox" id="check_type05"/>
+												<label for="check_type05"><span class="color "></span>UI팀프로젝트 일정공유</label>
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+										<li>
+											<div class="pick_cal type16">
+												<input type="checkbox" id="check_type16"/>
+
+												<label for="check_type16"><span class="color "></span>휴가일 공유</label>
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+									</ul>
+								</div>         
+								<!-- 스퀘어 달력 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">스퀘어 달력</a>
+									<a class="ico_btn small setting">스퀘어 달력 설정</a>
+									<ul class="sub_lst">
+										<li>
+											<div class="pick_cal type07">
+												<input type="checkbox" id="check_type07"/>
+
+												<label for="check_type07"><span class="color "></span>UI팀프로젝트<span class="count">4</span></label>
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+										<li>
+											<div class="pick_cal type11">
+												<input type="checkbox" id="check_type11"/>
+
+												<label for="check_type11"><span class="color "></span>휴가일 공유<span class="count">4</span></label>
+												<a class="ico info">정보</a>
+											</div>
+										</li>
+									</ul>
+								</div>  
+								<!-- 구독 달력 -->
+								<div class="lnb_menu open">
+									<a class="menu_title category">구독 달력</a>
+									<ul class="sub_lst">
+										<li>
+											<div class="pick_cal type02">
+												<input type="checkbox" id="check_type02"/>
+
+												<label for="check_type02"><span class="color "></span>전사일정</label></div>
+										</li>
+										<li>
+											<div class="pick_cal type04">
+												<input type="checkbox" id="check_type04"/>
+
+												<label for="check_type04"><span class="color "></span>대한민국 휴일</label>
+											</div>
+										</li>
+									</ul>
+								</div> 
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- content -->
+				<div class="container_area handy-scroll">
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>설정</h2>
+								<ul class="tab">
+									<li><a class="selected">일반 설정</a></li>
+									<li><a class="">달력 순서 변경</a></li>	
+									<li><a class="">구글 달력 동기화</a></li>		
+								</ul>
+							</div>
+							<!-- // 타이틀 영역 -->
+							<div class="new_lst_info feed">
+								<a class="btn">달력보기</a>
+							</div>
+							<!-- form -->
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width:124px;">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>시간 형식</th>
+											<td>
+												<div class="option">
+													<span class="form">
+														<input type="radio" name="radio1" id="radio1_1" />
+														<label for="radio1_1">오전/오후</label>
+													</span>
+													<span class="form">
+														<input type="radio" name="radio1" id="radio1_2" />
+														<label for="radio1_2">24시간</label>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>인쇄 형식</th>
+											<td>
+												<div class="option">
+													<span class="form">
+														<input type="radio" name="radio2" id="radio2_1" />
+														<label for="radio2_1">리스트</label>
+													</span>
+													<span class="form">
+														<input type="radio" name="radio2" id="radio2_2" />
+														<label for="radio2_2">테이블</label>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>달력 방식</th>
+											<td>
+												<div class="option">
+													<span class="form">
+														<input type="radio" name="radio3" id="radio3_1" />
+														<label for="radio3_1">일간</label>
+													</span>
+													<span class="form">
+														<input type="radio" name="radio3" id="radio3_2" />
+														<label for="radio3_2">주간</label>
+													</span>
+													<span class="form">
+														<input type="radio" name="radio3" id="radio3_3" />
+														<label for="radio3_3">월간</label>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>시작 시각</th>
+											<td>
+												<div class="selectbox" style="width:81px;">
+													<select> 
+														<option> 08:00 </option>
+														<option> 12:30 </option>
+														<option> 12:30 </option>
+														<option> 12:30 </option>
+														<option> 12:30 </option>
+														<option> 12:30 </option>
+													</select>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="btns_area">
+									<a class="action_btn" href="#">저장</a>
+									<a class="btn">취소</a>
+								</div>
+							</div>
+							<!-- //form -->
+
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<!--좌측 메뉴 영역-->
+
+<div id="Left_subWrap" name="Left_subWrap" class="left_menu">
+  <ul id="clubHomeMenuManagement" class="snb_lst">
+    <li><a id="menu_0" class="slct" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(0);"><span>동호회 속성 관리</span></a></li>
+    <li><a id="menu_1" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(1);"><span>동호회 운영 관리</span></a></li>
+    <li><a id="menu_2" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(2);"><span>메뉴/권한 관리</span></a></li>
+    <li><a id="menu_6" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(6);"><span>동호회 사용량 조회</span></a></li>
+    <li><a id="menu_7" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(7);"><span>동호회 회원등급 관리</span></a></li>
+    <li><a id="menu_3" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(3);"><span>회원 관리</span></a></li>
+    <li><a id="menu_4" href="javascript:CopManageLeftMenuObj.fnGotoSelectedMenu(4);"><span>홈페이지 관리</span></a></li>
+    <li><a id="menu_5" onclick="javascirpt:location.href='/hcop/portal/Collaboration/DiscussCoPAdmin.psml?clubID=000000201&amp;gubun=req&amp;COP_MENU_ID=5'" href="#"><span>토론실관리</span></a></li>
+  </ul>
+  
+  <!--Setting & Info Area start-->
+  <div class="info_area">
+    <ul>
+      <li class="extra_area"> <a href="/hcop/portal/cop_main.psml?stage=0&amp;SESSIONID=79F91869415651422961686DAD40DC36"> <span class="btn_exit mg_lft_20">홈으로 돌아가기</span></a> </li>
+    </ul>
+  </div>
+  <!--Setting & Info Area END--> 
+  
+</div>
+<div id="Right_contentWrap" name="Right_contentWrap" class="container_box">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <script>
+    DivManageHandler.sessionID = 'C53DEAA13DC0F1488E2D86B16DF46C9E';
+</script>
+  <div class="title_area" title="회원관리">
+    <h2 class="title"> 회원관리 </h2>
+    <div class="btn_flip_left"> <a href="javascript:toggleLFrame();">&nbsp;</a> </div>
+    <div class="btn_flip_right"> <a href="javascript:toggleRFrame();">&nbsp;</a> </div>
+  </div>
+  <div class="srch_area">
+    <fieldset class="search">
+      <form method="post" action="" name="searchFrm" id="searchFrm">
+        <input type="hidden" id="calendarID" name="calendarID" value="">
+        <input type="hidden" id="sysopID" name="sysopID" value="001013122">
+        <input type="hidden" id="sysopName" name="sysopName" value="백은경">
+        <input type="hidden" id="sysopDeptID" name="sysopDeptID" value="000024006">
+        <input type="hidden" id="sysopDeptName" name="sysopDeptName" value="UX디자인팀">
+        <input type="hidden" id="clubName" name="clubName" value="몽몽이를 부탁해">
+        <input type="hidden" id="orgMemberIDs" name="orgMemberIDs" value="001009502;001016605;001000609;500017070;001006255;001002906;001002806;">
+        <input type="hidden" id="orgMemberNames" name="orgMemberNames" value="김광수;김나정;김민우;김용세;김은하;엄유정;최희선;">
+        <input type="hidden" id="club_memberList_Table_no_select" name="club_memberList_Table_no_select" value="선택한 회원이 없습니다.">
+        <select id="coplist" name="coplist">
+          <option value="1">이름</option>
+        </select>
+        <input type="text" id="byUserName" name="byUserName" value="" onkeydown="return CopMemberListForAdminObj.fnCheckEnterKey();">
+        <a href="#" class="srch_btn" onclick="CopMemberListForAdminObj.fnGoSubmit();">검색</a> <span style="display:none">
+        <input type="text" id="userLevel" name="userLevel" value="" style="display:none">
+        <input type="text" id="copsearch" name="copsearch" value="" style="display:none">
+        <input type="text" id="pageNumber" name="pageNumber" value="1" style="display:none">
+        <input type="text" id="listSize" name="listSize" value="15" style="display:none">
+        <input type="text" id="clubID" name="clubID" value="000000201" style="display:none">
+        <input type="text" id="userApprovalFlag" name="userApprovalFlag" value="" style="display:none">
+        <input type="text" id="acton" name="acton" value="list">
+        <input type="text" id="ACT_MODE" name="ACT_MODE">
+        <input type="text" id="VIEW_MODE" name="VIEW_MODE" value="list">
+        <input type="text" id="IS_POP" name="IS_POP" value="N">
+        <input type="text" id="ADMIN_REQ" name="ADMIN_REQ" value="Y">
+        </span> <span id="checkedUser" name="checkedUser" style="display:none;"></span>
+      </form>
+    </fieldset>
+  </div>
+  <div class="btn_area">
+    <input type="hidden" name="inputNm0" id="memberName">
+    <input type="hidden" name="hiddenNm0" id="memberIDs">
+    <ul class="btns">
+      <li><span title="회원승인" onclick="javascript:CopMemberListForAdminObj.fnSetUserHandle(2);"><a href="#">회원승인</a></span></li>
+      <li><span title="승인거부" onclick="javascript:CopMemberListForAdminObj.fnSetUserHandle(3);"><a href="#">승인거부</a></span></li>
+      <li><span title="강제탈퇴" onclick="javascript:CopMemberListForAdminObj.fnSetUserHandle(5);"><a href="#">강제탈퇴</a></span></li>
+      <li><span title="등급변경" onclick="javascript:CopMemberListForAdminObj.fnUpdateLevelOpenPopup();"><a href="#">등급변경</a></span></li>
+      <li><span title="회원가입" onclick="javascript:openOrgPopup('2','1','001013122','memberIDs','memberName','CopMemberListForAdminObj.fnAddMembers');return false;"><a href="#">회원가입</a></span></li>
+    </ul>
+    <div class="layout_rgt">
+      <ul class="btns">
+        <li>
+          <select name="levelSelect" id="levelSelect" onchange="CopMemberListForAdminObj.fnChangeListSize();">
+            <option value="">전체</option>
+            <option value="1">운영자</option>
+            <option value="2">부운영자</option>
+            <option value="3">정회원</option>
+            <option value="4">준회원</option>
+            <option value="8">자퇴회원</option>
+            <option value="9">강퇴회원</option>
+          </select>
+        </li>
+        <li>
+          <select name="approvalFlag" id="approvalFlag" onchange="CopMemberListForAdminObj.fnChangeListSize();">
+            <option value="">전체</option>
+            <option value="1">신청</option>
+            <option value="2">승인</option>
+            <option value="3">거부</option>
+            <option value="4">자퇴</option>
+            <option value="5">강퇴</option>
+          </select>
+        </li>
+        <li>
+          <select id="sort" name="sort" onchange="CopMemberListForAdminObj.fnChangeListSize();">
+            <option value="15" selected="">15</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+        </li>
+      </ul>
+      <p class="btn_rfrsh"> <a title="새로고침" href="javascript:fnOtherPage(1);"> 새로고침 </a> </p>
+    </div>
+  </div>
+  <div class="content_lst content_lst_head">
+    <table>
+      <colgroup>
+      <col style="width:40px">
+      <col style="width:100px">
+      <col style="width:*">
+      <col style="width:100px">
+      <col style="width:100px">
+      <col style="width:100px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="chkAll" name="chkAll" onclick="javascript:CopMemberListForAdminObj.fnSetCheckBoxAll();"></th>
+          <th>No</th>
+          <th>이름 (별명)</th>
+          <th>등급</th>
+          <th>상태</th>
+          <th>가입일</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="content_lst content_lst_body" style="height: 781px;">
+    <table summary="등록자 링크를 통해서 상세 내용으로 이동">
+      <colgroup>
+      <col style="width:40px">
+      <col style="width:100px">
+      <col style="width:*">
+      <col style="width:100px">
+      <col style="width:100px">
+      <col style="width:84px">
+      </colgroup>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001000609"></td>
+          <td>1</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001000609','000000201');return false;">김민우
+            <input type="hidden" id="userName" name="userName" value="김민우">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001002806"></td>
+          <td>2</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001002806','000000201');return false;">최희선
+            <input type="hidden" id="userName" name="userName" value="최희선">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001002906"></td>
+          <td>3</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001002906','000000201');return false;">엄유정
+            <input type="hidden" id="userName" name="userName" value="엄유정">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001006255"></td>
+          <td>4</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001006255','000000201');return false;">김은하
+            <input type="hidden" id="userName" name="userName" value="김은하">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001009502"></td>
+          <td>5</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001009502','000000201');return false;">김광수
+            <input type="hidden" id="userName" name="userName" value="김광수">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" disabled="" value=""></td>
+          <td>6</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001013122','000000201');return false;">백은경
+            <input type="hidden" id="userName" name="userName" value="백은경">
+            <span></span></a></td>
+          <td>운영자</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="001016605"></td>
+          <td>7</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','001016605','000000201');return false;">김나정
+            <input type="hidden" id="userName" name="userName" value="김나정">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" id="usrChk" name="usrChk" value="500017070"></td>
+          <td>8</td>
+          <td><a href="#" onclick="javascript:CopMemberListForAdminObj.fnOpenPopup('','500017070','000000201');return false;">김용세
+            <input type="hidden" id="userName" name="userName" value="김용세">
+            <span></span></a></td>
+          <td>준회원</td>
+          <td> 승인
+            <input type="hidden" name="approvalFlags" id="approvalFlags" value="2"></td>
+          <td>2015.03.05</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="6">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="paginate_box">
+    <div class="paginate"> <a class="first">처음</a> <a class="prev"> 이전페이지 </a> <a class="on">1</a> <a class="next">다음페이지</a> <a class="last"> 마지막 </a>
+      <input id="totalPage" name="totalPage" type="hidden" value="1">
+    </div>
+  </div>
+  <div id="memberList_popUpSubmit" name="memberList_popUpSubmit" style="display:none;">
+    <form id="memberList_fm" name="memberList_fm" method="post" enctype="application/x-www-form-urlencoded" action="/hcop/clubMember.do?SESSIONID=C53DEAA13DC0F1488E2D86B16DF46C9E" target="win">
+      <input type="text" name="ADMIN_REQ" value="Y">
+      <input type="text" name="IS_POP">
+      <input type="text" name="VIEW_MODE">
+      <input type="text" name="acton">
+      <input type="text" name="clubID">
+      <input type="text" name="orgMemberIDs">
+      <input type="text" name="orgMemberNames">
+      <input type="text" name="sysopID">
+      <input type="text" name="sysopName">
+      <input type="text" name="sysopDeptID">
+      <input type="text" name="sysopDeptName">
+      <input type="text" name="userID">
+      <input type="text" NAME="SESSIONID" VALUE="C53DEAA13DC0F1488E2D86B16DF46C9E">
+    </form>
+  </div>
+  <div id="memberListAdmin_Message" name="memberListAdmin_Message" style="display:none;">
+    <input id="admin.club.memberList.Confirm.Update.Approve" name="admin.club.memberList.Confirm.Update.Approve" value="선택한 회원에 대해서 승인 하겠습니까?">
+    <input id="admin.club.memberList.Confirm.Update.Deny" name="admin.club.memberList.Confirm.Update.Deny" value="선택한 회원에 대해서 승인거부 하시겠습니까?">
+    <input id="admin.club.memberList.Confirm.Delete.Fire" name="admin.club.memberList.Confirm.Delete.Fire" value="선택한 회원을 탈퇴 시키시겠습니까?">
+    <input id="admin.club.memberList.Alert.NotSelected" name="admin.club.memberList.Alert.NotSelected" value="선택한 회원이 없습니다.">
+    <input id="admin.club.memberList.Approval.message" name="admin.club.memberList.Approval.message" value="승인 거부는 신청인 회원상태에만 적용 할 수 있습니다">
+    <input id="admin.club.memberList.Fire.message" name="admin.club.memberList.Fire.message" value="신청상태인 회원은 강제탈퇴 할 수 없습니다">
+    <input id="admin.club.memberList.alreadyApprove.message" name="admin.club.memberList.alreadyApprove.message" value="이미 승인된 회원입니다">
+    <input id="admin.club.memberList.alreadyDeny.message" name="admin.club.memberList.alreadyDeny.message" value="이미 승인거부된 회원입니다">
+    <input id="admin.club.memberList.CannotUpdateLevel.message" name="admin.club.memberList.CannotUpdateLevel.message" value="'신청' 또는 '거부'상태인 회원은 등급변경 할 수 없습니다">
+    <input id="admin.club.memberList.CannotUpdateCalendarMember.message" name="admin.club.memberList.CannotUpdateCalendarMember.message" value="달력 공유자 수정 과정에서 오류가 발생하셨습니다.">
+  </div>
+  <div id="directory" style="display:none;"></div>
+</div>
+
+<!--buddy CARD Form-->
+<div class="bd_card">
+  <div class="pop_wrap">
+    <div class="title_area">
+      <h1> 회원정보 </h1>
+    </div>
+    <div class=""> 
+      <!-- "등급변경" 기능에 대한 조건 추가  -->
+      <table>
+        <colgroup>
+        <col style="">
+        <col style="">
+        <col style="">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td class="txt_align_cnt pd_0" valign="middle" rowspan="5"><img src="../../img/img_small_default.png" alt="회원정보"></td>
+            <th>이름</th>
+            <td><a onclick="javascript:show_buddy_card('001000609')" href="#">김민우</a></td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- [D] 회원 정보 보기 -->
+<div class="common_layer_pop cal_view" style="left:300px; top:150px;display:;">
+  <div class="inner_box">
+    <div class="tit"> <b>회원정보</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+    <div class="cont_pop">
+      <ul class="bd_card">
+        <li class="bd_img_area"> <img class="mask" src="../../img/bg_bd_card.png"> <img class="photo" src="../../img/@aoi.jpg" alt="회원정보"> </li>
+        <li class="bd_info_area">
+          <div class="lst">
+            <dl>
+              <dt>이름</dt>
+              <dd><a onclick="javascript:show_buddy_card('001000609')" href="#">김민우</a></dd>
+            </dl>
+            <dl>
+              <dt>회원등급</dt>
+              <dd>
+                <select class="basic_select" name="copAdminUserLevel" id="copAdminUserLevel">
+                  <option value="2">부운영자</option>
+                  <option value="3">정회원</option>
+                  <option value="4" selected="">준회원</option>
+                  <option value="9">강퇴회원</option>
+                </select>
+              </dd>
+            </dl>
+            <dl>
+              <dt>가입일</dt>
+              <dd>2015.03.05 20:12</dd>
+            </dl>
+            <dl>
+              <dt>최근접속일</dt>
+              <dd>2015.03.05 20:12</dd>
+            </dl>
+            <dl>
+              <dt>방문수</dt>
+              <dd>0</dd>
+            </dl>
+          </div>
+        </li>
+      </ul>
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span id="actButton3" name="actButton3" onclick="javascript:fnCtrlMemberUpdate(6);"> <a class="fnt_bold" href="#">적용</a> </span></li>
+          <li><span id="actButton4" name="actButton4" onclick="javascript:fnCtrlMemberDelete(5);"> <a>강제탈퇴</a> </span> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- // [D] -->
+
+</body>
+</html>

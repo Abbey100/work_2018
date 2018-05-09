@@ -1,0 +1,150 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="left_menu">
+    <div class="left_area"> 
+      <!-- Bookmark tree -->
+      <div id="" class="tree_area_box">
+        <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'bookmark_tree_area');">즐겨찾기</span> <a class="btn_tree_lst on" href="#"> </a><a class="btn_tree_cnfg" href="#"> </a></div>
+        <div id="bookmark_tree_area" class="ifrm_bkmk_tree">
+          <div class="document_year">연도
+            <select class="basic_select">
+              <option>2015</option>
+              <option>2014</option>
+            </select>
+          </div>
+          <div id="noFolder" class="fldr_none">제목 옆 <img src="../../img/ico_star_off.png"/> 아이콘을<br>
+            클릭하시면 추가됩니다.</div>
+          <div class="mkmk_tree_area">
+            <div id="JHOMS150560023694000" class="webfx-tree-item"><img id="JHOMS150560023694000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/Lminus.png"><img id="JHOMS150560023694000-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;">즐겨찾기</font></div>
+            <div style="display: block;" id="JHOMS150560023694000-cont" class="webfx-tree-container">
+              <div id="JHOMS150560006516000" class="webfx-tree-item"><img id="JHOMS150560006516000-indent-0" src="../../img/blank.png"><img id="JHOMS150560006516000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560006516000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560006516000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재대기</a></font></div>
+              <div style="display: none;" id="JHOMS150560006516000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023553000" class="webfx-tree-item"><img id="JHOMS150560023553000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023553000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023553000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023553000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재진행</a></font></div>
+              <div style="display: none;" id="JHOMS150560023553000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023574000" class="webfx-tree-item"><img id="JHOMS150560023574000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023574000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023574000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023574000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">공람완료</a></font></div>
+              <div style="display: none;" id="JHOMS150560023574000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023626000" class="webfx-tree-item"><img id="JHOMS150560023626000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023626000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023626000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023626000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">수신반송</a></font></div>
+              <div style="display: none;" id="JHOMS150560023626000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023647000" class="webfx-tree-item"><img id="JHOMS150560023647000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023647000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023647000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023647000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">휴지통</a></font></div>
+              <div style="display: none;" id="JHOMS150560023647000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023675000" class="webfx-tree-item"><img id="JHOMS150560023675000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023675000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/L.png"><img id="JHOMS150560023675000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023675000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재한문서</a></font></div>
+              <div style="display: none;" id="JHOMS150560023675000-cont" class="webfx-tree-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //Bookmark tree --> 
+      <!-- Private tree -->
+      <div class="tree_area_box">
+        <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'private_tree_area');">부서</span></div>
+          <div id="private_tree_area" class="tree_box_area content_configlist">
+        <div class="document_year">연도
+            <select class="basic_select">
+              <option>2015</option>
+              <option>2014</option>
+            </select>
+          </div>
+              <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:150px"><input type="text" readonly value="품질관리팀 나는 누구 어딘어디?"style="width:136px">
+                    </div>
+                  </div>
+        <div class="ifrm_tree" style="height: 300px;">
+          <div id="00000000000000000003" class="webfx-tree-item"><img id="00000000000000000003-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000003-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">결재</font> </div>
+          <div id="00000000000000000003-cont" class="webfx-tree-container" style="display: block;">
+            <div id="JHOMS131890003442000" class="webfx-tree-item"><img id="JHOMS131890003442000-indent-0" src="../../img/I.png"><img id="JHOMS131890003442000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890003442000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890003442000-anchor">미완료문서</a></font> </div>
+            <div id="JHOMS131890003442000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018176000" class="webfx-tree-item"><img id="JHOMS131890018176000-indent-0" src="../../img/I.png"><img id="JHOMS131890018176000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018176000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="selected" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018176000-anchor">결재대기</a></font> </div>
+            <div id="JHOMS131890018176000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018184000" class="webfx-tree-item"><img id="JHOMS131890018184000-indent-0" src="../../img/I.png"><img id="JHOMS131890018184000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018184000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018184000-anchor">결재진행</a></font> </div>
+            <div id="JHOMS131890018184000-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="00000000000000000004" class="webfx-tree-item"><img id="00000000000000000004-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000004-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">공람</font> </div>
+          <div id="00000000000000000004-cont" class="webfx-tree-container" style="display: block;">
+            <div id="JHOMS131890018198000" class="webfx-tree-item"><img id="JHOMS131890018198000-indent-0" src="../../img/I.png"><img id="JHOMS131890018198000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018198000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018198000-anchor">공람대기</a></font> </div>
+            <div id="JHOMS131890018198000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018206000" class="webfx-tree-item"><img id="JHOMS131890018206000-indent-0" src="../../img/I.png"><img id="JHOMS131890018206000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018206000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018206000-anchor">공람완료</a></font> </div>
+            <div id="JHOMS131890018206000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018217000" class="webfx-tree-item"><img id="JHOMS131890018217000-indent-0" src="../../img/I.png"><img id="JHOMS131890018217000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018217000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018217000-anchor">보낸공람</a></font> </div>
+            <div id="JHOMS131890018217000-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="00000000000000000005" class="webfx-tree-item"><img id="00000000000000000005-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000005-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">발송</font> </div>
+          <div id="00000000000000000005-cont" class="webfx-tree-container" style="display: block;">
+            <div id="JHOMS131890018226000" class="webfx-tree-item"><img id="JHOMS131890018226000-indent-0" src="../../img/I.png"><img id="JHOMS131890018226000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018226000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018226000-anchor">발송대기</a></font> </div>
+            <div id="JHOMS131890018226000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018237000" class="webfx-tree-item"><img id="JHOMS131890018237000-indent-0" src="../../img/I.png"><img id="JHOMS131890018237000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018237000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018237000-anchor">발송진행</a></font> </div>
+            <div id="JHOMS131890018237000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018249000" class="webfx-tree-item"><img id="JHOMS131890018249000-indent-0" src="../../img/I.png"><img id="JHOMS131890018249000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018249000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018249000-anchor">발송현황</a></font> </div>
+            <div id="JHOMS131890018249000-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="00000000000000000006" class="webfx-tree-item"><img id="00000000000000000006-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000006-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">접수</font> </div>
+          <div id="00000000000000000006-cont" class="webfx-tree-container" style="display: block;">
+            <div id="JHOMS131890018257000" class="webfx-tree-item"><img id="JHOMS131890018257000-indent-0" src="../../img/I.png"><img id="JHOMS131890018257000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018257000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018257000-anchor">수신반송</a></font> </div>
+            <div id="JHOMS131890018257000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018270000" class="webfx-tree-item"><img id="JHOMS131890018270000-indent-0" src="../../img/I.png"><img id="JHOMS131890018270000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018270000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018270000-anchor">개인접수</a></font> </div>
+            <div id="JHOMS131890018270000-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="00000000000000000007" class="webfx-tree-item"><img id="00000000000000000007-plus" src="../../img/Lminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000007-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">개인문서함</font> </div>
+          <div id="00000000000000000007-cont" class="webfx-tree-container" style="display: block;">
+            <div id="JHOMS131890018281000" class="webfx-tree-item"><img id="JHOMS131890018281000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018281000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018281000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018281000-anchor">임시보관</a></font> </div>
+            <div id="JHOMS131890018281000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018293000" class="webfx-tree-item"><img id="JHOMS131890018293000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018293000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018293000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018293000-anchor">기안한문서</a></font> </div>
+            <div id="JHOMS131890018293000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018307000" class="webfx-tree-item"><img id="JHOMS131890018307000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018307000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018307000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018307000-anchor">결재한문서</a></font> </div>
+            <div id="JHOMS131890018307000-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="JHOMS131890018314000" class="webfx-tree-item"><img id="JHOMS131890018314000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018314000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018314000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018314000-anchor">접수한문서</a></font> </div>
+            <div id="JHOMS131890018314000-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+        </div>
+          </div>
+      </div>
+      <!-- //Private tree --> 
+      <!-- Share tree -->
+      <div id="" class="tree_area_box last">
+        <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'share_tree_area');">공유</span> <a class="btn_tree_cnfg" href="#"> </a> </div>
+        <div id="share_tree_area">
+          <div class="document_year dsp_none">연도
+            <select class="basic_select">
+              <option>2015</option>
+              <option>2014</option>
+            </select>
+          </div>
+          <div id="noFolder" class="fldr_none">공유받은 폴더가 없습니다.</div>
+          <div class="ifrm_tree">
+            <div id="JHOMS150560023694000" class="webfx-tree-item"><img id="JHOMS150560023694000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/Lminus.png"><img id="JHOMS150560023694000-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;">즐겨찾기</font></div>
+            <div style="display: block;" id="JHOMS150560023694000-cont" class="webfx-tree-container">
+              <div id="JHOMS150560006516000" class="webfx-tree-item"><img id="JHOMS150560006516000-indent-0" src="../../img/blank.png"><img id="JHOMS150560006516000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560006516000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560006516000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재대기</a></font></div>
+              <div style="display: none;" id="JHOMS150560006516000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023553000" class="webfx-tree-item"><img id="JHOMS150560023553000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023553000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023553000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023553000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재진행</a></font></div>
+              <div style="display: none;" id="JHOMS150560023553000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023574000" class="webfx-tree-item"><img id="JHOMS150560023574000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023574000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023574000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023574000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">공람완료</a></font></div>
+              <div style="display: none;" id="JHOMS150560023574000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023626000" class="webfx-tree-item"><img id="JHOMS150560023626000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023626000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023626000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023626000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">수신반송</a></font></div>
+              <div style="display: none;" id="JHOMS150560023626000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023647000" class="webfx-tree-item"><img id="JHOMS150560023647000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023647000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/T.png"><img id="JHOMS150560023647000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023647000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">휴지통</a></font></div>
+              <div style="display: none;" id="JHOMS150560023647000-cont" class="webfx-tree-container"></div>
+              <div id="JHOMS150560023675000" class="webfx-tree-item"><img id="JHOMS150560023675000-indent-0" src="../../img/blank.png"><img id="JHOMS150560023675000-plus" onclick="webFXTreeHandler.toggle(this);" src="../../img/L.png"><img id="JHOMS150560023675000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size: 9pt;"><a style="font-size: 9pt;" id="JHOMS150560023675000-anchor" class="active" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" active="">결재한문서</a></font></div>
+              <div style="display: none;" id="JHOMS150560023675000-cont" class="webfx-tree-container"></div>
+            </div>
+          </div>
+        </div>
+        <!-- //Share tree --> 
+      </div>
+    </div>
+    <!-- Config --> 
+    <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+    <!-- //Config -->
+</div>
+</body>
+</html>

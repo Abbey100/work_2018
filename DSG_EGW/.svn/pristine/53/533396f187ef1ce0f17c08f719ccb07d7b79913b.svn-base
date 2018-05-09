@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>GROUP WARE FRAME</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <frameset rows="*,0" framespacing="0" border="0" frameborder="0">
+
+        <frameset rows="90,*" framespacing="0" border="0" frameborder="0">
+            <frame id="menu" name="menu" src="../top_menu_horizon.html" scrolling="no" noresize="noresize" frameborder="0" />
+            <frameset id="main" cols="220,*" frameborder="no" border="0" framespacing="0"  noresize="noresize">            
+                <frame id="left" name="left" src="apprvl_admin_left.html" scrolling="no" noresize="noresize" frameborder="0" />
+                <frame id="left_01" name="left" src="apprvl_%EA%B4%80%EC%9D%B8%EA%B4%80%EB%A6%AC.html" scrolling="no" noresize="noresize" frameborder="0" />
+                <frame id="right" name="right" src="../right.html" scrolling="no" noresize="noresize" frameborder="0"/>
+            </frameset>
+        </frameset><noframes></noframes>
+        <frame src=""></frameset>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 환결설정</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.textcomplete.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        <script>
+      </script>
+  </head>
+
+<body class="sq_plus">
+  <!-- title start-->
+<div class="container_box container_list_box">
+  
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글 for 커뮤니케이터</a></div>
+   
+<!-- Title area END-->     
+   <div class="title_area">
+      <h2 class="title">
+      <span class="title_name">스퀘어 환경설정</span>
+       <!--span class="loading"></span-->
+      </h2>
+     
+   </div>
+<!-- // Title area END-->
+<div>
+  <div class="content_lst content_lst_body">
+    <div class="config"> 
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab">알림설정</li>
+        </a> <a href="#">
+        <li class="tab">워크피드 설정</li>
+        </a> <a href="#">
+        <li class="tab selected">종료그룹 관리</li>
+        </a>
+      </ul>
+    </div>
+<div>
+    <div class="content_lst content_lst_head">
+      <table>
+        <colgroup>
+        <col style="width:*">
+        <col style="width:75px">
+        <col style="width:75px">
+        <col style="width:75px">
+        <col class="info" style="width:*">
+        <col style="width:75px">
+        <col style="width:120px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="td_inpbox_b">그룹명</th>
+            <th>개설자</th>
+            <th>개설일</th>
+            <th>종료일</th>
+            <th class="info">소개</th>
+            <th>목록표시</th>
+            <th>관리</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="content_lst content_lst_body">
+      <table>
+        <colgroup>
+        <col style="width:*">
+        <col style="width:75px">
+        <col style="width:75px">
+        <col style="width:75px">
+        <col class="info" style="width:*">
+        <col style="width:75px">
+        <col style="width:120px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td class="txt_align_cnt" colspan="7">
+                종료된 그룹이 없습니다.
+            </td>
+          </tr>
+          <tr>
+            <td class="td_inpbox_b"><a href="#">UX/UI디자인</a></td>
+            <td>김핸디</td>
+            <td class="date">2017.01.01</td>
+            <td class="date">2017.01.31</td>
+            <td class="info">스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. 스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. </td>
+            <td><label><input type="checkbox">숨김</label></td>
+            <td><ul class="tbl_square_config">
+                <a href="#">
+                <li>영구삭제</li>
+                </a>
+                <a href="#">
+                <li>재시작</li>
+                </a>
+              </ul></td>
+          </tr>
+          <tr>
+            <td class="td_inpbox_b"><a href="#">스퀘어플러스그룹</a></td>
+            <td>박변화</td>
+            <td class="date">2016.12.01</td>
+            <td class="date">2017.12.31</td>
+            <td class="info">다른사람이 만든 그룹의 경우, "관리"의 메뉴가 보이지 않습니다.</td>
+            <td><label><input type="checkbox">숨김</label></td>
+            <td><!-- [D] 관리 권한이 없는 경우 .disabled를 추가합니다. -->
+                <ul class="tbl_square_config disabled">
+                <a href="#">
+                <li>영구삭제</li>
+                </a>
+                <a href="#">
+                <li>재시작</li>
+                </a>
+              </ul></td>
+          </tr>
+          <tr>
+            <td class="td_inpbox_b"><a href="#">UX/UI디자인</a></td>
+            <td>김핸디</td>
+            <td class="date">2017.01.01</td>
+            <td class="date">2017.01.31</td>
+            <td class="info">스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. 스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. </td>
+            <td><label><input type="checkbox">숨김</label></td>
+            <td><ul class="tbl_square_config">
+                <a href="#">
+                <li>영구삭제</li>
+                </a>
+                <a href="#">
+                <li>재시작</li>
+                </a>
+              </ul></td>
+          </tr>
+          <tr>
+            <td class="td_inpbox_b"><a href="#">UX/UI디자인</a></td>
+            <td>김핸디</td>
+            <td class="date">2017.01.01</td>
+            <td class="date">2017.01.31</td>
+            <td class="info">스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. 스퀘어플러스 그룹의 소개글이 들어갈 자리입니다. 내용이 길어지면 말줄임표시를 하겠습니다. </td>
+            <td><label><input type="checkbox">숨김</label></td>
+            <td><ul class="tbl_square_config">
+                <a href="#">
+                <li>영구삭제</li>
+                </a>
+                <a href="#">
+                <li>재시작</li>
+                </a>
+              </ul></td>
+          </tr>
+        </tbody>
+      </table>
+        
+    </div>
+    </div>
+        <div class="footer">
+          <ul class="btns">
+            <li><span><a href="#" alt="저장" style="float:right">저장</a></span></li>
+          </ul>
+        </div>   
+        </div>    
+        </div>
+</div>
+    </div>
+</body>
+</html>

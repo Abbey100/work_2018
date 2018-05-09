@@ -1,0 +1,31 @@
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>설문 프레임 화면</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<script>
+//Rsch Register -> depends on FileAttach View 
+var body_filebox_none_cols = '380,*,0';
+var body_filebox_with_cols = '500,*,0';
+
+function deleteTemp(){
+	document.getElementById("DeleteTempFrame").location='/jsp/rsch/RschTempDelete.jsp?K=003sH1EiZ1';
+}
+</script></head>
+
+
+	
+		<frameset id="BODY" name="BODY" rows="510, *,0" borderspacing="0" frameborder="No" framespacing="0" border="0" scrolling="NO" onload="deleteTemp(1);">
+	
+	<frame id="TInput" name="TInput" marginwidth="0" marginheight="0" src="../research/write_sheet_body_top.html" border="0" scrolling="NO">
+	<frame id="BInput" name="BInput" marginwidth="0" marginheight="0" src="../research/write_sheet_body_bottom.html" border="0" scrolling="NO">
+	<frame id="DeleteTempFrame" style="display:none" name="DeleteTempFrame" noresize="" scrolling="NO" nowrap="" marginwidth="0" marginheight="0">
+	<noframes>
+		&lt;BODY BGCOLOR="WHITE" TEXT="BLACK" LINK="BLUE" VLINK="PURPLE" ALINK="RED"&gt;
+		&lt;P&gt;이 페이지를 보려면, 프레임을 볼 수 있는 브라우저가 필요합니다.&lt;/P&gt;
+		&lt;/BODY&gt;
+	</noframes>
+	</frameset>
+
+
+</html>

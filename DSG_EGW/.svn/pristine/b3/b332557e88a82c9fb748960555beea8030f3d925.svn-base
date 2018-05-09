@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 조직도_팝업 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+		 <script type="text/javascript" src="../../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../../js/common.js" ></script>		
+	</head>
+	<!-- Size : 800 x 592 -->
+	<body>
+		<!-- header -->
+		<h1 class="title">연락처 가져오기</h1>
+		<!-- //header -->
+		<div class="container_area">
+			<div class="scroll_area">
+				<div class="group_menu">
+					<!-- 조직도 트리 영역 -->
+					<div class="org_group">
+						<ul class="tab">
+							<li><a href="" class="">조직도</a></li>
+							<li><a href="" class="selected">주소록</a></li>
+						</ul>
+						<legend>조직도 검색</legend>
+						<fieldset>
+							<div class="srch_group on">
+								<!-- // 검색 이전엔 on 삭제 -->
+								<input type="text" placeholder="이름 검색" />
+								<a class="btn_srch">검색</a>
+								<a class="btn_return">이전</a>
+							</div>
+						</fieldset>
+						<div class="org_tree folder handy-scroll">
+							<ul class="dynatree-container">
+								<li class="">
+									<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+										<span class="dynatree-expander"></span>
+										<span class="dynatree-icon"></span>
+										<a href="#" class="dynatree-title">
+											<span class="node-folder" >그룹없는 연락처</span>
+										</a>
+									</div>
+									<ul>
+										<li>
+											<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>		<span class="dynatree-checkbox"></span>	
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">강미나 부장</span>
+												</a>
+											</span>
+										</li>
+										<li>
+											<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">나미나 본부장</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">다미나 대리</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">라미나 대리</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">강미나 사원</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">나미나 사원</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">다미나 사원</span>
+												</a>
+											</span>
+										</li>
+										<li class="dynatree-lastsib">
+											<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">라미나 사원</span>
+												</a>
+											</span>
+										</li>
+									</ul>
+								</li>
+								<li class="">
+									<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+										<span class="dynatree-expander"></span>
+										<span class="dynatree-icon"></span>
+										<a href="#" class="dynatree-title">
+											<span class="node-folder" >가족</span>
+										</a>
+									</div>
+									<ul>
+										<li>
+											<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>		<span class="dynatree-checkbox"></span>	
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">김엄마</span>
+												</a>
+											</span>
+										</li>
+										<li>
+											<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+												<span class="dynatree-connector"></span>
+												<span class="dynatree-checkbox"></span>
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">나아빠</span>
+												</a>
+											</span>
+										</li>
+									</ul>
+								</li>
+								<li class="">
+									<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+										<span class="dynatree-expander"></span>
+										<span class="dynatree-icon"></span>
+										<a href="#" class="dynatree-title">
+											<span class="node-folder" >친구</span>
+										</a>
+									</div>
+									<ul>
+										<li>
+											<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+												<span class="dynatree-connector"></span>		<span class="dynatree-checkbox"></span>	
+												<span class="dynatree-icon"></span>
+												<a class="dynatree-title" href="#">
+													<span class="node-group">내친구</span>
+												</a>
+											</span>
+										</li>										
+									</ul>
+								</li>						
+							</ul>
+						</div>
+					</div>
+					<!-- 선택 버튼 -->
+					<a class="btn_add">add</a>
+					<!-- 선택 리스트 -->
+					<div class="added_group">
+						<h2>총<span class="count">4</span>명</h2>
+						<div class="usr_lst handy-scroll">
+							<div class="usr bg">
+								<div class="usr_info">
+									<span class="name">$다큐플로팀</span>	
+								</div>
+								<a class="cancel">cancel</a>
+							</div>
+							<div class="usr bg">
+								<div class="usr_info">
+									<div class="usr_photo"> 
+										<img src="../../../img/profile_photo_blank.png" alt="박명수">
+									</div>
+									<span class="name">김명수김명수김명수김명수김명수김명수김명수김명수김명수김명수김명수김명수김명수김명수</span>
+									<span class="rank">본부장부장부장부장부장부장부장부장부장부장</span>		
+								</div>
+								<a class="cancel">cancel</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="btns_area bttm">
+
+				<div class="align_rg">
+					<!-- 등록 -->
+					<a class="action_btn">확인</a>
+					<a class="btn">취소</a>
+				</div>
+			</div>   
+		</div>
+		<!-- // body -->	
+	</body>
+</html>

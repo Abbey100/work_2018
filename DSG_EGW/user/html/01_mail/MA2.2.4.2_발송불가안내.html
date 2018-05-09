@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 메일쓰기 레이아웃 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!--메일주소오류 메시지-->
+        <div class="popup al_pop open">
+            <!--  open 추가시 모달-->
+            <div>
+                <div class="popup_container" style="width:380px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        메일 주소 오류
+                    </h2>
+                    <!-- contents -->
+                    <div class="mail">
+                        <!-- content -->
+                        <div class="ms_cont">
+                            <!-- message details -->
+                            <span class="org_title"><p>잘못 입력된 이메일 주소가 있습니다.</p></span>
+                            <span class="message">이메일 주소 형태가 올바른지 다시 확인해주세요.</span>
+                        </div>	
+                        <div class="btns_area">
+                            <div class="align_rg">
+                                <a class="btn">확인</a>
+                            </div>
+                        </div>   
+                    </div>
+                    <!-- // body -->	
+                </div>
+            </div>
+        </div>
+        <!-- // 메일주소오류 메시지 -->
+        <!-- header -->
+        <h1>메일쓰기</h1>
+        <p class="util saved_info">2017-08-10 15:40 저장됨</p>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <div class="btns_area">
+                <div class="align_lf">
+                    <!-- btns -->
+                    <a class="action_btn">보내기</a>
+                    <div class="group">
+                        <a class="btn">미리보기</a>
+                        <a class="btn">임시저장</a>
+                    </div>	
+                </div>
+                <div class="align_rg">
+                    <span class="message">2017-08-10 19:00 예약됨<a class="cancel">예약취소</a></span>
+                    <!-- 예약발송 옵션 -->
+                    <div class="group">
+                        <a class="btn select">예약발송</a>
+                        <div class="datepicker" style="top:30px; right:0;z-index: 10">
+                            <dl>
+                                <dt><a href="#">2017년 11월</a></dt>
+                                <dd class="day">
+                                    <table>						
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">일</th>
+                                                <th scope="col">월</th>
+                                                <th scope="col">화</th>
+                                                <th scope="col">수</th>
+                                                <th scope="col">목</th>
+                                                <th scope="col">금</th>
+                                                <th scope="col">토</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="disable"><a href="#">1</a></td>
+                                                <td class="disable"><a href="#">2</a></td>
+                                                <td class="disable"><a href="#">3</a></td>
+                                                <td class="disable"><a href="#">4</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="disable"><a href="#">5</a></td>
+                                                <td class="disable"><a href="#">6</a></td>
+                                                <td class="disable"><a href="#">7</a></td>
+                                                <td class="disable"><a href="#">8</a></td>
+                                                <td class="disable"><a href="#">9</a></td>
+                                                <td class="disable"><a href="#">10</a></td>
+                                                <td class="today"><a href="#">11</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">12</a></td>
+                                                <td><a href="#">13</a></td>
+                                                <td><a href="#">14</a></td>
+                                                <td><a href="#">15</a></td>
+                                                <td><a href="#">16</a></td>
+                                                <td><a href="#">17</a></td>
+                                                <td><a href="#">18</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">19</a></td>
+                                                <td><a href="#">20</a></td>
+                                                <td><a href="#">21</a></td>
+                                                <td><a href="#">22</a></td>
+                                                <td><a href="#">23</a></td>
+                                                <td><a href="#">24</a></td>
+                                                <td><a href="#">25</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">26</a></td>
+                                                <td><a href="#">27</a></td>
+                                                <td><a href="#">28</a></td>
+                                                <td><a href="#">29</a></td>
+                                                <td><a href="#">30</a></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </dd>
+                            </dl>
+
+                            <div class="booking">
+                                <span>예약시간 </span>
+                                <div class="selectbox">
+                                    <select title="시 선택">
+                                        <option value="">00시</option>
+                                        <option value="">01시</option>
+                                        <option value="">02시</option>
+                                        <option value="">03시</option>
+                                        <option value="">05시</option>
+                                        <option value="">06시</option>
+                                        <option value="">07시</option>
+                                        <option value="">08시</option>
+                                        <option value="">09시</option>
+                                        <option value="">10시</option>
+                                        <option value="">11시</option>
+                                        <option value="">12시</option>
+                                        <option value="">13시</option>
+                                        <option value="">14시</option>
+                                        <option value="">15시</option>
+                                        <option value="">16시</option>
+                                        <option value="">17시</option>
+                                        <option value="">18시</option>
+                                        <option value="">19시</option>
+                                        <option value="">20시</option>
+                                        <option value="">21시</option>
+                                        <option value="">22시</option>
+                                        <option value="">23시</option>
+                                        <option value="">24시</option>
+                                    </select>
+                                </div>
+                                <div class="selectbox">
+                                    <select title="분 선택">
+                                        <option value="">00분</option>
+                                        <option value="">05분</option>
+                                        <option value="">10분</option>
+                                        <option value="">15분</option>
+                                        <option value="">20분</option>
+                                        <option value="">25분</option>
+                                        <option value="">30분</option>
+                                        <option value="">35분</option>
+                                        <option value="">40분</option>
+                                        <option value="">45분</option>
+                                        <option value="">50분</option>
+                                        <option value="">55분</option>
+                                    </select>
+                                </div>
+                                <p>
+                                    <a href="#" class="action_btn">확인</a>
+                                    <a href="#" class="btn">취소</a>
+                                </p>
+                            </div>
+
+                            <a href="#" class="pre">이전</a>
+                            <a href="#" class="next">다음</a>
+                        </div>
+                    </div>
+
+                    <!-- 보내기 옵션 -->
+                    <div class="group open">
+                        <!-- // open 클래스 제거시 레이어 close -->
+                        <a class="btn select">보내기옵션</a>
+                        <div class="select_lst rg">
+                            <ul class="multi_opt">
+                                <li>
+                                    <span class="form"><input type="checkbox" id="requestCrypt"/><label for="requestCrypt">읽을 때 암호 확인</label></span>
+                                </li>
+                                <li>
+                                    <span class="form"><input type="checkbox" id="indivSpan" /><label for="indivSpan">개별 발송</label></span>
+                                </li>
+                                <li>
+                                    <span class="form"><input type="checkbox" id="includingsender" /><label for="includingsender">나에게도 전송</label></span>
+                                </li>								
+                                <li>
+                                    <span class="form"><input type="checkbox" id="autoarchivesent" /><label for="autoarchivesent">보낸편지함 저장</label></span>
+                                </li>									
+                            </ul>
+                            <div class="btns_area">
+                                <a class="btn align_rg">확인</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 본문 영역 -->
+            <div class="scroll_area handy-scroll">
+                <div class="">				
+                    <div class="form_table">
+                        <table>
+                            <col style="width: 110px">
+                            <col style="width:*">
+                            <tbody>
+                                <tr>                
+                                    <th><span>받는 사람</span></th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <div class="token-input modify">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li title="" class="token-input-token">
+                                                        <p>$개발1팀</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token invalid">
+                                                        <p>기획</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-input-token-directory ui-sortable-handle">
+                                                        <input type="text" style="outline: none; width: 110px;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                    </li>
+                                                </ul>
+                                                <input type="text" id="hwto" name="hwto" style="display: none;">
+                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>참조</span><a class="btn_open open">숨은참조열기</a></th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <div class="token-input modify">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li title="" class="token-input-token">
+                                                        <p>$개발1팀</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>												
+                                                    <li class="token-input-input-token-directory ui-sortable-handle">
+                                                        <input type="text" style="outline: none; width: 110px;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                    </li>
+                                                </ul>
+                                                <input type="text" id="hwto" name="hwto" style="display: none;">
+                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 숨은참조의 기본 상태는 class="blind" 사용, 참조의 open 버튼을 통해 열었을 경우, 클래스 삭제 -->
+                                <tr class="">                
+                                    <th><span>숨은참조</span></th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <div class="token-input modify">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li title="" class="token-input-token">
+                                                        <p>$개발1팀</p>
+                                                        <span class="token-input-modi-token">modify</span>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>												
+                                                    <li class="token-input-input-token-directory ui-sortable-handle">
+                                                        <input type="text" style="outline: none; width: 110px;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                    </li>
+                                                </ul>
+                                                <input type="text" id="hwto" name="hwto" style="display: none;">
+                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>제목</span></th>
+                                    <td>
+                                        <div class="input_group multi focused">
+                                            <input type="text" class="basic_input" placeholder="제목을 입력해 주세요" />
+                                            <div class="group">
+                                                <span class="form">
+                                                    <input type="checkbox" id="emergency" />
+                                                    <label for="emergency" class="emergency">긴급</label></span>
+                                                <span class="form">
+                                                    <input type="checkbox" id="security" />
+                                                    <label for="security">보안</label></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>								
+                                <tr>
+                                    <th><span>파일첨부</span>
+                                        <a class="btn_open" onclick="javascript:$(this).toggleClass('open'); $('#display_test').toggleClass('dsp_none');">파일리스트 열기</a>
+                                    </th>
+                                    <td class="">
+                                        <div class="attached_box two_btn">
+                                            <!-- 파일첨부 -->
+                                            <div class="attached_files">
+                                                <div class="group file_input">
+                                                    <a class="btn small" >
+                                                        <input type="file" onclick="blur()" >
+                                                        내PC
+                                                    </a>
+                                                    <a class="btn small">내파일</a>
+                                                </div>
+                                                <!-- 저장 버튼 그룹-->
+                                                <div class="align_rg text_group">
+                                                    <!-- 기본형 버튼 1개 -->
+                                                    <a class="text_btn all_delete">모두삭제</a>												
+                                                    <!-- 결재용 버튼 2개 -->
+                                                    <a class="text_btn files">저장</a>
+                                                    <a class="text_btn files">삭제</a>
+                                                </div>
+
+                                                <!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+                                                <div class="file_lst upload handy-scroll dsp_none" id="display_test">
+                                                    <ul class="">
+                                                        <li>
+                                                            <a class="move">항목이동</a>
+                                                            <a class="file_name"><span class="badge my_file">내파일</span>IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+                                                            <!-- 다운로드 횟수 및 기간 -->
+                                                            <div class="download_info">(<em>~2017-09-30</em> / 잔여 <em>100회</em>)</div>
+                                                            <span class="file_size">9,999 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <a class="move">항목이동</a>
+                                                            <a class="file_name"><span class="badge my_file">내파일</span>EGW_GUI_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">28 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <a class="move">항목이동</a>
+                                                            <a class="file_name"><span class="badge bigdata">대용량</span>EGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 10%;">10%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">2 MB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <a class="move">항목이동</a>
+                                                            <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">284 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <a class="move">항목이동</a>
+                                                            <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">284 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- 파일정보 -->
+                                            <dl class="file_info">
+                                                <dt>내PC(2) : </dt>
+                                                <dd><em>7.93MB</em>/2GB</dd>
+                                                <dt>내파일(2) : </dt>
+                                                <dd><em>93MB</em></dd>
+                                            </dl>
+                                        </div>
+                                    </td>
+                                </tr>							
+                                <tr>
+                                    <th><span>파일첨부</span>
+                                        <a class="btn_open open" onclick="javascript:$(this).toggleClass('open'); $('#display_test2').toggleClass('dsp_none');">파일리스트 열기</a>
+                                    </th>
+                                    <td class="">
+                                        <div class="attached_box two_btn">
+                                            <!-- 파일첨부 -->
+                                            <div class="attached_files">
+                                                <div class="group file_input">
+                                                    <a class="btn small" >
+                                                        <input type="file" onclick="blur()" >
+                                                        내PC
+                                                    </a>
+                                                    <a class="btn small">내파일</a>
+                                                </div>
+                                                <!-- 저장 버튼 그룹-->
+                                                <div class="align_rg text_group">
+                                                    <!-- 기본형 버튼 1개 -->
+                                                    <a class="text_btn all_delete">모두삭제</a>												
+                                                    <!-- 결재용 버튼 2개 -->
+                                                    <a class="text_btn files">저장</a>
+                                                    <a class="text_btn files">삭제</a>
+                                                </div>
+                                                <!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+                                                <div class="file_lst upload handy-scroll"  id="display_test2">
+                                                    <div class="description">
+                                                        <p class="">작성창으로 파일을 드래그하여 첨부할 수 있습니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 파일정보 -->
+                                            <dl class="file_info">
+                                                <dt>내PC(0) : </dt>
+                                                <dd><em>0</em>/2GB</dd>
+                                                <dt>내파일(0) : </dt>
+                                                <dd><em>0</em></dd>
+                                            </dl>
+                                        </div>
+                                    </td>
+                                </tr>				
+                                <tr>
+                                    <th><span>파일첨부</span>
+                                        <a class="btn_open open" onclick="javascript:$(this).toggleClass('open'); $('#display_test2').toggleClass('dsp_none');">파일리스트 열기</a>
+                                    </th>
+                                    <td class="">
+                                        <div class="attached_box">
+                                            <!-- 파일첨부 -->
+                                            <div class="attached_files">
+                                                <div class="group file_input">
+                                                    <a class="btn small" >
+                                                        <input type="file" onclick="blur()" >
+                                                        내PC
+                                                    </a>
+                                                    <a class="btn small">내파일</a>
+                                                </div>
+                                                <!-- 저장 버튼 그룹-->
+                                                <div class="align_rg text_group">
+                                                    <!-- 기본형 버튼 1개 -->
+                                                    <a class="text_btn all_delete">모두삭제</a>												
+                                                    <!-- 결재용 버튼 2개 -->
+                                                    <a class="text_btn files">저장</a>
+                                                    <a class="text_btn files">삭제</a>
+                                                </div>
+                                                <!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+                                                <div class="file_lst upload handy-scroll"  id="display_test2">
+                                                    <div class="description">
+                                                        <p class="">작성창으로 파일을 드래그하여 첨부할 수 있습니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 파일정보 -->
+                                            <dl class="file_info">
+                                                <dt>내PC(0) : </dt>
+                                                <dd><em>0</em>/2GB</dd>
+                                                <dt>내파일(0) : </dt>
+                                                <dd><em>0</em></dd>
+                                            </dl>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="editor">
+
+                        <div class="align_rg bottom">
+                            <div class="selectbox " style="width:100px;">
+                                <select> 
+                                    <option>기본서명</option>
+                                    <option>기본서명1</option>
+                                    <option>기본서명2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

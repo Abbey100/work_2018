@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>HANDY GROUPWARE</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/login.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+		<script src="../../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../../js/common.js" ></script>		
+	</head>
+<body>
+<div class="login_area">
+	<div class="logins">  
+		<div class="logins_box">
+			<div class="loginbox">
+				<div class="login_txt">
+					<strong class="tit"><img src="../../../img/login/login_tit.png" alt="Log In"></strong>
+					<p class="txt">Working Smart,<br>
+					Living Smart,<br>
+					<span>Global Smart.</span></p>
+					<div class="sel">
+						<div class="selectbox" style="width:140px;">
+							<select>
+								<option>한국어</option>
+								<option>中国语</option>
+								<option>日本语</option>
+								<option>English</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="login_box">
+					<strong class="logos"><img src="../../../img/login/login_logo.png" alt="HANDY Groupware"></strong>
+
+					<div class="logs_cont">
+						<p class="logos_des2">
+							<strong class="tits">다중 접속 에러</strong>
+							로그인하려는 사용자는 현재 사용 중입니다.<br>
+							재로그인 하시겠습니까?
+						</p>
+
+						<div class="logs_txt4">
+							<!-- message -->
+							<p class="mess">사용자 (10.30.4.38)</p>
+							<!-- //message -->
+						</div>
+					</div>
+
+					<div class="btns">
+						<a href="#" class="bts">재 로그인</a>
+						<p class="others">
+							<a href="#">다른 사용자로 로그인</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span class="login_footer">ⓒ DASAN Handysoft Corp.</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 비전자문서 등록 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 600 -->
+	<body>
+		<!-- header -->
+		<h1>파일 올리기</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">			
+			<!-- 본문 영역 -->		
+			<div class="form_table">
+				<table>
+					<col style="width: 120px">
+					<col style="width:*">
+					<tbody>
+						<tr>                
+							<th><span>폴더찾기</span></th>
+							<td>
+								<div class="input_group has_btn focused">
+									<input class="basic_input" type="text" readonly="" placeholder="내 파일">
+									<a class="ico group" href="#">찾기</a>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><span>파일첨부</span></th>
+
+							<td class="">
+								<div class="attached_box">
+									<!-- // 스토리지 파일을 사용하기 않기 위해 two_btn 을 사용하지 않습니다. -->
+									<!-- 파일첨부 -->
+									<div class="attached_files">
+										<div class="group file_input">
+											<a class="btn small" >
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small">내파일</a>
+										</div>
+										<!-- 저장 버튼 그룹-->
+										<div class="align_rg text_group">
+											<!-- 기본형 버튼 1개 -->
+											<a class="text_btn all_delete">모두삭제</a>												
+											<!-- 결재용 버튼 2개 -->
+											<a class="text_btn files">저장</a>
+											<a class="text_btn files">삭제</a>
+										</div>
+
+										<!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+										<div class="file_lst upload handy-scroll" id="display_test">
+											<ul class="">
+												<li>
+													<!--															<a class="move">항목이동</a>-->
+													<a class="file_name"><span class="badge my_file">내파일</span>IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+													<!-- 다운로드 횟수 및 기간 -->
+													<div class="download_info">(<em>~2017-09-30</em> / 잔여 <em>100회</em>)</div>
+													<span class="file_size">9,999 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<!--															<a class="move">항목이동</a>-->
+													<a class="file_name"><span class="badge my_file">내파일</span>EGW_GUI_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<!--															<a class="move">항목이동</a>-->
+													<a class="file_name"><span class="badge bigdata">대용량</span>EGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 10%;">10%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">2 MB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<!--															<a class="move">항목이동</a>-->
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<!--															<a class="move">항목이동</a>-->
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- 파일정보 -->
+									<dl class="file_info">
+										<dt>제한용량 </dt>
+										<dd><em>7.93MB</em>/100MB</dd>
+										<dt>파일갯수</dt>
+										<dd><em>6</em>/10</dd>
+									</dl>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+			<div class="btns_area bttm">
+				<div class="align_rg">
+
+					<a class="action_btn">완료</a>
+					<a class="btn">취소</a>
+				</div>
+			</div>  
+		</div>
+		<!-- // body -->	
+		<div class="popup">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:422px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						위치선택
+					</h2>
+					<div class="contents">
+						<div class="tree_group">
+							<div class="tree folder handy-scroll">
+								<ul class="dynatree-container">
+									<li class="">
+										<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+											<span class="dynatree-expander"></span>
+
+											<span class="dynatree-icon"></span>
+											<a href="#" class="dynatree-title">
+												<span class="node-folder" >기본폴더</span>
+											</a>
+										</div>
+
+										<ul style="">
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인 폴더함1</span>
+													</a>
+												</span>
+
+											</li>
+										</ul>
+									</li>									
+								</ul>
+								<ul class="dynatree-container">
+									<li class="">
+										<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+											<span class="dynatree-expander"></span>
+
+											<span class="dynatree-icon"></span>
+											<a href="#" class="dynatree-title">
+												<span class="node-folder" >생성폴더</span>
+											</a>
+										</div>
+
+										<ul style="">
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함2</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+													<span class="dynatree-connector"></span>							<span class="dynatree-radio"></span>
+													<span class="dynatree-icon"></span>
+													<a class="dynatree-title" href="#">
+														<span class="node-group">개인폴더함3</span>
+													</a>
+												</span>
+											</li>
+
+										</ul>
+									</li>									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>SNS</title>
+<link rel="stylesheet" type="text/css" href="../css/common.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../css/sns.css" media="screen">
+<script type="text/javascript" language="JavaScript" src="js/jquery-1.6.js"></script>
+    <!--
+<script type="text/javascript">
+	 $(document).ready(function () {
+			var resizeFunction = function(){
+				var screenY = parseInt($(window).height());
+				var screenX = parseInt($(window).width());	
+				$("#stl_container").css({ "height": screenY - 68 });
+				$("#stl_container").css({ "width": screenX - 462 });
+				$(".stl_wrap").css({ "min-height": screenY - 120 });
+				
+				if ($("#stl_container").width() < 600) {
+					var margin = ($("#stl_container").width() - 520) / 2
+					if (margin > 10) {
+						$(".stl_area").css({ "margin": "0 " + margin + "px" });
+					} else {
+						$(".stl_area").css({ "margin": "0 10px" });
+					}
+				} else {
+					$(".stl_area").css({ "margin": "0 40px" });
+				}
+				
+				// 센터정렬
+				//$(".stl_area").css({ "min-height": screenY - 68 });
+			//	if ($("#stl_container").width() >= 1030) {
+			//		$(".stl_area").width(800);
+			//		var margin = ($("#stl_container").width() - 800) / 2;
+			//		$(".stl_area").css({ "margin": "0 " + margin + "px" });
+			//	} else {
+			//		if ($("#stl_container").width() < 760) {
+			//			$(".stl_area").width(530);
+			//		} else {
+			//			$(".stl_area").width($("#stl_container").width() - 230);
+			//		}
+			//		$(".stl_area").css({ "margin": "0 115px" });
+			//	}
+			};
+ 		resizeFunction();
+		$(window).resize(resizeFunction);
+	 });
+</script>
+-->
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrap"> 
+	<!-- header -->
+	<div id="header">
+		<h1><a href="#"><img src="../images/logo.png" alt="HANDY Groupware" width="175" height="37"></a></h1>
+		<!-- nav_bar -->
+		<div class="nav_area"> 
+			<!-- menu navigation -->
+			<ul class="menu">
+			<li><a href="#">메일</a></li>
+			<li><a href="#">게시판</a></li>
+			<li><a href="#">업무넷</a></li>
+			<li><a href="#">결재</a></li>
+			<li><a href="#">문서함</a></li>
+			<li><a href="#" class="menu_on">SNS</a></li>
+			<li><a href="#">설문</a></li>
+			<li><a href="#">일정</a></li>
+			<li><a href="#">일정일정</a></li>
+			</ul>
+			<div class="menu_link"><a href="#">관리자</a><a href="#">링크링크</a></div>
+			<!-- //menu navigation --> 
+		</div>
+		<!-- //nav_bar --> 
+		<!-- header_right -->
+		<div id="header_right"> 
+			<!-- my info -->
+			<div class="user_info"><span>공통기반팀공통기반팀공통기반팀</span><span>최희선 최희선최희선 최희선</span></div>
+			<!-- //my info -->
+			<ul class="gnb">
+			<li><a href="#" class="logout" title="로그아웃"><span class="text">로그아웃</span><span class="image"><img src="images/btn_logout.png" width="54" height="23"></span></a></li>
+			<li><a href="#" class="config" title="환경설정"><span class="text">환경설정</span><span class="image"><img src="images/btn_config.png" width="54" height="23"></span></a></li>
+			</ul>
+		</div>
+		<!-- //header_right --> 
+	</div>
+	<!-- //header --> 
+	<!-- SNS SNB Wrapper -->
+	<div class="left_menu_sns">
+		<div class="btn_large">
+		<a class="btn_l_lft" title="글쓰기" href="#">글쓰기</a> 
+		<a class="btn_l_rgt" title="최신 소식" href="#">내 담벼락</a>
+	</div>
+		<!-- 사용자 프로필&카운트 -->
+		<div id="userinfo_menu" class="stl_left_userarea"> 
+			<!-- 프로필-->
+			<ul class="stl_left_userinfo">
+			<li class="cen"><img src="images/gr/people_01.gif" onload="if(this.width &gt; this.height) {this.width=138;} else {this.height=138;}" onerror="this.src='images/people_01.gif'"></li>
+			<li><strong>UX디자인팀 긴팀명 말줄임</strong></li>
+			<li><span id="user_name"><strong>최희선</strong></span><span>(주임연구원)</span></li>
+			</ul>
+			<!-- //프로필 --> 
+			<!-- 카운트 -->
+			<ul class="stl_left_count">
+			<li class="stl_count_followers"><a title="소식을 전하는 사람">소식을 전하는 사람<span class="stl_count">0</span></a></li>
+			<li class="stl_count_following"><a href="/sns/profile/following_list_frame_so.action?userid=001001121" title="소식을 받는 사람">소식을 받는 사람<span class="stl_count">5</span></a></li>
+			<li><a href="javascript:MyProfile('001001121')" title="글목록">글목록<span class="stl_count">10</span></a></li>
+		</ul>
+			<!-- //카운트 --> 
+		</div>
+		<!-- //사용자 프로필&카운트 --> 
+		<!-- 최신소식 -->
+		<ul class="snb_lst_sns">
+		<li><a title="뉴스피드" href="javascript:MemoContent('comment')"><span class="font_weight margin_left_minus_5">뉴스피드</span></a></li>
+		<li><a id="newspeed" title="최신 소식" href="javascript:MemoContent('comment')" class="snb_on">최신 소식</a></li>
+		<li><a id="newhit" title="최근 추천 글" href="javascript:MemoContent('hit')">최근 추천 글</a></li>
+		<li><a id="newreferirse" title="최근 인용 글" href="javascript:MemoContent('referirse')">최근 인용 글</a></li>
+		</ul>
+		<!-- 내 담벼락 -->
+		<ul class="snb_lst_sns">
+		<li><a title="내 담벼락" href="javascript:MyProfile('001002806')" id="my_profile_title"><span class="font_weight margin_left_minus_5">내 담벼락</span></a></li>
+		<li><a id="profile_memolist" title="글목록" href="javascript:MyProfile('001002806')">글목록</a></li>
+		<li><a id="profile_hit" title="추천글" href="javascript:MyProfile('001002806', 'hit')">추천글</a></li>
+		
+		<!-- li><a id="big_menu_follower" title="소식을 전하는 사람" href="/sns/profile/follower_list_frame_so.action?userid=001002806">소식을 전하는 사람</a></li -->
+		</ul>
+		
+		<!-- 소식을 받는 사람 -->
+		
+		<div id="following_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				<a id="big_menu_following" href="/sns/profile/following_list_frame_so.action?userid=001002806"> <span class="font_weight margin_left_minus_5">소식을 받는 사람</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			<li class="hidden_group"> <span id="following_list_display" class="list_plus"><a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a></span> </li>
+			</ul>
+		</div>
+		
+		<!-- 소식을 전하는 사람 -->
+		
+		<div id="follower_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				<a id="big_menu_follower" href="/sns/profile/follower_list_frame_so.action?userid=001002806"> <span class="font_weight margin_left_minus_5">소식을 전하는 사람</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			<li class="hidden_group"> <span id="follower_list_display" class="list_plus"><a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a></span> </li>
+			</ul>
+		</div>
+		
+		<!-- 비공개 그룹 -->
+		<div id="specialgroup_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				
+				<a id="big_menu_specialgroup" title="비공개 그룹" href="/sns/forcegroup/specialgroup_list_frame_so.action"> <span class="font_weight margin_left_minus_5">비공개 그룹</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			<li class="hidden_group"> <span id="community_list_display" class="list_plus"> <a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a> </span> </li>
+			</ul>
+		</div>
+		
+		<!-- 공개 그룹 -->
+		<div id="department_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				<a id="big_menu_department" href="/sns/ouinfo/department_list_frame_so.action?call_type=page&amp;userid=001002806"> <span class="font_weight margin_left_minus_5">공개 그룹</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			
+			<!--다산 SNS 커스터마이징 start --> 
+			
+			<!--다산 SNS 커스터마이징 end --><!--다산 SNS 커스터마이징 -->
+			
+			<li class="hidden_group"> <span id="dept_list_display" class="list_plus"><a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a></span> </li>
+			</ul>
+			<form name="DeptMemo" id="DeptMemo" method="post" action="/sns/profile/memo_list_department_so.action">
+				<input type="hidden" id="userid" name="userid" value="001002806">
+				<input type="hidden" id="oucode" name="oucode" value="">
+				<input type="hidden" id="ouname" name="ouname" value="">
+			</form>
+		</div>
+		
+		<!-- 소식을 받을 직위 -->
+		
+		<div id="position_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				<a id="big_menu_position" href="/sns/profile/position_list_frame_so.action?userid=001002806"> <span class="font_weight margin_left_minus_5">소식 받을 직위</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			<li class="hidden_group"> <span id="position_list_display" class="list_plus"><a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a></span> </li>
+			</ul>
+			<form name="PosMemo" id="PosMemo" method="post" action="/sns/profile/memo_list_position_so.action">
+				<input type="hidden" id="p_userid" name="userid" value="001002806">
+				<input type="hidden" id="p_oucode" name="oucode" value="">
+				<input type="hidden" id="p_position" name="position" value="">
+				<input type="hidden" id="p_positionnm" name="positionnm" value="">
+			</form>
+		</div>
+		
+		<!-- 내가 보고 싶은 그룹 -->
+		
+		<div id="group_menu">
+			<ul class="snb_lst_sns">
+			<li> 
+				<!-- 타이틀 --> 
+				<a id="big_menu_group" title="내가 보고 싶은 그룹" href="/sns/group/group_list_frame_so.action?userid=001002806"> <span class="font_weight margin_left_minus_5">내가 보고 싶은 그룹</span> </a> 
+				
+				<!-- 줄임과 늘임 --> 
+				
+			</li>
+			<li class="hidden_group"> <span id="group_list_display" class="list_plus"><a title="해당 내용이  없습니다.">해당 내용이  없습니다.</a> </span> </li>
+			</ul>
+		</div>
+		<div class="snb_lst_sns_complete"></div>
+	</div>
+	<!-- //SNS SNB Wrapper -->
+    <div class="content_box_memo_sns" id="content_box">
+    <!-- 제목 -->
+    <div class="title_area_sns"><h2 class="title"><span title="HOME > SNS > 최신 소식" id="memo_title">최신 소식</span></h2></div>
+    <!-- // 제목 -->
+	<!-- stl_container -->
+	<div id="stl_container"> 
+		<!-- stl_wrap -->
+		<div class="stl_wrap"> 
+			<!-- SNS timeline -->
+			<div class="stl_area"> 
+				<!-- SNS 글쓰기 --> 
+				<!-- 글쓰기 top -->
+				<form id="memo_insert" method="post" enctype="multipart/form-data">
+			<h2><span class="wrt_ttl">글쓰기</span>
+				<div class="float_right">
+					<!-- 공지사항 -->
+					
+						<input type="checkbox" onclick="noticeShow(this.checked)" class="input_chk" id="snsNotice">
+						<label for="snsNotice">공지사항</label>
+						<div class="opt_calendar" id="opt_calendar" style="display: none;">
+							<input class="intxt" id="start_date" name="start_date" type="text" title="시작 날짜" onclick="calenda(this.id)" value="" readonly=""><a href="javascript:calenda('start_date')"><img src="/img/gw8/calendar.gif"></a>
+							<span>~</span>
+							<input class="intxt" id="end_date" name="end_date" type="text" title="종료 날짜" onclick="calenda(this.id)" value="" readonly=""><a href="javascript:calenda('end_date')"><img src="/img/gw8/calendar.gif"></a>
+						</div>
+					
+						
+					<!-- 다산 업무보고 용 -->
+					
+						<input type="checkbox" onclick="businessReportTitleFunc(this.checked)" value="[업무보고]" class="input_chk" id="bizReport">
+						<label for="bizReport">업무보고</label>
+					
+			
+					<div id="my_community" class="float_left" style="display: block;">
+
+
+<select name="outside_community_insert" id="outside_community_insert" onchange="$('#tag_seq').val(this.value)" style="margin-bottom: 3px;">
+    <option value="">전체공개</option>
+    <option value="255">비공개로</option>
+
+
+</select>
+
+
+
+</div>
+				</div>
+			</h2>
+			<!-- //글쓰기 top --> 
+			<!-- 글쓰기 contents -->
+			<div class="stl_write" id="memo_write_state">
+					<!-- 숨긴 폼들 => -->
+				<input type="hidden" id="share_type" name="share_type" value="W">
+				
+		    	<input type="hidden" id="memo_command" name="memo_command" value="">
+		    	
+		    	<input type="hidden" id="tag_seq" name="tag_seq" value="">
+		    	<input type="hidden" id="REGID" name="REGID" value="">
+		    	
+		    	<!-- UMM 관련 -->
+		    	<input type="hidden" name="share_link" value="" id="hid_ulStrmID">
+		    	<input type="hidden" name="share_link_title" value="" id="share_link_title">
+		    	<input type="hidden" name="" id="hid_type">
+		    	
+		    	<!-- 컨텐츠 수정 -->
+		    	
+		    	
+		    	
+		    	<!-- 숨긴 폼들 <= -->
+    	
+				<div class="stl_txtarea">
+					<textarea name="share_content" id="share_content" rows="2" onkeyup="TextareaScroll(this)" style="overflow: hidden; resize: none; height: 32px;">지금 생각을 동료에게 말해보세요!</textarea>
+				</div>
+				<!-- SNS 첨부파일 -->
+				<div class="stl_tools">
+					<a href="javascript:ShareCreate('')" class="stl_btn_share" title="등록하기">
+						등록하기
+					</a>
+					<ul class="stl_attach" id="add_list_button">
+						<!-- 사진 첨부 -->
+						<li id="photo_file_put">
+							<div class="photo_attachment" id="file_form" style="margin-top: -35px;">
+								<input name="share_files" type="file" class="photo_attachment_size" id="share_files1" size="1" title="사진을 선택하세요" onclick="SharePhotoShow(1)" onchange="ShareFileAdd(this, 1)">
+								<input name="share_files" type="file" class="photo_attachment_size" id="share_files2" size="1" title="사진을 선택하세요" onclick="SharePhotoShow(2)" onchange="ShareFileAdd(this, 2)">
+								<input name="share_files" type="file" class="photo_attachment_size" id="share_files3" size="1" title="사진을 선택하세요" onclick="SharePhotoShow(3)" onchange="ShareFileAdd(this, 3)">
+							</div>
+							<a href="#" onclick="alert('사진은 3개까지 첨부가 가능합니다.')" class="stl_atch_photo" title="사진업로드">사진</a></li>
+						
+						<!-- 파일 첨부 -->
+						<li>
+							<input id="share_files4" name="share_files" type="file" title="최대 50M 이하의 파일을 선택하세요." class="file_attachment_size" size="1" onclick="ShareFileShow()" onchange="ShareOtherFileAdd(this, '*')">
+							<a href="#" class="stl_atch_file" title="파일업로드">파일</a>
+						</li>
+						
+					</ul>
+				</div>
+	        
+		        <!-- 첨부 결과 : UMM -->
+		        <div id="userlink" class="display_none" style="display: none;">
+		        	<ul class="stl_file_lst">
+			        	<li><a id="cRecdUmm" href="javascript:ViewUMM();"><img src="/sns/images/ico_umm_m.gif">&nbsp;미디어 콘텐츠가 첨부되었습니다.</a></li>
+			            <li><a id="cRecdUmmDelBtn" href="javascript:DelUMM()"><img src="/sns/images/gr/btn_del_s.gif" border="0"></a></li>
+		            </ul>
+		        </div>
+		        
+		         <!-- 첨부 결과 : PHOTO, FILE -->
+				<div id="user_add" class="display_none" style="display: block;">
+					<ul class="stl_file_lst" id="filename_list"><li class="file" id="user_add_filename1">dday.gif</li><li class="file" id="user_add_filename11"><a href="javascript:RemoveFile(1)"><img src="/sns/images/btn_del_s.gif" width="16" height="10" alt="delete"></a></li></ul>
+				</div>
+				<!-- //SNS 첨부파일 --> 
+			</div>
+		</form>
+				<!-- //SNS 글쓰기 --> 
+				<!-- 로딩바 (로딩중 이외에는 오늘날짜와 새로고침) 
+				<div class="stl_loading"><img src="images/gr/loading.gif" width="32" height="15"></div>
+				<div class="stl_loading stl_today"><a href="#" title="새글불러오기"><span>2013-05-23</span></a></div>
+				--> 
+				<!-- 리로딩&검색바 -->
+                <div id="loading_bar" class="stl_loading display_none" style="display: none;"><img src="/sns/images/gr/loading.gif" width="32" height="15"></div>
+				<div class="stl_loading" id="loading_bar_today" onmouseover="reloadTimeFunc('reload_time')" onmouseout="$('#reload_time').text('');" style="display: block;"><a href="javascript:pageReload()" title="새글불러오기" class="stl_reload"><span id="reload_time"></span></a>
+	
+		
+
+
+<div class="stl_srch_box" onmouseover="searchBoxFunc('block')" onmouseout="searchBoxFunc('none')">
+	<div class="stl_srch">
+		<fieldset id="search_box" style="display: none;">
+			<legend>검색</legend>
+			<!-- 검색 입력 -->
+			<form name="search_form" method="post">
+				<input id="search_head" name="search_head" type="text" size="15" onkeyup="SearchSelectWindow(this)" onclick="SearchSelectWindow(this)" value="">
+			</form>
+			<div onfocus="blur();" title="검색" class="btn_srch"><span>검색</span></div>
+		</fieldset>
+		<ul class="stl_srch_lst" id="search_combo">
+        	<li><a href="javascript:SearchHeadSo('memo')"><span id="search_memo"></span>" 글 내용으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('name_memo')"><span id="search_name_memo"></span>" 등록자로 글 검색</a></li>
+<!--
+			<li><a href="javascript:SearchHeadSo('name')"><span id="search_name"></span>" 이름으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('id')"><span id="search_id"></span>" 사번으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('email')"><span id="search_email"></span>" 이메일로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('organization')"><span id="search_organization"></span>" 조직으로 검색</a></li>
+-->
+		</ul>
+	</div>
+</div>
+	
+</div>
+                <a href="javascript:pageReload()" title="새글불러오기" class="stl_reload"><span id="reload_time"></span></a>
+                <div class="stl_srch_box" onmouseover="searchBoxFunc('block')" onmouseout="searchBoxFunc('none')">
+	<div class="stl_srch">
+		<fieldset id="search_box" style="display: none;">
+			<legend>검색</legend>
+			<!-- 검색 입력 -->
+			<form name="search_form" method="post">
+				<input id="search_head" name="search_head" type="text" size="15" onkeyup="SearchSelectWindow(this)" onclick="SearchSelectWindow(this)" value="">
+			</form>
+			<div onfocus="blur();" title="검색" class="btn_srch"><span>검색</span></div>
+		</fieldset>
+		<ul class="stl_srch_lst" id="search_combo">
+        	<li><a href="javascript:SearchHeadSo('memo')"><span id="search_memo"></span>" 글 내용으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('name_memo')"><span id="search_name_memo"></span>" 등록자로 글 검색</a></li>
+<!--
+			<li><a href="javascript:SearchHeadSo('name')"><span id="search_name"></span>" 이름으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('id')"><span id="search_id"></span>" 사번으로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('email')"><span id="search_email"></span>" 이메일로 검색</a></li>
+			<li><a href="javascript:SearchHeadSo('organization')"><span id="search_organization"></span>" 조직으로 검색</a></li>
+-->
+		</ul>
+	</div>
+</div>
+                
+                
+                
+				<!-- //리로딩&검색바 --> 
+				<!--글 불러오기 --> 
+				<!-- 글&댓글 반복 -->
+				<div> 
+					<!-- 글박스 -->
+					<div class="stl_artcl_box stl_empty">
+						<div class="stl_artcl_body">등록된 글이 없습니다.</div>
+					</div>
+					<!-- //글박스 --> 
+					<!-- 글박스 -->
+					<div class="stl_artcl_box"> 
+						<!-- 비공개 그룹 --> 
+						<a href="#" class="stl_private">비공개 그룹 : 있으나마나</a> 
+						<!-- //비공개 그룹 -->
+						<div class="stl_artcl_body"> 
+							<!-- 내 등록글 수정/삭제 -->
+							<ul class="stl_edit" style="display:;">
+							<li><a href="#"><img src="images/gr/modi_pen.png" width="16" height="16" alt="수정"></a></li>
+							<li><a href="#"><img src="images/gr/del.png" width="16" height="16" alt="삭제"></a></li>
+							</ul>
+							<!-- //내 등록글 수정/삭제 --> 
+							<!-- 좌측 작성자 사진 -->
+							<div class="stl_pic_writer"><a href="#"><img src="images/gr/img_people_01.gif"></a></div>
+							<!-- 우측 컨텐츠 -->
+							<div class="stl_contents">
+								<div class="stl_user_area"><a href="#" class="stl_user"><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+									<!-- UC 연동 
+									<ul class="stl_uc">
+									<li>UC 상태아이콘(로그온/통화가능) 여기</li>
+									<li><a href="#" title="채팅하기"><img src="images/gr/uc_chat.png" width="16" height="12" alt="채팅하기"></a></li>
+									<li><a href="#" title="화상회의"><img src="images/gr/uc_video_chat.png" width="11" height="12" alt="화상회의"></a></li>
+									<li><a href="#" title="전화하기"><img src="images/gr/uc_phone.png" width="15" height="12" alt="전화하기"></a></li>
+									<li><a href="#" title="휴대폰 전화하기"><img src="images/gr/uc_mobile_phone.png" width="12" height="12" alt="휴대폰 전화하기"></a></li>
+									<li><a href="#" title="UMM 전달"><img src="images/gr/uc_umm.png" width="17" height="12" alt="UMM 전달"></a></li>
+									<li><a href="#" title="쪽지보내기"><img src="images/gr/uc_msg.png" width="19" height="12" alt="쪽지보내기"></a></li>
+									<li><a href="#" title="메일보내기"><img src="images/gr/uc_mail.png" width="13" height="12" alt="메일보내기"></a></li>
+									</ul>
+									 //UC 연동 --> 
+								</div>
+								<!-- 본문 -->
+								<div class="stl_artcl"><!-- 더보기 누르면 클래스 추가 class="stl_artcl stl_view" --><a href="#">http://gw.handysoft.co.kr 링크테스트</a>오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다. 오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+								<!-- //본문 --> 
+								<a href="#" class="stl_view_all">내용더보기</a> 
+								<!-- 첨부사진 -->
+								<ul class="stl_atched_pics">
+								<!--li 반복으로 3개 까지 -->
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								</ul>
+								<!-- //첨부사진 -->
+								<div class="stl_atched"><a href="#" class="stl_atched_file"><strong>다운로드</strong><span>파일명.pdf</span></a></div>
+								<div class="stl_atched"><a href="#" class="stl_atched_umm"><strong>재생</strong><span>Audio</span></a></div>
+								<!-- 인용글 -->
+								<div class="stl_add_quote"><a href="#" class="stl_pic_writer02"><!-- 원문 작성자 사진 --><img src="images/gr/img_people_02.gif"></a>
+									<div class="stl_artcl_con"><a href="#" class="stl_user02"><!-- 원문 작성자 --><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+										<!-- 인용원문 -->
+										<div class="stl_artcl_smpl"><!-- 더보기 누르면 클래스 추가 class="stl_artcl stl_view" --><a href="#">http://gw.handysoft.co.kr 링크테스트</a>오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다. 오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+										<!-- //인용원문 --> 
+										<a href="#" class="stl_view_all">내용더보기</a><span class="stl_usertime02">2013년 05월 21일 오후 07시58분</span> 
+										<!-- 인용글 첨부사진 -->
+										<ul class="stl_atched_pics">
+										<!--li 반복으로 3개 까지 -->
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										</ul>
+										<!-- //인용글 첨부사진 --></div>
+								</div>
+								<!-- //인용글 --> 
+								<!-- 인용글 -->
+								<div class="stl_add_quote stl_excision"> 인용글이 삭제되었습니다. </div>
+								<!-- //인용글 --> 
+							</div>
+							<!-- //우측 컨텐츠 --> 
+						</div>
+						<!-- 글작성 시간 및 액션박스 -->
+						<div class="stl_infoact">
+							<ul>
+							<li>
+								<ul class="stl_artcl_act">
+								<li><a href="#">댓글달기</a></li>
+								<li><a href="#">인용하기</a></li>
+								</ul>
+							</li>
+                            <!-- 즐겨찾기 누르면 클래스 추가 추가 class="stl_recommend stl_recommend_on" -->
+                            <li class="stl_recommend" title="즐겨찾기"><a href="#"></a></li>
+							<li class="stl_reple_count"><a href="#"><strong>27</strong>개</a></li>
+							<li class="stl_usertime"><span>2013년 05월 21일 오후 07시58분</span></li>
+							<!-- 추천 카운트, 내가쓴글일경우 class="stl_like_count_off_me" -->
+							<li class="stl_like_count_off" title="추천하기"><a href="#"></a></li>
+							<!-- //추천 카운트 -->
+							</ul>	
+						</div>
+						<!-- //글작성 시간 및 액션박스 -->
+					</div>
+					<!-- //글박스 --> 
+                    <div class="stl_artcl_box"> 
+						<!-- 비공개 그룹 --> 
+						<a href="#" class="stl_private">비공개 그룹 : 있으나마나</a> 
+						<!-- //비공개 그룹 -->
+						<div class="stl_artcl_body"> 
+							<!-- 내 등록글 수정/삭제 -->
+							<ul class="stl_edit" style="display:;">
+							<li><a href="#"><img src="images/gr/modi_pen.png" width="16" height="16" alt="수정"></a></li>
+							<li><a href="#"><img src="images/gr/del.png" width="16" height="16" alt="삭제"></a></li>
+							</ul>
+							<!-- //내 등록글 수정/삭제 --> 
+							<!-- 좌측 작성자 사진 -->
+							<div class="stl_pic_writer"><a href="#"><img src="images/gr/img_people_01.gif"></a></div>
+							<!-- 우측 컨텐츠 -->
+							<div class="stl_contents">
+								<div class="stl_user_area"><a href="#" class="stl_user"><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+									<!-- UC 연동 
+									<ul class="stl_uc">
+									<li>UC 상태아이콘(로그온/통화가능) 여기</li>
+									<li><a href="#" title="채팅하기"><img src="images/gr/uc_chat.png" width="16" height="12" alt="채팅하기"></a></li>
+									<li><a href="#" title="화상회의"><img src="images/gr/uc_video_chat.png" width="11" height="12" alt="화상회의"></a></li>
+									<li><a href="#" title="전화하기"><img src="images/gr/uc_phone.png" width="15" height="12" alt="전화하기"></a></li>
+									<li><a href="#" title="휴대폰 전화하기"><img src="images/gr/uc_mobile_phone.png" width="12" height="12" alt="휴대폰 전화하기"></a></li>
+									<li><a href="#" title="UMM 전달"><img src="images/gr/uc_umm.png" width="17" height="12" alt="UMM 전달"></a></li>
+									<li><a href="#" title="쪽지보내기"><img src="images/gr/uc_msg.png" width="19" height="12" alt="쪽지보내기"></a></li>
+									<li><a href="#" title="메일보내기"><img src="images/gr/uc_mail.png" width="13" height="12" alt="메일보내기"></a></li>
+									</ul>
+									 //UC 연동 --> 
+								</div>
+								<!-- 본문 -->
+								<div class="stl_artcl"><!-- 더보기 누르면 클래스 추가 class="stl_artcl stl_view" --><a href="#">http://gw.handysoft.co.kr 링크테스트</a>오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다. 오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+								<!-- //본문 --> 
+								<a href="#" class="stl_view_all">내용더보기</a> 
+								<!-- 첨부사진 -->
+								<ul class="stl_atched_pics">
+								<!--li 반복으로 3개 까지 -->
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+								</ul>
+								<!-- //첨부사진 -->
+								<div class="stl_atched"><a href="#" class="stl_atched_file"><strong>다운로드</strong><span>파일명.pdf</span></a></div>
+								<div class="stl_atched"><a href="#" class="stl_atched_umm"><strong>재생</strong><span>Audio</span></a></div>
+								<!-- 인용글 -->
+								<div class="stl_add_quote"><a href="#" class="stl_pic_writer02"><!-- 원문 작성자 사진 --><img src="images/gr/img_people_02.gif"></a>
+									<div class="stl_artcl_con"><a href="#" class="stl_user02"><!-- 원문 작성자 --><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+										<!-- 인용원문 -->
+										<div class="stl_artcl_smpl"><!-- 더보기 누르면 클래스 추가 class="stl_artcl stl_view" --><a href="#">http://gw.handysoft.co.kr 링크테스트</a>오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다. 오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+										<!-- //인용원문 --> 
+										<a href="#" class="stl_view_all">내용더보기</a><span class="stl_usertime02">2013년 05월 21일 오후 07시58분</span> 
+										<!-- 인용글 첨부사진 -->
+										<ul class="stl_atched_pics">
+										<!--li 반복으로 3개 까지 -->
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										<li><a href="#"><img src="images/gr/missing_130.gif"></a></li>
+										</ul>
+										<!-- //인용글 첨부사진 --></div>
+								</div>
+								<!-- //인용글 --> 
+								<!-- 인용글 -->
+								<div class="stl_add_quote stl_excision"> 인용글이 삭제되었습니다. </div>
+								<!-- //인용글 --> 
+							</div>
+							<!-- //우측 컨텐츠 --> 
+						</div>
+						<!-- 글작성 시간 및 액션박스 -->
+						<div class="stl_infoact">
+							<ul>
+							<li>
+								<ul class="stl_artcl_act">
+								<li><a href="#">댓글달기</a></li>
+								<li><a href="#">인용하기</a></li>
+								</ul>
+							</li>
+                            <!-- 즐겨찾기 누르면 클래스 추가 추가 class="stl_recommend stl_recommend_on" -->
+                            <li class="stl_recommend stl_recommend_on" title="즐겨찾기"><a href="#"></a></li>
+							<li class="stl_reple_count"><a href="#"><strong>27</strong>개</a></li>
+							<li class="stl_usertime"><span>2013년 05월 21일 오후 07시58분</span></li>
+							<!-- 추천 카운트, 내가쓴글일경우 class="stl_like_count_me" -->
+							<li class="stl_like_count" title="추천"><a href="#">200</a></li>
+							<!-- //추천 카운트 -->
+							</ul>
+						</div>
+						<!-- //글작성 시간 및 액션박스 --> 
+					</div>
+					<!-- //글박스 --> 
+					<!-- 댓글영역 -->
+					<div class="stl_reple_area">
+						<ul class="stl_reple_lst">
+						<!-- 댓글 li 반복으로 기본 2개 댓글수 클릭시 나머지 표현 -->
+						<li> 
+							<!-- 내 댓글 삭제 --> 
+							<a href="#" class="stl_reple_del" style="display:;"><img src="images/gr/del.png" width="16" height="16" alt="삭제"></a><a href="#" class="stl_pic_writer02"><!-- 댓글 작성자 사진 --><img src="images/gr/img_people_02.gif"></a>
+							<div class="stl_artcl_con"><a href="#" class="stl_user02"><!-- 댓글 작성자 --><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+								<!-- 댓글 -->
+								<div class="stl_artcl_smpl">오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+								<!-- //댓글 --> 
+								<span class="stl_usertime02">2013년 05월 21일 오후 07시58분</span> </div>
+						</li>
+						<li> 
+							<!-- 내 댓글 삭제 --> 
+							<a href="#" class="stl_reple_del" style="display:;"><img src="images/gr/del.png" width="16" height="16" alt="삭제"></a><a href="#" class="stl_pic_writer02"><!-- 댓글 작성자 사진 --><img src="images/gr/img_people_02.gif"></a>
+							<div class="stl_artcl_con"> <a href="#" class="stl_user02"><!-- 댓글 작성자 --><strong class="stl_username">최희선</strong><span>(제품보증팀 선임연구위원)</span></a><a href="#" class="stl_btn_buddycard">사용자정보</a> 
+								<!-- 댓글 -->
+								<div class="stl_artcl_smpl"><!-- 더보기 누르면 클래스 추가 class="stl_artcl stl_view" --><a href="#">http://gw.handysoft.co.kr 링크테스트</a>오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다. 오늘은 "부부의날" 이랍니다. 회사 업무로 인해 세상에서 제일 소중한 내 배우자를 잘 챙기지 못하셨다면 , 오늘 하루 만큼은 일찍 퇴근하셔서 간단한 담소와 맛있는 음식을 즐기는 것도 좋아 보입니다.</div>
+								<!-- //댓글 --> 
+								<a href="#" class="stl_view_all">내용더보기</a><span class="stl_usertime02">2013년 05월 21일 오후 07시58분</span> </div>
+						</li>
+						</ul>
+						<div class="stl_add_reple" style="display:;">
+							<textarea id="" name="" rows="1"></textarea>
+							<a href="#" class="stl_btn_share" title="등록">등록</a></div>
+					</div>
+					<!-- //댓글영역 --> 
+				</div>
+				<!-- //글&댓글 반복 --> 
+				<!--//글 불러오기 --> 
+				<!-- 기능버튼바 -->
+				<div id="prev_bar_loading" class="stl_loading stl_btmbar display_none"><img src="/sns/images/gr/loading.gif" width="32" height="15"></div>
+                <div id="prev_bar" class="stl_btmbtn">
+							<a id="prev_bar_link" href="javascript:if(deleteState == true){pageReload();}else{TimeLine(page, need_data);}" title="이전글보기" style="display: none;"><img src="/sns/images/gr/btn_next.png" width="96" height="29" class="fl"></a>
+							<a id="prev_bar_top" href="#loading_bar_today" title="맨위로가기" style="width: 100%;"><img src="/sns/images/gr/btn_top.png" width="96" height="29" class="fr"></a>
+						</div>
+				<!-- //기능버튼바 --> 
+				<!-- 하단로딩바 -->
+				<div class="stl_loading stl_btmbar"><img src="images/gr/loading.gif" width="32" height="15"></div>
+				<!-- //하단로딩바 --> 
+			</div>
+			<!-- //SNS timeline --> 
+		</div>
+		<!-- //stl_wrap --> 
+	</div>
+	<!-- //stl_container --> 
+    </div>
+    <!-- content_box -->
+</div>
+<!-- //Wrapper -->
+</body>
+</html>

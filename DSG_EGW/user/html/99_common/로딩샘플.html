@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 게시판 신청</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 800 x 450 -->
+    <body>
+        <div class="handy-scroll">
+            <div class="wrapper">
+                <!-- header -->
+                <h1 class="title">내 파일</h1>
+                <!-- //header -->
+                <div class="container_area">
+                    <!-- btn -->
+                    <div class="btns_area">
+                        <div class="align_lf">
+                            <a class="action_btn">선택완료</a>	
+                        </div>
+                        <div class="align_rg">
+                            <div class="group">
+                                <span>다운로드 가능 기간 : </span>
+                                <div class="selectbox">
+                                    <select> 
+                                        <option>무제한</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <span>다운로드 가능 횟수 : </span>
+                                <div class="selectbox">
+                                    <select> 
+                                        <option>무제한</option>
+                                    </select>
+                                </div>
+                            </div>  
+                            <div class="group">
+                                <span>필터 : </span>
+                                <div class="selectbox">
+                                    <select> 
+                                        <option>모든유형</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <a href="#" class="ico_btn grid on">그리드형</a>
+                                <a href="#" class="ico_btn view_lst">리스트형</a>
+                            </div>
+                            <div class="selectbox">
+                                <select> 
+                                    <option>50개</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- body -->
+                    <div class="body_file"> 
+                        <!-- LnB-->
+                        <div class="lnb_area">   
+                            <div class="lnb_lst">
+                                <!-- basic list menu area -->   
+                                <div class="lnb_menu_area">
+                                    <div class="handy-scroll">
+                                        <div class="wrap-hs">
+                                            <!-- 즐겨찾기 -->
+                                            <div class="lnb_menu">
+                                                <div class="handy-scroll">
+                                                    <div class="wrap-hs">
+                                                        <div class="folder">									
+                                                            <ul class="dynatree-container">
+                                                                <li class="">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                        <span class="dynatree-expander"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder" >EGW As-Is</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <ul style="">
+                                                                        <li class="">
+                                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                                <span class="dynatree-connector"></span>
+                                                                                <span class="dynatree-icon"></span>
+                                                                                <a href="#" class="dynatree-title">
+                                                                                    <span class="node-folder">회의 내용</span>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="dynatree-lastsib">
+                                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                                <span class="dynatree-connector"></span>
+                                                                                <span class="dynatree-icon"></span>
+                                                                                <a href="#" class="dynatree-title">
+                                                                                    <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                                                </a>
+                                                                            </div></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                                                </li>
+                                                            </ul>
+                                                        </div>	
+                                                    </div>
+                                                </div>
+                                            </div>                
+                                            <div class="lnb_menu tree divide open"> 
+                                                <a class="menu_title category">내 폴더</a>
+                                                <div class=" handy-scroll">
+                                                    <div class="wrap-hs">
+                                                        <div class="folder">									
+                                                            <ul class="dynatree-container">
+                                                                <li class="">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                        <span class="dynatree-expander"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder" >EGW As-Is</span>
+                                                                            <span class="shared">공유된폴더</span>
+                                                                            <!-- //공유된 폴더 형 -->
+                                                                        </a>
+                                                                    </div>
+                                                                    <ul style="">
+                                                                        <li class="">
+                                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                                <span class="dynatree-connector"></span>
+                                                                                <span class="dynatree-icon"></span>
+                                                                                <a href="#" class="dynatree-title">
+                                                                                    <span class="node-folder">회의 내용</span>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li class="dynatree-lastsib">
+                                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                                <span class="dynatree-connector"></span>
+                                                                                <span class="dynatree-icon"></span>
+                                                                                <a href="#" class="dynatree-title">
+                                                                                    <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                                                </a>
+                                                                            </div></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                                                </li>
+                                                                <li class="">
+                                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span>
+                                                                        <span class="shared">공유된폴더</span>
+                                                                        </a></span>			
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>              
+                                            <div class="lnb_menu divide">
+                                                <a class="menu_title category">공유받은폴더</a>	
+                                            </div>
+                                            <div class="lnb_menu divide open">
+                                                <a class="menu_title category">스퀘어 폴더</a>
+                                                <ul class="sub_lst">
+                                                    <li><a href="#">MFC 프로젝트</a></li>
+                                                    <li><a href="#">UI 설계모음</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- content -->
+                        <!-- ***** 나이스 스크롤로 라이브러리 변경에 따라 스크롤 클래스 위치 변경 -->
+                        <div class="container_area2 handy-scroll" >
+
+                            <div class="wrap-hs">
+                                <!-- 본문 영역 -->
+                                <!-- !!!!!!!!!!!!  -->
+                                <!-- 로딩되고 있는 영역에 아래 요소 사용 -->
+                                <div class="popup open loading">
+                                    <div class="state_message">
+                                        <div class="state_loading">로딩</div>
+                                    </div>
+                                </div>
+                                <!--// 여기까지 로딩-->
+
+                                <div class="container" style="padding:0">
+                                    <!-- 리스트 영역 -->
+                                    <div class="content_table">	
+                                        <div class="table_head mt_top30">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:37px;">
+                                                    <col style="width:29px;">
+                                                    <col style="wid th:55px;">
+                                                    <col style="width:*;">
+                                                    <col style="width:87px;">
+                                                    <col style="width:137px;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th><span class="blind">플래그</span></th>
+                                                        <th><span>종류</span></th>
+                                                        <th class="ascend"><a href="#">이름</a></th>
+                                                        <th>크기</th>
+                                                        <th>수정일</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="table_body scroll_area handy-scroll">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:37px;">
+                                                    <col style="width:29px;">
+                                                    <col style="width:55px;">
+                                                    <col style="width:*;">
+                                                    <col style="width:87px;">
+                                                    <col style="width:137px;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox" disabled="" /><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file folder">폴더</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">대용량첨부폴더</a>
+                                                        </td>
+                                                        <td></td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox" disabled=""/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file shar">공유폴더</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">공유폴더_1</a>			
+                                                        </td>
+                                                        <td></td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file doc">DOC 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.doc</a>			
+                                                        </td>
+                                                        <td class="capacity">999KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file xls">XLS 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.xls</a>			
+                                                        </td>
+                                                        <td class="capacity">55.3KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file ppt">PPT 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.ppt</a>
+                                                        </td>
+                                                        <td class="capacity">999KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file zip">ZIP 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.zip</a>
+                                                        </td>
+                                                        <td class="capacity">12KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file pdf">PDF 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.pdf</a>
+                                                        </td>
+                                                        <td class="capacity">4KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file doc">DOC 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.doc</a>			
+                                                        </td>
+                                                        <td class="capacity">999KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file xls">XLS 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.xls</a>			
+                                                        </td>
+                                                        <td class="capacity">55.3KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file ppt">PPT 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식_휴가계획서_기본양식.ppt</a>
+                                                        </td>
+                                                        <td class="capacity">999KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file zip">ZIP 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.zip</a>
+                                                        </td>
+                                                        <td class="capacity">12KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> 
+                                                            <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                        </td>
+                                                        <td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+                                                        <td><span class="ico_file pdf">PDF 파일</span></td>
+                                                        <td>
+                                                            <a href="#" class="subject">휴가계획서_기본양식.pdf</a>
+                                                        </td>
+                                                        <td class="capacity">4KB</td>
+                                                        <td class="date">2017-09-25 08:26</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                        
+                                    </div>
+                                    <!-- // 리스트 영역 -->
+                                </div>
+                                <!-- // 본문 영역 -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //body -->	
+            </div>
+        </div>	
+    </body>
+</html>

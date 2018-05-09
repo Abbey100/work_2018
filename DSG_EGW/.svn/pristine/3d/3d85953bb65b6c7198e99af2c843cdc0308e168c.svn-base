@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 비전자문서 상세 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 814 -->
+	<body>
+		<!-- header -->
+		<h1>법인카드 비용 정산서</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="btn" href="#">수정</a>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="scroll_area">
+				<div class="handy-scroll">		
+					<div class="content">
+						<!-- 첨부된파일 -->
+						<div class="">
+							<dl class="file_info">
+								<dt><a class="btn_open open"></a>첨부파일</dt>
+								<dd>
+									<a class="text_btn">전체선택</a>
+									<a class="text_btn">저장</a>
+									&#40;<span class="txt">일반첨부 10</span>
+									<span class="divider"></span>
+									<span class="txt">대용량 1</span>											&#41;				
+								</dd>
+							</dl>
+
+							<div class="file_lst download">
+								<ul>
+									<li>
+										<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+										<a class="ico_btn small download">다운로드</a>
+										<a class="ico_btn small storage">스토리지로저장</a>
+										<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+										<span class="file_size">311KB</span>
+									</li>
+									<li>
+										<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+										<a class="ico_btn small download">다운로드</a>
+										<a class="ico_btn small storage">스토리지로저장</a>
+										<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+										<span class="file_size">311KB</span>
+									</li>
+									<li>
+										<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+										<a class="ico_btn small download">다운로드</a>
+										<a class="ico_btn small storage">스토리지로저장</a>
+										<a class="file_name"><span class="badge bigdata">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+										<span class="file_downopt">
+											&#40;
+											<em>~2017-09-03</em>
+											/&nbsp;잔여
+											<em>100회</em>&#41;
+										</span>
+										<span class="file_size">311KB</span>
+
+									</li>
+								</ul>
+							</div>
+
+							<dl>
+								<dt>경로정보</dt>
+								<dd>
+									<div class="vertical_table">	
+										<table>
+											<colgroup>
+												<col style="width: 133px;">
+												<col>
+												<col style="width: 133px;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th>원기안자</th>
+													<td>홍길동</td>
+													<th>원기안(발신)부서</th>
+													<td>제품기획팀</td>
+												</tr>
+												<tr>
+													<th>접수자</th>
+													<td>홍길동</td>
+													<th>기안일자</th>
+													<td>2017-11-20 12:55</td>
+												</tr>
+												<tr>
+													<th>결재자</th>
+													<td>홍길동</td>
+													<th>결재일자</th>
+													<td>2017-11-20 12:55</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>시행정보</dt>
+								<dd>
+									<div class="vertical_table">	
+										<table>
+											<colgroup>
+												<col style="width: 133px;">
+												<col>
+												<col style="width: 133px;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th>생산기관문서번호</th>
+													<td>0123-2315-45387</td>
+													<th>등록일자</th>
+													<td>2017-11-20</td>
+												</tr>
+												<tr>
+													<th>시행종류</th>
+													<td>대내시행</td>
+													<th>시행일자</th>
+													<td>2017-11-20</td>
+												</tr>													
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+							<dl>
+								<dt>문서정보</dt>
+								<dd>
+									<div class="vertical_table">	
+										<table>
+											<colgroup>
+												<col style="width: 133px;">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th>등록구분</th>
+													<td>수신</td>
+												</tr>
+												<tr>
+													<th>문서분류</th>
+													<td>문서함명</td>
+												</tr>
+												<tr>
+													<th>열람범위(내부)</th>
+													<td>수신</td>
+												</tr>
+												<tr>
+													<th>열람제한(보안)</th>
+													<td>설정안함</td>
+												</tr>
+												<tr>
+													<th>보안등급</th>
+													<td>없음</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</dd>
+							</dl>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

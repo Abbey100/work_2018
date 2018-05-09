@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.12.1.min.js"></script>
+
+        <!--graph-->
+        <script type="text/javascript" src="../../js/jqplot/jquery.jqplot.js"></script>
+        <script type="text/javascript" src="../../js/jqplot/jqplot.categoryAxisRenderer.js"></script>
+        <script type="text/javascript" src="../../js/jqplot/jqplot.barRenderer.js"></script>
+        <script type="text/javascript" src="../../js/jqplot/jqplot.highlighter.js"></script>
+        <script type="text/javascript" src="../../js/jqplot/jqplot.pointLabels.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../js/jqplot/jquery.jqplot.css" >
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <!-- <h1 class="logo"><a title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+2017-09-05 사용자단 ux 적용으로 인해 로고 영역 삭제 by 백은경 -->
+                <!-- Area Title -->
+                <h1 class="area_title">통계정보</h1>
+                <div class="user_menu">
+                    <!-- User information -->
+                    <a class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    <div class="user_photo" title="MarkElliot Zuckerberg MarkElliot Zuckerberg"> 
+                        <img src="../../img/profile_photo_blank.png">
+                    </div>
+                    <!-- Alram -->
+                    <a class="btn_noti" title="show noti">노티확인</a>
+                    <!-- Contextual area btn -->
+                    <a class="btn_contextual" title="open contextual">컨텍스츄얼영역 열기</a>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- gnb -->
+            <div class="gnb_area"> 
+                <!-- 메뉴영역 -->
+                <div class="gnb">
+                    <ul>
+                        <li class="gnb_menu first home">  
+                            <!--
+                            <div class="gnb_menu second">
+                            <h2>홈</h2>
+                            </div>
+                            -->
+                        </li>
+                        <li class="gnb_menu first set">
+                            <div class="gnb_menu second">
+                                <h2>기본 설정 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                            <li><a title="클래스 관리">클래스 관리</a></li>
+                                            <li><a title="배치 관리">배치 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+                                    <li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+                                    <li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+                                    <li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+                                    <li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+                                    <li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first menu">
+                            <div class="gnb_menu second">
+                                <h2>메뉴 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="서식 관리">서식 관리</a></li>
+                                            <li><a title="서식 분류">서식 분류</a></li>
+                                            <li><a title="표어 관리">표어 관리</a></li>
+                                            <li><a title="관인 관리">관인 관리</a></li>
+                                            <li><a title="모듈 관리">모듈 관리</a></li>
+                                            <li><a title="한글 서식 관리">한글 서식 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="게시판 관리">게시판 관리</a></li>
+                                            <li><a title="양식 관리">양식 관리</a></li>
+                                            <li><a title="캐시 관리">캐시 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="동호회 관리">동호회 관리</a></li>
+                                            <li><a title="환경 설정">환경 설정</a></li>
+                                            <li><a title="토론실 관리">토론실 관리</a></li>
+                                            <li><a title="마일리지 관리">마일리지 관리</a></li>
+                                            <li><a title="가산점 관리">가산점 관리</a></li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="진행중인 그룹">진행중인 그룹</a></li>
+                                            <li><a title="종료된 그룹">종료된 그룹</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="파일 관리">파일 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="">관리자 유실 달력 관리</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first system">
+                            <div class="gnb_menu second">
+                                <h2>시스템 정보</h2>
+                                <ul>
+                                    <li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+                                    <li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="웹메일">웹메일</a></li>
+                                            <li><a title="웹폴더">웹폴더</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first statistics">
+                            <div class="gnb_menu second">
+                                <h2>통계정보</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="결재 통계">결재 통계</a></li>
+                                            <li><a title="웹메일 통계">웹메일 통계</a></li>
+                                            <li><a title="웹폴더 통계">웹폴더 통계</a></li>
+                                            <li><a title="동호회 통계">동호회 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="로그인">로그인</a></li>
+                                            <li><a title="게시판">게시판</a></li>
+                                            <li><a title="결재">결재</a></li>
+                                            <li><a title="권한">권한</a></li>
+                                            <li><a title="업무넷">업무넷</a></li>
+                                            <li><a title="스퀘어">스퀘어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>        
+            <!-- //gnb -->  
+            <!-- body -->
+            <div class="body">
+                <div class="lnb_area">
+                    <ul class="lnb">
+                        <li class="lnb_menu first drop_down open"><!-- [D]클릭시 open 추가 -->
+                            <a class="first_ttl" title="통계">통계</a> 
+                            <ul class="lnb_menu second">
+                                <li class="current"><a class="second_ttl" title="결재 통계">결재 통계</a></li>
+                                <li class=""><a class="second_ttl" title="웹메일 통계">웹메일 통계</a></li>
+                                <li class=""><a class="second_ttl" title="웹폴더 통계">웹폴더 통계</a></li>
+                                <li class=""><a class="second_ttl" title="동호희 통계">동호희 통계</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="액션로그">액션로그</a> 
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="">로그인</a></li>
+                                <li><a class="second_ttl" title="게시판">게시판</a></li>
+                                <li><a class="second_ttl" title="결재">결재</a></li>
+                                <li><a class="second_ttl" title="권한">권한</a></li>
+                                <li><a class="second_ttl" title="업무넷">업무넷</a></li>
+                                <li><a class="second_ttl" title="스퀘어">스퀘어</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="container_area">
+                    <div class="title_area">
+                        <h2><span class="title">웹메일 통계</span></h2>
+                    </div>
+                    
+                    <div class="content_section tree_out"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="content_section tree_out"> -->
+                    
+                        <div class="content_area">
+
+                            <!-- 서브 탭 -->
+                            <div class="tab_area">
+                                <ul>
+                                    <li class="current"><a href="#"><span class="tab_title">기간별 발송 현황</span></a></li>
+                                    <li><a href="#" ><span class="tab_title">부서 및 사용자별 현황</span></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 컨텐츠 스크롤 -->
+                            <div class="scroll_area_srch">
+                                <!-- 상단 검색 -->
+                                <div class="srch_statistics">
+                                    <!-- 게시판 상세 영역 -->
+                                    <div class="board_view">
+
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type01">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:142px">
+                                                    <col style="width:*">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>구분</th>
+                                                        <td>
+                                                            <ul class="radio_list">
+                                                                <li>
+                                                                    <span class="radio">
+                                                                        <label for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">일별 발송 현황</label>
+                                                                        <input type="radio" name="opinions" id="radio-1" value="" />
+                                                                    </span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="radio">
+                                                                        <label class="checked" for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">월별 발송 현황</label>
+                                                                        <input type="radio" name="opinions" id="radio-2" value="" checked="" />
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- 게시판 상세 하단 버튼 -->
+                                        <div class="view_btn_area">
+                                            <a href="#" class="btn_complete">조회</a>
+                                        </div>
+
+                                    </div>
+                                    <!-- //게시판 상세 영역 -->
+                                </div>
+                                <!-- //상단 검색 -->
+                                
+                                <!-- 검색결과 -->
+                                <div class="board_list">
+        							
+        							<!--검색 결과-->
+        							<div class="division_select">
+        								<p class="division_select_result"><strong class="t_green">2016-08 ~ 2017-07</strong> 월별 발송 현황</p>
+        							</div>
+
+
+                                    <!-- 게시판 목록 상단 버튼 -->
+                                    <div class="list_btn_area none"><!-- [D] 2017-09-21 그래프 영역에 가려져 링크영역이 잡히지 않는 오류. class에 none 추가. by 정수진 -->
+                                        <!-- 좌측 버튼영역 -->
+                                        <div class="left_btn">
+                                            <a href="#" class="btn_excel_down" title="엑셀 다운로드">다운로드</a>
+                                        </div>                               
+                                    </div>
+
+                                    <!-- graph -->
+                                    <div class="graph_box" style="height:432px;">
+        								<div  id="chartdiv" >
+        								
+        								</div>							
+                                    </div>
+
+        							<script type="text/javascript">
+        								//$.jqplot.config.enablePlugins = true;
+        								var s1 = [20, 55, 67, 58, 90, 23, 56, 98, 56, 23, 16, 33];
+        								var s2 = [['10:00~11:00', 0], ['12:00~13:00', 1], ['12:00~13:00', 2], ['12:00~13:00', 3], ['12:00~13:00', 4], ['12:00~13:00', 5], ['12:00~13:00', 6], ['12:00~13:00', 7], ['12:00~13:00', 8], ['12:00~13:00', 9], ['12:00~13:00', 10], ['12:00~13:00', 11]];
+        								var x_ticks = ['2016-08', '2016-09', '2016-10', '2016-11', '2016-12', '2017-01', '2017-02', '2017-03', '2017-04', '2017-05', '2017-06', '2017-07'];
+        								var plot1 = null;
+        							
+        								plot1 = $.jqplot ('chartdiv', [s1], {
+        										//animate: !$.jqplot.use_excanvas,
+        										title:{show:false},										
+        										axesDefaults:{
+        											tickOptions:{
+        												showGridline: false,
+        												showMark: false
+        											},
+        										},
+        										axes: {
+        											xaxis: {
+        												renderer: $.jqplot.CategoryAxisRenderer,
+        												ticks: x_ticks,
+        												pad:0
+        											},
+        											yaxis:{
+        												show:false
+        											}
+        										},
+        										grid: {
+        											drawGridLines: false,  
+        											shadow: false, 
+        											drawBorder: false
+        										},
+        										seriesDefaults:{
+        											renderer:$.jqplot.BarRenderer,
+        											rendererOptions: {
+        												barWidth: 40, 
+        												shadowDepth: 0,    
+        												highlightMouseOver: true
+        											},
+        											showMarker: false,
+        											pointLabels: { show:true, stackedValue: true},
+        											color:'#57bce1'
+        											
+        										},										
+        										highlighter: { 
+        											show: true,
+        											tooltipLocation: 'ne',
+        											sizeAdjust:0,
+        											tooltipOffset:0,
+        											lineWidthAdjust:0,
+        											tooltipContentEditor: function(current, serie, index, plot){
+        												 var stringToReturn = '<p class="tooltip-info"><span class="title">최다 메일 발송 시간</span><span class="time">'+s2[index][0]+'</span> : <span class="length">'+s2[index][1]+'</span> 건</p>'; 
+        												return stringToReturn;
+        											}
+        										}
+        								});
+        							</script>
+                                </div>
+                                <!-- //검색결과 -->
+
+        						<!-- board_list_table -->
+                                <div class="board_list_table">
+    								 <div class="list_btn_area">
+    									<!-- 좌측 버튼영역 -->
+    									<div class="left_btn">
+    										<!-- 셀렉트 박스 -->
+                                            <div class="selectbox" style="width: 125px">
+                                                <select>
+                                                    <option selected>선택</option>
+                                                    <option>2017-07</option>
+                                                    <option>2017-06</option>
+                                                    <option>2017-05</option>
+                                                </select>
+                                            </div>
+    									</div>     
+    									<div class="left_btn"><span class="txt">주간 발송 현황</span></div>
+    								</div>
+
+                                    <table>
+                                        <colgroup>   
+    										<col style="width:50%">
+                                            <col style="width:*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>기간</th>
+                                                <th>발송건</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td title="2017-07-01~2017-07-14">2017-07-01~2017-07-14</td>
+                                                <td title="99">99</td>  
+                                            </tr>
+                                           <tr>
+                                                <td title="2017-07-01~2017-07-14">2017-07-01~2017-07-14</td>
+                                                <td title="99">99</td>  
+                                            </tr>
+    										<tr>
+                                                <td title="2017-07-01~2017-07-14">2017-07-01~2017-07-14</td>
+                                                <td title="99">99</td>  
+                                            </tr>
+    										<tr>
+                                                <td title="2017-07-01~2017-07-14">2017-07-01~2017-07-14</td>
+                                                <td title="99">99</td>  
+                                            </tr>
+    										<tr>
+                                                <td title="2017-07-01~2017-07-14">2017-07-01~2017-07-14</td>
+                                                <td title="99">99</td>  
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- //컨텐츠 스크롤 -->
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- //body -->
+            
+        </div>
+        <!-- //wrapper -->
+            
+    </body>
+</html>

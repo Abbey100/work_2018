@@ -1,0 +1,123 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../../../03_common/javascripts/jquery.fileUpload/fileUpload.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+    <div class="container_box meeting">
+<!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>회의 안건 조회</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">편집</a></span></li>
+      <li><span><a href="#">닫기</a></span></li>
+    </ul>
+  </div>
+<!-- //버튼 영역 -->
+<!-- 컨텐츠 영역 -->
+  <div class="view_body_contents read">
+<!-- 회의 정보영역 -->
+    <div class="subj_box">
+    <table width="100%" class="meeting_table">
+        <colgroup>
+        <col width="60px;">
+        <col width="">
+        </colgroup>
+        <tbody>
+        <tr>
+            <th colspan="4">
+                <p></p>
+            </th>
+        </tr>
+        <tr class="etc_info">
+            <th>업무그룹</th>
+            <td colspan="3">No working group</td>
+            <th>회의</th>
+            <td colspan="3">핸디소프트 그룹웨어 관련</td>
+        </tr>
+        <tr class="subject">
+            <th>제목</th>
+            <td class="subj" colspan="3">안건을 또 등록</td>
+        </tr>                   
+        <tr class="explain">
+             <th>설명</th>
+            <td colspan="3">
+            <div class="wr_form_td">
+                <textarea class="basic_txtarea" style="width:100%; height: 60px;" wrap="hard"; readonly>회의에 대한 설명</textarea></div>
+            </td>
+        </tr> 
+        <tr class="result">
+            <th>결과</th>
+            <td colspan="3">
+            <div class="wr_form_td">
+                <textarea class="basic_txtarea" style="width:100%; height: 60px;" wrap="hard"; readonly>회의 결과</textarea></div>
+            </td>
+        </tr>
+
+        <tr class="mtn_optn">
+        <th>상태</th>
+        <td class="mttng_status running">
+
+
+                진행중
+
+
+        </td>
+    </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- // 회의 정보영역 -->
+      <!-- 첨부파일 -->
+          <div class="add_file_list"> <span class="list_num"><strong>첨부파일</strong> <a href="#" class="btn_trig">리스트펴기,닫기</a></span> <span><a href="#"  class="file_all_save">모두저장</a></span> <span><a href="#" class="file_save">첨부저장</a></span>
+        <div class="file_list">
+          <ul>
+            <li>
+              <input type="checkbox" checked>
+              <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+            <li>
+              <input type="checkbox" checked>
+              <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+          </ul>
+        </div>
+      </div>
+    <!-- // 첨부파일 -->
+  <!-- 의견 -->
+      <div class="comment_area">
+        <span class="comment_bg_ttl">의견</span>
+        <div class="comment_write">
+            <textarea class="txtarea" cols="20" rows="4"></textarea>
+            <input class="inp" type="button" width="68" height="51" border="0" value="의견입력">          </div>
+          <div class="comment_view">
+              <div class="comment_info">
+                  <a href="#">백은경</a><span class="date">2015.06.17 10:32</span>
+                  <ul><a href="#"><li class="cmmt">댓글</li></a>
+                      <span><a href="#"><li class="cmmt_del">삭제</li></a></span></ul>
+              </div>
+              <div class="comment_ctt">의견</div>
+          </div>
+        </div>
+      
+    <!-- //의견 -->
+        
+        
+  </div>
+      
+
+    </div>
+</div>
+</body>
+</html>

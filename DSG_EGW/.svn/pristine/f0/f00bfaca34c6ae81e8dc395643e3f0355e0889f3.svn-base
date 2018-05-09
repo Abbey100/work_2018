@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 게시판 추가 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <!-- popup 800 x 770 -->
+    <body>
+        <div class="wrapper">
+            <!-- header -->
+            <h1>게시판 추가</h1>
+            <!-- // header -->
+            <!-- body -->
+            <div class="cont_wrap container_area">				
+                <!-- 본문 영역 -->
+                <div class="scroll_area handy-scroll">
+                    <div class="wrap-hs">
+                        <div class="form_table">
+                            <table>
+                                <colgroup>
+                                    <col style="width:150px;">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>유형</th>
+                                        <td>
+                                            <div class="selectbox" style="width:100px">
+                                                <select>
+                                                    <option>공지사항</option>
+                                                    <option selected>공지사항</option>
+                                                    <option>공지사항</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>게시판명</th>
+                                        <td>
+                                            <div class="input_group multi focused">
+                                                <!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+                                                <input type="text" class="basic_input" value="농구동호회 자료실" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>게시판 사용여부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_00" />
+                                                    <label for="type_00">사용함</label></span>
+
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_01" />
+                                                    <label for="type_01">사용안함</label>
+                                                </span>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>읽기권한</th>
+                                        <td>
+                                            <div class="selectbox" style="width:80px">
+                                                <select>
+                                                    <option>정회원</option>
+                                                    <option selected>준회원</option>
+                                                    <option>비회원</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>쓰기권한</th>
+                                        <td>
+                                            <div class="selectbox" style="width:80px">
+                                                <select>
+                                                    <option>정회원</option>
+                                                    <option selected>준회원</option>
+                                                    <option>비회원</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>목록갯수</th>
+                                        <td>
+                                            <div class="selectbox" style="width:70px">
+                                                <select>
+                                                    <option>30개</option>
+                                                    <option selected>20개</option>
+                                                    <option>10개</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>파일첨부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_02" />
+                                                    <label for="type_02">사용함</label></span>
+
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_03" />
+                                                    <label for="type_03">사용안함</label>
+                                                </span>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>답글여부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_04" />
+                                                    <label for="type_04">사용함</label></span>
+
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_05" />
+                                                    <label for="type_05">사용안함</label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>익명여부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_06" />
+                                                    <label for="type_06">사용함</label></span>
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_07" />
+                                                    <label for="type_07">사용안함</label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>게시물 관리자</th>
+                                        <td>
+                                            <div class="input_group has_btn">
+                                                <div class="token-input">
+                                                    <ul class="token-input-list ui-sortable">
+                                                        <li title="" class="token-input-token">
+                                                            <p>이핸디</p>
+                                                            <span class="token-input-modi-token">modify</span>
+                                                            <span class="token-input-delete-token">delete</span>
+                                                        </li>
+                                                    </ul>
+                                                    <input type="text" style="display: none;">
+                                                    <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                    <a class="ico_btn small add" href="#">조직도</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>								
+                                    <tr>
+                                        <th>메뉴명</th>
+                                        <td class="text_input">
+                                            <input type="text" class="border_input" id="input" placeholder="링크명을 입력하세요">
+                                        </td>
+                                    </tr>			
+
+                                    <tr>
+                                        <th>사용여부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_08" />
+                                                    <label for="type_08">사용함</label></span>
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_09" />
+                                                    <label for="type_09">사용안함</label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>읽기권한</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_10" />
+                                                    <label for="type_10">사용함</label></span>
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_11" />
+                                                    <label for="type_11">사용안함</label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>URL</th>
+                                        <td class="text_input">
+                                            <input type="text" class="border_input" id="input" placeholder="http://">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>사용여부</th>
+                                        <td>
+                                            <div class="option">
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_08" />
+                                                    <label for="type_08">사용함</label></span>
+                                                <span class="form">
+                                                    <input type="radio" name="type" id="type_12" />
+                                                    <label for="type_12">사용안함</label>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>	
+
+                        </div>
+                    </div>
+                </div>
+                <div class="btns_area bttm">
+                    <div class="align_rg">
+                        <!-- 등록 -->
+                        <a class="action_btn">완료</a>
+                        <a class="btn">취소</a>
+                    </div>
+                </div>            
+
+            </div>
+            <!-- // body -->		
+        </div>
+    </body>
+</html>

@@ -1,0 +1,260 @@
+
+/* Dynatree Customized by ek100@handysoft.co.kr - 2016.12.12 */
+
+/*** 내 폴더, 전사 폴더 공통 ***/
+
+.dynatree-container
+{ position:relative; white-space: nowrap; padding:4px 0; width:100%; margin: 0; border: 0;  display: block;    width:100%;   box-sizing: border-box;  }
+
+.dynatree-container li {position:relative; display: block;}
+.dynatree-container img {width: 22px;height: 22px;border-style: none;}
+.dynatree-container a {text-decoration: none; letter-spacing: normal; font-size: 12px;}
+
+.dynatree-active a {color: #F26522 !important; font-weight: bold !important;}
+.dynatree-title { color : #666;}
+
+.dynatree-expander, 
+.dynatree-connector, 
+.dynatree-icon {width:22px; height:22px; float:left; display: inline-block;}
+
+/* Tree Icon */
+.dynatree-icon {background: url(/img/square_plus/dyna_sq_folder.png) 0 0 no-repeat;}
+
+/* Expander icon
+ * Note: IE6 doesn't correctly evaluate multiples class names,
+ *		 so we create combined class names that can be used in the CSS.
+ *
+ * Prefix: dynatree-exp-
+ * 1st character: 'e': expanded, 'c': collapsed
+ * 2nd character (optional): 'd': lazy (Delayed)
+ * 3rd character (optional): 'l': Last sibling
+ */
+.dynatree-expander {background: url(/img/square_plus/dyna_sq_folder_plus.png) 0 0 no-repeat;}
+.dynatree-ico-ef .dynatree-expander {background: url(/img/square_plus/dyna_sq_folder_minus.png) 0 0 no-repeat;}
+.dynatree-lastsib.dynatree-has-children > .dynatree-expander {background: url(/img/square_plus/dyna_sq_folder_plus_last.png) 0 0 no-repeat;}
+
+.dynatree-lastsib.dynatree-has-children.dynatree-ico-ef > .dynatree-expander {background: url(/img/square_plus/dyna_sq_folder_minus_last.png) 0 0 no-repeat;}
+
+
+.dynatree-connector {background: url(/img/square_plus/dyna_sq_list.png) 0 0 no-repeat;}
+.my_group .dynatree-folder .dynatree-connector {background:0 none}
+
+#orgTree ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 0 0 repeat-y;}
+#orgTree ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 18px 0 repeat-y;}
+#orgTree ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 36px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 54px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 72px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 90px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 118px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 136px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 154px 0 repeat-y;}
+#orgTree ul li ul li ul li ul li ul li ul li ul li ul li ul li ul li {background: url(/img/square_plus/dyna_sq_vertical_line.png) 172px 0 repeat-y;}
+
+#orgTree .dynatree-lastsib {background:0 none !important;}
+
+.dynatree-has-children + ul {    
+/*    background-image: url(/img/square_plus/vline.gif);*/
+    background-position: 0 0;
+    background-repeat-y: repeat;
+    background-repeat-x: no-repeat;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+/*    padding-left: 17px;*/
+}
+/*.dynatree-has-children + ul li:first-child {background: 0 none;}*/
+.dynatree-has-children + ul li:last-child {background: 0 none;}
+.dynatree-lastsib > .dynatree-connector {background: url(/img/square_plus/dyna_sq_list_last.png) 0 0 no-repeat;}
+
+.dynatree-has-children + ul .dynatree-title { padding-left:4px;}
+
+
+/* Style of hover */
+.dynatree-has-children + ul > li:hover > a,
+.dynatree-folder:hover > a
+.dynatree-node:hover > a
+{text-decoration: none;	color: #F26522 !important; /* @ IE6 */}
+.dynatree-folder:hover,
+.dynatree-node:hover {background-color: rgba(185, 185, 185, 0.17); cursor: pointer}
+
+
+/* Disabled Style */
+.ui-dynatree-disabled ul.dynatree-container
+{opacity: 0.5;/*	filter: alpha(opacity=50); /* Yields a css warning */background-color: none;}
+
+/* 'Loading' Style */  
+.dynatree-loading .dynatree-expander {background: url(/img/square_plus/loading.gif) 0 0 no-repeat;}
+
+
+/* Node type icon
+ * Note: IE6 doesn't correctly evaluate multiples class names,
+ *		 so we create combined class names that can be used in the CSS.
+ *
+ * Prefix: dynatree-ico-
+ * 1st character: 'e': expanded, 'c': collapsed
+ * 2nd character (optional): 'f': folder
+ */
+
+.dynatree-node {position:relative; display:block;}
+.dynatree-node a
+{font-size: 12px; display: inline-block; padding-right: 3px; }
+
+/* styles for the "tree Depth" */
+
+.dynatree-node {padding-left: 20px; margin: 0; list-style:none; }
+
+.dynatree-node + ul .dynatree-node {padding-left: 18px;}
+.dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 36px;}
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 54px;}
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 72px; }
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 90px; }
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 118px; }
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 136px; }
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 154px; }
+.dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node + ul .dynatree-node {padding-left: 172px; }
+
+
+
+
+
+/*******************************************************************************
+ * Drag'n'drop support
+ */
+.dynatree-drag-helper {}
+.dynatree-drag-helper a
+{ position:absolute; border:1px solid #788dea;color:#333333; background:#fff url(/img/tooltip_mail_move.png) no-repeat 4px 0px; padding:5px 10px 5px 20px; opacity: 1; top:0; min-width:105px;z-index:999; cursor: none;}
+
+.dynatree-drag-helper-img {}
+
+.dynatree-drop-accept .dynatree-drag-helper-img {}
+.dynatree-drop-target.dynatree-drop-reject {}
+.dynatree-drop-reject.dynatree-drag-helper a
+{position:absolute; top:0; padding:5px 10px 5px 20px;min-width:105px;border:1px solid #d68a66;color:#333333;background: #fff url(/img/tooltip_mail_move.png) no-repeat 4px -28px;z-index:999; cursor: none;}
+
+.dynatree-drop-reject .dynatree-drag-helper-img{}
+
+
+/*** Drop marker icon *********************************************************/
+
+#dynatree-drop-marker {width: 100px; position: absolute; background:none; margin: 0; height:22px; border: 0 none; z-index: 0;}
+
+    #dynatree-drop-marker.dynatree-drop-before
+    {width: 200px; border-top: 1px solid rgba(157, 166, 208, 0.5); }
+    #dynatree-drop-marker.dynatree-drop-after
+    {width: 200px; border-bottom: 1px solid rgba(157, 166, 208, 0.5); }
+
+#dynatree-drop-marker.dynatree-drop-copy {background-position: 0 0;}
+#dynatree-drop-marker.dynatree-drop-move {background-position: 0 0;}
+
+/*** Source node while dragging ***********************************************/
+
+.dynatree-drag-source
+{background-color: #f3f4f5; padding: 0 10px 0 0;}
+.dynatree-drag-source a
+{color: #ff6210;}
+
+
+/*** Target node while dragging cursor is over it *****************************/
+
+.dynatree-drop-target {/*border: 1px solid gray;*/}
+.dynatree-drop-target a {}
+
+.dynatree-drop-target.dynatree-drop-accept a {
+	background-color: rgba(122, 149, 239, 0.8) ! important;
+	color: #fff !important; /* @ IE6 */
+	text-decoration: none; padding:0 8px 0 5px;}
+
+
+.dynatree-drop-target.dynatree-drop-reject {/*border: 1px solid red;*/}
+.dynatree-drop-target.dynatree-drop-after {}
+
+
+/*******************************************************************************
+ * Custom node classes (sample)
+ */
+
+.custom1 a {background-color: maroon;color: yellow;}
+
+
+.ui-dynatree-checkbox {	margin-left: 3px; background: url(/img/square_plus/cbUnchecked.gif) 0 0 no-repeat;}
+
+
+
+
+.dynatree-node a {font-size: 12px; display: inline-block; width:100%; padding-right: 3px; box-sizing: border-box; }
+.dynatree-node .dynatree-title {cursor: pointer; max-width:145px; line-height: 22px; }
+.dynatree-node .dynatree-title .node-folder {height:22px; line-height: 22px; padding: 0; width:100%; display: block; overflow: hidden; text-overflow: ellipsis;}
+.dynatree-node .dynatree-title .node-group {height:22px; line-height: 22px; padding: 0; width:100%; display: block; overflow: hidden; text-overflow: ellipsis;}
+
+
+/* Suppress lines if level is fixed expanded (option minExpandLevel) */
+ul.dynatree-no-connector > li {background-image: none;}
+
+/* Style, when control is disabled */
+.ui-dynatree-disabled ul.dynatree-container {opacity: 0.5;}
+.dynatree-connector {}
+/*
+.dynatree-ico-c .dynatree-connector {background: url(/img/square_plus/dyna_sq_list.png) 0 0 no-repeat;}*/
+
+
+/* child node */
+ul.dynatree-container li > ul .dynatree-ico-c .dynatree-icon {display: none;}
+/* last child node */
+ul.dynatree-container li.dynatree-lastsib {}
+ul.dynatree-container li.dynatree-lastsib .dynatree-ico-cf {}
+ul.dynatree-container li span  {position: relative; height: 22px; }
+
+
+/*** Drop marker icon *********************************************************/
+
+#dynatree-drop-marker { }
+
+/** Checkbox icon **/
+.dynatree-checkbox {     margin-top: 4px;  margin-left: 4px; margin-right: 2px; background-position: 0px -32px; background-image: url(/img/square_plus/icons.gif);  height: 13px !important;
+    width: 13px;  display: block !important; float: left;}
+.dynatree-checkbox:first-child {margin-left: 2px;}
+.dynatree-checkbox:hover {background-position: -16px -32px;}
+.dynatree-partsel .dynatree-checkbox {background-position: -64px -32px;}
+.dynatree-partsel .dynatree-checkbox:hover {background-position: -80px -32px;}
+.dynatree-selected .dynatree-checkbox {background-position: -32px -32px;}
+.dynatree-selected .dynatree-checkbox:hover {background-position: -48px -32px;}
+
+.ui-dynatree-unselectable .dynatree-checkbox {background-position: 0px 0px;background-image: url(/img/square_plus/cbUnchecked_disabled.gif);}
+.ui-dynatree-unselectable .dynatree-checkbox:hover {background-position: 0px 0px;background-image: url(/img/square_plus/cbUnchecked_disabled.gif);}
+.ui-dynatree-unselectable-selected .dynatree-checkbox {background-position: 0px 0px;background-image: url(/img/square_plus/cbChecked_disabled.gif);}
+.ui-dynatree-unselectable-selected .dynatree-checkbox:hover {background-position: 0px 0px;background-image: url(/img/square_plus/cbChecked_disabled.gif);}
+
+/** Radiobutton icon **/
+.dynatree-radio {margin-left: 3px;background-position: 0px -48px;}
+.dynatree-radio:hover {background-position: -16px -48px;}
+
+.dynatree-partsel .dynatree-radio {background-position: -64px -48px;}
+.dynatree-partsel .dynatree-radio:hover {background-position: -80px -48px;}
+
+.dynatree-selected .dynatree-radio {background-position: -32px -48px;}
+.dynatree-selected .dynatree-radio:hover {background-position: -48px -48px;}
+.ui-dynatree-unselectable .dynatree-radio {background-position: 0px 0px;background-image: url(/img/square_plus/rbUnchecked_disabled.gif);}
+.ui-dynatree-unselectable-selected .dynatree-radio {background-position: 0px 0px;	background-image: url(/img/square_plus/rbChecked_disabled.gif);
+}
+
+
+
+/* My group FOLDER */
+
+.my_group .dynatree-node {padding-left: 0px;}
+.my_group .dynatree-lastsib:first-child > .dynatree-node  {}
+ {padding-left: 16px;}
+
+
+.my_group .dynatree-expander, 
+.my_group .dynatree-ico-ef .dynatree-expander,
+.my_group .dynatree-lastsib.dynatree-has-children > .dynatree-expander,
+.my_group .dynatree-lastsib.dynatree-has-children.dynatree-ico-ef > .dynatree-expander
+{background: url(/img/square_plus/my_group_folding.png) 2px 0 no-repeat;}
+
+.my_group .dynatree-ico-ef .dynatree-expander,
+.my_group .dynatree-lastsib.dynatree-has-children.dynatree-ico-ef > .dynatree-expander
+{background-position: 2px -22px;}
+
+.my_group .dynatree-ico-cf > .dynatree-connector { background: 0 none;}

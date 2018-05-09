@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="tooltip_move">총 <span>2</span>개의 메일 이동<!-- 이동범위를 벗어났을 경우 no 클래스 추가해주면됨 --></div>
+<!--컨테이너-->
+<div id="main_content"> 
+  <!--좌측 메뉴 영역-->
+  <div id="folder_content" class="left_menu"> 
+    <!--Action Btn start-->
+    <div class="btn_large_half"> <a class="btn_l" href="" title="편지쓰기">편지쓰기</a> <a class="btn_r" href="" title="내게쓰기">내게쓰기</a> </div>
+    <!--Action Btn END--> 
+    <!--Quick Btn start-->
+    <ul class="quickbtn_area four">
+      <li class="btn_noread quickbtn_on"><a href="#"> <span>안읽음</span></a></li>
+      <li class="btn_imprt"><a href="#"> <span>중요</span></a></li>
+      <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+      <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+    </ul>
+    <!--Quick Btn END--> 
+    <!--Menu List start-->
+    <ul id="folder_list" class="snb_lst">
+      <li class="snb_rcv"> <a id="menu_01" href="javascript:getMessages('INBOX', true);selectFolder('menu_01');" > <span id='INBOX'>받은 편지함</span></a></li>
+      <li class="snb_slf"> <a id="menu_10" class="slct" href="javascript:getMessages('SELFBOX', true);selectFolder('menu_10');" > <span id='SELFBOX'>내게 쓴 편지함 </span></a></li>
+      <li class="snb_snd"> <a id="menu_02" href="javascript:getMessages('보낸 편지함', true);selectFolder('menu_02');" > <span id='보낸 편지함'>보낸 편지함</span></a></li>
+    </ul>
+    <!--Menu List end--> 
+    <!--Tree Area-->
+    <div id="folderDiv" class="tree_area bttm_ln"> 
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'tree_contents_area');">개인메일함</span> <a class="btn_tree_add" href="#"> </a> <a class="btn_tree_cnfg" href="#"> </a> </div>
+      <!--Tree Box-->
+      <div id="tree_contents_area" class="tree_cntnts_area">
+        <div id="webfx-tree-object-4" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);return false;">개인 편지함</a> </div>
+        <div id="webfx-tree-object-4-cont" class="webfx-tree-container">
+          <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);">개인메일함</a> </div>
+          <div id="webfx-tree-object-5-cont" class="webfx-tree-container">
+            <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item select" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-indent-0" src="../../img/I.png"><img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.개인부서메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);">개인부서메일함</a> </div>
+            <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+            <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-indent-0" src="../../img/I.png"><img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.부서안의부서', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);">부서안의부서</a> </div>
+            <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+          </div>
+          <div id="webfx-tree-object-8" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-8-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-8-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.부서메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-8-anchor" onfocus="webFXTreeHandler.focus(this);">부서메일</a> </div>
+          <div id="webfx-tree-object-8-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-9" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-9-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-9-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.완전 긴 메일이름으로 한번 지어봅시다완전 긴', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-9-anchor" onfocus="webFXTreeHandler.focus(this);">완전 긴 메일이름으로 한번 지어봅시다완전 긴</a> </div>
+          <div id="webfx-tree-object-9-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-10" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-10-plus" src="../../img/Lplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-10-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.작업메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-10-anchor" onfocus="webFXTreeHandler.focus(this);">작업메일</a> </div>
+        </div>
+      </div>
+    </div>
+    <!--Tree Area END --> 
+    <!--Menu List start-->
+    <ul class="snb_lst">
+      <li class="snb_tmp"> <a id="menu_04" href="javascript:getMessages('임시 보관함', true);selectFolder('menu_04');" > <span id='임시 보관함'>임시 보관함</span> </a> </li>
+      <li class="snb_rsrv"> <a id="menu_05" href="javascript:reservedMessages(true);selectFolder('menu_05');" > <span id='예약 편지함'>예약 편지함</span> </a> </li>
+      <li class="snb_trsh"> <a id="menu_03" href="javascript:getMessages('지운 편지함', true);selectFolder('menu_03');" > <span id='지운 편지함'>지운 편지함</span></a> <a class="btn_trshbx_dl" href="#">휴지통비우기</a></li>
+    </ul>
+    <!--Menu List END--> 
+    <!--Setting & Info Area start-->
+    <div class="info_area" id="defaultDiv">
+      <ul>
+        <li class="config"> <a href="javascript:managementcapacity();" title='편지함관리'> <span>편지함관리</span></a></li>
+        <li id="quotatable" class="cpcty_area"> <img id="gagequota" src="../../img/BAR_BG_ON.GIF" width="0%" height="12px" style="width:56px;"><img id="gagequotabg" src="../../img/BAR_BG.GIF" width="0%" height="12px" style="width:100px;"> <span class="cpcty_grp"> <span id="usequota">128MB</span> <span class="fnt_gray">/</span> <span id="limitquota">1000</span>MB </span> </li>
+      </ul>
+    </div>
+    <!--Setting & Info Area END--> 
+  </div>
+  <!--좌측 메뉴 영역 END--> 
+  <!----------------------->
+  <div class="container_box mail_view_box">
+    <div class="title_area">
+      <h2 class="title">받은메일함<span>2개의 메일을 선택했습니다.</span></h2>
+      <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+      <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+    </div>
+    <!-- 버튼 영역 -->
+    <div class="btn_area">
+      <ul class="btns first">
+        <li><span><a href="#" class="f_bold">답장</a></span></li>
+        <li class="m_a_lft"><span><a href="#" >전체답장</a></span></li>
+        <!-- [D] 버튼끼리 붙이기 -->
+        <li class="m_a_lft"><span><a href="#">전달</a></span></li>
+        <!-- [D] 버튼끼리 붙이기 -->
+        <li><span class="send"><a href="#">보내기</a></span></li>
+        <!-- [D] slt 는 셀렉트형태의 버튼 -->
+      </ul>
+      <ul class="btns">
+        <li><span class="ico_del"><a href="#" class="f_bold">삭제</a></span></li>
+        <!--[D] del 클래스는 x 아이콘 -->
+        <li class="m_a_lft"><span><a href="#">완전삭제</a></span></li>
+        <!-- [D] 버튼끼리 붙이기 -->
+        <li><span><a href="#">읽음</a></span></li>
+        <li><span class="slt"><a href="#">이동</a></span></li>
+        <!-- [D] slt 는 셀렉트형태의 버튼 -->
+        <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+          <!-- [D] 추가기능 레이어 팝업 -->
+          <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+            <ul>
+              <li><a href="#">인쇄하기</a></li>
+              <li><a href="#">PC저장</a></li>
+              <li><a href="#">Excel저장</a></li>
+            </ul>
+          </div>
+          <!-- // [D] 추가기능 레이어 팝업 --> 
+        </li>
+      </ul>
+      <div class="array_sort mg_tp_9"> <span class="array_all"><a href="#">목록</a></span> <span class="array_up"><a href="#">위</a></span> <span class="array_down"><a href="#">아래</a></span> </div>
+    </div>
+    <!-- //버튼 영역 -->
+    <div class="view_cont"> 
+      <!-- 메일 리스팅 확장(우측) -->
+      <div class="view_content_box">
+        <div class="inner_box">
+          <div class="view_body_contents">
+            <div class="view_subj_box">
+              <p class="view_subj"> <img src="../../img/ico_flag_off.gif" alt="중요메일표시"> <img src="../../img/ico_lock_tit.png" title="보안" alt="보안메일표시"> <img src="../../img/ico_warning_tit.png" title="긴급" alt="긴급메일표시">메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.<a href="#" class="pop" title="새 창으로 보기">새 창으로 보기</a></p>
+              <div class="mail_sender"><!-- [D] 여기 on 클래스가 추가 되면 받는사람, 참조도 펼쳐짐 -->
+                <div class="sender">
+                  <dl>
+                    <dt>보낸사람 :<a href="#" class="btn_trig">열기</a></dt>
+                    <dd><span><a href="#">이석진</a></span><span><a href="#">주소록추가</a></span><span class="btn_spam"><a href="#">수신차단</a></span></dd>
+                    <dd class="date">2014.03.04 17:26 </dd>
+                  </dl>
+                </div>
+                <div class="recive">
+                  <dl>
+                    <dt>받는사람 :</dt>
+                    <dd>최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경, 최희선, 백은경</dd>
+                  </dl>
+                </div>
+                <div class="refer">
+                  <dl>
+                    <dt>참조<span class="pd_lft_28">:</span></dt>
+                    <dd>최희선, 백은경, 최희선</dd>
+                  </dl>
+                </div>
+              </div>
+              <p class="btn_prnt"><a href="#">프린트</a></p>
+            </div>
+            <div class="add_file_list"> <span class="list_num"><strong>일반 첨부파일</strong> <em>8개</em> (14.27kb)<a href="#" class="btn_trig">리스트펴기,닫기</a></span> <span><a href="#"  class="file_all_save">모두저장</a></span> <span><a href="#" class="file_save">첨부저장</a></span>
+              <div class="file_list">
+                <ul>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked>
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                </ul>
+              </div>
+            </div>
+            <div class="view_area"> 메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+              메일 내용이 들어갈 공간입니다.<br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //메일 리스팅 확장(우측) --> 
+  </div>
+</div>
+</body>
+</html>

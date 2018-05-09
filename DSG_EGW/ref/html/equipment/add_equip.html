@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="/js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+</head>
+
+<body>
+<!-- 설비 추가 및 관리 관련 화면  팝업사이즈는 530(w) x 550(h) 적정 -->
+<div class="pop_wrap equip_set">
+  <!-- TAB title 영역 -->
+  <div class="title_area">
+  <h1>설비추가</h1></div>
+  <div class="tab_area">
+      <div class="tab_box" id="pop_header" name="pop_header">
+          <ul class="tab_menu" id="tab_list" name="tab_list">
+              <a href="javascript:clickTab(0);" onfocus="blur();">
+                 <li class="tab selected">설비추가</li>
+              </a>
+                <a href="javascript:clickTab(1);" onfocus="blur();">
+                 <li class="tab">권한설정</li>
+              </a>
+              <a href="javascript:clickTab(2);">
+               <li class="tab">
+                    설비분류 추가</li>
+                    </a>
+             <a href="javascript:clickTab(3);">
+               <li class="tab"> 설비 순서 변경 </li>
+                    </a>
+          </ul>
+      </div>
+  </div>
+  <!-- // TAB title 영역 -->
+  <div class="tab_ctt org_all" id="pop_content" name="pop_content">
+      <div class="contentwrap" id="div_equip_add" name="div_equip_add" style="display:block">
+           <div class="write_form_box brdr_0">
+					<table class="writting mg_0" cellspacing="0" style="width:100%;">
+						<colgroup>
+						<col style="width:150px;">
+						<col style="width:*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="item_list">
+									설비명*
+								</th>
+								<td>
+								<input class="basic_inp" id="title" type="text" style="ime-mode:active; width:100%;"></td>
+							</tr>
+							<tr>
+								<th class="item_list vertical_align_tp">
+									관리자*
+								</th>
+								<td class="positon_rltv pd_lft_32">
+									<a href="javascript:showOrgWinOwner();" class="btn_human mg_tp_3">&nbsp;</a>
+									<span id="mngr_nm" name="mngr_nm">
+										<div class="basic_inp" id="mngr_user_list" name="mngr_user_list"><span class="recipient"><em>김민우</em><a href="javascript:remove_mngr('001006200');" class="btn_close"></a></span></div>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th class="item_list">
+									설비상태
+								</th>
+								<td>
+									<select name="calendar_st" id="calendar_st" class="basic_select" style="width:100%;">
+										<option value="1">사용가능</option>
+										<option value="3">사용불가</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th class="item_list">승인제여부</th>
+								<td>
+									<input name="reservation_fg" type="radio" value="0" checked="checked">선점
+									<input class="mg_lft_15" name="reservation_fg" type="radio" value="1">승인
+								</td>
+							</tr>
+							<tr>
+								<th class="item_list vertical_align_tp" id="par_equipment_title" name="par_equipment_title">
+									설비분류명*
+								</th>
+								<td>
+									<input class="basic_inp" name="par_equipment_body" id="par_equipment_body" type="text" onfocus="blur();" style="width:100%;" onclick="javascript:$('.equipment_lst').toggleClass('on')">
+                                    <div id="popup_checkbox_div_id_par_equipment_body" class="equipment_lst">
+                                            <ul>
+                                                <li><input type="radio" id="test_1" name="select_eq">
+                                                    <label for="test_1">민우설비분류</label></li>
+                                                <li><input type="radio" id="test_2" name="select_eq"> 
+                                                    <label for="test_2">회의실</label></li>
+                                                <li><input type="radio" id="test_3" name="select_eq">
+                                                     <label for="test_3">노트북</label></li>
+                                                <li><input type="radio" id="test_4" name="select_eq">
+                                                    <label for="test_4">사물함_수정</label></li>
+                                                <li><input type="radio" id="test_5" name="select_eq">
+                                                    <label for="test_5">새로운_설비_분류_공유됨</label></li>
+                                                <li><input type="radio" id="test_6" name="select_eq">
+                                                    <label for="test_6">공유자 설정한 설비 분류</label></li>
+                                            </ul>
+                                    </div>
+                                </td>
+							</tr>
+							<tr>
+								<th class="item_list vertical_align_tp">
+									색상
+								</th>
+								<td class="positon_rltv select_color">
+									
+<p class="btn_color">
+	<a id="colorlink" href="javascript:CommonUtil.setVisibilityForID('colorcheck', 'on');">
+		<em id="checked" name="checked" style="background: rgb(251, 193, 189);"></em>
+		<span id="colorSelect">
+			색상선택
+		</span>	
+	</a>	 
+</p>
+<div id="colorcheck" name="colorcheck" class="colorcheck" style="display: ;">
+	<ul>
+		<li><a href="javascript:selectColor('#fbc1bd');" class="color01 on"></a></li>
+		<li><a href="javascript:selectColor('#f7b4cb');" class="color02"></a></li>
+		<li><a href="javascript:selectColor('#cab3cf');" class="color03"></a></li>
+		<li><a href="javascript:selectColor('#d3b0da');" class="color04"></a></li>
+		<li><a href="javascript:selectColor('#ccbee7');" class="color05"></a></li>
+		<li><a href="javascript:selectColor('#bfc5e6');" class="color06"></a></li>
+		<li><a href="javascript:selectColor('#b5dcfb');" class="color07"></a></li>
+		<li><a href="javascript:selectColor('#ace2fb');" class="color08"></a></li>
+		<li><a href="javascript:selectColor('#abe8f1');" class="color09"></a></li>
+		<li><a href="javascript:selectColor('#abdcd7');" class="color10"></a></li>
+		<li></li>
+		<li><a href="javascript:selectColor('#b4ddb5');" class="color11"></a></li>
+		<li><a href="javascript:selectColor('#cee5b3');" class="color12"></a></li>
+		<li><a href="javascript:selectColor('#e9f0ac');" class="color13"></a></li>
+		<li><a href="javascript:selectColor('#fef289');" class="color14"></a></li>
+		<li><a href="javascript:selectColor('#fee188');" class="color15"></a></li>
+		<li><a href="javascript:selectColor('#fec776');" class="color16"></a></li>
+		<li><a href="javascript:selectColor('#efccb8');" class="color17"></a></li>
+		<li><a href="javascript:selectColor('#e0c3bd');" class="color18"></a></li>
+		<li><a href="javascript:selectColor('#d3b0ac');" class="color19"></a></li>
+		<li><a href="javascript:selectColor('#b7a090');" class="color20"></a></li>
+		<li><a href="javascript:selectColor('#a49184');" class="color21"></a></li>
+	</ul>
+	<p class="btn_close">
+		<a href="javascript:CommonUtil.setVisibilityForID('colorcheck', 'off');"><img src="/img/btn_colorcheck_close.gif"></a>
+	</p>
+</div>
+<input type="hidden" id="ui_attr" name="ui_attr" value="#fbc1bd">
+								</td>
+							</tr>
+							<tr>
+								<th class="item_list vertical_align_tp">
+									공유자
+								</th>
+								<td class="positon_rltv pd_lft_32">
+									<a href="javascript:showOrgWinUser();" class="btn_human mg_tp_3">&nbsp;</a>
+									<span name="public_list_form" id="public_list_form">
+										<div class="basic_inp" id="public_list" name="public_list"></div>
+									</span>	
+									<input type="hidden" id="admin_name_list" name="admin_name_list" value="김민우">
+									<input type="hidden" id="granted_name_list" name="granted_name_list">
+									<input type="hidden" id="admin_id_list" name="admin_id_list" value="001006200"> 
+									<input type="hidden" id="granted_id_list" name="granted_id_list">
+								</td>
+							</tr>
+							<tr>
+								<th class="item_list vertical_align_tp">
+									설명
+								</th>
+								<td id="discript" name="discript">
+									<textarea class="basic_select" name="summary" id="summary" cols="1" rows="8" style="ime-mode:active; width:100%; height:70px; "></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+           
+        </div>
+  </div>
+  
+  
+<!--// tab ctt END -->
+<div class="footer layout_bttm full_width" id="pop_bottom" name="pop_bottom">
+            <ul class="btns layout_cnt" id="pop_footer" name="pop_footer">
+                
+                <li><span><a class="fnt_bold" href="javascript:;" onclick="javascript:add();" onfocus="blur();">만들기</a></span></li>
+                
+                <li><span><a href="javascript:fncClose()" class="" onclick="javascript:self.close();" onfocus="blur();">취소</a></span></li>
+            </ul>
+        </div>
+</div>
+<!-- //설비 추가 및 관리 관련 화면 -->
+</body>
+</html>

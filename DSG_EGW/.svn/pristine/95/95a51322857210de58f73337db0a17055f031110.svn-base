@@ -1,0 +1,4861 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>HANDY GROUPWARE - GUIDE</title>		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/common.css" /><!-- 공통 css -->
+		<!-- css : for GUIDE -->
+		<link rel="stylesheet" href="../guider/css/guide.css" type="text/css" />		
+		<style>
+			body {overflow: auto;}
+			th, td { border : 1px solid #ddd; height: 26px; vertical-align: middle; padding:4px;}
+			td:first-child, td:nth-child(2) { text-align: left; padding-left:8px;}
+			.notice { color:#ff6200; }
+			.modi_ing { color:#7687b4; background: #eee;}
+			a { text-decoration: underline; color:#0077ff;}
+			#header ul li a { text-decoration: none;  }
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="header">
+				<h1>Application</h1>
+				<p style="color: #003bd9; font-weight:bold; margin-top:20px;"></p>
+				<p style="color: #003bd9;margin-top:6px;"></p>				
+				<ul>
+					<li><a href="#guide01">메일 Mail</a></li>
+					<li><a href="#guide02">게시판 Board</a></li>
+					<li><a href="" style="color:#999;">업무넷:미정</a></li>
+					<li><a href="#guide04">스퀘어 Square</a></li>
+					<li><a href="#guide05">결재 Approval</a></li>
+					<li><a href="#guide06" style="color: #003bd9;">일정 Schedule</a></li>
+					<li><a href="#guide07" style="color: #003bd9;">설비 Equipment</a></li>
+					<li><a href="#guide08">주소록 Contact</a></li>
+					<li><a href="#guide09">스토리지 Storage</a></li>
+					<li><a href="#guide10">동호회 Community</a></li>
+					<li><a href="#guide11">설문 Research</a></li>					
+					<li><a href="#guide99">공통 Common</a></li>					
+					<li><a href="../guider/html/guide.html" target="_blank">공통 가이드</a></li>
+					<li><a href="lnb.html" target="_blank">lnb</a></li>		
+					<li><a href="https://docs.google.com/spreadsheets/d/1IeFWY3wy5Y3A9rJs5INQ2wTgyGdFGoym1VhBz8uci0g/edit?usp=sharing" style="color:#ff6200" target="_blank">퍼블리싱 리스트(수정일정 첫째 탭)</a></li>	
+				</ul>
+			</div>
+			<div id="container">
+				<div id="guide01" class="guide_box">
+					<h1>#01. 메일(01_mail)</h1>
+					<div class="guide_b">
+						<table style="width:100%; table-layout:fixed; text-align: center;">
+							<colgroup>
+								<col style="width: 80px;">
+								<col style="width: 80px;">
+								<col style="width: 80px;">
+								<col style="width: 80px">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 80px;">
+								<col style="width: 80px;">
+								<col style="width: *;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th colspan="5">위치</th>									
+									<th>파일명</th>												
+									<th>상태</th>
+									<th>완료일</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>메일열람</td>
+									<td>전체메일</td>
+									<td>목록</td>
+									<td>분할형</td>
+									<td>메일 분할 화면</td>
+									<td><a href="01_mail/MA2.1.1.1.1.html"  target="_blank">MA2.1.1.1.1.html</a></td>	
+									<td>완료</td>
+									<td> </td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>목록형</td>
+									<td>전체 메일 목록</td>
+									<td><a href="01_mail/MA2.1.1.1.2.html"  target="_blank">MA2.1.1.1.2.html</a></td>
+									<td>완료 </td>
+									<td>10/02</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>받은메일</td>
+									<td>목록</td>
+									<td>분할형</td>
+									<td>메일분할화면</td>
+									<td><a href="01_mail/MA2.1.2.1.1.html" target="_blank">MA2.1.2.1.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>목록형</td>
+									<td>받은편지함목록</td>
+									<td><a href="01_mail/MA2.1.2.1.2.html" target="_blank">MA2.1.2.1.2.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>VIP</td>
+									<td></td>
+									<td>목록형</td>
+									<td>VIP 메일 목록</td>
+									<td><a href="01_mail/MA2.1.10.1.html" target="_blank">MA2.1.10.1.html</a></td>
+									<td>완료</td>
+									<td>18/01/15</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>키워드</td>
+									<td></td>
+									<td>분할형</td>
+									<td>키워드 메일 목록</td>
+									<td><a href="01_mail/MA2.1.11.1.html" target="_blank">MA2.1.11.1.html</a></td>
+									<td>완료</td>
+									<td>18/01/15</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td>상세</td>
+									<td>본문형</td>
+									<td>메일읽기 스레드화면</td>
+									<td><a href="01_mail/MA2.1.2.2.1.html" target="_blank">MA2.1.2.2.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>팝업형</td>
+									<td>메일읽기 팝업화면</td>
+									<td><a href="01_mail/MA2.1.2.2.2.html" target="_blank">MA2.1.2.2.2.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>내게쓴 메일</td>
+									<td>목록</td>
+									<td>목록형</td>
+									<td>내게쓴 메일목록</td>
+									<td><a href="01_mail/MA2.1.3.1.1.html" target="_blank">MA2.1.3.1.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>내게쓴 메일</td>
+									<td>상세</td>
+									<td>본문형</td>
+									<td>내게쓴메일 읽기</td>
+									<td><a href="01_mail/MA2.1.3.2.1.html" target="_blank">MA2.1.3.2.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<!-- 보낸 메일함-->
+								<tr>
+									<td>메일열람</td>
+									<td>보낸 메일</td>
+									<td>목록</td>
+									<td>목록형</td>
+									<td>보낸메일 목록</td>
+									<td><a href="01_mail/MA2.1.4.1.1.html" target="_blank">MA2.1.4.1.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>보낸 메일</td>
+									<td>상세</td>
+									<td>본문형</td>
+									<td>보낸메일 읽기</td>
+									<td><a href="01_mail/MA2.1.4.2.1.html" target="_blank">MA2.1.4.2.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>수신확인함</td>
+									<td>목록</td>
+									<td>목록형</td>
+									<td>수신확인 목록</td>
+									<td><a href="01_mail/MA2.1.5.1.1.html" target="_blank">MA2.1.5.1.1.html</a></td>
+									<td>완료</td>
+									<td>11/8 </td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>임시보관함</td>
+									<td>목록</td>
+									<td>목록형</td>
+									<td>임시보관 목록</td>
+									<td><a href="01_mail/MA2.1.6.1.1.html" target="_blank">MA2.1.6.1.1.html</a></td>
+									<td>완료</td>
+									<td>11/8 </td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일열람</td>
+									<td>예약편지함</td>
+									<td>목록</td>
+									<td>목록형</td>
+									<td>예약메일 목록</td>
+									<td><a href="01_mail/MA2.1.7.1.1.html" target="_blank">MA2.1.7.1.1.html</a></td>
+									<td>완료</td>
+									<td>11/8 </td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>메일쓰기</td>
+									<td>팝업형</td>
+									<td></td>
+									<td></td>
+									<td></td>										
+									<td><a href="01_mail/MA2.2.3.html"  target="_blank">MA2.2.3.html</a></td>
+									<td>완료</td>
+									<td>11/02</td>
+									<td></td>
+								</tr>
+								<!-- 환경설정-->									
+								<tr>
+									<td>환경설정</td>
+									<td>일반설정</td>
+									<td></td>
+									<td></td>
+									<td>일반설정</td>
+									<td><a href="01_mail/MA2.3.1.html"  target="_blank">MA2.3.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>편지함관리</td>
+									<td></td>
+									<td></td>
+									<td>기본보관함</td>
+									<td><a href="01_mail/MA2.3.2.1.html"  target="_blank">MA2.3.2.1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>편지함관리</td>
+									<td></td>
+									<td></td>
+									<td>개인보관함</td>
+									<td><a href="01_mail/MA2.3.2.2.html"  target="_blank">MA2.3.2.2.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>편지함관리</td>
+									<td></td>
+									<td></td>
+									<td>개인보관함 - 폴더 및 보관함 이동</td>
+									<td><a href="01_mail/MA2.3.2.2_1.html"  target="_blank">MA2.3.2.2_1.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>포워딩설정</td>
+									<td></td>
+									<td></td>
+									<td>포워딩설정</td>
+									<td><a href="01_mail/MA2.3.3.html"  target="_blank">MA2.3.3.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>자동분류</td>
+									<td></td>
+									<td></td>
+									<td>자동분류</td>
+									<td><a href="01_mail/MA2.3.4.html"  target="_blank">MA2.3.4.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>설정 : 서명</td>
+									<td></td>
+									<td></td>
+									<td>서명</td>
+									<td>
+										<a href="01_mail/MA2.3.5.html"  target="_blank">
+											MA2.3.5.html
+										</a>
+									</td>
+									<td>완료</td>
+									<td>11/9</td>
+									<td></td>
+								</tr>			
+								<tr>
+									<td>환경설정</td>
+									<td>외부메일</td>
+									<td></td>
+									<td></td>
+									<td>외부메일 가져오기</td>
+									<td><a href="01_mail/MA2.3.6.html"  target="_blank">MA2.3.6.html</a></td>
+									<td>완료</td>
+									<td>11/10</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>외부메일</td>
+									<td></td>
+									<td></td>
+									<td>외부메일 추가</td>
+									<td><a href="01_mail/MA2.3.6.1.html"  target="_blank">MA2.3.6.1.html</a></td>
+									<td>완료</td>
+									<td>11/10</td>
+									<td> </td>
+								</tr>									
+								<tr>
+									<td>환경설정</td>
+									<td>VIP메일</td>
+									<td></td>
+									<td></td>
+									<td>목록</td>
+									<td><a href="01_mail/MA2.3.7.html"  target="_blank">MA2.3.7.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>								
+								<tr>
+									<td>환경설정</td>
+									<td>VIP메일</td>
+									<td></td>
+									<td></td>
+									<td>VIP 추가</td>
+									<td><a href="01_mail/MA2.3.7.1.html"  target="_blank">MA2.3.7.1.html</a></td>
+									<td>완료</td>
+									<td>11/10</td>
+									<td> </td>
+								</tr>								
+								<tr>
+									<td>환경설정</td>
+									<td>키워드메일함</td>
+									<td></td>
+									<td></td>
+									<td>목록</td>
+									<td><a href="01_mail/MA2.3.8.html"  target="_blank">MA2.3.8.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>키워드메일함</td>
+									<td></td>
+									<td></td>
+									<td>키워드메일함 추가</td>
+									<td><a href="01_mail/MA2.3.8.1_add.html"  target="_blank">MA2.3.8.1_add.html</a></td>
+									<td>완료</td>
+									<td>11/10</td>
+									<td> </td>
+								</tr>
+								<tr>
+									<td>환경설정</td>
+									<td>키워드메일함</td>
+									<td></td>
+									<td></td>
+									<td>키워드메일함 변경</td>
+									<td><a href="01_mail/MA2.3.8.1_modify.html"  target="_blank">MA2.3.8.1_modify.html</a></td>
+									<td>완료</td>
+									<td>11/10</td>
+									<td> </td>
+								</tr>																
+								<tr>
+									<td>검색</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>메일검색</td>
+									<td><a href="01_mail/MA_5.1.html"  target="_blank">간편검색</a></td>
+									<td>완료</td>
+									<td>18/01/22</td>
+									<td></td>
+								</tr>																
+								<tr>
+									<td>검색</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>메일검색</td>
+									<td><a href="01_mail/MA_5.2.1.html"  target="_blank">상세검색</a></td>
+									<td>완료</td>
+									<td>18/01/22</td>
+									<td></td>
+								</tr>															
+								<tr>
+									<td>EML업로드</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>EML업로드</td>
+									<td><a href="01_mail/MA4.html"  target="_blank">MA4.html</a></td>
+									<td>완료</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>				
+
+				<!-- 게시판 -->
+				<div id="guide02" class="guide_box">
+					<div class="guide_contents" >          
+						<h1>#02. 게시판(02_board)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>일반 게시판 </td>
+										<td>목록</td>
+										<td>목록형</td>
+										<td></td>
+										<td>게시판 목록</td>
+										<td><a href="02_board/BO7.1.1.html"  target="_blank">BO7.1.1.html</a></td>
+										<td> </td>
+										<td>10/26 - 10/27</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>일반 게시판 </td>
+										<td>목록</td>
+										<td>분할형</td>
+										<td></td>
+										<td>게시판 분할화면</td>
+										<td><a href="02_board/BO7.1.1.vertical.html"  target="_blank">BO7.1.1.vertical.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>일반 게시판 </td>
+										<td>상세</td>
+										<td>게시물읽기</td>
+										<td></td>
+										<td>게시물읽기</td>
+										<td><a href="02_board/BO7.1.1.1.html"  target="_blank">BO7.1.1.1.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>일반 게시판 </td>
+										<td>팝업</td>
+										<td>상세</td>
+										<td></td>
+										<td>게시물읽기</td>
+										<td><a href="02_board/BO7.1.1.2.html"  target="_blank">BO7.1.1.2.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>동영상 게시판 </td>
+										<td>목록</td>
+										<td>게시물목록</td>
+										<td></td>
+										<td>게시물읽기</td>
+										<td><a href="02_board/BO7.1.5.html"  target="_blank">BO7.1.5.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>동영상 게시판 </td>
+										<td>상세</td>
+										<td>게시물읽기</td>
+										<td></td>
+										<td>게시물읽기</td>
+										<td><a href="02_board/BO7.1.5.1.html"  target="_blank">BO7.1.5.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+
+									<tr>
+										<td>동영상 게시판 </td>
+										<td>상세</td>
+										<td>게시물읽기</td>
+										<td></td>
+										<td>게시물읽기</td>
+										<td><a href="02_board/BO7.1.5.2.html"  target="_blank">BO7.1.5.2.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>앨범게시판</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="02_board/BO7.1.6.html"  target="_blank">BO7.1.6.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>앨범게시판</td>
+										<td>상세</td>
+										<td>게시물읽기</td>
+										<td></td>
+										<td></td>
+										<td><a href="02_board/BO7.1.6.1.html"  target="_blank">BO7.1.6.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판상세검색</td>
+										<td>상세검색</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="02_board/BO7.1.7.html"  target="_blank">BO7.1.7.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>임시저장함 </td>
+										<td>임시저장함 목록 </td>
+										<td></td>
+										<td></td>
+										<td>임시저장함 목록</td>
+										<td><a href="02_board/BO7.2.html"  target="_blank">BO7.2.html</a></td>
+
+										<td>11/7</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>임시저장함 </td>
+										<td>임시저장함 상세 </td>
+										<td></td>
+										<td></td>
+										<td>임시저장 게시하기</td>
+										<td><a href="02_board/BO7.2.1.html"  target="_blank">BO7.2.1.html</a></td>
+
+										<td>11/7</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판 </td>
+										<td>게시판 쓰기 </td>
+										<td></td>
+										<td></td>
+										<td>게시하기</td>
+										<td><a href="02_board/BO7.3.1.html"  target="_blank">BO7.3.1.html</a></td>
+
+										<td>11/7</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판 </td>
+										<td>게시판 쓰기 </td>
+										<td></td>
+										<td></td>
+										<td>게시하기</td>
+										<td><a href="02_board/BO7.3.2.html"  target="_blank">BO7.3.2.html</a></td>
+
+										<td>11/10</td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판신청 </td>
+										<td>게시판신청 목록 </td>
+										<td></td>
+										<td></td>
+										<td>게시판신청 목록</td>
+										<td><a href="02_board/BO7.4.1.html"  target="_blank">BO7.4.1.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판신청 </td>
+										<td>상세 </td>
+										<td>본문형</td>
+										<td></td>
+										<td>신청 게시판 읽기</td>
+										<td><a href="02_board/BO7.4.1.1.html"  target="_blank">BO7.4.1.1.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판신청 </td>
+										<td>상세 </td>
+										<td></td>
+										<td></td>
+										<td>신청 게시판 상세 팝업 window</td>
+										<td><a href="02_board/BO7.4.1.2.html"  target="_blank">BO7.4.1.2.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+
+									<tr>
+										<td>게시판신청 </td>
+										<td>쓰기 </td>
+										<td></td>
+										<td></td>
+										<td>신청 게시판 쓰기</td>
+										<td><a href="02_board/BO7.4.2.1.html"  target="_blank">BO7.4.2.1.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>게시판신청 </td>
+										<td>쓰기 </td>
+										<td>팝업</td>
+										<td></td>
+										<td>게시판 신청</td>
+										<td><a href="02_board/BO7.4.2.1_popup.html"  target="_blank">BO7.4.2.2.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>목록 </td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="02_board/BO7.5.1.html"  target="_blank">BO7.5.1.html</a></td>
+										<td> </td>
+										<td></td>
+										<td>완료</td>
+										<td class="notice">변경 레이어 포함</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 스퀘어 -->
+				<div id="guide04" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#04. 스퀘어(04_square)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 50px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>피드읽기</td>
+										<td>워크피드</td>
+										<td>스퀘어 메인</td>
+										<td></td>		
+										<td></td>
+										<td><a href="04_square/SQ5.1.1.html"  target="_blank">SQ5.1.1.html</a></td>
+
+										<td>11/13 - 11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>표정 레이어팝업</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.1_emoti.html"  target="_blank">SQ5.1.1_emoti.html</a></td>
+
+										<td>11/13 - 11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>플래그 글</td>
+										<td>피드</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.2.1.html"  target="_blank">SQ5.1.2.1.html</a></td>
+
+										<td>11/13 - 11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>사진</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.2.2.html"  target="_blank">SQ5.1.2.2.html</a></td>
+
+										<td>11/10 - 11/10</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>파일</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.2.3.html"  target="_blank">SQ5.1.2.3.html</a></td>
+
+										<td>11/10 - 11/10</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>보고</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.2.5.html"  target="_blank">SQ5.1.2.5.html</a></td>
+
+										<td>11/10 - 11/10</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>공지</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.2.6.html"  target="_blank">SQ5.1.2.6.html</a></td>
+
+										<td>11/10 - 11/10</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>멘션 글</td>
+										<td></td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.3.html"  target="_blank">SQ5.1.3.html</a></td>
+
+										<td>11/09 - 11/09</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>VIP 글</td>
+										<td></td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.1.4.html"  target="_blank">SQ5.1.4.html</a></td>
+
+										<td>11/09 - 11/09</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>내그룹 피드</td>
+										<td>피드</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.1.html"  target="_blank">SQ5.2.1.html</a></td>
+
+										<td>11/09 - 11/09</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>글쓰기</td>										
+										<td>기본</td>
+										<td><a href="04_square/SQ5.2.1.3.1.html"  target="_blank">SQ5.2.1.3.1.html</a></td>
+
+										<td>11/13 - 11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>	
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>								
+										<td>일정 등록</td>
+										<td></td>
+										<td><a href="04_square/SQ5.2.1.3.2.html"  target="_blank">SQ5.2.1.3.2.html</a></td>
+
+										<td>11/14 - 11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>										
+										<td>보고서 등록</td>
+										<td></td>
+										<td><a href="04_square/SQ5.2.1.3.3.html"  target="_blank">SQ5.2.1.3.3.html</a></td>
+
+										<td>11/14 - 11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>								
+										<td>공지사항 등록</td>
+										<td></td>
+										<td><a href="04_square/SQ5.2.1.3.4.html"  target="_blank">SQ5.2.1.3.4.html</a></td>
+
+										<td>11/14 - 11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>사진</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.2.html"  target="_blank">SQ5.2.2.html</a></td>
+
+										<td>11/15 - 11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>사진</td>
+										<td></td>	
+										<td></td>
+										<td><a href="99_common/img_view.html"  target="_blank"> 이미지뷰어 </a></td>
+										<td>공통사항 참고</td>
+										<td></td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>파일</td>
+										<td></td>	
+										<td></td>
+										<td><a href="04_square/SQ5.2.3.html"  target="_blank">SQ5.2.3.html</a></td>
+
+										<td>11/15 - 11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>파일함 폴더 선택</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.3.1.html"  target="_blank">SQ5.2.3.1.html</a></td>
+
+										<td>11/15 - 11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>멤버</td>
+										<td>관리자 뷰</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.4.html"  target="_blank">SQ5.2.4.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td class="notice">리스트 2종류 모두 포함: 관리자일경우, 첫 항목의 셀렉트 타입 사용, 일반 사용자 일 경우 이하 badge로 표현된 ui 사용</td>
+									</tr>									
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>팀별로 보기</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.4_team.html"  target="_blank">SQ5.2.4_team.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>멤버추가 팝업</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.4.1.html"  target="_blank">SQ5.2.4.1.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>일정</td>
+										<td>캘린더 형</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.5.1.html"  target="_blank">SQ5.2.5.1.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>목록 형</td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.5.2.html"  target="_blank">SQ5.2.5.2.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>보고</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.6.html"  target="_blank">SQ5.2.6.html</a></td>
+
+										<td>11/17 - 11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>공지</td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.2.7.html"  target="_blank">SQ5.2.7.html</a></td>
+
+										<td>11/17 - 11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공개그룹</td>
+										<td></td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.3.html"  target="_blank">SQ5.3.html</a></td>
+
+										<td>11/17 - 11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>종료된그룹</td>
+										<td></td>
+										<td></td>										
+										<td></td>
+										<td><a href="04_square/SQ5.4.html"  target="_blank">SQ5.4.html</a></td>
+
+										<td>11/17 - 11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>그룹만들기</td>
+										<td></td>
+										<td></td>	
+										<td>그룹만들기(모달)</td>
+										<td><a href="04_square/SQ5.6.html"  target="_blank">SQ5.6.html</a></td>
+
+										<td>11/20 - 11/20</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>01. 알림설정</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.7.1.html"  target="_blank">SQ5.7.1.html</a></td>
+
+										<td>11/9 - 11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>02워크피드설정_01나의그룹</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.7.2.1.html"  target="_blank">SQ5.7.2.1.html</a></td>
+
+										<td>11/9 - 11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>02워크피드설정_02전사조직그룹</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.7.2.2.html"  target="_blank">SQ5.7.2.2.html</a></td>
+
+										<td>11/9 - 11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>02워크피드설정_03공개그룹</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.7.2.3.html"  target="_blank">SQSQ5.7.2.3.html</a></td>
+
+										<td>11/9 - 11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>03. 종료그룹관리</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.7.3.html"  target="_blank">SQ5.7.3.html</a></td>
+
+										<td>11/9 - 11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>연계:메일</td>
+										<td>메일연계</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="04_square/SQ5.8.html"  target="_blank">SQ5.8.html</a></td>
+
+										<td>01/26</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 결재 -->
+				<div id="guide05" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#05. 결재(05_approval)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 50px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>기안한 문서</td>
+										<td>기안</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.1.html"  target="_blank">AP3.1.1.html</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.html"  target="_blank">AP3.1.2.html</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>예약상신</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.8.1.html"  target="_blank">AP3.1.8.1.html</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.8.2.html"  target="_blank">AP3.1.8.2.html</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>발송</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.6.1.html"  target="_blank">AP3.1.6.1.html</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.6.html"  target="_blank">AP3.1.6.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>문서 수정</td>
+										<td></td>
+										<td></td>
+										<td>윈도우 팝업</td>
+										<td><a href="05_approval/AP3.1.1.2.2.html"  target="_blank">AP3.1.1.2.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>접수한문서</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.3.1.html"  target="_blank">AP3.1.3.1.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.3.2.html"  target="_blank">AP3.1.3.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>반려된문서</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.4.1.html"  target="_blank">AP3.1.4.1.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.4.2.html"  target="_blank">AP3.1.4.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>공람요청한문서</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.5.1.html"  target="_blank">AP3.1.5.1.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.5.2.html"  target="_blank">AP3.1.5.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공람자 확인</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.5.2.1.html"  target="_blank">AP3.1.5.2.1.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>수신반송된문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.6.1_수신반송된문서.html"  target="_blank">AP3.1.6.1_수신반송된문서.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.6.2.html"  target="_blank">AP3.1.6.2.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>회신요청문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.7.1.html"  target="_blank">AP3.1.7.1.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.7.2.html"  target="_blank">AP3.1.7.2.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>결재할문서</td>
+										<td>결재예정</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.2.1.html" target="_blank">AP3.2.1.2.1.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.2.2.html" target="_blank">AP3.2.1.2.2.html</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재대기</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.1.1.html" target="_blank">AP3.2.1.1.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.1.2.html" target="_blank">AP3.2.1.1.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재처리</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.3.1.html" target="_blank">AP3.2.1.3.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.1.3.2.html" target="_blank">AP3.2.1.3.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>접수할문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.4.1_분할형.html" target="_blank">AP3.2.4.1_분할형.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.4.1_목록형.html" target="_blank">AP3.2.4.1_목록형.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>부서접수</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.2.1.html"  target="_blank">AP3.2.2.1</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.2.2.html"  target="_blank">AP3.2.2.2</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>임시보관함</td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.9.html"  target="_blank">AP3.1.9.html</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>처리할 문서</td>
+										<td>접수할 문서</td>
+										<td>담당자 지정</td>
+										<td></td>
+										<td>담당자 지정 팝업(윈도우)</td>
+										<td><a href="05_approval/AP3.2.2.2.1.1.1.html"  target="_blank">AP3.2.2.2.1.1.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>의견 작성 팝업(윈도우)</td>
+										<td><a href="05_approval/AP3.2.2.2.1.1.2.html"  target="_blank">AP3.2.2.2.1.1.2.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>부서 지정</td>
+										<td></td>
+										<td>부서 지정 팝업(윈도우)</td>
+										<td><a href="05_approval/AP3.2.2.2.1.2.1.html"  target="_blank">AP3.2.2.2.1.2.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>의견 작성 팝업(윈도우)</td>
+										<td><a href="05_approval/AP3.2.2.2.1.2.2.html"  target="_blank">AP3.2.2.2.1.2.2.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>접수 의견 팝업(모달)</td>
+										<td><a href="05_approval/AP3.2.2.2.3.html"  target="_blank">AP3.2.2.2.3.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공람할 문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.3.1.html"  target="_blank">AP3.2.3.1.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>									
+									<tr>
+										<td></td>
+										<td>공람할 문서</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.3.2.html"  target="_blank">AP3.2.3.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>회신할 문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.5.1.html"  target="_blank">AP3.2.5.1.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>회신할 문서</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.5.2.html"  target="_blank">AP3.2.5.2.html</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>미완료문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.6.1.html"  target="_blank">AP3.2.6.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>미완료문서</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.2.6.2.html"  target="_blank">AP3.2.6.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>완료된문서</td>
+										<td>기안</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.1.1.html"  target="_blank">AP3.3.1.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>기안</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.1.2.html"  target="_blank">AP3.3.1.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.2.1.html"  target="_blank">AP3.3.2.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.2.2.html"  target="_blank">AP3.3.2.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>접수</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.3.1.html"  target="_blank">AP3.3.3.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>접수</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.3.2.html"  target="_blank">AP3.3.3.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공람</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.4.1.html"  target="_blank">AP3.3.4.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공람</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.3.4.2.html"  target="_blank">AP3.3.4.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>휴지통</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.10.1.html"  target="_blank">AP3.10.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.10.2.html"  target="_blank">AP3.10.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>플래그문서</td>
+										<td>분할</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.5.1.html"  target="_blank">AP3.5.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.5.2.html"  target="_blank">AP3.5.2.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>개인보관함</td>
+										<td>분할형</td>
+										<td></td>
+										<td></td>
+										<td>개인보관함 분할형</td>
+										<td><a href="05_approval/AP3.7.1.html"  target="_blank">AP3.7.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.7.2.html"  target="_blank">AP3.7.2.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>공통팝업</td>
+										<td>결재경로지정</td>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.2.1.html"  target="_blank">AP3.1.2.2.1.html</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>									
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>나의결재선</td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.2.3.html"  target="_blank">AP3.1.2.2.3.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>수신자지정</td>
+										<td>수신자지정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.3.1.html"  target="_blank">AP3.2.3.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>수신그룹자지정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.3.2.html"  target="_blank">AP3.2.3.2.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>공람자지정</td>
+										<td>공람자지정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.4.1.html"  target="_blank">AP3.2.4.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공람그룹지정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.4.2.html"  target="_blank">AP3.2.4.2.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>열람제한 공유</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.5.html"  target="_blank">AP3.1.2.5.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>공유관리</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.6.html"  target="_blank">AP3.1.2.6.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>문서암호</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.1.2.1.2.html"  target="_blank">AP3.1.1.2.1.2.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>회수의견</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.7.html"  target="_blank">AP3.1.2.7.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>문서함선택</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.1.2.8.html"  target="_blank">AP3.1.2.8.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>공통 팝업</td>
+										<td>관리문서 선택</td>
+										<td></td>
+										<td></td>
+										<td>관련문서 선택(모달)</td>
+										<td><a href="05_approval/AP3.1.2.9.html"  target="_blank">AP3.1.2.9.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재/반려/보류 의견</td>
+										<td></td>
+										<td></td>
+										<td>결재 의견(모달)</td>
+										<td><a href="05_approval/AP3.2.1.1.2.1.1.html"  target="_blank">AP3.2.1.1.2.1.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>설정</td>
+										<td>개인보관함 관리</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.8.1.html"  target="_blank">AP3.8.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>개인보관함 관리</td>
+										<td>추가 레이어</td>
+										<td></td>
+										<td></td>
+										<td><a href="05_approval/AP3.8.1.1.html"  target="_blank">AP3.8.1.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>기안확인</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>기안서 확인</td>
+										<td><a href="05_approval/AP3.1.2.1.html"  target="_blank">AP3.1.2.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>기안작성</td>
+										<td>서식선택</td>
+										<td>그리드형</td>
+										<td></td>
+										<td>서식 선택하기(윈도우)</td>
+										<td><a href="05_approval/AP3.1.2.10.2_%EC%B2%A8%EB%B6%80%EA%B8%B0%EC%95%88_%EA%B7%B8%EB%A6%AC%EB%93%9C.html"  target="_blank">AP3.1.2.10.2.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>서식 선택하기(윈도우)</td>
+										<td><a href="05_approval/AP3.1.2.10.1_%EB%AA%A9%EB%A1%9D%ED%98%95.html"  target="_blank">AP3.1.2.10.1.html</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>접수 처리</td>
+										<td></td>
+										<td>레이어 팝업</td>
+										<td></td>
+										<td>접수 처리 -결재경로 </td>
+										<td><a href="05_approval/AP3.15.4.html"  target="_blank">AP3.15.4.html</a></td>
+										<td>02/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>이력보기</td>
+										<td></td>
+										<td>레이어 팝업</td>
+										<td></td>
+										<td>이력보기</td>
+										<td><a href="05_approval/AP3.15.7.1.html"  target="_blank">AP3.15.7.1.html</a></td>
+										<td>02/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>이력보기 첨부</td>
+										<td></td>
+										<td>이력보기</td>
+										<td><a href="05_approval/AP3.15.7.2.html"  target="_blank">AP3.15.7.2.html</a></td>
+										<td>02/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									
+									<tr>
+										<td>문서비교</td>
+										<td></td>
+										<td>윈도우팝업</td>
+										<td></td>
+										<td>문서비교</td>
+										<td><a href="05_approval/AP3.15.7.1.1.html"  target="_blank">AP3.15.7.1.1.</a></td>
+										<td>02/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>경로비교</td>
+										<td></td>
+										<td>윈도우팝업</td>
+										<td></td>
+										<td>경로비교</td>
+										<td><a href="05_approval/AP3.15.7.1.2.html"  target="_blank">AP3.15.7.1.2.</a></td>
+										<td>02/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 일정 -->
+				<div id="guide06" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#06. 일정(06_schedule)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 50px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>뷰모드</td>
+										<td>월간</td>
+										<td></td>
+										<td></td>
+										<td>월간뷰</td>
+										<td><a href="06_schedule/CA6.1.1.html"  target="_blank">CA6.1.1.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>월간</td>
+										<td></td>
+										<td></td>
+										<td>월간뷰-간편등록</td>
+										<td><a href="06_schedule/CA6.1.1.1.html"  target="_blank">CA6.1.1.1.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td class="notice">6.1.1.1</td>
+									</tr>
+									
+									<tr>
+										<td>뷰모드</td>
+										<td>월간</td>
+										<td></td>
+										<td></td>
+										<td>월간뷰-간편보기</td>
+										<td><a href="06_schedule/CA6.1.1.2.html"  target="_blank">CA6.1.1.2.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td class="notice">6.1.1.1</td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>월간</td>
+										<td></td>
+										<td></td>
+										<td>월간뷰-반복수정설정</td>
+										<td><a href="06_schedule/CA6.1.1.1_1.html"  target="_blank">CA6.1.1.1_1.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>주간</td>
+										<td></td>
+										<td></td>
+										<td>주간뷰</td>
+										<td><a href="06_schedule/CA6.1.2.html"  target="_blank">CA6.1.2.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>일간</td>
+										<td></td>
+										<td></td>
+										<td>일간뷰</td>
+										<td><a href="06_schedule/CA6.1.3.html"  target="_blank">CA6.1.3.html</a></td>
+
+										<td>11/8</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>일정정보</td>
+										<td></td>
+										<td></td>
+										<td>팝업(윈도우)</td>
+										<td><a href="06_schedule/CA6.1.1.3.html"  target="_blank">CA6.1.1.3.html</a></td>
+
+										<td>11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>일정등록</td>
+										<td></td>
+										<td></td>
+										<td>팝업(윈도우)</td>
+										<td><a href="06_schedule/CA6.2.1.html"  target="_blank">CA6.2.1.html</a></td>
+
+										<td>11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td></td>
+										<td>반복설정 레이어팝업</td>
+										<td></td>
+										<td>팝업(모달)</td>
+										<td><a href="06_schedule/CA6.2.1_반복설정.html" target="_blank">CA6.2.1_반복설정.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>공유자,설비일정확인</td>
+										<td></td>
+										<td></td>
+										<td>팝업(윈도우)</td>
+										<td><a href="06_schedule/CA6.2.2.html"  target="_blank">CA6.2.2.html</a></td>
+
+										<td>11/28</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>공유자추가</td>
+										<td></td>
+										<td></td>
+										<td>팝업(윈도우)</td>
+										<td><a href="06_schedule/CA6.2.1.2.html"  target="_blank">CA6.2.1.2.html</a></td>
+
+										<td>11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>달력추가</td>
+										<td></td>
+										<td></td>
+										<td>팝업(레이어)</td>
+										<td><a href="06_schedule/CA6.3.html"  target="_blank">CA6.3.html</a></td>
+
+										<td>11/13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설정</td>
+										<td>일반설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="06_schedule/CA6.4.1.html"  target="_blank">CA6.4.1.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>달력순서변경</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="06_schedule/CA6.4.2.html"  target="_blank">CA6.4.2.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>구글달력동기화</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="06_schedule/CA6.4.3.html"  target="_blank">CA6.4.3.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>검색</td>
+										<td>검색</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="06_schedule/CA6.10.html"  target="_blank">CA6.10.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>검색</td>
+										<td>검색 결과</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="06_schedule/CA6.5.html"  target="_blank">CA6.5.html</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>상세</td>
+										<td>인쇄보기</td>
+										<td></td>
+										<td></td>
+										<td>팝업(윈도우)</td>
+										<td><a href="06_schedule/CA6.6.html"  target="_blank">CA6.6.html</a></td>
+
+										<td>11/27</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 설비 -->
+				<div id="guide07" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#07. 설비(07_equipment)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 50px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>뷰모드</td>
+										<td>월간</td>
+										<td></td>
+										<td></td>
+										<td>월간뷰</td>
+										<td><a href="07_equipment/CA6.5.1.html"  target="_blank">CA6.5.1.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td class="notice">6.1.1.1/ 6.1.1.2/ CA6.5.1.1 포함</td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>주간</td>
+										<td></td>
+										<td></td>
+										<td>주간뷰</td>
+										<td><a href="07_equipment/CA6.5.2.html"  target="_blank">CA6.5.2.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>뷰모드</td>
+										<td>일간</td>
+										<td></td>
+										<td></td>
+										<td>일간뷰</td>
+										<td><a href="07_equipment/CA6.5.3.html"  target="_blank">CA6.5.3.html</a></td>
+
+										<td>11/9</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>리스트</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>내가 예약한 설비</td>
+										<td><a href="07_equipment/CA6.6.html"  target="_blank">CA6.6.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>리스트</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>승인 대기중인 설비</td>
+										<td><a href="07_equipment/CA6.7.html"  target="_blank">CA6.7.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>중복 승인</td>
+										<td><a href="07_equipment/CA6.7.2.html"  target="_blank">CA6.7.2.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비추가</td>
+										<td><a href="07_equipment/CA6.8.1.html"  target="_blank">CA6.8.1.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비정보</td>
+										<td><a href="07_equipment/CA6.8.2.html"  target="_blank">CA6.8.2.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비목록추가</td>
+										<td><a href="07_equipment/CA6.8.3.html"  target="_blank">CA6.8.3.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비목록추가</td>
+										<td><a href="07_equipment/CA6.8.4.html"  target="_blank">CA6.8.4.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비순서 변경</td>
+										<td><a href="07_equipment/CA6.9.1.html"  target="_blank">CA6.9.1.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>팝업</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비그룹관리</td>
+										<td><a href="07_equipment/CA6.9.2.html"  target="_blank">CA6.9.2.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>									
+									<tr>
+										<td>설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>설비그룹추가</td>
+										<td><a href="07_equipment/CA6.9.2.1.html"  target="_blank">CA6.9.2.1.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>검색</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>검색결과</td>
+										<td><a href="07_equipment/CA6.10.html"  target="_blank">CA6.10.html</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- 주소록 -->
+				<div id="guide08" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#08. 주소록(08_contact)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 150px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: *;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th>파일명</th>												
+										<th>상태</th>
+										<th>완료일</th>
+										<th>비고</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>즐겨찾는 주소록</td>
+										<td>목록</td>
+										<td>분할형</td>
+										<td></td>
+										<td>즐겨찾는 주소분할형</td>
+										<td>
+											<a href="08_contact/AD9.1.6.1.html" target="_blank">
+												AD9.1.6.1.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>버튼열, 상세내용 변경</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>즐겨찾는 주소목록형</td>
+										<td><a href="08_contact/AD9.1.6.2.html"  target="_blank">AD9.1.6.2.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>컬럼 변경(직위컬럼 삭제)</td>
+									</tr>
+
+									<tr>
+										<td>개인 주소록</td>
+										<td>목록</td>
+										<td>분할형</td>
+										<td></td>
+										<td>개인 주소록 분할형</td>
+										<td>
+											<a href="08_contact/AD9.1.1.1.html" target="_blank">
+												AD9.1.1.1.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>버튼열, 상세내용 변경</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>개인 주소록 목록형</td>
+										<td><a href="08_contact/AD9.1.1.2.html"  target="_blank">AD9.1.1.2.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>컬럼 변경(직위컬럼 삭제)</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>상세</td>
+										<td>읽기</td>
+										<td></td>
+										<td>연락처 상세</td>
+										<td><a href="08_contact/AD9.1.1.2.2.html"  target="_blank">AD9.1.1.2.2.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>그룹설정 UI 변경, 사용자 정보영역, 대표이메일 설정 변경</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>상세</td>
+										<td>추가/수정</td>
+										<td></td>
+										<td>연락처 추가/수정</td>
+										<td><a href="08_contact/AD9.1.1.2.2.1.html"  target="_blank">AD9.1.1.2.2.1.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>그룹설정 UI 변경, 사용자 정보영역, 대표이메일 설정 변경, 생년월일달력선택</td>
+									</tr>
+									<tr>
+										<td>그룹 주소록</td>
+										<td>목록</td>
+										<td>분할형</td>
+										<td></td>
+										<td>그룹주소록 분할형</td>
+										<td><a href="08_contact/AD9.1.2.1.html"  target="_blank">AD9.1.2.1.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>버튼열, 상세내용 변경</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>그룹주소록 목록형</td>
+										<td><a href="08_contact/AD9.1.2.2.html"  target="_blank">AD9.1.2.2.html</a></td>
+										<td>수정완료</td>
+										<td>12/07</td>
+										<td>그룹제목에 공유표기</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>추가</td>
+										<td>팝업</td>
+										<td></td>
+										<td>연락처 가져오기:조직도</td>
+										<td>
+											<a href="08_contact/AD9.1.2.2.1.html"  target="_blank">
+												AD9.1.2.2.1.html
+											</a>
+										</td>
+										<td>수정완료</td>
+										<td>12/08</td>
+										<td></td>
+									</tr>
+
+									<tr>
+										<td></td>
+										<td>추가</td>
+										<td>팝업</td>
+										<td></td>
+										<td>연락처 가져오기:주소록</td>
+										<td>
+											<a href="08_contact/AD9.1.2.2.1_2.html"  target="_blank">
+												AD9.1.2.2.1_2.html
+											</a>
+										</td>
+										<td>수정완료</td>
+										<td>12/08</td>
+										<td>주소록부분 추가</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>삭제</td>
+										<td>모달</td>
+										<td></td>
+										<td>연락처 삭제</td>
+										<td>
+											<a href="08_contact/AD9.1.2.2.2.html"  target="_blank">
+												AD9.1.2.2.2.html
+											</a>
+										</td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>신규</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>그룹관리</td>
+										<td>모달</td>
+										<td></td>
+										<td>그룹 관리</td>
+										<td>
+											<a href="08_contact/AD9.1.1.2.5.html"  target="_blank">
+												AD9.1.1.2.5.html
+											</a>
+										</td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>신규</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>공유자선택</td>
+										<td>팝업</td>
+										<td></td>
+										<td>공유자 선택팝업</td>
+										<td><a href="08_contact/AD9.1.1.2.1.1.html"  target="_blank">
+											AD9.1.1.2.1.1							</a>
+										</td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>신규</td>
+									</tr>									
+									<tr>
+										<td>그룹 추가</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<a href="08_contact/AD9.1.1.2.5.html"  target="_blank">
+												AD9.1.1.2.3.html
+											</a>
+										</td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>신규</td>
+									</tr>
+									<tr>
+										<td>공유받은주소록</td>
+										<td>목록</td>
+										<td>분할형</td>
+										<td></td>
+										<td>공유받은주소록 분할형</td>
+										<td><a href="08_contact/AD9.1.3.1.html"  target="_blank">AD9.1.3.1.html</a></td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>버튼열변경, 파일이름변경</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>공유받은주소록 목록형</td>
+										<td><a href="08_contact/AD9.1.3.2.html"  target="_blank">AD9.1.3.2.html</a></td>
+										<td>완료</td>
+										<td>12/08</td>
+										<td>버튼열변경, 파일이름변경</td>
+									</tr>
+									<tr>
+										<td>주소록 가져오기</td>
+										<td>신규</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<!--											<a href="08_contact/AD9.3.html"  target="_blank">-->
+											AD9.3.html
+											<!--											</a>-->
+										</td>
+										<td></td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>중복</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<!--											<a href="08_contact/AD9.3.html"  target="_blank">-->
+											AD9.3.html
+											<!--											</a>-->
+										</td>
+										<td></td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>잘못된</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<!--											<a href="08_contact/AD9.3.html"  target="_blank">-->
+											AD9.3.html
+											<!--											</a>-->
+										</td>
+										<td></td>
+										<td> </td>
+										<td> </td>
+									</tr>
+									<tr>
+										<td>주소록 내보내기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<a href="08_contact/AD9.4.html"  target="_blank">
+												AD9.4.html
+											</a>
+										</td>
+										<td>수정완료</td>
+										<td>12/08</td>
+										<td>주석에 CSV의 설명글 추가</td>
+									</tr>
+									<tr>
+										<td>내 연락처</td>
+										<td>설정</td>
+										<td></td>
+										<td></td>
+										<td>내연락처 그룹관리</td>
+										<td>
+																						<a href="08_contact/AD9.5.html"  target="_blank">
+											AD9.5.html
+																						</a>
+										</td>
+										<td>수정완료</td>
+										<td>12/08</td>
+										<td>화면 ID 변경, 타이틀변경</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 스토리지 -->
+				<div id="guide09" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#09. 스토리지(09_storage)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>스토리지 내파일</td>
+										<td>플래그 파일</td>
+										<td>목록</td>
+										<td>그리드형</td>
+
+										<td></td>
+										<td><a href="09_storage/ST8.1.1.1.html"  target="_blank">ST8.1.1.1.html</a></td>
+
+										<td>11/06 - 11/07</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr> <td></td>
+										<td>플래그 파일</td>
+										<td>목록</td>
+										<td>그리드형</td>
+										<td></td>
+
+										<td><a href="09_storage/ST8.1.1.1_drag_guide.html"  target="_blank">ST8.1.1.1_드래그앤드롭가이드</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+
+										<td>플래그 파일</td>
+										<td><a href="09_storage/ST8.1.2.1.html"  target="_blank">ST8.1.2.1.html</a></td>
+
+										<td>11/03 - 11/06</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+
+										<td>내폴더 목록형</td>
+										<td><a href="09_storage/ST8.1.1.2.html"  target="_blank">ST8.1.1.2.html</a></td>
+
+										<td>11/03 - 11/06</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td>레이어팝업</td>
+
+										<td>내폴더 새폴더 추가</td>
+										<td><a href="09_storage/ST8.1.1.2_1.html"  target="_blank">ST8.1.1.2_1.html</a></td>
+
+										<td>18/01/24</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>내폴더 목록형 - 폴더 상세</td>
+										<td><a href="09_storage/ST8.1.3.1.html"  target="_blank">ST8.1.3.1.html</a></td>
+
+										<td>11/03 - 11/06</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>내폴더 공유관리</td>
+										<td><a href="09_storage/ST8.1.3.1.1.html"  target="_blank">ST8.1.3.1.1.html</a></td>
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>내폴더 공유관리:기본</td>
+										<td><a href="09_storage/ST8.1.3.1.1_basic.html"  target="_blank">ST8.1.3.1.1_basic.html</a></td>
+										<td>18/01/24</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>내폴더 공유관리:버튼</td>
+										<td><a href="09_storage/ST8.1.3.1.1_btn.html"  target="_blank">ST8.1.3.1.1_btn.html</a></td>
+										<td>18/01/24</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr> <td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>내폴더 위치선택</td>
+										<td><a href="09_storage/ST8.1.3.1.2.html"  target="_blank">ST8.1.3.1.2.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr> <td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+
+										<td>파일올리기: 위치선택</td>
+										<td><a href="09_storage/ST8.1.3.1.3.html"  target="_blank">ST8.1.3.1.3.html</a></td>
+										<td></td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+
+										<td>공유받은 폴더</td>
+										<td><a href="09_storage/ST8.1.4.1.1.html"  target="_blank">ST8.1.4.1.1.html</a></td>
+
+										<td>11/03 - 11/06</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+
+									<tr> <td></td>
+										<td></td>
+										<td></td>
+										<td>팝업 목록형</td>
+
+										<td>이력보기</td>
+										<td><a href="09_storage/ST8.1.4.1.1.1.html"  target="_blank">ST8.1.4.1.1.1.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+
+									<tr><td></td>
+										<td></td>
+										<td></td>
+										<td>팝업 통계보기</td>
+
+										<td>공유받은 폴더</td>
+										<td><a href="09_storage/ST8.1.4.1.1.1_1.html"  target="_blank">ST8.1.4.1.1.1_1.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td><td></td>
+										<td></td>
+										<td>목록형</td>
+
+										<td>공유중인 폴더</td>
+										<td><a href="09_storage/ST8.1.4.1.2.html"  target="_blank">ST8.1.4.1.2.html</a></td>
+
+										<td>11/07 - 11/07</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td>스퀘어폴더</td>
+										<td></td>
+										<td>목록형</td>
+
+										<td>공유중인 폴더</td>
+										<td><a href="09_storage/ST8.1.5.html"  target="_blank">ST8.1.4.1.2.html</a></td>
+
+										<td>11/16 - 11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td>휴지통</td>
+										<td></td>
+										<td></td>
+
+										<td>휴지통</td>
+										<td><a href="09_storage/ST8.1.6.html"  target="_blank">ST8.1.6.html</a></td>
+
+										<td>11/07 - 11/07</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td>설정</td>
+										<td>일반설정</td>
+										<td></td>
+
+										<td>일반설정</td>
+										<td><a href="09_storage/ST8.1.7.1.html"  target="_blank">ST8.1.7.1.html</a></td>
+
+										<td>11/15~11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr><td></td>
+										<td>설정</td>
+										<td>용량정보</td>
+										<td></td>
+
+										<td>용량정보</td>
+										<td><a href="09_storage/ST8.1.7.2.html"  target="_blank">ST8.1.7.2.html</a></td>
+
+										<td>11/15~11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									
+									<tr><td></td>
+										<td>검색</td>
+										<td></td>
+										<td></td>
+
+										<td>그리드형</td>
+										<td><a href="09_storage/ST8.3.1.html"  target="_blank">ST8.3.1.html</a></td>
+
+										<td>11/15~11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									
+									<tr><td></td>
+										<td>검색</td>
+										<td></td>
+										<td></td>
+
+										<td>목록형</td>
+										<td><a href="09_storage/ST8.3.2.html"  target="_blank">ST8.3.2.html</a></td>
+
+										<td>11/15~11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<!-- 스토리지:문서함-->
+									<tr>
+										<td>스토리지 문서함</td>
+										<td>최근찾은문서</td>
+										<td>분할형</td>
+										<td></td>
+										<td>문서함 최근찾은문서</td>
+										<td><a href="09_storage/DC8.1.1.html"  target="_blank">DC8.1.1</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>문서함 최근찾은문서</td>
+										<td><a href="09_storage/DC8.1.2.html"  target="_blank">DC8.1.2</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>완료함</td>
+										<td>분할형</td>
+										<td></td>
+										<td>문서완료함</td>
+										<td><a href="09_storage/DC8.3.1.1.html"  target="_blank">DC8.3.1.1</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>문서완료함</td>
+										<td><a href="09_storage/DC8.3.1.2.html"  target="_blank">DC8.3.1.2</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>수신완료함</td>
+										<td>분할형</td>
+										<td></td>
+										<td>문서함 수신완료함</td>
+										<td><a href="09_storage/DC8.1.1.html"  target="_blank">DC8.1.1</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>목록형</td>
+										<td></td>
+										<td>문서함 수신완료함</td>
+										<td><a href="09_storage/DC8.3.3.1.html"  target="_blank">DC8.3.3.1</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>설정</td>
+										<td>문서함관리</td>
+										<td></td>
+										<td>문서관리</td>
+										<td><a href="09_storage/DC8.6.1.html"  target="_blank">DC8.6.1</a></td>
+
+										<td>11/21</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>부서문서함추가</td>
+										<td></td>
+										<td>문서관리</td>
+										<td><a href="09_storage/DC8.6.1.1.html"  target="_blank">DC8.6.1.1</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>문서이동</td>
+										<td></td>
+										<td>문서이동</td>
+										<td><a href="09_storage/DC8.6.1.2.2.html"  target="_blank">DC8.6.1.2.2</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>팝업</td>
+										<td></td>
+										<td>부서선택</td>
+										<td><a href="09_storage/DC8.6.1.2.2._select_team.html"  target="_blank">DC8.6.1.2.2_부서선택</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>비전자문서</td>
+										<td>팝업</td>
+										<td></td>
+										<td>비전자문서등록</td>
+										<td><a href="09_storage/DC8.7.1.1.html"  target="_blank">DC8.7.1.1</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>비전자문서</td>
+										<td>팝업</td>
+										<td></td>
+										<td>비전자문서상세</td>
+										<td><a href="09_storage/DC8.7.1.2.html"  target="_blank">DC8.7.1.2</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 동호회 -->
+				<div id="guide10" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#10. 동호회(10_community)</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>동호회 홈</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>동호회 홈</td>
+										<td><a href="10_community/CU10.1.html"  target="_blank">CU10.1.html</a></td>
+
+										<td>11/13 ~ 11~16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>목록</td>
+										<td>일반로그인</td>
+										<td>동호회 홈</td>
+										<td><a href="10_community/CU10.1.1.1_공지사항_일반로그인.html"  target="_blank">CU10.1.1.1_공지사항_일반로그인.html</a></td>
+
+										<td>11/13 ~ 11~13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>목록</td>
+										<td>관리자로그인</td>
+										<td>동호회 홈</td>
+										<td><a href="10_community/CU10.1.1.1_공지사항_관리자로그인.html"  target="_blank">CU10.1.1.1_공지사항_관리자로그인.html</a></td>
+
+										<td>11/13 ~ 11~13</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>상세보기</td>
+										<td></td>
+										<td>게시물상세</td>
+										<td><a href="10_community/CU10.1.1.1.1.html"  target="_blank">CU10.1.1.1.1.html</a></td>
+
+										<td>11/16 ~ 11~16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>상세보기</td>
+										<td></td>
+										<td>게시물수정</td>
+										<td><a href="10_community/CU10.1.1.1.2.html"  target="_blank">CU10.1.1.1.2.html</a></td>
+
+										<td>11/14 ~ 11~14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>상세보기</td>
+										<td></td>
+										<td>토론게시물상세</td>
+										<td><a href="10_community/CU10.1.1.1.3.html"  target="_blank">
+											CU10.1.1.1.3.html</a>
+										</td>
+
+										<td>11/16 ~ 11~16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>공지사항</td>
+										<td>상세보기</td>
+										<td></td>
+										<td>토론게시물수정</td>
+										<td><a href="10_community/CU10.1.1.1.4.html"  target="_blank">CU10.1.1.1.4.html</a></td>
+
+										<td>11/14 ~ 11~14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>우수동호회</td>
+										<td>목록</td>
+										<td></td>
+										<td>우수동호회</td>
+										<td><a href="10_community/CU10.1.1.2.html"  target="_blank">CU10.1.1.2.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>신규동호회</td>
+										<td>목록</td>
+										<td></td>
+										<td>신규동호회</td>
+										<td><a href="10_community/CU10.1.1.3.html"  target="_blank">CU10.1.1.3.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>홍보게시판</td>
+										<td>목록</td>
+										<td></td>
+										<td>홍보게시판</td>
+										<td><a href="10_community/CU10.1.1.4.html"  target="_blank">CU10.1.1.4.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>토론</td>
+										<td>목록</td>
+										<td></td>
+										<td>토론:진행중</td>
+										<td><a href="10_community/CU10.1.1.5.1.1.html"  target="_blank">CU10.1.1.5.1.1.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>토론</td>
+										<td>목록</td>
+										<td></td>
+										<td>토론:완료</td>
+										<td><a href="10_community/CU10.1.1.5.1.2.html"  target="_blank">CU10.1.1.5.1.2.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>게시판보기</td>
+										<td>토론</td>
+										<td>목록</td>
+										<td></td>
+										<td>토론:진행중:layer pop up</td>
+										<td><a href="10_community/CU10.1.1.5.2.html"  target="_blank">CU10.1.1.5.2.html</a></td>
+
+										<td>11/15 ~ 11~15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>동호회만들기</td>
+										<td>동호회생성</td>
+										<td>레이어팝업</td>
+										<td></td>
+										<td>Step1. 기본정보 입력_window pop-up</td>
+										<td><a href="10_community/CU10.1.2.1.html"  target="_blank">CU10.1.2.1.html</a></td>
+
+										<td>11/17 ~ 11~17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>동호회만들기</td>
+										<td>동호회생성</td>
+										<td>레이어팝업</td>
+										<td></td>
+										<td>Step2. 메뉴 구성_window pop-up</td>
+										<td><a href="10_community/CU10.1.2.2.html"  target="_blank">CU10.1.2.2.html</a></td>
+
+										<td>11/17 ~ 11~17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>동호회만들기</td>
+										<td>동호회생성</td>
+										<td>레이어팝업</td>
+										<td></td>
+										<td>Step3. 미리보기_window pop-up</td>
+										<td><a href="10_community/CU10.1.2.3.html"  target="_blank">CU10.1.2.3.html</a></td>
+
+										<td>11/17 ~ 11~17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>동호회만들기</td>
+										<td></td>
+										<td>레이어팝업</td>
+										<td>동호회 분류 선택</td>
+										<td>동호회 카테고리 선택_modal</td>
+										<td><a href="10_community/CU10.1.2.1.1.html"  target="_blank">CU10.1.2.1.1.html</a>
+										</td>
+
+										<td>11/17 ~ 11~17</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>전체게시물</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>전체게시물목록:일반</td>
+										<td><a href="10_community/CU10.2.1.1_전체게시물_목록_사용자.html"  target="_blank">CU10.2.1.1_전체게시물_목록_사용자</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>전체게시물</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>전체게시물목록:운영자</td>
+										<td><a href="10_community/CU10.2.1.1_전체게시물_목록_운영자.html"  target="_blank">CU10.2.1.1_전체게시물_목록_운영자</a></td>
+
+										<td>11/14</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>공지사항</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>공지사항:일반</td>
+										<td><a href="10_community/CU10.2.1.2_공지사항_목록_사용자.html"  target="_blank">CU10.2.1.2_공지사항_목록_사용자</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+
+									<tr>
+										<td>공지사항</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>공지사항:운영자</td>
+										<td><a href="10_community/CU10.2.1.2_공지사항_목록_운영자.html"  target="_blank">CU10.2.1.2_공지사항_목록_운영자</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>앨범게시판</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>앨범게시판:사용자</td>
+										<td><a href="10_community/CU10.2.1.6_앨범게시판_목록_사용자.html"  target="_blank">CU10.2.1.6_앨범게시판_목록_사용자</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>앨범게시판</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>앨범게시판:운영자</td>
+										<td><a href="10_community/CU10.2.1.6_앨범게시판_목록_운영자.html"  target="_blank">CU10.2.1.6_앨범게시판_목록_운영자</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>토론실</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>토론실:진행중</td>
+										<td><a href="10_community/CU10.2.1.7_토론실_진행중.html"  target="_blank">CU10.2.1.7_토론실_진행중</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>토론실</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>토론실:완료</td>
+										<td><a href="10_community/CU10.2.1.7_토론실_완료.html"  target="_blank">CU10.2.1.7_토론실_완료</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>토론실</td>
+										<td>토론실등록</td>
+										<td>레이어팝업</td>
+										<td></td>
+										<td>토론실:팝업</td>
+										<td><a href="10_community/CU10.2.1.7_토론실_진행중_팝업(레이어).html"  target="_blank">CU10.2.1.7_토론실_진행중_팝업(레이어)</a></td>
+
+										<td>11/15</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>동호회정보</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>개별동호회메인</td>
+										<td><a href="10_community/CU10.2.1.8.html"  target="_blank">CU10.2.1.8</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>동호회정보</td>
+										<td>등록한 게시글</td>
+										<td></td>
+										<td></td>
+										<td>개별동호회게시글</td>
+										<td><a href="10_community/CU10.2.1.9.1.html"  target="_blank">CU10.2.1.9.1</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>동호회정보</td>
+										<td>댓글단 게시글</td>
+										<td></td>
+										<td></td>
+										<td>댓글단게시글</td>
+										<td><a href="10_community/CU10.2.1.9.2.html"  target="_blank">CU10.2.9.2</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>동호회정보</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>등록한 댓들</td>
+										<td><a href="10_community/CU10.2.1.9.3.html"  target="_blank">CU10.2.9.3</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>게시판쓰기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>게시물쓰기</td>
+										<td><a href="10_community/CU10.2.2.html"  target="_blank">CU10.2.2</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>게시판쓰기</td>
+										<td>레이어 팝업</td>
+										<td></td>
+										<td></td>
+										<td>게시물 미리보기</td>
+										<td><a href="10_community/CU10.2.2.1.html"  target="_blank">CU10.2.2.1</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>회원목록</td>
+										<td>리스트</td>
+										<td></td>
+										<td></td>
+										<td>회원목록</td>
+										<td><a href="10_community/CU10.2.3.1.html"  target="_blank">CU10.2.3.1</a></td>
+
+										<td>11/23</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+
+									<tr>
+										<td>회원목록</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td>회원목록:메일전송(전체)</td>
+										<td><a href="10_community/CU10.2.3.1.3html"  target="_blank">CU10.2.3.1.3</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>회원가입</td>
+										<td>레이어팝</td>
+										<td></td>
+										<td></td>
+										<td>회원가입</td>
+										<td><a href="10_community/CU10.2.3.2.html"  target="_blank">CU10.2.3.2</a></td>
+
+										<td>11/24</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>동호회속성관리</td>
+										<td></td>
+										<td></td>
+										<td>동호회속성관리</td>
+										<td><a href="10_community/CU10.2.4.1.html"  target="_blank">CU10.2.4.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>동호회운영관리</td>
+										<td></td>
+										<td></td>
+										<td>동호회운영관리</td>
+										<td><a href="10_community/CU10.2.4.2.html"  target="_blank">CU10.2.4.2.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>동호회속성관리</td>
+										<td>팝업</td>
+										<td></td>
+										<td>동호회속성관리</td>
+										<td><a href="10_community/CU10.2.4.2.1.html"  target="_blank">CU10.2.4.2.1.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>메뉴권한관리</td>
+										<td></td>
+										<td></td>
+										<td>게시판관리</td>
+										<td><a href="10_community/CU10.2.4.3.html"  target="_blank">CU10.2.4.3.html</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>메뉴권한관리</td>
+										<td></td>
+										<td></td>
+										<td>게시판추가</td>
+										<td><a href="10_community/CU10.2.4.3_board_add_pop.html"  target="_blank">CU10.2.4.3_board_add_pop</a></td>
+
+										<td>11/16</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>사용량조회</td>
+										<td></td>
+										<td></td>
+										<td>사용량조회</td>
+										<td><a href="10_community/CU10.2.4.4.html"  target="_blank">CU10.2.4.4</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>회원등급관리</td>
+										<td></td>
+										<td></td>
+										<td>회원등급관리</td>
+										<td><a href="10_community/CU10.2.4.5.html"  target="_blank">CU10.2.4.5</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>회원관리</td>
+										<td></td>
+										<td></td>
+										<td>회원관리</td>
+										<td><a href="10_community/CU10.2.4.6.html"  target="_blank">CU10.2.4.6</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>회원관리</td>
+										<td>팝업</td>
+										<td></td>
+										<td>회원관리</td>
+										<td><a href="10_community/CU10.2.4.6.1.html"  target="_blank">CU10.2.4.6.1</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>홈페이지관리</td>
+										<td></td>
+										<td></td>
+										<td>배너관리</td>
+										<td><a href="10_community/CU10.2.4.7.html"  target="_blank">CU10.2.4.7</a></td>
+
+										<td>11/17</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>토론실관리</td>
+										<td>목록</td>
+										<td></td>
+										<td>토론실관리:승인</td>
+										<td><a href="10_community/CU10.2.4.8.html"  target="_blank">CU10.2.4.8</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>토론실관리</td>
+										<td>상세</td>
+										<td></td>
+										<td>토론실관리:상세</td>
+										<td><a href="10_community/CU10.2.4.8.1.html"  target="_blank">CU10.2.4.8.1</a></td>
+
+										<td>11/22</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>환경설정</td>
+										<td>토론실관리</td>
+										<td>목록</td>
+										<td></td>
+										<td>토론실관리:토론</td>
+										<td><a href="10_community/CU10.2.4.8_1.html"  target="_blank">CU10.2.4.8-토론</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td></td>
+									</tr>
+
+									<tr>
+										<td>환경설정</td>
+										<td>토론실관리</td>
+										<td></td>
+										<td></td>
+										<td>토론실관리:수정</td>
+										<td><a href="10_community/CU10.2.4.8.1.1.html"  target="_blank">CU10.2.4.8.1.1</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td></td>
+									</tr>									
+									<tr>
+										<td>환경설정</td>
+										<td>토론실관리</td>
+										<td></td>
+										<td></td>
+										<td>토론실관리:반려사유</td>
+										<td><a href="10_community/CU10.2.4.8.2.html"  target="_blank">CU10.2.4.8.2</a></td>
+
+										<td>11/20</td>
+										<td>완료</td>
+										<td class="notice"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<!-- 설문 -->
+				<div id="guide11" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#11. 설문</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 100px;">
+									<col style="width: 200px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th rowspan="2">파일명</th>
+
+										<th rowspan="2">시작/종료</th>		
+										<th rowspan="2">수정/완료</th>
+										<th rowspan="2">비고</th>
+									</tr>
+									<tr>
+										<th>1st</th>
+										<th>2nd</th>
+										<th>3rd</th>
+										<th>4th</th>
+										<th>화면명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>진행중인 설문</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1_설문_진행중인설문_목록.html"  target="_blank">SV1.1_설문_진행중인설문_목록.html</a></td>
+
+										<td>11/15 ~ 11/15</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>상세보기(진행전)</td>
+										<td>상세</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1_설문_상세화면(진행전).html"  target="_blank">SV1.1.1_설문_상세화면(진행전).html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>상세보기(진행중)</td>
+										<td>상세</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1_설문_상세화면(진행중).html"  target="_blank">SV1.1.1_설문_상세화면(진행중).html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설문송부(진행전)</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td>
+											<a href="11_research/SV1.1.1.1_설문_송부(진행전).html"  target="_blank">SV1.1.1.1_설문_송부(진행전).html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설문송부(진행중)</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td>
+											<a href="11_research/SV1.1.1.1_설문_송부(진행중).html"  target="_blank">SV1.1.1.1_설문_송부(진행중).html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>받는이 선택</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td>공통화면(조직도)</td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td>공통화면 조직도 사용</td>
+									</tr>
+									<tr>
+										<td>참여기간 변경</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1.2_설문_상세(진행중)_참여기간변경.html"  target="_blank">SV1.1.1.2_설문_상세(진행중)_참여기간변경.html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>미응답자 보기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1.3_설문_상세(진행중)_미응답자보기.html"  target="_blank">SV1.1.1.3_설문_상세(진행중)_미응답자보기.html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설문 응답하기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1.4_설문응답하기.html" target="_blank">SV1.1.1.4_설문응답하기.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>응답자 보기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1.1.5_설문_상세(진행중)_응답자보기.html"  target="_blank">SV1.1.1.5_설문_상세(진행중)_응답자보기.html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>종료설문</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.2_설문_종료설문_목록.html"  target="_blank">SV1.2_설문_종료설문_목록.html</a></td>
+
+										<td>11/15 ~ 11/15</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>설문등록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV2_설문_등록.html"  target="_blank">SV2_설문_등록.html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>문제추가</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV2.1_설문_등록_문제추가.html"  target="_blank">SV2.1_설문_등록_문제추가.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>그림등록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV2.1_설문_등록_문제추가.html"  target="_blank">SV2.1_설문_등록_문제추가.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td>문체추가 페이지에 포함시킴</td>
+									</tr>
+									<tr>
+										<td>설문미리보기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV2.2_설문미리보기.html"  target="_blank">SV2.2_설문미리보기.htmll</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>필수 응답문제수</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV2.3_필수응답문제수.html"  target="_blank">SV2.3_필수응답문제수.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>진행중인 투표</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV3.1_투표_진행중인투표_목록.html"  target="_blank">SV3.1_투표_진행중인투표_목록.html</a></td>
+
+										<td>11/15 ~ 11/15</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>상세보기(진행전)</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/투표_상세화면(진행전).html"  target="_blank">투표_상세화면(진행전).html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>상세보기(진행중)</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/투표_상세화면(진행중).html"  target="_blank">투표_상세화면(진행중).html</a></td>
+
+										<td>11/21 ~ 11/21</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>투표 응답하기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV3.1.1_투표응답하기.html"  target="_blank">SV3.1.1_투표응답하기.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>투표 결과보기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV3.1.1.1_투표결과보기.html"  target="_blank">SV3.1.1.1_투표결과보기.html</a></td>
+
+										<td>11/22 ~ 11/22</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>종료투표</td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV3.2_투표_종료투표_목록.html"  target="_blank">SV3.2_투표_종료투표_목록.html</a></td>
+
+										<td>11/15 ~ 11/15</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>투표등록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV4_투표_등록.html"  target="_blank">SV4_투표_등록.html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+                                    <tr>
+										<td>설문검색</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/SV1.1_설문_검색.html"  target="_blank">SV1.1_설문_검색.html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+                                    <tr>
+										<td>설문송부중</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>없음</td>
+										<td><a href="11_research/송부중.html"  target="_blank">송부중.html</a></td>
+
+										<td>11/20 ~ 11/20</td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>		
+
+				<!-- 공통 -->
+				<div id="guide99" class="guide_box">
+					<div class="guide_contents" >                         
+						<h1>#99. 공통</h1>
+						<div class="guide_b">
+							<table style="width:100%; table-layout:fixed; text-align: center;">
+								<colgroup>
+									<col style="width: 150px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: 80px">
+									<col style="width: 150px;">
+									<col style="width: 150px;">
+									<col style="width: 80px;">
+									<col style="width: 80px;">
+									<col style="width: *;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="5">위치</th>									
+										<th>파일명</th>												
+										<th>상태</th>
+										<th>완료일</th>
+										<th>비고</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>로그인</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/login/login.html"  target="_blank">login.html</a></td>
+										<td></td>
+										<td>9/15</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>비밀번호 변경</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/login/login2_error.html"  target="_blank">login2_error.html</a></td>
+										<td></td>
+										<td>9/15</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>로그인 실패</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/login/login3_fail.html"  target="_blank">login3_fail.html</a></td>
+										<td></td>
+										<td>9/15</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>사용자 선택</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/login/login4_user.html"  target="_blank">login4_user.html</a></td>
+										<td></td>
+										<td>9/15</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>다중 접속 에러</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/login/login5_multi.html"  target="_blank">login5_multi.html</a></td>
+										<td>완료</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>에러페이지</td>
+										<td>에러</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/error_page.html"  target="_blank">에러페이지</a></td>
+
+										<td>완료</td>
+										<td></td>
+										<td></td>
+									</tr>
+
+									<tr>
+										<td>가이드 메시지</td>
+										<td>분할화면 내용선택 가이드</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/분할화면_not_selected.html"  target="_blank">리스트 선택 가이드</a></td>
+										<td>완료</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>조직도</td>
+										<td>받는사람</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/연계기능_01조직도_팝업(윈도우).html"  target="_blank">01조직도</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>									
+									<tr>
+										<td></td>
+										<td>검색</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/연계기능_02조직도_left_검색결과_팝업(윈도우).html"  target="_blank">02검색결과</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>즐겨찾는</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/연계기능_04즐겨찾는_팝업(윈도우)html"  target="_blank">03즐겨찾는</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>직위</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/연계기능_05직위_팝업(윈도우).html"  target="_blank">04직위</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>간편</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/연계기능_06받는사람지정_간편팝업(윈도우).html"  target="_blank">05받는사람지정</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>주소록</td>
+										<td>주소록</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/AD9.1.2.2.1_2.html"  target="_blank">주소록</a></td>
+
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재</td>
+										<td>나의결재선</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/AP3.1.2.2.3.html"  target="_blank">나의결재선</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>수신자그룹</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/AP3.1.2.3.2.html"  target="_blank">수신자그룹</a></td>
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>공람그룹</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/organization_chart/AP3.1.2.4.2.html"  target="_blank">공람그룹</a></td>
+
+										<td>완료</td>
+										<td>12/1</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>내파일 불러오기</td>
+										<td>그리드</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/내파일불러오기_그리드형.html"  target="_blank">내파일불러오기 그리드</a></td>
+
+										<td>완료</td>
+										<td>12/4</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>목록</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/내파일불러오기_목록형.html"  target="_blank">내파일불러오기 목록</a></td>
+
+										<td>완료</td>
+										<td>12/4</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>주소찾기</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/주소찾기.html"  target="_blank">주소찾기</a></td>
+
+										<td>완료</td>
+										<td>12/4</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>검색결과</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/주소찾기_검색결과.html"  target="_blank">주소찾기_검색결과</a></td>
+										<td>완료</td>
+										<td>12/4</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>버디카드</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/buddy/buddy_180112.html"  target="_blank">버디카드</a></td>
+										<td>완료</td>
+										<td>18/01/09</td>
+										<td></td>
+									</tr>									
+									<tr>
+										<td>알림</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/alarm/alarm180112.html"  target="_blank">알림센터+토스트알림</a></td>
+										<td>완료</td>
+										<td>18/01/08</td>
+										<td></td>
+									</tr>
+										<!-- 개인정보 설정 -->							
+									<tr>
+										<td>개인정보설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY1_setinfo.html"  target="_blank">개인정보설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>비밀번호설정</td>
+										<td>로그인비밀번호</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY2.1_setpw.html"  target="_blank">비밀번호설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td></td>
+										<td>결재비밀번호</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY2.2_setpw.html"  target="_blank"> 결재 비밀번호설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>결재시 비밀번호 확인설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY2.3_setpw.html"  target="_blank">결재시 비밀번호 확인설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>부재설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY3_setabsence.html"  target="_blank">부재설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>부재설정</td>
+										<td>쓰기</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY3.1_setabsence.html"  target="_blank">부재설정쓰기</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>그룹설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY4_setgroup.html"  target="_blank">그룹설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>그룹설정</td>
+										<td>수신자그룹</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY4.1_setgroup.html"  target="_blank">수신자 그룹설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>									
+									<tr>
+										<td></td>
+										<td>그룹설정</td>
+										<td>공람그룹</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY4.2_setgroup.html"  target="_blank">공람 그룹설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>								
+									<tr>
+										<td></td>
+										<td>서명설정</td>
+										<td>서명</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY5.1_setsign.html"  target="_blank">서명설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>							
+									<tr>
+										<td></td>
+										<td>서명설정</td>
+										<td>서명추가</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY5.1.1_setsign.html"  target="_blank">서명추가</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>					
+									<tr>
+										<td></td>
+										<td>서명설정</td>
+										<td>서명관리(방법)</td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY5.2_setsign.html"  target="_blank">서명방법관리</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>					
+									<tr>
+										<td></td>
+										<td>알림설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY6_setalrm.html"  target="_blank">알림설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>				
+									<tr>
+										<td></td>
+										<td>결재설정</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td><a href="../html/99_common/personal_inform/MY7_setaprvl.html"  target="_blank">결재설정</a></td>
+										<td>완료</td>
+										<td>18/01/05</td>
+										<td></td>
+									</tr>
+									<!-- 홈: 서포트 -->
+									<tr>
+										<td>서포트</td>
+										<td>칼렌더</td>
+										<td></td>
+										<td></td>
+										<td>서포트 calendar</td>
+										<td><a href="../html/00_home/support_cal.html"  target="_blank">서포트 :칼렌더</a></td>
+										<td>완료</td>
+										<td>18/01/17</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>사람</td>
+										<td></td>
+										<td></td>
+										<td>서포트 people</td>
+										<td>
+<!--											<a href="../html/00_home/support_cal.html"  target="_blank">서포트 :칼렌더</a>-->
+										</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<!-- 프로필 -->
+									<tr>
+										<td>겸직,프로필</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>겸직선택,프로필</td>
+										<td><a href="../html/00_home/profile_area.html"  target="_blank">겸직선택, 프로필</a></td>
+										<td>완료</td>
+										<td>18/01/17</td>
+										<td></td>
+									</tr>
+									<!-- 서포트 -->
+									<tr>
+										<td>서포트메뉴</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>서포트메뉴 달력</td>
+										<td><a href="../html/00_home/support_cal.html"  target="_blank">달력보기</a></td>
+										<td>완료</td>
+										<td>18/01/17</td>
+										<td></td>
+									</tr>
+									<!-- 서포트 -->
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>서포트메뉴 사람</td>
+										<td><a href="../html/00_home/support_people.html"  target="_blank">사람보기</a></td>
+										<td>완료</td>
+										<td>18/01/17</td>
+										<td></td>
+									</tr>
+									<!-- 서포트 -->
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>서포트메뉴 사람 검색</td>
+										<td><a href="../html/00_home/support_people_after_search.html"  target="_blank">사람 검색</a></td>
+										<td>완료</td>
+										<td>18/01/17</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

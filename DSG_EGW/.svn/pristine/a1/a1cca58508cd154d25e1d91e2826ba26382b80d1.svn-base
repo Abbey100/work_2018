@@ -1,0 +1,1055 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>square 상세 검색 화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(function() {
+                $('.topic_sentence li p').dotdotdot();
+            });
+        </script>
+</head>
+<body>
+<!--컨테이너-->
+<div class="co_work">
+<!--좌측 메뉴 영역-->
+<div id="" class="left_menu">
+  <!--Action Btn start-->
+  <div class="btn_large mg_bttm_15"> <a class="btn_l" href="" title="협업룸 만들기">협업룸만들기</a></div>
+    <!--Tree Area-->
+    <!--즐겨찾는 그룹-->
+  <div id="" class="tree_area">
+    <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span class="tree_ttl" onclick="">즐겨찾는그룹</span> </div>
+        <!--업무방 Box-->
+       <ul id="" class="tree_cntnts_area bttm_no_scroll">
+        <li id="" ondblclick="" class="on"><span>품질관리팀</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""> <span class="fnt_bold">경쟁사 동향분석</span> <span class="count">12</span> <a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+        <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span><a class="delete" href=""> delete</a> </li>
+       </ul>
+ </div>
+    <!--// 즐겨찾는 그룹-->
+    <!-- 나의 업무 그룹-->
+  <div id="" class="tree_area bttm_ln">
+       <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span class="tree_ttl one" onclick="">진행중인 업무그룹</span><a class="btn_tree_cnfg" href="#"> </a> </div>
+          <!--업무방 Box-->
+      <ul id="" class="tree_cntnts_area bttm_no_scroll">
+         <li id="" ondblclick="" class=""><span class="fnt_bold">경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span class="fnt_bold">경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+         <li id="" ondblclick="" class=""><span>경쟁사 동향분석</span></li>
+      </ul>
+   </div>
+ <!-- Config -->
+   <a class="left_config" id="" href="#"><span>환경설정</span></a>
+ <!-- //Config -->
+</div>
+<!--좌측 메뉴 영역 END-->
+<!----------------------->
+<!----------------------->
+<!-- 중앙 컨텐츠 영역 Center Contents Area -->
+<div class="container_box">
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+   <!--[D] title_area 에 on 클래스 추가 하면 메뉴 활성화-->
+   <div class="title_area">
+      <h2 class="title">
+       <a href="#"><span class="btn_ttl_menu">품질관리관리관리관리팀</span></a>
+       <a href="#" class="btn_star">즐겨찾기</a>
+       <span class="loading"></span>
+      </h2>
+      <div class="layer_pop ttl_menu">
+      <ul>
+          <li> 타이틀 메뉴01타이틀 메뉴01타이틀 </li>
+          <li> 타이틀 메뉴01 </li>
+          <li> 타이틀 메뉴01 </li>
+          <li> 타이틀 메뉴01 </li>
+       </ul>
+      </div>
+   </div>
+   <!-- // Title area END-->
+    
+<!-- CONTENTs AREA START -->
+   <div class="list_vertical">
+       <!-- CONTENTs 좌측 -->
+       <div class="container_wrap_left">
+           <!-- .content_lst_body 본문 영역 -->
+           <div class="content_lst content_lst_body">
+              <!-- 시스템: 날짜 정보 -->
+              <div class="system_date"><span>2015.04.20</span></div>
+              <!-- // 시스템: 날짜 정보 -->
+                  
+              <!-- 글 Type 06. 시스템: 그룹 생성정보 -->
+              <div class="article_box">
+                    <div class="system_info_group">
+                         <div class="ico_group"> <img src="../../img/square/ico_co_work_group.png" /> </div>
+                         <div class="group_info">
+                              <h2 class="title">품질관리팀</h2>
+                              <div class="info_txt">
+                                  <span>그룹이 생성되었습니다. </span>
+                                  <span>12:30 PM</span>
+                                  <p>팀 구성원 간 공지사항이나 경조사, 이벤트 등의 내용을 공유할 수 있으며,
+                                  팀 일정 등을 공유하여 커뮤니케이션하는 공간입니다.</p>
+                              </div>
+                              <div class="members">
+                                  <div class="ico_member"><img src="../../img/square/ico_member.png" /></div>
+                                  <ul class="member_info">
+                                     <!-- 그룹원정보 -->
+                                    <li> <span class="name">강감찬</span> <span class="class">(품질관리팀 수석연구원)</span> </li>
+                                    <li> <span class="name">홍길동</span> <span class="class">(품질관리팀 책임연구원)</span> </li>
+                                    <li> <span class="name">이의견</span> <span class="class">(품질관리팀 책임연구원)</span> </li>
+                                    <li> <span class="name">고도리</span> <span class="class">(품질관리팀 선임연구원)</span> </li>
+                                    <li> <span class="name">나주인</span> <span class="class">(품질관리팀 주임연구원)</span> </li>
+                                    <li> <span class="name">김공유</span> <span class="class">(품질관리팀 연구원)</span> </li>
+                                  </ul>
+                              </div>
+                         </div>
+                    </div>
+                </div>
+              <!-- // 글 Type 06. 시스템: 그룹 생성정보 -->
+                
+              <!-- 시스템: 날짜 정보 -->
+              <div class="system_date"><span>2015.05.18</span></div>
+              <!-- // 시스템: 날짜 정보 -->
+                
+              <!-- 글 Type 01. 토픽 A -->
+              <div class="article_box">
+                    <div class="usr_pic">
+                        <img class="mask" src="../../img/pic_mask_40.png" />
+                        <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence mine">
+                        <!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+                          <li>
+                              <span class="name">나주인</span>
+                              <span class="class">(품질관리팀 주임연구원)</span>
+                              <span class="date">12:30 PM</span>
+                              <span class="ico bookmark">즐찾</span></li>
+                           <li class="go_modify">
+                             <span class="ico set"></span>
+                             <div class="layer_pop">
+                                 <ul>
+                                    <li> 수정 </li>
+                                    <li> 삭제 </li>
+                                 </ul></div></li>
+                           <!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+                          <li>
+                              <h3><span>Topic의견 관련하여 등록된 글: 토픽 A</span></h3>
+                              <p>토픽 A에 대한 본문입니다. 팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다. 또한 그룹웨어의 팀의 일정 같은 것들이나 공유폴더와 연계하여 추가되는 일정이나 파일정보 등을 현 그룹에서 확인할 수 있답니당~~~~!!</p></li>
+                          <li class="attached">
+                              <span class="commnt">5개</span>
+                              <span class="file">10개</span></li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type ppt"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type doc"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                         <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type pdf"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                         <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type hwp"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type etc"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type zip"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                         <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type jpg"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type xls"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type music"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type media"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                    </ul>
+               </div>
+              <!-- *** 글 Type 01. 토픽 A 에 관련 의견이 바로 있을 때 *** -->
+              <!-- 글 Type 01 - 1. 글 Type 01. 토픽 A 의견 01 -->
+              <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                            <img class="mask" src="../../img/pic_mask_40.png" />
+                            <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">고도리</span>
+                                 <span class="class">(품질관리팀 선임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>토픽 A에 대한 의견 01 입니다.<br>
+                                 <em>@김공유</em> 씨는 프리젠테이션 준비 부탁합니다. 라고 이야기가 길더라도 의견에서는 그냥 쭉쭉 나오면 되는 건가염..? </p>
+                             </li>
+                         </ul>
+                    </div>
+              </div>
+              <!-- 글 Type 01 - 2. 글 Type 01. 토픽 A 의견 02 = file -->
+              <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">김공유</span>
+                                 <span class="class">(품질관리팀 연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>토픽A에관하여</p></li>
+                         </ul>
+                         <ul class="usr_comment">
+                             <li>
+                                <div class="file_info">
+                                <div class="file_type pdf"> </div>
+                                <ul class="file_txt">
+                                    <li><span class="file_ttl">토픽A.pdf</span> <span class="ico bookmark">즐겨찾기버튼</span> </li>
+                                    <li><span  class="capacity">646KB</span></li>
+                                </ul>
+                                <div class="detail_menu">
+                                    <span class="more">more</span>
+                                    <div class="layer_pop more_file_menu">
+                                            <ul><li>다운로드</li></ul></div>
+                                </div></div>
+                          </li>
+                        </ul>
+                   </div>
+              </div>
+              <!-- 글 Type 01. 토픽 B -->
+              <div class="article_box">
+                    <div class="usr_pic">
+                        <img class="mask" src="../../img/pic_mask_40.png" />
+                        <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                        <!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+                          <li>
+                              <span class="name">홍길동</span>
+                              <span class="class">(품질관리팀 책임연구원)</span>
+                              <span class="date">12:30 PM</span>
+                              <span class="ico bookmark">즐찾</span></li>
+                           <!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+                          <li>
+                              <h3><span>Topic의견 관련하여 : 토픽 B</span></h3>
+                              <p>토픽 B의 내용이 이곳으로 들어왔다고 합시다. 팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다. 또한 그룹웨어의 팀의 일정 같은 것들이나 공유폴더와 연계하여 추가되는 일정이나 파일정보 등을 현 그룹에서 확인할 수 있답니당~~~~!!</p></li>
+                          <li class="attached">
+                              <span class="commnt">1개</span>
+                              <span class="file">1개</span></li>
+                          <li class="topic_attached">
+                              <div class="file_info">
+                                  <div class="file_type etc"> </div>
+                                  <div class="file_txt"><span  class="capacity">646KB</span></div>
+                              </div>
+                          </li>
+                    </ul>
+               </div>
+              <!-- *** 글 Type 01. 토픽 B 도 관련 의견이 바로 있다고 합시다 *** -->
+              <!-- 글 Type 01 - B1. 글 Type 01. 토픽 B 의견 01 -->
+              <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                            <img class="mask" src="../../img/pic_mask_40.png" />
+                            <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">고도리</span>
+                                 <span class="class">(품질관리팀 선임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>토픽 B에 대한 의견 01 입니다.</p>
+                             </li>
+                         </ul>
+                    </div>
+               </div>
+               
+              <!-- *** 토픽 B 아래 토픽 A 관련 의견이 등록 되었다면 *** -->
+              <!-- 글 Type 04. 시스템: 의견 추가 알림 -->
+              <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_ttl_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                       <li><h3><span>Topic의견 관련하여 등록된 글: 토픽 A</span></h3></li>
+                       <li><span class="note">새 의견이 등록되었습니다.</span></li>
+                    </ul>
+               </div>
+               <!-- //  글 Type 04. 시스템: 의견 추가 알림  -->
+                
+               <!-- 글 Type 01 - 3. 글 Type 01. 토픽 A 의견 03 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">김공유</span>
+                                 <span class="class">(품질관리팀 연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>토픽 A를 다시 이야기 해 봅시다.</p></li>
+                        </ul>
+                   </div>
+               </div>
+                
+               <!-- *** 의견아래 날짜가 바뀌었다면 *** -->
+               <!-- 시스템: 날짜 정보 -->
+               <div class="system_date"><span>2015.05.20</span></div>
+               <!-- // 시스템: 날짜 정보 -->
+               
+               <!-- 글 Type 04. 시스템: 의견 추가 알림
+              <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_ttl_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                       <li><h3><span>Topic의견 관련하여 등록된 글: 토픽 A</span></h3></li>
+                       <li><span class="note">새 의견이 등록되었습니다.</span></li>
+                    </ul>
+               </div>
+                //  글 Type 04. 시스템: 의견 추가 알림  -->
+                
+               <!-- 글 Type 01 - 4. 글 Type 01. 토픽 A 의견 04 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">홍길동</span>
+                                 <span class="class">(품질관리팀 책임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>토픽 A를 다시 이야기 해 봅시다.</p></li>
+                        </ul>
+                   </div>
+               </div>
+                    
+               <!-- 글 Type 01 - 5. 글 Type 01. 토픽 A 의견 05 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment mine">
+                             <li><span class="name">나주인</span>
+                                 <span class="class">(품질관리팀 주임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify on">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                 <ul>
+                                    <li> 수정 </li>
+                                    <li> 삭제 </li>
+                                 </ul></div></li>
+                             <li><p>토픽 A의 다섯번쨰 의견이었답니다.</p></li>
+                        </ul>
+                   </div>
+               </div>
+                     
+                <!-- 시스템: 날짜 정보 -->
+                <div class="system_date"><span>2015.05.21</span></div>
+                <!-- // 시스템: 날짜 정보 -->
+                                             
+               <!-- 글 Type 02: Instant message (다른 사람이 쓴 글) -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </div>
+                    <ul class="usr_opinion">
+                      <li> <span class="name">홍길동</span>
+                           <span class="class">(품질관리팀 책임연구원)</span>
+                           <span class="date">12:30 PM</span>
+                           <span class="ico bookmark">즐찾</span></li>
+                      <li class="go_modify"> <span class="ico set"></span>
+                            <div class="layer_pop">
+                              <ul>
+                                <li> 수정 </li>
+                                <li> 삭제 </li>
+                              </ul>
+                            </div></li>
+                      <li> <p>팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다.
+                          또한 그룹웨어의 팀 일정이나 공유폴더와 연계하여 추가되는 일정이나 파일 정보 등을 현 그룹에서 확인하거
+                          나 해당 솔루션을 이용할 수도 있습니다. 이 공간의 모든 데이터는 아카이브하여 보관하거나 파일로 저장하여
+                          다른 그룹 생성 시 해당 데이터를 복사하여 사용할 수 있습니다. </p></li>
+                    </ul>
+                </div>
+                
+               <!-- 글 Type 02: Instant message (내가쓴 글 기본 - 내가쓴글은 user_opinion에 mine이 붙음) -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </div>
+                    <ul class="usr_opinion mine">
+                         <li><span class="name">나주인</span>
+                             <span class="class">(품질관리팀 주임연구원)</span>
+                             <span class="date">12:30 PM</span>
+                             <span class="ico bookmark">즐찾</span></li>
+                         <li class="go_modify">
+                             <span class="ico set"></span>
+                             <div class="layer_pop">
+                                 <ul>
+                                    <li> 수정 </li>
+                                    <li> 삭제 </li>
+                                 </ul></div></li>
+                         <li><p>팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다.
+                          또한 그룹웨어의 팀 일정이나 공유폴더와 연계하여 추가되는 일정이나 파일 정보 등을 현 그룹에서 확인하거
+                          나 해당 솔루션을 이용할 수도 있습니다. 이 공간의 모든 데이터는 아카이브하여 보관하거나 파일로 저장하여
+                          다른 그룹 생성 시 해당 데이터를 복사하여 사용할 수 있습니다. </p></li>
+                   </ul>
+               </div>
+               <!-- 글 Type 02: Instant message (내가쓴 글 설정"수정 및 삭제" 버튼이 눌린 상태 - go_modify에 on이 붙음) -->
+               <div class="article_box">
+                   <div class="usr_pic">
+                   <img class="mask" src="../../img/pic_mask_40.png" />
+                   <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                   </div>
+                   <ul class="usr_opinion mine">
+                      <li> <span class="name">나주인</span>
+                           <span class="class">(품질관리팀 주임연구원)</span>
+                           <span class="date">12:30 PM</span>
+                           <span class="ico bookmark">즐찾</span></li>
+                      <li class="go_modify on"> <span class="ico set"></span>
+                            <div class="layer_pop">
+                              <ul>
+                                <li> 수정 </li>
+                                <li> 삭제 </li>
+                              </ul>
+                            </div></li>
+                      <li> <p>팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다.
+                          또한 그룹웨어의 팀 일정이나 공유폴더와 연계하여 추가되는 일정이나 파일 정보 등을 현 그룹에서 확인하거
+                          나 해당 솔루션을 이용할 수도 있습니다. 이 공간의 모든 데이터는 아카이브하여 보관하거나 파일로 저장하여
+                          다른 그룹 생성 시 해당 데이터를 복사하여 사용할 수 있습니다. </p></li>
+                  </ul>
+               </div>
+               <!-- 글 Type 02: Instant message (내가쓴 글 수정 용 - usr_opinion에 modify_mod가 붙음) -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </div>
+                    <ul class="usr_opinion mine modify_mod">
+                       <li> <span class="name">나주인</span>
+                            <span class="class">(품질관리팀 주임연구원)</span>
+                            <span class="date">12:30 PM</span>
+                            <span class="ico bookmark">즐찾</span></li>
+                       <li class="confirm_mod">
+                            <span class="modify">수정</span>
+                            <span class="cancle">수정취소</span> </li>
+                       <li class="go_modify">
+                            <div class="layer_pop">
+                              <ul>
+                                <li> 수정 </li>
+                                <li> 삭제 </li>
+                              </ul>
+                            </div></li>
+                      <li> <textarea class="textarea">팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 공간입니다.또한 그룹웨어의 팀 일정이나 공유폴더와 연계하여 추가되는 일정이나 파일 정보 등을 현 그룹에서 확인하거나 해당 솔루션을 이용할 수도 있습니다. 이 공간의 모든 데이터는 아카이브하여 보관하거나 파일로 저장하여 다른 그룹 생성 시 해당 데이터를 복사하여 사용할 수 있습니다.</textarea></li>
+                    </ul>
+                </div>
+                 
+               <!-- 시스템: 날짜 정보 -->
+               <div class="system_date"><span class="today">오늘</span></div>
+               <!-- // 시스템: 날짜 정보 -->
+                 
+               <!-- 글 Type 04. 시스템: 그룹원 추가 알림 - 첨부되는 사진에 thmb_ttl_mini.png을 표시함 -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_ttl_mini.png" />
+                    </div>
+                    <ul class="attchd_usr">
+                      <li> <span class="name">추가자</span>
+                          <span class="class">(품질관리팀 책임연구원)</span>
+                          <span class="note">님이</span></li>
+                      <li>
+                           <span class="note">그룹에 추가되었습니다</span>
+                           <span class="date">12:30 PM</span>
+                           </li>
+                    </ul>
+                </div>
+               <!-- //  글 Type 04. 시스템: 그룹원 추가 알림  -->
+                  
+               <!-- 글 Type 03. 단일 파일 등록 - 다른 사람이 올린 -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                        <img class="mask" src="../../img/pic_mask_40.png" />
+                        <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                    <!-- '내 글'에는 mine 추가 -->
+                         <li><span class="name">이의견</span>
+                             <span class="class">(품질관리팀 책임연구원)</span>
+                             <span class="date">12:30 PM</span>
+                             <span class="ico bookmark">즐찾</span></li>
+                         <li><h3><span>프리젠테이션과관련된파일.txt</span></h3></li>
+                         <li class="attached"><span class="commnt">5개</span><span class="file">3개</span> </li>
+                         <li class="topic_attached">
+                              <div class="file_info">
+                                     <div class="file_type txt"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                        <li class="topic_attached">
+                               <div class="file_info">
+                                     <div class="file_type pdf"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                         <li class="topic_attached">
+                               <div class="file_info">
+                                     <div class="file_type xls"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                    </ul>
+               </div>
+               
+               <!-- 글 Type 03. 단일 파일 등록 - 내가 올린 -->
+               <div class="article_box">
+                    <div class="usr_pic">
+                        <img class="mask" src="../../img/pic_mask_40.png" />
+                        <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence mine">
+                    <!-- '내 글'에는 mine 추가 -->
+                         <li><span class="name">나주인</span>
+                             <span class="class">(품질관리팀 주임연구원)</span>
+                             <span class="date">12:30 PM</span>
+                             <span class="ico bookmark">즐찾</span></li>
+                         <li class="go_modify">
+                             <span class="ico set"></span>
+                             <div class="layer_pop">
+                                 <ul>
+                                    <li> 수정 </li>
+                                    <li> 삭제 </li>
+                                 </ul></div></li>
+                         <li><h3><span>프리젠테이션과관련된파일.txt</span></h3></li>
+                         <li class="attached"><span class="commnt">5개</span><span class="file">3개</span> </li>
+                         <li class="topic_attached">
+                              <div class="file_info">
+                                     <div class="file_type txt"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                        <li class="topic_attached">
+                               <div class="file_info">
+                                     <div class="file_type pdf"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                         <li class="topic_attached">
+                               <div class="file_info">
+                                     <div class="file_type xls"> </div>
+                                     <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                               </div></li>
+                    </ul>
+               </div>
+               <!-- 글 Type 03 - 1. 단일 파일 등록 의견 01 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">홍길동</span>
+                                 <span class="class">(품질관리팀 책임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>파일2번째꺼-pdf꺼 안열리는데요.</p></li>
+                        </ul>
+                   </div>
+               </div>
+               <!-- 글 Type 03 - 2. 단일 파일 등록 의견 02 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">추가자</span>
+                                 <span class="class">(품질관리팀 책임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li><p>저는 잘열리는데요?</p></li>
+                        </ul>
+                   </div>
+               </div>
+                                
+               <!-- 시스템: 날짜 정보 -->
+               <div class="system_date unread"><span>새로운 글</span></div>
+               <!-- // 시스템: 날짜 정보 -->
+   
+               <!-- 글 Type 05. 업무지시 - 내가 담당자로 지정된 업무 -->
+              <div class="article_box">
+                 <div class="usr_pic">
+                     <img class="mask" src="../../img/pic_mask_40.png" />
+                     <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                 <ul class="usr_opinion topic_sentence">
+                     <li><span class="name">강감찬</span>
+                         <span class="class">(품질관리팀 수석연구원)</span>
+                         <span class="date">12:30 PM</span>
+                         <span class="ico bookmark">즐찾</span></li>
+                    <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                     <!-- 나를 언급한 업무지시타이틀에는 todo 추가 -->
+                     <li><h3><span class="duty">업무지시</span><span class="todo">mGW UI 관련 협의</span></h3>
+                         <p>업무지시 사항은 첨부 파일을 참고하세요. 종료일 여부와 상관없이 각자 가능한 일정에 대해 의견 부탁합니다. </p></li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">1개</span> </li>
+                      <li class="topic_attached">
+                         <div class="file_info">
+                              <div class="file_type doc"></div>
+                              <div class="file_txt"> <span  class="capacity">646KB</span> </div>
+                          </div>
+                      </li>
+                 </ul>
+              </div>
+              
+              <!-- 글 Type 05. 업무지시 B - 내가 올린 업무 지시글 -->
+              <div class="article_box">
+                 <div class="usr_pic">
+                     <img class="mask" src="../../img/pic_mask_40.png" />
+                     <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                 <ul class="usr_opinion topic_sentence mine">
+                     <li><span class="name">나주인</span>
+                         <span class="class">(품질관리팀 주임연구원)</span>
+                         <span class="date">12:30 PM</span>
+                         <span class="ico bookmark">즐찾</span></li>
+                      <li class="go_modify">
+                             <span class="ico set"></span>
+                             <div class="layer_pop">
+                                 <ul>
+                                    <li> 수정 </li>
+                                    <li> 삭제 </li>
+                                 </ul></div></li>
+                     <li><h3><span class="duty">업무지시</span><span>2차. mGW UI 관련 협의</span></h3>
+                         <p>의견으로 파일 올려주세요</p></li>
+                      <li class="attached"> <span class="commnt">1개</span></li>
+                 </ul>
+              </div>
+              
+               <!-- 글 Type 05 - 2. 글 Type 05. 업무지시 B에 대한 의견 01 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">추가자</span>
+                                 <span class="class">(품질관리팀 책임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                              <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li>
+                                <p>내는 글씨가 있어서 즐찾 버튼이 나온다냥~</p>
+                             </li>
+                        </ul>
+                        <ul class="usr_comment">
+                             <li>
+                                <div class="file_info">
+                                <div class="file_type music"> </div>
+                                <ul class="file_txt">
+                                    <li><span class="file_ttl">야옹.mp3</span> <span class="ico bookmark">즐겨찾기버튼</span> </li>
+                                    <li><span  class="capacity">646KB</span></li>
+                                </ul>
+                                <div class="detail_menu on">
+                                    <span class="more">more</span>
+                                    <div class="layer_pop more_file_menu">
+                                            <ul><li>다운로드</li></ul></div>
+                                </div></div>
+                          </li>
+                        </ul>
+                   </div>
+               </div>
+               
+               <!-- 글 Type 05 - 2. 글 Type 05. 업무지시 B에 대한 의견 02 _mine -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment mine">
+                             <li><span class="name">나주인</span>
+                                 <span class="class">(품질관리팀 주임연구원)</span>
+                                 <span class="date">12:30 PM</span></li>
+                             <li class="go_modify">
+                                 <span class="ico set"></span>
+                                 <div class="layer_pop">
+                                     <ul><li> 수정 </li>
+                                         <li> 삭제 </li></ul></div></li>
+                             <li>
+                                <p></p>
+                             </li>
+                        </ul>
+                        <ul class="usr_comment">
+                             <li>
+                                <div class="file_info">
+                                <div class="file_type jpg"> </div>
+                                <ul class="file_txt">
+                                    <li><span class="file_ttl">야옹이귀욤귀욤귀욤귀욤.jpg</span> <span class="ico bookmark">즐겨찾기버튼</span> </li>
+                                    <li><span  class="capacity">646KB</span></li>
+                                </ul>
+                                <div class="detail_menu on">
+                                    <span class="more">more</span>
+                                    <div class="layer_pop more_file_menu">
+                                            <ul><li>다운로드</li>
+                                                <li>삭제</li></ul></div>
+                                </div></div>
+                          </li>
+                        </ul>
+                   </div>
+               </div>
+               
+               <!-- 글 Type 04. 시스템: 의견 추가 알림 -->
+              <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_ttl_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                       <li><h3><span class="duty">업무지시</span><span class="todo">mGW UI 관련 협의</span></h3></li>
+                       <li><span class="note">새 의견이 등록되었습니다.</span></li>
+                    </ul>
+               </div>
+               <!-- //  글 Type 04. 시스템: 의견 추가 알림  -->
+               
+      
+              <!-- 글 Type 05 - 1. 글 Type 05. 업무지시 A에 대한 의견 01 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">강감찬</span>
+                                 <span class="class">(품질관리팀 수석연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li><p>추가자 책임이 파일 취합해서 정리 해 주세요.</p></li>
+                        </ul>
+                   </div>
+               </div>
+               
+                <!-- 글 Type 05 - 2. 글 Type 05. 업무지시 A에 대한 의견 02 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">추가자</span>
+                                 <span class="class">(품질관리팀 책임연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li><p>넵</p></li>
+                        </ul>
+                   </div>
+               </div>
+              
+              <!-- 글 Type 04. 시스템: 의견 추가 알림 -->
+              <div class="article_box">
+                    <div class="usr_pic">
+                    <img class="mask" src="../../img/pic_mask_40.png" />
+                    <img class="photo" src="../../img/thmb_ttl_mini.png" /></div>
+                    <ul class="usr_opinion topic_sentence">
+                       <li><h3><span class="duty">업무지시</span><span>2차.mGW UI 관련 협의</span></h3></li>
+                       <li><span class="note">새 의견이 등록되었습니다.</span></li>
+                    </ul>
+               </div>
+               <!-- //  글 Type 04. 시스템: 의견 추가 알림 -->
+      
+              <!-- 글 Type 05 - 1. 글 Type 05. 업무지시 B에 대한 의견 01 -->
+               <div class="article_box">
+                    <div class="comment">
+                         <div class="usr_pic">
+                             <img class="mask" src="../../img/pic_mask_40.png" />
+                             <img class="photo" src="../../img/thmb_nopic_mini.png" /></div>
+                         <ul class="usr_comment">
+                             <li><span class="name">강감찬</span>
+                                 <span class="class">(품질관리팀 수석연구원)</span>
+                                 <span class="date">12:30 PM</span>
+                                 <span class="ico bookmark">즐찾</span></li>
+                             <li><p>이것도 정리되는대로 파일 전달 해 주세요.</p></li>
+                        </ul>
+                   </div>
+               </div>
+        </div>
+           <!-- // .content_lst_body 본문 영역 END-->
+           <!-- input area -->
+           <div class="paginate_box">
+               <div class="input_area">
+               <!-- 입력창 : input_box에 on 되면 select_menu가 보임-->
+               <div class="input_box on">
+                     <a class="select_menu"><span class="btn_upload">선택메뉴</span></a>
+                     <!-- 파일 등록 메뉴 -->
+                     <div class="layer_pop write_type">
+                        <ul><li class="type_file">
+                                <input type="file" class="btn_file_upload">
+                                <span class="ico file">파일</span>
+                                <span>파일등록</span></li>
+                            <li class="type_topic">
+                                <span class="ico topic">토픽</span>
+                                <span>토픽등록</span></li>
+                            <li class="type_work">
+                                <span class="ico work">업무</span>
+                                <span>업무지시</span></li></ul>
+                    </div>
+                    <!-- 내용 입력창 -->
+                    <textarea class="instant_inp"></textarea>
+                </div>
+                <!-- 입력버튼 -->
+                <a href="#" class="btn_write"><span>등록</span></a> </div>
+             </div>
+             <div id="" class="btn_flip_open" > <a href="" >우측 영역 접기 토글</a> </div>
+        </div>
+        <!-- //  CONTENTs 좌측(기본 화면) -->
+        <!--  CONTENTs 우측(디테일 화면) -->
+       <div class="view_content_box view_box off">
+        <div class="inner_box">
+                  <div class="top_area">
+            <div><span id="" class="btn_flip_close" ><a href="" >우측 영역 접기 토글</a></span></div>
+            <div class="search">
+                      <input type="search" value="Search">
+                      <a class="btn_search" href="#">search </a> </div>
+            <div class="detail_menu">
+                      <!--[D] more_detail_menu 버튼이 눌렸을 때, detail_menu에 on 추가-->
+                      <span class="more_detail_menu">버튼</span>
+                      <div class="layer_pop more_dtl_menu">
+                <ul>
+                          <li>그룹정보</li>
+                          <li>파일</li>
+                          <li>즐겨찾기</li>
+                          <li>업무지시</li>
+                        </ul>
+              </div>
+                    </div>
+          </div>
+                  <!-- /// 상세창 검색 영역 END -->
+                  <div class="cowork_detail">
+            
+            <!-- 상세 정보 영역 START -->
+            <div class="detail_title">
+                      <!--[D] 버튼 메뉴 클릭시, detail_title에 on추가-->
+                      <a href="" class="btn_back"> <span>Back</span></a>
+                      <!-- 현재위치 -->
+                   <h2 class="title"><a href="#"><span class="btn_ttl_menu">  파일타입 : <span>전체 </span> </span></a></h2>
+                      <div class="layer_pop ttl_menu">
+                <ul>
+                          <li class="selected"> 전체</li>
+                          <li> 문서 </li>
+                          <li> 이미지 </li>
+                          <li> 동영상 </li>
+                        </ul>
+              </div>
+                    </div>
+            <!-- 상세 정보 Title -->
+            <div class="detail_area">
+                      <!-- 뒤로 버튼 -->
+                      
+                      <!-- /// 상세 정보 Title END-->
+                      <!-- 분류 버튼-->
+                      
+                      <div class="square_slct_area">
+                <!--[D] 업무지시 유형의 각 버튼의 눌려진 상태는 ON 추가-->
+                <ul class="slct_area">
+                          <li class="layout_lft"> <span>
+                            <select class="basic_select">
+                            <option>전체사용자</option>
+                            <option>내가 등록한 파일</option>
+                            <option>다른 사람이 등록한 파일</option>
+                          </select>
+                            </span></li>
+                          <li class="layout_lft mg_tp_6 fnt_prpl"><span class="fnt_bold mg_lft_5"> 홍길동</span><span class="mg_lft_5">님이 등록한 파일</span> </li>
+                          <li class="layout_rgt"> <span>
+                            <select class="basic_select">
+                            <option>최근등록순</option>
+                            <option>가나다 순</option>
+                          </select>
+                            </span> </li>
+                        </ul>
+              </div>
+                      
+                      <!-- 검색된 파일 -->
+                      
+                      <!-- 검색된 파일 -->
+            
+                      
+                      <div class="article_box search_none">
+               <div class="notice">
+                    <span class="fnt_prpl">
+                "홍길동"
+              </span>
+              <span>에 대한 검색결과가 없습니다. </span>
+               </div>
+                      
+             
+              <ul class="mg_tp_7">
+                <li>단어의 철자가 정확한지 확인해 보세요.</li>
+                 <li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
+<li>두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.</li>
+
+              </ul>
+              </div>
+                    </div>
+            <!-- /// 상세 정보 영역 -->
+          </div>
+                </div>
+      </div>
+              
+              <!-- // 메일 리스팅 확장(우측) -->
+              <div class="controlbar">
+        <div class="bar"><em>조절바</em></div>
+      </div>
+            </div>
+  </div>
+          
+          <!-- 파일 다운로드 -->
+          
+        </div>
+<script type="text/javascript">
+    /* 창크기 조절 */
+    var listContainerWidth = null;
+    $('.controlbar').draggable({
+            opacity: 0.7,
+            containment: 'html',
+            axis : 'x',
+            start : function(){
+                $('.list_vertical').css('opacity', 0.6);
+            },
+            stop : function(){
+                $('.list_vertical').css('opacity', 1);
+                listContainerWidth = $(this).position().left;
+                //console.log("스크롤바 위치 : " + listContainerWidth + " / 왼쪽컨텐츠 사이즈 : " + (listContainerWidth ))
+                $('.list_vertical .container_wrap_left').css('width', listContainerWidth);
+                $('.list_vertical .view_content_box').css('margin-left', listContainerWidth);
+                $('.list_vertical .container_wrap_left .textarea').css('width', listContainerWidth - 100 );
+            }
+    })
+</script>
+</body>
+</html>

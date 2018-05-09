@@ -1,0 +1,197 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script>
+	function approval_pw(){
+		
+		if($("#private_approval_pw").is(":checked")){
+			$("#approval_pw_ctt").css("display","block");
+		} else {
+			$("#approval_pw_ctt").css("display","none");
+		}
+	}
+</script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">환경변수</h2>
+  </div>
+  <div class="pd_all_18"> 
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab selected">메일</li>
+        </a> <a href="#">
+        <li class="tab">RM</li>
+        </a> <a href="#">
+        <li class="tab">업무넷</li>
+        </a> <a href="#">
+        <li class="tab">스퀘어</li>
+        </a> <a href="#">
+        <li class="tab">결재</li>
+        </a><a href="#">
+        <li class="tab">일정</li>
+        </a><a href="#">
+        <li class="tab">주소록</li>
+        </a><a href="#">
+        <li class="tab">웹폴더</li>
+        </a><a href="#">
+        <li class="tab">동호회</li>
+        </a>
+      </ul>
+    </div>
+    <!-- 가로탭영역 END -->
+      
+    <div class="content_configlist lst">
+      <div class="btn_area config">
+        <ul class="btns">
+          <li><span><a href="#">추가</a></span></li>
+          <li><span class="ico_del"><a href="#">삭제</a></span></li>
+        </ul>
+      </div>
+      <div class="content_lst content_lst_head">
+        <table>
+          <colgroup>
+          <col style="width:90px">
+          <col style="width:310px">
+          <col style="width:200px">
+          <col style="width:*">
+          <col style="width:200px">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="td_inpbox"><input type="checkbox">
+                번호</th>
+                <th>
+                변수명</th>
+                <th>변수값</th>
+                <th>변수설명</th>
+                <th>분류명</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!--//환경설정 header -->
+      <div class="content_lst content_lst_body" style=""> <!-- resize heignt적용 해주세요. -->
+        <table>
+          <colgroup>
+          <col style="width:90px">
+          <col style="width:310px">
+          <col style="width:200px">
+          <col style="width:*">
+          <col style="width:200px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="td_inpbox"><input type="checkbox">
+                1</td>
+              <td>
+                abcdefghijklmn</td>
+              <td>http://123.456.789</td>
+              <td>가나다라마바사아자차카타파하</td>
+              <td>분류분류분류</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+   <!-- 환경 변수 입력 pop--> 
+    <div class="common_layer_pop config" style="top:400px; left:20%">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">추가</span></p>
+                    <span class="btn_close"><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span>
+                </div>
+                <div class="cont_pop">
+                    <div>
+                        <dl>
+                            <dt><strong>변수명</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:400px" placeholder="내용을 입력해 주세요."></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>변수값</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:400px"  placeholder="내용을 입력해 주세요."></dd>
+                        </dl>
+						<dl>
+                            <dt><strong>변수설명</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:400px"  placeholder="내용을 입력해 주세요."></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>분류명</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:400px"  placeholder="내용을 입력해 주세요."></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>구분</strong></dt>
+                            <dd>
+                                <input type="radio" name="test" id="test_01"><label for="test_01">사용</label>   
+                                <input type="radio" name="test" id="test_02"><label for="test_02">사용안함</label>                                
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="footer">
+                      <ul class="btns">
+                        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+                        <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+                        <li><span><a href="#">취소</a></span></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 환경 변수 입력 pop--> 
+    <div class="common_layer_pop config" style="top:100px; left:20%">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">수정</span></p>
+                    <span class="btn_close"><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span>
+                </div>
+                <div class="cont_pop">
+                    <div>
+                        <dl>
+                            <dt><strong>변수명</strong></dt>
+                            <dd><p>abcdefghijklmn</p></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>변수값</strong></dt>
+                            <dd><input type="text" class="basic_inp" style="width:400px"  placeholder="수정되는 영역"></dd>
+                        </dl>
+						<dl>
+                            <dt><strong>변수설명</strong></dt>
+                            <dd><p>가나다라마바사아자차카타파하</p></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>분류명</strong></dt>
+                            <dd><p>분류명분류명분류명</p></dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>구분</strong></dt>
+                            <dd>
+                                <input type="radio" name="test_e" id="test_e01" checked><label for="test_e01">사용</label>   
+                                <input type="radio" name="test_e" id="test_e02"><label for="test_e02">사용안함</label>                                
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="footer">
+                      <ul class="btns">
+                        <li><span><a href="#" class="fnt_bold">저장</a></span></li>
+                        <li><span><a href="#">취소</a></span></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

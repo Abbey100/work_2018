@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 인쇄보기 팝업 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>
+	</head>
+	<!-- popup 기본 사이즈는 800 x 433 -->
+	<body>
+		<!-- header -->
+		<h1>인쇄보기</h1>
+		<p class="util saved_info">2017-11-01(수) ~ 2017.11.30(목)</p>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->
+			<div class="scroll_area handy-scroll">
+				<div class="">
+					<!-- 리스트 영역 -->
+					<div class="content_table print_pop">	
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:120px;">
+									<col style="width:80px;">
+									<col style="width:80px;">
+									<col style="width:83px;">
+									<col style="width:*;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th><span>날짜</span></th>
+										<th><span>시작 일시</span></th>
+										<th><span>종료 일시</span></th>
+										<th><span>상태</span></th>
+										<th><span class="title">제목</span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body">
+							<table>
+								<colgroup>
+									<col style="width:120px;">
+									<col style="width:80px;">
+									<col style="width:80px;">
+									<col style="width:83px;">
+									<col style="width:*;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td class="date"  rowspan="5">2017-09-08(월)</td>
+										<td class="date align_ct" colspan="2">종일일정</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의 내용 길어지면 알아서 말줄임 됩니다.</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date align_ct" colspan="2">종일일정</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr>
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+									<tr style="background:black">
+										<td class="date">2017-09-08(월)</td>
+										<td class="date">오전 9:00</td>
+										<td class="date">오전 10:30</td>
+										<td>
+											<span class="state b_gray">대기</span>
+										</td>
+										<td>
+											<div class="title">
+												<a class="subject">기업금융사업부기업금융사업부기업금융사업부기업금융사업부 주간회의</a>
+											</div>			
+										</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // 리스트 영역 -->
+				</div>
+
+			</div>
+			<div class="btns_area bttm">
+				<div class="align_rg">
+					<!-- 등록 -->
+					<a class="action_btn">확인</a>
+				</div>
+			</div>            
+		</div>
+		<!-- // body -->		
+	</body>
+<!--
+	<script>
+	$( function() {
+	function printpage(){
+	var originalContents = $('table').html();
+	var printReport= $('table').innerHTML;
+	$('table').html() = printReport;
+	window.print();
+	$('table').innerHTML = originalContents;
+	}
+	});
+		</script>
+-->
+</html>

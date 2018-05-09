@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>플래그 글_피드</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />	
+		<link rel="stylesheet" type="text/css" href="../../css/square.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>스퀘어</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>주소록</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn selected new">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 -->     
+			<!-- body -->
+			<div class="body"> 
+
+				<!-- 스퀘어 -->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">그룹 만들기</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<!-- 태그 메뉴 -->
+								<div class="lnb_menu">
+									<a class="menu_title selected">워크피드</a>
+								</div>
+								<div class="lnb_menu">
+									<a class="menu_title">플래그 글<span class="count">4</span></a>
+								</div>
+								<div class="lnb_menu">
+									<a class="menu_title">멘션 글<span class="count">4</span></a>
+								</div>
+								<div class="lnb_menu divide">
+									<a class="menu_title">VIP</a>
+									<a class="ico_btn small setting">내 그룹 설정</a>
+								</div>
+								<!-- 즐겨찾는 -->
+								<div class="lnb_menu divide">
+									<a class="menu_title category">즐겨찾는 그룹</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>							
+								<!-- 내 그룹 -->
+								<div class="lnb_menu  divide open">
+									<a class="menu_title category">내 그룹</a> 
+									<div class="group">
+										<a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+										<a class="ico_btn small setting">내 그룹 설정</a>
+									</div>
+									<!-- 트리 시작 -->
+									<div class="tree">
+										<ul class="dynatree-container">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >2015</span>
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-group" >file_1</span>
+															</a>
+														</span>
+													</li>
+													<li class="dynatree-lastsib">
+														<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-group">file_2</span>
+															</a>
+														</span></li>
+												</ul>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >2016</span></a></span>
+												<ul style="display: none;">
+													<li class="">
+														<span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+													</li>
+													<li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+													<li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+												</ul>
+											</li>
+										</ul>
+									</div>	
+								</div>
+								<div class="lnb_menu">
+									<a class="menu_title category">공개 그룹</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>	
+								<div class="lnb_menu divide">
+									<a class="menu_title category">종료된 그룹</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+								<ul class="lnb_menu">
+									<li><a>그룹 초대</a><span class="count">4</span></li>
+								</ul>
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- // 스퀘어 -->
+				<!-- content -->
+				<div class="container_area square">	
+					<!-- 본문 영역 -->
+					<div class="container schedule_area">
+						<!-- 타이틀 영역 -->
+						<!-- 스퀘어에서 그려지는 부분-->
+						<div class="hgroup">							
+							<span class="form favorite"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+							<h2>플래그 글</h2>
+							<ul class="tab">
+								<li><a class="">피드</a></li>
+								<li><a class="">사진</a></li>
+								<li><a class="">파일</a></li>
+								<li><a class="selected">일정</a></li>
+								<li><a class="">보고</a></li>
+								<li><a class="">공지</a></li>
+							</ul>
+						</div>
+						<div class="new_lst_info feed">
+							<a class="ico rfsh">새로고침</a>
+						</div>
+						<!-- // 스퀘어에서 그려지는 부분-->
+
+						<!-- 일정에서 그려지는 부분-->
+						<div class="sq_sched">
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<h3 class="month">2017년 11월</h3>
+
+									<div class="hgroup_btn">
+										<a href="#" class="ico_btn arrow_pre">이전</a>
+										<a href="#" class="ico_btn arrow_next">다음</a>
+									</div>
+									<a href="#" class="btn">오늘</a>
+								</div>
+								<div class="align_rg">
+									<a id="filter_flag_event_cal" class="hscalendar_main_view_event ico_btn flag">플래그 일정 보기</a> 
+									<div class="hscalendar_main_view_event hgroup_btn square">
+										<a class="btn" id="month_view_cal">달력</a>
+										<a class="btn on" id="list_view_cal">목록</a>
+									</div>
+									<a class="hscalendar_main_view_search btn display_none">달력 보기</a>
+									<div class="hscalendar_main_view_search selectbox page_num display_none">
+										<select name="hscalendar_main_view_search_list_size_cal" id="hscalendar_main_view_search_list_size_cal" style="display: none;"> 
+											<option value="15" selected="selected"> 15개 </option>
+											<option value="20"> 20개 </option>
+											<option value="30"> 30개 </option>
+											<option value="40"> 40개 </option>
+											<option value="50"> 50개 </option>
+										</select>
+									</div>
+									<a class="btn_d_search mg_l_8" title="검색" onclick="$(this).toggleClass('open').next().toggleClass('open');"></a>
+									<div class="d_srch_layer" style="width:420px;">
+										<div class="s_cont handy-scroll open">
+											<div class="form_table">
+												<table>
+													<colgroup>
+														<col style="width:77px;">
+														<col width="*">
+													</colgroup>
+													<tbody>
+														<tr>
+															<th>기간</th>
+															<td>
+																<div class="input_group has_select">
+																	<div class="selectbox" style="width:90px">
+																		<select>
+																			<option value="0">당일 </option>
+																			<option value="1" selected="selected">일주일</option>																	
+																			<option value="2">한달</option>
+																			<option value="3">3개월</option>
+																			<option value="4">6개월</option>
+																			<option value="5">1년</option>
+																			<option value="6">지정</option>
+																		</select>
+																	</div>
+																	<div class="datepic_area">
+																		<div class="date_box">
+																			<input type="text" class="date_input" style="width:92px;" disabled="">
+																			<a class="date_btn"></a>
+																		</div>
+																		<span>~</span>
+																		<div class="date_box">
+																			<input type="text" class="date_input" style="width:92px;" disabled="">
+																			<a class="date_btn"></a>
+																		</div>                                     
+																	</div>
+																</div>
+															</td>
+														</tr>
+
+														<tr>
+															<th>제목</th>
+															<td class="text_input">
+																<input type="text" class="border_input" id="hscalendar_main_view_search_title_input_cal">
+															</td>
+														</tr>
+														<tr>
+															<th>구분</th>
+															<td>
+																<div class="group" id="hscalendar_main_view_search_calendar_category_radio_div_cal">
+																	<span class="form">
+																		<input type="radio" checked="checked" disabled="">
+																		<label>달력+공유일정</label>
+																	</span>
+																	<span class="form">
+																		<input type="radio" disabled="">
+																		<label>달력</label>
+																	</span>
+																	<span class="form">
+																		<input type="radio" disabled="">
+																		<label>공유일정</label>
+																	</span>
+																</div>	
+																<div class="selectbox br_bttm" style="width:100%;">
+																	<select>
+																		<option>스퀘어 풀컨텐츠</option>
+																		<option>스퀘어 풀컨텐츠</option>
+																		<option>스퀘어 풀컨텐츠</option>
+																	</select>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th>작성자</th>
+															<td>
+																<div class="input_group has_btn">
+																	<div class="token-input">
+																		<ul class="token-input-list ui-sortable"><li class="token-input-input-token ui-sortable-handle"><input type="text" autocomplete="off" id="token-input-hscalendar_main_view_search_writer_token_input_cal" style="outline: none;"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: &quot;맑은 고딕&quot;, &quot;Malgun Gothic&quot;, Dotum, AppleGothic, Helvetica, tahoma, sans-serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester></li></ul><input type="text" id="hscalendar_main_view_search_writer_token_input_cal" style="display: none;">
+																		<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+																		<input type="hidden" id="hscalendar_main_view_search_writer_names_input_cal">
+																		<input type="hidden" id="hscalendar_main_view_search_writer_ids_input_cal">
+																		<input type="button" class="ico_btn small add" id="hscalendar_main_view_search_writer_org_popup_btn_cal">
+																	</div>
+																</div>
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+										<div class="btns_area">												
+											<div class="align_lf">
+												<a id="hscalendar_main_view_search_reset_btn_cal" class="text_btn mg_t_4">초기화</a>
+											</div>
+											<div class="align_rg">
+												<a id="hscalendar_main_view_search_confirm_btn_cal" class="action_btn">검색</a>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							<!-- 달력(일) 리스트 시작 -->
+							<div class="daily_list content_table">
+								<!-- 리스트 영역 -->
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:73px">
+											<col style="width:*">
+										</colgroup>
+										<thead>
+											<!-- 
+table의 td에 경우의 수 별로 클래스 부여
+- 평일 : <th class="day">
+- 토요일 : <th class="saturday">
+- 일요일 : <th class="sunday">
+- 공휴일 : <th class="holiday">
+-->
+											<tr>
+												<th scope="col">&nbsp;</th>
+												<th scope="col" class="saturday"><div class="th_wrap"><span class="day_date today">27</span><span class="day_week">토</span><span class="day_txt1">(음) 06.21</span></div></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table_body">
+									<!-- 종일 일정 테이블 시작 -->
+									<div class="allday_scol handy-scroll">
+										<table>
+											<colgroup>
+												<col style="width:73px">
+												<col style="width:*">
+											</colgroup>
+											<tbody>
+												<tr>
+													<td><div class="fix_cell"><span class="fix_cell_txt1">기념일</span></div></td>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td><div class="fix_cell"><span class="fix_cell_txt1">종일일정</span></div></td>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>												
+											</tbody>
+										</table>
+									</div>
+									<!-- 종일 일정 테이블 끝 -->
+
+									<!-- 시간 별 일정 테이블 시작 -->
+									<div class="normal_scol handy-scroll">
+										<table>
+											<colgroup>
+												<col style="width:73px">
+												<col style="width:*">
+											</colgroup>
+											<tbody>
+												<tr>
+													<th></th>
+													<td></td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">00:00</span></div></th>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">8:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">9:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">10:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">11:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">12:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">13:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">14:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">15:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">16:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">17:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">18:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">19:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th rowspan="2"><div class="fix_cell"><span class="fix_cell_txt1">20:00</span></div></th>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="daily_cell">
+															<a href="#" class="day_schedule_add">일정등록</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="bline_no">
+													<th></th>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- 시간 별 일정 테이블 끝 -->
+
+								</div>
+								<!-- // 리스트 영역 -->
+
+								<!-- events_entry_box 시작 -->
+								<div class="events_entry_box">
+									<!--
+schedule_txt에 경우의 수 별로 클래스 부여 
+- 달력 구분별로 : type01 ~ type18
+- 달력 배경컬러 보이기 : bg_on
+- 일정 높이값 자율 : h_auto
+- 폰트색이 진할 때(달력 컬러와 비슷한 톤이 아니고 진한색) : c333
+- 끝난 일정 : end
+- 달력 아이콘이 안보일 때 : dal_ic_no
+-->
+									<div class="schedule_txt type17 bg_on c333" style="left:74px; top:34px; width:90%;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">디자인팀 회의</a>
+										<div class="ui-resizable-s"></div>
+										<span class="more_next"></span><span class="more_prev"></span></div>
+
+									<div class="schedule_txt type01 bg_on h_auto dal_ic_no" style="left:74px; top:279px; width:276px; height:72px;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">12:00 자동차 UX 개선 임원 보고 발표</a>
+										<div class="ui-resizable-s"></div>
+									</div>
+									<div class="schedule_txt type12 bg_on dal_ic_no" style="left:352px; top:304px; width:278px;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">12:00 자동차 UX 개선 임원 보고 발표</a>
+										<div class="ui-resizable-s"></div>
+									</div>
+									<div class="schedule_txt type06 bg_on dal_ic_no" style="left:352px; top:329px; width:278px;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">12:00 자동차 UX 개선 임원 보고 발표</a>
+										<div class="ui-resizable-s"></div>
+									</div>
+									<div class="schedule_txt type02 bg_on dal_ic_no" style="left:632px; top:304px; width:273px;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">12:00 자동차 UX 개선 임원 보고 발표</a>
+										<div class="ui-resizable-s"></div>
+									</div>
+									<div class="schedule_txt type04 bg_on h_auto dal_ic_no" style="left:74px; top:393px; width:950px; height:50px"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt">12:00 자동차 UX 개선 임원 보고 발표</a>
+										<div class="ui-resizable-s"></div>
+									</div>
+
+									<!-- 타임 라인 -->
+									<div class="time_line" style="left:74px; top:200px; width:900px">타임라인</div>
+
+								</div>
+								<!-- events_entry_box 끝 -->
+
+							</div>
+							<!-- 달력(일) 리스트 끝 -->
+						</div>
+					</div>	
+				</div>
+				<!-- // 본문 영역 -->
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

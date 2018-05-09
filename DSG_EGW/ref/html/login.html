@@ -1,0 +1,129 @@
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY Groupware 8.3</title>
+<link rel="stylesheet" href="../css/login.css" type="text/css" />
+</head>
+<body>
+<!-- login loding page start -->
+<div class="loading_page" style="display:block;">
+  <div class="loading_layer"> 
+    <!-- inner_box -->
+    <div class="loading_wrap">
+      <div class="loading_info">로그인 중입니다</div>
+      <!-- cont_pop -->
+      <div class="cont_pop">
+        <dl>
+          <dd style="width:100%"> <img align="middle" src="../img/LoginWaitting.gif"> </dd>
+        </dl>
+      </div>
+    </div>
+    <!-- //inner_box --> 
+  </div>
+</div>
+<!-- // login loding page end -->
+<div class="login wrap"> 
+  <!-- 로고영역 / 이미지 높이 : 40px -->
+  <div class="logo">
+    <h1><img src="../img/login_logo.png" alt="Handy Groupware"></h1>
+  </div>
+  <!-- 컨테이너 -->
+  <div class="container">
+    <!-- 로그인 폼 -->
+    <!-- 정보 입력 영역 div class="login"에 기본상태=basic, 겸직or동명 시=slct_name 추가-->
+    <div class="login slct_name">
+      <fieldset>
+        <legend>그룹웨어 로그인</legend>
+          <!-- 로그인 인풋영역 start -->
+          <ul style="display:block">
+            <li>
+              <label for="user_id"><span><img src="../img/bg_input.png"></span> <span class="user_img"><img src="../img/login_id.png"></span></label>
+              <div>
+                <input type="text" id="user_id" title="아이디를 입력해주세요">
+              </div>
+            </li>
+            <li>
+              <label for="user_pwd"> <span><img src="../img/bg_input.png"></span> <span class="user_img"><img src="../img/login_pwd.png"></span></label>
+              <div>
+                <input type="password" id="user_pwd" title="비밀번호를 입력해주세요">
+              </div>
+            </li>
+          </ul>
+        <!-- login_wrap start -->
+        <div class="login_wrap">
+          <!-- // 로그인 인풋영역 end -->
+          <!-- 초기 로그인 암호변경 start -->
+          <ul class="change_pw"  style="display:none">
+            <li><span><em>초기 암호는 일괄적으로 설정되었습니다.</em></span> <span>개인 정보를 보호하기 위해 암호를 변경하십시오.</span></li>
+            <li class="inp_area"><span>
+              <input class="basic_inp" title="이전암호" placeholder="이전암호">
+              </span></li>
+            <li class="inp_area"><span>
+              <input class="basic_inp" title="새 암호" placeholder="새 암호">
+              </span></li>
+            <li class="inp_area"><span>
+              <input class="basic_inp" title="암호 확인" placeholder="암호확인" type="password">
+              </span></li>
+            <li class="inp_area">
+              <input id="pw" type="checkbox">
+              <label for="pw">결재암호 동일하게 변경</label>
+            </li>
+          </ul>
+          <!-- // 초기 로그인 암호변경 end -->
+          <!-- 겸직or동명 사용자 선택 start -->
+          <div class="name" style="display:none">
+            <div class="info"> <span><strong>동명의 사용자가 있습니다.</strong> 
+              <!-- 겸직 시: "겸직 사용자 입니다.".....--> 
+              <br>
+              사용자를 선택해 주십시오. </span> </div>
+            <select class="check_same" title="동명 사용자 선택" mutiple size="3">
+              <option>다산테스트부서.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+              <option>품질관리실.핸사원</option>
+            </select>
+          </div>
+          <!-- // 겸직or동명 사용자 선택 end -->
+          <!-- 접속중인 로그인 사용자 재로그인 start -->
+          <div class="name" style="display:none;">
+            <div class="info"> <span>로그인하려는 사용자는 현재 사용 중입니다. <br>
+              <strong>재로그인 하시겠습니까?</strong> </span> </div>
+            <div class="prev_user"> <span>사용자 (<strong>10.30.4.38</strong>)</span> </div>
+          </div>
+          <!--  // 접속중인 로그인 사용자 재로그인 둥 -->
+        </div>
+        <!-- // login_wrap end -->
+        <!-- 로그인버튼 start -->
+        <div class="btn_login"> <a href="#">로그인</a></div>
+        <!-- // 로그인버튼 end -->
+        <!-- 옵션영역 start 다른이름으로 로그인시 display:none 처리 -->
+        <!-- // [D] 겸직or동명 시 check_info 의  select 및 check box에 대해 disable 적용이 필요 -->
+        <div class="check_info" style="display:none">
+          <select class="check_lang" title="언어선택" >
+            <option selected="selected">한국어</option>
+            <option>영어</option>
+            <option>일본어</option>
+          </select>
+          <span class="alias_id" >
+          <input type="checkbox" id="" title="사원번호로 로그인" >
+          <label for="alias">사원번호로 로그인</label>
+          </span>
+        </div>
+        <!-- // 옵션영역 end -->
+        <!-- 다른 사용자로 로그인 start 옵션영역 활성시 display:none 처리 -->
+        <div class="btn_back" style="display:block"><a href="#">다른 사용자로 로그인</a> </div>
+        <!-- // 다른 사용자로 로그인 end -->
+      </fieldset>
+    </div>
+    <!-- 비주얼 영역 -->
+    <div class="login_visual"> <span> <img src="../img/img_txt.png" alt="Workin Smart Living Smart"> </span> </div>
+  </div>
+</div>
+</body>
+</html>

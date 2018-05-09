@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시물 읽기 팝업 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<div class="">
+			<div class="wrapper">
+				<!-- header -->
+				<h1 class="title">게시물 읽기</h1>
+				<div class="util paginate">
+					<a class="prev">이전</a>
+					<a class="next">다음</a>
+				</div>
+				<!-- //header -->
+				<div class="container_area handy-scroll">
+					<!-- btn -->
+					<div class="btns_area">
+						<div class="align_lf">
+							<a href="#" class="btn">답글</a>	
+							<a href="#" class="btn">수정</a>	
+							<a href="#" class="btn">삭제</a>		
+							<div class="group"><!-- open 클래스 추가시 레이어 open -->	
+								<a class="btn select">보내기</a>
+								<ul class="select_lst">
+									<li><a href="#">타 게시판으로 전달</a></li>
+									<li><a href="#">메일로 발송</a></li>
+								</ul>
+							</div>
+							<div class="group"><!-- open 클래스 추가시 레이어 open -->	
+								<a class="btn select">추가기능</a>
+								<ul class="select_lst">
+									<li><a href="#">인쇄보기</a></li>
+								</ul>
+							</div>
+						</div>		
+					</div>
+					<!-- contents -->
+					<div class="scroll_area handy-scroll">
+						<div class="">
+							<div class="form_table read gray">
+								<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>	
+								<table>
+									<tbody>
+										<tr class="subject">                
+											<th class="form_th">제목</th>
+											<td colspan="2">
+												<div>															
+													<h3><span>[머리글]</span> 요영역에글자수는50자제한입다확인하여알아봅니다요영역에글자수에제한이있는지 확인합니다만다요기러아끝</h3>
+													<div class="group">
+														<span class="form">
+															<input type="checkbox" id="check001" checked/>
+															<label for="check001" class="emergency">긴급</label></span>
+														<span class="form">
+															<input type="checkbox" id="check002" checked/>
+															<label for="check002" class="noti">공지</label></span>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr><th class="form_th">게시판 위치</th><td>EGW As-Is</td></tr>
+										<tr><th class="form_th">작성자</th><td>김핸디</td></tr>
+										<tr><th class="form_th">작성일</th><td>2017-08-18</td></tr>
+										<tr><th class="form_th">종료일</th><td>2018-08-18</td></tr>
+									</tbody>
+								</table>
+								<!-- 추가정보 -->
+								<div class="key_info">
+									<div class="sub2">
+										<dt>번호</dt>
+										<dd>726</dd>
+										<dt>조회수</dt>
+										<dd>217</dd>
+										<dt class="blind">찬성</dt>
+										<dd><a class="ico_btn agree">12</a></dd>
+										<dt class="blind">반대</dt>
+										<dd><a class="ico_btn disagree">0</a></dd>
+										<dt class="ico comment">의견</dt>
+										<dd>4</dd>
+										<dt>조회/의견권한</dt>
+										<dd>실명(모두)</dd>
+									</div>
+								</div>
+
+							</div>
+							<!-- 첨부파일 -->
+							<div class="additional_info">
+								<dl class="file_info">
+									<dt><a class="btn_open open"></a>첨부파일</dt>
+									<dd>
+										<a class="text_btn">전체선택</a>
+										<a class="text_btn">저장</a>
+										&#40;<span class="txt">일반첨부 10</span>
+										<span class="divider"></span>
+										<span class="txt">대용량 1</span>	
+										&#41;
+									</dd>
+								</dl>
+
+								<div class="file_lst download">
+									<ul>
+										<li>
+											<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+											<a class="ico_btn small download">다운로드</a>
+											<a class="ico_btn small storage">스토리지로저장</a>
+											<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+											<span class="file_size">311KB</span>
+										</li>
+										<li>
+											<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+											<a class="ico_btn small download">다운로드</a>
+											<a class="ico_btn small storage">스토리지로저장</a>
+											<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+											<span class="file_size">311KB</span>
+										</li>
+										<li>
+											<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+											<a class="ico_btn small download">다운로드</a>
+											<a class="ico_btn small storage">스토리지로저장</a>
+											<a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+											<span class="file_downopt">
+												&#40;
+												<em>~2017-09-03</em>
+												/&nbsp;잔여
+												<em>100회</em>&#41;
+											</span>
+											<span class="file_size">311KB</span>
+
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="content">
+								안녕하세요. 핸디소프트의 박책임입니다. <br>
+								본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+								간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+								<br>
+								EGW GUI컨셉 문서<br>
+								UI 프레임워크 <br>
+								Screen shot파일<br>
+								<br>
+								감사합니다.
+								<div>	
+									<!-- 글만 있는 케이스 -->
+									<a class="sq_feed" href="#">
+										<div class="article">
+											<p class="txt">
+												다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요. 다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요. 다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요.
+											</p>					
+											<p class="locate">[스퀘어]EGW UX 개선 프로젝트 TF</p>
+										</div>
+									</a>
+									<!-- 글 + 일정 있는 케이스 -->
+									<a class="sq_feed" href="#">	
+										<div class="article">					
+											<p class="txt">
+												일정을 등록했습니다.
+											</p>
+											<div class="linkfeed">	
+												<span href="#" class="plan">
+													<em>프로젝트팀 중간회식</em>
+													2017.09.30 (듬) 15:00 - 17:00
+												</span>	
+											</div>
+											<p class="locate">[스퀘어]EGW UX 개선 프로젝트 TF</p>
+										</div>
+									</a>
+								</div>		
+							</div>
+							<div class="replybox">
+								<div>
+									<span class="ico comment">의견</span>
+									<span class="size_txt"><span class="count"> 0</span>/500 </span>
+									<div class="pw_group">
+										<p class="description">*암호 입력 불가시 의견 수정/불가합니다.</p>
+										<label for="password" class="">비밀번호</label>
+										<input id="password" type="password" class="box_input" placeholder="비밀번호를 입력하세요">
+									</div>
+									<div class="write">
+										<textarea placeholder="의견을 입력하세요" rows="1"></textarea>
+										<a href="#" class="text_btn">등록</a>
+									</div>
+									<ul class="list">
+										<li>
+											<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+											<div class="cont">		
+												<a href="#" class="name">나주인</a>
+												<span class="time">30분 전</span>
+												<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+												<a href="#" class="text_btn">의견 입력</a>
+											</div>
+											<div class="group">
+												<a href="#" class="ico modify">수정</a>
+												<a href="#" class="ico del">삭제</a>
+											</div>
+										</li>
+										<li class="thread">
+											<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+											<div class="cont">		
+												<a href="#" class="name">김연아</a>
+												<span class="time">30분 전</span>
+												<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+											</div>
+										</li>
+										<li class="thread">
+											<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+											<div class="cont">		
+												<a href="#" class="name">김연아</a>
+												<span class="time">30분 전</span>
+												<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+											</div>
+										</li>
+										<li>
+											<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+											<div class="cont">		
+												<a href="#" class="name">김연아</a>
+												<span class="time">30분 전</span>
+												<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+												<a href="#" class="text_btn">의견 입력</a>
+											</div>
+										</li>
+										<!-- 작성 중 의견 -->
+										<li class="thread comment">	
+											<div class="pw_group">
+												<p class="description">*암호 미입력시 의견수정/삭제 불가합니다.</p>
+												<label for="password" class="">비밀번호</label>
+												<input id="password" type="password" class="box_input" placeholder="비밀번호를 입력하세요">
+											</div>
+											<!-- 포커스된 인풋은 write에 focus를 넣고 간다 -->
+											<div class="cont write focus">	
+												<textarea placeholder="의견을 입력하세요" rows="1">박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</textarea>
+												<a href="#" class="text_btn submit">등록</a>
+												<a href="#" class="text_btn cancel">취소</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->	
+	</body>
+</html>

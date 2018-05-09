@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 연락처 상세보기 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:600px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						연락처 상세보기
+					</h2>
+
+					<div class="form_table read">                        
+						<div class="profile">
+							<div class="util">
+								<a href="#" class="text_btn">편집</a>
+								<a href="#" class="text_btn">삭제</a>
+							</div>
+							<div class="usr_photo max"> 
+								<img src="../../img/profile_photo_blank.png" alt="">
+							</div>
+							<ul>
+								<li>
+									<span class="name">김핸디</span>
+									<span class="form favorite">
+										<input type="checkbox" name="from_check" id="check003" />
+										<label for="check003" class="blind">즐겨찾기</label>
+									</span>
+								</li>
+								<li class="info">
+									<span>대리</span>
+									<span>영업 1팀</span>
+									<span>핸디소프트</span>
+								</li>
+								<!-- 해당 연락처가 공유그룹에 속해 있는 경우만 수정정보 출력 -->
+								<li class="info">
+									<span>최근 수정일 : 
+										<a href="#" class="name">홍길동</a>
+										(2017-11-28 12:55)</span>
+								</li>
+							</ul>
+
+
+						</div>
+						<table>
+														<colgroup>
+															<col style="width:120px;">
+															<col width="*">
+														</colgroup>
+														<tbody>
+															<tr class="vip_set">
+																<th class="important">VIP</th>
+																<td>
+																	<div class="toggle group">
+																		<a class="btn" href="#">등록</a>
+																		<a class="btn on" href="#">해제</a>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<th>성별</th>
+																<td>여성</td>
+															</tr>
+															<!-- 간편보기 시, tr에 클래스 blind 사용 -->
+															<tr>
+																<th>전화번호</th>
+																<td>
+																	<dl><dt>휴대폰</dt><dd>010-1234-5678</dd></dl>
+																	<dl><dt>회사</dt><dd>031-1234-5678</dd></dl>
+																	<dl><dt>집</dt><dd>02-1234-5678</dd></dl>
+																	<dl><dt>회사 팩스번호</dt><dd>02-1234-5678</dd></dl>	
+																</td>
+															</tr>
+															<tr>
+																<th>이메일</th>
+																<td>
+																	<dl><dt>개인</dt><dd><a href="#">handy@handy.com</a><span class="choose on">주사용</span></dd></dl>
+																	<dl><dt>회사</dt><dd><a href="#">handy@handy.com</a></dd></dl>
+																</td>
+															</tr>
+															<tr>
+																<th>그룹</th>
+																<td><a href="#" class="text_btn">핸디소프트 &#62;</a></td>
+															</tr>
+															<tr>
+																<th>주소</th>
+																<td>
+																	경기도 성남시 분당구 대왕판교로 644 대산타워 5층
+																</td>
+															</tr>
+
+															<tr>
+																<th>홈페이지</th>
+																<td>
+																	<a class="url" href="#">www.handysoft.com</a>
+																</td>
+															</tr>
+															<tr>
+																<th>생년월일</th>
+																<td>1983-11-01
+																</td>
+															</tr>
+															<tr>
+																<th>배우자</th>
+																<td>-
+																</td>
+															</tr>
+															<tr>
+																<th>메모</th>
+																<td>
+																	<p>지난 12월 부터 A통신, B금융, C전자 담당<br>
+																		현재 A은행, B은행, C은행 진행 중<br>
+																		자리는 6층 사무실</p>
+																</td>
+															</tr>
+															<tr>
+																<th>그룹</th>
+																<td class="open">
+																	<a href="#" class="text_btn">내 연락처 그룹에 추가하기</a>
+																	<div class="select_lst check_type handy-scroll" style="width:140px; left:160px; top:0">
+																		<ul class="">
+																			<li class="selected"><a href="" >가족</a></li>
+																			<li><a href="">친구</a></li>
+																			<li><a href="">회사회사회사</a></li>
+																		</ul>
+																		<div class="btns_area align_rg border"><a href="#" class="btn">복사</a></div>
+
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

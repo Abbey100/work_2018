@@ -1,0 +1,459 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="left_menu">
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'log_in');">로그인</span> </div>
+    <div id="log_in" class="list_tree">
+      <ul>
+        <li> <a class="slct"> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'board');">게시판</span> </div>
+    <div id="board" class="list_tree">
+      <ul>
+        <li> <a> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+  <div id="folderDiv" class="tree_area_box">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'apprvl');">결재</span> </div>
+    <div id="apprvl" class="list_tree">
+      <ul>
+        <li> <a> <span>부서별</span> </a> </li>
+        <li> <a> <span>사용자별</span> </a> </li>
+        <li> <a> <span>월별</span> </a> </li>
+        <li> <a> <span>일별</span> </a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container_box container_list_box">
+  <div class="title_area">
+    <h2 class="title">로그인 > 부서별</h2>
+    <div id="left_btn_close" class="btn_flip_left"><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right"><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- 검색 영역 -->
+  <div class="detail_srch_wrap srch_document"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table style="width:770px">
+          <colgroup>
+          <col style="width:88px">
+          <col style="width:245px">
+          <col style="width:88px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row">부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">기간</th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.10" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                </ul></td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span class="ico_del"><a href="#" class="fnt_bold">삭제</a></span></li>
+      <!--[D] del 클래스는 x 아이콘 -->
+      <li><span><a href="#">읽음</a></span></li>
+      <li><span><a href="#">이동</a></span></li>
+      <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+        <!-- [D] 추가기능 레이어 팝업 -->
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">인쇄하기</a></li>
+            <li><a href="#">PC저장</a></li>
+            <li><a href="#">Excel저장</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 --> 
+      </li>
+    </ul>
+    <div class="layout_rgt">
+      <select>
+        <option value="전체">전체</option>
+        <option value="읽지않은게시물">읽지않은게시물</option>
+        <option value="읽은게시물">읽은게시물</option>
+        <option value="긴급게시물">긴급게시물</option>
+      </select>
+      <select>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <p class="btn_rfrsh"><a href="#">새로고침</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 리스팅 기본형(좌측) -->
+  <div class="mail_wrap_left"> 
+    <!-- 게시판 header -->
+    <div class="content_lst content_lst_head">
+      <table>
+        <thead>
+          <tr>
+            <th class="td_check"> <input type="checkbox">
+              상태 <img src="../../img/ico_q.gif"> </th>
+            <th class="td_etc">번호</th>
+            <th class="td_title">제목</th>
+            <th class="td_etc">게시자</th>
+            <th class="td_etc">조회</th>
+            <th class="td_etc"><a href="#" class="descend">게시일</a></th>
+            <th class="td_etc"><a href="#" class="ascend">종료일</a></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- // 게시판 header --> 
+    <!-- 게시판 list -->
+    <div class="content_lst content_lst_body">
+      <table>
+        <tbody>
+          <tr>
+            <td class="td_check"><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="td_etc">1280</td>
+            <td class="subj td_title"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td class="td_etc">이석진</td>
+            <td class="td_etc">1280/0/0</td>
+            <td class="date td_etc">2014.03.04</td>
+            <td class="date td_etc td_last">2014.03.04</td>
+          </tr>
+          <tr class="td_list_bold">
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc2.gif" alt="새로운게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr class="chk_on">
+            <td><input type="checkbox" checked>
+              <img src="../../img/ico_doc3.gif" alt="오래된게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc4.gif" alt="읽은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"> <img src="../../img/ico_chk.gif" alt="수정"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"> <img src="../../img/ico_clip.gif" alt="클립"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"> <img src="../../img/ico_w.gif" alt="느낌표"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <img src="../../img/ico_doc1.gif" alt="읽지않은게시물" class="lst_flag"></td>
+            <td class="writer">1280</td>
+            <td class="subj"><a href="#">[결제완료] 휴가신청서 오전반차 09:00~12:00 신청합니다</a></td>
+            <td>이석진</td>
+            <td>1280/0/0</td>
+            <td class="date">2014.03.04</td>
+            <td class="date">2014.03.04</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // 게시판 list -->
+    <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+      <div class="paginate"><a href="#" class="first">맨뒤로</a><a href="#" class="prev">뒤로</a><a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#" class="next on">앞으로</a><a href="#" class="last on">맨앞으로</a></div>
+      <div class="pagi_num">
+        <input type="text" value="1">
+        / 123 </div>
+    </div>
+  </div>
+  <!-- // 메일 리스팅 기본형(좌측) --> 
+</div>
+</body>
+</html>

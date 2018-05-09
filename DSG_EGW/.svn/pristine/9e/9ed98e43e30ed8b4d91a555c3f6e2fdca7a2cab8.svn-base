@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+
+<!--좌측 메뉴 영역-->
+<div class="left_menu">
+<!--Action Btn start-->
+<div class="btn_large"> <a href="javascript:postMTRL();" title="회의등록">회의등록</a> </div>
+<!--// Action Btn END--> 
+<!--Quick Btn start
+  <ul class="quickbtn_area four">
+    <li class="btn_noread quickbtn_on"><a href="#"> <span>안읽음</span></a></li>
+    <li class="btn_imprt"><a href="#"> <span>중요</span></a></li>
+    <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+    <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+  </ul>
+  -Quick Btn END--> 
+<!--Menu List start-->
+<ul id="folder_list" class="snb_lst">
+  <li class="snb_my_meeting"> <a id="menu_01" href="javascript:;" > <span>나의회의</span></a></li>
+  <li class="snb_ing_meeting"> <a id="menu_02" class="slct" href="javascript:;" > <span>진행중인회의 </span></a></li>
+  <li class="snb_end_meeting"> <a id="menu_03" href="javascript:;" > <span>완료된회의</span></a></li>
+  <li class="snb_meeting_issue"> <a id="menu_04" href="javascript:;" > <span>회의안건관리</span></a></li>
+  <li class="snb_meeting_group"> <a id="menu_05" href="javascript:;" > <span>업무그룹관리</span></a></li>
+</ul>
+<!--// Menu List end--> 
+
+<!--Setting & Info Area start-->
+<div class="info_area"> 
+  <!-- Config --> 
+  <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+  <!-- //Config --> 
+</div>
+<!--좌측 메뉴 영역 END--> 
+<!-----------------------> 
+<!-----------------------> 
+<!----------------------->
+
+</body>
+</html>

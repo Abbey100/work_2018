@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.12.1.min.js"></script>
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.tokeninput.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <!-- <h1 class="logo"><a title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+2017-09-05 사용자단 ux 적용으로 인해 로고 영역 삭제 by 백은경 -->
+                <!-- Area Title -->
+                <h1 class="area_title">기본설정관리</h1>
+                <div class="user_menu">
+                    <!-- User information -->
+                    <a class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    <div class="user_photo" title="MarkElliot Zuckerberg MarkElliot Zuckerberg"> 
+                        <img src="../../img/profile_photo_blank.png">
+                    </div>
+                    <!-- Alram -->
+                    <a class="btn_noti" title="show noti">노티확인</a>
+                    <!-- Contextual area btn -->
+                    <a class="btn_contextual" title="open contextual">컨텍스츄얼영역 열기</a>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- gnb -->
+            <div class="gnb_area"> 
+                <!-- 메뉴영역 -->
+                <div class="gnb">
+                    <ul>
+                        <li class="gnb_menu first home">  
+                            <!--
+                            <div class="gnb_menu second">
+                            <h2>홈</h2>
+                            </div>
+                            -->
+                        </li>
+                        <li class="gnb_menu first set">
+                            <div class="gnb_menu second">
+                                <h2>기본 설정 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                            <li><a title="클래스 관리">클래스 관리</a></li>
+                                            <li><a title="배치 관리">배치 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+                                    <li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+                                    <li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+                                    <li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+                                    <li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+                                    <li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first menu">
+                            <div class="gnb_menu second">
+                                <h2>메뉴 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="서식 관리">서식 관리</a></li>
+                                            <li><a title="서식 분류">서식 분류</a></li>
+                                            <li><a title="표어 관리">표어 관리</a></li>
+                                            <li><a title="관인 관리">관인 관리</a></li>
+                                            <li><a title="모듈 관리">모듈 관리</a></li>
+                                            <li><a title="한글 서식 관리">한글 서식 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="게시판 관리">게시판 관리</a></li>
+                                            <li><a title="양식 관리">양식 관리</a></li>
+                                            <li><a title="캐시 관리">캐시 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="동호회 관리">동호회 관리</a></li>
+                                            <li><a title="환경 설정">환경 설정</a></li>
+                                            <li><a title="토론실 관리">토론실 관리</a></li>
+                                            <li><a title="마일리지 관리">마일리지 관리</a></li>
+                                            <li><a title="가산점 관리">가산점 관리</a></li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="진행중인 그룹">진행중인 그룹</a></li>
+                                            <li><a title="종료된 그룹">종료된 그룹</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="파일 관리">파일 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="">관리자 유실 달력 관리</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first system">
+                            <div class="gnb_menu second">
+                                <h2>시스템 정보</h2>
+                                <ul>
+                                    <li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+                                    <li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="웹메일">웹메일</a></li>
+                                            <li><a title="웹폴더">웹폴더</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first statistics">
+                            <div class="gnb_menu second">
+                                <h2>통계정보</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="결재 통계">결재 통계</a></li>
+                                            <li><a title="웹메일 통계">웹메일 통계</a></li>
+                                            <li><a title="웹폴더 통계">웹폴더 통계</a></li>
+                                            <li><a title="동호회 통계">동호회 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="로그인">로그인</a></li>
+                                            <li><a title="게시판">게시판</a></li>
+                                            <li><a title="결재">결재</a></li>
+                                            <li><a title="권한">권한</a></li>
+                                            <li><a title="업무넷">업무넷</a></li>
+                                            <li><a title="스퀘어">스퀘어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>        
+            <!-- //gnb -->  
+            <!-- body -->
+            <div class="body">
+                <div class="lnb_area">
+                    <ul class="lnb">
+                        <li class="lnb_menu first drop_down open"><!-- [D]클릭시 open 추가 -->
+                            <a class="first_ttl">조직도</a> 
+                            <ul class="lnb_menu second">
+                                <li class="current"><a class="second_ttl" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                <li class=""><a class="second_ttl" title="클래스 관리">클래스 관리</a></li>
+                                <li class=""><a class="second_ttl" title="배치 관리">배치 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="권한 설정">권한 설정</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="GNB 메뉴">GNB 메뉴</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="초기 화면">초기 화면</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="메인 배너">메인 배너</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="긴급 공지">긴급 공지</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="환경 변수">환경 변수</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="긴급 공지">긴급 공지</a>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <div class="container_area">
+                        <div class="title_area">
+                        <h2><span class="title">조직/구성원 관리</span></h2>
+                    </div>
+                    
+                    <div class="content_section"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="content_section tree_out"> -->
+                        
+                        <!-- left_area -->
+                        <div class="left_area">
+                            <div class="srch_area">
+                                <div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+                                    <label for="" class="hidden">검색어 입력</label>
+                                    <input id="" type="text" class="form_control" name="" placeholder="검색">
+                                    <a class="btn_srch">검색하기</a>
+                                </div>
+                                <a class="btn_rfsh">새고로침</a>
+                            </div>
+
+                            <div><img src="../../img/blank_tree.gif" alt="트리이미지"></div>
+                        </div>
+                        <!-- //left_area -->
+                    
+                        <div class="content_area">
+                            
+                            <!-- 서브 탭 -->
+                            <div class="tab_area">
+                                <ul>
+                                    <li class="current"><a href="#"><span class="tab_title">부서 정보</span></a></li>
+                                    <li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 컨텐츠 스크롤 -->
+                            <div class="scroll_area_no">
+                                <!-- 게시판 상세 -->
+                                <div class="board_view scroll_area_tab">
+                                    
+                                    <!-- 기본정보 -->
+                                    <div id="cu1">
+                                        <!-- 상세 서브 탭 -->
+                                        <div class="sub_tab_area">
+                                            <ul>
+                                                <li class="current"><a href="#" onclick="cu(1)" onfocus="blur()">기본</a></li>
+                                                <li><a href="#" onclick="cu(2)" onfocus="blur()">권한 및 관리</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <h3 class="hidden">부서 정보</h3>
+
+                                        <h4 class="sub_title_02"><span class="title line">필수 정보</span></h4>
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>부서명 <span class="required">(필수)</span></dt>
+                                                <dd class="gap_btm">
+                                                    <div class="input_group t_byte2"><!-- [D] input 글자수 영역 추가 시 t_byte2 추가. <div class="input_group t_byte2"> -->
+                                                        <input id="" type="text" class="form_control" name="">
+                                                        <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                    </div>
+                                                </dd>
+                                                <dt>영문명</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>부서 위치</dt>
+                                                <dd>
+                                                    제품기획팀
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="selectbox" style="width:160px;margin-left:5px;display: inline-block;">
+                                                        <select>
+                                                            <option selected>위로 이동</option>
+                                                            <option>하위로 이동</option>
+                                                            <option>아래로 이동</option>
+                                                        </select>
+                                                    </div>
+                                                </dd>
+                                                <dt>코드</dt>
+                                                <dd class="gap_btm">
+                                                    <div class="input_group t_byte2"><!-- [D] input 글자수 영역 추가 시 t_byte2 추가. <div class="input_group t_byte2"> -->
+                                                        <input id="" type="text" class="form_control" name="">
+                                                        <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                    </div>
+                                                </dd>
+                                                <dt>약어</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>발신 명의1</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>발신 명의2</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <h4 class="sub_title_02"><span class="title line board_open">부가 정보</span></h4><!-- [D] 타이틀 클릭시 board_close로 변경. class="title board_close" -->
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl style="display: default;"><!-- [D] 클릭 후 열리면 display: default로 변경. 닫히면 display: none -->
+                                                <dt>부서 권한</dt>
+                                                <dd>
+                                                    <ul class="radio_list">
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label class="checked" for="check-1"  onclick="javascript:$(this).toggleClass('checked');">발송 부서</label>   
+                                                                <input type="checkbox" name="selection" id="check-1" value="" checked="" />
+                                                            </span>
+                                                        </li>
+                                                        <li >
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">기관 여부</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li >
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">감사 부서</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li >
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">준법감시 부서</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li >
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">대표팀</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>부서명(통상)</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>부서 이메일</dt>
+                                                <dd>
+                                                    <div class="email_group">
+                                                        <div class="input_group">                           
+                                                            <input id="" type="text" class="form_control" name="">
+                                                        </div> @
+                                                        <!-- 셀렉트 박스 -->
+                                                        <div class="selectbox">
+                                                            <select>
+                                                                <option selected>직접입력</option>
+                                                                <option>handysoft.co.kr</option>
+                                                                <option>lotus.handysoft.co.kr</option>
+                                                                <option>lotus.lotus.lotus.handysoft.co.kr</option>
+                                                            </select>
+                                                        </div>
+                                                        <a href="#" class="btn_text" title="이메일 추가">추가</a>
+                                                    </div>
+                                                    <ul class="name_list">
+                                                        <li><span class="name">abc@handysoft.co.kr</span><span class="btn_close">닫기</span></li>
+                                                        <li><span class="name">abc@lotus.handysoft.co.kr</span><span class="btn_close">닫기</span></li>
+                                                        <li><span class="name">abc@handysoft.co.kr</span><span class="btn_close">닫기</span></li>
+                                                        <li><span class="name">abc@handysoft.co.kr</span><span class="btn_close">닫기</span></li>
+                                                        <li><span class="name">abc@lotus.handysoft.co.kr</span><span class="btn_close">닫기</span></li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- //기본정보 -->
+
+                                    <!-- 권한 및 관리 -->
+                                    <div id="cu2" style="display: none;">
+                                        <!-- 상세 서브 탭 -->
+                                        <div class="sub_tab_area">
+                                            <ul>
+                                                <li><a href="#" onclick="cu(1)" onfocus="blur()">기본</a></li>
+                                                <li class="current"><a href="#" onclick="cu(2)" onfocus="blur()">권한 및 관리</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <h3 class="hidden">권한 및 관리</h3>
+
+                                        <h4 class="sub_title_02"><span class="title line">부서 관리자 정보</span></h4>
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>부서 관리자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>접수 담당자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>문서 관리자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>기관장</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>부서장</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>부재 관리자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>발송 담당자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>준법 감시인</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>예산 통제</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>상근 감사</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>선임 계리</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>CFO</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">                           
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- //권한 및 관리 -->                                    
+
+                                </div>
+                                <!-- //게시판 상세 -->
+
+                                <!-- 게시판 상세 하단 버튼 -->
+                                <div class="view_btn_area">
+                                    <a href="#" class="btn_del">삭제</a>
+                                    <a href="#" class="btn_cancel">취소</a>
+                                    <a href="#" class="btn_complete">저장</a>
+                                </div>
+                            </div>
+                            <!-- //컨텐츠 스크롤 -->
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- //body -->
+            
+        </div>
+        <!-- //wrapper -->
+
+        <!-- 레이어 팝업 -->    
+        <div class="popup_layer">
+            <div class="popup_layer_area" style="margin-top:-320px">
+                
+                <div class="popup_layer_container">
+                    <h1 class="pop_title"><span class="title">부서 선택</span></h1>
+
+                    <!-- 팝업 컨텐츠 -->
+                    <div class="popup_layer_content">
+                        <!-- 트리영역 -->
+                        <div class="pop_tree_area">
+                            <div class="srch_area">
+                                <div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+                                    <label for="" class="hidden">검색어 입력</label>
+                                    <input id="" type="text" class="form_control" name="" placeholder="검색">
+                                    <a class="btn_srch">검색하기</a>
+                                </div>
+                                <a class="btn_rfsh">새고로침</a>
+                            </div>
+
+                            <div class="scroll_area" style="height:303px"><img src="../../img/blank_tree.gif" alt="트리이미지"></div>
+                        </div>
+                        <!-- //트리영역 -->
+
+                        <div class="pop_write_table">
+                            <table>
+                                <colgroup>
+                                    <col width="143px">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>이동 대상 부서</th>
+                                        <td><span class="division_text_box">표준개발팀</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>위치</th>
+                                        <td>
+                                            <!-- 셀렉트 박스 -->
+                                            <div class="selectbox">
+                                                <select>
+                                                    <option selected>위로 이동</option>
+                                                    <option>하위로 이동 하위로 이동 하위로 이동 하위로 이동 하위로 이동</option>
+                                                    <option>아래로 이동</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 하단 버튼 -->
+                        <div class="view_btn_area">
+                            <a href="#" class="btn_cancel">취소</a>
+                            <a href="#" class="btn_complete">완료</a>
+                        </div>
+                    </div>
+                    <!-- //팝업 컨텐츠 -->
+                </div>
+
+                <a href="javascript:popup_close();" class="btn_close">팝업 닫기</a>
+            </div>
+            <div class="popup_layer_back"></div>
+        </div>
+        <!-- //레이어 팝업 -->
+            
+    </body>
+</html>

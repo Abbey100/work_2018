@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>회사정보</title>
+<link type="text/css" rel="stylesheet" href="../css/common.css">
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+<div  class="pop_wrap" id="pop_wrap" style="min-width:370px;">
+   <div class="container_box">       
+    <div class="title_area">
+      <h1>회사정보</h1>
+    </div>  
+        <div class="write_form_box brdr_bttm_0">
+            
+	<table class="popup_table" border="0" cellspacing="0" cellpadding="0" width="100%">
+		<colgroup>
+            <col width="120">
+		<col>
+		</colgroup><tbody>
+			<tr>
+				<th>
+					이름
+				</th>
+				<td>
+					백크리미
+				</td>
+			</tr>
+			<tr>
+				<th>
+					회사명
+				</th>
+				<td>
+					핸디소프트
+				</td>
+			</tr>
+			<tr>
+				<th>
+					부서
+				</th>
+				<td>
+					품질관리팀
+				</td>
+			</tr>
+			<tr>
+				<th>
+					직위
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					업무
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					개인전자우편
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					회사전자우편
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					기타전자우편
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					휴대전화번호
+				</th>
+				<td>
+					010-0000-0010
+				</td>
+			</tr>
+			<tr>
+				<th>
+					회사전화번호
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					회사팩스번호
+				</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<th>
+					회사우편번호
+				</th>
+				<td>
+					13493
+				</td>
+			</tr>
+			<!--<tr style="height:73px;">-->
+            <tr>
+				<th>
+					회사주소
+				</th>
+				<td>
+					<!--&nbsp;&nbsp;-->
+                    대한민국 경기도 성남시 분당구 대왕판교로644번길 49 다산타워 5층
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>    
+    </div>
+    </div>
+    
+    </body></html>

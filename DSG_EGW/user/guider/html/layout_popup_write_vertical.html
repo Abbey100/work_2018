@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 팝업형 레이아웃 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+	<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+		<body>
+		<!-- header -->
+		<h1>타이틀</h1>
+		<a class="util select_again">서식선택 다시하기</a>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" title="기안올리기">기안올리기</a>
+					<a class="btn" title="임시저장">임시저장</a>
+					<div class="selectbox noFirst">
+						<select> 
+							<option>추가기능</option>
+							<option>PC저장</option>
+							<option>EML업로드</option>
+							<option>엑셀다운로드</option>
+							<option>인쇄보기</option>
+							<option>일정으로 보내기</option>
+							<option>스퀘어로 보내기</option>
+							<option>동호회로 보내기</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="vertical_ui ">
+				<div class="vertical_lf scroll_area">
+					<div class="handy-scroll">
+						<!-- 본문 영역 -->
+						<div class="inform_area">
+							제목 파일첨부						
+						</div>
+						<div class="content">
+							<img class="" src="../../src/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다." style="width:100%">
+						</div>
+					</div>	
+				</div>	
+				<div class="vertical_rg scroll_area">
+					<div class="handy_scroll">
+						상세정보 화면
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

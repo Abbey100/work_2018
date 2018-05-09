@@ -1,0 +1,596 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8" />
+  <title>square 상세 즐찾 업무 화면</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/square.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+<script type="text/javascript" language="javascript">
+$(function() {
+$('.topic_sentence li p').dotdotdot();
+});
+</script>
+</head>
+<body>
+<div class="co_work" id="">
+    
+<!--layer pop -->
+<div class="square_layer_pop modify">
+    <span class="layer_arr"></span>
+    <div class="inner_box">
+        <div class="tit">보관<span class="count">28</span>
+            <a class="more">more</a>           
+            <div class="layer_pop">
+              <ul>
+                <li >업무요청추가</li>
+                <li >토픽추가</li>
+                <li >일괄삭제</li>
+              </ul>
+                    </div>
+            <a class="close">close</a></div>
+        <div class="contents">
+            <div class="layer_search">
+                <input id="searchKeyword" type="search" placeholder="업무명을 입력하여 검색하세요" onkeypress="">
+                <a href="" class="btn_search"> </a> </div>
+            <div class="modi_btn_area">
+                <div class="guide">
+                    <div class="fnt_prpl"><strong>선택한 보관 콘텐츠 삭제하기</strong></div>
+                    <div class="fnt_gray">삭제할 보관 콘텐츠를 선택하여 주십시오</div>
+                </div>
+                
+                <div class="btns checked">
+                <!-- [D] 리스트가 하나라도 체크되면 btns에 checked 라는 class 가 추가됩니다.
+                    
+                    <span class="del"><p>2</p>삭제</span>
+                    <span class="cancel">취소</span>              
+                </div>
+                </div>
+            
+            <table class="table_list modify">
+                <!--기본항목
+                <thead>
+                <tr>
+                <th>업무명</th>
+                <th class="date">등록일자</th>
+                <th class="select">선택</th>
+                </tr>
+                </thead>    
+                <!--리스트
+                <tbody>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td>
+                    <td class="select"><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox" ></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"  checked></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                    <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                    <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                    <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                    <tr>
+                <td>E&amp;G TFT 실무 그룹</td>
+                <td class="date">2015.12.25</td><td class="select"><input type="checkbox"></td>
+                </tr>
+                </c:forEach>
+                </tbody>
+           </table>
+    <div class="note"><p class="fnt_gray"
+>* 최근 5일간 등록된 컨텐츠 입니다.</p>
+        </div>
+    </div>
+</div>
+</div>
+<!--좌측 메뉴 영역-->
+<div id="" class="left_menu"> 
+<!--Action Btn start-->
+<div class="btn_large mg_bttm_15"> <a class="btn_l" href="#" onclick="" title="">그룹 만들기</a> </div>
+          <!--Action Btn END--> 
+          <!--Quick Btn start--> 
+          <!--[D] 
+1. 퀵버튼의 버튼이 두개일때 two, 네개일때 four...
+2. 카운트는 해당 li 안에 <span></span>으로 사용
+-->
+<ul class="quickbtn_area two">
+<li class="btn_s_work"><a href="#"> <span>업무</span></a></li>
+<li class="btn_s_temp"><a href="#"> <span>보관</span><span class="count">13</span></a></li>
+  </ul>
+          <!--Quick Btn END--> 
+          <!--Tree Area--> 
+          <!--즐겨찾는 그룹-->
+<div id="" class="with_del tree_area"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span id="myFavoriteTree" class="tree_ttl" onclick="javascript:$('#myFavoriteGroupMenu').toggle();">즐겨찾는 그룹</span> </div>
+    <!--업무방 Box-->
+    <ul id="myFavoriteGroupMenu" class="tree_cntnts_area bttm_no_scroll ">
+              <li id=""><span onclick="" class="group_name">UX디자인팀</span><a class="delete" href="">delete</a></li>
+              <li id=""><span onclick="" class="group_name">스퀘어TFT</span><a class="delete" href="">delete</a></li>
+            </ul>
+  </div>
+          <!--// 즐겨찾는 그룹--> 
+          <!-- 나의 업무 그룹-->
+<div id="" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span id="myTree" class="tree_ttl" onclick="javascript:$('#myGroupMenu').toggle();">진행중인 그룹</span> 
+              <!-- <a class="btn_tree_cnfg" href="#"> </a> --> 
+            </div>
+    <!--업무방 Box-->
+    <ul id="myGroupMenu" class="tree_cntnts_area bttm_no_scroll">
+              <li id="" class="on"><span id="" onclick="" class="group_name">그룹</span><a class="delete" href="" style="display:;">delete</a></li>
+              <li id=""><span id="groupName" onclick="" class="group_name">보기화면</span><a class="delete" href="" style="display:;">delete</a></li>
+            </ul>
+  </div>
+          <!-- 종료된 업무 그룹-->
+          <div id="" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span id="endTree" class="tree_ttl" onclick="javascript:$('#endGroupMenu').toggle();">종료된 그룹</span> 
+              <!-- 						<a class="btn_tree_cnfg" href="#"> </a> --> 
+            </div>
+    <!--업무방 Box-->
+    <ul id="endGroupMenu" class="tree_cntnts_area bttm_no_scroll">
+              <li id=""><span id="" onclick="" class="group_name">부서 개설</span></li>
+              <li id=""><span id="" onclick="" class="group_name">어므나 그룹의 이름이 느무느무 길지 않습니까?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요? 이를 어쩐이를 어쩐 어쩐 어쩐다요?</span></li>
+            </ul>
+  </div>
+          <!-- Config --> 
+          <!-- 				<a class="left_config" id="" href="#"><span>환경 설정</span></a> --> 
+<!-- //Config --> 
+</div>
+<!--좌측 메뉴 영역 END--> 
+
+<!-- 중앙 컨텐츠 영역 Center Contents Area -->
+<div class="container_box container_list_box" id="">
+<div id="">
+<div class="title_area">
+          <h2 id="" class="title"> <a id="" href="#" onclick="javascript:jQuery('.title_area').toggleClass('on');titleMenuInit();return;"> <span class="btn_ttl_menu">그룹</span> </a> <a id="favoriteIcon" href="" class="btn_star" title="즐겨찾기 등록"> 즐겨찾기 </a> <span id="" style="display: none;"></span> <span class="loading" style="display:none"></span> 
+    <!--[D] btn_star 에 on 클래스 추가 하면 활성화--> 
+  </h2>
+          <div id="left_btn_close" class="btn_flip_left"> <a href="javascript:toggle_LFrame()"></a> </div>
+          <div id="right_btn_close" class="btn_flip_right on"> <a href="javascript:toggle_RFrame();"></a> </div>
+          <div class="layer_pop ttl_menu" style="width:150px">
+    <ul>
+              <li id="sqAdminGroupMenu1" onclick="javascript:jQuery('.title_area').toggleClass('on');modifySquareMemberView();"> 구성원 추가 </li>
+              <li id="sqUserGroupMenu1" onclick="javascript:jQuery('.title_area').toggleClass('on');openAlarmPopup();"> 알림 설정 </li>
+              <li id="sqAdminGroupMenu2" onclick="javascript:jQuery('.title_area').toggleClass('on');modifySquareView();"> 그룹정보수정 </li>
+              <li id="sqAdminGroupMenu3" onclick="javascript:jQuery('.title_area').toggleClass('on');openAdminPopup();"> 관리자추가/삭제 </li>
+              <li id="sqAdminGroupMenu4" onclick="javascript:jQuery('.title_area').toggleClass('on');deleteSquare('01bnakg42');"> 그룹종료 </li>
+            </ul>
+  </div>
+        </div>
+
+<!-- // Title area END-->
+<div id="" class="list_vertical" style="">
+ <div class="container_wrap_left" style="width: 518px;">
+    <div id="viewContents" class="content_lst content_lst_body" style="">
+              <div id="01bnakg63" class="article_box">
+        <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+        <ul class="usr_opinion system_info_group">
+                  <li> <span  class="name" onclick="">admin</span> <span id="" class="class">(system 관리자)</span> </li>
+                  <li> <span class="inform"> <em>그룹</em> 그룹이 생성되었습니다. </span> <span id="" class="date">07.03 16:20</span> </li>
+                </ul>
+      </div>
+              <div id="" class="system_date tempdate"><span>2015.09.04</span></div>
+              <div id="01e5cdw8r" class="article_box">
+        <div id="" class="usr_pic" onclick="j"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+        <ul  class="usr_opinion topic_sentence">
+                  <!-- '내 글'에는 mine 추가 -->
+                  <li> <span  class="name" onclick="">김부장</span> <span  class="class">(UX디자인팀 책임연구원)</span> <span  class="date">09.04 16:50</span> <span id="01e5cdw8r_favorite" class="ico bookmark" onclick=""></span> </li>
+                  <li  class="confirm_mod" style="display: none;"> <span  class="modify">저장</span> <span  class="cancle">취소</span> </li>
+                  <li  class="go_modify" style="display: none;"> <span class="ico set"></span>
+            <div class="layer_pop">
+                      <ul>
+                <li >수정</li>
+                <li >삭제</li>
+              </ul>
+                    </div>
+          </li>
+                  <li >
+            <h3   onclick=""> <span class="duty">업무요청</span> <span  class="todo">업무지시</span> </h3>
+            <p id="chargerList" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">나주인</em></p>
+            <p  style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">ㅇㅇㅇ</p>
+            <input type="hidden" name="originalBody" value="ㅇㅇㅇ">
+          </li>
+                  <li  style="display: none;">
+            <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+          </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file"><em></em></span>
+            <input type="hidden"  name="commentCount" value="0">
+          </li>
+                </ul>
+      </div>
+              <div id="1442847600000" class="system_date tempdate"><span>2015.09.22</span></div>
+              <div id="01ev2l35n" class="article_box">
+        <div  class="usr_pic" onclick=""> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+        <ul  class="usr_opinion topic_sentence">
+                  <!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+                  <li> <span  class="name" onclick="">핸대리</span> <span  class="class">(UX디자인팀 연구원일까)</span> <span  class="date">09.22 16:58</span> <span id="01ev2l35n_favorite" class="ico bookmark" onclick=""></span> </li>
+                  <li  class="confirm_mod" style="display: none;"> <span  class="modify">저장</span> <span  class="cancle">취소</span> </li>
+                  <li  class="go_modify" style="display: none;"> <span class="ico set"></span>
+            <div class="layer_pop">
+                      <ul>
+                <li  style="display: none;">수정</li>
+                <li >삭제</li>
+              </ul>
+                    </div>
+          </li>
+                  <!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+                  <li  onclick="javascript:showDetailInfo('01ev2l35n', false);">
+            <h3> <span >01.square_개선_03.jpg</span> </h3>
+            <p  style="word-wrap: break-word"> </p>
+            <input type="hidden" name="originalBody" value="">
+          </li>
+                  <li  style="display: none;">
+            <textarea class="textarea" style="width: 738px;">			</textarea>
+          </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부<em> 1</em></span>
+            <input type="hidden"  name="commentCount" value="0">
+          </li>
+                  <li id="01ev2l35t" class="temp_topic_attach">
+            <div class="file_info">
+                      <div class="file_type  img" onclick=""></div>
+                      <ul class="file_txt">
+                <li> <span class="file_ttl main_contents_temp" title="01.square_개선_03.jpg" onclick="">01.square_<font class="dot_file_name">개선_03.jpg</font></span> </li>
+                <li> <span  class="capacity">756.6 KB</span> </li>
+                <li> <span id="01ev2l35t_favorite" class="ico bookmark" onclick=""></span> </li>
+              </ul>
+                      <div id="01ev2l35t_commentDetailMenu" class="detail_menu"> <!-- on 클래스를 추가 하면 메뉴가 활성화 --> 
+                <span  class="more" onclick="javascript:$('#01ev2l35t_commentDetailMenu').toggleClass('on');">more</span>
+                <div class="layer_pop more_file_menu">
+                          <ul>
+                    <li  style="display:none" onclick="javascript:$('#01ev2l35t_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01ev2l35n&quot;, &quot;01ev2l35t&quot;);">원문보기</li>
+                    <li  onclick="javascript:$('#01ev2l35t_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01ev2l35n&quot;, &quot;01ev2l35t&quot;);">다운로드</li>
+                    <li  style="display:none">삭제</li>
+                  </ul>
+                        </div>
+              </div>
+                    </div>
+          </li>
+                </ul>
+      </div>
+              <div id="1445439600000" class="system_date tempdate"><span>2015.10.22</span></div>
+              <div id="01g1q1knf" class="article_box">
+        <div  class="usr_pic" onclick="javascript:show_buddy_card('001013122');"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+        <ul  class="usr_opinion topic_sentence mine">
+                  <!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+                  <li> <span  class="name" onclick="javascript:show_buddy_card('001013122');">나주인</span> <span  class="class">(UX디자인팀 주임연구원)</span> <span  class="date">10.22 13:21</span> <span id="01g1q1knf_favorite" class="ico bookmark" onclick="javascript:addFavoriteContents('01g1q1knf', '2');"></span> </li>
+                  <li id="01g1q1knf_modifyMenu" class="confirm_mod" style="display: none;"> <span  class="modify" onclick="javascript:modifyContents('01g1q1knf', '2');">저장</span> <span  class="cancle" onclick="javascript:cancelModifyTextArea('01g1q1knf')">취소</span> </li>
+                  <li id="01g1q1knf_contentsMenu" class="go_modify" onclick="javascript:$('#01g1q1knf_contentsMenu').toggleClass('on'); checkEndContents('01g1q1knf');"> <span class="ico set"></span>
+            <div class="layer_pop">
+                      <ul>
+                <li  style="display: none;" onclick="javascript:modifyTextArea('01g1q1knf');">수정</li>
+                <li  onclick="javascript:deleteMainContents('01g1q1knf');">삭제</li>
+              </ul>
+                    </div>
+          </li>
+                  <!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+                  <li  onclick="javascript:showDetailInfo('01g1q1knf', false);">
+            <h3> <span >sub.png</span> </h3>
+            <p  style="word-wrap: break-word"> </p>
+            <input type="hidden" name="originalBody" value="">
+          </li>
+                  <li  style="display: none;">
+            <textarea class="textarea" style="width: 738px;">			</textarea>
+          </li>
+                  <li  class="attached" onclick="javascript:showDetailInfo('01g1q1knf', false);"> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부<em> 1</em></span>
+            <input type="hidden"  name="commentCount" value="0">
+          </li>
+                  <li id="01g1q1knl" class="temp_topic_attach">
+            <div class="file_info">
+                      <div class="file_type  img" onclick="javascript:$('#01g1q1knl_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1q1knf&quot;, &quot;01g1q1knl&quot;);"></div>
+                      <ul class="file_txt">
+                <li> <span class="file_ttl main_contents_temp" title="sub.png" onclick="javascript:$('#01g1q1knl_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1q1knf&quot;, &quot;01g1q1knl&quot;);"><font class="dot_file_name">sub.png</font></span> </li>
+                <li> <span  class="capacity">153.3 KB</span> </li>
+                <li> <span  class="ico bookmark" onclick="javascript:addFavoriteContents('01g1q1knl', '6')"></span> </li>
+              </ul>
+                      <div id="01g1q1knl_commentDetailMenu" class="detail_menu"> <!-- on 클래스를 추가 하면 메뉴가 활성화 --> 
+                <span  class="more" onclick="javascript:$('#01g1q1knl_commentDetailMenu').toggleClass('on');">more</span>
+                <div class="layer_pop more_file_menu">
+                          <ul>
+                    <li  style="display:none" onclick="javascript:$('#01g1q1knl_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1q1knf&quot;, &quot;01g1q1knl&quot;);">원문보기</li>
+                    <li  onclick="javascript:$('#01g1q1knl_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1q1knf&quot;, &quot;01g1q1knl&quot;);">다운로드</li>
+                    <li  style="display:none">삭제</li>
+                  </ul>
+                        </div>
+              </div>
+                    </div>
+          </li>
+                </ul>
+      </div>
+              <div id="01g1qgjsq" class="article_box">
+        <div  class="usr_pic" onclick="javascript:show_buddy_card('001013122');"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+        <ul  class="usr_opinion topic_sentence mine">
+                  <!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+                  <li> <span  class="name" onclick="javascript:show_buddy_card('001013122');">나주인</span> <span  class="class">(UX디자인팀 주임연구원)</span> <span  class="date">10.22 13:32</span> <span class="ico bookmark" onclick="javascript:addFavoriteContents('01g1qgjsq', '2');"></span> </li>
+                  <li id="01g1qgjsq_modifyMenu" class="confirm_mod" style="display: none;"> <span  class="modify" onclick="javascript:modifyContents('01g1qgjsq', '2');">저장</span> <span  class="cancle" onclick="javascript:cancelModifyTextArea('01g1qgjsq')">취소</span> </li>
+                  <li id="01g1qgjsq_contentsMenu" class="go_modify" onclick="javascript:$('#01g1qgjsq_contentsMenu').toggleClass('on'); checkEndContents('01g1qgjsq');"> <span class="ico set"></span>
+            <div class="layer_pop">
+                      <ul>
+                <li  style="display: none;" onclick="javascript:modifyTextArea('01g1qgjsq');">수정</li>
+                <li  onclick="javascript:deleteMainContents('01g1qgjsq');">삭제</li>
+              </ul>
+                    </div>
+          </li>
+                  <!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+                  <li  onclick="javascript:showDetailInfo('01g1qgjsq', false);">
+            <h3> <span >[스퀘어]디자인컨셉정의서.pptx</span> </h3>
+            <p  style="word-wrap: break-word"> </p>
+            <input type="hidden" name="originalBody" value="">
+          </li>
+                  <li  style="display: none;">
+            <textarea class="textarea" style="width: 738px;">			</textarea>
+          </li>
+                  <li  class="attached" onclick="javascript:showDetailInfo('01g1qgjsq', false);"> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부<em> 1</em></span>
+            <input type="hidden"  name="commentCount" value="0">
+          </li>
+                  <li id="01g1qgjsz" class="temp_topic_attach">
+            <div class="file_info">
+                      <div class="file_type  ppt" onclick="javascript:$('#01g1qgjsz_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;);"></div>
+                      <ul class="file_txt">
+                <li> <span class="file_ttl main_contents_temp is-truncated" title="[스퀘어]디자인컨셉정의서.pptx" onclick="javascript:$('#01g1qgjsz_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;);">[스퀘어... <font class="dot_file_name" style="display: inline;">컨셉정의서.pptx</font></span> </li>
+                <li> <span  class="capacity">1.6 MB</span> </li>
+                <li> <span  class="ico bookmark" onclick=" "></span> </li>
+              </ul>
+                      <div id="01g1qgjsz_commentDetailMenu" class="detail_menu"> <!-- on 클래스를 추가 하면 메뉴가 활성화 --> 
+                <span  class="more" onclick="javascript:$('#01g1qgjsz_commentDetailMenu').toggleClass('on');">more</span>
+                <div class="layer_pop more_file_menu">
+                          <ul>
+                    <li  style="display:none" onclick="javascript:$('#01g1qgjsz_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;);">원문보기</li>
+                    <li  onclick="javascript:$('#01g1qgjsz_commentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;);">다운로드</li>
+                    <li  style="display:none">삭제</li>
+                  </ul>
+                        </div>
+              </div>
+                    </div>
+          </li>
+                </ul>
+      </div>
+              <div id="divLoadingBar" title="Loading....." align="center" style="display:none;"> <img src="../../square/images/ajax_loader.gif"></div>
+            </div>
+    <div id="contentsPagenateBox" class="paginate_box entr0"> <!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+				<div id="inputArea" class="input_area">
+					<!-- 입력창 -->
+					<div id="inputBox" class="input_box">
+						<a onclick="javascript:$('#inputBox').toggleClass('on');setContentsFileUploader();" class="select_menu"><span class="btn_upload"></span></a>
+						<div class="layer_pop write_type">
+							<ul>
+								<li class="type_file">
+									<div id="fileUpload" name="fileUpload" class="fileUpload"></div>
+									<span class="ico file"></span><span>파일등록</span>
+								</li>
+								<li onclick="javascript:showAddTopic('01e4x976k');" class="type_topic"><span class="ico topic"></span><span>토픽등록</span></li>
+								<li onclick="javascript:showAddOrder('01e4x976k');" class="type_work"><span class="ico work"></span><span>업무요청</span></li>
+							</ul>
+						</div>
+                        <div class="btn_layer_pop">
+                        </div> 
+						<textarea id="message" class="instant_inp" onkeydown="javascript:return textAreaKeyEvent(event);"></textarea>
+					</div>
+					<!-- 입력버튼 -->
+					<a href="javascript:addMessage();" class="btn_write"><span>등록</span></a>
+				</div>
+             <div class="square_layer_pop input" >
+         <div class="inner_box" style="">
+         <div class="tit">보관<span class="count">28</span>
+           
+            <a class="close">close</a></div>
+             <ul>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li>
+                <li><a>E&amp;G TFT 실무 그룹</a><a class="del"></a></li> 
+             </ul>
+         </div>     
+     </div>
+			</div>
+
+    <div class="btn_flip_open" style="display:none;"> <a href="javascript:hideDetailArea(false)"></a> </div>
+  </div>
+<!-- // CONTENTs 좌측(기본 화면) --> 
+<!--  CONTENTs 우측(디테일 화면) -->
+<div id="vertical_message_content" class="view_content_box view_box off" style="margin-left: 518px;"> 
+    <div class="inner_box">
+              <div class="top_area">
+        <div>
+                  <div class="btn_flip_close"> <a href="javascript:hideDetailArea(true);"></a> </div>
+                </div>
+        <span class="search">
+                <input id="searchKeyword" type="search" placeholder="Search" onkeypress="">
+                <a href="javascript:showSearchResult();" class="btn_search"> </a> </span> <span  class="detail_menu" onclick="javascript:showMore(event);"> <span id="btnMoreList" class="more_detail_menu"></span> <span class="layer_pop more_dtl_menu">
+                <ul>
+                  <li onclick=""> 그룹정보 </li>
+                  <li onclick=""> 파일 </li>
+                  <li onclick=""> 즐겨찾기 </li>
+                  <li onclick=""> 업무요청 </li>
+                </ul>
+                </span> </span> </div>
+              <div id="contents_details" class="cowork_detail">
+        <div id="detailInfo">
+                  <div class="detail_title"> <a id="detailBackButton" href="javascript:backDetail();" class="btn_back" style="display: none;"></a>
+            <h2 id="pageTitle" class="title nodepth">상세정보</h2>
+            <a id="btnClose" href="javascript:canCloseInstructions();" class="btn_end" style="display: none;"></a> <a id="btnFinish" href="javascript:completeTask();" class="btn_fin" style="display: none;"></a> 
+            <!--현재 위치 관련 메뉴 -->
+            <div class="detail_menu" onclick="javascript:showMore(event);"> <span class="more_detail_menu"></span>
+                      <div class="layer_pop more_dtl_menu">
+                <ul>
+                          <li onclick="javascript:downloadAllByContentsId();"> 전체파일저장 </li>
+                        </ul>
+              </div>
+                    </div>
+          </div>
+                  <div  class="detail_area" style="height:;">
+            <div class="article_box">
+                      <ul class="usr_opinion topic_sentence duty mine">
+                <li> <span class="name"><a href="">나주인</a></span> <span class="class">(UX디자인팀 주임연구원)</span> <span class="ico bookmark" onclick=""></span> </li>
+                <li> <span id="createdDate" class="date">2015.10.22 13:32</span> </li>
+                <li class="go_modify" onclick="javascript:showMore(event);"> <span class="ico set"></span>
+                          <div class="layer_pop">
+                    <ul>
+                              <li id="contentsEditable" style="display: none;" onclick="javascript:showModifyTopic('01g1qgjsq');">수정</li>
+                              <li id="contentsDeletable" onclick="javascript:deleteContents('01g1qgjsq', 'contents');">삭제</li>
+                            </ul>
+                  </div>
+                        </li>
+                <li>
+                          <h3> <span id="markInstructions" class="duty" style="display: none;"> 업무요청 </span> <span id="titleArea">[스퀘어]디자인컨셉정의서.pptx</span> </h3>
+                          <p></p>
+                        </li>
+                <li id="statusArea" class="work_state" style="display: none;"> <span id="status"></span> <span class="classify"> 업무기한 </span> <span id="duedate"></span> </li>
+                <!-- 				<li class="attached">
+					
+				</li>
+-->
+              </ul>
+                      <div id="attachCountDetail">
+                <div id="contentsAttachList" class="detail_info_attatch">
+                          <h4 id="attachCount" class="file"> 첨부<em> 1</em> </h4>
+                          <div id="01g1qgjsz_detail" class="file_info temp_topic_detail_attach">
+                    <div class="file_type  ppt" onclick="javascript:SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;)"></div>
+                    <ul class="file_txt">
+                              <li> <span class="file_ttl main_contents_temp is-truncated" title="[스퀘어]디자인컨셉정의서.pptx" onclick="javascript:SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;)">[스퀘어... <font class="dot_file_name" style="display: inline;">컨셉정의서.pptx</font></span> </li>
+                              <li> <span  class="capacity">1.6 MB</span> </li>
+                              <li> <span  class="ico bookmark" onclick=" "></span> </li>
+                            </ul>
+                    <div id="01g1qgjsz_detailCommentDetailMenu" class="detail_menu"> <!-- on 클래스를 추가 하면 메뉴가 활성화 --> 
+                              <span  class="more" onclick="javascript:$('#01g1qgjsz_detailCommentDetailMenu').toggleClass('on');">more</span>
+                              <div class="layer_pop more_file_menu">
+                        <ul>
+                                  <li id="commentDetailView" style="display:none">원문보기</li>
+                                  <li  onclick="javascript:$('#01g1qgjsz_detailCommentDetailMenu').toggleClass('on');SQUARE_PROXY.invokeDownloadOpenAPI(&quot;01bnakg42&quot;, &quot;01g1qgjsq&quot;, &quot;01g1qgjsz&quot;)">다운로드</li>
+                                  <li  style="display:none">삭제</li>
+                                </ul>
+                      </div>
+                            </div>
+                  </div>
+                        </div>
+                <div id="attachDivision" class="division" style="display: none;"></div>
+              </div>
+                      <div id="memberListArea" class="detail_info_member" style="display: none;">
+                <h4>업무담당자</h4>
+                <div id="memberList" class="members" style="display: none !important;"></div>
+                <div id="nopicMemberList" style="display: none;">
+                          <h5 class="finish">처리완료</h5>
+                          <p id="endMemberList"></p>
+                          <h5 class="running">진행중</h5>
+                          <p id="ingMemberList"></p>
+                        </div>
+              </div>
+                      <div id="commentArea" class="detail_info_comment" style="display: none;">
+                <div id="commentDivision" class="division" style="display: none;"></div>
+                <h4  class="commnt" style="display: none;"> 의견<em>0</em> </h4>
+              </div>
+                    </div>
+          </div>
+                  <div id="commentInputBox" class="paginate_box entr0">
+		<div class="input_area">
+			<div class="input_box">
+				<a class="select_menu">
+					<div id="commentUpload" name="commentUpload" class="fileUpload"><div class="add_filebg"><div id="wfw_file_box" class="wfw_file_box"><form name="commentFileUploadForm" id="commentFileUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data"><input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" style="opacity: 0; width: 38px; height: 40px;"></form><ul style="display: none;"><li><a href="#" class="attach_add">찾아보기</a></li></ul><form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST"><input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;"></form></div></div><ul style="display: none;"><li class="theader_h1">파일이름</li><li class="theader_h2">파일크기</li></ul><div id="commentFileListLayer" class="filelistlayer"><ul id="commentFileList" class="filelist" style="display: none;"></ul></div></div>
+					<span class="btn_upload"></span>
+				</a>
+				<div class="file_upload" style="display:none">
+					<ul class="file_type_input">
+						<li class="file_type_ttl">
+							<span id="detailFileTtl" class="file_ttl"></span>
+							<span id="detailFileCapacity" class="capacity"></span>
+							<span class="cancel" onclick="javascript:cancelFileUpload();"></span>
+						</li>
+						<li class="file_type_txtarea">
+							<textarea id="filetypeCommentInput" class="instant_inp" onkeydown="javascript:return commentKeyEvent(event);"></textarea>
+						</li>
+					</ul>
+				</div>
+				<textarea id="commentInput" class="instant_inp" onkeydown="javascript:return commentKeyEvent(event);"></textarea>
+			</div>
+			<a href="javascript:addComment();" class="btn_write"><span></span></a>
+		</div>
+	</div>
+                  <div id="contentsInfo">
+            <input type="hidden" id="contentsId" name="contentsId" value="01g1qgjsq">
+            <input type="hidden" id="isAuthor" name="isAuthor" value="true">
+          </div>
+                </div>
+      </div>
+              <input type="hidden" id="detailContentsId" name="detailContentsId" value="01g1qgjsq">
+            </div>
+  </div>
+<div class="controlbar ui-draggable" style="left: 518px;">
+    <div class="bar"> <em>control</em> </div>
+</div>
+        </div>
+<script type="text/javascript">
+    /* 창크기 조절 */
+    var listContainerWidth = null;
+    $('.controlbar').draggable({
+            opacity: 0.7,
+            containment: 'html',
+            axis : 'x',
+            start : function(){
+                $('.list_vertical').css('opacity', 0.6);
+            },
+            stop : function(){
+                $('.list_vertical').css('opacity', 1);
+                listContainerWidth = $(this).position().left;
+                //console.log("스크롤바 위치 : " + listContainerWidth + " / 왼쪽컨텐츠 사이즈 : " + (listContainerWidth ))
+                $('.list_vertical .container_wrap_left').css('width', listContainerWidth);
+                $('.list_vertical .view_content_box').css('margin-left', listContainerWidth);
+                $('.list_vertical .container_wrap_left .textarea').css('width', listContainerWidth - 100 );
+            }
+    })
+</script>
+</body>
+</html>

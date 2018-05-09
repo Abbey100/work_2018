@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>개인별 응답보기</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <div class="handy-scroll">
+            <div class="wrapper">
+                <!-- header -->
+                <h1 class="title">개인별 응답보기</h1>
+                <!-- //header -->
+                <div class="container_area">
+                    <!-- contents -->
+                    <div class="scroll_area handy-scroll">
+                        <div class="">
+                            <!--상단 기본정보 영역-->
+                            <div class="key_info">
+                                <div class="subject">
+                                    <h3>[사회] 직장인 의견 조사</h3>
+                                </div>
+                                <div class="sub1 border_none">
+                                    <dt>작성자</dt>
+                                    <dd class="name">김민우</dd>
+                                    <dt class="blind">소속</dt>
+                                    <dd class="team">제품기획팀</dd>
+                                    <dt>응답일</dt>
+                                    <dd class="name">2018-02-12</dd>
+                                </div>
+                            </div>
+                            <!--설문 내용 시작-->
+                            <div class="content research write"> <!--응답하기 write 클래스 추거-->
+                                <div class="purpose">
+                                    <span class="tit">취지</span>
+                                    <div class="txt">회사원들의 노고 반영<br>- 회사원들이 가장 많이 받는 다는 스트레스의 원인<br>- 과로사와 탈모, 극심한 스트레스성 위염의 발생</div>
+                                </div>
+                                <div class="question">
+                                    <span class="tit">1.<span class="blind">객관식</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                    <div class="photo">
+                                        <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                    </div>
+                                    <div class="form_table question_read">
+                                        <table>
+                                            <col style="width: 40px">
+                                            <col style="width: *">
+                                            <tbody>
+                                                <!--객관식 문제 선택된 항목 tr에 select 클래스 추가-->
+                                                <tr class="select">
+                                                    <th>1)
+                                                    </th>
+                                                    <td>
+                                                        <span class="txt">업무량<img src="../../img/ico_check.png"></span>
+                                                        <div class="photo">
+                                                            <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        2)
+                                                    </th>
+                                                    <td>
+                                                        <span class="txt">출퇴근 시간</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        3)
+                                                    </th>
+                                                    <td>
+                                                        <span class="txt">팀원간의 소통</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        4)
+                                                    </th>
+                                                    <td>
+                                                        <span class="txt">상사와의 관계</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        5)
+                                                    </th>
+                                                    <td><!--기타항목-->
+                                                        <span class="txt">기타</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="question">
+                                    <span class="tit">2.<span class="blind">주관식</span> 회사에서 가장 힘들었던 문제는?</span>
+                                </div>
+                                <div class="question">
+                                    <span class="tit">3.<span class="blind">수량형</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                    <div class="photo">
+                                        <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                    </div>
+                                    <div class="form_table question_read">
+                                        <table>
+                                            <col style="width: 25px">
+                                            <col style="width: *">
+                                            <tbody>
+                                                <tr>
+                                                    <th>1)</th>
+                                                    <td>
+                                                        <!--선택된 순위를 p태그 안에 추가-->
+                                                        <span class="txt">업무량<p>(3)</p></span>
+                                                        <div class="photo">
+                                                            <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2)</th>
+                                                    <td>
+                                                        <span class="txt">출퇴근 시간<p>(1)</p></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3)</th>
+                                                    <td>
+                                                        <span class="txt">팀원간의 소통<p>(2)</p></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4)</th>
+                                                    <td>
+                                                        <span class="txt">상사와의 관계<p>(4)</p></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="question">
+                                    <span class="tit">4.<span class="blind">순위형</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                    <div class="photo">
+                                        <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                    </div>
+                                    <div class="form_table question_read">
+                                        <table>
+                                            <col style="width: 40px">
+                                            <col style="width: *">
+                                            <tbody>
+                                                <tr>
+                                                    <th>1)</th>
+                                                    <td>
+                                                        <!--선택된 순위를 p태그 안에 추가-->
+                                                        <span class="txt">업무량<p>(2)</p></span>
+                                                        <div class="photo">
+                                                            <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2)</th>
+                                                    <td>
+                                                        <span class="txt">출퇴근 시간<p>(3)</p></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3)</th>
+                                                    <td>
+                                                        <span class="txt">팀원간의 소통<p>(1)</p></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4)</th>
+                                                    <td>
+                                                        <span class="txt">상사와의 관계<p>(4)</p></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // body -->	
+    </body>
+</html>

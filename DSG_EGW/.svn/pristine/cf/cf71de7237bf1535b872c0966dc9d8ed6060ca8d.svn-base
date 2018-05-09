@@ -1,0 +1,157 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+
+<body>
+<!-- 설비 추가 및 관리 관련 화면  팝업사이즈는 530(w) x 550(h) 적정 -->
+<div class="pop_wrap equip_set">
+  <!-- TAB title 영역 -->
+  <div class="title_area">
+  <h1>설비추가</h1></div>
+  <div class="tab_area">
+      <div class="tab_box" id="pop_header" name="pop_header">
+          <ul class="tab_menu" id="tab_list" name="tab_list">
+              <a href="javascript:clickTab(0);" onfocus="blur();">
+                 <li class="tab">설비추가</li>
+              </a>
+                <a href="javascript:clickTab(1);" onfocus="blur();">
+                 <li class="tab">권한설정</li>
+              </a>
+              <a href="javascript:clickTab(2);">
+               <li class="tab">
+                    설비분류 추가</li>
+                    </a>
+             <a href="javascript:clickTab(3);">
+               <li class="tab selected"> 설비 순서 변경 </li>
+                    </a>
+          </ul>
+      </div>
+  </div>
+  <!-- // TAB title 영역 -->
+  <div class="tab_ctt pd_all_18" id="pop_content" name="pop_content">
+     <div class="content_configlist">
+            <table style="width:100%;">
+               <colgroup>
+                   <col style="width:160px;">
+                   <col style="width:36px;">
+                   <col style="width:160px;">
+               </colgroup>
+                <tbody>
+                    <tr>
+                        <th><label for="">설비분류명</label></th>
+                        <th></th>
+                        <th><label for="">설비</label></th>
+                    </tr>
+                    <tr>
+                        <td class="slct_list_box">
+                            <div class="move_btn_box">
+                                <ul class="item_move layout_rgt">
+                                    <a href="">
+                                        <li class="up_end">
+                                            맨위
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="up2">
+                                            위로
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="down2">
+                                            아래로
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="down_end">
+                                            맨아래
+                                        </li>
+                                    </a>
+                                </ul>
+                            </div>
+                            <div class="slct_list">
+                                <select id="" multiple="multiple" style="height:100%;">
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                </select>
+                            </div>
+                           
+                        </td>
+                        <td class="slct_list_box">
+                            <ul class="lst_move">
+                                <a href="#" onclick="">
+                                    <li class="add">
+                                        추가
+                                    </li>
+                                </a>
+                                <a href="#" onclick="">
+                                    <li class="del">
+                                        삭제
+                                    </li>
+                                </a>
+                            </ul>
+                        </td>
+                        <td class="slct_list_box">
+                            <div class="move_btn_box">
+                                <ul class="item_move layout_rgt">
+                                    <a href="">
+                                        <li class="up_end">
+                                            맨위
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="up2">
+                                            위로
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="down2">
+                                            아래로
+                                        </li>
+                                    </a>
+                                    <a href="">
+                                        <li class="down_end">
+                                            맨아래
+                                        </li>
+                                    </a>
+                                </ul>
+                            </div>
+                            <div class="slct_list">
+                                <select id="" multiple="multiple" style="height:100%;">
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                 	<option>설비설비?</option>
+                                </select>
+                            </div>
+                           
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+</div>
+<!--// tab ctt END -->
+<div class="footer layout_bttm full_width" id="pop_bottom" name="pop_bottom">
+            <ul class="btns layout_cnt" id="pop_footer" name="pop_footer">
+                
+                <li><span><a class="fnt_bold" href="javascript:;" onclick="javascript:add();" onfocus="blur();">만들기</a></span></li>
+                
+                <li><span><a href="javascript:fncClose()" class="" onclick="javascript:self.close();" onfocus="blur();">취소</a></span></li>
+            </ul>
+        </div>
+</div>
+<!-- //설비 추가 및 관리 관련 화면 -->
+</body>
+</html>

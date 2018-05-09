@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 기안서 수정 팝업 </title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 950 x 840 -->
+		<body>
+		<!-- header -->
+		<h1>기안서 수정</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" title="수정완료">수정완료</a>
+					<a class="btn" title="임시저장">임시저장</a>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="vertical_ui ">
+				<div class="vertical_lf scroll_area handy-scroll">
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="appr_pop_inner">
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width: 120px">
+										<col style="width:*">
+									</colgroup>
+									<tbody>
+										<tr>                
+											<th>제목</th>
+											<td>
+												<div class="input_group multi appr_case1">
+													<input type="text" class="basic_input" placeholder="글을 입력해 주세요" value="2017 추석 휴가 수요 조사" />
+													<div class="group">
+														<span class="form">
+															<input type="checkbox" id="check001" />
+															<label for="check001" class="emergency">긴급</label>
+														</span>
+														<span class="form">
+															<input type="checkbox" id="check002" />
+															<label for="check002">열람 시 암호 확인</label>
+														</span>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+											<td>
+												<div class="group file_input">
+													<a class="btn small" >
+														<input type="file" onclick="blur()" >
+														내PC
+													</a>
+													<a class="btn small">스토리지</a>
+												</div>
+												<dl class="file_info">
+													<dt>일반첨부 </dt>
+													<dd>2(<em>7.93MB</em>/100MB)</dd>
+													<dt>대용량 </dt>
+													<dd>1(<em>2GB</em>)</dd>
+												</dl>
+												<a class="text_btn all_delete">전체삭제</a>
+												<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+												<div class="file_lst upload handy-scroll">
+													<ul class="">
+														<li>
+															<a class="move">항목이동</a>
+															<a class="file_name">IMG_file.jpg </a>															
+															<span class="file_size">44 KB</span>
+															<a class="cancel" ></a></li>
+														<li>
+															<a class="move">항목이동</a>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+															<span class="file_size">28 KB</span>
+															<a class="cancel" ></a></li>
+														<li>
+															<a class="move">항목이동</a>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+															<span class="file_size">284 KB</span>
+															<a class="cancel" ></a></li>
+														<li>
+															<a class="move">항목이동</a>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+															<span class="file_size">284 KB</span>
+															<a class="cancel" ></a></li>
+														<li>
+															<a class="move">항목이동</a>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+															<span class="file_size">284 KB</span>
+															<a class="cancel" ></a></li>
+													</ul>
+												</div>
+		
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- 기안서 테이블 -->
+							<div class="appr_table_wrap">
+								<div class="appr_table_head">
+									<h2 class="title">기안서</h2>
+								</div>
+								<table>
+									<colgroup>
+										<col style="width:*">
+										<col style="width:*">
+										<col style="width: 13%">
+										<col style="width: 13%">
+										<col style="width: 13%">
+										<col style="width: 13%">
+									</colgroup>
+									<thead>
+										<th colspan="2">기안부서</th>
+										<th colspan="4">합의</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<span class="appr_txt1">과장</span>
+												<span class="appr_txt2">홍과장 07/31</span>
+											</td>
+											<td>
+												<span class="appr_txt1">부장</span>
+												<span class="appr_txt2 blue">부서장</span>
+											</td>
+											<td>&nbsp;</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //기안서 테이블 -->
+	
+							<div class="egw_editor" title="에디터영역 : 에디터로 대체됩니다.">
+								<img class="" src="../../img/community/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다.">
+							</div>
+						</div>
+
+					</div>	
+				</div>	
+				<div class="vertical_rg scroll_area handy-scroll">
+					<div class="">
+						<div class="appr_pop_inner">
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap">
+								<div class="title_wrap">
+									<h3 class="title">결재선</h3>
+									<span class="num"><em>4</em>명</span>
+									<a href="#" class="btn small">결재경로</a>
+								</div>
+								<!-- 결재 라인 -->
+								<div class="appr_line_list">
+									<ul>
+											<!-- 
+												appr_line_wrap에 상황별 클래스 추가
+												- 진행 중 : ing
+												- 완료 : end
+												-->
+
+											<!-- 결재 라인 한셋 (완료)-->										
+										<li>
+											<!-- 결재 라인 한셋 (대기중)-->
+											<div class="appr_line_wrap">
+												<div class="appr_line_progress">
+													<span class="ic">결재 대기</span>
+													<span class="txt"><span>병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="오상식"></span>
+													<div class="al_mid">
+														<span class="name"><em>오상식</em> 책임</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+														<span class="state b_gray">대기</span>
+														<span class="state b_rblue">확인</span>
+														<span class="state b_lgray">완료</span>
+														<span class="state b_dgray">반려</span>
+														<span class="state b_orange">보류</span>
+													-->
+													<span class="state b_gray">대기</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 결재 라인 한셋 (대기중)-->
+											<div class="appr_line_wrap">
+												<div class="appr_line_progress">
+													<span class="ic">결재 대기</span>
+													<span class="txt"><span>병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="조지원"></span>
+													<div class="al_mid">
+														<span class="name"><em>조지원</em> 수석</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+														<span class="state b_gray">대기</span>
+														<span class="state b_rblue">확인</span>
+														<span class="state b_lgray">완료</span>
+														<span class="state b_dgray">반려</span>
+														<span class="state b_orange">보류</span>
+													-->
+													<span class="state b_gray">대기</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 결재 라인 한셋 (진행중)-->
+											<div class="appr_line_wrap ing">
+												<div class="appr_line_progress">
+													<span class="ic">결재 진행</span>
+													<span class="txt"><span>병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="김민성"></span>
+													<div class="al_mid">
+														<span class="name"><em>김민성</em> 선임</span>
+														<span class="date">2017-09-01 13:50</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+														<span class="state b_gray">대기</span>
+														<span class="state b_rblue">확인</span>
+														<span class="state b_lgray">완료</span>
+														<span class="state b_dgray">반려</span>
+														<span class="state b_orange">보류</span>
+													-->
+													<span class="state b_rblue">확인</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 
+												appr_line_wrap에 상황별 클래스 추가
+												- 진행 중 : ing
+												- 완료 : end
+												-->
+
+											<!-- 결재 라인 한셋 (완료)-->
+											<div class="appr_line_wrap end">
+												<div class="appr_line_progress">
+													<span class="ic">결재 완료</span>
+													<span class="txt"><span>검토</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="김미나"></span>
+													<div class="al_mid">
+														<span class="name"><em>김미나</em> 선임</span>
+														<span class="date">2017-09-01 13:50</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+														<span class="state b_gray">대기</span>
+														<span class="state b_rblue">확인</span>
+														<span class="state b_lgray">완료</span>
+														<span class="state b_dgray">반려</span>
+														<span class="state b_orange">보류</span>
+													-->
+													<span class="state b_lgray">완료</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+									</ul>
+								</div>
+								<!-- //결재 라인 -->
+							</div>
+							<!-- //블럭 한셋 -->
+
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap open"><!-- 펼쳐지면 open 클래스 추가 -->
+								<div class="title_wrap">
+									<h3 class="title">수신자</h3>
+									<span class="num"><em>200</em>명</span>
+									<a href="#" class="btn small">수신자지정</a>
+								</div>
+								<a href="#" class="btn_visible">내용 펼치기</a>
+								<div class="arrp_block_cont">
+									<div class="sche_share_list handy-scroll">
+										<div class="inner">
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //블럭 한셋 -->
+
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap"><!-- 펼쳐지면 open 클래스 추가 -->
+								<div class="title_wrap">
+									<h3 class="title">공람자</h3>
+									<span class="num"><em>99</em>명</span>
+									<a href="#" class="btn small">공람지정</a>
+								</div>
+								<a href="#" class="btn_visible">내용 펼치기</a>
+								<div class="arrp_block_cont">
+									<div class="sche_share_list handy-scroll">
+										<div class="inner">
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //블럭 한셋 -->
+
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap open"><!-- 펼쳐지면 open 클래스 추가 -->
+								<div class="title_wrap">
+									<h3 class="title">관련문서</h3>
+									<span class="num"><em>5</em>건</span>
+									<a href="#" class="btn small">문서추가</a>
+								</div>
+								<a href="#" class="btn_visible">내용 펼치기</a>
+								<div class="arrp_block_cont cust2">
+									<div class="file_lst upload handy-scroll">
+										<ul class="">
+											<li>
+												<span class="file_opt">핸디2과-4 길면 말줄임 됩니다.</span>
+												<a class="file_name">2016 추석 휴가 수요 조사 내용이 길어지면 말줄임 됩니다.</a>															
+												<a class="cancel" ></a></li>
+											<li>
+												<span class="file_opt">핸디2과-4</span>
+												<a class="file_name">2016 추석 휴가 수요 조사</a>															
+												<a class="cancel" ></a></li>
+											<li>
+												<span class="file_opt">핸디2과-4</span>
+												<a class="file_name">2016 추석 휴가 수요 조사</a>															
+												<a class="cancel" ></a></li>
+											<li>
+												<span class="file_opt">핸디2과-4</span>
+												<a class="file_name">2016 추석 휴가 수요 조사</a>															
+												<a class="cancel" ></a></li>
+											<li>
+												<span class="file_opt">핸디2과-4</span>
+												<a class="file_name">2016 추석 휴가 수요 조사</a>															
+												<a class="cancel" ></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- //블럭 한셋 -->
+
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap open"><!-- 펼쳐지면 open 클래스 추가 -->
+								<div class="title_wrap">
+									<h3 class="title">문서정보</h3>
+									<a href="#" class="btn small">문서추가</a>
+								</div>
+								<a href="#" class="btn_visible">내용 펼치기</a>
+								<div class="arrp_block_cont cust3">
+									<div class="vertical_table">	
+										<table>
+											<colgroup>
+												<col style="width:120px;">
+												<col style="width:*;">
+											</colgroup>
+											<tbody>
+												<tr>
+													<th>문서번호</th>
+													<td>2017-제품기획팀-41</td>
+												</tr>
+												<tr>
+													<th>문서종류</th>
+													<td>발신</td>
+												</tr>
+												<tr>
+													<th>문서분류</th>
+													<td>
+														<div class="input_group has_btn">
+															<input type="text" class="basic_input" value="문서함명" readonly="readonly">
+															<a class="ico group" href="#">조직도</a>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th>열람범위</th>
+													<td>
+														<div class="selectbox" style="width:100px;">
+															<select> 
+																<option>소속기관</option>
+															</select>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th>열람제한</th>
+													<td>
+														<div class="selectbox" style="width:100px;">
+															<select> 
+																<option>설정안함</option>
+															</select>
+														</div>
+														<div class="date_box">
+															<input type="text" class="date_input" value="2017.11.02" style="width:103px;" readonly="">
+															<a class="date_btn" title="">달력</a>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- //블럭 한셋 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="popup open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:322px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">문서함 선택</h2>
+					<div class="contents">
+						<div class="tree_group">	
+							<div class="tree folder handy-scroll">
+								<ul class="dynatree-container ">
+									<li class="">
+										<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+											<span class="dynatree-expander"></span>
+											
+											<span class="dynatree-icon"></span>
+											<a href="#" class="dynatree-title">
+												<span class="node-folder" >기록물철1</span>
+											</a>
+										</div>
+										<ul style="">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >연구문1</span>
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+															<span class="dynatree-expander"></span>
+															
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder" >기록010</span>
+															</a>
+														</div>
+														<ul style="">
+															<li class="">
+																<span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef dynatree-selected">
+																	<span class="dynatree-expander"></span>
+																	
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-group" >다큐001</span>
+																	</a>
+																</span>
+																<ul>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+																			<span class="dynatree-connector"></span>							
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+																			<span class="dynatree-connector"></span>							
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+																			<span class="dynatree-connector"></span>							
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c dynatree-selected">
+																			<span class="dynatree-connector"></span>							
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li class="dynatree-lastsib">
+																		<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																</ul>
+															</li>
+															<li class="">
+																<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf">
+																	<span class="dynatree-expander"></span>
+																	
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-group" >기록0102</span>
+																	</a>
+																</span>
+																<ul style="display: none">
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	<li class="dynatree-lastsib">
+																		<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																</ul>
+															</li>
+															<li class="">
+																<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf">
+																	<span class="dynatree-expander"></span>
+																	
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-group" >기록0102</span>
+																	</a>
+																</span>
+																<ul style="display: none">
+																	<li>
+																		<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+																			<span class="dynatree-connector"></span>
+																			
+																			<span class="dynatree-icon"></span>
+																			<a class="dynatree-title" href="#">
+																				<span class="node-group">기록0102</span>
+																			</a>
+																		</span>
+																	</li>
+																	
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>									
+								</ul>
+							</div>
+						</div>					
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

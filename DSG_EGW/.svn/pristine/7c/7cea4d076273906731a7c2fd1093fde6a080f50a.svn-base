@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.12.1.min.js"></script>
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <!-- Area Title -->
+                <h1 class="area_title">서식연동관리</h1>
+                <div class="user_menu">
+                    <!-- User information -->
+                    <a class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    <div class="user_photo" title="MarkElliot Zuckerberg MarkElliot Zuckerberg"> 
+                        <img src="../../img/profile_photo_blank.png">
+                    </div>
+                    <!-- Alram -->
+                    <a class="btn_noti" title="show noti">노티확인</a>
+                    <!-- Contextual area btn -->
+                    <a class="btn_contextual" title="open contextual">컨텍스츄얼영역 열기</a>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- gnb -->
+            <div class="gnb_area"> 
+                <!-- 메뉴영역 -->
+                <div class="gnb">
+                    <ul>
+                        <li class="gnb_menu first home">  
+                            <!--
+<div class="gnb_menu second">
+<h2>홈</h2>
+</div>
+-->
+                        </li>
+                        <li class="gnb_menu first set">
+                            <div class="gnb_menu second">
+                                <h2>기본 설정 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                            <li><a title="클래스 관리">클래스 관리</a></li>
+                                            <li><a title="배치 관리">배치 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+                                    <li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+                                    <li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+                                    <li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+                                    <li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+                                    <li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first menu">
+                            <div class="gnb_menu second">
+                                <h2>메뉴 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="서식 관리">서식 관리</a></li>
+                                            <li><a title="서식 분류">서식 분류</a></li>
+                                            <li><a title="표어 관리">표어 관리</a></li>
+                                            <li><a title="관인 관리">관인 관리</a></li>
+                                            <li><a title="모듈 관리">모듈 관리</a></li>
+                                            <li><a title="한글 서식 관리">한글 서식 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="게시판 관리">게시판 관리</a></li>
+                                            <li><a title="양식 관리">양식 관리</a></li>
+                                            <li><a title="캐시 관리">캐시 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="동호회 관리">동호회 관리</a></li>
+                                            <li><a title="환경 설정">환경 설정</a></li>
+                                            <li><a title="토론실 관리">토론실 관리</a></li>
+                                            <li><a title="마일리지 관리">마일리지 관리</a></li>
+                                            <li><a title="가산점 관리">가산점 관리</a></li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="진행중인 그룹">진행중인 그룹</a></li>
+                                            <li><a title="종료된 그룹">종료된 그룹</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="파일 관리">파일 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="">관리자 유실 달력 관리</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first system">
+                            <div class="gnb_menu second">
+                                <h2>시스템 정보</h2>
+                                <ul>
+                                    <li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+                                    <li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="웹메일">웹메일</a></li>
+                                            <li><a title="웹폴더">웹폴더</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first statistics">
+                            <div class="gnb_menu second">
+                                <h2>통계정보</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="결재 통계">결재 통계</a></li>
+                                            <li><a title="웹메일 통계">웹메일 통계</a></li>
+                                            <li><a title="웹폴더 통계">웹폴더 통계</a></li>
+                                            <li><a title="동호회 통계">동호회 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="로그인">로그인</a></li>
+                                            <li><a title="게시판">게시판</a></li>
+                                            <li><a title="결재">결재</a></li>
+                                            <li><a title="권한">권한</a></li>
+                                            <li><a title="업무넷">업무넷</a></li>
+                                            <li><a title="스퀘어">스퀘어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first qdb">
+                            <div class="gnb_menu second">
+                                <h2>서식연동관리</h2>
+                                <ul>
+                                    <li class=""><a class="second_ttl" title="양식관리">양식관리</a></li>
+                                    <li class=""><a class="second_ttl" title="연동문서목록">연동문서목록</a></li>
+                                    <li class=""><a class="second_ttl" title="연동로그">연동로그</a></li>
+                                    <li class=""><a class="second_ttl" title="연동테스트">연동테스트</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>        
+            <!-- //gnb -->  
+            <!-- body -->
+            <div class="body">
+                <div class="lnb_area">
+                    <ul class="lnb">
+                        <li class="lnb_menu first"><a class="first_ttl current" title="양식관리">양식관리</a></li>
+                        <li class="lnb_menu first"><a class="first_ttl" title="연동문서목록">연동문서목록</a></li>
+                        <li class="lnb_menu first"><a class="first_ttl" title="연동로그">연동로그</a></li>
+                        <li class="lnb_menu first"><a class="first_ttl" title="연동테스트">연동테스트</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="container_area">
+                    <div class="title_area">
+                        <h2><span class="title">양식관리</span></h2>
+                    </div>
+
+                    <div class="content_section tree_out">
+                        <div class="content_area">
+                            <!-- 서브 탭 -->
+                            <div class="tab_area">
+                                <ul>
+                                    <li class="current"><a href="#"><span class="tab_title">양식 정보</span></a></li>
+                                    <li><a href="#"><span class="tab_title">셀 관리</span></a></li>
+                                    <li><a href="#"><span class="tab_title">시스템 연동</span></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 목록 -->
+                            <div class="board_list scroll_area">                               
+
+
+
+                                <!-- board_list_table -->
+                                <div class="board_view_type01">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:142px">
+                                            <col style="width:*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>양식명 <span class="required">(필수)</span></th>
+                                                <td>
+                                                    <div class="input_group t_byte"><!-- [D] input 글자수 영역 추가 시 t_byte 추가. <div class="input_group t_byte"> -->
+                                                        <input id="" type="text" class="form_control" name="">
+                                                        <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>서식 종류</th>
+                                                <td>
+                                                    <ul class="radio_list">
+                                                        <li>   
+                                                            <span class="radio">
+                                                                <label class="checked" for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">html</label>
+                                                                <input type="radio" name="opinions" id="radio-2" value="" checked="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>   
+                                                            <span class="radio">
+                                                                <label for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">한글서식</label>
+                                                                <input type="radio" name="opinions" id="radio-2" value="" />
+                                                            </span>
+                                                        </li>                                                        
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>양식 설명</th>
+                                                <td>
+                                                    <div class="input_group textarea_control t_byte">                           
+                                                        <textarea rows="5" cols="" placeholder="내용을 작성해 주세요."></textarea>
+                                                        <span class="t_byte_num"><span class="count">100</span> / 1000 Byte</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>을지파일</th>
+                                                <td>
+                                                    <div class="btn_attach">
+                                                        <input type="file" class="single_attach">
+                                                        <span class="single_attach">파일찾기</span>
+                                                    </div>
+                                                    <div class="attach description">
+                                                        <p>.hwx 파일만 등록이 가능합니다.</p>
+                                                        <p>을지파일을 삭제하고, 다시 올리는 경우 RepeatLoad/PepeatLoadFile/AddPage 등의 액션을 다시 저장해야 합니다.</p>
+                                                    </div>
+                                                    <ul class="file_list">
+                                                       <li> <p>등록된 을지파일이 없습니다.</p></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>을지파일</th>
+                                                <td>
+                                                    <div class="btn_attach">
+                                                        <input type="file" class="single_attach">
+                                                        <span class="single_attach">파일찾기</span>
+                                                    </div>
+                                                    <div class="attach description">
+                                                        <p>.hwx 파일만 등록이 가능합니다.</p>
+                                                        <p>을지파일을 삭제하고, 다시 올리는 경우 RepeatLoad/PepeatLoadFile/AddPage 등의 액션을 다시 저장해야 합니다.</p>
+                                                    </div>
+                                                     <ul class="file_list">
+                                                       <li class="attached_file"><p>cjaqnehlsvkdlffltmxmdmlvkdlf.html</p><a class="ico_btn cancel"></a></li>
+                                                       <li class="attached_file"><p>을지파일을지파일을지파일을지파일을지파일.html</p><a class="ico_btn cancel"></a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+<div class="view_btn_area fixed">
+
+                                <a href="#" title="목록" class="btn_list">목록</a>
+                                <a href="#" title="저장" class="btn_complete">저장</a>
+                                <a href="#" title="목록" class="btn lf">리포트</a>
+                                <a href="#" title="목록" class="btn lf">연동테스트</a>
+                            </div>
+
+
+                            </div>
+                            <!-- //게시판 목록 -->
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //body -->
+
+        </div>
+        <!-- //wrapper -->
+
+    </body>
+</html>

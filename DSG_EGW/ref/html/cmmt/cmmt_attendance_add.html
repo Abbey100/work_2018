@@ -1,0 +1,136 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box">
+    <div class="title_area">
+      <h1>근태규칙 추가</h1>
+    </div>   
+    <!-- 리스팅 기본형(좌측) -->
+    <div class="cmmt_pop" style="height: 360px;">
+      <div class="detail_form">
+        <!-- 사용자명 start --> 
+        <dl>
+          <dt><span class="tit">사용자명<em class="req">*</em></span></dt>
+          <dd><a href="#" class="btn_human">사용자명 검색</a>
+            <div class="input_box" style="width:400px">
+                <input type="text">              
+            </div>
+            </dd>
+        </dl>
+        <!-- //사용자명 end --> 
+        <!-- 부서명 start-->
+        <dl>
+          <dt><span class="tit">부서명</span></dt>
+          <dd><input type="text" class="basic_inp" style="width:435px"></dd>
+        </dl>
+        <!-- //부서명 end -->
+        <!-- 근무타입 start --> 
+        <dl>
+            <dt><span class="tit">근무타입<em class="req">*</em></span></dt>
+            <dd><input type="radio">고정근무&nbsp;&nbsp;->&nbsp;&nbsp;근무시간
+            <select class="basic_select" disabled="disabled">
+			<option>00시</option>
+            <option>01시</option>
+            <option>02시</option>
+            <option>03시</option>
+            <option>04시</option>
+            <option>05시</option>
+            <option>06시</option>
+            <option>07시</option>
+            <option>08시</option>
+            <option selected>09시</option>
+            <option>10시</option>
+            <option>11시</option>
+            <option>12시</option>
+            <option>13시</option>
+            <option>14시</option>
+            <option>15시</option>
+            <option>16시</option>
+            <option>17시</option>
+            <option>18시</option>
+            <option>19시</option>
+            <option>20시</option>
+            <option>21시</option>
+            <option>22시</option>
+            <option>23시</option>
+            </select>
+            <span>:</span>
+            <select class="basic_select" disabled="disabled">
+			<option>00분</option>
+            <option>10분</option>
+            <option>20분</option>
+            <option>30분</option>
+            <option>40분</option>
+            <option>50분</option>
+            </select>
+            <span>~</span>
+             <select class="basic_select" disabled="disabled">
+			<option>00시</option>
+            <option>01시</option>
+            <option>02시</option>
+            <option>03시</option>
+            <option>04시</option>
+            <option>05시</option>
+            <option>06시</option>
+            <option>07시</option>
+            <option>08시</option>
+            <option>09시</option>
+            <option>10시</option>
+            <option>11시</option>
+            <option>12시</option>
+            <option>13시</option>
+            <option>14시</option>
+            <option>15시</option>
+            <option>16시</option>
+            <option>17시</option>
+            <option selected>18시</option>
+            <option>19시</option>
+            <option>20시</option>
+            <option>21시</option>
+            <option>22시</option>
+            <option>23시</option>
+            </select>
+            <span>:</span>
+            <select class="basic_select" disabled="disabled">
+			<option>00분</option>
+            <option>10분</option>
+            <option>20분</option>
+            <option>30분</option>
+            <option>40분</option>
+            <option>50분</option>
+            </select>
+            </dd>
+            <dd style="margin-top:-3px;"><input type="radio">탄력근무&nbsp;&nbsp;->&nbsp;&nbsp;집중근무시간(오전10시~오후4시)을 포함하는 근무조건</dd>
+            <dd><input type="radio">자율근무&nbsp;&nbsp;->&nbsp;&nbsp;자율적으로 하루 8시간이상 근무조건</dd>
+        </dl>
+        <!-- //근무타입 end --> 
+        <!-- 기록방식 start-->
+        <dl>
+          <dt><span class="tit">기록방식</span></dt>
+          <dd><span class="mg_rgt_18">특정 아이피</span><input type="text" class="basic_inp" style="width:353px"></dd>
+        </dl>
+        <!-- //기록방식 end -->
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) --> 
+    <!-- 하단 버튼 영역 -->
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+    <!-- // 하단 버튼 영역 -->
+  </div>
+</div>
+</body>
+</html>

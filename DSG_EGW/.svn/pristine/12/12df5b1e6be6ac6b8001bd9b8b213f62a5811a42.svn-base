@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> EML 업로드 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../../js/common.js" ></script>	
+	</head>
+	<!-- popup 사이즈는 640 x 282 -->
+	<body>
+		<!-- header -->
+		<h1>EML 업로드</h1>		
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->
+			<div class="popup_cont">
+				<div class="file_input">
+					<h2>파일첨부</h2>
+					<a class="btn small" href="#">
+						<input type="file" onclick="blur()" >
+						내PC
+					</a>						
+				</div>
+				<dl class="file_info">
+					<dt>일반첨부 </dt>
+					<dd>2(<em>7.93MB</em>/100MB)</dd>
+					<dt>대용량 </dt>
+					<dd>1(<em>2GB</em>)</dd>
+				</dl>
+				<a class="text_btn all_delete" href="#">전체삭제</a>
+				<div class="file_lst upload handy-scroll">
+					<ul class="">
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">9,999 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+				</div>
+				<div class="file_opt">
+				<span class="form"><input type="checkbox" ><label>받은 날짜를 현재 날짜로 변경</label></span>
+				<div class="align_rg"><p class="fnt_alert">업로드할 EML파일이 없습니다.</p></div>
+					</div>
+			</div>
+			<div class="btns_area bttm">
+				<div class="align_rg">
+
+					<a class="action_btn">완료</a>
+					<a class="btn">취소</a>
+				</div>
+			</div>            
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

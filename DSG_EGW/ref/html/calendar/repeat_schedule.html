@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link type="text/css" rel="stylesheet" href="../../css/common.css" />
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+    </head>
+    <body>
+        <div class="left_wrap_content">
+            <div class="container_box container_list_box mg_lft_0">
+                <div class="title_area">
+                    <h2 class="title">상세일정 등록하기</h2>
+                    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+                    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+                </div>
+
+                <!-- 버튼 영역 -->
+                <div class="btn_area calendar_btn_area">
+                    <ul class="btns">
+                        <li><span><a href="#">수정</a></span>
+                            <div id="update_select" class="common_layer_pop cal_view" style="display: none; left: 0px; top: 33px;">
+                                <div class="inner_box repeat_pop">
+                                    <div class="tit"><span class="fnt_bold">수정</span><p class="txt">반복일정으로 등록된 일정입니다.</p><a href="javascript:cancelRecurUpdateItem();" title="닫기"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></div>
+                                    <div class="cont_pop">
+                                        <form name="update_select_form" id="update_select_form">
+                                            <input type="hidden" id="update_option" name="update_option" value="">
+                                            <dl>
+                                                <label>
+                                                    <input name="update_radiobutton" type="radio" value="1" onclick="javascript:update_select_form.update_option.value = this.value;">전체 반복일정 수정
+                                                </label>
+                                            </dl>
+                                            <dl>
+                                                <label>
+                                                    <input name="update_radiobutton" type="radio" value="2" onclick="javascript:update_select_form.update_option.value = this.value;">선택된 일정만 수정
+                                                </label>
+                                            </dl>
+
+                                            <dl>
+                                                <label>
+                                                    <input name="update_radiobutton" type="radio" value="4" onclick="javascript:update_select_form.update_option.value = this.value;">선택된 일정을 포함한 이후 일정 수정
+                                                </label>
+                                            </dl>
+                                        </form>
+                                        <div class="btn_area">
+                                            <ul class="btns">
+                                                <li><span><a href="javascript:eventCrud.updateRecurItem();">수정</a></span></li>
+                                                <li><span><a href="javascript:cancelRecurUpdateItem();">취소</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><span><a href="#">삭제</a></span></li>
+                        <li><span><a href="#">취소</a></span></li>
+                    </ul>
+                </div>
+                <!-- //버튼 영역 --> 
+                <!-- 리스팅 기본형(좌측) -->
+                <div class="calendar_detail">
+                    <div class="detail_form">
+                        <dl>
+                            <dt><span class="tit">제목<em class="req">*</em></span></dt>
+                            <dd>
+                                <input type="text" class="basic_inp" value="제목을 입력해주세요." style="width:770px">
+                                <label class="pd_lft_10">
+                                    <input type="checkbox">
+                                    비공개</label>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">달력<em class="req">*</em></span></dt>
+                            <dd>
+                                <div class="cal_selectbox"> <a>달력선택</a>
+                                    <div class="cal_select_list cal_lst">
+                                        <ul>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox" checked>
+                                                    <em class="color03"></em><span class="cal_name">나의 달력</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox" checked>
+                                                    <em class="color08"></em><span class="cal_name">기념일</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox" checked>
+                                                    <em class="color03"></em><span class="cal_name">Hi my calendar! HappyDay!</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <em class="color12"></em><span class="cal_name">전사 달력</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <em class="color15"></em><span class="cal_name">너무나도이름이긴달력01</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <em class="color12"></em><span class="cal_name">너무나도이름이긴달력02</span></label>
+                                                </a></li>
+                                            <li><a href="#">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <em class="color18"></em><span class="cal_name">너무나도이asdasdasd름이긴달력03</span></label>
+                                                </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input_box mg_0" style="width:695px">
+                                    <input type="text" class="basic_inp" value="나의달력; 기념일; 그룹웨어" readonly style="width:695px">
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">반복</span></dt>
+                            <dd>
+                                <div class="cal_selectbox equipment"> <a href="#">매주</a>
+                                    <div class="cal_select_list">
+                                        <ul>
+                                            <li><a href="#">반복없음</a></li>
+                                            <li><a href="#">매일(월~일)</a></li>
+                                            <li><a href="#">매일(월~금)</a></li>
+                                            <li><a href="#">매주</a></li>
+                                            <li><a href="#">매월</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="set_repeat">
+                                     <span class="count_selectbox"> <a href="#" onclick="javascript:$('.count_select_list').toggleClass('on');">4</a>
+                                            <div class="count_select_list">
+                                                <ul>
+                                                    <li><a href="#" >1</a></li>
+                                                    <li><a href="#">2</a></li>
+                                                    <li><a href="#">3</a></li>
+                                                    <li><a href="#" class="now">4</a></li>
+                                                    <li><a href="#">5</a></li>
+                                                    <li><a href="#">6</a></li>
+                                                    <li><a href="#">7</a></li>
+                                                    <li><a href="#">8</a></li>
+                                                    <li><a href="#">9</a></li>
+                                                    <li><a href="#">10</a></li>
+                                                </ul>
+                                            </div>
+                                        </span>
+                                        <span class="text">주 마다</span>
+                                        <span class="repeat_day" style="display:inline-block"><!-- [D] 매주 일경우 노출 -->   
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            일</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            월</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            화</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            수</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            목</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            금</label>
+                                        <label class="pd_rgt_10">
+                                            <input type="checkbox">
+                                            토</label>
+                                    </span>
+                                
+                                <div class="repeat_day" style="display:none"><!-- [D] 매월 일경우 노출 -->
+                                    <label class="pd_rgt_10">
+                                        <input type="radio" name="day01">
+                                        매월 28일</label>
+                                    <label class="pd_rgt_10">
+                                        <input type="radio" name="day01">
+                                        매월 다섯 번째 월요일</label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">일시</span></dt>
+                            <dd>
+                                <label class="pd_rgt_10">
+                                    <input type="checkbox">
+                                    종일</label>
+                                <div class="datepic_box">
+                                    <input type="text" class="basic_inp" value="2014.03.02" readonly style="width:102px;">
+                                    <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                                <div class="time_selectbox"> <a href="#">오전 10:00</a>
+                                    <div class="time_select_list">
+                                        <ul>
+                                            <li><a href="#">오전 10:00</a></li>
+                                            <li><a href="#">오전 10:30</a></li>
+                                            <li><a href="#">오전 11:00</a></li>
+                                            <li><a href="#">오전 11:30</a></li>
+                                            <li><a href="#">오후 12:00</a></li>
+                                            <li><a href="#">오후 12:30</a></li>
+                                            <li><a href="#">오후 13:00</a></li>
+                                            <li><a href="#">오후 13:30</a></li>
+                                            <li><a href="#">오후 14:00</a></li>
+                                            <li><a href="#">오후 14:30</a></li>
+                                            <li><a href="#">오후 15:00</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <span class="divide">-</span>
+                                <div class="datepic_box">
+                                    <input type="text" class="basic_inp" value="2014.03.02" readonly style="width:102px;">
+                                    <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                                <div class="time_selectbox"> <a href="#">오전 10:00</a>
+                                    <div class="time_select_list">
+                                        <ul>
+                                            <li><a href="#">오전 10:00</a></li>
+                                            <li><a href="#">오전 10:30</a></li>
+                                            <li><a href="#">오전 11:00</a></li>
+                                            <li><a href="#">오전 11:30</a></li>
+                                            <li><a href="#">오후 12:00</a></li>
+                                            <li><a href="#">오후 12:30</a></li>
+                                            <li><a href="#">오후 13:00</a></li>
+                                            <li><a href="#">오후 13:30</a></li>
+                                            <li><a href="#">오후 14:00</a></li>
+                                            <li><a href="#">오후 14:30</a></li>
+                                            <li><a href="#">오후 15:00</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <label class="pd_lft_10 pd_rgt_10">
+                                    <input type="checkbox">
+                                    기념일</label>
+                                <label class="pd_lft_10 pd_rgt_10">
+                                    <input type="checkbox">
+                                    음력</label>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">공유자</span></dt>
+                            <dd> <a href="#" class="btn_human">사용자검색</a>
+                                <div class="input_box"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span> <span class="recipient inactive"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                                    <input type="text">
+                                </div>
+                                <a href="#" class="btn_daily">일정확인</a>
+                                <div class="time_table">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:113px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="tit"> <div> <strong>04. 02</strong>
+                                                    <div class="btn_box_date">
+                                                        <div> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> </div>
+                                                    </div>
+                                                    </div>
+                                                </th>
+                                                <th colspan="2"><p>9시</p></th>
+                                                <!-- [D] cross 클래스를 넣으면 시간 사이에 위치함 -->
+                                                <th colspan="2"><p>10시</p></th>
+                                                <th colspan="2"><p>11시</p></th>
+                                                <th colspan="2"><p>12시</p></th>
+                                                <th colspan="2"><p>오후1시</p></th>
+                                                <th colspan="2"><p>2시</p></th>
+                                                <th colspan="2"><p>3시</p></th>
+                                                <th colspan="2"><p>4시<span style="height:86px"></span><em style="height:86px"></em></p></th>
+                                                <th colspan="2"><p>5시</p></th>
+                                                <th colspan="2"><p>6시</p></th>
+                                                <th colspan="2"><p>7시</p></th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>엄유정</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <!-- [D] bor_lt 는 좌측 파란색 선이고, bg_on 은 배경색이 있는경우 -->
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>김나정</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="time_sort">
+                                    <ul>
+                                        <li> <span class="sort01"></span>약속있음 </li>
+                                        <li> <span class="sort02"></span>설정시간 </li>
+                                        <li> <span class="sort03"></span>빈 시간 </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">설비</span></dt>
+                            <dd>
+                                <div class="equipment_select"> <a href="#">설비선택</a>
+                                    <div class="equipment_tree"> </div>
+                                </div>
+                                <div class="input_box mg_0" style="width:695px"> <span class="recipient"><em>1층 Room #8</em><a href="#" class="btn_close">삭제</a></span>
+                                    <input type="text">
+                                </div>
+                                <div class="time_table">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:113px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                            <col style="width:34px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="tit"> <div> <strong>04. 02</strong>
+                                                    <div class="btn_box_date">
+                                                        <div> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> </div>
+                                                    </div>
+                                                    </div>
+                                                </th>
+                                                <th colspan="2"><p>9시<span class="cross" style="height:116px"></span><em class="cross" style="height:116px"></em></p></th>
+                                                <!-- [D] cross 클래스를 넣으면 시간 사이에 위치함 -->
+                                                <th colspan="2"><p>10시</p></th>
+                                                <th colspan="2"><p>11시</p></th>
+                                                <th colspan="2"><p>12시<span style="height:116px"></span><em style="height:116px"></em></p></th>
+                                                <th colspan="2"><p>오후1시</p></th>
+                                                <th colspan="2"><p>2시</p></th>
+                                                <th colspan="2"><p>3시</p></th>
+                                                <th colspan="2"><p>4시</p></th>
+                                                <th colspan="2"><p>5시</p></th>
+                                                <th colspan="2"><p>6시</p></th>
+                                                <th colspan="2"><p>7시</p></th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td><label>
+                                                <input type="checkbox" checked>
+                                                1층 Room #8</label></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <!-- [D] bor_lt 는 좌측 파란색 선이고, bg_on 은 배경색이 있는경우 -->
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt bg_on"></td>
+                                            <td class="bg_on"></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>
+                                                <input type="checkbox">
+                                                5층 Bahamas</label></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>
+                                                <input type="checkbox">
+                                                5층 Jeju</label></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                            <td class="bor_lt"></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="time_sort">
+                                    <ul>
+                                        <li> <span class="sort01"></span>약속있음 </li>
+                                        <li> <span class="sort02"></span>설정시간 </li>
+                                        <li> <span class="sort03"></span>빈 시간 </li>
+                                    </ul>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">달력</span></dt>
+                            <dd>
+                                <div class="txt_box mg_bt8">
+                                    <label class="pd_rgt_10">
+                                        <input type="checkbox">
+                                        메일 즉시 발송</label>
+                                    <label class="pd_rgt_10">
+                                        <input type="checkbox">
+                                        즉시알림</label>
+                                    <label class="pd_lft_10 pd_rgt_10">
+                                        <input type="checkbox">
+                                        10분 전</label>
+                                    <label class="pd_lft_10 pd_rgt_10">
+                                        <input type="checkbox">
+                                        20분 전</label>
+                                    <label class="pd_lft_10 pd_rgt_10">
+                                        <input type="checkbox">
+                                        30분 전</label>
+                                    <label class="pd_lft_10 pd_rgt_10">
+                                        <input type="checkbox">
+                                        1시간 전</label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">내용</span></dt>
+                            <dd>
+                                <textarea cols="3" rows="3" class="cal_detail_textarea"></textarea>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt><span class="tit">파일첨부</span> <a href="#" class="btn_trig">열기,닫기</a></dt>
+                            <dd>
+                                <div class="btn_box btn_s">
+                                    <ul>
+                                        <li><span><a href="#">내 PC</a></span></li>
+                                        <li><span><a href="#">클라우드</a></span></li>
+                                        <li class="btn_desc"><strong>0</strong>개의 첨부파일이 있습니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="write_file_list" style="width:860px;">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:61%">
+                                            <col style="width:21%">
+                                            <col style="width:18%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">파일명</th>
+                                                <th scope="col">파일위치</th>
+                                                <th scope="col">크기</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- [D] 파일첨부전은 tbody 가 display:none 처리 되어있음 -->
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                <td>내PC</td>
+                                                <td>53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- [D] 파일 올리기전 설명 이미지 -->
+                                    <p class="file_list_desc"><img src="../../img/img_email_write_list_desc.gif" alt="마우스로 파일을 끌어오세요"></p>
+                                    <!-- // [D] 파일 올리기전 설명 이미지 --> 
+                                </div>
+                            </dd>
+                        </dl>
+                        <div class="comment_area"> <span class="comment_bg_ttl">의견</span>
+                            <div class="comment_write">
+                                <textarea name="new_comment" id="new_comment" cols="20" rows="4" onkeyup="javascript:fc_chk_byte(this,400);" onkeypress="javascript:fc_chk2();" onblur="" class="txtarea"></textarea>
+                                <input type="button" width="68" height="51" border="0" name="submitBtn" value="덧글입력" class="inp">
+                            </div>
+                            <div class="comment_view">
+                                <div class="comment_info"> <a href="">김진호</a> <span class="date">2014.04.02</span>
+                                    <ul>
+                                        <a href="">
+                                            <li class="cmmt">댓글</li>
+                                        </a> <a href="">
+                                        <li class="cmmt_modi">수정</li>
+                                        </a> <a href="">
+                                        <li class="cmmt_del">삭제</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                                    작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                                    다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨
+                                    꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                                    작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                                    다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨</div>
+                            </div>
+                            <div class="comment_view comment2">
+                                <div class="comment_info"> <a href="">박나래</a> <span class="date">2014.04.02</span>
+                                    <ul>
+                                        <a href="">
+                                            <li class="cmmt">댓글</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                                    작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                                    다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨</div>
+                            </div>
+                            <div class="comment_view comment2 modi">
+                                <div class="comment_info"> <a href="">박나래</a> <span class="date">2014.04.02</span>
+                                    <ul>
+                                        <a href="">
+                                            <li class="cmmt">댓글</li>
+                                        </a> <a href="">
+                                        <li class="cmmt_cncl">수정취소</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <textarea class="txtarea">댓글 수정 중입니다.</textarea>
+                                <input type="button" width="68" height="51" border="0" name="submitBtn" value="덧글입력" class="inp">
+                            </div>
+                            <div class="comment_view comment2">
+                                <div class="comment_info"> <a href="">댓글다는 자</a> <span class="date">2014.04.02</span>
+                                    <ul>
+                                        <a href="">
+                                            <li class="cmmt_cncl">댓글취소</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                                    작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                                    다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨 </div>
+                            </div>
+                            <div class="comment_repl">
+                                <textarea name="new_comment" id="new_comment" cols="20" rows="4" onkeyup="javascript:fc_chk_byte(this,400);" onkeypress="javascript:fc_chk2();" onblur="" class="txtarea"></textarea>
+                                <input type="button" width="68" height="51" border="0" name="submitBtn" value="덧글입력" class="inp">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 메일 리스팅 기본형(좌측) --> 
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        /* 시간 셀렉트 박스 */
+        $('.time_selectbox>a').on('click', function(){
+            if($(this).siblings('.time_select_list').hasClass('on')){
+                $(this).siblings('.time_select_list').removeClass('on');	
+            } else {
+                $(this).siblings('.time_select_list').addClass('on');
+            }
+
+        });
+
+        /* 달력 셀렉트 박스 */
+        $('.cal_selectbox>a').on('click', function(){
+            if($(this).siblings('.cal_select_list').hasClass('on')){
+                $(this).siblings('.cal_select_list').removeClass('on');	
+            } else {
+                $(this).siblings('.cal_select_list').addClass('on');
+            }
+
+        });
+
+        /* 설비 트리 박스 */
+        $('.equipment_select>a').on('click', function(){
+            if($(this).siblings('.equipment_tree').hasClass('on')){
+                $(this).siblings('.equipment_tree').removeClass('on');	
+            } else {
+                $(this).siblings('.equipment_tree').addClass('on');
+            }
+
+        });
+
+        /* 파일첨부 */
+        $('.btn_trig').on('click', function(){
+            if($(this).hasClass('on')){
+                $(this).removeClass('on');
+                $('.write_file_list').hide();
+            }else{
+                $(this).addClass('on');
+                $('.write_file_list').show();
+            }
+
+
+        });
+
+    </script>
+</html>

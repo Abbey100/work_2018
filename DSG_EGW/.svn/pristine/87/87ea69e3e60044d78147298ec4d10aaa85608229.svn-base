@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시물쓰기 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<!-- header -->
+		<h1>게시판 전달</h1>		
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" href="#">작성완료</a>
+					<a class="btn" href="#">취소</a>
+				</div>
+				
+			</div>
+			<!-- 본문 영역 -->
+			<div class="scroll_area handy-scroll">
+				<div class="">				
+					<div class="form_table">
+						<table>
+							<col style="width: 160px">
+							<col style="width:*">
+							<tbody>
+								<tr>                
+									<th>제목</th>
+									<td>
+										<div class="input_group">											
+											<input type="text" class="basic_input" placeholder="제목을 입력해 주세요" />		
+										</div>
+									</td>
+								</tr>
+
+								<tr>                
+									<th>게시판 위치</th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" placeholder="게시판을 선택해 주세요">
+											<a class="ico group"  href="#">조직도</a>
+										</div>
+									</td>
+								</tr>
+								<!-- 작성자 고정 -->
+								<tr>
+									<th>작성자</th>
+									<td>
+											<span>홍길동과장</span>
+									</td>
+								</tr>
+								
+								<tr>
+									<th>작성일</th>
+									<td><span class="txt">2017-12-11</span></td>
+								</tr>	
+								
+							
+								<tr>
+									<th>게시판 공지</th>
+									<td>
+											<span class="form"><input type="checkbox" id="c6" /><label for="c6">설정</label></span></td>
+								</tr>
+								<tr>
+									<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+									<td>
+										<div class="group file_input">
+											<a class="btn small" >
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small">스토리지</a>
+										</div>
+										<dl class="file_info">
+											<dt>일반첨부 </dt>
+											<dd>2(<em>7.93MB</em>/100MB)</dd>
+											<dt>대용량 </dt>
+											<dd>1(<em>2GB</em>)</dd>
+										</dl>
+										<a class="text_btn all_delete">전체삭제</a>
+										<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+										<div class="file_lst upload handy-scroll">
+											<ul class="">
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">IMG_file.jpg </a>															
+													<span class="file_size">44 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+										</div>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="editor">
+						<img class="border" src="../../src/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다." style="width:100%">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

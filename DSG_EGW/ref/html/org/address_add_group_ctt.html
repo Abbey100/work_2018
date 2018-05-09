@@ -1,0 +1,270 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/dynatree-1.2.4/ui.dynatree.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+</head>
+<body>
+<div class="container_box container_list_box none_mg_left">
+<div class="title_area">
+  <h2 class="title">그룹추가</h2>
+  <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+  <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+</div>
+<div class="quick_group_box">
+  <input type="text" class="basic_inp" style="width:166px;" value="그룹명">
+  <input type="text" class="basic_inp" style="width:176px;" value="대표 전자우편">
+  <span class="handy_email">@handysoft.co.kr</span>
+  <input type="text" class="basic_inp" value="그룹 설명">
+  <span class="btn_config"><a href="#">그룹 추가</a></span>
+  <div class="group_opt">
+    <input type="radio" id="group1" checked="checked">
+    <label for="group1"> 공유그룹 </label>
+    <input type="radio" id="group2">
+    <label for="group2"> 첨부 발송 제한 </label>
+    <input type="radio" id="group3">
+    <label for="group3"> 외부 발송 제한 </label>
+    <input type="radio" id="group4">
+    <label for="group4"> 첨부 / 외부 발송제한 </label>
+  </div>
+</div>
+
+<!-- tab -->
+<div class="tab_area">
+  <div class="tab_box">
+    <ul class="tab_menu">
+      <a href="#">
+      <li class="tab selected">조직도</li>
+      </a> <a href="#">
+      <li class="tab">주소록</li>
+      </a>
+    </ul>
+  </div>
+</div>
+<!-- //tab -->
+
+<div class="tab_ctt"> 
+  <!-- left tree -->
+  <div class="left_tree_box search">
+    <div class="tree_search">
+      <input type="text" value="" placeholder="부서명 검색"/>
+      <a title="검색" href="">검색</a> </div>
+    <div class="left_tree">
+      <ul class="tree_toggle">
+        <a href="#">
+        <li>모두접기</li>
+        </a> <a href="#">
+        <li>모두펴기</li>
+        </a> <a href="#" title="이전">
+        <li class="org_back on">이전</li>
+        </a>
+      </ul>
+      <div id="div_tree" class="org_tree_area popup_tree" style="height:330px;">
+        <LI class=dynatree-lastsib><SPAN class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-lastsib ui-dynatree-unselectable ui-dynatree-notusedept dynatree-exp-el dynatree-ico-ef"><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>system</A></SPAN>
+          <UL>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>다산네트웍스</A></SPAN></LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>핸디소프트</A></SPAN>
+              <UL>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><SPAN class=dynatree-connector></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>고문</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><SPAN class=dynatree-connector></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>대표이사Staff</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>경영관리실</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>정보전략실</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf dynatree-active"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>제품전략실</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><SPAN class=dynatree-connector></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>경영지원팀</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>SW사업부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>CS사업부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>전략사업부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>금융사업부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>NW사업부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>연구개발본부</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>품질관리실</A></SPAN></LI>
+                <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>관계사</A></SPAN></LI>
+                <LI class=dynatree-lastsib><SPAN class="dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf"><SPAN class=dynatree-connector></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>감사부서</A></SPAN></LI>
+              </UL>
+            </LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>다산RND</A></SPAN></LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>차산네트웍스</A></SPAN></LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>디엠씨</A></SPAN></LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>DYTS</A></SPAN></LI>
+            <LI><SPAN class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><SPAN class=dynatree-connector></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>팬더미디어</A></SPAN></LI>
+            <LI class=dynatree-lastsib><SPAN class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf"><SPAN class=dynatree-expander></SPAN><SPAN class=dynatree-checkbox></SPAN><SPAN class=dynatree-icon></SPAN><A style="CURSOR: pointer" class=dynatree-title>유통테스트</A></SPAN></LI>
+          </UL>
+        </LI>
+      </div>
+    </div>
+    <!-- //left tree --> 
+    
+    <!-- right tree -->
+    <div class="right_tree_box small">
+      <div class="r_search">
+        <div class="filter_search">
+          <select class="basic_select filter">
+            <option>이름</option>
+            <option>직위</option>
+          </select>
+          <input type="text" >
+          <a href="" class="btn_search">검색</a> </div>
+      </div>
+      <div class="org_lst">
+        <div class="content_lst content_lst_head">
+          <table>
+            <colgroup>
+            <col style="width:240px;">
+            <col style="width:167px;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="no_chckbox">성명</th>
+                <th>직위</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="content_lst content_lst_body" style="height:330px;">
+          <table>
+            <colgroup>
+            <col style="width:240px;">
+            <col style="width:167px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td><input type="checkbox">
+                  Paul<span><a class="btn_absence">부재</a></span></td>
+                <td>책임연구위원</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox">
+                  김과장</td>
+                <td>과장</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="slct_list_box">
+      <ul class="list_move">
+        <a href="#">
+        <li class="add">넣기</li>
+        </a> <a href="#">
+        <li class="del">빼기</li>
+        </a>
+      </ul>
+      <div class="slct_list">
+        <select multiple="multiple">
+          <option>김부장님</option>
+          <option>김철수</option>
+          <option>안철수</option>
+        </select>
+        <div class="slct_list_opt"> 추가할 주소 <span class="folder_msg_count">20</span> <span class="btn_config"><a href="#">초기화</a></span> </div>
+      </div>
+    </div>
+    <!-- //right tree --> 
+  </div>
+</div>
+</body>
+</html>

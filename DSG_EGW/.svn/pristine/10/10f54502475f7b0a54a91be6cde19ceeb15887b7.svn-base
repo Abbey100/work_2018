@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 조직도 정보 팝업: 구성원 정보 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 980 x 725 -->
+    <body>
+        <!-- header -->
+        <h1>표준개발실</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->			
+            <div  class="contents_tab has_btns">
+                <ul>
+                    <li><a class="selected">구성원 정보 5</a></li>
+                    <li><a class="">부재자 정보</a></li>				
+                    <li><a class="">부서 정보</a></li>				
+                </ul>
+                <div class="align_rg new_lst_info">
+                    <a class="btn_d_search open" onclick="$(this).toggleClass('open');$('.d_srch_layer').toggleClass('open')">검색</a>
+                    <div class="d_srch_layer open" >										
+                        <!-- 간편 탭 -->
+                        <div class="s_cont easy open no-scroll">
+                            <div class="input_group has_select has_btn medium  mg_t_15">
+                                <div class="selectbox" style="width:100px;">
+                                    <select>
+                                        <option>성명</option>
+                                        <option>사원번호</option>
+                                        <option>별칭</option>
+                                        <option>직위</option>
+                                        <option>직책</option>
+                                        <option>담당업무</option>
+                                        <option>이메일</option>
+                                        <option>전화번호</option>
+                                        <option>휴대폰번호</option>
+                                    </select>
+                                </div>
+                                <input class="basic_input" type="text" value="" >
+                                <a class="ico search"  href="#">검색</a>
+                            </div>	
+                        </div>
+                        <!-- detail srch layer : 상세 탭-->
+                        <div class="s_cont detail">
+                            <div class="form_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:77px;">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th><label>게시판</label></th>
+                                            <td>
+                                                <div class="input_group multi">	
+                                                    <input class="basic_input" type="text" value="Groupware Q&A" onfocus="blur();" readonly>	
+
+                                                    <a class="ico group"  href="#">조직도</a>
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check002" />
+                                                        <label for="check002">전체</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td class="text_input">
+                                                <input type="text" class="border_input focused" placeholder="제목은">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>머리글</th>
+                                            <td>
+                                                <div class="selectbox border_select" style="width:288px">
+                                                    <select>
+                                                        <option>머릿글 선택</option>
+                                                        <option selected>카드프로젝트</option>
+                                                        <option>UI 설계</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>작성자</th>
+                                            <td>
+                                                <div class="input_group has_btn">
+                                                    <div class="token-input">
+                                                        <ul class="token-input-list ui-sortable">
+                                                            <li title="" class="token-input-token">
+                                                                <p>이은수</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                        </ul>
+                                                        <input type="text" style="display: none;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                        <a class="ico_btn small add" href="#">조직도</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>작성부서</th>
+                                            <td>
+                                                <div class="input_group has_btn">
+                                                    <div class="token-input">
+                                                        <ul class="token-input-list ui-sortable">
+                                                            <li title="" class="token-input-token">
+                                                                <p>$개발1팀</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                        </ul>
+                                                        <input type="text" style="display: none;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                        <a class="ico_btn small add" href="#">조직도</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>원부서명</th>
+                                            <td class="text_input">
+                                                <input type="text" class="border_input focused" placeholder="">
+                                            </td>
+                                        </tr>	
+                                        <tr>
+                                            <th>작성일</th>
+                                            <td>
+                                                <div class="input_group has_select">
+                                                    <div class="selectbox" style="width:90px">
+                                                        <select>
+                                                            <option>1년</option>
+                                                            <option>최근 6개월</option>																	
+                                                            <option selected>최근 3개월</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="datepic_area">
+                                                        <div class="date_box">
+                                                            <input type="text" class="date_input" value="2017.11.02" style="width:92px;" readonly="">
+                                                            <a class="date_btn" title="">달력</a>
+                                                        </div>
+                                                        ~
+                                                        <div class="date_box">  
+                                                            <input type="text" class="date_input" value="2017.12.02" style="width:92px;" readonly="">
+                                                            <a class="date_btn" title="">달력</a>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>종료일</th>
+                                            <td>
+                                                <div class="input_group has_select">
+                                                    <div class="selectbox" style="width:90px">
+                                                        <select>
+                                                            <option>1년</option>
+                                                            <option>최근 6개월</option>	
+                                                            <option selected>최근 3개월</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="datepic_area">
+                                                        <div class="date_box">
+                                                            <input type="text" class="date_input" value="2017.11.02" style="width:92px;" readonly="">
+                                                            <a class="date_btn" title="">달력</a>
+                                                        </div>
+                                                        ~
+                                                        <div class="date_box">  
+                                                            <input type="text" class="date_input" value="2017.12.02" style="width:92px;" readonly="">
+                                                            <a class="date_btn" title="">달력</a>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>상태</th>
+                                            <td>
+                                                <div class="input_group">	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check003" />
+                                                        <label for="check003">전체</label></span>	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check004" />
+                                                        <label for="check004">안읽은</label></span>	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check005" />
+                                                        <label for="check005">답글</label></span>	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check006" />
+                                                        <label for="check006">첨부</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>의견</th>
+                                            <td>
+                                                <div class="multi_group">	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check007" checked/>
+                                                        <label for="check007">조회수</label></span>	
+                                                    <span class="">
+                                                        <input class="box_input" type="text" style="width:60px"/>
+                                                    </span>
+                                                    <div class="selectbox" style="width:62px">
+                                                        <select>
+                                                            <option>이상</option>		
+                                                            <option selected>이하</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="multi_group">	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check008" />
+                                                        <label for="check008">찬성수</label></span>	
+                                                    <span class="">
+                                                        <input class="box_input" type="text" style="width:60px" disabled/>
+                                                    </span>
+                                                    <div class="selectbox" style="width:62px">
+                                                        <select disabled>
+                                                            <option>이상</option>		
+                                                            <option selected>이하</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="multi_group">	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check009" />
+                                                        <label for="check009">반대수</label></span>	
+                                                    <span class="">
+                                                        <input class="box_input" type="text" style="width:60px" disabled/>
+                                                    </span>
+                                                    <div class="selectbox" style="width:62px">
+                                                        <select disabled>
+                                                            <option>이상</option>		
+                                                            <option selected>이하</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="multi_group">	
+                                                    <span class="form">
+                                                        <input type="checkbox" id="check010" />
+                                                        <label for="check010">의견수</label></span>	
+                                                    <span class="">
+                                                        <input class="box_input" type="text" style="width:60px" disabled/>
+                                                    </span>
+                                                    <div class="selectbox" style="width:62px">
+                                                        <select disabled>
+                                                            <option>이상</option>		
+                                                            <option selected>이하</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>	
+                        </div>
+                        <div class="btns_area dsp_none">				
+                            <!-- // 상세검색시만 dsp_none 삭제 -->		
+                            <div class="align_lf">
+                                <a class="text_btn">항목초기화</a>
+                            </div>
+                            <div class="align_rg">
+                                <a class="action_btn">검색</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_table has_tab_bttn">						
+                <div class="table_head">
+                    <!--                                        <a class="col_option"></a>-->
+                    <table>
+                        <colgroup>
+                            <col style="width:120px;">
+                            <col style="width:110px;">
+                            <col style="width:110px;">
+                            <col style="width:*;">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                            <col style="width:140px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><span class="name">성명</span></th>
+                                <th>직위</th>
+                                <th>직책</th>
+                                <th>이메일</th>
+                                <th>전화번호</th>
+                                <th>휴대폰번호</th>
+                                <th>회사</th>
+                                <th>집전화</th>
+                                <th>로그인 상태</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="table_body handy-scroll">
+                    <div class="wrap-hs">
+                        <table>
+                            <colgroup>
+                                <col style="width:120px;">
+                                <col style="width:110px;">
+                                <col style="width:110px;">
+                                <col style="width:*;">
+                                <col style="width:120px;">
+                                <col style="width:120px;">
+                                <col style="width:120px;">
+                                <col style="width:120px;">
+                                <col style="width:140px;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디핸디핸디핸디</a></td>
+                                    <td>부부부부부부부부부부부장</td>
+                                    <td>팀팀팀팀팀팀팀팀팀장</td>
+                                    <td>handyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="name">김핸핸핸디</a></td>
+                                    <td>부장</td>
+                                    <td>팀장</td>
+                                    <td>handyhandyhandyhandy@handy.co.kr</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>010-1234-5678</td>
+                                    <td>2018-02-28 18:30</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>                         
+            </div>
+            <div class="paginate_area">
+                <div class="paginate">	
+                    <a class="first disabled">처음 페이지</a>
+                    <a class="pre disabled">이전 페이지</a>	
+                    <!-- // 1페이지가 아닌경우, disabled 삭제 -->
+                    <a class="selected">1</a>
+                    <a>2</a>		
+                    <a>3</a>		
+                    <a>4</a>		
+                    <a>5</a>		
+                    <a class="next">다음 페이지</a>
+                    <a class="last">마지막 페이지</a>
+                </div>
+                <div class="page_num">
+                    <input type="text" value="1"> / 118
+                </div>           
+            </div>
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

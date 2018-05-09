@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <link rel="stylesheet" href="../../../../../01_GW8.3/javascripts/jquery.fileUpload/fileUpload.css" type="text/css" />
+        <script type="text/javascript">		
+            // 파일첨부
+            $(document).ready(function(e) {
+                $('.btn_trig').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.attach_lst_wrap').hide();
+                    }else{
+                        $(this).addClass('on');
+                        $('.attach_lst_wrap').show();
+                    }
+                });
+                $('.btn_detail_ctt').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.detail_ctt_box2').removeClass('on');
+                    }else{
+                        $(this).addClass('on');
+                        $('.detail_ctt_box2').addClass('on');
+
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="pop_wrap">
+            <div class="container_box">
+                <div class="title_area">
+                    <h1>비전자문서등록</h1>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btn_area">
+                    <ul class="btns">
+                        <li><span><a href="#">연속등록</a></span></li>
+                        <li><span><a href="#">저장</a></span></li>
+                    </ul>
+                </div>
+                <div class="pop_container rgh_scroll" style="height:100%;" > 
+                    <!----파일영역 오픈시 pop_container의 넓이값 조정----->
+                    <div class="write_box layout_lft apprvl_write">
+                        <div class="write_form"> 
+                            <!-- 문서정보 -->
+                            <div class="apprvl_write_lft positon_rltv">
+                                <p class="ttl_ctt fnt_bold">문서정보</p>
+                                <div class="ctt_box">
+                                    <div class="detail_ctt_box2">
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">등록구분<em class="fnt_orng fnt_bold_n">&#42;</em></span></dt>
+                                            <dd class="pd_tp_5">
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="R_SENDRECEIVE" checked>
+                                                    수신</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="R_SENDRECEIVE">
+                                                    생산</label>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">제목<em class="fnt_orng fnt_bold_n">&#42;</em></span></dt>
+                                            <dd>
+                                                <input type="text" class="basic_inp" style="width:100%" value="제목을 입력해주세요">
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">문서분류</span></dt>
+                                            <dd class="pd_rgt_60"> <span class="btn_pop"></span>
+                                                <select class="basic_select mg_lft_32" style="width:100%;">
+                                                    <option value="기록물철을 선택하세요">기록물철을 선택하세요</option>
+                                                    <option value="기록물철을 선택하세요">기록물철을 선택하세요</option>
+                                                    <option value="기록물철을 선택하세요">기록물철을 선택하세요</option>
+                                                </select>
+                                                <span class="positon_set_rgt pd_tp_5 pd_rgt_10"><a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></span> </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">공개여부<em class="fnt_orng fnt_bold_n">&#42;</em></span></dt>
+                                            <dd class="pd_tp_5">
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="PUBLICATION">
+                                                    공개</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="PUBLICATION" checked>
+                                                    부분공개</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="PUBLICATION">
+                                                    비공개</label>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt></dt>
+                                            <dd class="pd_tp_5">
+                                                <table class="tbl_list horizon" summary="공개제한세부사항">
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:80%">
+                                                    </colgroup>
+                                                    <tr>
+                                                        <th class="gray positon_rltv">비공개사유<a href="#"title="공개제한 도움말 새창으로 보기"><img src="../../img/ic_publicationHelp.gif" alt="공개제한 도움말 새창으로 보기"></a></th>
+                                                        <td><input id="ho1" title="다른 법률 또는 법률이 위임한 명령(국회규칙, 대법원규칙, 헌법재판소규칙, 중앙선거관리위원회규칙, 대통령령 및 조례에 한한다)에 의하여 비밀 또는 비공개 사항으로 규정된 정보" name="othbcAt" value="0x0001" type="checkbox">
+                                                            <label for="ho1">1호</label>
+                                                            <input id="ho2" title="국가안전보장, 국방, 통일, 외교관계 등에 관한 사항으로서 공개될 경우 국가의 중대한 이익을 현저히 해할 우려가 있다고 인정되는 정보" name="othbcAt" value="0x0002" type="checkbox">
+                                                            <label for="ho2">2호</label>
+                                                            <input id="ho3" title="공개될 경우 국민의 생명, 신체 및 재산의 보호에 현저한 지장을 초래할 우려가 있다고 인정되는 정보" name="othbcAt" value="0x0004" type="checkbox">
+                                                            <label for="ho3">3호</label>
+                                                            <input id="ho4" title="진행중인 재판에 관련된 정보와 범죄의 예방, 수사, 공소의 제기 및 유지, 형의 집행, 교정, 보안처분에 관한 사항으로서 공개될 경우 그 직무수행을 현저히 곤란하게 하거나 형사피고인의 공정한 재판을 받을 권리를 침해한다고 인정할 만한 상당한 이유가 있는 정보" name="othbcAt" value="0x0008" type="checkbox">
+                                                            <label for="ho4">4호</label>
+                                                            <input id="ho5" title="감사, 감독, 검사, 시험, 규제, 입찰계약, 기술개발, 인사관리, 의사결정 또는 내부검토 과정에 있는 사항 등으로 공개될 경우 업무의 공정한 수행이나 연구, 개발에 현저한 지장을 초래한다고 인정할 만한 상당한 이유가 있는 정보" name="othbcAt" value="0x0010" type="checkbox">
+                                                            <label for="ho5">5호</label>
+                                                            <input id="ho6" title="당해 정보에 포함되어 있는 이름, 주민등록번호 등 개인에 관한 사항으로서 공개될 경우 개인의 사행활의 비밀 또는 자유를 침해할 우려가 있다고 인정되는 정보" name="othbcAt" value="0x0020" type="checkbox">
+                                                            <label for="ho6">6호</label>
+                                                            <input id="ho7" title="법인, 단체 또는 개인의 경영, 영업상 비밀에 관한 사항으로서 공개될 경우 법인등의 정당한 이익을 현저히 해할 우려가 있다고 인정되는 정보" name="othbcAt" value="0x0040" type="checkbox">
+                                                            <label for="ho7">7호</label>
+                                                            <input id="ho8" title="공개될 경우 부동산 투기, 매점매석 등으로 특정인에게 이익 또는 불이익을 줄 우려가 있다고 인정되는 정보" name="othbcAt" value="0x0080" type="checkbox">
+                                                            <label for="ho8">8호</label></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="gray">공개제한부분표시</th>
+                                                        <td><input type="text" class="basic_inp" readonly style="width:100%"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="gray">특수기록물</th>
+                                                        <td><input id="spclDcryCn1" name="spclDcryCn" value="1" type="checkbox">
+                                                            <label for="spclDcryCn1">대통령관련</label>
+                                                            <input id="spclDcryCn2" name="spclDcryCn" value="2" type="checkbox">
+                                                            <label for="spclDcryCn2">비밀기록물</label>
+                                                            <input id="spclDcryCn3" name="spclDcryCn" value="4" type="checkbox">
+                                                            <label for="spclDcryCn3">개별관리기록물</label>
+                                                            <input id="spclDcryCn4" name="spclDcryCn" value="8" type="checkbox">
+                                                            <label for="spclDcryCn4">저작권보호기록물</label>
+                                                            <input id="spclDcryCn5" name="spclDcryCn" value="16" type="checkbox">
+                                                            <label for="spclDcryCn5">특수규격기록물</label></td>
+                                                    </tr>
+                                                </table>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">열람범위(내부)<em class="fnt_orng fnt_bold_n">&#42;</em></span></dt>
+                                            <dd class="pd_tp_5">
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="readngScope" checked>
+                                                    전체</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="readngScope">
+                                                    소속기관</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="readngScope">
+                                                    부서</label>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj">
+                                            <dt><span class="tit_l">열람제한(보안)</span></dt>
+                                            <dd>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="SECURITY" checked>
+                                                    설정안함</label>
+                                                <label class="pd_rgt_10">
+                                                    <input type="radio" name="SECURITY">
+                                                    제한종료일</label>
+                                                <div class="datepic_box">
+                                                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                                                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                                                <label class="pd_lft_10">
+                                                    <input type="radio" name="SECURITY">
+                                                    영구 </label>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj hide_refer">
+                                            <dt><span class="tit_l">숨은참조</span></dt>
+                                            <dd>
+                                                <div class="input_box">
+                                                    <input type="text" class="write_sbj_inp">
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl class="subj attach_area">
+                                            <dt><span class="tit_l">첨부<a href="#" class="btn_trig on">펼치기,접기</a></span></dt>
+                                            <dd>
+                                                <div class="btn_box btn_s">
+                                                    <div class="fileUpload" id="fileUpload">
+                                                        <div class="add_filebg">
+                                                            <div id="wfw_file_box" class="wfw_file_box_popup">
+                                                                <form name="fileUploadForm" id="fileUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data"><input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" multiple="" style="opacity: 0;">
+                                                                </form>
+                                                                <ul>
+                                                                    <li><a href="#" class="attach_add">찾아보기</a></li>
+                                                                </ul>
+                                                                <form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST"><input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="apprvl_write_rgt_attach" id="fileBox" ondragover="javascript:showDropZone(event);">
+                                                    <div id="filelistlayer" class="filelistlayer_popup">
+                                                        <ul id="filelist" class="filelist_popup">
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btn_desc">
+                                                        <ul class="filelist_popup">
+                                                            <li class="" id="divAttCnt"><strong> <span id="attCnt">0</span></strong>개의 첨부파일이 있습니다.</li>
+                                                            <li class=""><span id="attsize"><b>0 KB</b> / 100 MB</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="attach_lst_wrap" style="display: block;">
+                                                        <div class="btn_box btn_ss">
+                                                            <ul>
+                                                                <li><span><a href="#">저장</a></span></li>
+                                                                <li><span><a href="#">삭제</a></span></li>
+                                                                <li class="item_move_btn">
+                                                                    <ul class="item_move">
+                                                                        <li class="up" id="btnAttUp"><a href="#">위로</a></li>
+                                                                        <li class="down" id="btnAttDown"><a href="#">아래로</a></li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="write_file_list">
+                                                            <table>
+                                                                <colgroup>
+                                                                    <col style="width:75%">
+                                                                    <col style="width:15%">
+                                                                    <col style="width:10%">
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"><input type="checkbox" id="allbox" onclick="paintAllTr(this.checked)" class="inchk">파일명</th>
+                                                                        <th scope="col">크기</th>
+                                                                        <th scope="col">공개여부</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <!-- [D] 파일첨부전은 tbody 가 display:none 처리 되어있음 -->
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                        <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                        <td><input type="checkbox" class="inchk"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!-- [D] 파일 올리기전 설명 이미지 -->
+                                                            <p class="file_list_desc"><img src="../../img/img_email_write_list_desc.gif" alt="마우스로 파일을 끌어오세요"><span class="desc_txt">마우스로 파일을 끌어오세요</span></p>
+                                                            <!-- // [D] 파일 올리기전 설명 이미지 --> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <!-- //문서정보 --> 
+                                    <!-- 경로정보 -->
+                                    <p class="ttl_ctt fnt_bold">경로정보</p>
+                                    <div class="ctt_box">
+                                        <table class="tbl_list horizon">
+                                            <colgroup>
+                                                <col style="width:18%">
+                                                <col style="width:32%">
+                                                <col style="width:18%">
+                                                <col style="width:32%">
+                                            </colgroup>
+                                            <tr>
+                                                <th>원기안자</th>
+                                                <td class="pd_rgt_12"><input type="text" class="basic_inp" style="width:100%;"></td>
+                                                <th>원기안(발신)부서<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td class="pd_rgt_12"><input type="text" class="basic_inp" style="width:100%;"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>접수자<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td class="positon_rltv fnt_over_hidden pd_rgt_44"><span class="btn_human" style="top: 9px; left: 12px;"></span>
+                                                    <input type="text" class="basic_inp mg_lft_32" style="width:100%;" readonly></td>
+                                                <th>업무담당자<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td class="positon_rltv pd_rgt_44"><span class="btn_human" style="top: 9px; left: 12px;"></span>
+                                                    <input type="text" class="basic_inp mg_lft_32" style="width:100%;" readonly></td>
+                                            </tr>
+                                            <tr>
+                                                <th>기안일자<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td><div class="datepic_box">
+                                                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100%;" readonly>
+                                                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                                                <th>결재일자<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td><div class="datepic_box">
+                                                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100%;" readonly>
+                                                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- //경로정보 --> 
+                                    <!-- 시행정보 -->
+                                    <p class="ttl_ctt fnt_bold">시행정보</p>
+                                    <div class="ctt_box">
+                                        <table class="tbl_list horizon">
+                                            <colgroup>
+                                                <col style="width:18%">
+                                                <col style="width:32%">
+                                                <col style="width:18%">
+                                                <col style="width:32%">
+                                            </colgroup>
+                                            <tr>
+                                                <th>생산기관문서번호<em class="fnt_orng fnt_bold_n">&#42;</em></th>
+                                                <td class="pd_rgt_12"><input type="text" class="basic_inp" style="width:100%;"></td>
+                                                <th>등록일자</th>
+                                                <td class="pd_rgt_12"><div class="datepic_box">
+                                                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100%;" readonly>
+                                                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                                            </tr>
+                                            <tr>
+                                                <th>시행종류</th>
+                                                <td class="pd_rgt_12"><select class="basic_select" style="width:100%;" name="SENDMETHOD" title="시행종류">
+                                                    <option value="0">내부결재</option>
+                                                    <option value="1">대내시행</option>
+                                                    <option selected value="2">대외시행</option>
+                                                    </select></td>
+                                                <th>시행일자</th>
+                                                <td><div class="datepic_box">
+                                                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100%;" readonly>
+                                                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- //시행정보 --> 
+                                    <!-- 관리정보 -->
+                                    <p class="ttl_ctt fnt_bold">관리정보</p>
+                                    <div class="ctt_box">
+                                        <table class="tbl_list horizon">
+                                            <colgroup>
+                                                <col style="width:18%">
+                                                <col style="width:82%">
+                                            </colgroup>
+                                            <tr>
+                                                <th>등록구분</th>
+                                                <td class="pd_rgt_12"><select class="basic_select" style="width:100%;" name="registSe" title="등록구분">
+                                                    <option value="1">일반문서</option>
+                                                    <option value="2">도면류</option>
+                                                    <option value="3">사진, 필름류</option>
+                                                    <option value="4">녹음, 동영상류</option>
+                                                    <option value="5">카드류</option>
+                                                    </select></td>
+                                            </tr>
+                                            <tr>
+                                                <th>검색어</th>
+                                                <td class="pd_rgt_12"><input type="text" class="basic_inp" style="width:100%;"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>쪽수</th>
+                                                <td class="pd_rgt_12"><input type="text" class="basic_inp" style="width:80px;">
+                                                    <span class="mg_lft_6">쪽</span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- //관리정보 --> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </body>
+        </html>

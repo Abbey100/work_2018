@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 조직도 정보 팝업: 구성원 정보 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 980 x 725 -->
+	<body>
+		<!-- header -->
+		<h1>표준개발실</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->			
+			<div  class="contents_tab has_btns">
+				<ul>
+					<li><a class="">구성원 정보 5</a></li>
+					<li><a class="">부재자 정보</a></li>				
+					<li><a class="selected">부서 정보</a></li>				
+				</ul>
+			</div>
+			<div class="content_table has_tab">
+			 <div class="vertical_table handy-scroll">	
+                                
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:120px;">
+                                            <col style="width:*;">
+											<col style="width:120px;">
+                                            <col style="width:*;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th><span>부서명</span></th>
+                                                <td><span>표준개발실</span></td>
+                                                <th><span>부서코드</span></th>
+                                                <td><span>0012</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th><span>부서약어</span></th>
+                                                <td><span>표준개발실</span></td>
+                                                <th><span>부서기호</span></th>
+                                                <td><span></span></td>
+                                            </tr>											
+                                            <tr>
+                                                <th><span>부서권한</span></th>
+                                                <td colspan="3"><span>문서함, 수신함</span></td>
+                                            </tr>										
+                                            <tr>
+                                                <th><span>부서장</span></th>
+                                                <td colspan="3"><span>홍길동</span></td>
+                                            </tr>										
+                                            <tr>
+                                                <th><span>접수담당장</span></th>
+                                                <td colspan="3"><span>이길수</span></td>
+                                            </tr>									
+                                            <tr>
+                                                <th><span>홈페이지</span></th>
+                                                <td colspan="3"><span></span></td>
+                                            </tr>
+											
+                                            <tr>
+                                                <th><span>전화번호</span></th>
+                                                <td><span></span></td>
+                                                <th><span>팩스번호</span></th>
+                                                <td><span></span></td>
+                                            </tr>
+											
+                                            <tr>
+                                                <th><span>국가</span></th>
+                                                <td><span></span></td>
+                                                <th><span>시차</span></th>
+                                                <td><span></span></td>
+                                            </tr>								
+                                            <tr>
+                                                <th><span>우편번호</span></th>
+                                                <td colspan="3"><span></span></td>
+                                            </tr>							
+                                            <tr>
+                                                <th><span>주소(한글)</span></th>
+                                                <td colspan="3"><span></span></td>
+                                            </tr>							
+                                            <tr>
+                                                <th><span>주소(영문)</span></th>
+                                                <td colspan="3"><span></span></td>
+                                            </tr>
+											
+                                        </tbody>
+                                    </table>
+                              
+                            </div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

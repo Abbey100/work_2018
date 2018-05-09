@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+</head>
+<body>
+<div class="btn_box btn_s">
+                    <ul>
+                      <li class="btn_file_area">
+                        <input type="file">
+                          <span class="file_btn">내PC</span>
+                          <span class="btn_file_rgt">
+                             </span>
+                      </li>
+                      <li class="btn_desc"><strong>0</strong> 개의 첨부파일이 있습니다.<span><b>705.42kb</b>/10MB</span></li>
+                    </ul>
+</div>
+</body>
+</html>

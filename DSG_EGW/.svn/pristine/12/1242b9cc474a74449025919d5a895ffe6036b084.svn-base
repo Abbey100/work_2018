@@ -1,0 +1,55 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="/js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+</head>
+    
+    <!-- 팝업창사이즈 : 337x * -->
+
+<body>
+<div class="pop_wrap">
+  <!-- TAB title 영역 -->
+  <div class="title_area">
+  <h1>사용자 선택</h1></div>  
+  <!-- 컨텐츠 영역 -->
+  <div class="pd_all_18">
+    <div class="namechk">
+        <!-- 안내문구 -->
+        <div class="info"> 
+        <span><strong>선택하신 사용자는 동명이인입니다.</strong><br>
+                목록에서 해당 사용자를 선택해 주십시오. </span> 
+        </div>
+        <!-- 동명 사용자가 두 명 이상일 때, userchk 추가 -->
+        <div class="userchk">
+            <!-- 동명 사용자 이름 -->
+            <span>홍사원</span>
+            <!-- 셀렉트 : 동명 사용자 선택 -->
+            <select class="check_same" title="동명 사용자 선택">
+              <option>다산테스트부서.핸사원</option>
+              <option>다산테스트부서.핸사원</option>
+            </select>
+        </div>
+        <!-- // 동명 사용자가 두 명 이상일 때, userchk 추가 -->
+    </div>
+    
+    <!-- 하단버튼 -->
+
+<div class="footer" >
+    <ul class="btns" >
+        <li><span><a href="#">확인</a></span></li>
+        <li><span><a href="javascript:fncClose()" >취소</a></span></li>
+    </ul>
+</div>
+</div>
+</div>
+<!-- //의견 등록 화면 -->
+</body>
+</html>

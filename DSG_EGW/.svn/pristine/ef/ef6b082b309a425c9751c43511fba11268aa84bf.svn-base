@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.2.min.js"></script>
+
+        <!-- checkbox+radio 관련 js -->
+        <script type="text/javascript" src="../../js/jQuery.customInput.js"></script>
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+  
+    <body class="window_popup">
+
+        <!-- 윈도우 팝업 -->    
+        <div class="popup_layer">
+            <div class="popup_layer_area">
+                
+                <div class="popup_layer_container" style="width:1220px;">
+                    <h1 class="pop_title"><span class="title">서식 편집</span></h1>
+
+                    <!-- 팝업 컨텐츠 -->
+                    <div class="popup_layer_content">
+
+                        <!-- 에디터 영역 -->
+                        <div class="editor_area" style="width:844px; height: 600px">
+                            <div class="scroll_area">
+                                <img src="../../img/sample_editor.gif" alt="에디터"> 
+                            </div>                      
+                        </div>
+                        <!-- //에디터 영역 -->
+
+
+                        <!-- 문서 컨트롤 영역 -->
+                        <div class="document_control_area">   
+
+                            <!-- 서식불러오기 영역 -->                     
+                            <div class="control_contents">
+                                <h4 class="sub_title_02"><span class="title">서식불러오기</span></h4>
+                                <a href="#" class="btn_board_view_02">Html, mht 파일</a>
+                                <a href="#" class="btn_board_view_02">템플릿</a>
+                            </div>                        
+                            <!-- //서식불러오기 영역 --> 
+
+                            <!-- 서식 항목 추가 영역 -->
+                            <div class="control_contents">
+                                <h4 class="sub_title_02"><span class="title">서식 항목 추가</span></h4>
+                                <div class="tab_area">
+                                    <ul>
+                                        <li><a href="#" class="current"><span class="tab_title" title="선택">선택</span></a></li>
+                                        <li><a href="#"><span class="tab_title" title=입력"">입력</span></a></li>
+                                    </ul>
+                                </div>
+                               <div class="tab_contents">
+                                   <ul class="tab_block">
+                                       <li><a href="#" class="current"><span title="결제">결제</span></a></li>
+                                       <li><a href="#"><span title="발수신">발수신</span></a></li>
+                                       <li><a href="#"><span title="흐름">흐름</span></a></li>
+                                       <li><a href="#"><span title="기안자">기안자</span></a></li>
+                                       <li><a href="#"><span title="관인">관인</span></a></li>
+                                       <li>&nbsp;</li>
+                                   </ul>
+                                   <div class="tab_block_contents">
+                                       <div class="scroll_area" style="height: 174px;">
+                                           <ul class="button_list">
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="보존년한">보존년한</a></li>
+                                               <li><a href="#" class="btn_board_view" title="문서번호">문서번호</a></li>
+                                               <li><a href="#" class="btn_board_view" title="고정수신처">고정수신처</a></li>
+                                               <li><a href="#" class="btn_board_view" title="공개여부">공개여부</a></li>
+                                               <li><a href="#" class="btn_board_view" title="기안일자">기안일자</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재완료일자">결재완료일자</a></li>
+                                               <li><a href="#" class="btn_board_view" title="전결근거">전결근거</a></li>
+                                               <li><a href="#" class="btn_board_view" title="과제카드">과제카드</a></li>
+                                               <li><a href="#" class="btn_board_view" title="방침번호">방침번호</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                               <li><a href="#" class="btn_board_view" title="결재제목">결재제목</a></li>
+                                           </ul>
+                                       </div>
+                                   </div>                               
+                               </div>
+                               <div class="tab_contents">
+                                    <div class="tab_block_contents clear">
+                                       <dl class="wirte">
+                                            <dt>형식명</dt>
+                                            <dd>
+                                                <div class="input_group">
+                                                    <input id="" type="text" class="form_control" name="">
+                                                </div>
+                                            </dd>                                    
+                                            <dt>편집방식</dt>
+                                            <dd>
+                                                <div class="select_area">
+                                                    <select name="" class="mySelect">
+                                                        <option value="" selected="">text</option>
+                                                        <option value="">html</option>
+                                                        <option value="">mht</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                       </dl>
+                                   </div>                               
+                               </div>
+                            </div>
+                            <!-- // 서식 항목 추가 영역 -->
+
+                            <!-- 서식 항목 삭제 영역 -->
+                            <div class="control_contents">
+                                <h4 class="sub_title_02"><span class="title">서식 항목 삭제</span></h4>                         
+                                <a href="#" class="btn_delete">삭제</a>
+                                <p class="tip">서식내 삭제하실 형식을 선택하신 후 삭제 버튼을 눌러주세요.</p>
+                            </div>
+                            <!-- // 서식 항목 삭제 영역 -->
+
+                        </div>
+                        <!-- // 문서 컨트롤 영역 -->
+
+                        <!-- 하단 버튼 -->
+                        <div class="view_btn_area">
+                            <a href="#" title="취소" class="btn_cancel">미리보기</a>
+                            <a href="#" title="취소" class="btn_cancel">취소</a>
+                            <a href="#" title="저장" class="btn_complete">완료</a>
+                        </div>
+                    </div>
+                    <!-- //팝업 컨텐츠 -->
+                </div>
+
+            </div>
+        </div>
+        <!-- //윈도우 팝업 -->
+            
+    </body>
+</html>

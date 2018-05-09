@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>HANDY GROUPWARE</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../../css/login.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+        <script src="../../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../../js/common.js" ></script>		
+    </head>
+    <body>
+        <div class="login_area">
+            <div class="logins">  
+                <div class="logins_box">
+                    <div class="loginbox">
+                        <div class="login_txt">
+                            <strong class="tit"><img src="../../../img/login/login_tit.png" alt="Log In"></strong>
+                            <p class="txt">Working Smart,<br>
+                                Living Smart,<br>
+                                <span>Global Smart.</span></p>
+                            <div class="sel">
+                                <div class="selectbox" style="width:140px;">
+                                    <select>
+                                        <option value="ko_KR" selected="">
+                                            한국어
+                                        </option>
+                                        <option value="en_US">
+                                            English
+                                        </option>
+                                        <option value="ja_JP">
+                                            日本語
+                                        </option>
+                                        <option value="zh_CN">
+                                            中文（简体中文）
+                                        </option>
+                                        <option value="zh_TW">
+                                            中文（繁體）
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login_box">
+                            <strong class="logos"><img src="../../../img/login/login_logo.png" alt="HANDY Groupware"></strong>
+                            <div class="logs_cont">
+                                <p class="logos_des">Sign into your Groupware account.</p>
+                                <div class="logs_area">
+                                    <div class="radio-group">
+                                        <input type="radio" id="one" name="selector" checked="checked"><label for="one">이름</label>
+                                        <input type="radio" id="two" name="selector"><label for="two">사번</label>
+                                    </div>
+                                    <ul class="logs_txt">
+                                        <li class="log_id">
+                                            <span class="icon">로그인</span>
+                                            <input type="text" placeholder="이름" title="이름입력">
+                                        </li>
+                                        <li class="log_pw">
+                                            <span class="icon">비밀번호</span>
+                                            <input type="password" placeholder="비밀번호" title="비밀번호입력">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="btns">
+                                <a href="#" class="bts">로그인</a>
+                                <div class="checks">
+                                    <input type="checkbox" id="c1" checked="checked"> <label for="c1"><span></span>Remember me.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="login_footer">ⓒ DASAN Handysoft Corp.</span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/buttons.css " type="text/css" />
+<link rel="stylesheet" href="../css/noty_theme_facebook.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery.noty.css " type="text/css" />
+<!--***-->
+
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <!--
+<div class="btn_box btn_s" => "tab_area pd_0" > 
+-->
+    <div class="tab_area pd_0">
+                       <div class="tab_box mg_0">
+                        <ul class="tab_menu">
+                            <a href="javascript:changeNormal();countAttachFile();" id="attechTab" name="attechTab" ><li class="tab selected">PC파일(<font id="attechCnt">5</font>)</li></a>
+                            <a href="javascript:changeMassData();countAttachFile();" id="massDataTab" name="massDataTab" ><li class="tab">대용량(<font id="massCnt">0</font>)</li></a>
+                            <a href="javascript:changeCloud();countAttachFile();" id="cloudTab" name="cloudTab" ><li class="tab">웹폴더(<font id="cloudCnt">0</font>)</li></a>
+                        
+     <li class="layout_rgt pd_tp_10">
+                            <span class="fnt_gray"> 총 <span class="fnt_bold"> 5 </span>개의 파일이 선택되었습니다.</span></li>                      
+                           </ul>
+                    </div>
+                   </div>  
+</body>
+</html>

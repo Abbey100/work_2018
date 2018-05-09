@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>square 알람 설정</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(function() {
+                $('.topic_sentence li p').dotdotdot();
+            });
+        </script>
+</head>
+<body>
+<div class="pop_wrap">
+    <!-- 버튼 영역 -->
+    <div class="title_area">
+      <h1>알림 설정하기</h1>
+    </div>
+          <div class="pop_container">
+            <div class="radio_list">
+              <dl>
+                <dt class="mg_bttm_8 "><span class="fnt_bold">현재 관리자</span> </dt>
+                <dd>
+                 <input type="radio"> 알림 메시지 받기</dd>
+                <dd>
+                  <input type="radio"> 엄무지시 메시지에만 받기</dd>                               <dd>
+                  <input type="radio"> 모든 활동에 알림 받지 않기</dd>
+              </dl>
+              <dl class="mg_tp_18 mg_bttm_15">
+                <dt class="mg_bttm_8 "><span class="fnt_bold">모바일 푸시 알림</span> </dt>
+                <dd class="">
+                 <input type="radio"> 알림 메시지 받기</dd>
+                <dd>
+                  <input type="radio"> 엄무지시 메시지에만 받기</dd>                               <dd>
+                  <input type="radio"> 모든 활동에 알림 받지 않기</dd>
+              </dl>
+            </div>
+            <!-- 하단 버튼 영역 -->
+            <div class="footer">
+              <ul class="btns">
+                <li><span><a href="#" class="fnt_bold">등록</a></span></li>
+                <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+                <li><span><a href="#">취소</a></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

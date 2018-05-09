@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../01_GW8.3/javascripts/jquery.fileUpload/fileUpload.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript">		
+            // 파일첨부
+            $(document).ready(function(e) {
+                $('.btn_trig').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.attach_lst_wrap').hide();
+                    }else{
+                        $(this).addClass('on');
+                        $('.attach_lst_wrap').show();
+                    }
+                });
+            });
+        </script>
+    </head>
+    <!-- 뷰포트 사이즈 : 984px(w) x 768px(h) 고정 -->
+    <body>
+        <!-- 모든 쓰기, 읽기 팝업 유형 공통 사항 -->
+        <div class="pop_wrap">
+            <div class="container_box admin_tmplt">
+                <div class="title_area">
+                    <h1>기안</h1>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btn_area">
+                    <ul class="btns">
+                        <li><span><a href="#">표식보기</a></span></li>
+                        <li><span><a href="#">표식숨김</a></span></li>
+                        <li><span><a href="#">형식지정</a></span></li>
+                        <li><span><a href="#">형식삭제</a></span></li>
+                        <li><span><a href="#">저장</a></span></li>
+                        <li><span><a href="#">읽어오기</a></span></li>
+                        <li><span><a href="#">서식템플릿</a></span></li>
+                    </ul>
+                </div>
+                <!-- // 모든 쓰기, 읽기 팝업 유형 공통 사항 --> 
+                <!-- 팝업의 본문영역(padding 값 17px 20px을 가지고 있음) -->
+                <div class="pop_container" style="height:100%;">
+                    <!-- ** LEFT AREA ** --> 
+                    <div class="editor_area">
+                        <div id="dvEditor1" style="width: 100%; height: 744px;">
+                            <iframe id="editor1" name="" src="/bms/com/hs/appr/doccrdEditor.act?ID=editor1&amp;MODE=design&amp;WORDTYPE=7&amp;edittmpl=1&amp;TOOLBARSET=FULL&amp;EDITOR=namocross&amp;HEIGHT=550" frameborder="0" border="0" width="100%" height="99%" style="height: 744px;"></iframe>
+                        </div>
+                    </div>
+                    <!-- //// ** LEFT AREA ** -->
+                    <!-- **  RIGHT AREA ** -->
+                    <div class="tmplt_setting_box" style="width: 40%;">
+                        <div class="tmplt_slct_box">
+                            <p class="ttl_ctt">레이아웃 선택</p>
+                            <div class="tmplt_slct">
+                                <ul>
+                                    <!-- 선택된 레이아웃에 on 클래스 추가 -->
+                                    <li class="btn basic"><label for="layout0"><input type="radio" checked name="layout0" id="layout0" value="0"><span class="txt">기본</span></label></li>
+                                    <li class="btn vertical on"><label for="layout1"><input type="radio" name="layout1" id="layout1" value="1"><span class="txt">세로형</span></label></li>
+                                    <li class="btn horizontal"><label for="layout3"><input type="radio" name="layout2" id="layout3" value="1"><span class="txt">가로형</span></label></li>
+                                    <li class="dscr_box">
+                                        <div class="bg_arrow"></div>
+                                        <div class="dscr">
+                                            <!-- 선택된 레이아웃에 on 클래스 추가 -->
+                                            <div class="basic on">
+                                                <div class="tit">
+                                                    <span>기본<em>(2단 탭구성)</em></span>
+                                                    <div class="btn_box btn_s">
+                                                        <ul>
+                                                            <li><span><a href="#" title="미리보기">미리보기</a></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- admin 계정 기안자 선택 UI -->
+                                                    <div class="writer">
+                                                        <a href="#" class="btn_human" title="기안자 선택">&nbsp;</a>
+                                                        <span class="name" title="홍길동이름이너무긴데요">홍길동이름이너무긴데요<a href="#" class="del">삭제</a></span>
+                                                    </div>
+                                                    <div class="txt">문서정보, 결재경로, 시행정보<br>공람자, 관련문서, 본문, 첨부파일 추가</div>
+                                                </div>
+                                            </div>
+                                            <div class="vertical">
+                                                <div class="tit">
+                                                    <span>세로형<em>(1단 구성)</em></span>
+                                                    <div class="btn_box btn_s">
+                                                        <ul>
+                                                            <li><span><a href="#">미리보기</a></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- admin 계정 기안자 선택 UI -->
+                                                    <div class="writer">
+                                                        <a href="#" class="btn_human">&nbsp;</a>
+                                                        <span class="name" title="홍길동이름이너무긴데요">홍길동이름이너무긴데요<a href="#" class="del">삭제</a></span>
+                                                    </div>
+                                                    <div class="txt">제목, 첨부파일 추가, 본문, 결재선, 수신자<br>공람, 관련문서</div>
+                                                </div>
+                                                <div class="horizontal">
+                                                    <div class="tit">
+                                                        <span>가로형<em>(1단 구성)</em></span>
+                                                        <div class="btn_box btn_s">
+                                                            <ul>
+                                                                <li><span><a href="#">미리보기</a></span></li>
+                                                            </ul>
+                                                        </div>
+                                                        <!-- admin 계정 기안자 선택 UI -->
+                                                        <div class="writer">
+                                                            <a href="#" class="btn_human">&nbsp;</a>
+                                                            <span class="name" title="홍길동이름이너무긴데요">홍길동이름이너무긴데요<a href="#" class="del">삭제</a></span>
+                                                        </div>
+                                                        <div class="txt">제목, 첨부파일 추가, 본문, 결재선, 수신자<br>공람, 관련문서</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 기안부서 결재선 -->
+                        <div class="ctt_box">
+                            <p class="ttl_ctt">기안부서 결재선</p>
+                            <div class="btn_box btn_s">
+                                <ul>
+                                    <li><span><a href="#" title="설정">설정</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="table_area">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width:50px">
+                                        <col style="width:130px">
+                                        <col style="width:*;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순번</th>
+                                            <th>처리방법</th>
+                                            <th>처리자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>결재</td>
+                                            <td><span class="ico">직책</span>팀장</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>검토</td>
+                                            <td><span class="ico">직위</span>과장</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 기안부서 결재선 -->
+                        <!-- 수신부서 결재선 -->
+                        <div class="ctt_box">
+                            <p class="ttl_ctt">수신부서 결재선</p>
+                            <div class="btn_box btn_s">
+                                <ul>
+                                    <li><span><a href="#" title="설정">설정</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="table_area">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width:50px">
+                                        <col style="width:130px">
+                                        <col style="width:*;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순번</th>
+                                            <th>업무권한</th>
+                                            <th>처리자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>업무관리자</td>
+                                            <td><span class="ico">직책</span>대표이사</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>업무담당자</td>
+                                            <td><span class="ico">사용자</span>홍길동(부장/UX디자인팀)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 수신부서 결재선 -->
+                        <!-- 협조부서 결재선 -->
+                        <div class="ctt_box">
+                            <p class="ttl_ctt">협조부서 결재선</p>
+                            <div class="btn_box btn_s">
+                                <ul>
+                                    <li><span><a href="#" title="설정">설정</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="table_area">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width:50px">
+                                        <col style="width:130px">
+                                        <col style="width:*;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순번</th>
+                                            <th>처리방법</th>
+                                            <th>처리자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!-- 설정전 td colspan="3" class="blank" -->
+                                            <td colspan="3" class="blank">관련정보 없음</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- 감사부서 결재선 -->
+                        <div class="ctt_box">
+                            <p class="ttl_ctt">감사부서 결재선</p>
+                            <div class="btn_box btn_s">
+                                <ul>
+                                    <li><span><a href="#" title="설정">설정</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="table_area">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width:50px">
+                                        <col style="width:130px">
+                                        <col style="width:*;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>순번</th>
+                                            <th>처리방법</th>
+                                            <th>처리자</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!-- 설정전 td colspan="3" class="blank" -->
+                                            <td colspan="3" class="blank">관련정보 없음</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- 수신처 -->
+                        <div class="ctt_box">
+                            <p class="ttl_ctt">수신처</p>
+                            <div class="btn_box btn_s">
+                                <ul>
+                                    <li><span><a href="#" title="설정">설정</a></span></li>
+                                </ul>
+                            </div>
+                            <div class="table_area">
+                                <table class="tbl_list horizon">
+                                    <colgroup>
+                                        <col style="width:110px">
+                                        <col style="width:*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>수신자</th>
+                                            <td>경영지원팀장</td>
+                                        </tr>
+                                        <!-- 설정전 td colspan="3" class="blank" -->
+                                        <tr>
+                                            <th>수신자</th>
+                                            <td class="blank">관련정보 없음</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- // 협조부서 결재선 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

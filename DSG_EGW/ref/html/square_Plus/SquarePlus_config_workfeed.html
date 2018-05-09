@@ -1,0 +1,151 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 환결설정</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.textcomplete.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        <script>
+      </script>
+  </head>
+
+<body class="sq_plus">
+  <!-- title start-->
+<div class="container_box container_list_box">
+  
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글 for 커뮤니케이터</a></div>
+   
+<!-- Title area END-->     
+   <div class="title_area">
+      <h2 class="title">
+      <span class="title_name">스퀘어 환경설정</span>
+       <!--span class="loading"></span-->
+      </h2>
+     
+   </div>
+<!-- // Title area END-->
+    
+  <div class="content_lst content_lst_body">
+    <div class="config"> 
+        <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab">알람설정</li>
+        </a> <a href="#">
+        <li class="tab selected">워크피드 설정</li>
+        </a> <a href="#">
+        <li class="tab">종료그룹 관리</li>
+        </a>
+      </ul>
+    </div>
+    <div>
+    <div class="tab_ctt"> 
+        <!-- group_list_box -->
+        <div class="group_list_box">
+            <!-- filter_area -->
+            <div class="filter_area pd_lft_10 pd_tp_5">
+                <a class="on">나의그룹</a>
+                <a>전사그룹</a>
+                <a>공개그룹</a>
+                <div class="pd_rgt_10">
+                </div>
+            </div>
+            <!-- //filter_area -->
+            <!-- org_lst -->
+            <div class="org_lst">
+                <!-- content_lst content_lst_head -->
+                <div class="content_lst content_lst_head">
+                    <table>
+                        <colgroup>
+                            <col style="width:30px;">
+                            <col style="width:*">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                            <col style="width:160px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>그룹이름</th>
+                                <th>개설자</th>
+                                <th>개설일</th>
+                                <th>그룹소개</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!-- //content_lst content_lst_head -->
+                <!-- content_lst content_lst_body -->
+                <div class="content_lst content_lst_body">
+                    <table>
+                        <colgroup>
+                            <col style="width:30px;">
+                            <col style="width:*">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+                            <col style="width:142px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>UX/UI디자인</td>
+                                <td>김핸디</td>
+                                <td class="date">2017.01.01</td>
+                                <td>스퀘어플러스 소개글입니다.</td>
+                            </tr>
+                            <tr>
+                                <td class="txt_align_cnt" colspan="5">
+                                    진행중인 그룹이 없습니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //content_lst content_lst_body -->
+            </div>
+            <!-- //org_lst -->
+        </div>
+        <!-- //group_list_box -->
+        
+         <!-- slct_list_box -->
+         <div class="slct_list_box">
+            <!-- list_move -->
+            <ul class="list_move">
+                <a id="addGroupAddBtn" href="#"><li class="add">추가</li></a>
+                <a id="addGroupDelBtn" href="#"><li class="del">제거</li></a>
+            </ul>
+            <!-- //list_move -->
+            <!-- slct_list -->
+            <div class="slct_list">
+                    <!--p style="display:none">추가할 정보가 없습니다.</p-->
+                    <select id="sel_addr" multiple="multiple">
+                        <option>선택된그룹이름이름이름이름름이름이름름이름이름</option>
+                        <option>업무그룹</option>
+                    </select>
+                    <div class="slct_list_opt">
+                        <span class="btn_config"><a href="#">초기화</a></span>
+                    </div>
+            </div>
+            <!-- //slct_list -->
+         </div>
+         <!-- slct_list_box -->
+    </div>
+    </div>
+        <div class="footer">
+          <ul class="btns">
+            <li><span><a href="#" alt="저장" style="float:right">저장</a></span></li>
+          </ul>
+        </div>   
+        </div>
+</div>
+    </div>
+</body>
+</html>

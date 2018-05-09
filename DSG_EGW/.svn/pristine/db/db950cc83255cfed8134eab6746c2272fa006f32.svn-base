@@ -1,0 +1,129 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<!--좌측 메뉴 영역-->
+<div id="Left_subWrap" name="Left_subWrap" class="left_menu">
+  <div id="subboxcontent" name="subboxcontent">
+    <ul class="snb_lst">
+      <li> <a id="menu_0" href="/hcop/portal/KmsAdmin/admin_cop_categoryManagement.psml?leftMenuID=0" class="slct"> <span> 분류관리 </span> </a> </li>
+      <li> <a id="menu_1" href="/hcop/portal/KmsAdmin/admin_cop_defaultMenuManagement.psml?leftMenuID=1" class=""> <span> 기본메뉴관리 </span> </a> </li>
+      <li> <a id="menu_2" href="/hcop/portal/KmsAdmin/admin_cop_copManagement.psml?leftMenuID=2" class=""> <span> 동호회관리 </span> </a> </li>
+      <li> <a id="menu_7" href="/hcop/portal/KmsAdmin/admin_cop_copSizeManagement.psml?leftMenuID=7" class=""> <span> 동호회용량관리 </span> </a> </li>
+      <li> <a id="menu_8" href="/hcop/portal/KmsAdmin/admin_cop_memberLevelManagement.psml?leftMenuID=8" class=""> <span> 동호회회원등급관리 </span> </a> </li>
+      <li> <a id="menu_5" href="/hcop/portal/Collaboration/DiscussAdmin.psml?leftMenuID=5&amp;gubun=req" class=""> <span> 토론실관리 </span> </a> </li>
+      <li> <a id="menu_4" href="/hcop/portal/KmsAdmin/admin_cop_best_copManagement.psml?leftMenuID=4&amp;SESSIONID=BE7AD41F1F430923B97CC2ACE058401E" class=""> <span> 우수동호회 관리 </span> </a> </li>
+      <li> <a id="menu_11" href="/hcop/portal/KmsAdmin/km_admin_evalaution_Mile_Cop.psml?leftMenuID=11" class=""> <span> 동호회마일리지설정 </span> </a> </li>
+      <li> <a id="menu_12" href="/hcop/portal/KmsAdmin/km_admin_evalaution_MileExtraPointsEventMgt.psml?leftMenuID=12" class=""> <span> 가산점이벤트관리 </span> </a> </li>
+      <li> <a id="menu_13" href="/hcop/portal/KmsAdmin/km_admin_evalaution_MileExtraPointsMgt.psml?leftMenuID=13" class=""> <span> 가산점관리 </span> </a> </li>
+      <li> <a id="menu_14" href="/hcop/portal/KmsAdmin/km_admin_evalaution_CalMileage.psml?leftMenuID=14" class=""> <span> 마일리지정산 </span> </a> </li>
+      <li id="mileageStatisticsDept" name="mileageStatisticsDept"> <a id="menu_21" href="/hcop/portal/KmsAdmin/mileStatisticsDept.psml?leftMenuID=21" class=""> <span> 부서 마일리지통계 </span> </a> </li>
+      <li id="mileageStatisticsUser" name="mileageStatisticsUser"> <a id="menu_22" href="/hcop/portal/KmsAdmin/mileStatisticsUser.psml?leftMenuID=22" class=""> <span> 개인 마일리지통계 </span> </a> </li>
+      <li id="copStatistics" name="copStatistics"> <a id="menu_23" href="/hcop/portal/KmsAdmin/copStatistics.psml?leftMenuID=23" class=""> <span> 동호회현황통계 </span> </a> </li>
+      <li id="copActiveStatistics" name="copActiveStatistics"> <a id="menu_24" href="/hcop/portal/KmsAdmin/copActiveStatistics.psml?leftMenuID=24" class=""> <span> 동호회활동통계 </span> </a> </li>
+      <li> <a id="menu_25" href="/hcop/portal/KmsAdmin/tagStatistics.psml?leftMenuID=25" class=""> <span> 태그통계 </span> </a> </li>
+      <li> <a id="menu_31" href="/hcop/portal/KmsAdmin/km_admin_systemManageMent_config.psml?leftMenuID=31" class=""> <span> 환경변수 </span> </a> </li>
+    </ul>
+  </div>
+</div>
+<!--// Left Menu--> 
+<!-- Main area-->
+<div class="container_box">
+<!--Title-->
+<div class="title_area" title="분류관리">
+  <h2 class="title"> 분류관리 </h2>
+  <div class="btn_flip_left"> <a href="javascript:toggleLFrame();">&nbsp;</a> </div>
+  <div class="btn_flip_right"> <a href="javascript:toggleRFrame();">&nbsp;</a> </div>
+</div>
+<div class="view_body_contents" > 
+  <!--left side-->
+  <div class="left_columns">
+    <div class="pd_all_18"  >
+      <p class="ctt_ttl">동호회 분류</p>
+      
+      <!-- TREE AREA-->
+      <div class="content_configlist ">
+        <ul class="tree_toggle">
+          <a href="javascript:allFolding('0')" title="모두접기">
+          <li>모두접기</li>
+          </a> <a href="javascript:allFolding('1');" title="모두펴기">
+          <li>모두펴기</li>
+          </a>
+        </ul>
+        <ul class="pd_bttm_15">
+          <div class="boxpm" id="tree_area">
+            <div style="white-space: nowrap" id="webfx-tree-object-000000000" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000000-plus" src="../../img/0minus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000000');" id="webfx-tree-object-000000000-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">가상루트</a></div>
+            <div id="webfx-tree-object-000000000-cont" class="webfx-tree-container" style="display: block;">
+              <div style="white-space: nowrap" id="webfx-tree-object-000000001" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000001-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000001-plus" src="../../img/Tplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000001-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000001')" id="webfx-tree-object-000000001-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">분류1</a></div>
+              <div id="webfx-tree-object-000000001-cont" class="webfx-tree-container" style="display: none;">
+                <div style="white-space: nowrap" id="webfx-tree-object-000000002" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000002-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000002-indent-0" src="../../img/I.png"><img id="webfx-tree-object-000000002-plus" src="../../img/Lminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000002-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000002')" id="webfx-tree-object-000000002-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">분류1_1</a></div>
+                <div id="webfx-tree-object-000000002-cont" class="webfx-tree-container" style="display: block;"></div>
+              </div>
+              <div style="white-space: nowrap" id="webfx-tree-object-000000021" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000021-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000021-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000021-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000021')" id="webfx-tree-object-000000021-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">분류2</a></div>
+              <div id="webfx-tree-object-000000021-cont" class="webfx-tree-container" style="display: block;"></div>
+              <div style="white-space: nowrap" id="webfx-tree-object-000000022" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000022-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000022-plus" src="../../img/Lplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000022-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000022')" id="webfx-tree-object-000000022-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">분류3</a></div>
+              <div id="webfx-tree-object-000000022-cont" class="webfx-tree-container" style="display: none;">
+                <div style="white-space: nowrap" id="webfx-tree-object-000000041" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-000000041-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000041-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-000000041-plus" src="../../img/Lminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-000000041-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="javascript:webFXTreeHandler.doAction('webfx-tree-object-000000041')" id="webfx-tree-object-000000041-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">하하하분류</a></div>
+                <div id="webfx-tree-object-000000041-cont" class="webfx-tree-container" style="display: block;"></div>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="Right_Columns" name="Right_Columns" class="right_columns">
+    <div class="content_configlist">
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span onclick="javascript:category.registCategory();"><a href="#">확인</a></span></li>
+          <li><span onclick="javascript:category.registCategory();"><a href="#">취소</a></span></li>
+        </ul>
+      </div>
+      <table width="100%" class="basic_table" border="0" cellspacing="0" cellpadding="0">
+        <colgroup>
+        <col width="120px">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th scope="row"><label for="mycop_poll_1"><span class="b">위치</span></label></th>
+            <td class="inp_ctt"><input id="" type="" name="" class="basic_inp">
+              <select id="" name="" class="basic_select">
+                <option value="">하위로</option>
+                <option value="">위로</option>
+                <option value="">아래로</option>
+              </select></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="mycop_poll_1"><span class="b">*분류명</span></label></th>
+            <td><input id="" type="" name="" class="basic_inp" style="width:400px" disabled=""></td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="mycop_poll_1"><span class="b">분류설명</span></label></th>
+            <td><textarea name="" id="" style="width:400px; height:120px; resize: none;" wrap="VIRTUAL"></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <input type="hidden" id="acton" name="acton">
+  </div>
+</div>
+<!--// View body contents -->
+
+<div>
+  <textarea rows="5" cols="60" id="innerhtml" name="innerhtml" style="display:none"></textarea>
+</div>
+</body>
+</html>

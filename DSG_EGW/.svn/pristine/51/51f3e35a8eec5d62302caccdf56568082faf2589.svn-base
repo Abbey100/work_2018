@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 그룹 관리 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:670px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						그룹 관리
+					</h2>
+					<div class="form_table">
+						<h3 class="blck">그룹 정보</h3>
+						<table>
+							<colgroup>
+								<col style="width:140px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><span class="necessary">그룹명</span>
+									</th>
+									<td class="text_input">
+										<input type="text" class="border_input" id="input" placeholder="제목을 입력해 주세요">
+									</td>
+								</tr>
+								<tr>
+									<th>수신 이메일</th>
+									<td class="text_input">
+										<input type="text" class="border_input" id="input" placeholder="제목을 입력해 주세요">
+									</td>
+								</tr>                                
+								<tr>
+									<th>공유 설정</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio01" />
+											<label for="from_radio01">설정 안함</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio02" />
+											<label for="from_radio02">부서/개인 공유</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio03" />
+											<label for="from_radio03">전체 공유</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>발송 제한 설정</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r01" />
+											<label for="from_r01">설정 안함</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r02" />
+											<label for="from_r02">첨부 발송 제한</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r03" />
+											<label for="from_r03">외부 발송 제한</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r04" />
+											<label for="from_r04">첨부/외부 발송 제한</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>그룹 설명</th>
+									<td>
+										<textarea class="border_textarea" placeholder="" rows='1'></textarea>
+										<span class="align_rg size_txt"><span class="count">0</span>/200</span>
+									</td>
+								</tr> 
+							</tbody>
+						</table>
+					</div>
+					<div class="popup_table">
+						<h3 class="blck">공유자 정보</h3>
+						<div class="btns_area">
+							<a class="btn">추가</a>
+							<a class="btn">해제</a>
+						</div>
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:37px">
+									<col style="width:*">
+									<col style="width:100px;">
+									<col style="width:110px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th><span class="form"><input type="checkbox"><label class="blind">선택</label></span></th>
+										<th>성명/부서명</th>
+										<th>수정 권한</th>
+										<th><span class="date ascend"><a href="#">공유 시작일</a></span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+
+						<div class="table_body handy-scroll" >
+							<div class="" style="max-height:175px;">
+								<table>
+									<colgroup>
+										<col style="width:37px">
+										<col style="width:*">
+										<col style="width:100px;">
+										<col style="width:110px;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+										<tr>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td>고길동</td>
+											<td><span class="form"><input type="checkbox"><label class="blind">선택</label></span></td>
+											<td class="date">2017-09-25</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>	
+						</div>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">등록</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

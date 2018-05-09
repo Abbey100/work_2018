@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 통계보기 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> 
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 사이즈는 950 x 750 -->
+	<body>
+			<div class="wrapper">
+				<!-- header -->
+				<div class="header">
+					<h1 class="title">통계 보기</h1>
+				</div>
+				<!-- //header -->
+				<div class="srch_area detail">
+						<table class="srch_table">
+							<colgroup>
+								<col style="width:90px;">
+								<col style="width:*;">
+							</colgroup>
+							<tr>
+								<th>기간</th>
+								<td class="">
+									<div class="input_group has_select">
+										<div class="selectbox" style="width:114px">
+											<select>
+												<option>1년</option>
+												<option selected>최근 3개월</option>
+												<option>최근 6개월</option>
+											</select>
+										</div>
+
+										<input type="text" class="basic_input" value="2017-8-14 ~ 2017-11-14" style="width:170px" readonly />
+										<a class="float date_btn" href="#">달력</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>범위</th>
+								<td>
+									<div class="input_group option">
+										<div class="form"><input type="radio" id="r1" name="setting" /><label for="r1">전체 공유자</label></div>
+										<div class="form">
+											<input type="radio" id="r2" name="setting" /><label for="r2">공유자 지정</label>
+											<div class="token-input border">
+												<ul class="token-input-list ui-sortable modify">
+													<li title="" class="token-input-token">
+														<p>$개발1팀</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token invalid">
+														<p>기획</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li class="token-input-input-token-directory ui-sortable-handle">
+														<input type="text" style="outline: none; width: 110px;">
+														<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+													</li>
+												</ul>
+												<a class="ico_btn small add" href="#">조직도</a>
+											</div>									
+										</div>										
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="btns_area">
+							<a class="action_btn" href="#">조회하기</a>
+						</div>
+					</div>
+				<div class="container_area">
+					<!-- 상세 검색 영역 -->
+					
+					<!-- // 상세 검색 영역 -->
+					<!-- contents -->
+					<!-- 리스트 영역 -->
+					<div class="content_table">	
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:*;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th class="descend"><a href="#">이름</a><span></span></th>
+										<th class="descend"><a href="#">업로드</a><span></span></th>
+										<th class="descend"><a href="#">다운로드</a><span></span></th>
+										<th class="descend"><a href="#">폴더수</a><span></span></th>
+										<th class="descend"><a href="#">파일수</a><span></span></th>
+										<th class="descend"><a href="#">파일크기</a><span></span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body scroll_area handy-scroll">
+							<table>
+								<colgroup>
+									<col style="width:*;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								<col style="width:16%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td>이만수</td>
+										<td class="size">99</td>
+										<td class="size">99</td>
+										<td class="size">99</td>
+										<td class="size">99</td>
+										<td class="size">99999 MB</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="paginate_area">
+							<div class="paginate">	
+								<a class="first disabled">처음 페이지</a>
+								<a class="pre disabled">이전 페이지</a>	
+								<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+								<a class="selected">1</a>
+								<a>2</a>
+								<a>3</a>
+								<a>4</a>
+								<a>5</a>
+								<a>6</a>		
+								<a>7</a>
+								<a>8</a>
+								<a>9</a>
+								<a>10</a>		
+								<a class="next">다음 페이지</a>
+								<a class="last">마지막 페이지</a>
+							</div>
+							<div class="page_num">
+								<input type="text" value="1"> / 118
+							</div>
+						</div>
+					</div>
+					<!-- // 리스트 영역 -->
+				</div>
+			</div>
+		
+		<!-- // body -->	
+	</body>
+</html>

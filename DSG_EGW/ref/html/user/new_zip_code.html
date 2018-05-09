@@ -1,0 +1,2756 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript">
+		
+		$(window).resize(function() {
+			window_resize();
+		});
+		
+		function window_resize() {
+			$('.content_lst_body').css('height', $('body').outerHeight() - $('.content_lst_body').position().top);
+		}
+		
+        function init()
+        {
+			if(frmData.addrSearch.value == "")
+			{
+				var width = 600, height = 560 ;
+				var x = (screen.width - width) / 2;
+				var y = (screen.height - height) / 2;
+				self.moveTo(x, y);
+				self.resizeTo(width, height);
+			}
+			else
+			{
+				document.getElementById("search").style.display			= "block";
+				document.getElementById("search_loading").style.display	= "none";
+			}
+        }
+        
+       function setAddr(code, addr)
+        {
+			
+				
+				
+            if (opener.CTRLZIP)
+                opener.CTRLZIP.value = code;
+            opener.CTRLADDR.value = addr;
+				
+			
+            close();
+        }
+        function searchAddr()
+        {
+            var frm = document.frmData;
+            if (trim(frm.addrSearch.value).length == 0) return;
+			frm.submit();
+
+			document.getElementById("search").style.display = "none";
+			document.getElementById("search_loading").style.display = "block";
+			if(document.getElementById("no_data") != undefined)
+			{
+				document.getElementById("no_data").innerHTML = "찾는 중 입니다.&nbsp;";
+			}
+
+        }  
+        
+        //clear popup window.status
+        document.onmouseover = function()
+        {
+        	if(event.srcElement.tagName == "A")
+        	{
+        		 setTimeout("hideStatus()", 0);
+        	}
+        }
+        
+        function hideStatus() {
+        	window.focus();
+        	window.status = "";	
+        }
+        
+        hideStatus();
+
+		$(document).ready(function() {
+			init();
+			window_resize();
+			var selectedSido = false;
+			for(var i=0;i<addr1_length;i++){
+				var isSelected = false;
+				if("서울특별시" == addr1_list[i]){
+					isSelected = true;
+					selectedSido = addr1_list[i];
+				}
+				$("#addr1").append('<option value="'+addr1_list[i]+'" '+(isSelected ? "selected" : "")+'>'+addr1_list[i]+'</option>');
+			}
+			if(selectedSido){
+				addr1_location_select(selectedSido);
+			}
+		});
+
+//두 번째 셀렉트박스의 내용을 지운다.
+function select_second_remover(){
+		var addr2 = document.getElementById("addr2");
+		var addr2_val_t = addr2.options;
+		while(addr2_val_t.length>1){
+			addr2_val_t[1]=null;
+		}
+}
+
+//db를 이용한다.........................................................................
+var addr1_location_list = new Array();  /*시/도 중복...*/
+var addr2_location_list = new Array();  /*전국 시/구/군*/
+var addr1_length=null; //<=도/시 길이 : 17
+var addr2_length=null; //<=시/구/군 길이 : 252
+
+
+	
+		
+	
+	
+	addr1_location_list[0]="강원도";
+	addr2_location_list[0]="강릉시";
+
+	
+	
+	addr1_location_list[1]="강원도";
+	addr2_location_list[1]="고성군";
+
+	
+	
+	addr1_location_list[2]="강원도";
+	addr2_location_list[2]="동해시";
+
+	
+	
+	addr1_location_list[3]="강원도";
+	addr2_location_list[3]="삼척시";
+
+	
+	
+	addr1_location_list[4]="강원도";
+	addr2_location_list[4]="속초시";
+
+	
+	
+	addr1_location_list[5]="강원도";
+	addr2_location_list[5]="양구군";
+
+	
+	
+	addr1_location_list[6]="강원도";
+	addr2_location_list[6]="양양군";
+
+	
+	
+	addr1_location_list[7]="강원도";
+	addr2_location_list[7]="영월군";
+
+	
+	
+	addr1_location_list[8]="강원도";
+	addr2_location_list[8]="원주시";
+
+	
+	
+	addr1_location_list[9]="강원도";
+	addr2_location_list[9]="인제군";
+
+	
+	
+	addr1_location_list[10]="강원도";
+	addr2_location_list[10]="정선군";
+
+	
+	
+	addr1_location_list[11]="강원도";
+	addr2_location_list[11]="철원군";
+
+	
+	
+	addr1_location_list[12]="강원도";
+	addr2_location_list[12]="춘천시";
+
+	
+	
+	addr1_location_list[13]="강원도";
+	addr2_location_list[13]="태백시";
+
+	
+	
+	addr1_location_list[14]="강원도";
+	addr2_location_list[14]="평창군";
+
+	
+	
+	addr1_location_list[15]="강원도";
+	addr2_location_list[15]="홍천군";
+
+	
+	
+	addr1_location_list[16]="강원도";
+	addr2_location_list[16]="화천군";
+
+	
+	
+	addr1_location_list[17]="강원도";
+	addr2_location_list[17]="횡성군";
+
+	
+		
+	
+	
+	addr1_location_list[18]="경기도";
+	addr2_location_list[18]="가평군";
+
+	
+	
+	addr1_location_list[19]="경기도";
+	addr2_location_list[19]="고양시 덕양구";
+
+	
+	
+	addr1_location_list[20]="경기도";
+	addr2_location_list[20]="고양시 일산동구";
+
+	
+	
+	addr1_location_list[21]="경기도";
+	addr2_location_list[21]="고양시 일산서구";
+
+	
+	
+	addr1_location_list[22]="경기도";
+	addr2_location_list[22]="과천시";
+
+	
+	
+	addr1_location_list[23]="경기도";
+	addr2_location_list[23]="광명시";
+
+	
+	
+	addr1_location_list[24]="경기도";
+	addr2_location_list[24]="광주시";
+
+	
+	
+	addr1_location_list[25]="경기도";
+	addr2_location_list[25]="구리시";
+
+	
+	
+	addr1_location_list[26]="경기도";
+	addr2_location_list[26]="군포시";
+
+	
+	
+	addr1_location_list[27]="경기도";
+	addr2_location_list[27]="김포시";
+
+	
+	
+	addr1_location_list[28]="경기도";
+	addr2_location_list[28]="남양주시";
+
+	
+	
+	addr1_location_list[29]="경기도";
+	addr2_location_list[29]="동두천시";
+
+	
+	
+	addr1_location_list[30]="경기도";
+	addr2_location_list[30]="부천시 소사구";
+
+	
+	
+	addr1_location_list[31]="경기도";
+	addr2_location_list[31]="부천시 오정구";
+
+	
+	
+	addr1_location_list[32]="경기도";
+	addr2_location_list[32]="부천시 원미구";
+
+	
+	
+	addr1_location_list[33]="경기도";
+	addr2_location_list[33]="성남시 분당구";
+
+	
+	
+	addr1_location_list[34]="경기도";
+	addr2_location_list[34]="성남시 수정구";
+
+	
+	
+	addr1_location_list[35]="경기도";
+	addr2_location_list[35]="성남시 중원구";
+
+	
+	
+	addr1_location_list[36]="경기도";
+	addr2_location_list[36]="수원시 권선구";
+
+	
+	
+	addr1_location_list[37]="경기도";
+	addr2_location_list[37]="수원시 영통구";
+
+	
+	
+	addr1_location_list[38]="경기도";
+	addr2_location_list[38]="수원시 장안구";
+
+	
+	
+	addr1_location_list[39]="경기도";
+	addr2_location_list[39]="수원시 팔달구";
+
+	
+	
+	addr1_location_list[40]="경기도";
+	addr2_location_list[40]="시흥시";
+
+	
+	
+	addr1_location_list[41]="경기도";
+	addr2_location_list[41]="안산시 단원구";
+
+	
+	
+	addr1_location_list[42]="경기도";
+	addr2_location_list[42]="안산시 상록구";
+
+	
+	
+	addr1_location_list[43]="경기도";
+	addr2_location_list[43]="안성시";
+
+	
+	
+	addr1_location_list[44]="경기도";
+	addr2_location_list[44]="안양시 동안구";
+
+	
+	
+	addr1_location_list[45]="경기도";
+	addr2_location_list[45]="안양시 만안구";
+
+	
+	
+	addr1_location_list[46]="경기도";
+	addr2_location_list[46]="양주시";
+
+	
+	
+	addr1_location_list[47]="경기도";
+	addr2_location_list[47]="양평군";
+
+	
+	
+	addr1_location_list[48]="경기도";
+	addr2_location_list[48]="여주시";
+
+	
+	
+	addr1_location_list[49]="경기도";
+	addr2_location_list[49]="연천군";
+
+	
+	
+	addr1_location_list[50]="경기도";
+	addr2_location_list[50]="오산시";
+
+	
+	
+	addr1_location_list[51]="경기도";
+	addr2_location_list[51]="용인시 기흥구";
+
+	
+	
+	addr1_location_list[52]="경기도";
+	addr2_location_list[52]="용인시 수지구";
+
+	
+	
+	addr1_location_list[53]="경기도";
+	addr2_location_list[53]="용인시 처인구";
+
+	
+	
+	addr1_location_list[54]="경기도";
+	addr2_location_list[54]="의왕시";
+
+	
+	
+	addr1_location_list[55]="경기도";
+	addr2_location_list[55]="의정부시";
+
+	
+	
+	addr1_location_list[56]="경기도";
+	addr2_location_list[56]="이천시";
+
+	
+	
+	addr1_location_list[57]="경기도";
+	addr2_location_list[57]="파주시";
+
+	
+	
+	addr1_location_list[58]="경기도";
+	addr2_location_list[58]="평택시";
+
+	
+	
+	addr1_location_list[59]="경기도";
+	addr2_location_list[59]="포천시";
+
+	
+	
+	addr1_location_list[60]="경기도";
+	addr2_location_list[60]="하남시";
+
+	
+	
+	addr1_location_list[61]="경기도";
+	addr2_location_list[61]="화성시";
+
+	
+		
+	
+	
+	addr1_location_list[62]="경상남도";
+	addr2_location_list[62]="거제시";
+
+	
+	
+	addr1_location_list[63]="경상남도";
+	addr2_location_list[63]="거창군";
+
+	
+	
+	addr1_location_list[64]="경상남도";
+	addr2_location_list[64]="고성군";
+
+	
+	
+	addr1_location_list[65]="경상남도";
+	addr2_location_list[65]="김해시";
+
+	
+	
+	addr1_location_list[66]="경상남도";
+	addr2_location_list[66]="남해군";
+
+	
+	
+	addr1_location_list[67]="경상남도";
+	addr2_location_list[67]="밀양시";
+
+	
+	
+	addr1_location_list[68]="경상남도";
+	addr2_location_list[68]="사천시";
+
+	
+	
+	addr1_location_list[69]="경상남도";
+	addr2_location_list[69]="산청군";
+
+	
+	
+	addr1_location_list[70]="경상남도";
+	addr2_location_list[70]="양산시";
+
+	
+	
+	addr1_location_list[71]="경상남도";
+	addr2_location_list[71]="의령군";
+
+	
+	
+	addr1_location_list[72]="경상남도";
+	addr2_location_list[72]="진주시";
+
+	
+	
+	addr1_location_list[73]="경상남도";
+	addr2_location_list[73]="창녕군";
+
+	
+	
+	addr1_location_list[74]="경상남도";
+	addr2_location_list[74]="창원시 마산합포구";
+
+	
+	
+	addr1_location_list[75]="경상남도";
+	addr2_location_list[75]="창원시 마산회원구";
+
+	
+	
+	addr1_location_list[76]="경상남도";
+	addr2_location_list[76]="창원시 성산구";
+
+	
+	
+	addr1_location_list[77]="경상남도";
+	addr2_location_list[77]="창원시 의창구";
+
+	
+	
+	addr1_location_list[78]="경상남도";
+	addr2_location_list[78]="창원시 진해구";
+
+	
+	
+	addr1_location_list[79]="경상남도";
+	addr2_location_list[79]="통영시";
+
+	
+	
+	addr1_location_list[80]="경상남도";
+	addr2_location_list[80]="하동군";
+
+	
+	
+	addr1_location_list[81]="경상남도";
+	addr2_location_list[81]="함안군";
+
+	
+	
+	addr1_location_list[82]="경상남도";
+	addr2_location_list[82]="함양군";
+
+	
+	
+	addr1_location_list[83]="경상남도";
+	addr2_location_list[83]="합천군";
+
+	
+		
+	
+	
+	addr1_location_list[84]="경상북도";
+	addr2_location_list[84]="경산시";
+
+	
+	
+	addr1_location_list[85]="경상북도";
+	addr2_location_list[85]="경주시";
+
+	
+	
+	addr1_location_list[86]="경상북도";
+	addr2_location_list[86]="고령군";
+
+	
+	
+	addr1_location_list[87]="경상북도";
+	addr2_location_list[87]="구미시";
+
+	
+	
+	addr1_location_list[88]="경상북도";
+	addr2_location_list[88]="군위군";
+
+	
+	
+	addr1_location_list[89]="경상북도";
+	addr2_location_list[89]="김천시";
+
+	
+	
+	addr1_location_list[90]="경상북도";
+	addr2_location_list[90]="문경시";
+
+	
+	
+	addr1_location_list[91]="경상북도";
+	addr2_location_list[91]="봉화군";
+
+	
+	
+	addr1_location_list[92]="경상북도";
+	addr2_location_list[92]="상주시";
+
+	
+	
+	addr1_location_list[93]="경상북도";
+	addr2_location_list[93]="성주군";
+
+	
+	
+	addr1_location_list[94]="경상북도";
+	addr2_location_list[94]="안동시";
+
+	
+	
+	addr1_location_list[95]="경상북도";
+	addr2_location_list[95]="영덕군";
+
+	
+	
+	addr1_location_list[96]="경상북도";
+	addr2_location_list[96]="영양군";
+
+	
+	
+	addr1_location_list[97]="경상북도";
+	addr2_location_list[97]="영주시";
+
+	
+	
+	addr1_location_list[98]="경상북도";
+	addr2_location_list[98]="영천시";
+
+	
+	
+	addr1_location_list[99]="경상북도";
+	addr2_location_list[99]="예천군";
+
+	
+	
+	addr1_location_list[100]="경상북도";
+	addr2_location_list[100]="울릉군";
+
+	
+	
+	addr1_location_list[101]="경상북도";
+	addr2_location_list[101]="울진군";
+
+	
+	
+	addr1_location_list[102]="경상북도";
+	addr2_location_list[102]="의성군";
+
+	
+	
+	addr1_location_list[103]="경상북도";
+	addr2_location_list[103]="청도군";
+
+	
+	
+	addr1_location_list[104]="경상북도";
+	addr2_location_list[104]="청송군";
+
+	
+	
+	addr1_location_list[105]="경상북도";
+	addr2_location_list[105]="칠곡군";
+
+	
+	
+	addr1_location_list[106]="경상북도";
+	addr2_location_list[106]="포항시 남구";
+
+	
+	
+	addr1_location_list[107]="경상북도";
+	addr2_location_list[107]="포항시 북구";
+
+	
+		
+	
+	
+	addr1_location_list[108]="광주광역시";
+	addr2_location_list[108]="광산구";
+
+	
+	
+	addr1_location_list[109]="광주광역시";
+	addr2_location_list[109]="남구";
+
+	
+	
+	addr1_location_list[110]="광주광역시";
+	addr2_location_list[110]="동구";
+
+	
+	
+	addr1_location_list[111]="광주광역시";
+	addr2_location_list[111]="북구";
+
+	
+	
+	addr1_location_list[112]="광주광역시";
+	addr2_location_list[112]="서구";
+
+	
+		
+	
+	
+	addr1_location_list[113]="대구광역시";
+	addr2_location_list[113]="남구";
+
+	
+	
+	addr1_location_list[114]="대구광역시";
+	addr2_location_list[114]="달서구";
+
+	
+	
+	addr1_location_list[115]="대구광역시";
+	addr2_location_list[115]="달성군";
+
+	
+	
+	addr1_location_list[116]="대구광역시";
+	addr2_location_list[116]="동구";
+
+	
+	
+	addr1_location_list[117]="대구광역시";
+	addr2_location_list[117]="북구";
+
+	
+	
+	addr1_location_list[118]="대구광역시";
+	addr2_location_list[118]="서구";
+
+	
+	
+	addr1_location_list[119]="대구광역시";
+	addr2_location_list[119]="수성구";
+
+	
+	
+	addr1_location_list[120]="대구광역시";
+	addr2_location_list[120]="중구";
+
+	
+		
+	
+	
+	addr1_location_list[121]="대전광역시";
+	addr2_location_list[121]="대덕구";
+
+	
+	
+	addr1_location_list[122]="대전광역시";
+	addr2_location_list[122]="동구";
+
+	
+	
+	addr1_location_list[123]="대전광역시";
+	addr2_location_list[123]="서구";
+
+	
+	
+	addr1_location_list[124]="대전광역시";
+	addr2_location_list[124]="유성구";
+
+	
+	
+	addr1_location_list[125]="대전광역시";
+	addr2_location_list[125]="중구";
+
+	
+		
+	
+	
+	addr1_location_list[126]="부산광역시";
+	addr2_location_list[126]="강서구";
+
+	
+	
+	addr1_location_list[127]="부산광역시";
+	addr2_location_list[127]="금정구";
+
+	
+	
+	addr1_location_list[128]="부산광역시";
+	addr2_location_list[128]="기장군";
+
+	
+	
+	addr1_location_list[129]="부산광역시";
+	addr2_location_list[129]="남구";
+
+	
+	
+	addr1_location_list[130]="부산광역시";
+	addr2_location_list[130]="동구";
+
+	
+	
+	addr1_location_list[131]="부산광역시";
+	addr2_location_list[131]="동래구";
+
+	
+	
+	addr1_location_list[132]="부산광역시";
+	addr2_location_list[132]="부산진구";
+
+	
+	
+	addr1_location_list[133]="부산광역시";
+	addr2_location_list[133]="북구";
+
+	
+	
+	addr1_location_list[134]="부산광역시";
+	addr2_location_list[134]="사상구";
+
+	
+	
+	addr1_location_list[135]="부산광역시";
+	addr2_location_list[135]="사하구";
+
+	
+	
+	addr1_location_list[136]="부산광역시";
+	addr2_location_list[136]="서구";
+
+	
+	
+	addr1_location_list[137]="부산광역시";
+	addr2_location_list[137]="수영구";
+
+	
+	
+	addr1_location_list[138]="부산광역시";
+	addr2_location_list[138]="연제구";
+
+	
+	
+	addr1_location_list[139]="부산광역시";
+	addr2_location_list[139]="영도구";
+
+	
+	
+	addr1_location_list[140]="부산광역시";
+	addr2_location_list[140]="중구";
+
+	
+	
+	addr1_location_list[141]="부산광역시";
+	addr2_location_list[141]="해운대구";
+
+	
+		
+	
+	
+	addr1_location_list[142]="서울특별시";
+	addr2_location_list[142]="강남구";
+
+	
+	
+	addr1_location_list[143]="서울특별시";
+	addr2_location_list[143]="강동구";
+
+	
+	
+	addr1_location_list[144]="서울특별시";
+	addr2_location_list[144]="강북구";
+
+	
+	
+	addr1_location_list[145]="서울특별시";
+	addr2_location_list[145]="강서구";
+
+	
+	
+	addr1_location_list[146]="서울특별시";
+	addr2_location_list[146]="관악구";
+
+	
+	
+	addr1_location_list[147]="서울특별시";
+	addr2_location_list[147]="광진구";
+
+	
+	
+	addr1_location_list[148]="서울특별시";
+	addr2_location_list[148]="구로구";
+
+	
+	
+	addr1_location_list[149]="서울특별시";
+	addr2_location_list[149]="금천구";
+
+	
+	
+	addr1_location_list[150]="서울특별시";
+	addr2_location_list[150]="노원구";
+
+	
+	
+	addr1_location_list[151]="서울특별시";
+	addr2_location_list[151]="도봉구";
+
+	
+	
+	addr1_location_list[152]="서울특별시";
+	addr2_location_list[152]="동대문구";
+
+	
+	
+	addr1_location_list[153]="서울특별시";
+	addr2_location_list[153]="동작구";
+
+	
+	
+	addr1_location_list[154]="서울특별시";
+	addr2_location_list[154]="마포구";
+
+	
+	
+	addr1_location_list[155]="서울특별시";
+	addr2_location_list[155]="서대문구";
+
+	
+	
+	addr1_location_list[156]="서울특별시";
+	addr2_location_list[156]="서초구";
+
+	
+	
+	addr1_location_list[157]="서울특별시";
+	addr2_location_list[157]="성동구";
+
+	
+	
+	addr1_location_list[158]="서울특별시";
+	addr2_location_list[158]="성북구";
+
+	
+	
+	addr1_location_list[159]="서울특별시";
+	addr2_location_list[159]="송파구";
+
+	
+	
+	addr1_location_list[160]="서울특별시";
+	addr2_location_list[160]="양천구";
+
+	
+	
+	addr1_location_list[161]="서울특별시";
+	addr2_location_list[161]="영등포구";
+
+	
+	
+	addr1_location_list[162]="서울특별시";
+	addr2_location_list[162]="용산구";
+
+	
+	
+	addr1_location_list[163]="서울특별시";
+	addr2_location_list[163]="은평구";
+
+	
+	
+	addr1_location_list[164]="서울특별시";
+	addr2_location_list[164]="종로구";
+
+	
+	
+	addr1_location_list[165]="서울특별시";
+	addr2_location_list[165]="중구";
+
+	
+	
+	addr1_location_list[166]="서울특별시";
+	addr2_location_list[166]="중랑구";
+
+	
+		
+	
+	
+	addr1_location_list[167]="세종특별자치시";
+	addr2_location_list[167]="";
+
+	
+		
+	
+	
+	addr1_location_list[168]="울산광역시";
+	addr2_location_list[168]="남구";
+
+	
+	
+	addr1_location_list[169]="울산광역시";
+	addr2_location_list[169]="동구";
+
+	
+	
+	addr1_location_list[170]="울산광역시";
+	addr2_location_list[170]="북구";
+
+	
+	
+	addr1_location_list[171]="울산광역시";
+	addr2_location_list[171]="울주군";
+
+	
+	
+	addr1_location_list[172]="울산광역시";
+	addr2_location_list[172]="중구";
+
+	
+		
+	
+	
+	addr1_location_list[173]="인천광역시";
+	addr2_location_list[173]="강화군";
+
+	
+	
+	addr1_location_list[174]="인천광역시";
+	addr2_location_list[174]="계양구";
+
+	
+	
+	addr1_location_list[175]="인천광역시";
+	addr2_location_list[175]="남구";
+
+	
+	
+	addr1_location_list[176]="인천광역시";
+	addr2_location_list[176]="남동구";
+
+	
+	
+	addr1_location_list[177]="인천광역시";
+	addr2_location_list[177]="동구";
+
+	
+	
+	addr1_location_list[178]="인천광역시";
+	addr2_location_list[178]="부평구";
+
+	
+	
+	addr1_location_list[179]="인천광역시";
+	addr2_location_list[179]="서구";
+
+	
+	
+	addr1_location_list[180]="인천광역시";
+	addr2_location_list[180]="연수구";
+
+	
+	
+	addr1_location_list[181]="인천광역시";
+	addr2_location_list[181]="옹진군";
+
+	
+	
+	addr1_location_list[182]="인천광역시";
+	addr2_location_list[182]="중구";
+
+	
+		
+	
+	
+	addr1_location_list[183]="전라남도";
+	addr2_location_list[183]="강진군";
+
+	
+	
+	addr1_location_list[184]="전라남도";
+	addr2_location_list[184]="고흥군";
+
+	
+	
+	addr1_location_list[185]="전라남도";
+	addr2_location_list[185]="곡성군";
+
+	
+	
+	addr1_location_list[186]="전라남도";
+	addr2_location_list[186]="광양시";
+
+	
+	
+	addr1_location_list[187]="전라남도";
+	addr2_location_list[187]="구례군";
+
+	
+	
+	addr1_location_list[188]="전라남도";
+	addr2_location_list[188]="나주시";
+
+	
+	
+	addr1_location_list[189]="전라남도";
+	addr2_location_list[189]="담양군";
+
+	
+	
+	addr1_location_list[190]="전라남도";
+	addr2_location_list[190]="목포시";
+
+	
+	
+	addr1_location_list[191]="전라남도";
+	addr2_location_list[191]="무안군";
+
+	
+	
+	addr1_location_list[192]="전라남도";
+	addr2_location_list[192]="보성군";
+
+	
+	
+	addr1_location_list[193]="전라남도";
+	addr2_location_list[193]="순천시";
+
+	
+	
+	addr1_location_list[194]="전라남도";
+	addr2_location_list[194]="신안군";
+
+	
+	
+	addr1_location_list[195]="전라남도";
+	addr2_location_list[195]="여수시";
+
+	
+	
+	addr1_location_list[196]="전라남도";
+	addr2_location_list[196]="영광군";
+
+	
+	
+	addr1_location_list[197]="전라남도";
+	addr2_location_list[197]="영암군";
+
+	
+	
+	addr1_location_list[198]="전라남도";
+	addr2_location_list[198]="완도군";
+
+	
+	
+	addr1_location_list[199]="전라남도";
+	addr2_location_list[199]="장성군";
+
+	
+	
+	addr1_location_list[200]="전라남도";
+	addr2_location_list[200]="장흥군";
+
+	
+	
+	addr1_location_list[201]="전라남도";
+	addr2_location_list[201]="진도군";
+
+	
+	
+	addr1_location_list[202]="전라남도";
+	addr2_location_list[202]="함평군";
+
+	
+	
+	addr1_location_list[203]="전라남도";
+	addr2_location_list[203]="해남군";
+
+	
+	
+	addr1_location_list[204]="전라남도";
+	addr2_location_list[204]="화순군";
+
+	
+		
+	
+	
+	addr1_location_list[205]="전라북도";
+	addr2_location_list[205]="고창군";
+
+	
+	
+	addr1_location_list[206]="전라북도";
+	addr2_location_list[206]="군산시";
+
+	
+	
+	addr1_location_list[207]="전라북도";
+	addr2_location_list[207]="김제시";
+
+	
+	
+	addr1_location_list[208]="전라북도";
+	addr2_location_list[208]="남원시";
+
+	
+	
+	addr1_location_list[209]="전라북도";
+	addr2_location_list[209]="무주군";
+
+	
+	
+	addr1_location_list[210]="전라북도";
+	addr2_location_list[210]="부안군";
+
+	
+	
+	addr1_location_list[211]="전라북도";
+	addr2_location_list[211]="순창군";
+
+	
+	
+	addr1_location_list[212]="전라북도";
+	addr2_location_list[212]="완주군";
+
+	
+	
+	addr1_location_list[213]="전라북도";
+	addr2_location_list[213]="익산시";
+
+	
+	
+	addr1_location_list[214]="전라북도";
+	addr2_location_list[214]="임실군";
+
+	
+	
+	addr1_location_list[215]="전라북도";
+	addr2_location_list[215]="장수군";
+
+	
+	
+	addr1_location_list[216]="전라북도";
+	addr2_location_list[216]="전주시 덕진구";
+
+	
+	
+	addr1_location_list[217]="전라북도";
+	addr2_location_list[217]="전주시 완산구";
+
+	
+	
+	addr1_location_list[218]="전라북도";
+	addr2_location_list[218]="정읍시";
+
+	
+	
+	addr1_location_list[219]="전라북도";
+	addr2_location_list[219]="진안군";
+
+	
+		
+	
+	
+	addr1_location_list[220]="제주특별자치도";
+	addr2_location_list[220]="서귀포시";
+
+	
+	
+	addr1_location_list[221]="제주특별자치도";
+	addr2_location_list[221]="제주시";
+
+	
+		
+	
+	
+	addr1_location_list[222]="충청남도";
+	addr2_location_list[222]="계룡시";
+
+	
+	
+	addr1_location_list[223]="충청남도";
+	addr2_location_list[223]="공주시";
+
+	
+	
+	addr1_location_list[224]="충청남도";
+	addr2_location_list[224]="금산군";
+
+	
+	
+	addr1_location_list[225]="충청남도";
+	addr2_location_list[225]="논산시";
+
+	
+	
+	addr1_location_list[226]="충청남도";
+	addr2_location_list[226]="당진시";
+
+	
+	
+	addr1_location_list[227]="충청남도";
+	addr2_location_list[227]="보령시";
+
+	
+	
+	addr1_location_list[228]="충청남도";
+	addr2_location_list[228]="부여군";
+
+	
+	
+	addr1_location_list[229]="충청남도";
+	addr2_location_list[229]="서산시";
+
+	
+	
+	addr1_location_list[230]="충청남도";
+	addr2_location_list[230]="서천군";
+
+	
+	
+	addr1_location_list[231]="충청남도";
+	addr2_location_list[231]="아산시";
+
+	
+	
+	addr1_location_list[232]="충청남도";
+	addr2_location_list[232]="예산군";
+
+	
+	
+	addr1_location_list[233]="충청남도";
+	addr2_location_list[233]="천안시 동남구";
+
+	
+	
+	addr1_location_list[234]="충청남도";
+	addr2_location_list[234]="천안시 서북구";
+
+	
+	
+	addr1_location_list[235]="충청남도";
+	addr2_location_list[235]="청양군";
+
+	
+	
+	addr1_location_list[236]="충청남도";
+	addr2_location_list[236]="태안군";
+
+	
+	
+	addr1_location_list[237]="충청남도";
+	addr2_location_list[237]="홍성군";
+
+	
+		
+	
+	
+	addr1_location_list[238]="충청북도";
+	addr2_location_list[238]="괴산군";
+
+	
+	
+	addr1_location_list[239]="충청북도";
+	addr2_location_list[239]="단양군";
+
+	
+	
+	addr1_location_list[240]="충청북도";
+	addr2_location_list[240]="보은군";
+
+	
+	
+	addr1_location_list[241]="충청북도";
+	addr2_location_list[241]="영동군";
+
+	
+	
+	addr1_location_list[242]="충청북도";
+	addr2_location_list[242]="옥천군";
+
+	
+	
+	addr1_location_list[243]="충청북도";
+	addr2_location_list[243]="음성군";
+
+	
+	
+	addr1_location_list[244]="충청북도";
+	addr2_location_list[244]="제천시";
+
+	
+	
+	addr1_location_list[245]="충청북도";
+	addr2_location_list[245]="증평군";
+
+	
+	
+	addr1_location_list[246]="충청북도";
+	addr2_location_list[246]="진천군";
+
+	
+	
+	addr1_location_list[247]="충청북도";
+	addr2_location_list[247]="청주시 상당구";
+
+	
+	
+	addr1_location_list[248]="충청북도";
+	addr2_location_list[248]="청주시 서원구";
+
+	
+	
+	addr1_location_list[249]="충청북도";
+	addr2_location_list[249]="청주시 청원구";
+
+	
+	
+	addr1_location_list[250]="충청북도";
+	addr2_location_list[250]="청주시 흥덕구";
+
+	
+	
+	addr1_location_list[251]="충청북도";
+	addr2_location_list[251]="충주시";
+
+
+var addr1_list = addr1_location_list.reduce(function(a,b){ //첫 번째 select box의 값: addr1_list = [강원도,경기도,경상남도, ...충청북도]
+	if(a.indexOf(b) < 0) a.push(b);
+	return a;
+},[]);  //addr1_location_list의 중복제거
+
+addr1_length = addr1_list.length;
+addr2_length = addr2_location_list.length;
+
+function addr1_location_select(value){
+	var selval_t = $("#addr1 option:selected").text(); //셀렉트박스에서 사용자가 선택한 값의 text
+	
+	select_second_remover();
+	for(var j=0; j<addr2_length;j++){
+		if(selval_t == addr1_location_list[j]){  //만들어지는 배열[강원도,강원도..] 중 사용자가 선택한 값[경기도]과 같다면
+				var isSelected = false;
+				if("강북구" == addr2_location_list[j]){
+					isSelected = true;
+				}
+				$("#addr2").append('<option value="'+addr2_location_list[j]+'" '+(isSelected ? "selected" : "")+'>'+addr2_location_list[j]+'</option>'); //두 번째 셀렉트박스 옵션에 경기도의 모든 시/군/구 추가
+		}
+	}
+}
+</script>
+</head>
+<body style="">
+<form id="frmData" name="frmData" action="/jsp/org/mng/NewZipCodeCheck.jsp" method="post" enctype="">
+  <div class="pop_wrap">
+    <div class="container_box">
+      <div class="title_area"> 우편번호 검색 </div>
+      <div style="overflow-x: hidden;">
+        <div class="bottom_area btn ln_hgt_19">
+          <table width="600px">
+            <tbody>
+              <tr>
+                <td class="txt_align_cnt"> 찾고자 하는 주소의 동/읍/면/도로명을 입력하세요.<br>
+                  예) 역삼동, 양촌면, 대왕판교로 <br>
+                  <div id="search_loading" style="display: none;"><img src="../../img/loading_bar_animated.gif"></div>
+                  <div class="search" id="search" style="display: block;">
+                    <select id="addr1" class="basic_select" name="addr1" onchange="addr1_location_select(this.value)">
+                      <option value="" selected="">=====선택===== </option>
+                      <option value="강원도">강원도</option>
+                      <option value="경기도">경기도</option>
+                      <option value="경상남도">경상남도</option>
+                      <option value="경상북도">경상북도</option>
+                      <option value="광주광역시">광주광역시</option>
+                      <option value="대구광역시">대구광역시</option>
+                      <option value="대전광역시">대전광역시</option>
+                      <option value="부산광역시">부산광역시</option>
+                      <option value="서울특별시" selected="">서울특별시</option>
+                      <option value="세종특별자치시">세종특별자치시</option>
+                      <option value="울산광역시">울산광역시</option>
+                      <option value="인천광역시">인천광역시</option>
+                      <option value="전라남도">전라남도</option>
+                      <option value="전라북도">전라북도</option>
+                      <option value="제주특별자치도">제주특별자치도</option>
+                      <option value="충청남도">충청남도</option>
+                      <option value="충청북도">충청북도</option>
+                    </select>
+                    <select id="addr2" class="basic_select" name="addr2">
+                      <option value="" selected="">=====선택=====</option>
+                      <option value="강남구">강남구</option>
+                      <option value="강동구">강동구</option>
+                      <option value="강북구" selected="">강북구</option>
+                      <option value="강서구">강서구</option>
+                      <option value="관악구">관악구</option>
+                      <option value="광진구">광진구</option>
+                      <option value="구로구">구로구</option>
+                      <option value="금천구">금천구</option>
+                      <option value="노원구">노원구</option>
+                      <option value="도봉구">도봉구</option>
+                      <option value="동대문구">동대문구</option>
+                      <option value="동작구">동작구</option>
+                      <option value="마포구">마포구</option>
+                      <option value="서대문구">서대문구</option>
+                      <option value="서초구">서초구</option>
+                      <option value="성동구">성동구</option>
+                      <option value="성북구">성북구</option>
+                      <option value="송파구">송파구</option>
+                      <option value="양천구">양천구</option>
+                      <option value="영등포구">영등포구</option>
+                      <option value="용산구">용산구</option>
+                      <option value="은평구">은평구</option>
+                      <option value="종로구">종로구</option>
+                      <option value="중구">중구</option>
+                      <option value="중랑구">중랑구</option>
+                    </select>
+                    <input class="basic_inp" onkeyup="if(window.event.keyCode == 13){javascript:searchAddr();}" id="addrSearch" type="text" name="addrSearch" size="40" maxlength="100" style="width: 180px;" value="미아">
+                    <span class="btn_config"> <a class="srch_btn" href="javascript:searchAddr();">검색</a> </span> </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="content_lst content_lst_head mg_tp_10 brdr_top">
+        <table>
+          <colgroup>
+          <col style="width: 80px;">
+          <col style="width: *;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th> 우편번호 </th>
+              <th> 주소 </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="content_lst content_lst_body ln_hgt_19" style="height: 532px;">
+        <table>
+          <colgroup>
+          <col style="width: 80px;">
+          <col style="width: *;">
+          </colgroup>
+          <tbody>
+            <!--<tr>
+						<td></td>
+						<td>
+							<p><span class="brdr_all fnt_prpl" style="width: 34px">도로명</span>235 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Korea</p>
+							<p><span class="brdr_all fnt_prpl" style="width: 34px">지 번</span>235 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Korea</p>
+						</td>
+					</tr>-->
+            
+            <tr>
+              <td colspan="2"><span id="tooDataMsg">검색결과가 많습니다.<br>
+                <span class="fnt_orng fnt_bold"> ‘도로명+건물번호’</span> 또는 <span class="fnt_orng fnt_bold">‘지역명+지번’</span> 으로 검색하시면, 보다 정확한 결과를 확인하실 수 있습니다.</span></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 15-3');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 15-3 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-58');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-58 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 31 (은행주택)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 31 (은행주택) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-101');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-101 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 42');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 42 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-116');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-116 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 20');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 20 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-136');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-136 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 11');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 11 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-162');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-162 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 28');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 28 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-128');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-128 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 36');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 36 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-121');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-121 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 30');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 30 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-125');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-125 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 26');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 26 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-129');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-129 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 33');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 33 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-100');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-100 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 49');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 49 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-373');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-373 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 45');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 45 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-36');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-36 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 22');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 22 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-133');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-133 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 18');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 18 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-137');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-137 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-16');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-16 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-350');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-350 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-153');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-153 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 22 (광성빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 22 (광성빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-195');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-195 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-23');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-23 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-406');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-406 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25-10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25-10 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-357');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-357 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25-4 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-356');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-356 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 11-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 11-4 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-145');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-145 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 28');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 28 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-191');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-191 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-19');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-19 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-369');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-369 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 16 (양지빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 16 (양지빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-183');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-183 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-10 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-161');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-161 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 50-9 (녹원빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 50-9 (녹원빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-289');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-289 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 42-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 42-1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-298');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-298 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-22');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-22 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-384');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-384 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-8');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-8 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-160');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-160 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 15');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 15 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-55');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-55 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-18');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-18 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-385');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-385 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 50-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 50-4 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-274');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-274 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-7 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-150');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-150 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 37-5');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 37-5 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-311');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-311 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 47');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 47 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-305');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-305 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 35-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 35-1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-49');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-49 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 37');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 37 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-301');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-301 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 51');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 51 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-306');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-306 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 19 (현대화이트빌)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 19 (현대화이트빌) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-315');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-315 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-25');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-25 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-95');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-95 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 40');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 40 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-300');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-300 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 50-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 50-1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-288');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-288 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 50-12');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 50-12 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-270');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-270 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 45-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 45-4 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-308');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-308 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-154');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-154 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25-9');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25-9 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-354');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-354 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 42');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 42 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-299');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-299 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 7-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 7-4 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-58');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-58 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 10-3');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 10-3 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-120');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-120 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 7-7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 7-7 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-63');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-63 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 13');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 13 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 43-24');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 43-24 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 3-8 (인성하이츠빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 3-8 (인성하이츠빌라) </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-67');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-67 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 10-2');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 10-2 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-88');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-88 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 7-2');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 7-2 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-59');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-59 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 7 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-60');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-60 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 4-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 4-1 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-89');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-89 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3가길 7-3');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3가길 7-3 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-61');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-61 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3길 36-9');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 36-9 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-167');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-167 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3길 52 (행운장여관)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 52 (행운장여관) </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 44-6');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 44-6 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01220<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01220','서울특별시&nbsp;강북구&nbsp;월계로3길 57 (대성장모텔)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 57 (대성장모텔) </a> <br>
+                <a href="javascript:setAddr('01220','서울특별시&nbsp;강북구&nbsp;미아동 44-15');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 44-15 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3길 36-12');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 36-12 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-173');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-173 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01219<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01219','서울특별시&nbsp;강북구&nbsp;월계로3길 66-15');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 66-15 </a> <br>
+                <a href="javascript:setAddr('01219','서울특별시&nbsp;강북구&nbsp;미아동 55-54');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 55-54 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로3길 42-1 (모텔쉐르빌)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로3길 42-1 (모텔쉐르빌) </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 37-16');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 37-16 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-9');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-9 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-149');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-149 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-21');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-21 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-368');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-368 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25-5');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25-5 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-355');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-355 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 11 (현대화이트빌)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 11 (현대화이트빌) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-156');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-156 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 36-7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 36-7 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-338');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-338 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 24 (동명빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 24 (동명빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-192');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-192 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 48');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 48 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-297');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-297 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 27');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 27 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-318');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-318 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 21');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 21 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-98');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-98 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 37-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 37-4 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 48-7');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 48-7 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 29 (하나빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 29 (하나빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-363');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-363 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 14');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 14 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-141');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-141 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 38');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 38 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-120');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-120 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 32');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 32 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-124');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-124 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 40');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 40 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-117');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-117 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 48');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 48 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-109');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-109 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 39');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 39 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-98');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-98 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 16');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 16 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-140');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-140 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 50');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 50 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-108');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-108 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 46');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 46 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-112');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-112 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 27 (홍은빌리지)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 27 (홍은빌리지) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-83');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-83 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 10 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-142');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-142 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 43');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 43 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-96');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-96 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-335');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-335 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 41');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 41 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-97');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-97 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21길 24');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21길 24 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-132');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-132 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 55 (대신대중사우나)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 55 (대신대중사우나) </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-31');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-31 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 53-3 (녹일빌딩)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 53-3 (녹일빌딩) </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-29');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-29 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 43-9');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 43-9 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-41');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-41 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 43 (유신종합공구)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 43 (유신종합공구) </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-12');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-12 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 79');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 79 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-336');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-336 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 75-7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 75-7 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-326');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-326 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 35');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 35 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 48-24');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 48-24 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 33 (우리이웃의원)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 33 (우리이웃의원) </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 48-29');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 48-29 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 39-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 39-4 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-16');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-16 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 23');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 23 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 46-19');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 46-19 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 89');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 89 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-138');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-138 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 57-16');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 57-16 </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 8-16');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-16 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 75-10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 75-10 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-333');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-333 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 75-5');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 75-5 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-327');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-327 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 75-8');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 75-8 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-332');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-332 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 81');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 81 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-336');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-336 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 33-6');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 33-6 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 48-23');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 48-23 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01220<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01220','서울특별시&nbsp;강북구&nbsp;월계로 7 (유창빌딩)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 7 (유창빌딩) </a> <br>
+                <a href="javascript:setAddr('01220','서울특별시&nbsp;강북구&nbsp;미아동 42-212');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-212 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-100) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 45');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 45 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 1317-14');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 1317-14 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 29');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 29 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 860-48');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 860-48 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 53-8');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 53-8 </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-1');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-1 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 43-11');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 43-11 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-42');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-42 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 43-14');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 43-14 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-39');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-39 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 37-12');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 37-12 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 48-4');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 48-4 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 53-7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 53-7 </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-24');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-24 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 43-1 (성림빌딩)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 43-1 (성림빌딩) </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-67');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-67 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 17');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 17 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-215');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-215 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 57-11');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 57-11 </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-152');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-152 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 27-11');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 27-11 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 46-28');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 46-28 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 27-6');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 27-6 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 860-47');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 860-47 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 57-15');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 57-15 </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 49-144');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-144 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 27-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 27-1 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 46-7');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 46-7 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 91');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 91 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-110');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-110 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01221<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;월계로 13');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 13 </a> <br>
+                <a href="javascript:setAddr('01221','서울특별시&nbsp;강북구&nbsp;미아동 42-4');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 42-4 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 59 (강북경찰서 모범운전자지회)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 59 (강북경찰서 모범운전자지회) </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 857-15');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 857-15 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 103');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 103 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-416');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-416 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로 41-4');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 41-4 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-35');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-35 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 95');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 95 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-110');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-110 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로 105-3');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 105-3 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-107');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-107 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 57-12 (진주빌라트)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 57-12 (진주빌라트) </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 8-1');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-1 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01237<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;월계로 57-10 (진주빌라트)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로 57-10 (진주빌라트) </a> <br>
+                <a href="javascript:setAddr('01237','서울특별시&nbsp;강북구&nbsp;미아동 8-415');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-415 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 36-5');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 36-5 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-337');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-337 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25 (한마음그린빌)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25 (한마음그린빌) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-204');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-204 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 25-11');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 25-11 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-353');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-353 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 36-1');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 36-1 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-48');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-48 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 54 (산장빌라)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 54 (산장빌라) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-292');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-292 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 35');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 35 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-219');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-219 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 20-24');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 20-24 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-383');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-383 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21나길 3-5');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21나길 3-5 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-151');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-151 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 18');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 18 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-78');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-78 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 7');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 7 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-91');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-91 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 26');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 26 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-81');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-81 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 23');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 23 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-83');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-83 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 16');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 16 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-77');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-77 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 10 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-95');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-95 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 15');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 15 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-87');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-87 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01222<br>
+                (142-804) </td>
+              <td><a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;월계로13길 12');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로13길 12 </a> <br>
+                <a href="javascript:setAddr('01222','서울특별시&nbsp;강북구&nbsp;미아동 49-96');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 49-96 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21가길 28 (장미맨션)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21가길 28 (장미맨션) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-60');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-60 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21가길 14-10');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21가길 14-10 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-164');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-164 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21가길 14');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21가길 14 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-171');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-171 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21가길 17');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21가길 17 </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-213');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-213 </a></td>
+            </tr>
+            <tr>
+              <td align="center"> 01236<br>
+                (142-802) </td>
+              <td><a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;월계로21가길 29 (우남파크빌)');"> <span class="brdr_all fnt_prpl">도로명</span>&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;월계로21가길 29 (우남파크빌) </a> <br>
+                <a href="javascript:setAddr('01236','서울특별시&nbsp;강북구&nbsp;미아동 8-205');"> <span class="brdr_all fnt_prpl">지 번</span>&nbsp;&nbsp;:
+                서울특별시&nbsp;강북구&nbsp;미아동 8-205 </a></td>
+            </tr>
+            <tr>
+              <td colspan="2"><!--<span id="no_data">데이타가 없습니다.</span> 데이타가없습니다/찾는중입니다.--> 
+                
+                &nbsp; </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</form>
+<div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">600</span> x <span class="tooltipHeight" id="winHeight">733</span><br>
+  <span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">584</span> x <span class="tooltipHeight" id="vpHeight">667</span></div>
+</body>
+</html>

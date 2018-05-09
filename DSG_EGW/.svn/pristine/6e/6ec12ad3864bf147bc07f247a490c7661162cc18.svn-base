@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 기안자 재지정 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+
+        <div class="popup open handy-scroll">
+            <div class="">
+                <div class="popup_container" style="width:600px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        기안자 재지정
+                    </h2>
+                    <div class="vertical_table">	
+                        <table>
+                            <colgroup>
+                                <col style="width:80px;">
+                                <col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>기안자</th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <div class="token-input">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li title="" class="token-input-token">
+                                                        <p>이은수</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                </ul>
+                                                <input type="text" style="display: none;">
+                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                <a class="ico_btn small add" href="#">조직도</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="popup_table">
+                        <div class="table_head">
+                            <table>
+                                <colgroup>
+                                    <col style="width:*">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>문서명</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table_body handy-scroll" >
+                            <div class="" style="max-height:175px;">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:*">
+                                        <col style="width:110px;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="btns_area bttm">
+                        <div class="align_rg">
+                            <!-- 등록 -->
+                            <a class="action_btn">확인</a>
+                            <a class="btn">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 동명이인 선택 2 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+
+        <div class="popup open handy-scroll">
+            <div class="">
+                <div class="popup_container slt_type2" style="width:600px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        동명이인 선택
+                    </h2>
+                    <div class="vertical_table">
+                        <p class="description mg_b_10">동명의 사용자가 있으니, 메일 수신자를 선택해 주세요.</p>
+                        <table>
+                            <colgroup>
+                                <col style="width:100px;">
+                                <col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="ellipsis">홍길동</span></th>
+                                    <td>
+                                      <div class="selectbox">
+										<select id="ui-id-1" style="display: none;"> 
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품제품제품제품제품제품제품제품제품제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. SW연구소. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option selected>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+										</select>
+									</div>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="ellipsis">홍길홍길홍길홍길홍길동</span></th>
+                                    <td>
+                                      <div class="selectbox">
+										<select id="ui-id-1" style="display: none;"> 
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. SW연구소. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option selected>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+										</select>
+									</div>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="ellipsis">홍길홍길홍길홍길홍길동</span></th>
+                                    <td>
+                                      <div class="selectbox">
+										<select id="ui-id-1" style="display: none;"> 
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. SW연구소. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option selected>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+										</select>
+									</div>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="ellipsis">홍길홍길홍길홍길홍길동</span></th>
+                                    <td>
+                                      <div class="selectbox">
+										<select id="ui-id-1" style="display: none;"> 
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. SW연구소. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option selected>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+											<option>다산그룹. 핸디소프트. 연구개발본부. NA연구소. 제품기획팀. 홍길동(사원)</option>
+										</select>
+									</div>  
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>                    
+                    <div class="btns_area bttm mg_t_20 ">
+                        <div class="align_rg">
+                            <!-- 등록 -->
+                            <a class="action_btn">확인</a>
+                            <a class="btn">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

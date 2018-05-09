@@ -1,0 +1,198 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box"> 
+    <!-- 타이틀영역 -->
+    <div class="title_area">
+      <h1>타이틀은 이곳에서</h1>
+    </div>
+    <!-- 컨텐츠영역 -->
+    <div class="pd_all_18 pd_rgt_0">
+      <div class="content_configlist" style="height: 600px;"><!-- 컨텐츠 내용이 많을경우 height값 적용 -->
+        <table>
+          <colgroup>
+          <col style="width:150px;">
+          <col width="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>제목</th>
+              <td class="inp_ctt elps">이곳에는 제목이 들어가는것이죠. 제목은 말줄임 클래스 <span class="fnt_orng fnt_bold">elps</span>가 추가됩니다. 영역 사이즈보다 제목이 긴경우는 당연히 말줄임이 생기겠죠. </td>
+            </tr>
+            <tr>
+              <th>제목</th>
+              <td class="inp_ctt elps">이곳에는 제목이 들어가는것이죠.<span class="state_box">상태</span>
+                <ul class="dsp_inblck">
+                  <li> <span class="btn_config ico_del"><a href="#"><em>삭제</em></a></span> </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th>기간(달력선택)</th>
+              <td class="inp_ctt"><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                  <a href="#" class="btn_date"><img src="../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <select class="basic_select">
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                </select>
+                <select class="basic_select">
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                </select>
+                ~
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                  <a href="#" class="btn_date"><img src="../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <select class="basic_select">
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                  <option value="11">11시</option>
+                </select>
+                <select class="basic_select">
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                  <option value="30">30분</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th>인풋타이틀</th>
+              <td class="inp_ctt"><select class="basic_select" style="width:278px;">
+                  <option>선택하세요.</option>
+                  <option>선택하세요.</option>
+                  <option>선택하세요.</option>
+                  <option>선택하세요.</option>
+                  <option>선택하세요.</option>
+                  <option>선택하세요.</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th>텍스트박스<span class="essntal">*</span><br>
+                <span class="fnt_bold_n">0/4000</span></th>
+              <td class="inp_ctt"><textarea class="basic_txtarea" style="width:538px;"> 팝업 템플릿의 width값은 인라인 스타일로 제어하면 됩니다. &#10; 팝업윈도우창의 크기는 내용에 따라서 달라져야겠죠. </textarea>
+                <span class="dsp_blck fnt_gray mg_tp_2">※ 설명은 이런식으로 표시하면 되겠습니다.</span></td>
+            </tr>
+            <tr>
+              <th>체크박스<br>
+                두줄은 br태그</th>
+              <td class="inp_ctt"><ul class="config_lst_opt">
+                  <li>
+                    <label class="all">
+                      <input type="checkbox" name="" id="all">
+                      모두</label>
+                  </li>
+                </ul>
+                <ul class="config_lst_opt">
+                  <li>
+                    <label class="part">
+                      <input type="checkbox" name="" id="part">
+                      지정</label>
+                  </li>
+                  <li>
+                    <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                      <div class="input_box" style="width:450px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                        <input type="text" style="width:50px">
+                      </div>
+                    </div>
+                  </li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th>라디오는<br>
+                이렇게하는것이</th>
+              <td class="inp_ctt"><ul class="config_lst_opt rdo">
+                  <li>중간결재 시
+                    <input type="radio" id="m_approval">
+                    <label for="m_approval">결재대기</label>
+                    <input type="radio" id="m_approval2">
+                    <label for="m_approval2">결재 안 함</label>
+                  </li>
+                </ul>
+                <ul class="config_lst_opt rdo">
+                  <li>최종결재 시
+                    <input type="radio" id="f_approval">
+                    <label for="f_approval">결재대기</label>
+                  </li>
+                </ul>
+                
+                <!--중간결재 시 <input type="radio" id="m_approval"><label for="m_approval">결재대기</label><input type="radio" id="m_approval2"><label for="m_approval2">결재 안 함</label><br>
+							최종결재 시 <input type="radio" id="f_approval"><label for="f_approval">결재대기</label>--></td>
+            </tr>
+            <tr>
+              <th>조직도의 선택은<br>
+                이런방식으로</th>
+              <td class="inp_ctt"><ul class="config_lst_opt mg">
+                  <li>메일수신</li>
+                  <li>
+                    <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                      <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                        <input type="text" style="width:50px">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="config_lst_opt mg">
+                  <li>결재자</li>
+                  <li>
+                    <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                      <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                        <input type="text" style="width:50px">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="config_lst_opt mg">
+                  <li>발송자</li>
+                  <li>
+                    <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                      <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                        <input type="text" style="width:50px">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="config_lst_opt mg">
+                  <li>접수자</li>
+                  <li>
+                    <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                      <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                        <input type="text" style="width:50px">
+                      </div>
+                    </div>
+                  </li>
+                </ul></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 하단 버튼 영역 -->
+      <div class="footer">
+        <ul class="btns">
+          <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+          <li><span class="ico_del"><a href="#">삭제</a></span></li>
+          <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+          <li><span><a href="#">취소</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

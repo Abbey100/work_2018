@@ -1,0 +1,111 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+</head>
+
+<body>
+<!-- 설비 추가 및 관리 관련 화면  팝업사이즈는 530(w) x 550(h) 적정 -->
+<div class="pop_wrap equip_set position: relative">
+  <!-- TAB title 영역 -->
+  <div class="title_area">
+  <h1>설비추가</h1></div>
+  <div class="tab_area">
+      <div class="tab_box" id="pop_header" name="pop_header">
+          <ul class="tab_menu" id="tab_list" name="tab_list">
+              <a href="javascript:clickTab(0);" onfocus="blur();">
+                 <li class="tab">설비추가</li>
+              </a>
+                <a href="javascript:clickTab(1);" onfocus="blur();">
+                 <li class="tab selected">권한설정</li>
+              </a>
+              <a href="javascript:clickTab(2);">
+               <li class="tab">
+                    설비분류 추가</li>
+                    </a>
+             <a href="javascript:clickTab(3);">
+               <li class="tab"> 설비 순서 변경 </li>
+                    </a>
+          </ul>
+      </div>
+  </div>
+  <!-- // TAB title 영역 -->
+  <div class="tab_ctt" id="pop_content" name="pop_content">
+      <div class="btn_box btn_s layout_lft mg_tp_10 mg_lft_15 mg_bttm_8">
+    <ul>
+       <li id=""><span><a href="#" class="">사용자</a></span></li>
+        <li id=""><span><a href="#" class="">선택삭제</a></span></li>
+    </ul>
+</div>
+
+<div class="pd_all_18 mg_tp_18">
+    <div class="content_lst content_lst_head mg_tp_18">
+        <table class="content_lst no_btn brdr_top">
+            <thead>
+                <tr>
+                    <th class=""><input type="checkbox" class=" vertical_align_m" id="checkMember_All"> <span class="mg_lft_15">이름</span></th>
+                    
+                </tr>
+            </thead>
+        </table>
+    </div>
+            <div class="content_lst content_lst_body" style="height:200px;">
+        <table id="memberList_table" class="content_lst no_btn">
+
+            <tbody>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+                <tr id="">
+                    <td><input type="checkbox" class="inchk vertical_align_m" id=""><span class="mg_lft_15"> 관리자 </span></td>
+                </tr>
+       
+            
+            
+            
+    </tbody>
+</table>
+</div>
+ </div>
+</div>
+<!--// tab ctt END -->
+<div class="footer layout_bttm full_width" id="pop_bottom" name="pop_bottom">
+            <ul class="btns layout_cnt" id="pop_footer" name="pop_footer">
+                
+                <li><span><a class="fnt_bold" href="javascript:;" onclick="javascript:add();" onfocus="blur();">만들기</a></span></li>
+                
+                <li><span><a href="javascript:fncClose()" class="" onclick="javascript:self.close();" onfocus="blur();">취소</a></span></li>
+            </ul>
+        </div>
+</div>
+<!-- //설비 추가 및 관리 관련 화면 -->
+</body>
+</html>

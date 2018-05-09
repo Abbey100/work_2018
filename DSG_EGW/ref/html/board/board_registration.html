@@ -1,0 +1,133 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="container_box container_write_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">게시판신청</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#"><b>신청</b></a></span></li>
+      <li><span><a href="#">취소</a></span></li>
+    </ul>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 글쓰기 -->
+  <div class="write_wrap">
+    <div class="write_form_box">
+      <table style="">
+        <colgroup>
+        <col style="width:118px;">
+        <col style="width:410px;">
+        <col style="width:118px;">
+        <col style="width:380px;">
+        </colgroup>
+        <tr>
+          <th scope="row">게시판위치</th>
+          <td><div class="wr_form_td">
+              <p class="form_position_a mg_0">
+                <input type="text" class="basic_inp" readonly style="width:100%">
+                <img src="../../img/ico_docment.png" alt="문서" class="ico_doc"> </p>
+            </div></td>
+          <th scope="row">신청자</th>
+          <td><div class="wr_form_td"> 무명 주임연구원(다산그룹,핸드소프트) </div></td>
+        </tr>
+        <tr>
+          <th scope="row">게시판명</th>
+          <td><div class="wr_form_td">
+              <input type="text" class="basic_inp" style="width:100%">
+            </div></td>
+          <th scope="row">신청일</th>
+          <td><div class="wr_form_td"> 2014. 04. 08 </div></td>
+        </tr>
+        <tr>
+          <th scope="row">홈페이지</th>
+          <td><div class="wr_form_td">
+              <input type="text" class="basic_inp" style="width:100%">
+            </div></td>
+          <th scope="row">게시판종료일</th>
+          <td><div class="wr_form_td">
+              <label class="pd_rgt_20">
+                <input type="checkbox">
+                영구</label>
+              <div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+              <!--
+								<select class="basic_select">
+									<option value="2014">2014</option>
+								</select>
+								<span class="pd_7_1">년</span>
+								<select class="basic_select">
+									<option value="03">03</option>
+								</select>
+								<span class="pd_7_1">월</span>
+								<select class="basic_select">
+									<option value="31">31</option>
+								</select>
+								<span class="pd_7_1">일</span>
+								--> 
+            </div></td>
+        </tr>
+        <tr>
+          <th scope="row">옵션</th>
+          <td><div class="wr_form_td">
+              <p class="layout_lft">
+                <select class="basic_select">
+                  <option value="">의견가능</option>
+                </select>
+              </p>
+              <p class="layout_lft mg_lft_5">
+                <select class="basic_select">
+                  <option value="">업무용</option>
+                </select>
+              </p>
+              <p class="layout_lft mg_lft_5">
+                <select class="basic_select">
+                  <option value="">공개</option>
+                </select>
+              </p>
+              <p class="layout_lft mg_lft_5">
+                <select class="basic_select">
+                  <option value="">순차</option>
+                </select>
+              </p>
+            </div></td>
+          <th scope="row">게시물게시기간</th>
+          <td><div class="wr_form_td">
+              <label class="pd_rgt_20">
+                <input type="radio" name="ra01">
+                영구</label>
+              <input type="radio" name="ra01">
+              <label class="pd_rgt_20">
+                <input type="text" class="basic_inp" style="width:42px">
+                개월</label>
+              <input type="radio" name="ra01">
+              <label>
+                <input type="text" class="basic_inp" style="width:42px">
+                일</label>
+            </div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- // 글쓰기 --> 
+  
+</div>
+</body>
+</html>

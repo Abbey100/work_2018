@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 일정 정보 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+	<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>일정 정보</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area">
+            <div class="handy-scroll">
+                <div>
+                    <div class="form_table">
+						<table>
+							<col style="width: 110px">
+							<col style="width:*">
+							<tbody>
+                                <tr>                
+                                    <th><span>제목</span></th>
+                                    <td><p class="description"><span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>EGW 프로젝트 업무회의</p></td>
+                                </tr>
+                                <tr>                
+                                    <th><span>작성자</span></th>
+                                    <td><p class="description">홍길동</p></td>
+                                </tr>
+                                <tr>                
+                                    <th><span>달력</span></th>
+                                    <td>
+                                        <ul class="sche_pop_list">
+                                            <li><div class="sche_dal type05"><span class="dal_ic">달력 구분</span>내 일정</div></li><!-- 달력 컬러 별로 type01 ~ type18 -->
+                                            <li><div class="sche_dal type16"><span class="dal_ic">달력 구분</span>UI팀 프로젝트 일정 공유</div></li><!-- 달력 컬러 별로 type01 ~ type18 -->
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>일시</span></th>
+                                    <td>
+                                        <p class="description">음력 2017-09-20 오전 11:00 ~ 2017-09-22 오후 3:00, 종일 일정</p>
+                                        <p class="blue_txt">3주마다 수요일에 반복</p>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>공유자</span></th>
+                                    <td>
+                                        <p class="description">이은수, 강미나, 홍길동, 김미나, 이미연, 외 <span class="sche_total"><em>200</em>명</span></p>
+                                        <div class="sche_share_list handy-scroll">
+                                            <div class="inner">
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+                                                이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>설비</span></th>
+                                    <td><p class="description">1층 Bahama, 노트북1, 노트북2</p></td>
+                                </tr>
+                                <tr>                
+                                    <th><span>알림</span></th>
+                                    <td><p class="description">10분전 알림, 메일</p></td>
+                                </tr>
+                                <tr>                
+                                    <th><span>기타</span></th>
+                                    <td>
+                                        <ul class="sche_pop_list1">
+                                            <li>기타제목1, 기타내용2</li>
+                                            <li>기타제목1, 기타내용2</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>내용</span></th>
+                                    <td>
+                                        <p class="description sche_pop_sty1">EGW 개발 리뷰를 위한 업무 회의 입니다.<br>EGW 개발 리뷰를 위한 업무 회의 입니다.<br>EGW 개발 리뷰를 위한 업무 회의 입니다.<br>EGW 개발 리뷰를 위한 업무 회의 입니다.</p>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>파일첨부</span></th>
+                                    <td>
+                                        <!--파일 다운로드-->
+                                        <div class="attached">
+                                          
+													<dl class="file_info">
+														<dt><a class="btn_open open"></a>첨부파일</dt>
+														<dd>
+															<a class="text_btn">전체선택</a>
+															<a class="text_btn">저장</a>
+															&#40;<span class="txt">일반첨부 2</span>
+															<span class="divider"></span>
+															<span class="txt">대용량 1</span>&#41;
+														</dd>
+													</dl>
+
+													<div class="file_lst download">
+                                                <ul>
+                                                    <li>
+                                                        <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                        <a class="ico_btn small download">다운로드</a>
+                                                        <a class="ico_btn small storage">스토리지로저장</a>
+                                                        <a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                        <span class="file_size">311KB</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                        <a class="ico_btn small download">다운로드</a>
+                                                        <a class="ico_btn small storage">스토리지로저장</a>
+                                                        <a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                        <span class="file_size">311KB</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                        <a class="ico_btn small download">다운로드</a>
+                                                        <a class="ico_btn small storage">스토리지로저장</a>
+                                                        <a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+														<span class="file_downopt">
+															&#40;
+															<em>~2017-09-03</em>
+                                                    /&nbsp;잔여
+															<em>100회</em>&#41;
+														</span>
+                                                        <span class="file_size">311KB</span>
+														
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--//파일 다운로드-->
+                                    </td>
+                                </tr>
+							</tbody>
+                        </table>
+                    </div>
+
+                    <!-- 의견 -->
+                    <div class="replybox sche_replybox_wrap">
+                        <div>
+                            <span class="ico comment">의견</span>
+                            <span class="count"> 0/500 </span></div>
+                        <div class="write">
+                            <textarea placeholder="의견을 입력하세요" rows="1"></textarea>
+                            <a href="#" class="text_btn">등록</a>
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                <div class="cont">		
+                                    <a href="#" class="name">홍길동 사원</a>
+                                    <span class="department">&middot; 경영지원센터</span>
+                                    <span class="time">2017-08-18 13:55</span>
+                                    <p>알겠습니다~</p>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="ico modify">수정</a>
+                                    <a href="#" class="ico del">삭제</a>
+                                </div>
+                            </li>
+                            <!-- 작성 중 의견 -->
+                            <li class="thread comment">
+                                <!-- 포커스된 인풋은 write에 focus를 넣고 간다 -->
+                                <div class="cont write focus">	
+                                    <textarea placeholder="의견을 입력하세요" rows="1">박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</textarea>
+									
+                                    <a href="#" class="text_btn fir">저장</a><a href="#" class="text_btn">취소</a>
+									
+                                </div>
+								<span class="align_rg size_txt"><span class="count">0</span>/500</span>
+                            </li>
+                            <!-- //작성 중 의견 -->
+							<li>
+                                <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                <div class="cont">		
+                                    <a href="#" class="name">홍길동 사원</a>
+                                    <span class="department">&middot; 경영지원센터</span>
+                                    <span class="time">2017-08-18 13:55</span>
+                                    <p>알겠습니다~</p>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="ico modify">수정</a>
+                                    <a href="#" class="ico del">삭제</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //의견 -->
+                </div>
+            </div>
+				
+            </div>
+			<div class="btns_area bttm">
+                <div class="align_rg">
+                    <!-- 등록 -->
+                    <a class="action_btn">승인</a>
+<!--                    <a class="btn">승인취소</a>-->
+                    <a class="btn">반려</a>
+<!--                    <a class="btn">반려취소</a>-->
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

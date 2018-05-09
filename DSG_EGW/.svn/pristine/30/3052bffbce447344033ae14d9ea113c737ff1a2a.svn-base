@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 그룹 추가 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:670px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						그룹 추가
+					</h2>
+					<div class="form_table">
+						<table>
+							<colgroup>
+								<col style="width:140px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><span class="necessary">그룹명</span>
+									</th>
+									<td class="text_input">
+										<input type="text" class="border_input" id="input" placeholder="제목을 입력해 주세요">
+									</td>
+								</tr>
+								<tr>
+									<th>수신 이메일</th>
+									<td>
+										<div class="input_group aft_selector">
+											<input type="text" class="border_input" id="input" placeholder="이메일을 입력해 주세요" style="width:235px;">
+											<p>@</p>
+											<div class="selectbox" style="width:230px">
+												<select title="email 선택">
+													<option selected>handysoft.co.kr</option>
+													<option>gmail.com</option>
+												</select>
+											</div>
+										</div>
+									</td>
+								</tr>   
+								<tr>
+									<th>공유 설정</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio01" />
+											<label for="from_radio01">설정 안함</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio02" />
+											<label for="from_radio02">부서/개인 공유</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio03" />
+											<label for="from_radio03">전체 공유</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>발송 제한 설정</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r01" />
+											<label for="from_r01">설정 안함</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r02" />
+											<label for="from_r02">첨부 발송 제한</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r03" />
+											<label for="from_r03">외부 발송 제한</label></span>
+										<span class="form">
+											<input type="radio" name="from_r" id="from_r04" />
+											<label for="from_r04">첨부/외부 발송 제한</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>그룹 설명</th>
+									<td>
+										<textarea class="border_textarea" placeholder="" rows='1'></textarea>
+										<span class="align_rg size_txt"><span class="count">0</span>/200</span>
+									</td>
+								</tr>
+								<!-- 연락처 추가를 펼치지 않았다면 다음 tr class="blind" -->
+								<tr class="">
+									<th>연락처</th>
+									<td>
+										<div class="input_group has_btn">
+											<div class="token-input">
+												<ul class="token-input-list ui-sortable">
+													<li title="" class="token-input-token">
+														<p>$개발1팀</p>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-delete-token">delete</span>
+													</li>	
+
+												</ul>
+												<input type="text" id="hwto" name="hwto" style="display: none;">
+												<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+												<input type="button" class="ico_btn small add">
+											</div>
+										</div>
+									</td>								</tr> 
+							</tbody>
+						</table>
+						<a class="flip close" href="#">
+							<!-- // 간단입력 중 클래스는 flip open 사용, 연락처 tr은 blind 시키기 -->
+							<span class="text_btn">연락처 추가하기</span>
+							<span class="ico close">상세정보 닫기</span>							
+						</a>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">저장</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

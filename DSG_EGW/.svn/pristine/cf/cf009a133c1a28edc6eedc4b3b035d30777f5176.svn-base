@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 연락처수정 팝업(레이어) </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:600px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						연락처 수정
+					</h2>
+					<div class="form_table">
+						<table class="contact">
+							<colgroup>
+								<col style="width:130px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr class="profile">
+									<th>프로필 사진</th>
+									<td>
+										<div class="usr_photo max"> 
+											<img src="../../img/profile_photo_blank.png" alt="">
+										</div>
+
+										<a class="btn small" >
+											<input type="file" onclick="blur()" >
+											사진 변경</a>
+										<div class="profile_file">
+											<input type="text" class="file_name" id="file_name02" value="파일_불러오기.pdf" readonly/>
+											<a class="cancel"  href="#"></a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><span class="necessary">성명</span></th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" value="김핸디">
+											<div class="group">
+												<span class="form favorite">
+													<input type="checkbox" name="from_check" id="check003" checked/>
+													<label for="check003" class="blind">즐겨찾기</label></span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="important">VIP</th>
+									<td>
+										<div class="toggle group">
+											<a class="btn" href="#">등록</a>
+											<a class="btn on" href="#">해제</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>성별</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio01" checked/>
+											<label for="from_radio01">남</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio02" />
+											<label for="from_radio02">여</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>회사,소속</th>
+									<td>
+										<div class="input_group">
+											<input type="text" class="basic_input" placeholder="" value="핸디소프트">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>부서명</th>
+									<td>
+										<div class="input_group">
+											<input type="text" class="basic_input" placeholder="" value="제품기획팀">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>직책</th>
+									<td>
+										<div class="input_group">
+											<input type="text" class="basic_input" placeholder="" value="과장">
+										</div>
+									</td>
+								</tr>
+								<!-- 추가 정보가 있는 항목은 간편보기 시, tr에 클래스 blind 사용 -->
+								<tr>
+									<th>전화번호</th>
+									<td>
+										<div class="input_group has_select has_btn">
+											<div class="selectbox" style="width:80px">
+												<select>
+													<option>집</option>
+													<option>회사</option>
+													<option selected>핸드폰</option>
+												</select>
+											</div>
+											<input type="text" class="basic_input" placeholder="전화번호를 입력해 주세요" />
+											<div class="group">
+												<a class="cancel" href="#">삭제</a>
+											</div>
+										</div>
+										<div class="input_group has_select has_btn">
+											<div class="selectbox" style="width:80px">
+												<select>
+													<option>집</option>
+													<option>회사</option>
+													<option selected>핸드폰</option>
+												</select>
+											</div>
+											<input type="text" class="basic_input" placeholder="전화번호를 입력해 주세요" />
+											<div class="group">
+												<a class="cancel" href="#">삭제</a>
+											</div>
+										</div>
+										<a class="text_btn add" href="#">추가입력</a>
+									</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td>
+										<div class="input_group has_select multi_ico">
+											<div class="selectbox" style="width:80px">
+												<select>
+													<option>개인</option>
+													<option>회사</option>
+													<option selected>기타</option>
+												</select>
+											</div>
+											<input type="text" class="basic_input" placeholder="전화번호를 입력해 주세요" />
+											<div class="group">
+												<a class="choose on" href="#">주사용선택</a>
+												<a class="cancel" href="#">삭제</a>
+											</div>
+										</div>
+										<div class="input_group has_select multi_ico">
+											<div class="selectbox" style="width:80px">
+												<select>
+													<option selected>개인</option>
+													<option>회사</option>
+													<option>기타</option>
+												</select>
+											</div>
+											<input type="text" class="basic_input" placeholder="전화번호를 입력해 주세요" />
+											<div class="group">
+												<a class="choose" href="#">주사용선택</a>
+												<a class="cancel" href="#">삭제</a>
+											</div>
+										</div>
+										<a class="text_btn add" href="#">추가입력</a>
+									</td>
+								</tr>
+								<tr>
+									<th>그룹</th>
+									<td class="">
+										<div class="input_group txt_btn open">
+											<div class="basic_input">
+												<span>가족가족가족가족가족가족가족가족</span>
+												<span>가족</span>
+												<span>가족</span>
+												<span>가족</span>
+												<span>가족</span>
+												<span>가족</span>
+												<span>가족</span>
+											</div>										
+											<a class="btn small mg_0" href="#">설정</a>
+											<div class="select_lst rg">
+												<ul class="multi_opt handy-scroll" style="width:146px;">
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="requestCrypt"/>
+															<label for="requestCrypt">가족</label>
+															<span class="shared">공유됨</span>
+														</span>									
+													</li>
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="indivSpan" />
+															<label for="indivSpan">친구친구친구친구</label>
+															<span class="shared">공유됨</span>
+														</span>
+													</li>
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="indivSpan" />
+															<label for="indivSpan">친구친구친구친구</label>
+															<span class="shared">공유됨</span>
+														</span>
+													</li>
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="indivSpan" />
+															<label for="indivSpan">친구친구친구친구</label>
+															<span class="shared">공유됨</span>
+														</span>
+													</li>
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="indivSpan" />
+															<label for="indivSpan">친구친구친구친구</label>
+															<span class="shared">공유됨</span>
+														</span>
+													</li>
+													<li>
+														<span class="form shared_lst">
+															<input type="checkbox" id="indivSpan" />
+															<label for="indivSpan">친구친구친구친구</label>
+															<span class="shared">공유됨</span>
+														</span>
+													</li>
+													<li>
+														<span class="form"><input type="checkbox" id="includingsender" /><label for="includingsender">나에게도 전송</label></span>
+													</li>								
+													<li>
+														<span class="form"><input type="checkbox" id="autoarchivesent" /><label for="autoarchivesent">보낸편지함 저장</label></span>
+													</li>									
+												</ul>
+												<div class="btns_area">
+													<a class="btn align_rg">확인</a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 이하 내용은 간단 입력시 tr class="blind" 되어야함-->
+								<tr class="">
+									<th>주소</th>
+									<td>
+										<div class="input_group txt_btn">
+											<input type="text" class="basic_input" value="경기도 성남시 분당구 대왕판교로 644">
+											<a class="btn small mg_0" href="#">주소찾기</a>
+										</div>
+										<div class="input_group text_btn">
+											<input type="text" class="basic_input" value="다산타워 5층">
+										</div>
+									</td>
+								</tr>
+								<tr class="">
+									<th>홈페이지</th>
+									<td class="text_input">
+										<input type="text" class="border_input" value="www.handysoft.co.kr">
+									</td>
+								</tr>
+								<tr class="">
+									<th>생년월일</th>
+									<td>
+										<div class="input_group multi">
+											<input type="text" class="date_input" value="1983-11-01">
+											<a class="date_btn" href="#">달력</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>배우자</th>
+									<td class="text_input">
+										<input type="text" class="border_input" value="-">
+									</td>
+								</tr>
+								<tr>
+									<th>메모</th>
+									<td class="">
+										<textarea class="border_textarea" rows='1'>최대 3줄까지 입력, 4줄부터 스크롤</textarea>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<a class="flip close" href="#">
+							<!-- // 간단입력 중의 버튼은 "자세히 입력하기", 클래스는 flip open 사용 -->
+							<span class="text_btn">간단히 입력하기</span>
+							<span class="ico close">상세정보 닫기</span>							
+						</a>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">저장</a>
+							<!-- 추가시 사용 
+<a class="action_btn">저장 후 계속추가</a>
+-->
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

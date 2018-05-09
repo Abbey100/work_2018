@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap user_all">
+    <div class="container_box">
+      <div class="title_area">
+        <h1>수신자 전체보기</h1>
+      </div>
+    <div class="pop_contents user_box">
+          <div class="content_lst content_lst_head">
+            <table>
+              <colgroup>
+              <col style="width:130px;">
+              <col style="width:120px;">
+              <col style="width:126px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>이름</th>
+                  <th>직위</th>
+                  <th>부서</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="content_lst content_lst_body">
+            <table>
+              <colgroup>
+              <col style="width:130px;">
+              <col style="width:120px;">
+              <col style="width:112px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td><a href="#">김과장 이름이긴 김과장</a></td>
+                  <td>수석연구원 직위가 긴 수석연구워</td>
+                  <td>제품기획팀 부서명이 긴 부서</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+                <tr>
+                  <td><a href="#">김핸디</a></td>
+                  <td>수석연구워</td>
+                  <td>제품기획팀</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

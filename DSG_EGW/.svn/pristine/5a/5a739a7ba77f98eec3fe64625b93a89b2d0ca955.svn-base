@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>보낸메일_목록</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>메일</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>메일</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn selected new">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont handy-scroll">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 -->    
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action group">
+							<a class="action_btn">메일쓰기</a>
+							<a class="big_split">추가 선택</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<ul class="lnb_menu divide">
+									<li><a>전체메일</a></li>
+									<li><a>받은편지함</a><span class="count">12</span></li>
+									<li><a>내게 쓴 편지함</a></li>
+									<li><a class="selected">보낸편지함</a>
+										<a class="small btn">수신확인</a></li>
+									<li><a>임시보관함</a></li>
+									<li><a>예약편지함</a></li>
+									<li><a>휴지통</a>
+										<a class="ico trash">휴지통 비우기</a></li>
+									<!--// 비울것이 있을 떄만 활성화-->
+								</ul>
+								<!-- tag_type -->
+								<div class="lnb_menu">
+									<a class="menu_title">플래그 메일</a><span class="count">4</span>
+								</div>
+								<!-- vip -->
+								<div class="lnb_menu open">
+									<a class="menu_title category">VIP 메일</a><a class="ico_btn small add">VIP 추가</a>
+									<ul class="sub_lst">
+										<li class="my_vip">
+											<div class="usr_mask"></div>
+											<div class="usr_photo"> 
+												<img src="../../img/profile_photo_blank.png" alt="">
+											</div>
+											<a class="usr_name">김광수 팀장님</a>
+										</li>
+										<li class="my_vip">
+											<div class="usr_mask"></div>
+											<div class="usr_photo"> 
+												<img src="../../img/profile_photo_blank.png" alt="">
+											</div>
+											<a class="usr_name">김핸디 과장</a>
+										</li>
+									</ul>
+								</div>
+								<!-- 키워드 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">키워드 메일</a>
+									<a class="ico_btn small add">키워드 추가</a>
+									<ul class="sub_lst">
+										<li><div class="menu_name">
+											<a class="selected">카드 프로젝트프로젝트프로젝트프로젝트</a>
+											<a class="ico modify"></a>
+											<a class="ico del2"></a>
+											</div></li>
+										<li><div class="menu_name"><a>설계모음</a>
+											<a class="ico modify"></a>
+											<a class="ico del2"></a>
+											</div></li>
+									</ul>
+								</div>                
+								<!-- 개인보관함 -->
+								<div class="lnb_menu open">
+									<a class="menu_title category">개인 보관함</a> 
+									<div class="group">
+										<a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+										<a class="ico_btn small setting">개인 보관함 설정</a>
+									</div>
+									<!-- 트리 시작 -->
+									<div class="tree">
+										<ul class="dynatree-container">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >2015</span>
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-group" >file_1</span>
+															</a>
+														</span>
+													</li>
+													<li class="dynatree-lastsib">
+														<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-group">file_2</span>
+															</a>
+														</span></li>
+												</ul>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >2016</span></a></span>
+												<ul style="display: none;">
+													<li class="">
+														<span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+													</li>
+													<li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+													<li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+												</ul>
+											</li>
+										</ul>
+									</div>	
+								</div>
+								<!-- // 개인보관함 -->  
+							</div>
+						</div>
+
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+							<div class="mail_capacity">
+								<span class="now_num">2.31GB</span>
+								<span class="total_num">5GB</span>
+							</div>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- content -->
+				<div class="container_area handy-scroll" >
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+
+
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>보낸편지함</h2>	
+								<!--<span class="length"><em>90</em>건</span>
+// 검색결과가 있을 경우-->
+
+								<ul class="tab">
+									<li><a class="selected">메일</a></li>
+									<li><a class="">파일</a></li>				
+								</ul>
+							</div>
+							<!-- // 타이틀 영역 -->
+
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group"><!-- open 클래스 제거시 레이어 close -->
+										<span class="form"><input type="checkbox"/><label class="blind">선택</label></span> 	
+										<div class="selectbox noTxt">
+											<select>
+												<option><a href="#">모든메일</a></option>
+												<option><a href="#">읽지않은메일</a></option>
+												<option><a href="#">읽은메일</a></option>
+												<option><a href="#">핀메일</a></option>
+
+												<option><a href="#">선택해제</a></option>
+											</select>
+										</div>									
+									</div>
+									<div class="group">
+										<a href="#" class="btn">삭제</a>
+										<a href="#" class="btn">완전삭제</a>
+									</div>
+									<div class="group">
+										<a href="#" class="btn">답장</a>
+										<a href="#" class="btn">전체답장</a>
+										<a href="#" class="btn">전달</a>
+										<a href="#" class="btn">다시 보내기</a>
+									</div>	
+									<div class="group open"><!-- open 클래스 제거시 레이어 close -->	
+										<a href="#" class="btn">이동</a>
+										<div class="select_lst check_type" style="width:144px;">
+											<ul class="handy-scroll">
+												<li class="selected"><a href="" >가족</a></li>
+												<li class=""><a href="" >친구구구구</a></li>
+												<li class=""><a href="" >친구</a></li>
+												<li class=""><a href="" >EGW관련 프로젝트메일모음</a></li>
+												<li class=""><a href="" >EGW관련 프로젝트메일모음</a></li>
+											</ul>
+											<div class="btns_area align_rg border">
+												<a href="#" class="btn">이동</a>
+												<a href="#" class="btn">복사</a>
+											</div>
+										</div>
+									</div>	
+									<div class="group">
+										<a href="#" class="btn">수신확인</a>
+										<a href="#" class="btn">회수</a>
+									</div>
+									<div class="group open"><!-- open 클래스 제거시 레이어 close -->
+										<a class="btn select">추가기능</a>
+										<ul class="select_lst">
+											<li><a href="#">PC저장</a></li>
+											<li><a href="#">EML업로드</a></li>
+											<li><a href="#">엑셀 다운로드</a></li>
+											<li><a href="#">인쇄보기</a></li>
+										</ul>
+									</div>
+									<div class="group">
+										<span>필터 : </span>
+										<div class="selectbox">
+											<select> 
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 플래그 </option>
+												<option> 새로운 </option>
+												<option> 긴급 </option>
+												<option> 보안 </option>
+												<option> 참조 </option>
+												<option> 내부수신 </option>
+												<option> 외부수신 </option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="align_rg">
+									<div class="group">									
+										<a href="#" class="ico_btn view_lst on">리스트형</a>
+										<a href="#" class="ico_btn view_vertical">분할형</a>
+									</div>
+									<!-- 
+<a href="#" class="ico_btn comment">대화형</a> 
+
+추후, 스레드 사용시 사용 ///
+스레드 작업 이후 사용 형태는,
+
+<a href="#" class="ico_btn comment">대화형</a> 
+<a href="#" class="ico_btn view_vertical on">분할형</a> 
+
+상태에서ico_btn.view_vertical on을 선택시, 
+해당버튼이 ico_btn view_lst 로 클래스 변경 함
+
+-->
+									<!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+									<div class="selectbox page_num">
+										<select> 
+											<option> 15개 </option>
+											<option> 20개 </option>
+											<option> 30개 </option>
+											<option> 40개 </option>
+											<option> 50개 </option>
+										</select>
+									</div>
+								</div>
+
+								<div class="new_lst_info">		
+									<span class="new">8</span>
+									<span>/ 450</span>
+									<a class="ico rfsh">새로고침</a>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->	
+							<!-- 리스트 영역 -->
+							<dl class="thread_lst">
+								<dt>
+									<span class="sub_info">선택, 플래그 설정, 메일상태</span>
+									<span class="person ascend"><a href="#">받는 사람</a></span>
+									<span class="title ascend"><a href="#">제목</a></span>
+									<span class="date ascend"><a href="#">받은날짜</a></span>
+									<span class="size ascend"><a href="#">크기</a></span>
+								</dt>
+								<dd class="scroll_area handy-scroll" > 
+									<ul>
+										<!-- 기본 -->
+										<li>
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<a class="name">이핸디</a>
+											</div>
+											<div class="title">
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?
+												</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<!-- 안읽음 -->
+										<li class="unread">
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail">안읽은메일</span>
+											</div>
+											<div class="person">	
+												<a class="name">이핸디</a>
+											</div>
+											<div class="title">
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?
+												</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<!-- vip -->
+										<li>
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail reply">답장메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+											</div>
+											<div class="title">
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">10-22 21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<!-- vip+스레드(클로즈) + 첨부 & badge -->
+										<li>
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail fw">전달받은 메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+												<a class="thread_btn" href="#" title="연관 메일 펼치기"><span>2</span></a>
+												<!-- //open시 open class 추가 -->
+											</div>
+											<div class="title">
+												<span class="ico file">첨부</span>
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">53 KB</span>
+										</li>										
+										<!-- 접힌 스레드 -->
+										<li class="thread">
+											<!--// thread 이면 thread 추가 -->
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail cc">참조 메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+												<a class="thread_btn" href="#" title="연관 메일 펼치기"><span>3</span></a>
+												<!-- //open시 open class 추가 -->
+											</div>
+											<div class="title">
+												<span class="ico file">첨부</span>
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<!-- vip+스레드(오픈) + 첨부 & badge -->
+										<li>
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+												<a class="thread_btn open" href="#" title="연관 메일 펼치기"><span>3</span></a>
+												<!-- //open시 open class 추가 -->
+											</div>
+											<div class="title">
+												<span class="ico file">첨부</span>
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<li class="thread open">
+											<!--// thread open 상태  -->
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<a class="name">이핸디</a>
+											</div>
+											<div class="title">
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">53 KB</span>
+										</li>
+										<li class="thread open">
+											<!--// thread 이면 thread 추가 -->
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+											</div>
+											<div class="title">	
+												<span class="ico file">첨부</span>
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">888 MB</span>
+										</li>
+										<li class="thread open selected">
+											<!--// thread 이면 thread 추가 -->
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" checked /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+											</div>
+											<div class="title">
+												<span class="badge notice">공지</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">535 KB</span>
+										</li>
+										<li class="selected">
+											<!--// selected 면 selected 추가 -->
+											<div class="sub_info">
+												<span class="form"><input type="checkbox" checked /><label class="blind">메일선택</label></span>
+												<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+												<span class="ico_mail open">읽은메일</span>
+											</div>
+											<div class="person">	
+												<span class="badge vip">VIP</span>	
+												<a class="name">김핸디</a>
+											</div>
+											<div class="title">
+												<span class="badge notice">공지</span>
+												<!-- // 뱃지 -->
+												<a class="subject">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<a class="ico pop_up">새창으로 보기</a>
+											</div>	
+											<span class="date">2016-12-22 21:55</span>
+											<span class="size">53 MB</span>
+										</li>
+									</ul>
+								</dd>	
+								<dd>
+									<div class="paginate_area">
+										<div class="paginate">	
+											<a class="first disabled">처음 페이지</a>
+											<a class="pre disabled">이전 페이지</a>	
+											<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+											<a class="selected">1</a>
+											<a>2</a>
+											<a>3</a>
+											<a>4</a>
+											<a>5</a>
+											<a>6</a>		
+											<a>7</a>
+											<a>8</a>
+											<a>9</a>
+											<a>10</a>		
+											<a class="next">다음 페이지</a>
+											<a class="last">마지막 페이지</a>
+										</div>
+										<div class="page_num">
+											<input type="text" value="1"> / 118
+										</div>
+									</div>
+								</dd>			
+							</dl>
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

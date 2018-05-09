@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="../css/login.css" />
+<script Language='javascript'>
+function relogin() {
+	if(confirm("<fmt:message bundle="${orgBundle}" key="WPreviousLoginPrompt"/>".replace("@r@",'<c:out value="${param.PRE_IP}"/>'))) {
+		var frm=document.LoginMenu;
+		frm.action='/jsp/main/login/actionLogin.jsp';
+		frm.submit();
+	} else {
+		this.location.href = '/NULL.HTML';
+		parent.close_show_login_iframe();
+	}
+}
+</script>
+</head>
+
+<body onload='relogin();' class="loading_page">
+<form id='LoginMenu'  name='LoginMenu' action='' method='POST'>
+<input id='UI' TYPE='HIDDEN' NAME='UI' VALUE='<c:out value="${param.UI}"/>'>
+<input id='PRE_K' TYPE='hidden' NAME='PRE_K' VALUE='<c:out value="${param.PRE_K}"/>'>
+<input id='INTRA' TYPE='hidden' NAME='INTRA' VALUE='<c:out value="${param.INTRA}"/>'>
+<input id='PRE_IP' TYPE='hidden' NAME='PRE_IP' VALUE='<c:out value="${param.PRE_IP}"/>'>
+<c:if test="${not empty param.OTHERUI}"><input id='OTHERUI' TYPE='hidden' NAME='OTHERUI' VALUE='<c:out value="${param.OTHERUI}"/>'></c:if>
+<input id='SLET' TYPE='hidden' NAME="SLET" VALUE='login.Login.java'>
+<input id='MET' TYPE='hidden' NAME="MET" VALUE='PUSHLOGIN'>
+<input id='PUSHMSG' TYPE='hidden' NAME="PUSHMSG" VALUE='<fmt:message bundle="${orgBundle}" key="WLogOutWithOther"/>'>
+<!-- common_layer_pop -->
+<div class="loading_layer on" style="display:block;">
+	<!-- inner_box -->
+	<div class="loading_wrap">
+        <div class="loading_info">로그인중입니다</div>
+        <!-- cont_pop -->
+		<div class="cont_pop">
+			<dl>
+				<dd style="width:100%">
+					<fmt:message bundle="${orgBundle}" key="LoginWaitting"/>
+					<IMG align="middle" src="../img/LoginWaitting.gif">
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- //inner_box -->
+</div>
+<!-- //common_layer_pop -->
+</form>
+</body>
+</html>

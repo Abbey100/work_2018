@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 의견 조회 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:600px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						의견 조회
+					</h2>
+					<div class="popup_table">
+						<p class="form_txt mg_b_10"><em class="blue_txt fnt_bold">2</em>개의 의견이 있습니다.</p>
+						<div class="align_rg">
+							<a class="ico_btn print">인쇄</a>
+						</div>
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:170px;">
+									<col style="width:*">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>작성일</th>
+										<th>작성자</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+
+						<div class="table_body handy-scroll" >
+							<div class="" style="max-height:175px;">
+								<table>
+									<colgroup>
+										<col style="width:170px;">
+										<col style="width:*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td>
+												<p class="fnt_grey">2018-02-15 09:10</p>
+												<p class="">일반</p>
+											</td>
+											<td>
+												<p class="name">홍길동 과장</p>
+												<p class="pre_line">기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 
+													검토하여주시기 바랍니다. </p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p class="fnt_grey">2018-02-15 09:10</p>
+												<p class="">일반</p>
+											</td>
+											<td>
+												<p class="name">홍길동 과장</p>
+												<p class="pre_line">기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 
+													검토하여주시기 바랍니다. </p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p class="fnt_grey">2018-02-15 09:10</p>
+												<p class="">일반</p>
+											</td>
+											<td>
+												<p class="name">홍길동 과장</p>
+												<p class="pre_line">기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 
+													검토하여주시기 바랍니다. </p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p class="fnt_grey">2018-02-15 09:10</p>
+												<p class="">일반</p>
+											</td>
+											<td>
+												<p class="name">홍길동 과장</p>
+												<p class="pre_line">기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 
+													검토하여주시기 바랍니다. </p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<p class="fnt_grey">2018-02-15 09:10</p>
+												<p class="">일반</p>
+											</td>
+											<td>
+												<p class="name">홍길동 과장</p>
+												<p class="pre_line">기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 검토하여 주시기 바랍니다. 기안을 제출합니다. 
+													검토하여주시기 바랍니다. </p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>	
+						</div>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<a class="btn">확인</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

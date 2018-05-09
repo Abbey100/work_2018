@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.12.1.min.js"></script>
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.tokeninput.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <!-- <h1 class="logo"><a title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+2017-09-05 사용자단 ux 적용으로 인해 로고 영역 삭제 by 백은경 -->
+                <!-- Area Title -->
+                <h1 class="area_title">기본설정관리</h1>
+                <div class="user_menu">
+                    <!-- User information -->
+                    <a class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    <div class="user_photo" title="MarkElliot Zuckerberg MarkElliot Zuckerberg"> 
+                        <img src="../../img/profile_photo_blank.png">
+                    </div>
+                    <!-- Alram -->
+                    <a class="btn_noti" title="show noti">노티확인</a>
+                    <!-- Contextual area btn -->
+                    <a class="btn_contextual" title="open contextual">컨텍스츄얼영역 열기</a>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- gnb -->
+            <div class="gnb_area"> 
+                <!-- 메뉴영역 -->
+                <div class="gnb">
+                    <ul>
+                        <li class="gnb_menu first home">  
+                            <!--
+                            <div class="gnb_menu second">
+                            <h2>홈</h2>
+                            </div>
+                            -->
+                        </li>
+                        <li class="gnb_menu first set">
+                            <div class="gnb_menu second">
+                                <h2>기본 설정 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                            <li><a title="클래스 관리">클래스 관리</a></li>
+                                            <li><a title="배치 관리">배치 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+                                    <li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+                                    <li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+                                    <li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+                                    <li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+                                    <li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first menu">
+                            <div class="gnb_menu second">
+                                <h2>메뉴 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="서식 관리">서식 관리</a></li>
+                                            <li><a title="서식 분류">서식 분류</a></li>
+                                            <li><a title="표어 관리">표어 관리</a></li>
+                                            <li><a title="관인 관리">관인 관리</a></li>
+                                            <li><a title="모듈 관리">모듈 관리</a></li>
+                                            <li><a title="한글 서식 관리">한글 서식 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="게시판 관리">게시판 관리</a></li>
+                                            <li><a title="양식 관리">양식 관리</a></li>
+                                            <li><a title="캐시 관리">캐시 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="동호회 관리">동호회 관리</a></li>
+                                            <li><a title="환경 설정">환경 설정</a></li>
+                                            <li><a title="토론실 관리">토론실 관리</a></li>
+                                            <li><a title="마일리지 관리">마일리지 관리</a></li>
+                                            <li><a title="가산점 관리">가산점 관리</a></li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="진행중인 그룹">진행중인 그룹</a></li>
+                                            <li><a title="종료된 그룹">종료된 그룹</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="파일 관리">파일 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="">관리자 유실 달력 관리</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first system">
+                            <div class="gnb_menu second">
+                                <h2>시스템 정보</h2>
+                                <ul>
+                                    <li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+                                    <li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="웹메일">웹메일</a></li>
+                                            <li><a title="웹폴더">웹폴더</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first statistics">
+                            <div class="gnb_menu second">
+                                <h2>통계정보</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="결재 통계">결재 통계</a></li>
+                                            <li><a title="웹메일 통계">웹메일 통계</a></li>
+                                            <li><a title="웹폴더 통계">웹폴더 통계</a></li>
+                                            <li><a title="동호회 통계">동호회 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="로그인">로그인</a></li>
+                                            <li><a title="게시판">게시판</a></li>
+                                            <li><a title="결재">결재</a></li>
+                                            <li><a title="권한">권한</a></li>
+                                            <li><a title="업무넷">업무넷</a></li>
+                                            <li><a title="스퀘어">스퀘어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>        
+            <!-- //gnb -->  
+            <!-- body -->
+            <div class="body">
+                <div class="lnb_area">
+                    <ul class="lnb">
+                        <li class="lnb_menu first drop_down open"><!-- [D]클릭시 open 추가 -->
+                            <a class="first_ttl">조직도</a> 
+                            <ul class="lnb_menu second">
+                                <li class="current"><a class="second_ttl" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                <li class=""><a class="second_ttl" title="클래스 관리">클래스 관리</a></li>
+                                <li class=""><a class="second_ttl" title="배치 관리">배치 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="권한 설정">권한 설정</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="GNB 메뉴">GNB 메뉴</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="초기 화면">초기 화면</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="메인 배너">메인 배너</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="긴급 공지">긴급 공지</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="환경 변수">환경 변수</a>
+                        </li>
+                        <li class="lnb_menu first">
+                            <a class="first_ttl" title="긴급 공지">긴급 공지</a>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <div class="container_area">
+                        <div class="title_area">
+                        <h2><span class="title">조직/구성원 관리</span></h2>
+                    </div>
+                    
+                    <div class="content_section"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="content_section tree_out"> -->
+                        
+                        <!-- left_area -->
+                        <div class="left_area">
+                            <div class="srch_area">
+                                <div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+                                    <label for="" class="hidden">검색어 입력</label>
+                                    <input id="" type="text" class="form_control" name="" placeholder="검색">
+                                    <a class="btn_srch">검색하기</a>
+                                </div>
+                                <a class="btn_rfsh">새고로침</a>
+                            </div>
+
+                            <div><img src="../../img/blank_tree.gif" alt="트리이미지"></div>
+                        </div>
+                        <!-- //left_area -->
+                    
+                        <div class="content_area">
+                            
+                            <!-- 서브 탭 -->
+                            <div class="tab_area">
+                                <ul>
+                                    <li><a href="#"><span class="tab_title">부서 정보</span></a></li>
+                                    <li class="current"><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 컨텐츠 스크롤 -->
+                            <div class="scroll_area_no">
+                                <!-- 게시판 상세 -->
+                                <div class="board_view scroll_area_tab">
+                                    
+                                    <!-- 기본정보 -->
+                                    <div id="cu1">
+                                        <!-- 상세 서브 탭 -->
+                                        <div class="sub_tab_area">
+                                            <ul>
+                                                <li class="current"><a href="#" onclick="cu(1)" onfocus="blur()">기본</a></li>
+                                                <li><a href="#" onclick="cu(2)" onfocus="blur()">계정 및 접속 이력</a></li>
+                                                <li><a href="#" onclick="cu(3)" onfocus="blur()">권한</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <h3 class="hidden">구성원 상세 기본 정보</h3>
+
+                                        <h4 class="sub_title_02"><span class="title line">프로필 정보</span></h4>                                    
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <div class="profile_photo">
+                                                <span class="profile_photo_mask"><img src="http://mimgnews1.naver.net/image/213/2017/08/10/0000981282_001_20170810070043966.jpg?type=w540" alt="프로필 사진"></span>
+                                                <a href="#" class="btn_board_view_03">사진 변경</a> <a href="#" class="btn_board_view_03">삭제</a>
+                                            </div>
+
+                                            <dl>
+                                                <dt>성명 <span class="required">(필수)</span></dt>
+                                                <dd class="gap_btm">
+                                                    <div class="input_group t_byte2"><!-- [D] input 글자수 영역 추가 시 t_byte2 추가. <div class="input_group t_byte2"> -->
+                                                        <input id="" type="text" class="form_control" name="">
+                                                        <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                    </div>
+                                                </dd>
+                                                <dt>영문명</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>사번 <span class="required">(필수)</span></dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>소속 부서</dt>
+                                                <dd>제품기획팀</dd>
+                                                <dt>직위</dt>
+                                                <dd>
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="selectbox">
+                                                        <select>
+                                                            <option selected>선택</option>
+                                                            <option>부장</option>
+                                                            <option>과장</option>
+                                                            <option>대리</option>
+                                                            <option>사원</option>
+                                                        </select>
+                                                    </div>
+                                                </dd>
+                                                <dt>직급</dt>
+                                                <dd>
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="selectbox">
+                                                        <select>
+                                                            <option selected>선택</option>
+                                                            <option>부장</option>
+                                                            <option>과장</option>
+                                                            <option>대리</option>
+                                                            <option>사원</option>
+                                                        </select>
+                                                    </div>
+                                                </dd>
+                                                <dt>직책</dt>
+                                                <dd>
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="selectbox">
+                                                        <select>
+                                                            <option selected>선택</option>
+                                                            <option>부장</option>
+                                                            <option>과장</option>
+                                                            <option>대리</option>
+                                                            <option>사원</option>
+                                                        </select>
+                                                    </div>
+                                                </dd>
+                                                <dt>보안 등급</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>결재 순번</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>사원여부</dt>
+                                                <dd>
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="selectbox">
+                                                        <select>
+                                                            <option selected>선택</option>
+                                                            <option>정식사원</option>
+                                                        </select>
+                                                    </div>
+                                                </dd>
+                                                <dt>입사일자</dt>
+                                                <dd>
+                                                    <div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+                                                        <label for="" class="hidden">검색어 입력</label>
+                                                        <input id="" type="text" class="form_control" name="" value="2017-08-09">
+                                                        <a href="#" class="btn_calendar">달력</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>이메일</dt>
+                                                <dd>
+                                                    <div class="email_group">
+                                                        <div class="input_group" style="width: 235px">                           
+                                                            <input id="" type="text" class="form_control" name="">
+                                                        </div> @
+                                                        <!-- 셀렉트 박스 -->
+                                                        <div class="selectbox">
+                                                            <select>
+                                                                <option selected>직접입력</option>
+                                                                <option>handysoft.co.kr</option>
+                                                                <option>lotus.handysoft.co.kr</option>
+                                                                <option>lotus.lotus.lotus.handysoft.co.kr</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </dd>                                                
+                                                <dt>회사번호</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>휴대폰번호</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <h4 class="sub_title_02"><span class="title line board_open">개인 정보</span></h4><!-- [D] 타이틀 클릭시 board_close로 변경. class="title board_close" -->
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>별칭</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>성별</dt>
+                                                <dd>
+                                                    <ul class="radio_list">
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">남</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" checked="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">여</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>홈페이지</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>자택번호</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>자택 팩스번호</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>자택 주소</dt>
+                                                <dd>
+                                                    <div class="address_box">
+                                                        <div class="zip_code">
+                                                            <div class="input_group">
+                                                                <input id="" type="text" class="form_control" name="">
+                                                            </div>
+                                                            <a href="#" class="btn_text">주소 찾기</a>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <input id="" type="text" class="form_control" name="">
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <input id="" type="text" class="form_control" name="">
+                                                        </div>
+                                                    </div>
+                                                </dd>
+                                                <dt>결혼 기념일</dt>
+                                                <dd>
+                                                    <div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+                                                        <label for="" class="hidden">검색어 입력</label>
+                                                        <input id="" type="text" class="form_control" name="" value="2017-08-09">
+                                                        <a href="#" class="btn_calendar">달력</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>생년 월일</dt>
+                                                <dd>
+                                                    <div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+                                                        <label for="" class="hidden">검색어 입력</label>
+                                                        <input id="" type="text" class="form_control" name="" value="2017-08-09">
+                                                        <a href="#" class="btn_calendar">달력</a>
+                                                    </div>
+                                                </dd>
+                                                <dt>담당 업무</dt>
+                                                <dd>
+                                                    <div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+                                                        <label for="" class="hidden">검색어 입력</label>
+                                                        <input id="" type="text" class="form_control" name="" value="2017-08-09">
+                                                        <a href="#" class="btn_calendar">달력</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <h4 class="sub_title_02"><span class="title line board_open">웹메일/웹폴더 용량</span></h4><!-- [D] 타이틀 클릭시 board_close로 변경. class="title board_close" -->
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>웹메일 용량</dt>
+                                                <dd>
+                                                    <div class="use_graph">
+                                                        <div class="use_graphbar"><span class="use_bar max" style="width: 90%"></span></div>
+                                                        <span class="use_data">450MB / 500MB</span>
+                                                    </div>
+                                                    <span class="title_data">할당 용량 수정</span>
+                                                    <div class="input_group" style="width:80px;margin-right:9px;display:inline-block;">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>MB
+                                                </dd>
+                                                <dt>웹폴더 용량</dt>
+                                                <dd>
+                                                    <div class="use_graph">
+                                                        <div class="use_graphbar"><span class="use_bar" style="width: 20%"></span></div>
+                                                        <span class="use_data">100MB / 500MB</span>
+                                                    </div>
+                                                    <span class="title_data">할당 용량 수정</span>
+                                                    <div class="input_group" style="width:80px;margin-right:9px;display:inline-block;">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>MB
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- //기본정보 -->
+
+                                    <!-- 계정 및 접속 이력 -->
+                                    <div id="cu2" style="display: none;">
+                                        <!-- 상세 서브 탭 -->
+                                        <div class="sub_tab_area">
+                                            <ul>
+                                                <li><a href="#"  onclick="cu(1)" onfocus="blur()">기본</a></li>
+                                                <li class="current"><a href="#" onclick="cu(2)" onfocus="blur()">계정 및 접속 이력</a></li>
+                                                <li><a href="#" onclick="cu(3)" onfocus="blur()">권한</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <h3 class="hidden">구성원 상세 계정 및 접속 이력 정보</h3>
+
+                                        <h4 class="sub_title_02"><span class="title line">계정 정보</span></h4>                                    
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>계정 상태</dt>
+                                                <dd>
+                                                    <ul class="radio_list">
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">로그인 불가능</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" checked="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">가능</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>접속 상태</dt>
+                                                <dd>
+                                                    <ul class="radio_list">
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">정상</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" checked="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="radio">
+                                                                <label for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">숨김</label>
+                                                                <input type="radio" name="opinions" id="radio-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>로그인 비밀번호</dt>
+                                                <dd>
+                                                    <div class="pw_group">
+                                                        <label for="">새 비밀번호</label>
+                                                        <div class="input_group">
+                                                            <input id="" type="password" class="form_control" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pw_group">
+                                                        <label for="">새 비밀번호 확인</label>
+                                                        <div class="input_group">
+                                                            <input id="" type="password" class="form_control" name="">
+                                                        </div>
+                                                    </div>
+                                                </dd>
+                                                <dt>결재 비밀번호</dt>
+                                                <dd>
+                                                    <div class="pw_group">
+                                                        <label for="">새 비밀번호</label>
+                                                        <div class="input_group">
+                                                            <input id="" type="password" class="form_control" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="pw_group">
+                                                        <label for="">새 비밀번호 확인</label>
+                                                        <div class="input_group">
+                                                            <input id="" type="password" class="form_control" name="">
+                                                        </div>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+                                        <h4 class="sub_title_02"><span class="title board_open">접속 정보</span></h4><!-- [D] 타이틀 클릭시 board_close로 변경. class="title board_close" -->
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>접속 IP</dt>
+                                                <dd>
+                                                    <div class="input_group">
+                                                        <input id="" type="text" class="form_control" name="">
+                                                    </div>
+                                                </dd>
+                                                <dt>최근 접속일</dt>
+                                                <dd>2017-06-23 24:59:59</dd>
+                                                <dt>사용 만료일</dt>
+                                                <dd>
+                                                    <div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+                                                        <input id="" type="text" class="form_control" name="" value="2017-08-09">
+                                                        <a href="#" class="btn_calendar">달력</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- //계정 및 접속 이력 -->
+
+                                    <!-- 권한 -->
+                                    <div id="cu3" style="display: none;">
+                                        <!-- 상세 서브 탭 -->
+                                        <div class="sub_tab_area">
+                                            <ul>
+                                                <li><a href="#" onclick="cu(1)" onfocus="blur()">기본</a></li>
+                                                <li><a href="#" onclick="cu(2)" onfocus="blur()">계정 및 접속 이력</a></li>
+                                                <li class="current"><a href="#" onclick="cu(3)" onfocus="blur()">권한</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <h3 class="hidden">구성원 상세 권한 정보</h3>
+
+                                        <h4 class="sub_title_02"><span class="title line">관리 권한 정보</span></h4>                                    
+                                        <!-- 게시판 상세 -->
+                                        <div class="board_view_type02">
+                                            <dl>
+                                                <dt>메뉴별 관리 권한</dt>
+                                                <dd>
+                                                    <ul class="radio_list">                                        
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">결재/서식</label>   
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">게시판</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">동호회</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">일정</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">설비</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">웹폴더</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">웹메일</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">설문</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">스퀘어</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">액션로그</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>문서 조회 권한</dt>
+                                                <dd>
+                                                    <ul class="radio_list">                                        
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">전체 문서</label>   
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">공유 문서</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">기록물 예시 관리</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>감사 권한</dt>
+                                                <dd>
+                                                    <ul class="radio_list">                                        
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">개인 감사</label>   
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-2" onclick="javascript:$(this).toggleClass('checked');">준법 감시</label>
+                                                                <input type="checkbox" name="selection" id="check-2" value="" />       
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>기타 관리 권한</dt>
+                                                <dd>
+                                                    <ul class="radio_list">                                        
+                                                        <li>
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">정보공개담당</label>   
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                                <dt>겸직자</dt>
+                                                <dd>
+                                                    <div class="manager_add_group token-input">
+                                                        <!-- 자동완성 영역 -->
+                                                        <div class="input_group">
+                                                            <ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-token">
+                                                                    <p>홍길동</p>
+                                                                    <span class="token-input-modi-token">×</span>
+                                                                    <span class="token-input-delete-token">×</span>
+                                                                </li>
+                                                                <li class="token-input-input-token">
+                                                                    <input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                                </li>
+                                                            </ul>                                                            
+                                                        </div>
+                                                        <a href="#" class="btn_manager_add">관리자 추가</a>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <!-- //권한 -->
+
+                                </div>
+                                <!-- //게시판 상세 -->
+
+                                <!-- 게시판 상세 하단 버튼 -->
+                                <div class="view_btn_area role_fixed_btn">
+                                    <a href="#" class="btn_list">목록</a>
+                                    <a href="#" class="btn_del">삭제</a>
+                                    <a href="#" class="btn_cancel">취소</a>
+                                    <a href="#" class="btn_complete">저장</a>
+                                </div>
+                            </div>
+                            <!-- //컨텐츠 스크롤 -->
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- //body -->
+            
+        </div>
+        <!-- //wrapper -->
+            
+    </body>
+</html>

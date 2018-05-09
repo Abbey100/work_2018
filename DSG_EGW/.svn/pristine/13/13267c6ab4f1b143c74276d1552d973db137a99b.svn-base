@@ -1,0 +1,110 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../../../03_common/javascripts/jquery.fileUpload/fileUpload.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+    <div class="container_box meeting">
+<!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>업무그룹 조회</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">편집</a></span></li>
+      <li><span><a href="#">닫기</a></span></li>
+    </ul>
+  </div>
+<!-- //버튼 영역 -->
+<!-- 컨텐츠 영역 -->
+  <div class="view_body_contents read group">
+<!-- 회의 정보영역 -->
+    <div class="subj_box">
+    <table class="meeting_table">
+        <colgroup>
+            <col style="width:50px;">
+            <col style="width:100px;">
+            <col style="width:50px;">
+            <col style="width:*;">
+            <col style="*">
+            <col style="width:100px;">
+            <col style="*">
+            <col style="width:100px;">
+        </colgroup>
+        <tbody>
+          <tr class="subject">
+            <th>제목</th>
+            <td class="subj" colspan="7">회의조회 팝업화면</td>
+          </tr>
+          <tr class="mtn_optn">
+            <th>공개/보안여부</th>
+                <td colspan="7">
+                  <ul>
+                  <li><input type="radio" disabled>
+                    <span>공개</span></li>
+                  <li><input type="radio" disabled>
+                   <span>비공개</span></li>
+                   </ul>
+                </td>
+            <th>상태</th>
+            <td class="mttng_status running">진행중</td>
+          </tr>
+          <tr class="name">
+            <th><span>주재자</span></th>
+            <td class="leader">
+                 <span><a title="엄유정" href="#">엄유정</a></span>
+            </td>
+            <th><span>관리자</span></th>
+            <td>
+                <span><a title="엄유정" href="#">엄유정</a></span>
+              </td>
+          </tr>
+          <tr class="name">
+            <th><span>참여자</span></th>
+            <td colspan="7">
+                <span><a title="엄유정" href="#">엄유정</a></span>
+                <span><a title="최희선" href="#">최희선</a></span>
+                <span><a title="김나정" href="#">김나정</a></span>
+
+              </td>
+          </tr>
+          <tr class="name">
+            <th><span>열람자</span></th>
+            <td colspan="7"><span><a title="엄유정" href="#">엄유정</a></span></td>
+          </tr>
+        <tr class="due">
+            <th>시작일시</th>
+            <td class="start">07.03 00:00</td>
+            <th>종료일시</th>
+            <td>07.03 00:00</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // 회의 정보영역 -->
+    <!-- 회의내용 -->
+      <div class="view_area">
+        <p>업무그룹에 대한 설명이 들어가는 자리입니다.</p>
+      </div>
+    <!-- // 회의내용 -->
+
+  
+        
+        
+  </div>
+      
+
+    </div>
+</div>
+</body>
+</html>

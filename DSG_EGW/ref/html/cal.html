@@ -1,0 +1,87 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+<div style="Z-INDEX: 101; POSITION: absolute; VISIBILITY: visible; TOP: 58px; LEFT: 355px" id="mcalendar_pop">
+  <div class="pop_mm"> <span id="backCal"> <a onclick="popup_calendar.updateCalendar(2015,-1,22)" href="#"><img alt="이전 달" src="../img/arr_last_month.png"></a> </span> <span id="stringCal">01</span> <span id="forwardCal"><a onclick="popup_calendar.updateCalendar(2015,1,22)" href="#"><img alt="다음 달" src="../img/arr_next_month.png"></a></span> <span id="stringYear" class="pop_mm_year"> <a onclick="popup_calendar.updateCalendar(2014,0,22)" href="#"><img src="../img/btn_top_date_prev.gif"></a> 2015 <a onclick="popup_calendar.updateCalendar(2016,0,22)" href="#"><img src="../img/btn_top_date_next.gif"></a></span> <a class="close" onclick="popup_calendar.removePopupCalendar(document.getElementById(&quot;mcalendar_pop&quot;))" href="#"><img alt="닫기" src="../img/btn_layer_close.gif"></a></div>
+  <table id="mcalendar" cellspacing="0" summary="달력" cellpadding="0">
+    <thead>
+      <tr>
+        <th class="sun">S</th>
+        <th>M</th>
+        <th>T</th>
+        <th>W</th>
+        <th>T</th>
+        <th>F</th>
+        <th class="sat">S</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="popup_calendar_tr_0" name="popup_calendar_tr_0">
+        <td id="popup_calendar_cell_0" class="sun" name="popup_calendar_cell_0">&nbsp;</td>
+        <td id="popup_calendar_cell_1" name="popup_calendar_cell_1">&nbsp;</td>
+        <td id="popup_calendar_cell_2" name="popup_calendar_cell_2">&nbsp;</td>
+        <td id="popup_calendar_cell_3" name="popup_calendar_cell_3">&nbsp;</td>
+        <td id="popup_calendar_cell_4" name="popup_calendar_cell_4"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,1);" href="#">1 </a></div></td>
+        <td id="popup_calendar_cell_5" name="popup_calendar_cell_5"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,2);" href="#">2 </a></div></td>
+        <td id="popup_calendar_cell_6" class="sat" name="popup_calendar_cell_6"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,3);" href="#">3 </a></div></td>
+      </tr>
+      <tr id="popup_calendar_tr_1" name="popup_calendar_tr_1">
+        <td id="popup_calendar_cell_7" class="sun" name="popup_calendar_cell_7"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,4);" href="#">4 </a></div></td>
+        <td id="popup_calendar_cell_8" name="popup_calendar_cell_8"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,5);" href="#">5 </a></div></td>
+        <td id="popup_calendar_cell_9" name="popup_calendar_cell_9"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,6);" href="#">6 </a></div></td>
+        <td id="popup_calendar_cell_10" name="popup_calendar_cell_10"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,7);" href="#">7 </a></div></td>
+        <td id="popup_calendar_cell_11" name="popup_calendar_cell_11"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,8);" href="#">8 </a></div></td>
+        <td id="popup_calendar_cell_12" name="popup_calendar_cell_12"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,9);" href="#">9 </a></div></td>
+        <td id="popup_calendar_cell_13" class="sat" name="popup_calendar_cell_13"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,10);" href="#">10 </a></div></td>
+      </tr>
+      <tr id="popup_calendar_tr_2" name="popup_calendar_tr_2">
+        <td id="popup_calendar_cell_14" class="sun" name="popup_calendar_cell_14"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,11);" href="#">11 </a></div></td>
+        <td id="popup_calendar_cell_15" name="popup_calendar_cell_15"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,12);" href="#">12 </a></div></td>
+        <td id="popup_calendar_cell_16" name="popup_calendar_cell_16"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,13);" href="#">13 </a></div></td>
+        <td id="popup_calendar_cell_17" name="popup_calendar_cell_17"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,14);" href="#">14 </a></div></td>
+        <td id="popup_calendar_cell_18" name="popup_calendar_cell_18"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,15);" href="#">15 </a></div></td>
+        <td id="popup_calendar_cell_19" name="popup_calendar_cell_19"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,16);" href="#">16 </a></div></td>
+        <td id="popup_calendar_cell_20" class="sat" name="popup_calendar_cell_20"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,17);" href="#">17 </a></div></td>
+      </tr>
+      <tr id="popup_calendar_tr_3" name="popup_calendar_tr_3">
+        <td id="popup_calendar_cell_21" class="sun" name="popup_calendar_cell_21"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,18);" href="#">18 </a></div></td>
+        <td id="popup_calendar_cell_22" name="popup_calendar_cell_22"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,19);" href="#">19 </a></div></td>
+        <td id="popup_calendar_cell_23" name="popup_calendar_cell_23"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,20);" href="#">20 </a></div></td>
+        <td id="popup_calendar_cell_24" name="popup_calendar_cell_24"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,21);" href="#">21 </a></div></td>
+        <td id="popup_calendar_cell_25" name="popup_calendar_cell_25"><div style="HEIGHT: 100%" class=" today"><a style="DISPLAY: block; PADDING-TOP: 2px" class=" today" onclick="popup_calendar.setDayToTextbox(2015,1,22);" href="#">22 </a></div></td>
+        <td id="popup_calendar_cell_26" name="popup_calendar_cell_26"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,23);" href="#">23 </a></div></td>
+        <td id="popup_calendar_cell_27" class="sat" name="popup_calendar_cell_27"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,24);" href="#">24 </a></div></td>
+      </tr>
+      <tr id="popup_calendar_tr_4" name="popup_calendar_tr_4">
+        <td id="popup_calendar_cell_28" class="sun" name="popup_calendar_cell_28"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,25);" href="#">25 </a></div></td>
+        <td id="popup_calendar_cell_29" name="popup_calendar_cell_29"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,26);" href="#">26 </a></div></td>
+        <td id="popup_calendar_cell_30" name="popup_calendar_cell_30"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,27);" href="#">27 </a></div></td>
+        <td id="popup_calendar_cell_31" name="popup_calendar_cell_31"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,28);" href="#">28 </a></div></td>
+        <td id="popup_calendar_cell_32" name="popup_calendar_cell_32"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,29);" href="#">29 </a></div></td>
+        <td id="popup_calendar_cell_33" name="popup_calendar_cell_33"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,30);" href="#">30 </a></div></td>
+        <td id="popup_calendar_cell_34" class="sat" name="popup_calendar_cell_34"><div style="HEIGHT: 100%"><a style="DISPLAY: block; PADDING-TOP: 2px" onclick="popup_calendar.setDayToTextbox(2015,1,31);" href="#">31 </a></div></td>
+      </tr>
+      <tr style="DISPLAY: none; VISIBILITY: hidden" id="popup_calendar_tr_5" name="popup_calendar_tr_5">
+        <td id="popup_calendar_cell_35" class="sun" name="popup_calendar_cell_35">&nbsp;</td>
+        <td id="popup_calendar_cell_36" name="popup_calendar_cell_36">&nbsp;</td>
+        <td id="popup_calendar_cell_37" name="popup_calendar_cell_37">&nbsp;</td>
+        <td id="popup_calendar_cell_38" name="popup_calendar_cell_38">&nbsp;</td>
+        <td id="popup_calendar_cell_39" name="popup_calendar_cell_39">&nbsp;</td>
+        <td id="popup_calendar_cell_40" name="popup_calendar_cell_40">&nbsp;</td>
+        <td id="popup_calendar_cell_41" class="sat" name="popup_calendar_cell_41">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

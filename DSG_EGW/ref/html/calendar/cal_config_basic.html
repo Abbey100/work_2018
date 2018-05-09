@@ -1,0 +1,158 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+</head>
+<body>
+<div id="main_table" class="left_wrap_content"> 
+  <!-- title start-->
+  <div class="title_area">
+    <h2 class="title">일정 환경 설정</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- title end-->
+  
+  <div class="pd_all_18" id="tab-pane-1">
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab selected">기본설정</li>
+        </a> <a href="#">
+        <li class="tab">구글동기화</li>
+        </a>
+      </ul>
+    </div>
+    <div class="content_configlist">
+      <table>
+        <colgroup>
+        <col style="width:150px;">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>시간형식</th>
+            <td><label class="pd_rt15">
+                <input type="radio" id="top_timeformat" name="top_timeformat" value="AMPM" checked="checked">
+                오전/오후</label>
+              <label class="pd_rt15 mg_lft_6">
+                <input type="radio" id="top_timeformat" name="top_timeformat" value="24">
+                24시</label></td>
+          </tr>
+          <tr>
+            <th>인쇄형식</th>
+            <td><label class="pd_rt15">
+                <input type="radio" id="print_fomat" name="print_fomat" value="0" checked="checked">
+                리스트</label>
+              <label class="pd_rt15 mg_lft_6">
+                <input type="radio" id="print_fomat" name="print_fomat" value="1">
+                테이블</label></td>
+          </tr>
+          <tr>
+            <th>기본보기방식</th>
+            <td><label class="pd_rt15">
+                <input type="radio" id="top_basic_view" name="top_basic_view" value="DAY" checked="checked">
+                일간보기</label>
+              <label class="pd_rt15 mg_lft_6">
+                <input type="radio" id="top_basic_view" name="top_basic_view" value="WEEK">
+                주간보기</label>
+              <label class="pd_rt15 mg_lft_6">
+                <input type="radio" id="top_basic_view" name="top_basic_view" value="MONTH">
+                월간보기</label></td>
+          </tr>
+          <tr>
+            <th>시작시각</th>
+            <td><select class="basic_select" id="top_start_time" name="top_start_time" style="width:85;">
+                <option value="0">00:00</option>
+                <option value="1">01:00</option>
+                <option value="2">02:00</option>
+                <option value="3">03:00</option>
+                <option value="4">04:00</option>
+                <option value="5">05:00</option>
+                <option value="6">06:00</option>
+                <option value="7">07:00</option>
+                <option value="8">08:00</option>
+                <option value="9">09:00</option>
+                <option value="10">10:00</option>
+                <option value="11">11:00</option>
+                <option value="12">12:00</option>
+              </select></td>
+          </tr>
+          <tr>
+            <th>달력순서변경</th>
+            <td><div class="content_configlist">
+                <table>
+                  <colgroup>
+                  <col style="width:50%">
+                  <col style="width:10px">
+                  <col style="width:50%">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th colspan="2"><label for="buildstep1">개인달력</label></th>
+                      <th colspan="2"><label for="buildstep2">공유받은달력</label></th>
+                    </tr>
+                    <tr>
+                      <td class="slct_list_box"><div class="move_btn_box">
+                          <ul class="item_move layout_rgt">
+                            <a href="#" onclick="">
+                            <li class="down_end">맨아래</li>
+                            </a> <a href="#" onclick="">
+                            <li class="down2">아래</li>
+                            </a> <a href="#" onclick="">
+                            <li class="up2">위</li>
+                            </a> <a href="#" onclick="">
+                            <li class="up_end">맨위</li>
+                            </a>
+                          </ul>
+                        </div>
+                        <div class="slct_list">
+                          <select id="private_order" name="private_order" multiple="multiple">
+                            <option>나의달력</option>
+                            <option>내가만든달력01</option>
+                            <option>달력은뭐니뭐니해도</option>
+                          </select>
+                        </div></td>
+                      <td></td>
+                      <td class="slct_list_box"><div class="move_btn_box">
+                          <ul class="item_move layout_rgt">
+                            <a href="#" onclick="">
+                            <li class="down_end">맨아래</li>
+                            </a> <a href="#" onclick="">
+                            <li class="down2">아래</li>
+                            </a> <a href="#" onclick="">
+                            <li class="up2">위</li>
+                            </a> <a href="#" onclick="">
+                            <li class="up_end">맨위</li>
+                            </a>
+                          </ul>
+                        </div>
+                        <div class="slct_list">
+                          <select id="shared_order" name="shared_order" multiple="multiple">
+                            <option>공유받은달력01</option>
+                            <option>이것은누가공유한달력인가</option>
+                            <option>왜달력을공유하는가</option>
+                          </select>
+                        </div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

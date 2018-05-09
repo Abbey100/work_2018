@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GROUP WARE FRAME</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<div style="width:1280px; height:100%; overflow-x: scroll;">
+<frameset cols="223, *" frameborder="no" border="0" framespacing="0">
+    <!--메일-->
+	<frame src="mail/mail_left.html" marginheight="0" frameborder="0" scrolling="NO" borderspacing="0" border="0" noresize="">
+	<frameset cols="223, *" rows="*" frameborder="no" border="0" framespacing="0">
+    <!--게시판-->
+			<frame src="board/board_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+            <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">
+    <!--결재-->
+			     <frame  src="approval/apprvl_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">               
+    <!--문서함-->                
+                <frame  src="document/document_left2.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+
+               <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">
+    <!--일정-->
+			     <frame  src="calendar/calendar_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0"> 
+    <!--주소록-->
+			     <frame  src="contact/contact_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0"> 
+    <!--설문-->
+			     <frame  src="research/research_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0"> 
+		
+    <!--동호회-->
+			     <frame  src="cop/cop_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0"> 
+		
+    <!--회의-->
+			     <frame  src="meeting/meeting_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">
+    <!--클라우드-->
+			     <frame  src="cloud/cloud_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">
+ <!--관리자:액션로그-->
+			     <frame  src="admin/admin_left.html" marginheight="0" frameborder="0" scrolling="no" borderspacing="0" border="0" noresize="">
+                    <frameset cols="223, *"  rows="*" frameborder="no" border="0" framespacing="0">
+                        </frameset>                    
+                        </frameset>
+                        </frameset>
+		</frameset>                        
+		</frameset>                        
+		          </frameset>
+		</frameset>
+    </frameset>		
+</frameset>	
+    
+<noframes></noframes>
+                </div>
+</html>

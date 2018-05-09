@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge,chrome=1" >
+		<title> UI 컴포넌트 :  현위치는 디자인 한글파일명  </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+		<script>
+			$(function() {    
+				$( ".header_area" ).load( "header.html" );
+				$( ".gnb_area" ).load( "gnb.html" );
+				$( ".lnb_area" ).load( "lnb.html" );
+				$( ".container_area" ).load( "container.html" );
+			});
+		</script>
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->
+			<div class="header_area">   
+			</div>
+			<!-- //header -->
+			<div class="gnb_area" >                 
+			</div>        
+			<!-- //gnb -->   
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<!-- container -->
+				<div class="error_page">
+					<div class="message_card ico_type">
+						<!--message_card n_type // 번호용 -->
+						<!--message_card ico_type // 아이콘 용 -->
+						<span class="classify mail">메일계정없음</span>
+						<!--n 타입의 경우 : classify 단독사용 -->
+						<!--ico타입의 경우 : mail -> classify mail -->
+						<!--ico타입의 경우 : system -> classify system -->
+						<p class="main_message">메일 계정이 없습니다.</p>
+						<p class="sub_message">관리자에게 문의 해 주십시오.</p>
+						<a href="#" class="btn">이전 페이지</a>
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+		<!-- wrapper 바깥에 생기는 경우 
+<div class="error_page">
+<div class="message_card n_type">
+<span class="classify num">503</span>
+<p class="main_message">에러가 발생하였습니다.</p>
+<p class="sub_message">잠시 후 다시 이용 해 주십시오.</p>
+<a href="#" class="btn">이전 페이지</a>
+</div>
+</div>
+-->
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>전자결재</title>
+		<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				parent.share_tree_area.style.height = $('.share_tree').outerHeight(true) + "px";
+			});
+		</script>
+		</head>
+		<body onload="">
+<form name="frm">
+          <input type="hidden" name="sel_fldrid" id="sel_fldrid"/>
+        </form>
+<div class="share_tree"> <span id="noFolder" style="display:none;">폴더정보가 없습니다.</span>
+          <div id="00000000000000000007" class="webfx-tree-item"><img id="00000000000000000007-plus" src="../../img/Lminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="00000000000000000007-icon" class="table" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;">개인문서함</font> </div>
+          <div id="00000000000000000007-cont" class="webfx-tree-container" style="display: block;">
+    <div id="JHOMS131890018281000" class="webfx-tree-item"><img id="JHOMS131890018281000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018281000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018281000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018281000-anchor">임시보관</a></font> </div>
+    <div id="JHOMS131890018281000-cont" class="webfx-tree-container" style="display: none;"></div>
+    <div id="JHOMS131890018293000" class="webfx-tree-item"><img id="JHOMS131890018293000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018293000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018293000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018293000-anchor">기안한문서</a></font> </div>
+    <div id="JHOMS131890018293000-cont" class="webfx-tree-container" style="display: none;"></div>
+    <div id="JHOMS131890018307000" class="webfx-tree-item"><img id="JHOMS131890018307000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018307000-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018307000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018307000-anchor">결재한문서(제목이 길도록 한번 테스트합니다)</a></font> </div>
+    <div id="JHOMS131890018307000-cont" class="webfx-tree-container" style="display: none;"></div>
+    <div id="JHOMS131890018314000" class="webfx-tree-item"><img id="JHOMS131890018314000-indent-0" src="../../img/blank.png"><img id="JHOMS131890018314000-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="JHOMS131890018314000-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><font style="font-size:9pt;"><a class="active" style="font-size:9pt;" active="" onclick="webFXTreeHandler.focus(this);javascript:showSancSbox(event);" href="#none" id="JHOMS131890018314000-anchor">접수한문서</a></font> </div>
+    <div id="JHOMS131890018314000-cont" class="webfx-tree-container" style="display: none;"></div>
+  </div>
+        </div>
+</body>
+</html>

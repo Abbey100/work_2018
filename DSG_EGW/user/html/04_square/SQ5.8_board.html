@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시물쓰기 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> 
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<!-- header -->
+		<h1>게시물 쓰기</h1>
+		<div class="align_rg util">
+			<span class="selectbox">
+				<select>
+					<option>html 편집기</option>
+					<option>html 편집기</option>
+				</select>
+			</span>
+		</div>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" href="#">작성완료</a>
+					<a class="btn" href="#">임시저장</a>
+					<a class="btn" href="#">동영상 링크걸기</a>
+					<a class="btn" href="#">미리보기</a>
+				</div>
+				<div class="align_rg">
+					<span class="message">2017-08-10 19:00 예약됨<a class="cancel">예약취소</a></span>
+					<!-- 예약발송 옵션 -->
+					<div class="group">
+						<!-- open 클래스 추가시 달력 오픈 -->
+						<a class="btn select">예약게시</a>
+						<div class="datepicker" style="top:30px; right:0; z-index: 100">
+							<dl>
+								<dt><a href="#">2017년 11월</a></dt>
+								<dd class="day">
+									<table>						
+										<thead>
+											<tr>
+												<th scope="col">일</th>
+												<th scope="col">월</th>
+												<th scope="col">화</th>
+												<th scope="col">수</th>
+												<th scope="col">목</th>
+												<th scope="col">금</th>
+												<th scope="col">토</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="disable"><a href="#">1</a></td>
+												<td class="disable"><a href="#">2</a></td>
+												<td class="disable"><a href="#">3</a></td>
+												<td class="disable"><a href="#">4</a></td>
+											</tr>
+											<tr>
+												<td class="disable"><a href="#">5</a></td>
+												<td class="disable"><a href="#">6</a></td>
+												<td class="disable"><a href="#">7</a></td>
+												<td class="disable"><a href="#">8</a></td>
+												<td class="disable"><a href="#">9</a></td>
+												<td class="disable"><a href="#">10</a></td>
+												<td class="today"><a href="#">11</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">12</a></td>
+												<td><a href="#">13</a></td>
+												<td><a href="#">14</a></td>
+												<td><a href="#">15</a></td>
+												<td><a href="#">16</a></td>
+												<td><a href="#">17</a></td>
+												<td><a href="#">18</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">19</a></td>
+												<td><a href="#">20</a></td>
+												<td><a href="#">21</a></td>
+												<td><a href="#">22</a></td>
+												<td><a href="#">23</a></td>
+												<td><a href="#">24</a></td>
+												<td><a href="#">25</a></td>
+											</tr>
+											<tr>
+												<td><a href="#">26</a></td>
+												<td><a href="#">27</a></td>
+												<td><a href="#">28</a></td>
+												<td><a href="#">29</a></td>
+												<td><a href="#">30</a></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</dd>
+							</dl>
+							<div class="booking">
+								<span>예약시간 </span>
+								<div class="selectbox">
+									<select title="시 선택">
+										<option value="">00시</option>
+										<option value="">01시</option>
+										<option value="">02시</option>
+										<option value="">03시</option>
+										<option value="">05시</option>
+										<option value="">06시</option>
+										<option value="">07시</option>
+										<option value="">08시</option>
+										<option value="">09시</option>
+										<option value="">10시</option>
+										<option value="">11시</option>
+										<option value="">12시</option>
+										<option value="">13시</option>
+										<option value="">14시</option>
+										<option value="">15시</option>
+										<option value="">16시</option>
+										<option value="">17시</option>
+										<option value="">18시</option>
+										<option value="">19시</option>
+										<option value="">20시</option>
+										<option value="">21시</option>
+										<option value="">22시</option>
+										<option value="">23시</option>
+										<option value="">24시</option>
+									</select>
+								</div>
+								<div class="selectbox">
+									<select title="분 선택">
+										<option value="">00분</option>
+										<option value="">05분</option>
+										<option value="">10분</option>
+										<option value="">15분</option>
+										<option value="">20분</option>
+										<option value="">25분</option>
+										<option value="">30분</option>
+										<option value="">35분</option>
+										<option value="">40분</option>
+										<option value="">45분</option>
+										<option value="">50분</option>
+										<option value="">55분</option>
+									</select>
+								</div>
+								<p>
+									<a href="#" class="action_btn">확인</a>
+									<a href="#" class="btn">취소</a>
+								</p>
+							</div>
+							<a href="#" class="pre">이전</a>
+							<a href="#" class="next">다음</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="scroll_area handy-scroll">
+				<div class="">				
+					<div class="form_table">
+						<table>
+							<col style="width: 160px">
+							<col style="width:*">
+							<tbody>
+								<tr>                
+									<th>제목</th>
+									<td>
+										<div class="input_group has_select multi">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>머릿글 선택</option>
+													<option selected>카드프로젝트</option>
+													<option>UI 설계 모음I 설계 모음I 설계 모음I 설계 모음</option>
+												</select>
+											</div>
+
+											<input type="text" class="basic_input" placeholder="제목을 입력해 주세요" />
+											<div class="group">
+												<span class="form">
+													<input type="checkbox" id="check001" />
+													<label for="check001" class="emergency">긴급</label></span>
+												<span class="form">
+													<input type="checkbox" id="check002" />
+													<label for="check002">보안</label></span>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>                
+									<th>게시판 위치</th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" placeholder="게시판을 선택해 주세요">
+											<a class="ico group"  href="#">조직도</a>
+										</div>
+									</td>
+								</tr>
+								<!-- 작성자 고정 -->
+								<tr>
+									<th>작성자</th>
+									<td>
+										<div class="group">
+											<span>홍길동과장</span>
+											<span class="form"><input type="checkbox" id="c2" /><label for="c2">부서이름으로 게시</label></span>
+										</div>
+									</td>
+								</tr>
+								<!-- 무명 게시판 -->
+								<tr>
+									<th>작성자</th>
+									<td>
+										<div class="group">
+											<span class="selectbox">
+												<select>
+													<option>무명</option>
+													<option></option>
+												</select>
+											</span>
+											<div class="group">
+												<span>별칭</span>
+												<span><input type="text" class="border_input"></span>
+											</div>
+											<span class="form"><input type="checkbox" id="c1" /><label for="c1">부서이름으로 게시</label></span>
+										</div>
+									</td>
+								</tr>
+								<tr>                
+									<th>조회/의견 권한 설정</th>
+									<td>
+										<span class="form"><input type="radio" id="r1" /><label for="r1">모두실명</label></span>
+										<span class="form"><input type="radio" id="r2" /><label for="r2">작성자만 (실명)</label></span>
+										<span class="form"><input type="radio" id="r3" /><label for="r3">비실명</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>작성일</th>
+									<td><span class="txt">2017-12-11</span></td>
+								</tr>	
+								<!-- 작성일 예약시 -->
+								<tr>
+									<th>작성일</th>
+									<td>
+										<div class="group">
+											<span class="form"><input type="checkbox" id="c3" /><label for="c3">예약게시</label></span>
+											<div class="date_box">
+												<input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly=""> 
+												<a class="date_btn"></a>
+											</div>
+											<div class="time_group">
+												<span class="selectbox">
+													<select>
+														<option>9시</option>
+														<option>10시</option>
+													</select>
+												</span>
+												<span class="selectbox">
+													<select>
+														<option>00분</option>
+														<option>05분</option>
+													</select>
+												</span>
+											</div>
+										</div></td>
+								</tr>
+								<tr>
+									<th>종료일</th>
+									<td>
+										<span class="form"><input type="radio" id="no" /><label for="no">설정안함(영구게시)</label></span>
+										<span class="form"><input type="radio" id="set" /><label for="set">설정</label></span>
+										<div class="date_box">
+											<input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly=""> 
+											<a class="date_btn"></a>
+										</div>
+
+									</td>
+								</tr>	
+								<tr>
+									<th>공지 기간</th>
+									<td>
+										<span class="form"><input type="radio" id="no" /><label for="no">설정안함(영구게시)</label></span>
+										<span class="form"><input type="radio" id="set" /><label for="set">설정</label></span>
+										<div class="date_box">
+											<input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly=""> 
+											<a class="date_btn"></a>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<th>보안 레벨</th>
+									<td>
+										<div class="group">
+											<span class="selectbox">
+												<select>
+													<option>선택</option>
+													<option></option>
+												</select>
+											</span>											
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>초기화면 자동 팝업</th>
+									<td>
+										<div class="group">
+											<span class="form"><input type="checkbox" id="c6" /><label for="c6">설정</label></span>
+											<span class="form"><input type="checkbox" id="c7" /><label for="c7">하루 안보기</label></span>
+											<div class="date_box">
+												<input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly=""> 
+												<a class="date_btn"></a>
+											</div>											
+										</div></td>
+								</tr>
+								<tr>
+									<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+									<td>
+										<div class="group file_input">
+											<a class="btn small" >
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small">스토리지</a>
+										</div>
+										<dl class="file_info">
+											<dt>일반첨부 </dt>
+											<dd>2(<em>7.93MB</em>/100MB)</dd>
+											<dt>대용량 </dt>
+											<dd>1(<em>2GB</em>)</dd>
+										</dl>
+										<a class="text_btn all_delete">전체삭제</a>
+										<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+										<div class="file_lst upload handy-scroll">
+											<ul class="">
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">9,999 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="editor">
+						<iframe style="width:100%; height:auto; min-height: 400px;" src="mail_in%20_sqaure.html">
+						
+						
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

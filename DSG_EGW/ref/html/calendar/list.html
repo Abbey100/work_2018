@@ -1,0 +1,763 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body class="calendar_body">
+<div class="left_wrap_content">
+  <div class="left_menu"> 왼쪽메뉴 </div>
+  <div class="container_box container_list_box">
+    <div class="title_area">
+      <h2 class="title dsp_inblck">2014. 03. 31<!--[D] btn_star 에 on 클래스 추가 하면 활성화--></h2>
+      <div class="btn_box_date">
+        <div class="btn_area_xs"> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> <span><a href="#" title="오늘">오늘</a></span> </div>
+      </div>
+      <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+      <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+    </div>
+    <!-- 검색 영역 -->
+    <div class="srch_area">
+      <fieldset class="search">
+        <div class="btn_cal_srch"> <a href="#"><img src="../../img/btn_top_cal_srch.gif" alt="일정검색">일정검색</a></div>
+      </fieldset>
+    </div>
+    <!-- //검색 영역 --> 
+    <!-- 상세 검색 영역 -->
+    <div class="detail_srch_wrap">
+      <div class="detail_srch">
+        <div class="detail_srch_form">
+          <table style="width:750px">
+            <colgroup>
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="*">
+            <col style="width:93px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">기간</th>
+                <td colspan="3"><label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1주일</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1개월</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    전체</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    지정</label>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                  <span>~</span>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                <td></td>
+                <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+              </tr>
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4"><div class="inp_box">
+                    <input type="text" class="basic_inp" style="width:471px">
+                    <label class="pd_lft_10">
+                      <input type="checkbox">
+                      제목없이 검색</label>
+                  </div></td>
+                <td rowspan="2"><span  class="btn_sqr"><a href="#" >검색</a></span></td>
+              </tr>
+              <!-- [D] 제목없이 검색 체크했을경우 -->
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4"><div class="inp_box">
+                    <input type="text" class="basic_inp none_subj" style="width:471px" readonly>
+                    <label class="pd_lft_10">
+                      <input type="checkbox" checked>
+                      제목없이 검색</label>
+                  </div></td>
+              </tr>
+              <!-- // [D] 제목없이 검색 체크했을경우 -->
+              <tr>
+                <th scope="row">달력</th>
+                <td><div class="inp_box">
+                    <select class="basic_select" style="min-width:165px">
+                      <option value="모든달력">모든달력</option>
+                    </select>
+                  </div></td>
+                <th scope="row">공유자</th>
+                <td><div class="inp_box"> <a href="#" class="btn_human">공유자검색</a>
+                    <div class="input_box" style="width:220px"> <span class="recipient"><em>홍길동</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- //상세 검색 영역 --> 
+    <!-- 버튼 영역 -->
+    <div class="btn_area calendar_btn_area">
+      <ul class="btns">
+        <li><span class="on"><a href="#" title="일간" class="fnt_bold">일간</a></span></li>
+        <!--[D] del 클래스는 x 아이콘 -->
+        <li class="btn_lft"><span><a href="#" title="주간" class="fnt_bold">주간</a></span></li>
+        <li class="btn_lft"><span><a href="#" title="월간" class="fnt_bold">월간</a></span></li>
+        <li class="btn_lft"><span><a href="#" title="목록" class="fnt_bold">목록</a></span></li>
+        <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+          <!-- [D] 추가기능 레이어 팝업 -->
+          <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+            <ul>
+              <li><a href="#">인쇄하기</a></li>
+              <li><a href="#">PC저장</a></li>
+              <li><a href="#">Excel저장</a></li>
+            </ul>
+          </div>
+          <!-- // [D] 추가기능 레이어 팝업 --> 
+        </li>
+      </ul>
+      <div class="layout_rgt">
+        <select style="width:157px;">
+          <option value="전체보기">전체보기</option>
+        </select>
+        <p class="btn_save"><a href="#" title="저장하기">저장</a></p>
+        <p class="btn_prnt"><a href="#" title="인쇄하기">인쇄</a></p>
+      </div>
+    </div>
+    <!-- //버튼 영역 --> 
+    <!-- 메일 리스팅 기본형(좌측) -->
+    <div class="calendar_list_box">
+      <div class="event_contents">
+        <div class="event_list"> 
+          <!-- [D] 일정 표시 bar -->
+          <div class="events_entry_box"> </div>
+          <!-- // [D] 일정 표시 bar --> 
+          <!-- [D] 일정 자세히 보기 레이어 -->
+          <div class="month_more" style="display:none"><!--[D] 마우스 오버시 노출 -->
+            <div class="p_eventall" style="left:160px; top:220px">
+              <p><strong>외부미팅</strong></p>
+              <p>05:00 ~ 06:00</p>
+              <p>이용자</p>
+              <p>5F 바하마</p>
+            </div>
+          </div>
+          <!-- // [D] 일정 자세히 보기 레이어 --> 
+          <!-- [D] 레이어 팝업 > 일정,할일 -->
+          <div class="common_layer_pop cal_confirm" style="left:500px; top:100px;display:none">
+            <div class="inner_box">
+              <div class="tit">
+                <p class="on"><a href="#">일정</a></p>
+                <p><a href="#">할 일</a></p>
+                <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+              <div class="cont_pop"> 
+                <!-- [D] 일정 -->
+                <div class="tab01">
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <input type="text" class="basic_inp" style="width:175px" value="제목을 입력해주세요.">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <select class="basic_select" style="width:175px">
+                        <option value="내 달력">내 달력</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <select class="basic_select" style="width:81px">
+                        <option value="10:00">10:00</option>
+                      </select>
+                      <span style="margin-left:-1px">-</span>
+                      <select class="basic_select" style="width:81px">
+                        <option value="10:00">10:00</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                      <div class="btn_area">
+                        <ul class="btns">
+                          <li><span><a href="#" class="f_bold">저장</a></span></li>
+                          <li><span><a href="#">상세입력</a></span></li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+                <!-- [D] 할일 -->
+                <div class="tab02" style="display:none">
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <input type="text" class="basic_inp" style="width:175px" value="제목을 입력해주세요.">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <select class="basic_select" style="width:175px">
+                        <option value="내 할일">내 할일</option>
+                      </select>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><strong>제목</strong></dt>
+                    <dd>
+                      <input type="text" class="basic_inp" style="width:175px">
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                      <div class="btn_area">
+                        <ul class="btns">
+                          <li><span><a href="#" class="f_bold">저장</a></span></li>
+                          <li><span><a href="#">상세입력</a></span></li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //[D] 레이어 팝업 > 일정,할일 --> 
+          <!-- [D] 달력추가 -->
+          <div class="common_layer_pop cal_add" style="left:0px; top:300px;display:none">
+            <div class="inner_box">
+              <div class="tit"> <b>달력추가</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+              <div class="cont_pop">
+                <dl>
+                  <dt><strong>달력명</strong></dt>
+                  <dd>
+                    <input type="text" class="basic_inp" style="width:352px" value="나의 달력">
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" value="">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>색상</strong></dt>
+                  <dd>
+                    <p class="btn_color"> <a href="#"><em></em>색상선택</a> </p>
+                    <div class="colorcheck">
+                      <ul>
+                        <li><a href="#" class="color01 on"></a></li>
+                        <!-- [D] 선택시 on 클래스 추가 -->
+                        <li><a href="#" class="color02"></a></li>
+                        <li><a href="#" class="color03"></a></li>
+                        <li><a href="#" class="color04"></a></li>
+                        <li><a href="#" class="color05"></a></li>
+                        <li><a href="#" class="color06"></a></li>
+                        <li><a href="#" class="color07"></a></li>
+                        <li><a href="#" class="color08"></a></li>
+                        <li><a href="#" class="color09"></a></li>
+                        <li><a href="#" class="color10"></a></li>
+                        <li></li>
+                        <li><a href="#" class="color11"></a></li>
+                        <li><a href="#" class="color12"></a></li>
+                        <li><a href="#" class="color13"></a></li>
+                        <li><a href="#" class="color14"></a></li>
+                        <li><a href="#" class="color15"></a></li>
+                        <li><a href="#" class="color16"></a></li>
+                        <li><a href="#" class="color17"></a></li>
+                        <li><a href="#" class="color18"></a></li>
+                        <li><a href="#" class="color19"></a></li>
+                        <li><a href="#" class="color20"></a></li>
+                        <li><a href="#" class="color21"></a></li>
+                      </ul>
+                      <p class="btn_close"><a href="#"><img src="../../img/btn_colorcheck_close.gif" alt="닫기"></a></p>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>공유자</strong></dt>
+                  <dd> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box"> <span class="recipient"><a href="#"><img src="../../img/btn_read.gif" alt="읽기"></a><em>김용세</em><a href="#" class="btn_close">삭제</a></span> <span class="recipient"><a href="#"><img src="../../img/btn_write.gif" alt="쓰기"></a><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" value="">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>달력명</strong></dt>
+                  <dd>
+                    <textarea cols="10" rows="3" class="info_textarea"></textarea>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <!-- // [D] 달력추가 --> 
+          <!-- [D] 전사달력 -->
+          <div class="common_layer_pop cal_view" style="left:600px; top:300px;display:none">
+            <div class="inner_box">
+              <div class="tit"> <b>전사달력</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+              <div class="cont_pop">
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd>홍길동</dd>
+                </dl>
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd><em class="color_view color02"></em></dd>
+                </dl>
+                <dl>
+                  <dt><strong>공유자</strong></dt>
+                  <dd>$UX디자인팀</dd>
+                </dl>
+                <dl>
+                  <dt><strong>권한</strong></dt>
+                  <dd>
+                    <div class="chk_custom"> <a href="#" class="on">읽기</a> <a href="#">쓰기</a> </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>설명</strong></dt>
+                  <dd>
+                    <p class="desc">설명입니다. 여기에 설명이 들어가고 자세한 설명이 들어갑니다. 자세히 들어주세요</p>
+                  </dd>
+                </dl>
+                <div class="btn_area">
+                  <ul class="btns">
+                    <li><span><a href="#" class="f_bold">저장</a></span></li>
+                    <li><span><a href="#">취소</a></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // [D] 전사달력 --> 
+          <!-- [D] 달력(주) 리스트 -->
+          <div class="list_table">
+            <table>
+              <colgroup>
+              <col width="70px">
+              <col width="40px">
+              <col width="150px">
+              <col width="122px">
+              <col width="*">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">일자</th>
+                  <th scope="col" class="add_schedule_list">추가</th>
+                  <th scope="col">시간</th>
+                  <th scope="col">달력</th>
+                  <th scope="col">내용</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2" class="date"><p>04.01 (화)</p></td>
+                  <td rowspan="2" class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color05"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></a></p></td>
+                </tr>
+                <tr>
+                  <td>오전 11:30 ~ 오후 03:30</td>
+                  <td class="type_list"><span class="color06"></span>기념일</td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr class="today"><!-- [D] 오늘날짜 일정의 tr 에는 today 클래스 추가 -->
+                  <td rowspan="4" class="date"><p>04.02 (수)</p></td>
+                  <td rowspan="4" class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>종일일정</td>
+                  <td class="type_list"><span class="color07"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr class="today"><!-- [D] 오늘날짜 일정의 tr 에는 today 클래스 추가 -->
+                  <td>할일</td>
+                  <td class="type_list"><span class="color15"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr class="today"><!-- [D] 오늘날짜 일정의 tr 에는 today 클래스 추가 -->
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color03"><em></em></span>나의 할일 </td>
+                  <td><p class="list_cont checked">
+                      <input type="checkbox">
+                      <a href="#">HandyGW 8.3 디자인 시안 보고서 작성</a></p></td>
+                </tr>
+                <tr class="today"><!-- [D] 오늘날짜 일정의 tr 에는 today 클래스 추가 -->
+                  <td>오후 03:00 ~ 오후 05:30</td>
+                  <td class="type_list"><span class="color03"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color11"></span>나의 달력</td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color03"><em></em></span>나의 할일 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color20"></span>우리팀 달력 </td>
+                  <td><p class="list_cont"><a href="#">IT 컨퍼런스 참여</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color03"></span>나의 달력 </td>
+                  <td><p class="list_cont"><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat"> 주간보고</p></td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color03"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>오전 10:00 ~ 오후 11:30</td>
+                  <td class="type_list"><span class="color03"></span>전사 달력 </td>
+                  <td><p class="list_cont"><a href="#">HandySoft 창립기념일 리허설<em class="em_line">|</em>지하 2층 대강당</a></p></td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.03 (목)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.04 (금)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date saturday"><p>04.05 (토)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date sunday"><p>04.06 (일)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (월)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.07 (화)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="date"><p>04.02 (수)</p></td>
+                  <td class="add_schedule_list"><a href="#" title="일정추가"><img src="../../img/btn_plus.gif" alt="일정추가"></a></td>
+                  <td>&nbsp;</td>
+                  <td class="type_list">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- // [D] 달력(주) 리스트 --> 
+        </div>
+      </div>
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) --> 
+  </div>
+</div>
+</body>
+</html>

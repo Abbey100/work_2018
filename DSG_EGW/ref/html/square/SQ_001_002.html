@@ -1,0 +1,113 @@
+<html><head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>그룹 만들기</title>
+		<link type="text/css" rel="stylesheet" href="../../javascripts/jquery.fileUpload/fileUpload.css">
+		<link type="text/css" rel="stylesheet" href="../../css/common.css">
+		<link type="text/css" rel="stylesheet" href="../../square/js/lib/token-input.css">
+		<link type="text/css" rel="stylesheet" href="../../square/js/lib/token-input-facebook.css">
+
+		<script type="text/javascript" src="../../square/js/res/resController.js"></script>
+		<script type="text/javascript" src="../../square/js/res/resString.jsp"></script>
+		<script type="text/javascript" src="../../square/js/lib/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="../../square/js/lib/jquery.tokeninput.js"></script>
+		<script type="text/javascript" src="../../square/js/lib/jquery-ui-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../../square/js/autoSuggest.js"></script>
+		<script type="text/javascript" src="../../square/js/squareProxy.js"></script>
+		<script type="text/javascript" src="../../square/js/init.js"></script>
+		<script type="text/javascript" src="../../square/js/cals.js"></script>
+		<script type="text/javascript" src="../../square/js/date.js"></script>
+		<script type="text/javascript" src="../../square/js/square/square.js"></script>
+		<script type="text/javascript" src="../../directory-web/directory/js/jquery.hs.directory/jquery.hs.directory.js"></script>
+		<script type="text/javascript" src="../../square/js/common.js"></script>
+		<script type="text/javascript">
+			var userId="001013122";
+			var key="00KDP1ATb2";
+			var sq_tokenInput;
+
+			jQuery(document).ready( function () {
+				initAutoSuggest("sqMember");
+				sortSuggest.init();				
+				setTabIndex();				
+				setDueDate();
+				resizePopup();
+			});
+
+			$(window).bind('resize', function(){
+				resizePopup();
+			});
+		</script>
+	</head>
+	<body>
+	
+		<div class="pop_wrap">
+			<div class="title_area">
+				<h1>그룹 만들기</h1>
+			</div>			
+			<form id="theForm" name="theForm" method="post" action="../../square/createSquare.do">			
+			<div class="view_content_box">
+				<div class="inner_box">
+					<div class="view_body_contents" style="">
+						<div class="pop_container" style="padding-top:0px">
+							<div class="write_box">
+								<div class="write_form">
+									<div class="write_form_box none_bar" style="padding-right:0;border-bottom-width:0px">
+										<table style="width: 100%;">
+											<colgroup><col style="width: 110px;">
+											<col style="width: 30px;">
+											<col style="width:*">
+											</colgroup><tbody>
+												<tr>
+													<th class="pd_lft_0"><span class="tit">그룹명<span class="essntal">*</span></span></th>
+													<td colspan="2"><input id="title" name="title" class="intxt" style="width: 100%; ime-mode: active;" onchange="isChanged=true;" value="" tabindex="1"></td>
+												</tr>
+												<tr>
+													<th class="pd_lft_0">구성원
+                                                    <span class="fnt_gray fnt_bold_n">
+       6/50                                                 </span>                                                        </th>
+													<td class="detail_srch_form">
+														<font class="inp_box"><a id="recipient_to" href="javascript:openOrgPopup();" style="position:static;" class="btn_human" onfocus="blur();">&nbsp;</a></font>
+													</td>
+													<td>
+														<ul class="token-input-list-facebook ui-sortable"><li class="token-input-input-token-facebook"><input type="text" autocomplete="off" id="token-input-sqMember" tabindex="2" style="outline: none;"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 12px; font-family: Dotum, sans-serif, Arial, Gulim, Verdana, 'MS Gothic'; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester></li></ul><input class="intxt" id="sqMember" name="sqMember" onchange="isChanged=true;" value="" style="display: none;">
+														<input type="hidden" id="member" name="member" value="">
+													</td>
+												</tr>
+												<tr>
+													<th class="pd_lft_0">종료일</th>
+													<td colspan="2">
+														<label class="pd_rgt_10"><input id="workDate" onclick="javascript:renderDateVisible('workDate', 'datepic_box');"  name="workDate" type="checkbox">설정</label>
+	<span class="fnt_gray">선택하면 그룹 종료일을 설정할 수 있으며, 종료일 이후 종료된 그룹으로 이동됩니다.</span>													<div id="datepic_box" class="datepic_box" style="display:none;">
+															<input type="text" class="basic_inp" id="dueDate" name="dueDate" value="" onclick="$('#workDate').attr('checked', false);fixedCalenda('dueDate',false);" style="width:100px;" readonly="">
+															<a href="#" onclick="$('#workDate').attr('checked', false);fixedCalenda('dueDate',false);"><img src="../../img/btn_datepicker.gif" alt="cals" class="btn_date"></a>
+														</div>
+                                                        
+													</td>
+												</tr>
+												<tr>
+													<th class="pd_lft_0 pd_tp_10" style="vertical-align:top; ">그룹소개</th>
+													<td colspan="2">
+														<textarea name="desc" id="desc" class="mg_tp_6" style="width: 100%;height:210px;overflow:auto;"></textarea>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>								
+								</div>
+							</div>
+							
+						</div></div>
+<div class="footer layout_bttm full_width">
+								<ul class="btns">
+									<li><span><a href="#" onclick="setForm();" class="fnt_bold">등록</a></span></li>
+									<li><span><a href="#" onclick="window.close();">취소</a></span></li>
+								</ul>
+							</div>
+					
+				</div>
+			</div>
+			</form>
+			
+		</div>	
+
+</body></html>

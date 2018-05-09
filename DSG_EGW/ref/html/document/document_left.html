@@ -1,0 +1,74 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function(e) {	
+	$('.left_area').height(document.body.clientHeight-53);
+});
+
+$(window).bind('resize', function(){
+	 $('.left_area').height(document.body.clientHeight-53);
+});
+</script>
+</head>
+<body class="left_menu">
+<form name="frm">
+  <input type="hidden" name="checkBookmk" id="checkBookmk" value="appr">
+  <div class="left_area"> 
+    <!-- Bookmark tree -->
+    <div id="" class="tree_area_box">
+      <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'bookmark_tree_area');">즐겨찾기</span> <a class="btn_tree_cnfg" href="#"> </a> </div>
+      <div id="bookmark_tree_area" class="ifrm_bkmk_tree">
+        <iframe src="document_left_tree.html" name="FTREE" id="FTREE" frameborder="no" scrolling="yes" height="100%" width="100%" cellSpacing="0" cellPadding="0"> </iframe>
+      </div>
+    </div>
+    <!-- //Bookmark tree --> 
+    <!-- Private tree -->
+    <div id="" class="tree_area_box">
+      <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'private_tree_area');">개인</span> <a class="btn_tree_cnfg" href="#"> </a> </div>
+      <div id="private_tree_area" class="ifrm_tree">
+        <iframe src="document_left_tree2.html" name="FTREE" id="FTREE2" frameborder="no" scrolling="no" height="100%" width="100%" cellSpacing="0" cellPadding="0"> </iframe>
+      </div>
+    </div>
+    <!-- //Private tree --> 
+    <!-- Share tree -->
+    <div id="" class="tree_area_box last">
+      <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'share_tree_area');">공유</span> <a class="btn_tree_cnfg" href="#"> </a> </div>
+      <div id="share_tree_area" class="ifrm_tree">
+        <iframe src="document_left_tree3.html" name="FTREE" id="FTREE3" frameborder="no" scrolling="no" height="100%" width="100%" cellSpacing="0" cellPadding="0"> </iframe>
+      </div>
+    </div>
+    <!-- //Share tree --> 
+  </div>
+  <!-- Config --> 
+  <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+  <!-- //Config -->
+</form>
+<!-- ==== DirectoryWeb Start ==== -->
+<div id="directory"></div>
+<!-- required - must exist "div" element -->
+
+<input type="hidden" id="uid" value="001002906" />
+<input type="hidden" id="display" value="" />
+<input type="hidden" id="dutiesUsed" value="" />
+<input type="hidden" id="checkbox" value="list" />
+<input type="hidden" id="selectMode" value="1" />
+<input type="hidden" id="openerType" value="" />
+<input type="hidden" id="notUseDept" value="000000101" />
+<input type="hidden" id="startDept" value="000024006" />
+<input type="hidden" id="message_noneterm" value="검색어를 입력하십시오." />
+<input type="hidden" id="message_minLength" value="검색은 2글자 이상 입력해야 합니다." />
+<input type="hidden" id="message_invalidvalue" value="부서명 검색으로 특수문자를 사용할 수 없습니다." />
+<!-- ==== DirectoryWeb End ==== -->
+</div>
+</body>
+</html>

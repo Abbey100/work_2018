@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<!--좌측 메뉴 영역-->
+
+<div id="Left_subWrap" name="Left_subWrap" class="left_menu">
+  <div class="btn_large"> <a class="btn_l" href='javascript:commonLeftMenuObj.fnCopCommonMenuWritePost("000000021");'>게시하기</a> </div>
+  <!--메인돌아가기 위치
+     <div class="snb_lst"> <span class="check_area">         
+            <a href="/hcop/portal/cop_main.psml?stage=0&amp;SESSIONID=79F91869415651422961686DAD40DC36" class="btn_back ">
+                <span class="mg_lft_20">동호회 메인</span></a></span>
+      </div>
+메인돌아가기 위치-->
+  <div id="" class="tree_area_box mg_tp_15">
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'cop_info');">동호회정보</span> </div>
+    <div id="cop_info" class="cop_info_area bttm_ln">
+      <div class="cop_name"  title="테스트 동호회1" > <a href="/hcop/portal/Collaboration/cop_clubhome.psml?clubID=000000021&amp;SESSIONID=79F91869415651422961686DAD40DC36&amp;moveHome=1">테스트 동호회1</a></div>
+      <ul >
+        <li class="admin">운영자 : 손세호</li>
+        <li class="hit">회원수 : 1</li>
+        <li class="article">게시물 : <span id="countClubTotalContents">25</span></li>
+      </ul>
+    </div>
+  </div>
+  <ul class="snb_lst" id="menu_list">
+    <li title="전체게시물"> <a id="menu_1" href="javascript:commonLeftMenuObj.fnCopCommonMenuViewAllContents('000000021','000000021');"> <span>전체게시물</span> </a> </li>
+    <!-- 링크메뉴 -->
+    <li title="[링크] 링크하나"><a id="menu_7" href="#" onclick="javascript:window.open('http://daum.net');"> <span>[링크] 링크하나</span></a></li>
+    <li title="자료실"><a id="menu_8" href="javascript:commonLeftMenuObj.fnCopCommonMenuGoBoard('000000021', '000000009', '1', '2','000000021','8');"><span>자료실</span></a></li>
+    <li title="공지사항"><a id="menu_9" href="javascript:commonLeftMenuObj.fnCopCommonMenuGoBoard('000000021', '000000007', '1', '1','000000021','9');"><span>공지사항</span></a></li>
+    <li title="일반게시판1"><a id="menu_10" href="javascript:commonLeftMenuObj.fnCopCommonMenuGoBoard('000000021', '000000008', '1', '2','000000021','10');"><span>일반게시판1</span></a></li>
+    <li title="앨범게시판"><a id="menu_11" href="javascript:commonLeftMenuObj.fnCopCommonMenuGoBoard('000000021', '000000010', '4', '1','000000021','11');"><span>앨범게시판</span></a></li>
+    
+    <!-- 구분선 -->
+    <li class="cop_partition"></li>
+    <!--// 구분선 -->
+    
+    <li title="승인게시판"><a id="menu_13" href="javascript:commonLeftMenuObj.fnCopCommonMenuGoBoard('000000021', '000000011', '8', '2','000000021','13');"><span>승인게시판</span></a></li>
+    <li title="토론실"><a id="menu_2" href="javascript:commonLeftMenuObj.clubDiscussList('000000021');"><span>토론실</span></a></li>
+    <li title="일정"><a id="menu_3" href="javascript:commonLeftMenuObj.fnCopCommonMenuSchedule('000000021','3');"><span>일정</span></a></li>
+    <li title="정보수정"><a id="menu_4" href="javascript:commonLeftMenuObj.fhGotoMyInfoEdit('000000021','4');"><span>정보수정</span></a></li>
+    <li title="회원목록"><a id="menu_5" href="javascript:commonLeftMenuObj.fnCopCommonMenuViewMembers('000000021','5');"><span>회원목록</span></a></li>
+    <li title="회원탈퇴"><a id="menu_6" href="javascript:commonLeftMenuObj.fnLeaveCoP();"><span>회원탈퇴</span></a></li>
+  </ul>
+</div>
+<div class="info_area">
+  <ul>
+    <li class="config"> <a href="#" title='관리'> <span>관리</span></a></li>
+    <li class="cpcty_area"> <a href="/hcop/portal/cop_main.psml?stage=0&amp;SESSIONID=79F91869415651422961686DAD40DC36"> <span class="btn_exit">홈으로 나가기</span></a> </li>
+  </ul>
+</div>
+</body>
+</html>

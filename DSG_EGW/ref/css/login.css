@@ -1,0 +1,206 @@
+@charset "utf-8";
+@font-face {
+    font-family: Nanum_Gothic;
+    src: url(../font/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(../font/NanumGothic-Bold.woff2) format("woff2"), url(../font/NanumGothic-Bold.woff) format("woff"), url(../font/NanumGothic-Bold.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal;
+} /* Font */
+
+/***** 초기화 Initialize *****/
+html, body {  height: 100%; scrollbar-face-color: #F6F6F6; scrollbar-shadow-color: #AEAEAE; scrollbar-highlight-color: #AEAEAE; scrollbar-3dlight-color: #F6F6F6; scrollbar-darkshadow-color: #F6F6F6; scrollbar-track-color: #F6F6F6; scrollbar-arrow-color: #AEAEAE; }
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {margin:0;padding:0}
+/** 다국어 지원 폰트선언 20160926 **/
+/* 영어 */
+html:lang(en) body, input, textarea, select, button { font-family: Dotum, sans-serif, Arial, Gulim, Verdana, MS Gothic; font-size: 12px; color: #333; }
+/* 일본어 */
+html:lang(ja) body, input, textarea, select, button { font-family: "MS PGothic", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Osaka, Meiryo, "メイリオ", Dotum; font-size: 12px; color: #333; }
+/* 중국어(간체) */
+html:lang(zh-Hans) body, input, textarea, select, button { font-family: Helvetica, Arial, "Microsoft MingLiU", 新細明體, sans-serif, Dotum; font-size: 12px; color: #333; }
+/* 중국어(번채) */
+html:lang(zh-Hant) body, input, textarea, select, button { font-family: Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif, Dotum; font-size: 12px; color: #333; }
+/* 한국어 */
+html:lang(ko) body, input, textarea, select, button { font-family: Dotum, sans-serif, Arial, Gulim, Verdana, MS Gothic; font-size: 12px; color: #333; }
+textarea {line-height: 21px; }
+table {clear: both; border-collapse: collapse; } /* td 공백시에도 스타일(border..) 적용 */
+img, fieldset {	border: 0 }
+legend, caption { visibility: hidden; overflow: hidden; width: 0; height: 0; font-size: 0; line-height: 0 }
+ul, ol { list-style: none }
+address { font-style: normal }
+a { outline: 0; text-decoration: none; color: #444 }
+a:hover { text-decoration:none; }
+input { ime-mode: active; }
+select { min-width: 45px; padding: 4px; box-sizing: border-box;}
+input[type="checkbox"], input[type="radio"] {margin:0 6px 0 0;}
+
+/***** 초기화 끝 Initialize END *****/
+
+
+body { position:relative; height:100%; background: #eaeaea; overflow: hidden;}
+.loading_page { position: relative; width: 100%; height: 100%; background-color: rgba(117,117,117,0.5); z-index: 99; }
+.wrap { position:absolute; left:50%; top:50%; margin:-300px 0 0 -395px; height:497px; width:750px; z-index: 9;}
+/* 로고 */
+.logo { padding-bottom: 20px;}
+/* 컨테이너*/
+.container { position:relative; height:434px; border-top: 3px solid #6f717e; box-shadow: 0px 3px 3px #c1c1c1;}
+
+/* 로그인 폼*/
+.login { position:relative; width:375px; height:434px; background: #fff; }
+.login fieldset { position:absolute; top:50px; left:38px;}
+
+/***** login.html 일반사용자 *****/
+.login fieldset ul { margin:50px 0 20px 0;}
+.login fieldset ul li { position:relative; font-size:0px; margin-bottom: 10px;}
+.login fieldset ul li .user_img { position:absolute; left:1px; top:1px;}
+.login fieldset ul li div { position:absolute; top:0; left:48px; height:48px; width:251px; border:1px solid #dadada;}
+
+
+/* 아이디, 비밀번호 입력 인풋박스 */
+.login fieldset ul li input { margin:10px; height:28px; width:230px; border:none; padding: 1px 0 0 0; line-height: 14px; font-size:14px; text-indent: 10px; }
+
+
+/***** login_slct_user.html 겸직&동명 사용자선택 *****/
+/* 안내문구 공통 */
+.info span { line-height: 16px; width:300px;}
+
+/* 동명사용자 선택 */
+.name { position:absolute; top:48px; width:300px;}
+.name.on { display:block;}
+.check_same  {width:300px; height:68px; margin-top: 12px; border:1px solid #dadada;}
+.check_office { width:300px; height:68px; margin-top: 12px; border:1px solid #dadada;}
+
+
+/***** login_prev_user.html 재로그인 *****/
+.prev_user { margin-top:15px; height:68px; background-color: #f2f2f2; color:#6f717e; font-size:14px; line-height: 68px; text-align: center;}
+
+
+/***** login_change_pwd.html 초기 비밀번호 변경 *****/
+.change_pw {position:relative; top:0; left:0; display:none; margin:0 !important; padding:0 !important; }
+.change_pw.on {display:block;}
+.change_pw li {width:300px; font-size:12px !important; }
+.change_pw li span em {font-weight: bold; font-style: normal;}
+.change_pw li span {display: block; line-height: 16px; }
+.change_pw li.inp_area {margin-bottom:8px;}
+.change_pw li.inp_area input.basic_inp {margin:0; height:26px; border: 1px solid #dadada; font-size: 12px; width:100%; }
+.change_pw li.inp_area input[type="checkbox"] {margin:0 6px 0 0; height:13px; border: 1px solid #dadada; font-size: 12px; width:auto !important; vertical-align: middle;}
+
+
+
+/***** ShowPreviousLogin.html 로딩 *****/
+.loading_layer { display: block; position:absolute; left:50%; top:50%; margin:-135px 0 0 -170px; background: #fff; width:310px; height:250px; border-radius: 4px;}
+.loading_wrap { text-align: center; margin-top:90px;}
+/**다국어 처리 20160926 **/
+.loading_info { font-size: 14px; color:#333; margin-bottom: 14px; }
+/* 한국어 */
+html:lang(ko) .loading_info { font-family:Nanum_Gothic; }
+/* 영어 */
+html:lang(en) .loading_info { font-family:Nanum_Gothic; }
+/* 일본어 */
+html:lang(ja) .loading_info { font-family:"MS PGothic", Nanum_Gothic; font-weight: 600; }
+/* 중국어(간체) */
+html:lang(zh-Hans) .loading_info { font-family:Helvetica, Arial, "Microsoft MingLiU", Nanum_Gothic; font-weight: 600; }
+/* 중국어(번체) */
+html:lang(zh-Hant) .loading_info { font-family:Helvetica, Arial, "Microsoft Yahei", Nanum_Gothic; font-weight: 600; }
+
+
+/* 로그인버튼 : 해당 컨셉에 맞는 색상으로 변경 */
+/**다국어 처리 20160926 **/
+.btn_login {position:absolute; top:190px; font-family: nanumgothic;}
+/* 한국어 */
+html:lang(ko) .btn_login { font-family:Nanum_Gothic; }
+/* 영어 */
+html:lang(en) .btn_login { font-family:Nanum_Gothic; }
+/* 일본어 */
+html:lang(ja) .btn_login { font-family:"MS PGothic", Nanum_Gothic; font-weight: 600; }
+/* 중국어(간체) */
+html:lang(zh-Hans) .btn_login { font-family:Helvetica, Arial, "Microsoft MingLiU", Nanum_Gothic; }
+/* 중국어(번체) */
+html:lang(zh-Hant) .btn_login { font-family:Helvetica, Arial, "Microsoft Yahei", Nanum_Gothic; }
+.btn_login a {display: inline-block; width:300px; height:60px; font-size:16px; text-align: center; line-height:60px; color:#fff; text-decoration: none !important;
+            background-image: url(../img/btn_login.gif);
+            box-sizing: border-box;}
+.btn_login a:hover { 
+            background-position:0 -60px;
+            box-sizing: border-box;}
+.btn_login a:active { color:#cfd1ed;
+            background-position:0 -120px;
+            box-sizing: border-box;}
+
+/* 다른 이름으로 로그인 버튼 */
+/**다국어 처리 20160926 **/
+.btn_back {position:absolute; top:260px; }
+/* 한국어 */
+html:lang(ko) .btn_back { font-family:Nanum_Gothic; }
+/* 영어 */
+html:lang(en) .btn_back { font-family:Nanum_Gothic; }
+/* 일본어 */
+html:lang(ja) .btn_back { font-family:"MS PGothic", Nanum_Gothic; font-weight: 600; }
+/* 중국어(간체) */
+html:lang(zh-Hans) .btn_back { font-family:Helvetica, Arial, "Microsoft MingLiU", Nanum_Gothic; }
+/* 중국어(번체) */
+html:lang(zh-Hant) .btn_back { font-family:Helvetica, Arial, "Microsoft Yahei", Nanum_Gothic; }
+.btn_back a {display: inline-block; width:300px; height:39px; font-size:12px; text-align: center; line-height:39px; color:#333; text-decoration: none !important;
+            background-image: url(../img/btn_back.gif);
+            box-sizing: border-box;}
+.btn_back a:hover { 
+            background-position:0 -39px;
+            box-sizing: border-box;}
+.btn_back a:active { color:#666666;
+            background-position:0 -78px;
+            box-sizing: border-box;}
+
+/* 셀렉트, 체크박스 div */
+.check_info { position:absolute; top:270px; width:300px;}
+
+
+/* 셀렉트 : 언어선택 */
+.check_info .check_lang { height:29px; width:77px; border:1px solid #dadada; color:#999999;}
+.check_info .check_lang option { color:#999999;}
+
+
+/* 체크박스 : 사원번호로 로그인 */
+.check_info .alias_id { position:absolute; top:8px; right:-2px;}
+.check_info .alias_id input { position:absolute; left:-21px; top:1px}
+
+/* 비주얼 영역 : 우측 그래픽 - background url 변경 사용 */
+.login_visual { position:absolute; top:0; right:0; width:375px; height:434px; background-image:url(../img/login_visaul.jpg);}
+.login_visual span { position:absolute; top:166px; left:25px;}
+
+/* 웍스모바일(클라이언트) 윈앱 로그인(드라이브 탐색기) Works client Login
+디바이스별 크기 맞춤을 위해 스타일 조정 - 2016.08.11- */
+.works_login { position: relative; width: 100%; height: 100%; background: url(../img/login_works.jpg); background-size: 100% 100%;}
+.works_login h2.logo { position: absolute; top: 132px; left: 68px; display: block; width: 212px; height: 46px; background: url(../img/login_works_logo.png) no-repeat; }
+.works_login .login { position:relative; width:290px; height:100%; background: none; padding-top: 70%; box-sizing: border-box; margin:0 auto; }
+.works_login .login fieldset { position: relative; top: inherit; left: inherit;  }
+.works_login .login fieldset ul { margin: 0;}
+.works_login .login fieldset ul li { margin-bottom: 8px; }
+.works_login .login fieldset ul li div { width: 239px; background: #fff; }
+.works_login .login fieldset ul li input { width: 218px; }
+.works_login .btn_login { position: relative; top: inherit; }
+.works_login .btn_login a {display: inline-block; width: 288px; height:50px; font-size:14px; text-align: center; line-height:50px; color:#fff; text-decoration: none !important; background-image: url(../img/btn_login_works.png); box-sizing: border-box; }
+.works_login .btn_login a:hover { background-position:0 -50px; box-sizing: border-box; }
+.works_login .btn_login a:active { color:#cfd1ed; background-position:0 -100px; box-sizing: border-box; }
+
+/* 웍스모바일(Web환경) 로그인 Works Web Login layer_pop */
+.works_login.layer_pop { position: relative; width: 350px; height: 168px; background: #fff; }
+.works_login.layer_pop  h2.logo { position: relative; top: inherit; left: inherit; display: block; width: 350px; height: 34px; background: url(../img/login_works_logo_layer.png) no-repeat; padding-bottom: 8px; }
+.works_login.layer_pop .login { position:relative; width:350px; height:126px; background: #f8f8f8; border: 1px solid #e6e6e6; padding: 0; box-sizing: border-box; }
+.works_login.layer_pop .login fieldset { position: relative; top: inherit; left: inherit; }
+.works_login.layer_pop .login fieldset ul { margin: 0; padding: 20px; }
+.works_login.layer_pop .login fieldset ul li { margin-bottom: 8px; }
+.works_login.layer_pop .login fieldset ul li span:first-child img { width: 38px; height: 38px;}
+.works_login.layer_pop .login fieldset ul li span.user_img img { width: 38px; height: 38px;}
+.works_login.layer_pop .login fieldset ul li div { left: 38px; width: 197px; height: 36px; background: #fff; }
+.works_login.layer_pop .login fieldset ul li input { width: 189px; margin: 4px; height: 28px; border: none; padding: 1px 0 0 0; line-height: 13px; font-size: 13px; text-indent: 10px;}
+.works_login.layer_pop .btn_login { position: absolute; top: 20px; right: 20px; }
+.works_login.layer_pop .btn_login a {display: inline-block; width: 66px; height:84px; font-size:13px; text-align: center; line-height:84px; color:#fff; text-decoration: none !important; background-image: url(../img/btn_login_works_layer.png); box-sizing: border-box; }
+.works_login.layer_pop .btn_login a:hover { background-position:0 -84px; box-sizing: border-box; }
+.works_login.layer_pop .btn_login a:active { color:#cfd1ed; background-position:0 -168px; box-sizing: border-box; }
+
+/* i-pad 가로형에만 해당 */
+
+    @media (orientation: landscape){
+  .works_login .login {
+        padding-top: 30%;
+  }
+}
+    

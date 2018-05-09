@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 우편번호 검색 </title>
+       <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 800 x 770 -->
+    <body>
+        <div class="wrapper">
+            <!-- header -->
+            <h1>우편번호검색</h1>
+            <!-- // header -->
+            <!-- body -->
+            <div class="cont_wrap container_area ">				
+                <!-- 본문 영역 -->
+                <div class="form_table">
+                    <table class="table_pd mt_top20">
+                        <colgroup>
+                            <col width="240px">
+                            <col width="*">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <p class="description" style="padding-left: 5px;">
+                                        찾고자 하는 주소의 동/읍/면/도로명을 입력하십시오.
+                                        <br />예) 역삼동, 양촌면, 대왕판교로 
+                                    </p>            
+                                </td>
+                            </tr>   
+                            <tr>
+                                <th> 
+                                    <div class="selectbox" style="width:100px; float: left;">
+                                        <select>
+                                            <option>선택</option>
+                                            <option selected>선택</option>
+                                            <option>선택</option>
+                                        </select>
+                                    </div>
+                                    <div class="selectbox" style="width:100px;float: left; padding-left: 8px;">
+                                        <select>
+                                            <option>선택</option>
+                                            <option selected>선택</option>
+                                            <option>선택</option>
+                                        </select>
+                                    </div></th>
+                                <td>
+                                    <div class="text_input" style="float: left; width:100%; padding-right: 60px;">
+                                        <input type="text" class="border_input" id="inputError" placeholder="동/읍/면/도로명 입력">
+                                        <a class="action_btn" style="position: absolute; right: 0;">검색</a>
+                                        <p class="validation"> 도/광역시를 선택하십시오.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>	
+                </div>
+                <!-- 본문 영역 -->
+                <div class="container" style="padding:0; height:100%">
+                    <!-- 리스트 영역 -->
+                    <div class="content_table">	
+                        <div class="table_head mt_top30">
+                            <table>
+                                <colgroup>
+                                    <col style="width:100px;">
+                                    <col style="*">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text_c">우편번호</th>
+                                        <th>주소</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table_body handy-scroll scroll-area">
+                            <div class="wrap-hs">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:100px;">
+                                        <col style="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr class="pd_none bg_data">
+                                            <td colspan="2" > 
+                                                <div class="large_data">
+                                                    검색결과가 많습니다.
+                                                    <span class="text_blue">‘도로명+건물번호’</span> 또는<span class="text_blue">‘지역명+지번’</span>으로 검색하시면, 보다 정확한 결과를 확인하실 수 있습니다.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="text_c">06267</th>
+                                            <td>도로명주소 : 서울특별시 강남구 강남대로 238 (스카이쏠라빌딩) <br />
+                                                지번주소 : 서울특별시 강남구 도곡동 953-11 (스카이쏠라빌딩) </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>                            
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 리스트 영역 -->
+                </div>
+                <!-- // 본문 영역 -->
+            </div>
+            <!-- // body -->		
+        </div>
+    </body>
+</html>

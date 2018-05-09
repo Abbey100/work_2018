@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body class="popup_download">
+<!-- 포지션 left, top / width 인라인 스타일 적용 -->
+<div >
+  <!-- 오늘하루 읽지 않음 표시 -->
+  <div class="no_show_again">
+      <label class="" for="no_show_check">오늘 하루 보지 않음</label>
+      <input type="checkbox" id="no_show_check">
+  </div>
+  <!-- 설치 메시지 -->
+  <div class="wrapper"> 
+    <!-- 아이콘 영역 -->
+    <div class="icon_viewer">
+     아이콘
+    </div>
+    <!-- 컨텐츠영역 :기본 -->
+    <div class="cont_message" style="display:none;">
+        <h2 class="">
+        문서를 보려면<br>
+        결재 프로그램이 필요합니다.
+        </h2>
+        <span class="">설치하시겠습니까?</span>
+    </div> 
+    <!-- 컨텐츠영역:설치 중-->
+    <div class="cont_message">
+        <h2 class="">
+        다운로드 중에는<br>
+        창을 닫지 마십시오.
+        </h2>
+        <span class="">결재 프로그램 설치중입니다...</span>
+    </div> 
+    
+          
+  </div> 
+</div>
+<div class="btn_apply_download block">
+      <span class="fnt_bold">설치</span>
+      <span class="">취소</span>
+  </div>
+</body>
+</html>

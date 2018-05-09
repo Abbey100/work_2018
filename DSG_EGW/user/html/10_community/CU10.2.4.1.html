@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>환경설정 동호회 속성관리</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1 class="">동호회</h1>
+                <span class="gohome" title="동호회홈으로"><a href="#">홈으로가기</a></span>
+                <div class="aside">
+                    <fieldset>
+                        <legend>search_box</legend>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>동호회</option>
+                                <option>통합</option>
+                            </select>
+
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>				
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>	
+            </div>
+            <!-- //header -->
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->      
+            <!-- body -->
+            <div class="body"> 
+                <!-- 동호회 -->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action">
+                            <a class="action_btn">게시하기</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">							
+                                <ul class="tab">
+                                    <li><a class="selected">정보</a></li>
+                                    <li><a class="">내 활동</a></li>	
+                                </ul>
+                                <div class="club_info divide">
+                                    <a class="club_name best">농구동호회</a>
+                                    <!-- // 종류 : 일반, 우수 -->
+                                    <dl>
+                                        <dt>운영자</dt>
+                                        <dd>박민철 대리</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>회원수</dt>
+                                        <dd>40</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>게시물</dt>
+                                        <dd>82</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>개설일</dt>
+                                        <dd>2016.08.10</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>마일리지</dt>
+                                        <dd>220점</dd>
+                                    </dl>
+                                </div>														
+                                <ul class="lnb_menu">
+                                    <li><a>전체 게시물</a><span class="count">8</span></li>
+                                    <li><a>공지사항</a></li>
+                                    <li><a>일반게시판</a></li>
+                                    <li><a>자료실</a></li>
+                                    <li><a>승인게시판</a></li>
+                                    <li><a>앨범게시판</a></li>
+                                    <li><a>동영상게시판</a></li>
+                                    <li><a>토론실</a></li>
+                                    <li><a>회원목록</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>							
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+                <!-- // 동호회 -->	
+                <!-- content -->
+                <div class="container_area handy-scroll" >
+                    <div class="">
+                        <!-- 본문 영역 -->
+                        <div class="container">
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup border">
+                                <h2>설정</h2>	
+                                <ul class="tab">
+                                    <li><a class="selected">동호회 속성 관리</a></li>
+                                    <li><a class="">운영 관리</a></li>	
+                                    <li><a class="">게시판 관리</a></li>		
+                                    <li><a class="">사용량 조회</a></li>
+                                    <li><a class="">회원등급 관리</a></li>
+                                    <li><a class="">회원 관리</a></li>
+                                    <li><a class="">배너 관리</a></li>
+                                    <li><a class="">토론실 관리</a></li>
+                                </ul>
+                            </div>
+                            <!-- // 타이틀 영역 -->
+                            <!-- form -->
+                            <div class="form_table">
+                                <div class="scroll_area handy-scroll">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:150px;">
+                                            <col width="*">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>동호회 명</th>
+                                                <td>
+                                                    <div class="input_group multi focused">
+                                                        <!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+                                                        <input type="text" class="basic_input" value="농구동호회" />
+                                                        <span class="size_txt">14/60bytes</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>운영자</th>
+                                                <td>
+                                                    <p class="description">
+                                                        최민식
+                                                    </p>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>생성일</th>
+                                                <td>
+                                                    <p class="description">
+                                                        2016-12-02(수) 12:00
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>동호회 분류</th>
+                                                <td>
+                                                    <div class="input_group has_btn">
+                                                        <input type="text" class="basic_input" value="스포츠" readonly>
+                                                        <a class="ico group"  href="#">분류</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>키워드</th>
+                                                <td class="text_input">
+                                                    <input type="text" class="border_input" id="input" value="농구">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>동호회 소개</th>
+                                                <td>
+                                                    <textarea type="text" class="box_textarea" rows="1">안녕하세요. 핸디소프트 최민식입니다. 우리 동호회는 친목 동호회입니다.</textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>가입 방식</th>
+                                                <td>
+                                                    <div class="option">
+                                                        <span class="form">
+                                                            <input type="radio" name="type" id="type_auto" />
+                                                            <label for="type_auto">가입제 (가입 신청시 자동가입)</label></span>
+                                                        <span class="form">
+                                                            <input type="radio" name="type" id="type_agree" />
+                                                            <label for="type_agree">승인제 (동호회 운영자 승인에 따라 가입)</label>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>별명 사용</th>
+                                                <td>
+                                                    <div class="option">
+                                                        <span class="form">
+                                                            <input type="radio" name="type" id="type_nickname" />
+                                                            <label for="type_nickname">사용함</label></span>
+
+                                                        <span class="form">
+                                                            <input type="radio" name="type" id="type_name" />
+                                                            <label for="type_name">사용안함 (회원 이름 사용)</label>
+                                                        </span>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>대표 이미지</th>
+                                                <td>
+                                                    <div class="file_box community">
+                                                        <input type="text" class="file_name" id="file_name02" value="A456tyop444.jpg" readonly/>
+                                                        <span class="cancel"></span>
+                                                        <span class="ico file">
+                                                            <input  type="file" id="file" style="" onchange="document.getElementById('file_name02').value=this.value;">
+                                                        </span> 
+                                                    </div>
+                                                    <p class="file_info fnt_grey">
+                                                        gif, jpg, ipeg, png 파일만 등록 가능합니다.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>회원 가입시 인사말</th>
+                                                <td>
+                                                    <textarea type="text" class="box_textarea" rows="1" placeholder="인사말을 입력해 주세요"> </textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>가입질문 1</th>
+                                                <td>
+                                                    <div class="input_group has_btn">
+                                                        <input type="text" class="basic_input" placeholder="내용을 입력해 주세요">
+                                                        <a class="cancel" href="#">삭제</a>
+                                                    </div>
+                                                    <a style="display: none;" class="text_btn add" href="#">추가입력</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>가입질문 2</th>
+                                                <td>
+                                                    <div class="input_group has_btn">
+                                                        <input type="text" class="basic_input" placeholder="내용을 입력해 주세요">
+                                                        <a class="cancel" href="#">삭제</a>
+                                                    </div>
+                                                    <a class="text_btn add" href="#">추가입력</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="btns_area">
+                                        <a class="action_btn" href="#">확인</a>
+                                        <a class="btn">취소</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

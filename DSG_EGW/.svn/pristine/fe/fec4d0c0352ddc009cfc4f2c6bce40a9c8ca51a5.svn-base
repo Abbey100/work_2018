@@ -1,0 +1,174 @@
+<html lang="ko"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>설문등록</title>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link type="text/css" rel="stylesheet" href="../../css/fileUpload.css">
+</head>
+
+<body marginwidth="0" marginheight="0">
+<div class="container_box container_write_box mg_lft_0">
+<form id="PblmType" name="PblmType" action="/jsp/rsch/RegistRsch.jsp" enctype="multipart/form-data" method="post">
+    
+    <div class="title_area">
+        <h2 class="title" title="HOME > 설문 > 설문등록">
+            설문등록
+            <span></span>
+        </h2>
+        <div class="btn_flip_left"><a href="javascript:toggleLFrame();">&nbsp;</a></div>
+        <div class="btn_flip_right"><a href="javascript:toggleRFrame();">&nbsp;</a></div>
+    </div>
+
+
+    <div class="btn_area">
+        <ul class="btns">
+        
+            <li><span><a href="javascript:MakeRgst();" title="등록">등록</a></span></li>
+            <li><span><a href="javascript:CancelRegist();" title="취소">취소</a></span></li>
+        
+            <li><span><a href="javascript:Del();" title="삭제">삭제</a></span></li>
+            <li><span><a href="javascript:PreView();" title="설문 미리보기">설문 미리보기</a></span></li>
+        </ul>
+    </div>
+    
+    <div class="write_wrap view_body_contents">
+        <div class="write_form_box">
+            <table class="full_width">
+                <colgroup>
+                    <col style="width:118px;">
+                    <col style="width:*;">
+                    <col style="width:118px;">
+                    <col style="width:*;">
+                </colgroup>
+                <tbody><tr>
+                    <th scope="row">
+                        제목
+                    </th>
+                    <td colspan="3">
+                        <div class="wr_form_td">
+                            <input id="ttl" name="ttl" type="text" class="basic_inp" style="width:100%" onkeypress="return handleEnter(this, event)" value="" onkeyup="javascript:textCheck(ttl,alert_title_limit,100);">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        취지
+                    </th>
+                    <td colspan="3">
+                        <div class="wr_form_td">
+                            <textarea id="prps_temp" name="prps_temp" class="basic_txtarea" rows="4" style="width:100%" wrap="hard"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        기명여부
+                    </th>
+                    <td>
+                        <div class="wr_form_td">
+                            <label class="pd_rgt_20">
+                                <input type="radio" name="rgst_cl" value="1" checked="">기명
+                            </label>
+                            <label class="pd_rgt_20">
+                                <input type="radio" name="rgst_cl" value="2">무기명
+                            </label>
+                        </div>
+                    </td>
+                    <th scope="row">
+                        공개여부
+                    </th>
+                    <td>
+                        <div class="wr_form_td">
+                            <label class="pd_rgt_20">
+                                <input type="radio" name="rslt_open_fl" value="1" checked="">공개
+                            </label>
+                            <label class="pd_rgt_20">
+                                <input type="radio" name="rslt_open_fl" value="0">비공개
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        문제유형
+                    </th>
+                    <td colspan="3">
+                        <div class="wr_form_td">
+                            <select id="add_pblm_type_cl" name="add_pblm_type_cl" onchange="SetItemCnt(this)" class="basic_select mg_rgt_8">
+                                <option value="1" selected="">객관식</option>
+                                <option value="2">주관식</option>
+                                <option value="3">수량형</option>
+                                <option value="4">순위형</option>
+                            </select>
+                            <input id="add_img_fl" type="checkbox" name="add_img_fl" value="1">그림포함
+                            &nbsp;&nbsp;/&nbsp;&nbsp;
+                            <input id="add_etc_fl" type="checkbox" name="add_etc_fl" value="1">기타항목포함
+                            &nbsp;&nbsp;/&nbsp;&nbsp;항목수&nbsp;
+                            <select id="add_item_cnt" name="add_item_cnt" class="basic_select">
+                                <option value="2" selected="">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option></select>
+                            &nbsp;&nbsp;/&nbsp;&nbsp;문제위치: &nbsp;
+                            아래로 &nbsp;
+                            <select id="add_pblm_no" name="add_pblm_no" class="basic_select"><option value=""></option></select>&nbsp;
+                            <span class="btn_config layout_rgt">
+                                <a href="javascript:ChkForm();">문제추가</a>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        지문추가
+                    </th>
+                    <td colspan="3" class="with_btn">
+                        <div class="wr_form_td">
+                            <input id="cmnt" type="text" name="cmnt" class="basic_inp" style="width:100%" value="" maxlength="109"> <!--&nbsp;-->
+                            <span class="btn_config">
+                                <a href="javascript:AddCmnt();">지문추가</a>
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                
+                <!-- 첨부파일 Start-->
+                
+                    
+                <tr>
+                    <th scope="row">
+                        파일첨부
+                        <a href="javascript:showFileAttach();" class="btn_trig btn_addfile on">&amp;bnsp;</a>
+                    </th>
+                    <td colspan="3">
+                    </td>
+                </tr>
+                <tr class="file_box one" style="display: table-row;">
+                        <td scope="row">
+                        </td><td colspan="3">
+                            <!-- 설문 첨부 UI Start -->
+                            <div name="fileUpload" id="fileUpload" class="fileUpload"><div class="add_filebg">
+                            <div id="wfw_file_box" class="wfw_file_box">
+                            <form name="fileUploadForm" id="fileUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data"><input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" multiple=""></form><ul><li><a href="#" class="attach_add">일반첨부</a></li></ul>
+                            <form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST"><input type="hidden" id="fileurl" name="fileurl" value=""></form>
+                            </div>
+                            </div><ul><li class="theader_h1">파일이름</li><li class="theader_h2">파일크기</li></ul><div id="filelistlayer" class="filelistlayer" style="display: block;"><ul id="filelist" class="filelist"></ul></div></div>
+                           <!--  설문 첨부 UI End-->
+                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            
+                        </td>                        
+                    </tr>
+            </tbody></table>
+        </div>
+    </div>
+    
+    
+
+</form>
+</div>
+
+</body></html>

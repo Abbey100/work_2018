@@ -1,0 +1,86 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script>
+	function popup_org(file_name){
+		var win = window.open(file_name+".html","organization_popup","width=686px,height=676px,resizable=no, toolbar=no,menubar=no,location=no");
+	}
+	function popup_org_s(file_name){
+		var win = window.open(file_name+".html","organization_popup","width=424px,height=612px,resizable=yes, toolbar=no,menubar=no,location=no");		
+	}function popup_cal_add(file_name){
+		var win = window.open(file_name+".html","organization_popup","width=438px,height=350px,resizable=no, toolbar=no,menubar=no,location=no");		
+	}
+</script>
+</head>
+<body>
+<div class="btn_area">
+  <p>메일</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_org('org_mail');">1.조직도</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_contact');">2.주소록그룹</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_position');">3.직위</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>일정</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_cal_add('../calendar/cal_add');">1.달력추가</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_contact');">2.주소록그룹</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_position');">3.직위</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>결재</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_org('org_approvalline');">4.조직도</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_approvalline_myline');">5.나의결재선</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_approval_public');">6.공람지정</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_approval_publicgroup');">7.공람그룹</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_approval_receiver');">8.수신자지정</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_approval_receivergroup');">9.수신자그룹</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org_s('org_approval_private');">10.문서함이동복사</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org_s('org_approval_dept');">11.부서문서함선택</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>게시판</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_org_s('org_board_tree');">12.선택</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_calendar_share');">13.공유선택</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>클라우드</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_org_s('org_cloud_folder');">14.폴더선택</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>주소록</p>
+  <ul class="btns">
+    <li><span><a href="org_address_add_group.html" target="_blank">15.그룹추가</a></span></li>
+    <li><span><a href="org_address_add_group2.html" target="_blank">16.그룹추가2</a></span></li>
+  </ul>
+</div>
+<div class="btn_area">
+  <p>setting</p>
+  <ul class="btns">
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_absence');">17.보낸이</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_absence2');">18.보낸이2</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace');">19.대리수신자</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace2');">20.대리수신자2</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace_approval');">21.대리결재자</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace_approval2');">22.대리결재자2</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace_send');">23.대리발송담당자</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace_receipt');">24.대리접수담당자</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_setting_replace_receipt2');">25.대리접수담당자2</a></span></li>
+    <li><span><a href="#" onclick="javascript:popup_org('org_sign_management');">26.서명관리</a></span></li>
+  </ul>
+</div>
+</body>
+</html>

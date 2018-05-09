@@ -1,0 +1,125 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">개인정보설정</h2>
+  </div>
+  <div class="pd_all_18">
+    <div class="content_configlist">
+      <table>
+        <colgroup>
+        <col style="width:150px;">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th><span>영문명</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>별칭</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>성별</span></th>
+            <td class="inp_ctt"><label class="pd_rt15">
+                <input type="radio" checked="checked">
+                남성</label>
+              <label>
+                <input type="radio">
+                여성</label></td>
+          </tr>
+          <tr>
+            <th><span>전화번호</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>팩스번호</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>홈페이지</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>E-Mail</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>사진</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" id="file_txt1" name="file_txt1"  style="width:217px" readonly />
+              &nbsp;<img src="../../img/btn_filesch.gif" alt="파일찾기" width="55" height="22" align="absmiddle" onclick="document.getElementById('file_nm1').click();"/>
+              <input type="file" name="file_nm1" id="file_nm1" style="display:none;" onchange="document.getElementById('file_txt1').value=this.value" value="this.value"/></td>
+          </tr>
+          <tr>
+            <th><span>자택 전화번호</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>자택 팩스번호</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>휴대폰번호</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:278px;"/></td>
+          </tr>
+          <tr>
+            <th><span>주소</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:96px">
+              -
+              <input type="text" class="basic_inp" style="width:97px">
+              <span class="btn_config"><a href="#">우편번호</a></span>
+              <div class="address_more">
+                <input type="text" class="basic_inp" style="width:545px">
+              </div></td>
+          </tr>
+          <tr>
+            <th><span>결혼기념일</span></th>
+            <td class="inp_ctt"><div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+              <label class="pd_lf10">
+                <input type="radio" name="ch01" checked="checked">
+                <strong>양력</strong></label>
+              <label>
+                <input type="radio" name="ch01">
+                <strong>음력</strong></label></td>
+          </tr>
+          <tr>
+            <th><span>생일</span></th>
+            <td class="inp_ctt"><div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+              <label class="pd_lf10">
+                <input type="radio" name="ch01" checked="checked">
+                <strong>양력</strong></label>
+              <label>
+                <input type="radio" name="ch01">
+                <strong>음력</strong></label></td>
+          </tr>
+          <tr>
+            <th><span>담당업무</span></th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:545px;"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="footer">
+    <ul class="btns">
+      <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+      <li><span><a href="#">취소</a></span></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

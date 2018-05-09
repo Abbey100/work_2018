@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 팝업형 레이아웃 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../../css/sub.css" />
+	</head>
+	<!-- Size : 600 x 450 -->
+	<body>
+		<div class="popup al_pop open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:600px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						알림
+						<!-- 주의 or 경고 -->
+					</h2>
+					<!-- contents -->
+					<div class="">
+						<!-- sender -->
+						<div class="sender">
+							<div class="sd_info noti">알림</div>
+							<!--<div class="sd_info caution">주의</div>
+<div class="sd_info warning">경고</div>-->
+						</div>
+						<!-- content -->
+						<div class="ms_cont">
+							<!-- message details -->
+							<span class="org_title"><p>서비스점검서비스점검서비스점검서비
+								스점검서비스점검서비스점검서비스점검서
+								비스점검서비스점검서비스점검서비스점검서비스점검서비스점
+								</p></span>
+							<span class="message">서버점검으로 인하여 오전 12시 30분까지 접속이 제한됩니다. 서버점검으로 
+								인하여 오전 12시 30분까지 접속이 제한됩니다. 서버점검으로 인하여 오전 12시 30분
+								까지 접속이 제한됩니다. 서버점검으로 인하여 오전 12시 30분까지 접속이 제한됩니다. 
+								서버점검으로 인하</span>
+						</div>	
+						<div class="btns_area bttm border">
+							<div class="align_rg">
+								<a class="btn">확인</a>
+							</div>
+						</div>   
+					</div>
+					<!-- // body -->	
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

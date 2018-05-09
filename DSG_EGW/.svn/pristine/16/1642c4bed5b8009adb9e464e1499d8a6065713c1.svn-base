@@ -1,0 +1,106 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap"> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>게시물읽기</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns first">
+      <li><span><a href="#" class="fnt_bold">답장</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span class="send"><a href="#">보내기</a></span></li>
+    </ul>
+    <ul class="btns first">
+      <li><span><a href="#">찬성</a></span></li>
+      <!--[D] del 클래스는 x 아이콘 -->
+      <li  class="mg_lft_-8"><span><a href="#">반대</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span class="slt"><a href="#">이동</a></span></li>
+      </li>
+    </ul>
+    <ul class="btns">
+      <li><span><a href="#">인쇄하기</a></span></li>
+    </ul>
+    <div class="array_sort mg_tp_9"> <span class="array_up"><a href="#">위</a></span> <span class="array_down"><a href="#">아래</a></span> </div>
+  </div>
+  <!-- //버튼 영역 -->
+  <SAVEBODYHEAD></SAVEBODYHEAD>
+  <div class="reading mg_tp_0">
+    <table width="100%" borderspacing='0' border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="TblTopNoImg"></td>
+      </tr>
+      <ISBBSINFOSTART></ISBBSINFOSTART>
+      <tr>
+        <th class="BoxBdrSmll"></th>
+      </tr>
+      <ISBBSINFOEND></ISBBSINFOEND>
+        <TR >
+      
+      <TD><form>
+          <BBSINFO></BBSINFO>
+          <table WIDTH='100%' border='0' cellpadding='0' cellspacing='0'>
+            <tr>
+              <th class="VSHead"  nowrap>제목</th>
+              <td class="Bsc subj"> 여기 제목이 들어가는 거지요????!! </td>
+            </tr>
+            <tr>
+              <th class="VSHead"  nowrap>게시자</th>
+              <td class="Bsc">핸 사원(다산그룹,핸디소프트)</td>
+            </tr>
+          </table>
+          <table WIDTH='100%' border='0' cellpadding='0' cellspacing='0'>
+            <tr>
+              <th class="VSHead"  nowrap><input type=button name=b value='게시판' onclick='BBSView()'/></th>
+              <td class="Bsc">6.x 게시판</td>
+              <th class="VSHead"  nowrap>게시일</th>
+              <td class="Bsc duration" nowrap>2014.04.04</td>
+            </tr>
+            <tr>
+              <th class="VSHead"  nowrap>옵션</th>
+              <td class="Bsc" nowrap><BBSRESPONSETYPE>
+                <BBSRESPONSEVIEW>
+                <bbssecurity>
+                <input type='checkbox' name='BBSEXPRESS' value='1'>
+                긴급
+                <bbsFirstPublished>
+                <bbsannounce></td>
+              <th class="VSHead"  nowrap>종료일</th>
+              <td class="Bsc duration" nowrap>~2014.04.04</td>
+            </tr>
+              </tr>
+            
+          </table>
+        <div class="brdr_dble"></div>
+          <table class="mg_tp_9" WIDTH='100%' HEIGHT='300' cellpadding='0' cellspacing='0' >
+            <tr>
+              <td class='BoxBdr'><TEXTAREA cols=46 name=BODY rows=12 style="FONT-SIZE:10pt;WIDTH:100%;HEIGHT:300px;border-color:#c6c6c6;border-width:1px; " wrap=physical></TEXTAREA></td>
+            </tr>
+            <tr>
+              <td height='2'></td>
+            </tr>
+          </table>
+          <FIRSTATTACHVIEW>
+          <BBSATTACH>
+          <WEBDOCATTACH>
+        </FORM></TD>
+        </TR>
+      
+    </table>
+  </div>
+</div>
+</body>
+</html>

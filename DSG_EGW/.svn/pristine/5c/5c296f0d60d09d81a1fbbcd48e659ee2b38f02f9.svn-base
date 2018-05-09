@@ -1,0 +1,505 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body id="tManagerBody" name="tManagerBody">
+
+<div id="left" class="left_menu">
+  <div id="fix_container" name="fix_container">
+    <div id="sub_title_calendar" class="btn_large" style="display: none;"> <a href="javascript:eventUtil.openPopup();" title="일정추가">일정추가</a> </div>
+    <div id="sub_title_equip" class="btn_large" style=""> <a href="javascript:eventUtil.openPopup();" title="설비예약">설비예약</a> </div>
+    <!-- 초기화면 달력 -->
+    <div id="" class="calendar_tree_box">
+      <div class="mini_cal_on">
+        <div class="tree_ttl_area"> <span class="tree_ttl mini_cal" id="this_month" name="this_month" onclick="javascript:toggle_div(this, 'info_calendar');">2015. 04</span> <a id="last_month_a" class="btn_month_pre" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 3, 15);" title="이전 달">이전 달</a> <a id="next_month_a" class="btn_month_next" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 15);" title="다음 달">다음 달</a> </div>
+        <div id="left_calendar_tree" class="left_calendar_tree">
+          <div id="info_calendar" style="display: block;">
+            <table id="calendar" name="calendar" border="0" cellspacing="0" cellpadding="0" class="calendar">
+              <colgroup>
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              </colgroup>
+              <thead id="calendar_head" name="calendar_head">
+                <tr id="week_name" name="week_name">
+                  <th class="holisun">S</th>
+                  <th>M</th>
+                  <th>T</th>
+                  <th>W</th>
+                  <th>T</th>
+                  <th>F</th>
+                  <th class="holisat">S</th>
+                </tr>
+              </thead>
+              <tbody id="calendar_body" name="calendar_body">
+                <tr id="calendar_table_body_tr_0" name="calendar_table_body_tr_0">
+                  <td id="calendar_table_body_td_0" name="calendar_table_body_td_0" class="other"><a id="calendar_table_body_a_0" name="calendar_table_body_a_0" schd_data="0329" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 3, 29);" class="holisun">29</a></td>
+                  <td id="calendar_table_body_td_1" name="calendar_table_body_td_1" class="other"><a id="calendar_table_body_a_1" name="calendar_table_body_a_1" schd_data="0330" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 3, 30);">30</a></td>
+                  <td id="calendar_table_body_td_2" name="calendar_table_body_td_2" class="other"><a id="calendar_table_body_a_2" name="calendar_table_body_a_2" schd_data="0331" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 3, 31);">31</a></td>
+                  <td id="calendar_table_body_td_3" name="calendar_table_body_td_3"><a id="calendar_table_body_a_3" name="calendar_table_body_a_3" schd_data="0401" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 1);">1</a></td>
+                  <td id="calendar_table_body_td_4" name="calendar_table_body_td_4"><a id="calendar_table_body_a_4" name="calendar_table_body_a_4" schd_data="0402" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 2);">2</a></td>
+                  <td id="calendar_table_body_td_5" name="calendar_table_body_td_5"><a id="calendar_table_body_a_5" name="calendar_table_body_a_5" schd_data="0403" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 3);">3</a></td>
+                  <td id="calendar_table_body_td_6" name="calendar_table_body_td_6"><a id="calendar_table_body_a_6" name="calendar_table_body_a_6" schd_data="0404" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 4);" class="holisat">4</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_1" name="calendar_table_body_tr_1">
+                  <td id="calendar_table_body_td_7" name="calendar_table_body_td_7"><a id="calendar_table_body_a_7" name="calendar_table_body_a_7" schd_data="0405" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 5);" class="holisun">5</a></td>
+                  <td id="calendar_table_body_td_8" name="calendar_table_body_td_8"><a id="calendar_table_body_a_8" name="calendar_table_body_a_8" schd_data="0406" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 6);" class="schd">6</a></td>
+                  <td id="calendar_table_body_td_9" name="calendar_table_body_td_9"><a id="calendar_table_body_a_9" name="calendar_table_body_a_9" schd_data="0407" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 7);" class="schd">7</a></td>
+                  <td id="calendar_table_body_td_10" name="calendar_table_body_td_10"><a id="calendar_table_body_a_10" name="calendar_table_body_a_10" schd_data="0408" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 8);" class="schd">8</a></td>
+                  <td id="calendar_table_body_td_11" name="calendar_table_body_td_11"><a id="calendar_table_body_a_11" name="calendar_table_body_a_11" schd_data="0409" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 9);" class="schd">9</a></td>
+                  <td id="calendar_table_body_td_12" name="calendar_table_body_td_12"><a id="calendar_table_body_a_12" name="calendar_table_body_a_12" schd_data="0410" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 10);">10</a></td>
+                  <td id="calendar_table_body_td_13" name="calendar_table_body_td_13"><a id="calendar_table_body_a_13" name="calendar_table_body_a_13" schd_data="0411" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 11);" class="holisat">11</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_2" name="calendar_table_body_tr_2">
+                  <td id="calendar_table_body_td_14" name="calendar_table_body_td_14"><a id="calendar_table_body_a_14" name="calendar_table_body_a_14" schd_data="0412" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 12);" class="holisun">12</a></td>
+                  <td id="calendar_table_body_td_15" name="calendar_table_body_td_15"><a id="calendar_table_body_a_15" name="calendar_table_body_a_15" schd_data="0413" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 13);">13</a></td>
+                  <td id="calendar_table_body_td_16" name="calendar_table_body_td_16"><a id="calendar_table_body_a_16" name="calendar_table_body_a_16" schd_data="0414" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 14);">14</a></td>
+                  <td id="calendar_table_body_td_17" name="calendar_table_body_td_17" class="day_on"><a id="calendar_table_body_a_17" name="calendar_table_body_a_17" schd_data="0415" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 15);">15</a></td>
+                  <td id="calendar_table_body_td_18" name="calendar_table_body_td_18"><a id="calendar_table_body_a_18" name="calendar_table_body_a_18" schd_data="0416" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 16);">16</a></td>
+                  <td id="calendar_table_body_td_19" name="calendar_table_body_td_19"><a id="calendar_table_body_a_19" name="calendar_table_body_a_19" schd_data="0417" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 17);">17</a></td>
+                  <td id="calendar_table_body_td_20" name="calendar_table_body_td_20"><a id="calendar_table_body_a_20" name="calendar_table_body_a_20" schd_data="0418" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 18);" class="holisat">18</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_3" name="calendar_table_body_tr_3">
+                  <td id="calendar_table_body_td_21" name="calendar_table_body_td_21"><a id="calendar_table_body_a_21" name="calendar_table_body_a_21" schd_data="0419" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 19);" class="holisun">19</a></td>
+                  <td id="calendar_table_body_td_22" name="calendar_table_body_td_22"><a id="calendar_table_body_a_22" name="calendar_table_body_a_22" schd_data="0420" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 20);">20</a></td>
+                  <td id="calendar_table_body_td_23" name="calendar_table_body_td_23"><a id="calendar_table_body_a_23" name="calendar_table_body_a_23" schd_data="0421" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 21);">21</a></td>
+                  <td id="calendar_table_body_td_24" name="calendar_table_body_td_24"><a id="calendar_table_body_a_24" name="calendar_table_body_a_24" schd_data="0422" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 22);">22</a></td>
+                  <td id="calendar_table_body_td_25" name="calendar_table_body_td_25"><a id="calendar_table_body_a_25" name="calendar_table_body_a_25" schd_data="0423" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 23);">23</a></td>
+                  <td id="calendar_table_body_td_26" name="calendar_table_body_td_26"><a id="calendar_table_body_a_26" name="calendar_table_body_a_26" schd_data="0424" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 24);">24</a></td>
+                  <td id="calendar_table_body_td_27" name="calendar_table_body_td_27"><a id="calendar_table_body_a_27" name="calendar_table_body_a_27" schd_data="0425" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 25);" class="holisat">25</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_4" name="calendar_table_body_tr_4">
+                  <td id="calendar_table_body_td_28" name="calendar_table_body_td_28"><a id="calendar_table_body_a_28" name="calendar_table_body_a_28" schd_data="0426" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 26);" class="holisun">26</a></td>
+                  <td id="calendar_table_body_td_29" name="calendar_table_body_td_29"><a id="calendar_table_body_a_29" name="calendar_table_body_a_29" schd_data="0427" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 27);">27</a></td>
+                  <td id="calendar_table_body_td_30" name="calendar_table_body_td_30"><a id="calendar_table_body_a_30" name="calendar_table_body_a_30" schd_data="0428" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 28);">28</a></td>
+                  <td id="calendar_table_body_td_31" name="calendar_table_body_td_31"><a id="calendar_table_body_a_31" name="calendar_table_body_a_31" schd_data="0429" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 29);">29</a></td>
+                  <td id="calendar_table_body_td_32" name="calendar_table_body_td_32"><a id="calendar_table_body_a_32" name="calendar_table_body_a_32" schd_data="0430" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 4, 30);">30</a></td>
+                  <td id="calendar_table_body_td_33" name="calendar_table_body_td_33" class="other"><a id="calendar_table_body_a_33" name="calendar_table_body_a_33" schd_data="0501" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 1);">1</a></td>
+                  <td id="calendar_table_body_td_34" name="calendar_table_body_td_34" class="other"><a id="calendar_table_body_a_34" name="calendar_table_body_a_34" schd_data="0502" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 2);" class="holisat">2</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_5" name="calendar_table_body_tr_5">
+                  <td id="calendar_table_body_td_35" name="calendar_table_body_td_35" class="other"><a id="calendar_table_body_a_35" name="calendar_table_body_a_35" schd_data="0503" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 3);" class="holisun">3</a></td>
+                  <td id="calendar_table_body_td_36" name="calendar_table_body_td_36" class="other"><a id="calendar_table_body_a_36" name="calendar_table_body_a_36" schd_data="0504" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 4);">4</a></td>
+                  <td id="calendar_table_body_td_37" name="calendar_table_body_td_37" class="other"><a id="calendar_table_body_a_37" name="calendar_table_body_a_37" schd_data="0505" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 5);">5</a></td>
+                  <td id="calendar_table_body_td_38" name="calendar_table_body_td_38" class="other"><a id="calendar_table_body_a_38" name="calendar_table_body_a_38" schd_data="0506" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 6);">6</a></td>
+                  <td id="calendar_table_body_td_39" name="calendar_table_body_td_39" class="other"><a id="calendar_table_body_a_39" name="calendar_table_body_a_39" schd_data="0507" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 7);">7 </a></td>
+                  <td id="calendar_table_body_td_40" name="calendar_table_body_td_40" class="other"><a id="calendar_table_body_a_40" name="calendar_table_body_a_40" schd_data="0508" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 8);">8</a></td>
+                  <td id="calendar_table_body_td_41" name="calendar_table_body_td_41" class="other"><a id="calendar_table_body_a_41" name="calendar_table_body_a_41" schd_data="0509" href="javascript:home_calendar.setAttributeCalendarNavi(2015, 5, 9);" class="holisat">9</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--// 달력 END -->
+    <!--
+    <div id="all_event" class="snb_lst" style="display: none;"> <span class="check_area">
+      <label>
+        <input type="checkbox" onclick="javascript:calendarList.viewMyAllEvent(this.checked);">
+        <span class="mg_lft_5">모든일정 보기 </span> </label>
+      </span> </div>
+      
+    <div id="cal_list1" class="tree_area_box" style="display: none;">
+      <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'all_tree');">전체일정</span> </div>
+      <div id="all_tree" class="calendar_tree_area">
+        <ul id="defalt_cal" class="calendar_tree">
+        </ul>
+      </div>
+    </div>
+    <div id="cal_list2" class="tree_area_box" style="display: none;">
+      <div class="tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'private_tree');">개인달력</span> <a id="calendar_add" class="btn_tree_add" href="#"> </a> </div>
+      <div id="private_tree" class="calendar_tree_area">
+        <ul id="private_cal" class="calendar_tree">
+        </ul>
+      </div>
+    </div>
+    <div id="cal_list3" class="tree_area_box last" style="display: none;">
+      <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'share_tree');">공유받은달력</span> </div>
+      <div id="share_tree" class="calendar_tree_area">
+        <ul id="shared_cal" class="calendar_tree">
+        </ul>
+      </div>
+    </div>-->
+    
+    <!-- [D] 설비 승인대기 목록 : 관리자 or 설비관리자 용 이므로 설비관리자가 아니라면 아래 ul snb_lst를 display:none; 시킨다. -->
+    <ul class="snb_lst" style="display:;">
+      <li class="snb_allwd_rsrv" style="display: ;"><a id="" href="" id="equipcheck" name="equipcheck" class="erecept" href="javascript:showColumnForApprovalWait();"   > <span id="">승인대기</span> </a></li>
+      <li class="snb_equip" style="display: ;"><a id="" href="" id="equipcheck" name="equipcheck" class="erecept" href="javascript:showColumnForApprovalWait();"   > <span id="">공유설비</span> </a></li>
+    </ul>
+    <!-- 설비목록추가 -->
+    <div id="cal_list3" class="tree_area_box last" style="display: ;">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'');">설비목록</span>
+        <!-- [D] tree_ttl 의 span에서 two, one을 사용하거나 제하고, 아래 사용하지 않는 버튼을 display:none; -->
+        <a class="btn_tree_add" id="equipment_add" name="equipment_add" href="javascript:mainEventHandler.openEquipmentWindow()" > </a>
+        <a class="btn_tree_cnfg" href="#" style="display:;"> </a>
+        </div>
+      
+      <!--///// 여기까지 설비 관리자 용 메뉴 -->
+      
+      <!--Tree Box-->
+      <div id="share_tree" class="calendar_tree_area pd_all_18 mg_tp_-7">
+        <ul id="shared_cal" class="calendar_tree">
+          <div id="equipment_list" name="equipment_list" style="display: block;" class="">
+            <div id="webfx-tree-object-4" name="webfx-tree-object-4" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-4-icon" name="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/myequip.gif" onclick="webFXTreeHandler.select(this);">&nbsp;
+              <input type="checkbox" name="myequipment" id="myequipment" class="tree-check-box" onclick="javascript:equipmentList.saveMyEquipmentChecked(this.checked);">
+              <a href="#" onclick="javascript:equipmentList.selectMyEquipment('webfx-tree-object-4');" id="webfx-tree-object-4-anchor" name="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);" onblur="webFXTreeHandler.blur(this);">내가 예약한 설비목록</a></div>
+            <div id="webfx-tree-object-4-cont" name="webfx-tree-object-4-cont" class="webfx-tree-container" style="display: block;">
+              <div id="webfx-tree-object-5" name="webfx-tree-object-5" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" name="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" name="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_OPEN.GIF" onclick="webFXTreeHandler.select(this);">
+                <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000001441" name="webfx-tree-item-checkbox-00000000000000001441" class="tree-check-box">
+                <a href="" id="webfx-tree-object-5-anchor" name="webfx-tree-object-5-anchor">5675</a></div>
+              <div id="webfx-tree-object-5-cont" name="webfx-tree-object-5-cont" class="webfx-tree-container" style="display: block;">
+                <div id="webfx-tree-object-9" name="webfx-tree-object-9" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-9-indent-0" name="webfx-tree-object-9-indent-0" src="../../img/I.png"><img id="webfx-tree-object-9-plus" name="webfx-tree-object-9-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-9-icon" name="webfx-tree-object-9-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);">
+                  <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000001442" name="webfx-tree-item-checkbox-00000000000000001442" class="tree-check-box">
+                  <span class="calcolor" id="webfx-tree-item-colorbox-00000000000000001442" name="webfx-tree-item-colorbox-00000000000000001442" style="background-color:#f88e85">·</span><a href="" id="webfx-tree-object-9-anchor" name="webfx-tree-object-9-anchor">8888888</a></div>
+                <div id="webfx-tree-object-9-cont" name="webfx-tree-object-9-cont" class="webfx-tree-container" style="display: none;"></div>
+              </div>
+              <div id="webfx-tree-object-6" name="webfx-tree-object-6" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-plus" name="webfx-tree-object-6-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" name="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_OPEN.GIF" onclick="webFXTreeHandler.select(this);">
+                <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000000651" name="webfx-tree-item-checkbox-00000000000000000651" class="tree-check-box">
+                <a href="" id="webfx-tree-object-6-anchor" name="webfx-tree-object-6-anchor">회의실</a></div>
+              <div id="webfx-tree-object-6-cont" name="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: block;">
+                <div id="webfx-tree-object-8" name="webfx-tree-object-8" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-8-indent-0" name="webfx-tree-object-8-indent-0" src="../../img/I.png"><img id="webfx-tree-object-8-plus" name="webfx-tree-object-8-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-8-icon" name="webfx-tree-object-8-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);">
+                  <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000001371" name="webfx-tree-item-checkbox-00000000000000001371" class="tree-check-box">
+                  <span class="calcolor" id="webfx-tree-item-colorbox-00000000000000001371" name="webfx-tree-item-colorbox-00000000000000001371" style="background-color:#fdd96a">·</span><a href="" id="webfx-tree-object-8-anchor" name="webfx-tree-object-8-anchor">6767</a></div>
+                <div id="webfx-tree-object-8-cont" name="webfx-tree-object-8-cont" class="webfx-tree-container" style="display: none;"></div>
+              </div>
+              <div id="webfx-tree-object-7" name="webfx-tree-object-7" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-plus" name="webfx-tree-object-7-plus" src="../../img/Lminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" name="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_OPEN.GIF" onclick="webFXTreeHandler.select(this);">
+                <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000000202" name="webfx-tree-item-checkbox-00000000000000000202" class="tree-check-box">
+                <a href="" id="webfx-tree-object-7-anchor" name="webfx-tree-object-7-anchor">노트북</a></div>
+              <div id="webfx-tree-object-7-cont" name="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: block;">
+                <div id="webfx-tree-object-10" name="webfx-tree-object-10" style="display:block" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-10-indent-0" name="webfx-tree-object-10-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-10-plus" name="webfx-tree-object-10-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-10-icon" name="webfx-tree-object-10-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);">
+                  <input type="checkbox" id="webfx-tree-item-checkbox-00000000000000000203" name="webfx-tree-item-checkbox-00000000000000000203" class="tree-check-box">
+                  <span class="calcolor" id="webfx-tree-item-colorbox-00000000000000000203" name="webfx-tree-item-colorbox-00000000000000000203" style="background-color:#169898">·</span><a href="" id="webfx-tree-object-10-anchor" name="webfx-tree-object-10-anchor">노트북A</a></div>
+                <div id="webfx-tree-object-10-cont" name="webfx-tree-object-10-cont" class="webfx-tree-container" style="display: none;"></div>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--///// LEFT END -->
+
+<!-- CONTENTS AREA -->
+<!-- CONTENTS AREA -->
+<!-- CONTENTS AREA -->
+<div class="container_box container_list_box" id="fluid_container" name="fluid_container">
+  <!-- 1st Title : 일반용-->
+  <div class="title_area" >
+    <h2 class="title dsp_inblck dsp_none">2014. 03</h2>
+    <h2 class="title dsp_inblck" >승인대기</h2>
+    <div class="btn_box_date dsp_none">
+      <div class="btn_area_xs dsp_none"> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> <span><a href="#" title="오늘">오늘</a></span> </div>
+    </div>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!--// 1st Title -->
+  
+  <!-- 검색 영역 -->
+  <div class="srch_area">
+    <fieldset class="search">
+      <div class="btn_cal_srch"> <a href="#"><img src="../../img/btn_top_cal_srch.gif" alt="일정검색">일정검색</a></div>
+    </fieldset>
+  </div>
+  <!-- //검색 영역 -->
+  <!-- 상세 검색 영역 -->
+  <div class="detail_srch_wrap">
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table style="width:750px">
+          <colgroup>
+          <col style="width:67px">
+          <col style="width:256px">
+          <col style="width:67px">
+          <col style="width:256px">
+          <col style="*">
+          <col style="width:93px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row">기간</th>
+              <td colspan="3"><label class="pd_rgt_10">
+                  <input type="radio" name="ra01">
+                  1주일</label>
+                <label class="pd_rgt_10">
+                  <input type="radio" name="ra01">
+                  1개월</label>
+                <label class="pd_rgt_10">
+                  <input type="radio" name="ra01">
+                  전체</label>
+                <label class="pd_rgt_10">
+                  <input type="radio" name="ra01">
+                  지정</label>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                  <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                <span>~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                  <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+              <td></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+            <tr>
+              <th scope="row">제목</th>
+              <td colspan="4"><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:471px">
+                  <label class="pd_lft_10">
+                    <input type="checkbox">
+                    제목없이 검색</label>
+                </div></td>
+              <td rowspan="2"><span class="btn_sqr"><a href="#" >검색</a></span></td>
+            </tr>
+            <!-- [D] 제목없이 검색 체크했을경우 -->
+            <tr>
+              <th scope="row">제목</th>
+              <td colspan="4"><div class="inp_box">
+                  <input type="text" class="basic_inp none_subj" style="width:471px" readonly>
+                  <label class="pd_lft_10">
+                    <input type="checkbox" checked>
+                    제목없이 검색</label>
+                </div></td>
+            </tr>
+            <!-- // [D] 제목없이 검색 체크했을경우 -->
+            <tr>
+              <th scope="row">달력</th>
+              <td><div class="inp_box">
+                  <select class="basic_select" style="min-width:165px">
+                    <option value="모든달력">모든달력</option>
+                  </select>
+                </div></td>
+              <th scope="row">공유자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">공유자검색</a>
+                  <div class="input_box" style="width:220px"> <span class="recipient"><em>홍길동</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 -->
+  <!-- 버튼 영역 -->
+  <div id="moveday_nav" name="moveday_nav" class="btn_area calendar_btn_area">
+    <ul class="btns">
+      <li><span id="day_view" name="day_view" class="undefined"><a href="#" class="fnt_bold" title="일간">일간</a> </span> </li>
+      <li class="btn_lft"> <span id="week_view" name="week_view" class="undefined"> <a href="#" class="fnt_bold" title="주간">주간</a> </span> </li>
+      <li class="btn_lft"> <span id="month_view" name="month_view" class="undefined"> <a href="#" class="fnt_bold" title="월간">월간</a> </span> </li>
+      <li class="dsp_none" id="add_event" name="add_event"> <span> <a href="javascript:eventUtil.openPopup();" title="일정등록 ">일정등록 </a> </span> </li>
+      <div id="approval_btn" class="layout_lft" style="display: block;">
+        <li> <span> <a href="javascript:approval.change_status('1');" title="승인">승인</a> </span> </li>
+        <li> <span> <a href="javascript:approval.change_status('2');" title="반려">반려</a> </span> </li>
+        <li> <span> <a href="javascript:approval.cancel_status('agree', 0);" title="승인취소">승인취소</a> </span> </li>
+        <li> <span> <a href="javascript:approval.cancel_status('reject', 0);" title="반려취소">반려취소</a> </span> </li>
+        <li> <span> <a href="javascript:approval.open_search();" title="검색">검색</a> </span> </li>
+      </div>
+      <div id="reservation_btn" class="layout_lft" style="display: none;">
+        <li> <span> <a href="javascript:showColumnForApprovalWait();" title="목록">목록</a> </span> </li>
+      </div>
+    </ul>
+    <div class="layout_rgt">
+      <select id="listCount" name="listCount" onchange="listCountChange();" style="display: block; visibility: visible;">
+        <option value="10" selected="">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+      <p class="btn_prnt" style="display: none;"><a href="#" onclick="javascript:eventUtil.eventPrintView(); return false;" title="프린트"> 프린트</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  
+  <div id="approval_column" name="approval_column" style="display: block;">
+    
+    <!--- Approval-Wait List --->
+    <div class="box">
+      <div class="content_lst">
+                    <div id="approval_content_lst_head" class="content_lst_head">
+                        <table>
+                            <colgroup>
+                                <col style="width:118px">
+                                <col style="width:*">
+                                <col style="width:150px">
+                                <col style="width:100px">
+                                <col style="width:177px">
+                                <col style="width:177px">
+                                <col style="width:190px">
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th>
+                                    <input type="checkbox" id="approval_wait_check_all" name="approval_wait_check_all" onclick="JavaScript:approval.check_all_approvallist();">상태
+                                    <img style="cursor:pointer" onclick="javascript:viewDescIcon();" src="/img/ico_q.gif">
+                                </th>
+                                <th>제목</th>
+                                <th>설비</th>
+                                <!-- [D] on 클래스는 활성화 -->
+                                <th>예약자</th>
+                                <th>사용시작시간</th>
+                                <th>사용종료시간</th>
+                                <th>반복일정</th>
+                              </tr>
+                            </thead>
+                          </table>
+                    </div>
+                     <div class="content_lst content_lst_body" style="height: 603px;">
+                        <form id="frm_approval_wait" name="frm_approval_wait">
+                        <table id="approval_wait_table" name="approval_wait_table">
+                                    <colgroup>
+                                        <col style="width:118px">
+                                        <col style="width:*">
+                                        <col style="width:150px">
+                                        <col style="width:100px">
+                                        <col style="width:177px">
+                                        <col style="width:177px">
+                                        <col style="width:175px">
+                                    </colgroup>
+                                  <tbody id="approval_wait_list" name="approval_wait_list">
+                                  	
+                                        <tr id="approval_0" name="approval_0">
+                                            <td class="td_check" id="approval_ck_0" name="approval_ck_0"><input type="checkbox" id="approval_check" name="approval_check"><input type="hidden" id="event_id_0" name="event_id_0" value="00000000000000002001"><img id="approval_st_img_0" name="approval_st_img_0" src="" alt="대기"></td>
+                                            <!-- <td id="approval_st_0" name="approval_st_0"></td> -->
+                                            <td id="approval_title_0" name="approval_title_0"><a href="javascript:;" onclick="approval.open_approval_wait_detail('00000000000000002001', '0', '0');">긴예약_다시 수정함_ㅈㅈ</a></td>
+                                            <td id="approval_equip_0" name="approval_equip_0"><span onmouseover="showtip(this, event, '노트북C');">노트북C</span></td>
+                                            <td id="approval_person_0" name="approval_person_0"><a href="javascript:;" onclick="javascript:showUserProperty('001007916')" title="허지예">허지예</a></td>
+                                            <td id="approval_sd_0" name="approval_sd_0">2015.04.16 13:00</td>
+                                            <td id="approval_ed_0" name="approval_ed_0">2015.04.16 13:30</td>
+                                            <td id="approval_recur_0" name="approval_recur_0"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_1" name="approval_1">
+                                            <td class="td_check" id="approval_ck_1" name="approval_ck_1"><input type="checkbox" id="approval_check" name="approval_check"><input type="hidden" id="event_id_1" name="event_id_1" value="00000000000000002521"><img id="approval_st_img_1" name="approval_st_img_1" src="" alt="승인"></td>
+                                            <!-- <td id="approval_st_1" name="approval_st_1"></td> -->
+                                            <td id="approval_title_1" name="approval_title_1"><a href="javascript:;" onclick="approval.open_approval_wait_detail('00000000000000002521', '1', '1');">승인대기_테스트</a></td>
+                                            <td id="approval_equip_1" name="approval_equip_1"><span onmouseover="showtip(this, event, '노트북C');">노트북C</span></td>
+                                            <td id="approval_person_1" name="approval_person_1"><a href="javascript:;" onclick="javascript:showUserProperty('001014911')" title="이수은">이수은</a></td>
+                                            <td id="approval_sd_1" name="approval_sd_1">2015.04.16 14:00</td>
+                                            <td id="approval_ed_1" name="approval_ed_1">2015.04.16 15:00</td>
+                                            <td id="approval_recur_1" name="approval_recur_1"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_2" name="approval_2">
+                                            <td class="td_check" id="approval_ck_2" name="approval_ck_2">&nbsp;</td>
+                                            <!-- <td id="approval_st_2" name="approval_st_2"></td> -->
+                                            <td id="approval_title_2" name="approval_title_2"></td>
+                                            <td id="approval_equip_2" name="approval_equip_2"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_2" name="approval_person_2"></td>
+                                            <td id="approval_sd_2" name="approval_sd_2"></td>
+                                            <td id="approval_ed_2" name="approval_ed_2"></td>
+                                            <td id="approval_recur_2" name="approval_recur_2"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_3" name="approval_3">
+                                            <td class="td_check" id="approval_ck_3" name="approval_ck_3">&nbsp;</td>
+                                            <!-- <td id="approval_st_3" name="approval_st_3"></td> -->
+                                            <td id="approval_title_3" name="approval_title_3"></td>
+                                            <td id="approval_equip_3" name="approval_equip_3"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_3" name="approval_person_3"></td>
+                                            <td id="approval_sd_3" name="approval_sd_3"></td>
+                                            <td id="approval_ed_3" name="approval_ed_3"></td>
+                                            <td id="approval_recur_3" name="approval_recur_3"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_4" name="approval_4">
+                                            <td class="td_check" id="approval_ck_4" name="approval_ck_4">&nbsp;</td>
+                                            <!-- <td id="approval_st_4" name="approval_st_4"></td> -->
+                                            <td id="approval_title_4" name="approval_title_4"></td>
+                                            <td id="approval_equip_4" name="approval_equip_4"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_4" name="approval_person_4"></td>
+                                            <td id="approval_sd_4" name="approval_sd_4"></td>
+                                            <td id="approval_ed_4" name="approval_ed_4"></td>
+                                            <td id="approval_recur_4" name="approval_recur_4"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_5" name="approval_5">
+                                            <td class="td_check" id="approval_ck_5" name="approval_ck_5">&nbsp;</td>
+                                            <!-- <td id="approval_st_5" name="approval_st_5"></td> -->
+                                            <td id="approval_title_5" name="approval_title_5"></td>
+                                            <td id="approval_equip_5" name="approval_equip_5"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_5" name="approval_person_5"></td>
+                                            <td id="approval_sd_5" name="approval_sd_5"></td>
+                                            <td id="approval_ed_5" name="approval_ed_5"></td>
+                                            <td id="approval_recur_5" name="approval_recur_5"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_6" name="approval_6">
+                                            <td class="td_check" id="approval_ck_6" name="approval_ck_6">&nbsp;</td>
+                                            <!-- <td id="approval_st_6" name="approval_st_6"></td> -->
+                                            <td id="approval_title_6" name="approval_title_6"></td>
+                                            <td id="approval_equip_6" name="approval_equip_6"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_6" name="approval_person_6"></td>
+                                            <td id="approval_sd_6" name="approval_sd_6"></td>
+                                            <td id="approval_ed_6" name="approval_ed_6"></td>
+                                            <td id="approval_recur_6" name="approval_recur_6"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_7" name="approval_7">
+                                            <td class="td_check" id="approval_ck_7" name="approval_ck_7">&nbsp;</td>
+                                            <!-- <td id="approval_st_7" name="approval_st_7"></td> -->
+                                            <td id="approval_title_7" name="approval_title_7"></td>
+                                            <td id="approval_equip_7" name="approval_equip_7"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_7" name="approval_person_7"></td>
+                                            <td id="approval_sd_7" name="approval_sd_7"></td>
+                                            <td id="approval_ed_7" name="approval_ed_7"></td>
+                                            <td id="approval_recur_7" name="approval_recur_7"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_8" name="approval_8">
+                                            <td class="td_check" id="approval_ck_8" name="approval_ck_8">&nbsp;</td>
+                                            <!-- <td id="approval_st_8" name="approval_st_8"></td> -->
+                                            <td id="approval_title_8" name="approval_title_8"></td>
+                                            <td id="approval_equip_8" name="approval_equip_8"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_8" name="approval_person_8"></td>
+                                            <td id="approval_sd_8" name="approval_sd_8"></td>
+                                            <td id="approval_ed_8" name="approval_ed_8"></td>
+                                            <td id="approval_recur_8" name="approval_recur_8"></td>
+                                        </tr>
+                                    
+                                        <tr id="approval_9" name="approval_9">
+                                            <td class="td_check" id="approval_ck_9" name="approval_ck_9">&nbsp;</td>
+                                            <!-- <td id="approval_st_9" name="approval_st_9"></td> -->
+                                            <td id="approval_title_9" name="approval_title_9"></td>
+                                            <td id="approval_equip_9" name="approval_equip_9"><span onmouseover="showtip(this, event, '');"></span></td>
+                                            <td id="approval_person_9" name="approval_person_9"></td>
+                                            <td id="approval_sd_9" name="approval_sd_9"></td>
+                                            <td id="approval_ed_9" name="approval_ed_9"></td>
+                                            <td id="approval_recur_9" name="approval_recur_9"></td>
+                                        </tr>
+                                    
+                                  </tbody>
+                            </table>
+                            </form>
+                     </div>  <!--list_table end-->
+                     <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+                      <div class="paginate" id="approval_wait_pagenation"><a href="#" class="first">◄</a><a class="prev" href="#">◄</a><a href="#" class="on">1</a><a class="next" href="#">►</a><a class="last" href="#">►</a></div>
+                      <div class="pagi_num" id="approval_wait_pagenation_num">&nbsp;<input type="text" id="approval_wait_pagenation_text" name="approval_wait_pagenation_text" value="1" class="pagego" onkeydown="if(event.keyCode==13){approval.moveGo('approval_wait_pagenation_text'); event.returnValue=false;}"> / 1<a href="javascript:approval.moveGo('approval_wait_pagenation_text');" class="pagenone"></a></div>
+                     </div>
+         </div>
+
+</div>
+</div>
+</div>
+<!-- content_list_body-->
+</body>
+</html>

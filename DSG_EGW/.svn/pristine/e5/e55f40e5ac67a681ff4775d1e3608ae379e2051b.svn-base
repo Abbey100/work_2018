@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+<title>HANDY Groupware</title>
+
+<!-- 컨텐츠 css -->
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/admin_content.css">
+<link rel="stylesheet" type="text/css" href="../css/ui.dynatree.css">
+<link rel="stylesheet" type="text/css" href="../css/jquery.contextMenu.css">
+
+<!-- 개발요건 js -->
+<script type="text/javascript" src="../js/prototype.js"></script>
+<script type="text/javascript" src="../js/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.2.min.js"></script>
+
+<!-- select+checkbox+radio 관련 js -->
+<script type="text/javascript" src="../js/jquery.styleSelect.js"></script>
+<script type="text/javascript" src="../js/jQuery.customInput.js"></script>
+
+<!-- 트리 관련 js -->
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/jquery.dynatree.js"></script>
+<script type="text/javascript" src="../js/jquery.contextMenu-custom.js"></script>
+<script type="text/javascript" src="../js/tree.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#tree").dynatree({
+            // using default options
+        });
+    });
+</script>
+
+<!-- 컨텐츠 js -->
+<script type="text/javascript" src="../js/common.js"></script>
+
+</head>
+<body>
+
+	<!-- wrapper -->
+    <div class="wrapper">    	
+        
+        <!-- header -->
+        <div class="header">
+            <h1 class="logo"><a href="#" title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+            
+            <div class="scroll_area">
+                <!-- 사용자 정보 -->
+                <div class="user_info">
+                    <div class="user_name" title="MarkElliot Zuckerberg MarkElliot Zuckerberg">MarkElliot Zuckerberg MarkElliot Zuckerberg</div>
+                    <span class="login_time">(07-21 09:07)</span>
+                    <div class="user_menu">
+                        <a href="#" class="btn_logout" title="로그아웃">로그아웃</a><a href="#" class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    </div>
+                </div>
+                
+                <!-- 메뉴영역 -->
+                <div class="menu">
+                    <ul>
+                        <li><h2 class="current">기본 설정 관리</h2>
+                            <ul>
+                                <li><a href="#" class="current" title="조직도">조직도</a>
+                                    <ul>
+                                        <li><a href="#" class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                        <li><a href="#" title="클래스 관리">클래스 관리</a></li>
+                                        <li><a href="#" title="배치 관리">배치 관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">권한 설정</a></li>
+                                <li><a href="#" title="">GNB 관리</a></li>
+                                <li><a href="#" title="">초기 화면 관리</a></li>
+                                <li><a href="#" title="">메인 배너 관리</a></li>
+                                <li><a href="#" title="">환경 변수 관리</a></li>
+                            </ul>
+                        </li>
+                        <li><h2>메뉴 관리</h2>
+                            <ul>
+                                <li><a href="#" title="">결재/서식</a>
+                                    <ul>
+                                        <li><a href="#" title="">서식 관리</a></li>
+                                        <li><a href="#" title="">서식 분류</a></li>
+                                        <li><a href="#" title="">표어 관리</a></li>
+                                        <li><a href="#" title="">관인 관리</a></li>
+                                        <li><a href="#" title="">모듈 관리</a></li>
+                                        <li><a href="#" title="">한글서식관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">게시판</a>
+                                    <ul>
+                                        <li><a href="#" title="">게시판 관리</a></li>
+                                        <li><a href="#" title="">양식 관리</a></li>
+                                        <li><a href="#" title="">캐시 관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">동호회</a>
+                                    <ul>
+                                        <li><a href="#" title="">동호회 관리</a></li>
+                                        <li><a href="#" title="">환경 설정</a></li>
+                                        <li><a href="#" title="">토론실 관리</a></li>
+                                        <li><a href="#" title="">마일리지 관리</a></li>
+                                        <li><a href="#" title="">가산점 관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">스퀘어 그룹</a>
+                                    <ul>
+                                        <li><a href="#" title="">진행중인 그룹</a></li>
+                                        <li><a href="#" title="">종료된 그룹</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">웹메일</a></li>
+                                <li><a href="#" title="">웹폴더</a>
+                                    <ul>
+                                        <li><a href="#" title="">파일 관리</a></li>
+                                        <li><a href="#" title="">용량 관리</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">일정/설비</a></li>
+                            </ul>
+                        </li>
+                        <li><h2>시스템 정보</h2>
+                            <ul>
+                                <li><a href="#" class="current" title="">라이선스 정보</a></li>
+                                <li><a href="#" title="">공지사항 팝업 메시지</a></li>
+                                <li><a href="#" title="">액션로그</a>
+                                    <ul>
+                                        <li><a href="#" title="">로그인</a></li>
+                                        <li><a href="#" title="">게시판</a></li>
+                                        <li><a href="#" title="">결재</a></li>
+                                        <li><a href="#" title="">권한</a></li>
+                                        <li><a href="#" title="">업무넷</a></li>
+                                        <li><a href="#" title="">스퀘어</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><h2>통계정보</h2>
+                            <ul>
+                                <li><a href="#" class="current" title="">결재 통계</a>
+                                    <ul>
+                                        <li><a href="#" title="">결재통계</a></li>
+                                        <li><a href="#" title="">결재성과통계</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">메일 통계</a>
+                                    <ul>
+                                        <li><a href="#" title="">전체 용량</a></li>
+                                        <li><a href="#" title="">기간별 발송 현황</a></li>
+                                        <li><a href="#" title="">부서 및 사용자별 현황</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" title="">웹폴더 통계</a>
+                                    <ul>
+                                        <li><a href="#" title="">전체 용량</a></li>
+                                        <li><a href="#" title="">기간별 발송 현황</a></li>
+                                        <li><a href="#" title="">부서 및 사용자별 현황</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>
+        </div>
+        <!-- //header -->
+        
+        <!-- body -->
+        <div class="body">
+            <!-- 상단 탭 영역 -->
+            <div class="top_tab_area">
+                <div class="top_tab_list">
+                    <div class="inner">
+                        <ul style="width:2000px;">
+                            <li><a href="#" class="current" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리 조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리 조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리 조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리 조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                            <li><a href="#" title="조직/구성원 관리"><span class="tab_menu">조직/구성원 관리 조직/구성원 관리</span></a><span class="btn_close" title="닫기">닫기</span></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="btn_pre" title="이전">이전</a>
+                    <a href="#" class="btn_next" title="다음">다음</a>
+                    <a href="#" class="btn_close_all" title="전체닫기">전체닫기</a>
+                </div>
+            </div>
+            
+            <div class="container_area"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="container_area tree_out"> -->
+                
+                <!-- 상단 타이틀 영역 -->
+                <div class="title_area">
+                    <h2><span class="title" title="">조직/구성원 관리</span></h2>
+                    <div class="location">&gt;<span>기본 설정 관리</span>&gt;<span>조직도</span>&gt;<span>조직/구성원 관리</span>&gt;<span>구성원 정보</span></div>
+                </div>
+                
+                <div class="content_section">
+                    <!-- left_area -->
+                    <div class="left_area">
+                        <div class="srch_area">
+                            <div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+                                <label for="" class="hidden">검색어 입력</label>
+                                <input id="" type="text" class="form_control" name="" placeholder="검색">
+                                <a href="#" class="btn_srch" title="검색하기">검색하기</a>
+                            </div>
+                            <a href="#" class="btn_rfsh" title="새고로침">새고로침</a>
+                        </div>
+                        
+						<!-- Tree -->
+						<div id="tree">
+							<ul>
+								<li id="id1" title="핸디소프트1">핸디소프트1</li>
+								<li id="id2" class="activate">핸디소프트2</li>
+								<li id="id3" class="folder">핸디소프트3
+									<ul>
+										<li id="id3.1">Sub3.1</li>
+										<li id="id3.2">Sub3.2</li>
+									</ul>
+								</li>
+								<li id="id4" class="expanded">핸디소프트4
+									<ul>
+										<li id="id4.1">Sub4.1</li>
+										<li id="id4.2">Sub4.2</li>
+									</ul>
+								</li>
+								<li id="id5" class="folder">핸디소프트5
+									<ul>
+										<li id="id5.1">Sub5.1</li>
+										<li id="id5.2">Sub5.2</li>
+									</ul>			
+								</li>
+							</ul>
+						</div>
+						<!-- layer menu -->
+						<ul id="myMenu" class="contextMenu">
+							<li class="edit"><a href="#edit">Edit</a></li>
+							<li class="cut separator"><a href="#cut">Cut</a></li>
+							<li class="copy"><a href="#copy">Copy</a></li>
+							<li class="paste"><a href="#paste">Paste</a></li>
+							<li class="delete"><a href="#delete">Delete</a></li>
+							<li class="quit separator"><a href="#quit">Quit</a></li>
+						</ul>
+						<!-- //Tree -->
+                    </div>
+                    <!-- //left_area -->
+                    
+                    <div class="content_area">
+                        
+                        <!-- 서브 탭 -->
+                        <div class="tab_area">
+                            <ul>
+                                <li><a href="#"><span class="tab_title" title="부서 정보">부서 정보</span></a></li>
+                                <li><a href="#" class="current"><span class="tab_title" title="구성원 정보">구성원 정보</span></a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 게시판 목록 -->
+                        <div class="board_list">
+                            <!-- 게시판 목록 상단 버튼 -->
+                            <div class="list_btn_area">
+                                <!-- 좌측 버튼영역 -->
+                                <div class="left_btn">
+                                    <a href="#" title="">삭제</a>
+                                    <a href="#" title="">이동</a>
+                                    <a href="#" title="">순서변경</a>
+                                    <a href="#" title="">일괄수정</a>
+                                </div>
+                                
+                                <!-- 우측 검색영역 -->
+                                <div class="right_srch">
+
+                                    <!-- 게시판 검색 -->
+                                    <div class="list_srch_area">
+                                        <a href="#" onclick="toggleLayer('test_layer_srch');" class="btn_list_srch">검색</a>
+                                        <div id="test_layer_srch" style="display:none;">
+                                            <div class="list_srch_box">
+                                                <div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+                                                    <!-- 셀렉트 박스 -->
+                                                    <div class="select_area">
+                                                        <select name="" class="mySelect">
+                                                            <option value="">선택</option>
+                                                            <option value="">동호회명</option>
+                                                            <option value="">분류</option>
+                                                            <option value="">운영자</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <label for="" class="hidden">검색어 입력</label>
+                                                    <input id="" type="text" class="form_control" name="" placeholder="검색">
+                                                    <a href="#" class="btn_srch" title="검색하기">검색하기</a>
+                                                </div>
+                                                <a href="#" onclick="toggleLayer('test_layer_srch');" class="btn_srch_close">닫기</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- board_list_table -->
+                            <div class="board_list_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:40px">
+                                        <col style="width:150px">
+                                        <col style="width:100px">
+                                        <col style="width:150px">
+                                        <col style="width:150px">
+                                        <col style="width:*">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><label for="check-all"></label><input type="checkbox" name="check-all" id="check-all" value="" /></th>
+                                            <th><a href="#" title="성명에 대한 정렬하기" class="descend">성명</a>
+                                                <div class="ico_tooltip division">
+                                                    <span class="hidden">권한 정보 및 계정 상태 아이콘 설명</span>
+                                                    <div class="pop_tooltip">
+                                                        <ul>
+                                                            <li><img src="../img/ico_user_01.png" title="전체 관리자" alt="전체 관리자">그룹웨어 전체 메뉴 및 시스템을 관리하는 전체 관리자</li>
+                                                            <li><img src="../img/ico_user_02.png" title="개별 관리자" alt="개별 관리자">일부 메뉴만 관리가 허용된 개별 관리자</li>
+                                                            <li><img src="../img/ico_user_03.png" title="잠김처리된 계정" alt="잠김처리된 계정">잠김처리된 계정</li>
+                                                            <li><img src="../img/ico_user_04.png" title="비공개 계정" alt="비공개 계정">비공개 계정</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th><a href="#" title="직위에 대한 정렬하기" class="ascend">직위</a></th>
+                                            <th>휴대폰 번호</th>
+                                            <th>회사 전화 번호</th>
+                                            <th>이메일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><label for="check-1"></label><input type="checkbox" name="check" id="check-1" value="" /></td>
+                                            <td><a href="#" title="홍길동">홍길동</a><img src="../img/ico_user_01.png" title="전체 관리자" alt="전체 관리자"></td>
+                                            <td title="부장">부장</td>
+                                            <td title="10-1111-1111">010-1111-1111</td>
+                                            <td title="10-1111-1111">010-1111-1111</td>
+                                            <td title="ong@handysoft.co.kr">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-2"></label><input type="checkbox" name="check" id="check-2" value="" /></td>
+                                            <td><a href="#" title="">홍길동이</a><img src="../img/ico_user_02.png" title="개별 관리자" alt="개별 관리자"></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong1122@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-3"></label><input type="checkbox" name="check" id="check-3" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a><img src="../img/ico_user_03.png" title="잠김처리된 계정" alt="잠김처리된 계정"></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-4"></label><input type="checkbox" name="check" id="check-4" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a><img src="../img/ico_user_04.png" title="비공개 계정" alt="비공개 계정"></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-5"></label><input type="checkbox" name="check" id="check-5" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-6"></label><input type="checkbox" name="check" id="check-6" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-7"></label><input type="checkbox" name="check" id="check-7" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-8"></label><input type="checkbox" name="check" id="check-8" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-9"></label><input type="checkbox" name="check" id="check-9" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="check-10"></label><input type="checkbox" name="check" id="check-10" value="" /></td>
+                                            <td><a href="#" title="">홍길동</a></td>
+                                            <td title="">부장</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">010-1111-1111</td>
+                                            <td title="">hong@handysoft.co.kr</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 게시판 목록 페이징 -->
+                            <div class="paginate_area">
+                                <!-- 목록갯수 -->
+                                <div class="board_num">
+                                    <div class="select_area">
+                                        <select name="" class="mySelect">
+                                            <option value="">10</option>
+                                            <option value="">15</option>
+                                            <option value="">20</option>
+                                            <option value="">30</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- 페이징 -->
+                                <div class="paginate_box">
+                                    <a href="#" title="처음" class="btn_first">처음</a>
+                                    <a href="#" title="이전" class="btn_pre">이전</a>
+                                    <a href="#" class="current">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#">7</a>
+                                    <a href="#">8</a>
+                                    <a href="#">9</a>
+                                    <a href="#">10</a>
+                                    <a href="#" title="다음" class="btn_next">다음</a>
+                                    <a href="#" title="마지막" class="btn_last">마지막</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- //게시판 목록 -->
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //body -->
+        
+    </div>
+    <!-- //wrapper -->
+        
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>요약문서</title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 860 x 610 -->
+	<body>
+		<!-- header -->
+		<h1>요약문서</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" title="저장">저장</a>
+					<a class="btn" title="삭제">삭제</a>
+					<a class="btn" title="불러오기">불러오기</a>
+					<div class="selectbox noFirst">
+						<select> 
+							<option>추가기능</option>
+							<option>PC저장</option>
+							<option>EML업로드</option>
+							<option>엑셀다운로드</option>
+							<option>인쇄보기</option>
+							<option>일정으로 보내기</option>
+							<option>스퀘어로 보내기</option>
+							<option>동호회로 보내기</option>
+						</select>
+					</div>	
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="appr_pop_inner">
+				<div class="egw_editor" title="에디터영역 : 에디터로 대체됩니다.">
+					<img class="" src="../../img/community/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다.">
+				</div>
+			</div>
+		</div>	
+	</body>
+</html>

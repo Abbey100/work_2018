@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>CloudFolder Main Page</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/dynatree-1.2.4/ui.dynatree.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<div class="left_menu" id="left_menu" name="left_menu">
+  <div class="btn_large"> <a href="#" onclick="javascript:addFile();" title="파일업로드">파일업로드</a> </div>
+  <ul class="quickbtn_area four">
+    <li class="btn_txts quickbtn_on"><a href="#"> <span>문서</span></a></li>
+    <li class="btn_imprt"><a href="#"> <span>사진</span></a></li>
+    <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+    <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+  </ul>
+  <div id="tree_div" class="tree_area_box mglast">
+    <div class="tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'folder_tree');">나의 클라우드</span> <a class="btn_tree_add" href="#"> </a> <a class="btn_tree_cnfg" href="#"> </a> </div>
+    <div id="folder_tree" name="folder_tree" class="tree_box">
+      <ul class="dynatree-container">
+        <li id="ui-dynatree-id-014kk622w" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-lastsib dynatree-exp-el dynatree-ico-ef"><span class="dynatree-expander"></span><img alt="" src="../../img/dynatree-1.2.4/ltFld_1.gif"><a style="cursor: pointer;" class="dynatree-title">클라우드 홈</a></span>
+          <ul>
+            <li id="ui-dynatree-id-014l10th5"><span class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">디자인소스</a></span></li>
+            <li id="ui-dynatree-id-014kks1oj"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">회사양식보관</a></span></li>
+            <li id="ui-dynatree-id-014kks1oj"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">주간업무보고</a></span></li>
+            <li id="ui-dynatree-id-014l10imm" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf"><span class="dynatree-expander"></span><img alt="" src="../../img/dynatree-1.2.4/ltFld_2.gif"><a style="cursor: pointer;" class="dynatree-title">팀워크샵사진</a></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'share_tree');">공유 받은 폴더</span> </div>
+    <div id="share_tree" name="share_tree" class="tree_box">
+      <ul class="dynatree-container">
+        <li id="ui-dynatree-id-shared" class="dynatree-lastsib">
+          <ul>
+            <li id="ui-dynatree-id-014wa0jmp"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">GW8.3 디자인</a></span></li>
+            <li id="ui-dynatree-id-014wa0vz5"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">GW8.3 퍼블리싱</a></span></li>
+            <li id="ui-dynatree-id-014wadvzc"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">주간회의록</a></span></li>
+            <li id="ui-dynatree-id-014wafxqm" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf dynatree-active"><span class="dynatree-expander"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">팀양식공유폴더</a></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="snb_lst">
+    <ul>
+      <li class="snb_lagfile"><a href="#" id="" onclick='javascript:initStatisticsList();' title='대용량첨부파일'><span>대용량첨부파일<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_history"><a href="#" id="" class="slct" onclick='javascript:initStatisticsList();' title='이력보기'><span>이력보기<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_stats"><a href="#" id="" onclick='javascript:initStatisticsList();' title='통계보기'><span>통계보기<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_trsh"><a href="#" id="cf_menu_trash" onclick='javascript:initTrashList();' title='휴지통'><span>휴지통</span></a> <a class="btn_trshbx_dl" href="#" title="휴지통비우기">휴지통비우기</a></li>
+    </ul>
+  </div>
+  <div class="info_area">
+    <ul>
+      <li class="config"><a href="javascript:setUserSettings();" title='환경설정'><span>환경설정</span></a></li>
+      <li class="cpcty_area"> <img id="gagequota" src="../../img/BAR_BG_ON.GIF" width="0%" height="12px" style="width:56px;"><img id="gagequotabg" src="../../img/BAR_BG.GIF" width="0%" height="12px" style="width:100px;"> <span class="cpcty_grp"> <span id="usequota">128MB</span><span class="fnt_gray">/</span><span id="limitquota">1000</span>MB </span> </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

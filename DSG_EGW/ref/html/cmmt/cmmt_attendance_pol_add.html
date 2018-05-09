@@ -1,0 +1,175 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box org_all">
+    <div class="title_area">
+      <h1>근태정책 추가</h1>
+    </div>    
+    <!-- 리스팅 기본형(좌측) -->
+    <div class="view_content_box">
+    <div class="cmmt_pop view_body_contents">
+      <div class="detail_form">
+        <!-- 정책명 start --> 
+        <dl>
+          <dt><span class="tit">정책명<em class="req">*</em></span></dt>
+          <dd>
+            <input type="text" class="basic_inp" style="width:370px">
+            <label class="pd_rgt_10" class="pd_rgt_10"><input type="checkbox">적용여부</label>
+          </dd>
+        </dl>
+        <!-- //정책명 end --> 
+        <!-- 부서명 start --> 
+        <dl>
+          <dt><span class="tit">부서명<em class="req">*</em></span></dt>
+          <dd><a href="#" class="btn_group">부서명 검색</a>
+            <div class="input_box" style="width:335px">
+                <input type="text">              
+            </div>
+            </dd>
+        </dl>
+        <!-- //부서명 end --> 
+        <!-- 근무타입 start --> 
+        <dl>
+            <dt><span class="tit">근무타입</span></dt>
+            <dd><input type="radio">고정근무&nbsp;&nbsp;->&nbsp;&nbsp;근무시간
+            <select class="basic_select" disabled="disabled">
+			<option>00시</option>
+            <option>01시</option>
+            <option>02시</option>
+            <option>03시</option>
+            <option>04시</option>
+            <option>05시</option>
+            <option>06시</option>
+            <option>07시</option>
+            <option>08시</option>
+            <option selected>09시</option>
+            <option>10시</option>
+            <option>11시</option>
+            <option>12시</option>
+            <option>13시</option>
+            <option>14시</option>
+            <option>15시</option>
+            <option>16시</option>
+            <option>17시</option>
+            <option>18시</option>
+            <option>19시</option>
+            <option>20시</option>
+            <option>21시</option>
+            <option>22시</option>
+            <option>23시</option>
+            </select>
+            <span>:</span>
+            <select class="basic_select" disabled="disabled">
+			<option>00분</option>
+            <option>10분</option>
+            <option>20분</option>
+            <option>30분</option>
+            <option>40분</option>
+            <option>50분</option>
+            </select>
+            <span>~</span>
+             <select class="basic_select" disabled="disabled">
+			<option>00시</option>
+            <option>01시</option>
+            <option>02시</option>
+            <option>03시</option>
+            <option>04시</option>
+            <option>05시</option>
+            <option>06시</option>
+            <option>07시</option>
+            <option>08시</option>
+            <option>09시</option>
+            <option>10시</option>
+            <option>11시</option>
+            <option>12시</option>
+            <option>13시</option>
+            <option>14시</option>
+            <option>15시</option>
+            <option>16시</option>
+            <option>17시</option>
+            <option selected>18시</option>
+            <option>19시</option>
+            <option>20시</option>
+            <option>21시</option>
+            <option>22시</option>
+            <option>23시</option>
+            </select>
+            <span>:</span>
+            <select class="basic_select" disabled="disabled">
+			<option>00분</option>
+            <option>10분</option>
+            <option>20분</option>
+            <option>30분</option>
+            <option>40분</option>
+            <option>50분</option>
+            </select>
+            </dd>
+            <dd style="margin-top:-3px;"><input type="radio">탄력근무&nbsp;&nbsp;->&nbsp;&nbsp;집중근무시간(오전10시~오후4시)을 포함하는 근무조건</dd>
+            <dd><input type="radio">자율근무&nbsp;&nbsp;->&nbsp;&nbsp;자율적으로 하루 8시간이상 근무조건</dd>
+        </dl>
+        <!-- //근무타입 end --> 
+        <!-- 휴일여부 start --> 
+        <dl class="txt_box">
+            <dt><span class="tit">휴일여부</span></dt>
+            <dd><div class="txt_box"><label class="pd_rgt_10"><input type="checkbox" checked>토요일</label>
+                <label class="pd_rgt_10"><input type="checkbox" checked>일요일</label></div></dd>
+        </dl>
+        <!-- //휴일여부 end --> 
+        <!-- 기록방식 start --> 
+        <dl>
+            <dt><span class="tit">기록방식</span></dt>
+            <dd><div class="txt_box pd_bttm_15"><label class="pd_rgt_10"><input type="checkbox" checked>웹(PC) 방식</label>
+                <label class="pd_rgt_10"><input type="checkbox" disabled>모바일 방식</label>
+                <label class="pd_rgt_10"><input type="checkbox" disabled>출입카드 방식</label></div>
+                <!-- 기록방식 : IP 보안여부 start --> 
+                <dl>
+                    <dt><label class="pd_rgt_10"><input type="checkbox">IP 보안여부</label></dt>
+                    <dd>IP 대역1 : <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;~&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"></dd>
+                    <dd>IP 대역2 : <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;~&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"></dd>
+                    <dd>IP 대역3 : <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;~&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"></dd>
+                    <dd>IP 대역4 : <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;~&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"></dd>
+                    <dd>IP 대역5 : <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;.&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span>&nbsp;~&nbsp;</span><input type="text" class="basic_inp" value="0" size="3" maxlength="3"></dd>
+                </dl>
+                <!-- // 기록방식 : IP 보안여부 end -->
+            </dd>
+        </dl>
+        <!-- //기록방식 end --> 
+        <!-- 초과근무 정책 start --> 
+        <dl>
+            <dt><span class="tit">초과근무 정책</span></dt>
+            <dd class="pd_tp_5"><label class="pd_rgt_10"><input type="checkbox">초과근무에 따른 출근시간 설정</label></dd>
+            <dd class="pd_lft_20"><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 시 이상(24시간제) </span><span style="color:#ff0000;">A</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 분 지연적용 </span></dd>
+            <dd class="pd_lft_20"><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 시 이상(24시간제) </span><span style="color:#ff0000;">B</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 분 지연적용 </span></dd>
+            <dd class="pd_lft_20"><input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 시 이상(24시간제) </span><span style="color:#ff0000;">C</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="basic_inp" value="0" size="3" maxlength="3"><span> 분 지연적용 </span></dd>
+        </dl>
+        <!-- //초과근무 정책 end --> 
+          
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) --> 
+    </div>
+    </div>
+    
+      <!-- 하단 버튼 영역 -->
+    <div class="footer layout_bttm full_width">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div></div>
+    <!-- // 하단 버튼 영역 -->
+</div>
+</body>
+</html>

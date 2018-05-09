@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+    </head>
+    <body>
+        <div class="left_menu"> 
+            <!--Menu List start-->
+            <ul class="snb_lst">
+                <li class="snb_form"><a href="#"><span>관인관리</span></a></li>
+                <li class="snb_form"><a href="#"><span>표어관리</span></a></li>
+                <li class="snb_form"><a href="#"><span>서식분류</span></a></li>
+                <li class="snb_form"><a href="#"><span>한글서식관리</span></a></li>
+                <li class="snb_form"><a href="#"><span>서식관리</span></a></li>
+                <li class="snb_form"><a href="#"><span>서식함관리</span></a></li>
+            </ul>
+            <!--// Menu List end--> 
+            <!-- Private tree -->
+            <div id="" class="tree_area_box">
+                <div class="ifrm_tree_area tree_ttl_area"> <span class="tree_ttl" onclick="">서식관리</span> </div>
+                <div id="" class="list_tree bg_lft_gry">
+                    <ul class="snb_lst">
+                        <li> <a> <span class="pd_lft_15">한글서식관리</span> </a> </li>
+                        <li> <a  class="slct"> <span class="pd_lft_15">서식관리</span> </a> <a class="btn_config_dl" href="#">서식함관리</a><!--서식관리일때는 btn_config_dl로 서식함open/ 서식함관리일때는 btn_doc_dl로 서식관리 open --> 
+                        </li>
+                    </ul>
+                </div>
+                <div id="" class="tree_box_area content_configlist" style="height: 755px;">
+                    <div class="inp_box mg_tp_-7 brdr_top" id="">
+                        <input type="hidden" name="" id="" value="">
+                        <a href="#" class="btn_group" onclick="">부서</a>
+                        <div class="input_box" style="width:150px">
+                            <input type="text" name="deptNm" id="" class="basic_inp" readonly style="width:136px" onclick="">
+                        </div>
+                    </div>
+                    <div id="" class="ifrm_tree">
+                        <iframe src="apprvl_tree2.html" name="" id="" frameborder="no" scrolling="no" height="" width="100%" cellspacing="0" cellpadding="0"> </iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- //Private tree --> 
+        </div>
+    </body>
+</html>

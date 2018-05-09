@@ -1,0 +1,260 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 워크피드</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/common.js"></script>
+  </head>
+<body class="sq_plus">
+<!-- 컨테이너 -->
+<div class="">
+<!-- 좌측 메뉴 영역 Left Menu Area -->
+<div id="" class="left_menu">
+ 
+<!-- Action Btn -->
+  <div class="btn_large"> <a class="" href="" title="그룹 만들기">그룹 만들기</a></div>
+<!-- // Action Btn --> 
+<!-- Quick Btn -->
+  <ul class="quickbtn_area three">
+      <li class="btn_go_workpeed">
+          <a title="워크피드" href="">
+              <span>워크피드</span>
+          </a>
+      </li>
+      <li class="btn_gathering">
+          <a title="관심글" href="">
+              <span>관심글</span>
+          </a>
+      </li>
+      <li class="btn_mention">
+          <a title="멘션" href="">
+              <span>멘션</span>
+          </a>
+      </li>
+  </ul>
+<!-- // Quick Btn -->
+<!--Tree Area-->  
+  <!--즐겨찾는 그룹-->    
+  <div id="" class="tree_area mg_tp_7 with_del">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> 
+          <span class="tree_ttl" onclick="">즐겨찾기 그룹</span> 
+      </div>
+        <!--// Tree Title Area-->
+        <!-- Group List-->
+       <ul id="" class="tree_cntnts_area">
+        <li id="" ondblclick="" class="">
+            <span class="group_name">우리그룹</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li id="" ondblclick="">
+            <span class="group_name">재무회계팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li id="" ondblclick="" class="">
+            <span class="group_name"><em class="public">공개</em>프로젝트 그룹웨어 스퀘어 플러스</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="">
+            <span class="group_name"><em class="all_branch">전사</em>제품기획팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>     
+       </ul>
+      <!-- // Group List-->   
+  </div>
+  <!--// 즐겨찾는 그룹-->
+  <!-- 나의 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl one" onclick="">나의 그룹</span>
+          <a class="btn_tree_add" href="#"> </a>
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="my_group">
+          <div id="tree">
+          <ul class="dynatree-container">
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2015">기본폴더</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+           <ul>
+           <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="전사공지">전사공지</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>   
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="제품기획팀">제품기획팀</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>          
+         </ul>
+          
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2016">새폴더(1)</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          <ul>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="스퀘어룸01">스퀘어룸01</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="프로젝트 그룹웨어 스퀘어 플러스">
+             프로젝트 그룹웨어 스퀘어 플러스             
+          </span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="우리그룹">우리그룹</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li></ul>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2017">2017</span>
+          <a class="more" href="">more</a> 
+          </a></span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="folder_0">folder</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span></li>
+          </ul></div>      
+      <!-- // Tree Part -->
+      <!-- Group "List" Part -->
+      <ul id="" class="tree_cntnts_area with_move">
+        <li id="" ondblclick="" class="">
+            <span class="group_name">프로젝트 그룹웨어 스퀘어 플러스의 다른 그룹</span>
+            <a class="move" href=""> move</a> 
+        </li>  
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>      
+       </ul>
+      <!-- // Group List Part -->   
+      </div>
+      <!-- // 나의 그룹 그룹부분-->
+   </div>
+   <!-- // 나의 그룹-->
+   <!-- 전사 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl" onclick="">전사 그룹</span> 
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="tree_cntnts_area" style="height: 200px;">
+			<iframe frameborder="no" scrolling="no" height="100%" width="100%" cellspacing="0" cellpadding="0" src="square_org_All.html"></iframe>
+      </div>
+      <!-- // Tree Part -->            
+   </div>
+   <!-- // 전사 그룹-->
+   
+   
+ <!-- Config -->
+   <a class="left_config" id="" href="#"><span>환경설정</span></a>
+ <!-- //Config -->
+</div>
+<!-- // 좌측 메뉴 영역 Left Menu Area -->
+    </div>
+          
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>공람요청한 문서 목록 화면</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>결재</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>결재</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<!-- 결재 -->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action group">
+							<a class="action_btn">기안 작성하기</a>
+							<a class="big_split">추가 선택</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">							
+								<!-- 즐겨찾는 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">즐겨찾는 문서</a>
+									<ul class="sub_lst">
+										<li><a class="selected" href="#">기안한 문서</a><span class="count">4</span></li>
+									</ul>
+								</div>							
+								<!-- 올린문서 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category" href="#">올린 문서</a>
+									<ul class="sub_lst">
+										<li><a class="" href="#">기안한 문서</a></li>
+										<li><a class="" href="#">접수한 문서</a></li>
+										<li><a class="" href="#">반려된 문서</a></li>
+										<li><a class="" href="#">공람요청한 문서</a></li>
+										<li><a class="" href="#">수신반송된 문서</a></li>
+										<li><a class="" href="#">회신요청한 문서</a></li>
+										<li><a class="" href="#">예약상신한 문서</a></li>
+									</ul>
+								</div>	
+								<!-- 처리할 문서 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category" href="#">처리할 문서</a>
+									<ul class="sub_lst">
+										<li><a class="" href="#">결재할 문서</a></li>
+										<li><a class="" href="#">접수할 문서</a></li>
+										<li><a class="" href="#">공람할 문서</a></li>
+										<li><a class="" href="#">회신할 문서</a></li>
+									</ul>
+								</div>	
+								<!-- 기타 메뉴 -->
+								<div class="lnb_menu">
+									<a class="menu_title" href="#">완료된 문서</a>
+								</div>
+								<div class="lnb_menu">	
+									<a class="menu_title" href="#">임시 보관함</a>
+								</div>
+								<div class="lnb_menu">								
+									<a class="menu_title" href="#">미완료 문서</a>
+								</div>
+								<div class="lnb_menu  divide">
+									<a class="menu_title" href="#">휴지통</a>
+									<a class="ico trash">휴지통 비우기</a>
+									<!-- // 비울 항목이 있을 때만 노출 -->
+								</div>
+								<!-- 플래그 -->
+								<div class="lnb_menu divide">
+									<a class="menu_title category">플래그 결재</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+								<!-- 키워드 -->
+								<div class="lnb_menu divide">
+									<a class="menu_title category">키워드 결재</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+								<!-- 개인보관함 -->
+								<div class="lnb_menu divide">
+									<a class="menu_title category">개인 보관함</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>	
+								<!-- 공유 문서 -->
+								<div class="lnb_menu">
+									<a class="menu_title category">공유 문서</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- // 결재 -->
+
+				<!-- content -->
+				<div class="container_area approval handy-scroll" >
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>공람요청한 문서</h2>								
+								<span class="length"><em>5</em></span>
+								<!-- // 검색결과가 있을 경우 -->
+							</div>
+							<!-- // 타이틀 영역 -->
+
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group"><!-- open 클래스 제거시 레이어 close -->
+										<span class="form"><input type="checkbox"/><label class="blind">선택</label></span> 	
+										<div class="selectbox noTxt">
+											<select>
+												<option><a href="#">모든메일</a></option>
+												<option><a href="#">읽지않은메일</a></option>
+												<option><a href="#">읽은메일</a></option>
+												<option><a href="#">핀메일</a></option>
+												
+												<option><a href="#">선택해제</a></option>
+											</select>
+										</div>									
+									</div>
+									<div class="group">
+										<a href="#" class="btn">삭제</a>
+										<a href="#" class="btn">완전삭제</a>
+									</div>
+									<a class="btn">읽음</a>
+									<div class="group">
+										<a href="#" class="btn">답장</a>
+										<a href="#" class="btn">전체답장</a>
+										<a href="#" class="btn">전달</a>
+									</div>	
+									<a class="btn">다시보내기</a>
+									<div class="group">	
+										<!-- // open 클래스 제거시 레이어 close -->
+										<a href="#" class="btn">이동</a>					
+										<a href="#" class="btn_more noTxt">더보기</a>
+										<ul class="select_lst">
+											<li><a href="#">이동</a></li>
+											<li><a href="#">복사</a></li>
+										</ul>							
+									</div>	
+									<div class="selectbox noFirst">
+										<select> 
+											<option>추가기능</option>
+											<option>PC저장</option>
+											<option>EML업로드</option>
+											<option>엑셀다운로드</option>
+											<option>인쇄보기</option>
+											<option>일정으로 보내기</option>
+											<option>스퀘어로 보내기</option>
+											<option>동호회로 보내기</option>
+										</select>
+									</div>	
+									<div class="group">
+										<span>필터 : </span>
+										<div class="selectbox">
+											<select> 
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="align_rg">
+									<a href="#" class="ico_btn comment">대화형</a>
+									<a href="#" class="ico_btn view_lst">리스트형</a>
+									<!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+									<div class="selectbox page_num">
+										<select> 
+											<option> 15개 </option>
+											<option> 20개 </option>
+											<option> 30개 </option>
+											<option> 40개 </option>
+											<option> 50개 </option>
+										</select>
+									</div>
+								</div>
+
+								<div class="new_lst_info">		
+									<a href="#" class="ico_btn rfsh mg_cust1">새로고침</a>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							
+							<!-- 리스트 영역 -->
+							<div class="content_table title_mg0">	
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:37px;">
+											<col style="width:50px;">
+											<col style="width:85px;">
+											<col style="width:75px;">
+											<col style="width:130px;">
+											<col style="width:*;">
+											<col style="width:150px;">
+											<col style="width:90px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th><span class="blind">플래그</span></th>
+												<th><span class="">속성</span></th>
+												<th><span class="">문서종류</span></th>
+												<th><span class="">문서번호</span></th>
+												<th><span class="title">제목</span></th>
+												<th class="ascend"><a class="date">공람보낸일</a><span></span></th>
+												<th><span class="name">공람정보</span></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table_body scroll_area handy-scroll">
+									<table>
+										<colgroup>
+											<col style="width:37px;">
+											<col style="width:50px;">
+											<col style="width:85px;">
+											<col style="width:75px;">
+											<col style="width:130px;">
+											<col style="width:*;">
+											<col style="width:150px;">
+											<col style="width:90px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" checked /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">발신</td>
+												
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr class="unread">
+												<td> 
+													<span class="form"><input type="checkbox" checked /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">일반</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안)</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<span class="badge emergency">긴급</span>
+														<span class="badge security">보안</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="badge emergency">긴급</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안)</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<span class="badge emergency">긴급</span>
+														<span class="badge security">보안</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="badge emergency">긴급</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안)</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<span class="badge emergency">긴급</span>
+														<span class="badge security">보안</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="badge emergency">긴급</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<a class="subject">교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안) 교육수강 신청(HTML 기안)</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="ico file">첨부</span>
+														<span class="badge emergency">긴급</span>
+														<span class="badge security">보안</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+												<td> 
+													<div class="appr_prop_wrap">
+														<span class="prop doc">관련문서</span>
+														<span class="prop lock">잠금</span>
+														<span class="prop cc">참조</span>
+													</div>
+												</td>
+												<td class="document">보고</td>
+												<td class="document">제품기획팀2017-12-1344</td>
+												<td>
+													<div class="title">
+														<span class="badge emergency">긴급</span>
+														<a class="subject">법인카드 한도 조정 신청서</a>
+													</div>			
+												</td>
+												<td class="date">2017-09-08 20:55</td>
+												<td><a class="ico pop_up">새창으로 보기</a></td>
+											</tr>
+													
+										</tbody>
+									</table>
+								</div>
+								<div class="paginate_area">
+									<div class="paginate">	
+										<a class="first disabled">처음 페이지</a>
+										<a class="pre disabled">이전 페이지</a>	
+										<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+										<a class="selected">1</a>
+										<a>2</a>
+										<a>3</a>
+										<a>4</a>
+										<a>5</a>
+										<a>6</a>		
+										<a>7</a>
+										<a>8</a>
+										<a>9</a>
+										<a>10</a>		
+										<a class="next">다음 페이지</a>
+										<a class="last">마지막 페이지</a>
+									</div>
+									<div class="page_num">
+										<input type="text" value="1"> / 118
+									</div>
+								</div>
+							</div>
+							<!-- // 리스트 영역 -->
+
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

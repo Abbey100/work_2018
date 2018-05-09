@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+        <title>HANDY Groupware</title>
+
+        <!-- 컨텐츠 css -->
+        <link rel="stylesheet" type="text/css" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../css/admin_content.css">
+        <link rel="stylesheet" type="text/css" href="../../css/square.css">
+        <link rel="stylesheet" type="text/css" href="../../css/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+
+        <!-- 개발요건 js -->
+        <script type="text/javascript" src="../../js/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.12.1.min.js"></script>
+
+        <!-- 트리 관련 js -->
+        <script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/jquery.contextMenu-custom.js"></script>
+        <script type="text/javascript" src="../../js/tree.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#tree").dynatree({
+                    // using default options
+                });
+            });
+        </script>
+
+        <!-- 컨텐츠 js -->
+        <script type="text/javascript" src="../../js/common.js"></script>
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <!-- <h1 class="logo"><a title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+2017-09-05 사용자단 ux 적용으로 인해 로고 영역 삭제 by 백은경 -->
+                <!-- Area Title -->
+                <h1 class="area_title">메뉴 관리</h1>
+                <div class="user_menu">
+                    <!-- User information -->
+                    <a class="btn_groupware" title="그룹웨어 가기">그룹웨어 가기</a>
+                    <div class="user_photo" title="MarkElliot Zuckerberg MarkElliot Zuckerberg"> 
+                        <img src="../../img/profile_photo_blank.png">
+                    </div>
+                    <!-- Alram -->
+                    <a class="btn_noti" title="show noti">노티확인</a>
+                    <!-- Contextual area btn -->
+                    <a class="btn_contextual" title="open contextual">컨텍스츄얼영역 열기</a>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- gnb -->
+            <div class="gnb_area"> 
+                <!-- 메뉴영역 -->
+                <div class="gnb">
+                    <ul>
+                        <li class="gnb_menu first home">  
+                            <!--
+<div class="gnb_menu second">
+<h2>홈</h2>
+</div>
+-->
+                        </li>
+                        <li class="gnb_menu first set">
+                            <div class="gnb_menu second">
+                                <h2>기본 설정 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                            <li><a title="클래스 관리">클래스 관리</a></li>
+                                            <li><a title="배치 관리">배치 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+                                    <li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+                                    <li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+                                    <li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+                                    <li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+                                    <li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first menu">
+                            <div class="gnb_menu second">
+                                <h2>메뉴 관리</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="서식 관리">서식 관리</a></li>
+                                            <li><a title="서식 분류">서식 분류</a></li>
+                                            <li><a title="표어 관리">표어 관리</a></li>
+                                            <li><a title="관인 관리">관인 관리</a></li>
+                                            <li><a title="모듈 관리">모듈 관리</a></li>
+                                            <li><a title="한글 서식 관리">한글 서식 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="게시판 관리">게시판 관리</a></li>
+                                            <li><a title="양식 관리">양식 관리</a></li>
+                                            <li><a title="캐시 관리">캐시 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="동호회 관리">동호회 관리</a></li>
+                                            <li><a title="환경 설정">환경 설정</a></li>
+                                            <li><a title="토론실 관리">토론실 관리</a></li>
+                                            <li><a title="마일리지 관리">마일리지 관리</a></li>
+                                            <li><a title="가산점 관리">가산점 관리</a></li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="진행중인 그룹">진행중인 그룹</a></li>
+                                            <li><a title="종료된 그룹">종료된 그룹</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="파일 관리">파일 관리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="">관리자 유실 달력 관리</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first system">
+                            <div class="gnb_menu second">
+                                <h2>시스템 정보</h2>
+                                <ul>
+                                    <li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+                                    <li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="웹메일">웹메일</a></li>
+                                            <li><a title="웹폴더">웹폴더</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb_menu first statistics">
+                            <div class="gnb_menu second">
+                                <h2>통계정보</h2>
+                                <ul>
+                                    <li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="결재 통계">결재 통계</a></li>
+                                            <li><a title="웹메일 통계">웹메일 통계</a></li>
+                                            <li><a title="웹폴더 통계">웹폴더 통계</a></li>
+                                            <li><a title="동호회 통계">동호회 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+                                        <ul class="gnb_menu third">
+                                            <li><a title="로그인">로그인</a></li>
+                                            <li><a title="게시판">게시판</a></li>
+                                            <li><a title="결재">결재</a></li>
+                                            <li><a title="권한">권한</a></li>
+                                            <li><a title="업무넷">업무넷</a></li>
+                                            <li><a title="스퀘어">스퀘어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //메뉴영역 -->
+            </div>        
+            <!-- //gnb -->  
+            <!-- body -->
+            <div class="body">
+                <div class="lnb_area">
+                    <ul class="lnb">
+                        <li class="lnb_menu first drop_down open"><!-- [D]클릭시 open 추가 -->
+                            <a class="first_ttl" title="결재/서식">결재/서식</a> 
+                            <ul class="lnb_menu second">
+                                <li class="current"><a class="second_ttl" title="조직/구성원 관리">조직/구성원 관리</a></li>
+                                <li><a class="second_ttl" title="서식 관리">서식 관리</a></li>
+                                <li><a class="second_ttl" title="서식 분류">서식 분류</a></li>
+                                <li><a class="second_ttl" title="표어 관리">표어 관리</a></li>
+                                <li><a class="second_ttl" title="관인 관리">관인 관리</a></li>
+                                <li><a class="second_ttl" title="모듈 관리">모듈 관리</a></li>
+                                <li><a class="second_ttl" title="한글 서식 관리">한글 서식 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="게시판">게시판</a>
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="게시판 관리">게시판 관리</a></li>
+                                <li><a class="second_ttl" title="양식 관리">양식 관리</a></li>
+                                <li><a class="second_ttl" title="캐시 관리">캐시 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="동호회">동호회</a>
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="동호회 관리">동호회 관리</a></li>
+                                <li><a class="second_ttl" title="환경 설정">환경 설정</a></li>
+                                <li><a class="second_ttl" title="토론실 관리">토론실 관리</a></li>
+                                <li><a class="second_ttl" title="마일리지 관리">마일리지 관리</a></li>
+                                <li><a class="second_ttl" title="가산점 관리">가산점 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="진행중인 그룹">진행중인 그룹</a></li>
+                                <li><a class="second_ttl" title="종료된 그룹">종료된 그룹</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="웹폴더">웹폴더</a>
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="파일 관리">파일 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="lnb_menu first drop_down">
+                            <a class="first_ttl" title="">일정/설비</a>
+                            <ul class="lnb_menu second">
+                                <li><a class="second_ttl" title="관리자 유실 달력 관리">관리자 유실 달력 관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container_area">
+                    <div class="title_area">
+                        <h2><span class="title">스퀘어 그룹 관리</span></h2>
+                    </div>
+
+                    <div class="content_section tree_out"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="content_section tree_out"> -->
+
+                        <div class="content_area">
+
+                            <!-- 서브 탭 -->
+                            <div class="tab_area">
+                                <ul>
+                                    <li class="current"><a href="#"><span class="tab_title">진행중인 그룹</span></a></li>
+                                    <li><a href="#"><span class="tab_title">종료된 그룹</span></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- 컨텐츠 스크롤 -->
+                            <div class="scroll_area_no">
+                                <!-- 게시판 상세 영역 -->
+                                <div class="board_view scroll_area_tab">
+
+                                    <h3 class="hidden">진행중인 그룹 상세</h3>
+
+                                    <h4 class="sub_title_02"><span class="title">기본 정보</span></h4>
+                                    <!-- 게시판 상세 -->
+                                    <div class="board_view_type01">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width:142px">
+                                                <col style="width:*">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th>그룹명 <span class="required">(필수)</span></th>
+                                                    <td>
+                                                        <div class="input_group t_byte"><!-- [D] input 글자수 영역 추가 시 t_byte 추가. <div class="input_group t_byte"> -->
+                                                            <input id="" type="text" class="form_control" name="">
+                                                            <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>그룹구분</th>
+                                                    <td>
+                                                        <ul class="radio_list">
+                                                            <li>
+                                                                <span class="radio">
+                                                                    <label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">공개</label>
+                                                                    <input type="radio" name="opinions" id="radio-1" value="" checked="" />
+                                                                </span>
+                                                            </li>
+                                                            <li>   
+                                                                <span class="radio">
+                                                                    <label for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">비공개</label>
+                                                                    <input type="radio" name="opinions" id="radio-2" value="" />
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>개설자</th>
+                                                    <td>홍길동</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>개설일</th>
+                                                    <td>2017-07-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>최근 접속일</th>
+                                                    <td>2017-07-12</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>멤버 초대권한</th>
+                                                    <td>
+                                                        <ul class="radio_list">
+                                                            <li>
+                                                                <span class="radio">
+                                                                    <label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">관리자</label>
+                                                                    <input type="radio" name="opinions" id="radio-1" value="" checked="" />
+                                                                </span>
+                                                            </li>
+                                                            <li>   
+                                                                <span class="radio">
+                                                                    <label for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">멤버</label>
+                                                                    <input type="radio" name="opinions" id="radio-2" value="" />
+                                                                </span>
+                                                            </li>
+                                                            <li>   
+                                                                <span class="radio">
+                                                                    <label for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">참관인</label>
+                                                                    <input type="radio" name="opinions" id="radio-2" value="" />
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>소개</th>
+                                                    <td>
+                                                        <div class="input_group textarea_control t_byte">                           
+                                                            <textarea rows="4" cols="" placeholder="내용을 작성해 주세요."></textarea>
+                                                            <span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>그룹이미지</th>
+                                                    <td>
+                                                        <div class="group_member_thumb">
+                                                            <!-- 직접등록 -->
+                                                            <div class="file_box">
+                                                                <input type="text" class="file_name" id="file_name" value="직접등록" readonly/>
+                                                                <div id="groupPictureUpload"><div id="wfw_file_box" class="group file_input"><form name="groupPictureUploadForm" id="groupPictureUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data">	<a class="btn small" id="temporaryFileTarget"><input type="file" id="temporaryFile" name="undefined" value="file" size="1" multiple="" style="opacity: 0;">내PC</a>	<a class="btn small" onclick="openCloud();">내파일</a></form><form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST"><input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;"></form></div><div class="align_rg text_group">	<a class="text_btn all_delete" id="btnAllDel">모두삭제</a>	<a class="text_btn files" id="btnAttSave">저장</a>	<a class="text_btn files" id="btnAttDel">삭제</a></div><div id="fileListAdd"><div id="groupPictureFileListLayer" class="file_lst upload handy-scroll"><ul id="groupPictureFileList"></ul><div class="description" id="description_area"><p>작성창으로 파일을 드래그하여 첨부할 수 있습니다.</p></div></div></div></div>
+                                                                <span class="ico file">
+                                                                    <input  type="file" id="file" style="" onchange="document.getElementById('file_name').value=this.value;">
+                                                                </span> 
+                                                            </div>
+
+                                                            <!--이미지 갤러리-->
+                                                            <div class="thum_area">
+                                                                <div class="thum_wrap">
+                                                                    <a class="btn pre">pre</a>
+                                                                    <ul class="thumnails">                  
+                                                                        <!-- 이미지 01 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_01.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 02 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box selected">
+                                                                                <img src="../../img/square/ex_img_02.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 03 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_03.jpg" />
+                                                                            </span>
+                                                                        </li> 
+                                                                        <!-- 이미지 04 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_04.jpg" />
+                                                                            </span>
+                                                                        </li>  
+                                                                        <!-- 이미지 05 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_05.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 01 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_06.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 02 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_02.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 03 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_03.jpg" />
+                                                                            </span>
+                                                                        </li> 
+                                                                        <!-- 이미지 04 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_04.jpg" />
+                                                                            </span>
+                                                                        </li>  
+                                                                        <!-- 이미지 05 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_05.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <a class="btn next">next</a>
+                                                                </div>
+                                                            </div>
+                                                            <!--//이미지 갤러리-->
+                                                        </div>
+
+                                                        <!-- 이미지 등록 및 선택 -->
+                                                        <div class="group_member_thumb">
+                                                            <!-- 직접등록 --> <!-- [D] 이미지 직접등록 후 화면-->
+                                                            <div class="file_box"> 
+                                                                <div class="thumnail">
+                                                                    <span class="thumnail_box">
+                                                                        <img src="../../img/square/group_img.jpg" />
+                                                                    </span>
+                                                                </div>
+                                                                <a href="#" class="del">삭제</a>
+                                                            </div>
+
+                                                            <!--이미지 갤러리-->
+                                                            <div class="thum_area">
+                                                                <div class="thum_wrap">
+                                                                    <a class="btn pre">pre</a>
+                                                                    <ul class="thumnails">                  
+                                                                        <!-- 이미지 01 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_01.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 02 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_02.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 03 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_03.jpg" />
+                                                                            </span>
+                                                                        </li> 
+                                                                        <!-- 이미지 04 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_04.jpg" />
+                                                                            </span>
+                                                                        </li>  
+                                                                        <!-- 이미지 05 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_05.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 01 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_06.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 02 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_02.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                        <!-- 이미지 03 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_03.jpg" />
+                                                                            </span>
+                                                                        </li> 
+                                                                        <!-- 이미지 04 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_04.jpg" />
+                                                                            </span>
+                                                                        </li>  
+                                                                        <!-- 이미지 05 -->
+                                                                        <li class="thumnail">
+                                                                            <span class="thumnail_box">
+                                                                                <img src="../../img/square/ex_img_05.jpg" />
+                                                                            </span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <a class="btn next">next</a>
+                                                                </div>
+                                                            </div>
+                                                            <!--//이미지 갤러리-->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- 상세페이지 하단 목록 -->
+                                    <div class="view_table">
+                                        <h4 class="sub_title_02"><span class="title">그룹 멤버</span></h4>
+                                        <div class="list_btn_area">
+                                            <div class="left_btn">
+                                                <a href="#">멤버 관리</a>  
+                                            </div>
+                                            <span>필터 : </span>
+                                            <span class="selectbox" style="width:200px">
+                                                                <select>
+                                                                    <option selected>전체부서</option>
+                                                                    <option>부서명</option>
+                                                                    <option>제품기획팀</option>
+                                                                    <option>컴포넌트팀</option>
+                                                                    <option>컴포넌트팀컴포넌트팀컴포넌트팀컴포넌트팀컴포넌트팀</option>
+                                                                </select>
+                                                            </span>
+                                        </div>
+                                        <!-- board_list_table -->
+                                        <div class="board_list_table">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:40px">
+                                                    <col style="width:50px">
+                                                    <col style="width:*">
+                                                    <col style="width:18%">
+                                                    <col style="width:18%">
+                                                    <col style="width:18%">                                                    
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <span class="checkbox">
+                                                                <label for="check-all" onclick="javascript:$(this).toggleClass('checked');">전체 선택</label>
+                                                                <input type="checkbox" name="selection" id="check-all" value="" />       
+                                                            </span>
+                                                        </th>
+                                                        <th>No</th>
+                                                        <th>성명</th>
+                                                        <th>직위</th>
+                                                        <th>부서</th>
+                                                        <th>등급</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>10</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                        
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="관리자">관리자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>9</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                       
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="멤버">멤버</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>8</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                       
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="관리자">관리자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>7</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                       
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="참관인">참관인</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>6</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                        
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="참관인">참관인</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>5</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                       
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="관리자">관리자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>4</td>
+                                                        <td title="홍길동">홍길동</td>
+                                                        
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="멤버">멤버</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>3</td>
+                                                        <td title="홍길동">홍길동</td>                                                        
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="멤버">멤버</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>2</td>
+                                                        <td title="홍길동">홍길동</td>                                                        
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="관리자">관리자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="check">
+                                                            <span class="checkbox">
+                                                                <label for="check-1" onclick="javascript:$(this).toggleClass('checked');">선택</label>
+                                                                <input type="checkbox" name="selection" id="check-1" value="" />
+                                                            </span>
+                                                        </td>
+                                                        <td>1</td>
+                                                        <td title="홍길동">홍길동</td>                                                       
+                                                        <td title="대리">대리</td>
+                                                        <td title="제품기획팀">제품기획팀</td>
+                                                        <td title="참관인">참관인</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="6" class="no_result">구성원을 추가해주세요.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>                                       
+
+                                    </div>
+                                    <!-- //상세페이지 하단 목록 -->
+
+                                </div>
+                                <!-- //게시판 상세 영역 -->
+
+                                <!-- 게시판 상세 하단 버튼 -->
+                                <div class="view_btn_area">
+                                    <a href="#" class="btn_list">목록</a>
+                                    <a href="#" class="btn_cancel">취소</a>
+                                    <a href="#" class="btn_complete">저장</a>
+                                </div>
+
+                            </div>
+                            <!-- //컨텐츠 스크롤 -->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- //body -->
+
+        </div>
+        <!-- //wrapper -->
+        
+    </body>
+</html>

@@ -1,0 +1,761 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>square 상세 즐찾 업무 화면</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/square.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+<script type="text/javascript" language="javascript">
+$(function() {
+$('.topic_sentence li p').dotdotdot();
+});
+</script>
+</head>
+<body>
+<div class="co_work" id=""> 
+  
+  <!--임시보관함의 layer pop -->
+  <div class="square_layer_pop two second"> <span class="layer_arr"></span>
+    <div class="inner_box">
+      <div class="tit">보관<span class="count">28</span> <a class="more">more</a>
+        <div class="layer_pop">
+          <ul>
+            <li >업무요청추가</li>
+            <li >토픽추가</li>
+            <li >일괄삭제</li>
+          </ul>
+        </div>
+        <a class="close">close</a></div>
+      <div class="contents">
+        <div class="layer_search">
+          <input id="searchKeyword" type="search" placeholder="업무명을 입력하여 검색하세요" onkeypress="">
+          <a href="" class="btn_search"> </a> </div>
+        <div class="modi_btn_area">
+          <div class="guide">
+            <div class="fnt_prpl"><strong>선택한 보관 콘텐츠 삭제하기</strong></div>
+            <div class="fnt_gray">삭제할 보관 콘텐츠를 선택하여 주십시오</div>
+          </div>
+          <div class="btns checked"> 
+            <!-- [D] 리스트가 하나라도 체크되면 btns에 checked 라는 class 가 추가됩니다.--> 
+            <span class="del">
+            <p>2</p>
+            삭제</span> <span class="cancel">취소</span> </div>
+        </div>
+        <table class="table_list modify">
+          <!--기본항목-->
+          <thead>
+            <tr>
+              <th>업무명</th>
+              <th class="date">등록일자</th>
+              <th class="select">선택</th>
+            </tr>
+          </thead>
+          <!--리스트-->
+          <tbody>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox" ></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"  checked></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <p class="fnt_gray">* 최근 5일간 등록된 컨텐츠 입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/// 임시보관함의 layer pop END --> 
+  
+  <!-- 좌측 메뉴 영역 -->
+  <!--좌측 메뉴 영역-->
+<div class="left_menu">
+<!--Action Btn start-->
+<div class="btn_large"> <a href="javascript:postMTRL();" title="">그룹만들기</a> </div>
+<!--// Action Btn END--> 
+<!--Quick Btn start
+  <ul class="quickbtn_area four">
+    <li class="btn_noread quickbtn_on"><a href="#"> <span>안읽음</span></a></li>
+    <li class="btn_imprt"><a href="#"> <span>중요</span></a></li>
+    <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+    <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+  </ul>
+  -Quick Btn END--> 
+<!--Menu List start-->
+<ul id="folder_list" class="snb_lst ">
+  <li class=""> <a id="menu_01" href="javascript:;" > <span>그룹관리</span></a></li>  
+</ul>
+<!--// Menu List end--> 
+
+<!--Setting & Info Area start-->
+<div class="info_area"> 
+  <!-- Config --> 
+  <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+  <!-- //Config --> 
+</div>
+<!--좌측 메뉴 영역 END--> 
+    </div>
+  
+  <!-- 중앙 컨텐츠 영역 Center Contents Area -->
+  <div class="container_box container_list_box ">
+    <div id="workGroup"> 
+      
+      <!-- Title area -->
+      <div class="title_area">
+        <h2 class="title">그룹관리</h2>
+          
+        <div id="left_btn_close" class="btn_flip_left"> <a href="javascript:toggle_LFrame()"></a> </div>
+        <div id="right_btn_close" class="btn_flip_right on"> <a href="javascript:toggle_RFrame();"></a> </div>       
+      </div>
+      <!-- // Title area END--> 
+      
+      <!-- Contents area -->
+      <!-- [D] 그룹관리 시에는 .managering_work 에, .group을 추가합니다. 
+    table은 스크롤 제어를 위해 thead영역과 tbody 영역을 나누어 갑니다.-->
+      <div class="list_vertical managering_work " style=""> 
+         
+        <!-- Contents area - LEFT -->
+        <div class="container_wrap_left control_mod" style="width: 518px;">
+           <div class="tab_area">
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab selected">활동중인 그룹<span>(58개)</span></li>
+        </a> <a href="#">
+        <li class="tab">종료된 그룹<span>(12개)</span></li>
+        </a>
+      </ul>
+    </div>
+  </div>
+       <div class="sort_condition">              
+           <ul class="btn_area">
+             <li class="btn_fin_set"><a href="" ><span class="">
+                 일괄 완료처리</span>
+          </a></li>
+               
+               <li class="btn_fin on"><a href="" ><span class="">
+               완료하기
+           </span></a></li>
+               
+               <li class="btn_cancel"><a href="" ><span class="">
+               취소
+           </span></a></li>
+           
+           </ul>
+       </div>
+        <div class="content_lst content_lst_head">
+          <table>
+            <thead>
+              <tr>
+                <!--[D] 제목의 정렬은 desend와 asend 사용 -->
+                <th class="group"><a href="#" class="list_sort descend">제목</a></th>
+                <th class="admin">개설자</th>
+                
+                <th class="member">구성원</th>
+                <th class="date"><a href="#" class="list_sort ascend">등록일자</a></th>
+                  <th class="select"> 
+                  </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+          <div class="content_lst content_lst_body">
+          <table class="move_lst_vertical">
+            <tbody>
+              <tr class="">                
+                <td class="group"><a href="#">링크걸린 그룹이름이요</a></td>
+                <td class="admin"><a href="#">관리자요</a></td>
+                <td class="member"><a href="#">11</a></td>
+                <td class="date">2014.03.04 19:07</td>
+                <td class="select"><input type="checkbox"></td>
+              </tr>
+             <tr class="">                
+                <td class="group"><a href="#">링크걸린 그룹이름이요</a></td>
+                <td class="admin"><a href="#">관리자요</a></td>
+                <td class="member"><a href="#">11</a></td>
+                <td class="date">2014.03.04 19:07</td>
+                <td class="select"><input type="checkbox"></td>
+              </tr>
+               <tr class="">                
+                <td class="group"><a href="#">링크걸린 그룹이름이요</a></td>
+                <td class="admin"><a href="#">관리자요</a></td>
+                <td class="member"><a href="#">11</a></td>
+                <td class="date">2014.03.04 19:07</td>
+                <td class="select"><input type="checkbox"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <!-- // content_lst_body --> 
+          
+          <!-- INPUT_BOX -->
+          <div id="" class="paginate_box entr0">
+            <div id="inputArea" class="input_area"> 
+              <!-- 입력창 -->
+              <div id="inputBox" class="input_box"> <a onclick="javascript:$('#inputBox').toggleClass('on');setContentsFileUploader();" class="select_menu"><span class="btn_upload"></span></a>
+                <div class="layer_pop write_type">
+                  <ul>
+                    <li class="type_file">
+                      <div id="fileUpload" name="fileUpload" class="fileUpload"></div>
+                      <span class="ico file"></span><span>파일등록</span> </li>
+                    <li onclick="javascript:showAddTopic('01e4x976k');" class="type_topic"><span class="ico topic"></span><span>토픽등록</span></li>
+                    <li onclick="javascript:showAddOrder('01e4x976k');" class="type_work"><span class="ico work"></span><span>업무요청</span></li>
+                  </ul>
+                </div>
+                <textarea id="message" class="instant_inp" onkeydown="javascript:return textAreaKeyEvent(event);"></textarea>
+              </div>
+              <!-- 입력버튼 --> 
+              <a href="javascript:addMessage();" class="btn_write"><span>등록</span></a> </div>
+          </div>
+          <!-- //  INPUT_BOX -->
+          
+          <div class="btn_flip_open" style="display:none;"> <a href="javascript:hideDetailArea(false)"></a> </div>
+        </div>
+        
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        
+        <!--  CONTENTs 우측(디테일 화면) -->
+        <div id="" class="view_content_box view_box off" style="margin-left: 518px;">
+          <div class="inner_box">
+            <!--div class="top_area">
+              <div>
+                <div class="btn_flip_close"> <a href=""></a> </div>
+              </div>
+              <span class="search">
+              <input id="" type="search" placeholder="Search" onkeypress="">
+              <a href="" class="btn_search"> </a> </span> <span  class="detail_menu" onclick=""> <span id="" class="more_detail_menu"></span> <span class="layer_pop more_dtl_menu">
+              <ul>
+                <li onclick=""> 그룹정보 </li>
+                <li onclick=""> 파일 </li>
+                <li onclick=""> 즐겨찾기 </li>
+                <li onclick=""> 업무요청 </li>
+              </ul>
+              </span> </span> </div-->
+            <div id="" class="cowork_detail">
+              <div id="">
+                  
+                <div class="detail_title"> <a id="" href="javascript:backDetail();" class="btn_back" style="display: none;"></a>
+                  <h2 id="" class="title nodepth">그룹검색</h2>
+                  
+                  <!--현재 위치 관련 메뉴 --> 
+                </div>
+                  <div class="serch_area">
+                  <div class="serch_box">
+                    <span class="search">
+						<input id="searchKeyword" type="search" placeholder="검색어를 입력하세요" onkeypress="">
+						<a href="" class="btn_search"> </a>
+					</span>
+                      </div>
+                    <div class="img_guide" style="display:none;">
+                    <img src="../../img/guide_serch.png">                    
+                    </div> </div>
+                  
+                  
+                <div  class="detail_area control_mod" style="height:;">                   
+                    
+               <div class="sort_condition">  
+                <ul class="btn_area">
+             <li class="btn_fin_set"><a href="" ><span class="">
+                 일괄 완료처리</span>
+          </a></li>
+               
+               <li class="btn_fin"><a href="" ><span class="">
+               완료하기
+           </span></a></li>
+               
+               <li class="btn_cancel"><a href="" ><span class="">
+               취소
+           </span></a></li>
+           
+           </ul>
+                    </div>   
+                    
+                    
+                    
+                    
+                    
+                    
+                <div class="strings">
+                    <em>스퀘어</em>에 대한 검색 결과 <em>8건</em></div>
+                
+                <div class="square_btn_area">
+                  <!--[D] 업무지시 유형 각 버튼의 눌려진 상태는 ON 추가-->
+                   <ul class="state_btns four">
+                       <li>
+                           <a href="#" class="total on"><span>전체</span></a>
+                       </li>
+                       <li>
+                           <a href="#" class="ing"><span>진행</span></a>
+                       </li>
+                       <li>
+                           <a href="#" class="delay"><span>지연</span></a>
+                       </li>
+                       <li style="display:;">
+                           <a href="#" class="fin"><span>종료</span></a>
+                       </li>
+                   </ul>
+                </div>
+                
+                
+                <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" ></label>  
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul>                
+                </div>
+                 <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" ></label> 
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul>                 
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" ></label>  
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul>                
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                     <!-- 검색된 그룹 -->
+               
+                <div class="article_box search_box">
+                   
+                    <div class="check_box"><input type="checkbox" class="check" id="test_detail_check"></div>
+                     <label for="test_detail_check" >
+                    <ul class="group_box">
+                     <li><h3><span><em class="searched">스퀘어</em> TFT</span></h3>
+                              <p>스퀘어 TFT 실무를 위한 그룹입니다. UX&UI에
+대한 의견을 공유하시기 바랍니다.</p>
+                            </li>
+                            <li class="group_info">
+                          <span class="admin">관리자요</span><span class="date">2015.11.15</span>
+                           
+                            </li>
+                        
+                  </ul></label>                  
+                </div>
+                    
+               
+                </div>
+            <!-- /// 상세 정보 영역 --> 
+                    
+                
+                <div id="" class="paginate_box entr0">
+                  <div class="input_area">
+                    <div class="input_box"> <a class="select_menu">
+                      <div id="" name="commentUpload" class="fileUpload">
+                        
+                        
+                      </div>
+                      <span class="btn_upload"> </span> </a>
+                      <div class="file_upload" style="display:none">
+                        <ul class="file_type_input">
+                          <li class="file_type_ttl"> <span id="" class="file_ttl"></span> <span id="" class="capacity"></span> <span class="cancel" onclick=""></span> </li>
+                          <li class="file_type_txtarea">
+                            <textarea id="" class="instant_inp" onkeydown=""></textarea>
+                          </li>
+                        </ul>
+                      </div>
+                      <textarea id="" class="instant_inp" onkeydown=""></textarea>
+                    </div>
+                    <a href="javascript:addComment();" class="btn_write"><span></span></a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="controlbar ui-draggable" style="left: 518px;">
+          <div class="bar"> <em>control</em> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    /* 창크기 조절 */
+    var listContainerWidth = null;
+    $('.controlbar').draggable({
+            opacity: 0.7,
+            containment: 'html',
+            axis : 'x',
+            start : function(){
+                $('.list_vertical').css('opacity', 0.6);
+            },
+            stop : function(){
+                $('.list_vertical').css('opacity', 1);
+                listContainerWidth = $(this).position().left;
+                //console.log("스크롤바 위치 : " + listContainerWidth + " / 왼쪽컨텐츠 사이즈 : " + (listContainerWidth ))
+                $('.list_vertical .container_wrap_left').css('width', listContainerWidth);
+                $('.list_vertical .view_content_box').css('margin-left', listContainerWidth);
+                $('.list_vertical .container_wrap_left .textarea').css('width', listContainerWidth - 100 );
+            }
+    })
+</script>
+</body>
+</html>

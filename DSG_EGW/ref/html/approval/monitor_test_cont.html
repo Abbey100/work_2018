@@ -1,0 +1,573 @@
+<html xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:vml="urn:schemas-microsoft-com:vml"><!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> --><head><meta charset="utf-8">
+
+        <title>FlowMonitor</title>
+        
+<link href="../../css/common.css" rel="stylesheet" type="text/css">
+<link href="../../css/bms.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" src="/bms/javascripts/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/bms/javascripts/jquery-migrate-1.2.1.min.js"></script>
+
+
+<script type="text/javascript" src="/js/CALS.JS"></script>
+<script type="text/javascript" src="/bms/js/calendar.js"></script>
+<script type="text/javascript" src="/bms/js/dui_all.js"></script>
+<script type="text/javascript" src="/bms/js/common/common_all.js"></script>
+<script type="text/javascript" src="/bms/js/validator/validator.js"></script>
+<script type="text/javascript" src="/bms/js/comm/jquery.blockUI.js"></script>
+<script type="text/javaScript" language="javascript" defer="defer">
+// <![CDATA[
+    var szKEY = '00mzx3i6m3';
+// ]]>
+</script>
+        <script type="text/javascript" src="/bms/js/cz/cb/lib/FlowTree.js"></script>
+        <script type="text/javascript" src="/bms/js/cz/cb/wrt/hcapi.js"></script>
+        <script type="text/javascript" src="/bms/js/cz/cb/wrt/propui.js"></script>
+        <script type="text/javascript" src="/bms/js/cz/cb/viw/appr_common.js"></script>
+        </head><body marginwidth="0" marginheight="0" id="monitorBody" onclick="$(&quot;#nodeinfo&quot;).hide()"><xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v">
+        <style>v\:*{ behavior:url(#default#VML);}</style>
+        <style>
+             #monitorBody{ background-color:#FFFFFF; }
+            #floatMenu {
+                position:absolute;
+                z-index:300;
+                left:10px;
+                top:10px;
+                height:50px;
+                width:159px;
+                background-color: #cccccc;
+                filter:alpha(opacity=90);
+            }
+            .clickable{cursor: pointer;}
+            .dragme{position:relative;cursor: pointer;display:;}
+            
+            .depth_clse {
+                /* width : 310px; */
+                position: relative;
+                overflow: hidden;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 11px;
+                height: 26px;
+                line-height: 26px;
+                white-space: nowrap;
+                text-overflow: ellipsis
+            }
+            
+            .photo {
+                float: left;
+                overflow: hidden;
+                width: 40px;
+                height: 40px;
+                border: 0px;
+                vertical-align: middle;
+            }
+            
+            .msg {
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%); /* Yep! */
+              width: 48%;
+              height: 59%;
+            }
+            
+        </style>
+        <script>
+        var floatMenu = "#floatMenu";
+        var menuYloc = null;
+        var menuXloc = null;
+        var mFromTask = null;
+        $(document).ready(function(){
+            var apprid = "JHOMS151070001701000";
+            var ai = Capi.getApprovalInfo(apprid);
+            if(ai) {
+            	if(ai.externalflag !='0') {
+            		$('#monitor').html('<span class="msg bold">비전자문서의 Flow는 표시할 수 없습니다.</span>')
+            		return;
+            	}
+            }
+            mFromTask = '';// 구해야함.
+            initMonitor(apprid, successCallBack, errorCallBack);
+            
+            $('.callSubFlow').click(function() {
+                var signertype = $(this).attr('data-signertype');
+                if(signertype=='1') return;
+                var deptID = $(this).attr('data-deptid');
+                var obj = Capi.getSendInfo(apprid, deptID);
+                if(obj && obj.receiptApprId && apprid!=obj.receiptApprId) {
+                    if(window.console)
+                        console.log('receiptApprId='+obj.receiptApprId+' deptID='+deptID);
+                    fncFlowInfo(obj.receiptApprId, deptID);
+                }
+            });
+        });
+        
+        function initMonitor(apprId, successFn, errorFn){
+                var url = PROJECT_CODE+'/cz/cb/monitor/procMonitor.act';
+                    
+                var successHandler = function(data, status){
+                                            successFn(data);
+                                            var code = $("code", data).text();
+                                            //alert('code='+code)
+                                            if(!code || eval(code) == 0) // for success
+                                            {
+                                                if(successFn){
+                                                    successFn(data);
+                                                }
+                                            } else {
+                                                if(errorFn){
+                                                    errorFn(data);
+                                                }else{
+                                                }
+                                            }
+                                        };
+                var paramValue = {};
+                paramValue['DOCID'] = apprId;
+                
+                if(window.console)
+                    window.console.log('url '+url +' apprid='+apprId);
+                $.ajax({
+                    type:"post",
+                    cache:false,
+                    url:url,
+                    data: paramValue,
+                    dataType: "xml",
+                    success: successHandler,
+                    error:function(data, status) {
+                                    var paramStr = ''; // Object.toJSON(paramValue);
+                                    alert("[Error]Invoke URL : "+paramStr+"\n\n"+status+"\n\n"+data.responseText);
+                                },
+                    async:false
+                });
+            //alert('initMonitor END')
+        }
+
+        function initFloatMenu(){
+            menuYloc = parseInt($(floatMenu).css("top").substring(0,$(floatMenu).css("top").indexOf("px")))
+            menuXloc = parseInt($(floatMenu).css("left").substring(0,$(floatMenu).css("left").indexOf("px")))
+            $(window).scroll(function () {
+                offset = menuYloc+$(document).scrollTop()+"px";
+                $(floatMenu).animate({top:offset},{duration:80,queue:false});
+                offset = menuXloc+$(document).scrollLeft()+"px";
+                $(floatMenu).animate({left:offset},{duration:80,queue:false});
+            }).resize(function () {
+                offset = menuYloc+$(document).scrollTop()+"px";
+                $(floatMenu).animate({top:offset},{duration:80,queue:false});
+                offset = menuXloc+$(document).scrollLeft()+"px";
+                $(floatMenu).animate({left:offset},{duration:80,queue:false});
+            });
+        }
+        var xxx2 = 'url: "http://localhost:8080/jquery/testxml.jsp",';
+        var xxx = 'url:  "/dcs/proc.do?todo=monitor&procid=null&K=null",';
+        var tree = null;
+            
+        var successCallBack = function(xml) {
+            CreateTree();
+            $(xml).find("node").each(viewxmldata);
+            tree.config.topXAdjustment = 20; //시작위치 위에서
+            tree.config.topYAdjustment = 0;
+            tree.setCurrentNode(mFromTask);
+            tree.UpdateTree();
+            ChangePositionColor(tree.config.iRootOrientation);
+            tree.animateCurrentNode(3);
+            setTimeout(initFloatMenu,1000);
+        }
+        
+        function errorCallBack(){
+            alert("err");
+        }
+
+        function getDataTR(label, value){
+            return '<tr><td class="lb">' + label + '</td><td class="value">' + value + '</td></tr>';
+        }
+
+        function getShoterTitle(title){
+            //alert(title.length);
+            if(title.length > 28){
+                title = title.substring(0,28) + "...";
+            }
+            return title;
+        }
+
+        function getDateString(str, status){
+            if(str == 'null') {
+                if(window.console)
+                    console.log('getDateString str '+str+' status '+status);
+                switch(status){
+                    case "R":
+                        return "unread";
+                    case "D":
+                        return "empty";
+                    case "C":
+                        return "progress";
+                }
+                return status;
+            }
+            return str;
+        }
+        
+        var borderColor = "#F0CC00";
+        function viewxmldata(){
+            var typeA =[150,125,'#ffffee', borderColor];
+            var typeW = [130,52,'#ffffcc', borderColor];
+            var content = [];
+            var brief = [];
+            var w;
+            var h;
+            var c;
+            var bc;
+            
+            var WPID=$(this).children("pid").text();
+            var WID=$(this).children("id").text();
+            var WSIGNERID = $(this).children("signerId").text();
+            var WTYPE=$(this).children("type").text();
+            var WSTATE=$(this).children("approvalStatus").text();
+            var WCMPLTDATE=$(this).children("approvalDate").text();
+            var WREADDATE=$(this).children("readdate").text();
+            var WPRTCPNAME=$(this).children("prtcpname").text();
+            var WPRTCPTYPE=$(this).children("displayApprovalType").text();
+            var WPOSITION=$(this).children("position").text();
+            var WPRTCPSTATUS=$(this).children("displayApprovalStatus").text();
+            var WSIGNERTYPE = $(this).children("signerType").text();
+            var WDEPTNAME = $(this).children("signerDeptName").text();
+            var WCOMMENT=$(this).children("comment").text();
+            var wseq = WID.split(".")[2];
+            if(wseq != null && wseq == "0")
+                return;
+            bc = getBorderColorByState(WSTATE);
+            if(WTYPE == "A"){///  ACT --- ACT --- ACT --- ACT
+                w = typeA[0];
+                h = typeA[1];
+                c = getBGColor(WSTATE,WTYPE);
+                //if(WSIGNERTYPE == '1') {
+                    brief.push('<div>');
+                    brief.push('<span class="co_pic">');
+                    brief.push('		<img class="photo" src="/jsp/org/view/ViewPicture.jsp?K='+szKEY+'&user_id='+WSIGNERID+'" >');
+                    brief.push('</span>');
+                    brief.push('</div>');
+                    brief.push('<ul >');
+                    brief.push('<li class="bold">'+WPRTCPTYPE+'</li>');
+                    brief.push('<li class="callSubFlow" data-deptid="'+WSIGNERID+'" data-signertype="'+WSIGNERTYPE+'">');
+                    brief.push(getDateString(WCMPLTDATE, WPRTCPSTATUS)+'<img src="'+ getImageByState(WSTATE, WTYPE)+'"/>');
+                    brief.push('</li>');
+                    brief.push('<li class="bold">'+getStrByLength(WPRTCPNAME));
+                    if(WSIGNERTYPE == '1') {
+                        brief.push('&nbsp;'+WPOSITION);
+                    }
+                    brief.push('</li>');
+                    brief.push('</ul>');
+                //}
+            }
+            if(WPID == -1){
+                var tmp = [];
+                 tmp.push('<table class="order" border="0" cellspacing="0" cellpadding="0">');
+                tmp.push('<tr>');
+                    tmp.push('<td>');
+                    tmp.push("<ul><li class='bold'>&nbsp;</li></ul>");
+                    tmp.push('</td>');
+                tmp.push('</tr>');
+                tmp.push('</table>');
+                tree.add(WID+".0", -1, "", 10, 10, c, bc, null, null, "A", null, '');
+                WPID = WID+".0";
+            }
+            tree.add(WID,
+                    WPID,
+                    WCOMMENT,
+                    w,h,c,bc,null,null,
+                    WTYPE,
+                    content.join(''), brief.join(''));
+        }
+
+        function CreateTree() {
+            tree = new FlowTree('tree','monitor');//monitor 라는 div에 출력, tree.함수 형태로 링크생성
+            tree.config.iRootOrientation = FlowTree.RO_LEFT;//가로방향 출력 //FlowTree.RO_TOP;
+            tree.config.iSubtreeSeparation = 50;
+            tree.config.iSiblingSeparation = 25;
+            //tree.config.iLevelSeparation = 50;
+            tree.config.iLevelSeparation = 50;
+            tree.config.linkType = 'P';
+            tree.config.nodeFill = FlowTree.NF_FLAT;
+            tree.config.linkColor = borderColor;
+            tree.config.useCanCollapse = false;
+        }
+
+        function detailClose(){
+            $("#nodeinfo").hide();event.cancelBubble = true;
+        }
+
+        function detailOver(obj){
+            $(obj).css({"background-position":"center"});
+        }
+        
+        function getStrByLength(str, len){
+            var length = str.length;
+            var maxLength = len;
+            var tmp;
+            var totalCnt = 0;
+            var koreanCnt = 0;
+            for(var i = 0; i < length ; i++){
+                tmp = str.charAt(i);
+                if(escape(tmp).length > 4){
+                    koreanCnt++;
+                    totalCnt += 2;
+                }else{
+                    totalCnt++;
+                }
+                if(totalCnt >= maxLength){
+                    
+                    return str.substring(0,maxLength-koreanCnt)+"...";
+                }
+            }
+            return str;
+        }
+
+        
+
+        function getBGColor(state, type) {
+            if(window.console)
+                console.log('getBGColor state='+state+' type='+type)
+            if(type == "A"){
+                switch(state){
+                    case "4"://NOW
+                        return '#788dea';//보라
+                    case "2"://DONE
+                        return '#e8e8f7';//'회색
+                    case "8"://WILL
+                        return '#788dea';//주황
+                    default :
+                        return "#ffffee";
+                }
+            }/* else if(type == "W"){
+                switch(state){
+                    case "4"://NOW
+                        return 'blue';
+                    case "2"://DONE
+                        return '#EEF2F5';//'회색
+                    case "8"://WILL
+                        return '#FDEDDD';//주황
+                    default :
+                        return "#ffffcc";
+                }
+            } */
+        }
+
+        //결재자 박스 테두리
+        function getBorderColorByState(state, delay) {
+            if(window.console)
+                console.log('getBorderColorByState state='+state+' delay='+delay)
+            switch(state){
+                case "4"://NOW
+                    return '#788dea';//보라
+                default :
+                    return "#FFFFFF";
+            }
+            return '#FFFFFF'; //배경이랑 같도록
+        }
+        function getImageByState(state, type, readdate, delay) {
+            //alert('state='+state+' type='+type)
+            if(type == "A"){
+                switch(state){
+                    case "2":
+                        return '../../img/icon_a_completed.gif" alt="완료';
+                    case "4"://NOW
+                    case "8"://WILL  이미지가 없어 같이 사용
+                        return '../../img/icon_a_active.gif" alt="진행중';
+                    case "16"://반송
+                        return '../../img/bms/s0.gif" alt="반송';
+                    case "512":
+                        return '../../img/icon_suspended.gif" alt="보류';
+                    case "1024":
+                        return '../../img/icon_withdrawed.gif" alt="회수';
+                    
+                }
+            }	/* else if(type == "W"){
+                switch(state){
+                    case "R":
+                        if(readdate == "null"){
+                            return '../../img/icon_w_unread.gif" alt="읽지 않음';
+                        }
+                        else{
+                            return '../../img/icon_w_read.gif" alt="읽음';
+                        }
+                    case "partapprstatus_done":
+                        return '../../img/icon_w_completed.gif" alt="완료';
+                    case "J":
+                        return '../../img/icon_w_rejected.gif" alt="반송';
+                    case "W":
+                        return '../../img/icon_withdrawed.gif" alt="회수';
+                    case "D":
+                        return '../../img/icon_withdrawed.gif" alt="회수';
+                    case "P":
+                        return '../../img/icon_suspended.gif" alt="보류';
+                }
+            } */
+        }
+
+        function getStringForState(state, delay, readdate){
+            switch(state){
+                case "R":
+                    if(delay)
+                        return '진행중';
+                    return '진행중';
+            }
+        }
+
+        function ChangePositionColor(pos){
+            if(pos == FlowTree.RO_TOP){
+                $("#top").removeClass("flow_verti");
+                $("#left").removeClass("flow_horizon");
+                $("#top").addClass("flow_vertion");
+                $("#left").addClass("flow_horiz");
+            }else{
+                $("#top").removeClass("flow_vertion");
+                $("#left").removeClass("flow_horiz");
+                $("#top").addClass("flow_verti");
+                $("#left").addClass("flow_horizon");
+            }
+        }
+        function ChangePosition(pos) {
+            ChangePositionColor(pos);
+            tree.config.iRootOrientation = pos;
+            switch (pos)
+            {
+                case FlowTree.RO_TOP:
+                    tree.config.topXAdjustment = 200;
+                    tree.config.topYAdjustment = 30;
+                    break;
+                casetopYAdjustment FlowTree.RO_BOTTOM:
+                    tree.config.topXAdjustment = 20;
+                    tree.config.topYAdjustment = -500;
+                    break;
+                case FlowTree.RO_RIGHT:
+                    tree.config.topXAdjustment = 20;
+                    tree.config.topYAdjustment = -500;
+                    break;
+                case FlowTree.RO_LEFT:
+                    tree.config.topXAdjustment = 150;
+                    tree.config.topYAdjustment = -10;
+                    break;
+            }
+            tree.UpdateTree();
+             
+            tree.signCurrentNode(pos);
+        }
+
+        function ChangeLinkType() {
+            tree.config.linkType = document.forms[0].linktype.value;
+            tree.UpdateTree();
+        }
+
+
+        function viewComment(obj, id, comment, event){
+            var button = "<img class='Lbtn' src='../../img/ic_close.gif' alt='닫기' />";
+            fncCBShowLayerImpl(obj, comment, event, 'layer_help_1', button);
+            event.cancelBubble = true;
+            
+            //일반
+            //var option = 'height=700px, width=650px';//, resizable=no, help=no, status=no';
+            //window.open(url,"",option);
+        }
+
+        function refreshMonitor(){
+            initMonitor();
+        }
+
+        //-- drag
+        var ie=document.all;
+        var nn6=document.getElementById&&!document.all;
+        
+        var isdrag=false;
+        var x,y;
+        var dobj;
+        
+        function movemouse(e)
+        {
+          if (isdrag)
+          {
+            dobj.style.left = nn6 ? tx + e.clientX - x : tx + event.clientX - x;
+            dobj.style.top  = nn6 ? ty + e.clientY - y : ty + event.clientY - y;
+            return false;
+          }
+        }
+        
+        function selectmouse(e)
+        {
+          var fobj       = nn6 ? e.target : event.srcElement;
+          var topelement = nn6 ? "HTML" : "BODY";
+        
+          while (fobj.tagName != topelement && fobj.className != "dragme")
+          {
+            fobj = nn6 ? fobj.parentNode : fobj.parentElement;
+          }
+        
+          if (fobj.className=="dragme")
+          {
+            isdrag = true;
+            dobj = fobj;
+            tx = parseInt(dobj.style.left+0);
+            ty = parseInt(dobj.style.top+0);
+            x = nn6 ? e.clientX : event.clientX;
+            y = nn6 ? e.clientY : event.clientY;
+            document.onmousemove=movemouse;
+            return false;
+          }
+        }
+        
+        document.onmousedown=selectmouse;
+        document.onmouseup=new Function("isdrag=false");
+
+        //-- joom S
+        var iZoomPercent = 0;
+                
+        function funcZoom(param)
+        {
+            if(navigator.userAgent.toLowerCase().indexOf("msie")!=-1)
+            {
+                if(document.body.style.zoom==null||document.body.style.zoom=="") iZoomPercent = 100;
+        
+                if(param=="in")
+                    iZoomPercent = iZoomPercent + 10;
+                else
+                    iZoomPercent = iZoomPercent - 10;
+        
+                if(iZoomPercent > 200) iZoomPercent = 200;
+        
+                if(iZoomPercent < 50) iZoomPercent = 50;
+                 
+                document.body.style.zoom = iZoomPercent +"%";
+            }
+        }
+        //-- joom E
+        </script>
+    
+    
+        
+
+
+
+<script type="text/javaScript" language="javascript" defer="defer">
+// <![CDATA[
+    var PROJECT_CODE = "/bms";
+// ]]>
+</script>
+
+       
+        <div id="currentNodeArrow" style="display:;"><img src="../../img/currentnode.gif" alt="현재업무" style="cursor:pointer"></div>
+        <div id="currentNodeBox" style="display:;"></div>
+        <div id="monitor"><canvas id="FlowTreecanvas" width="1712" height="370"></canvas>
+        <div class="clickable" style="z-index:100; position:absolute; top:24; left:56; width:10; height:10" onclick="tree.selectNode('JHOMS151070001501000.0', true, event)"><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:116; width:150; height:125" onclick="tree.selectNode('JHOMS151070001501000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">결재</li><li class="callSubFlow" data-deptid="100001223" data-signertype="1">2015-04-17<img src="../../img/icon_a_completed.gif" alt="완료"></li><li class="bold">박범진&nbsp;책임연구원</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:316; width:150; height:125" onclick="tree.selectNode('JHOMS151070001502000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">부서순차협조</li><li class="callSubFlow" data-deptid="000011303" data-signertype="2">진행<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">제품지원연구소</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:516; width:150; height:125" onclick="tree.selectNode('JHOMS151070001503000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">부서병렬협조</li><li class="callSubFlow" data-deptid="000024003" data-signertype="2">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">플랫폼연구소</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:174; left:516; width:150; height:125" onclick="tree.selectNode('JHOMS151070001504000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">부서병렬협조</li><li class="callSubFlow" data-deptid="000024100" data-signertype="2">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">연구개발본부</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:716; width:150; height:125" onclick="tree.selectNode('JHOMS151070001505000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">병렬협조</li><li class="callSubFlow" data-deptid="001001400" data-signertype="1">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">무대리&nbsp;CEO</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:174; left:716; width:150; height:125" onclick="tree.selectNode('JHOMS151070001506000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">병렬협조</li><li class="callSubFlow" data-deptid="001002001" data-signertype="1">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">기안자&nbsp;CEO</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:916; width:150; height:125" onclick="tree.selectNode('JHOMS151070001507000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">부서순차협조</li><li class="callSubFlow" data-deptid="000020328" data-signertype="2">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">NW사업부</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:1116; width:150; height:125" onclick="tree.selectNode('JHOMS151070001508000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">부서순차협조</li><li class="callSubFlow" data-deptid="000022700" data-signertype="2">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">금융사업부</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div><div class="clickable" style="z-index:100; position:absolute; top:24; left:1316; width:150; height:125" onclick="tree.selectNode('JHOMS151070001509000', true, event)"><div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div><ul><li class="bold">결재</li><li class="callSubFlow" data-deptid="001001403" data-signertype="1">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">홍길동&nbsp;CEO</li></ul><table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div>
+        <div class="clickable" style="z-index:100; position:absolute; top:24; left:1516; width:150; height:125" onclick="tree.selectNode('JHOMS151070001510000', true, event)">
+        <div><span class="co_pic">		<img class="photo" src="../../img/thmb_nopic_mini.png"></span></div>
+        <ul><li class="bold">결재</li><li class="callSubFlow" data-deptid="001013122" data-signertype="1">대기<img src="../../img/icon_a_active.gif" alt="진행중"></li><li class="bold">백은경&nbsp;주임연구원</li></ul>
+        <table class="order" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="plmi" colspan="2"></td></tr></tbody></table></div></div>
+        
+        <div id="nodeinfo" onclick="event.cancelBubble = true" style="z-index:200" class="dragme">
+            <div id="nodeinfocontent">
+                <span id="infocontent"></span>
+            </div>
+    	</div>
+    	<!-- <div id="monitor_log" style="top:800px"></div> -->
+    
+</xml:namespace></body></html>

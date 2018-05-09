@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>메일내 스퀘어</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />	
+	</head>
+	<body>
+		<!-- 본문 영역 -->
+		<div style="box-sizing: border-box">	
+			<!-- 글만 있는 케이스 -->
+			<div  style="position: relative; display: block; background: #f5f5f5; border: 1px solid #e3e3e3;margin: 18px; width: calc(100% - 36px);">				
+					<p style="display: block; font-size: 13px; color: #333; width: 100%; height: 32px; padding: 15px 15px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; box-sizing: border-box">
+						다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요. 다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요. 다음 달 회식 날짜를 정하려고 합니다. 일정 확인후 참석가능하신 분들은 댓글로 가능여부 남겨 주세요.
+					</p>					
+					<p style="display: block; width: 100%; border: 0 none; padding: 0 15px 15px; color: #969696; font-size: 12px; height: 34px; 
+    line-height: 18px; box-sizing: border-box">
+						[스퀘어]EGW UX 개선 프로젝트 TF</p>				
+			</div>
+			<!-- 글 + 일정 있는 케이스 -->
+			<div style="position: relative; display: block; background: #f5f5f5; border: 1px solid #e3e3e3;margin: 18px; width: calc(100% - 36px);">	
+								
+					<p style="display: block; font-size: 13px; color: #333; width: 100%; height: 32px; padding: 15px 15px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; box-sizing: border-box">
+						일정을 등록했습니다.
+					</p>
+					<div style="padding: 5px 15px; box-sizing: border-box">	
+						<span href="#" style="display: block; position: relative; height: 66px; font-size: 12px; line-height: 19px; color: #969696; border: 1px solid #e3e3e3;
+    padding: 13px 0 0 65px; background: #fff url('/user/img/square/ico_plan.png') no-repeat 24px 17px; box-sizing: border-box">
+							<em style="display: block; font-size: 13px;  color: #333;">프로젝트팀 중간회식</em>
+							2017.09.30 (듬) 15:00 - 17:00
+						</span>	
+					</div>
+					<p style="display: block; width: 100%; border: 0 none; padding: 0 15px 15px; color: #969696; font-size: 12px; height: 34px; 
+    line-height: 18px; box-sizing: border-box">[스퀘어]EGW UX 개선 프로젝트 TF</p>				
+			</div>
+		</div>	
+		<!-- //wrapper -->
+	</body>
+</html>

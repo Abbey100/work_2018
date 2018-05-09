@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>파일</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/square.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>스퀘어</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>주소록</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->
+			<!-- body -->
+			<div class="body"> 
+				
+			<!-- 스퀘어 -->
+			<div class="lnb_area">   
+				<div class="lnb_lst">
+					<!-- Action Button Area -->
+					<div class="big_action">
+						<a class="action_btn">그룹 만들기</a>
+					</div>
+					<!-- basic list menu area -->   
+					<div class="lnb_menu_area">
+						<div class="handy-scroll">
+							<!-- 태그 메뉴 -->
+							<div class="lnb_menu">
+								<a class="menu_title selected">워크피드</a>
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title">플래그 글<span class="count">4</span></a>
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title">멘션 글<span class="count">4</span></a>
+							</div>
+							<div class="lnb_menu divide">
+								<a class="menu_title">VIP</a>
+								<a class="ico_btn small setting">내 그룹 설정</a>
+							</div>
+							<!-- 즐겨찾는 -->
+							<div class="lnb_menu divide">
+								<a class="menu_title category">즐겨찾는 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>							
+							<!-- 내 그룹 -->
+							<div class="lnb_menu  divide open">
+								<a class="menu_title category">내 그룹</a> 
+								<div class="group">
+									<a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+									<a class="ico_btn small setting">내 그룹 설정</a>
+								</div>
+								<!-- 트리 시작 -->
+								<div class="tree">
+									<ul class="dynatree-container">
+										<li class="">
+											<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+												<span class="dynatree-expander"></span>
+												<span class="dynatree-icon"></span>
+												<a href="#" class="dynatree-title">
+													<span class="node-folder" >2015</span>
+												</a>
+											</div>
+											<ul style="">
+												<li class="">
+													<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+														<span class="dynatree-connector"></span>
+														<span class="dynatree-icon"></span>
+														<a href="#" class="dynatree-title">
+															<span class="node-group" >file_1</span>
+														</a>
+													</span>
+												</li>
+												<li class="dynatree-lastsib">
+													<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+														<span class="dynatree-connector"></span>
+														<span class="dynatree-icon"></span>
+														<a href="#" class="dynatree-title">
+															<span class="node-group">file_2</span>
+														</a>
+													</span></li>
+											</ul>
+										</li>
+										<li class="">
+											<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >2016</span></a></span>
+											<ul style="display: none;">
+												<li class="">
+													<span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+												</li>
+												<li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+												<li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+											</ul>
+										</li>
+									</ul>
+								</div>	
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title category">공개 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>	
+							<div class="lnb_menu divide">
+								<a class="menu_title category">종료된 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>
+							<ul class="lnb_menu">
+								<li><a>그룹 초대</a><span class="count">4</span></li>
+							</ul>
+						</div>
+					</div>
+					<!-- setting menu area -->
+					<div class="setting_area">
+						<a class="btn_setting">설정</a>
+					</div>
+					<!-- // setting menu area -->
+				</div>
+			</div>
+			<!-- // 스퀘어 -->
+				<!-- content -->
+				<div class="container_area square">	
+					<!-- 본문 영역 -->
+					<div class="container">
+						<!-- 타이틀 영역 -->
+						<div class="hgroup">
+							<span class="form favorite"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+							<h2>플래그 글</h2>
+							<ul class="tab">
+								<li><a class="">피드</a></li>
+								<li><a class="">사진</a></li>
+								<li><a class="selected">파일</a></li>
+								<li><a class="">멤버</a></li>
+								<li><a class="">일정</a></li>
+								<li><a class="">보고</a></li>
+								<li><a class="">공지</a></li>
+							</ul>
+						</div>
+
+						<div class="new_lst_info feed">		
+									<a href="#" class="ico_btn rfsh">새로고침</a>
+									<a class="btn_d_search open" onclick="$(this).toggleClass('open');$('.d_srch_layer').toggleClass('open')">검색</a>
+											<!-- detail srch layer -->
+											<div class="d_srch_layer open" >
+												<!-- 간편 탭 -->
+												<div class="s_cont open">
+													<div class="s_cont  open">
+										<div class="form_table">
+											<table>
+												<colgroup>
+													<col style="width:50px;">
+													<col width="*">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th><label>파일명</label></th>
+														<td>
+															<div class="input_group has_btn small focused">
+																<input class="basic_input " type="text" value="" >
+																<a class="ico search"  href="#">검색</a>
+															</div>	
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+												</div>
+											</div>
+								</div>
+
+						<!-- 기본 버튼 영역 -->
+						<div class="btns_area">
+							<div class="align_lf">
+								<div class="member_all open"><!-- // open 클래스 제거시 레이어 close -->
+									<a href="#" class="btn select" style="width: 95px">모든 멤버</a><!-- [D]선택된 멤버 이름 노출 -->
+									<div class="member_all_lst">										
+										<fieldset>
+											<legend>멤버 검색</legend>
+											<div class="srch_group">
+												<input type="text" placeholder="사람 이름으로 검색" />
+												<a class="btn_srch">검색</a>
+											</div>
+										</fieldset>
+										<div class="group_lst handy-scroll">
+											<ul>
+												<li class="all">
+													<a href="#" class="selected"><!-- [D]멤버 선택 selected 추가 -->
+														<img src="../../img/ico_member_all.png" alt="" class="profile_photo">
+														<span class="name">모든 멤버</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">강미나</span>
+														<span class="badge admin">관리자</span>
+													</a>
+												</li>
+												<li>
+													<a href="#" class="selected"><!-- [D]멤버 선택 selected 추가 -->
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">김광수</span>
+														<span class="badge">멤버</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">민유린</span>
+														<span class="badge">참관인</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">박민혁</span>
+														<span class="badge">멤버</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">강미나</span>
+														<span class="badge">참관인</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">강미나</span>
+														<span class="badge">멤버</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">강미나</span>
+														<span class="badge">참관인</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<img src="../../img/square/@temp_person.png" alt="" class="profile_photo">
+														<span class="name">강미나</span>
+														<span class="badge">멤버</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>							
+								</div>
+
+								<div class="selectbox" style="width: 125px">
+									<select> 
+										<option>모든 파일 타입</option>
+										<option>워드</option>
+										<option>파워포인트</option>
+										<option>엑셀</option>
+										<option>PDF</option>
+										<option>한글</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<!-- // 기본 버튼 영역 -->
+
+						<div class="scroll_area handy-scroll">
+							<div class="square_area">
+								<p class="file_count">전체 파일 <span>35</span>건</p>
+								<!-- 파일목록 -->
+								<ul class="file_lst">
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행</a>
+											</dt>
+											<dd class="file ppt">
+												<a href="#">EGW_스퀘어플러스 화면설계서 스퀘어플러스 화면설계서_v1.0.ppt</a>
+												<span>999KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file pdf">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.pdf</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool open">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file doc">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.doc</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file xls">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.xls</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file hwp">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.hwp</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file txt">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.txt</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file zip">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.zip</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행</a>
+											</dt>
+											<dd class="file ppt">
+												<a href="#">EGW_스퀘어플러스 화면설계서 스퀘어플러스 화면설계서_v1.0.ppt</a>
+												<span>999KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file pdf">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.pdf</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file doc">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.doc</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file xls">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.xls</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file hwp">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.hwp</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file txt">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.txt</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file zip">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.zip</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행 미래형 자동차 선행</a>
+											</dt>
+											<dd class="file ppt">
+												<a href="#">EGW_스퀘어플러스 화면설계서 스퀘어플러스 화면설계서_v1.0.ppt</a>
+												<span>999KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file pdf">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.pdf</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file doc">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.doc</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file xls">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.xls</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file hwp">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.hwp</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file txt">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.txt</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+									<li>
+										<dl>
+											<dt>
+												<a href="#">미래형 자동차 선행</a>
+											</dt>
+											<dd class="file zip">
+												<a href="#">EGW_스퀘어플러스 화면설계서_v1.0.zip</a>
+												<span>5.3KB</span>
+											</dd>
+											<dd class="feed_file_info">
+												<a href="#">박민혁</a>
+												<span class="team">UX/UI팀</span>
+												<span class="time">30분전</span>
+											</dd>
+											<dd class="flag">
+												<span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+											</dd>
+											<dd class="tool">
+												<a href="#">tool</a>
+												<ul class="select_lst">
+													<li><a href="#">다운로드</a></li>
+													<li><a href="#">스토리지에 저장</a></li>
+													<li><a href="#">삭제</a></li>
+												</ul>
+											</dd>
+										</dl>
+									</li>
+								</ul>
+								<!-- //파일목록 -->
+							</div>
+						</div>							
+
+					</div>
+					<!-- // 본문 영역 -->		
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

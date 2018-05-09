@@ -1,0 +1,104 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+<!-- 버튼 영역 -->
+<div class="title_area">
+  <h1>게시물쓰기</h1>
+</div>
+<div class="btn_area">
+  <ul class="btns">
+    <li><span><a href="#" class="fnt_bold">게시하기</a></span></li>
+    <li><span><a href="#" >임시저장</a></span></li>
+  </ul>
+  <div class="layout_rgt">
+    <select style="min-width:120px">
+      <option value="일반양식">일반양식</option>
+    </select>
+  </div>
+</div>
+<!-- //버튼 영역 -->
+<form>
+  <SAVEBODYHEAD></SAVEBODYHEAD>
+  <div class="write_form_box brdr_0">
+    <ISBBSINFOSTART></ISBBSINFOSTART>
+    <ISBBSINFOEND></ISBBSINFOEND>
+    <BBSINFO></BBSINFO>
+    <table class="writting mg_0">
+      <tbody>
+        <tr>
+          <th scope="row" id="RC_SUBJECT" class="item_list">제목</th>
+          <td colspan="3"><table class="emptytable">
+              <tr>
+                <bbspreface>
+                <td><select class="basic_select preface">
+                    <option value="머릿말이지요">머릿말이지요</option>
+                  </select>
+                  <input class='intxt' style="width:75%;" id="SUBJECT" name="SUBJECT" type="text"/></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_POSTER"  class="item_list">게시자</th>
+          <td colspan="3"><SENDER></SENDER></td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_BOARD"  class="item_list">게시판</th>
+          <td><div class="wr_form_td">
+              <p class="form_position_a mg_lft_0">
+                <input class='basic_inp' type="text" id='BOARDNAME' name="BOARDNAME" readonly onfocus="blur()" style="width:100%;"/>
+                <a class="ico_doc" href="javascript:BBSView();"> <img alt='fmt:message bundle="${bbsBundle}" key="W1340"/>' src="../../img/ico_docment.png"/> </a> </p>
+            </div></td>
+          <th scope="row" id="RC_POSTDATE"  class="item_list">게시일</th>
+          <td id='bbspdate' name='bbspdate'><bbspostdate id='BBSPOSTDATE' name="BBSPOSTDATE"></bbspostdate>
+            <div class="wr_form_td">
+              <div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+              <select class="basic_select">
+                <option value="12">12</option>
+              </select>
+              <span class="pd_rgt_7_lft_1">시</span>
+              <select class="basic_select">
+                <option value="31">31</option>
+              </select>
+              <span class="pd_rgt_7_lft_1">분</span> </div></td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_OPTION"  class="item_list">옵션</th>
+          <td><label class='pd_rgt_20'>
+              <input type='checkbox' id='BBSEXPRESS' name='BBSEXPRESS' value='1'>
+              긴급</label>
+            <bbsannounce>
+            <BBSREPONSETYPE>
+            <BBSRESPONSEVIEW>
+            <bbssecurity></td>
+          <th scope="row" id="RC_EXPIREDDATE"  class="item_list">종료일</th>
+          <td id='bbsedate' name='bbsedate'><bbsenddate id='BBSENDDATE' name='BBSENDDATE'></bbsenddate></td>
+        </tr>
+        <bbsanndate>
+        <bbsmainpop>
+      </tbody>
+    </table>
+    <BBSATTACH>
+    <div class='write_area'>
+      <TEXTAREA style="width: 100%;" class="input02" id='BODY' name="BODY" rows="27"></TEXTAREA>
+    </div>
+  </div>
+  <FIRSTATTACHVIEW>
+  <WEBDOCATTACH>
+</form>
+<script type="text/javascript" src="/jsp/bbs/form/FORMLANGS.jsp"></script>
+</body>
+</html>

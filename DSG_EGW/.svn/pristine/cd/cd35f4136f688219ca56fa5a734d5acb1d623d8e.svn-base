@@ -1,0 +1,92 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<div class="pop_wrap">
+  <div class="title_area">
+  <h1>의견</h1></div>  
+    <div class="popup_inner">
+<div class="comment_pop comment_area"> 
+            <div class="comment_write">
+              <textarea class="txtarea"></textarea>
+              <input type='button' width='68' height='51' border='0' name='submitBtn' value="의견입력" class="inp">
+            </div>
+            <div class="comment_view">
+              <div class="comment_info">
+                  <a href="">김이름긴사람</a> <span class="date">2015.06.22</span>
+                  <div class="go_modify on">
+                       <span class="set"></span>
+                       <span class="layer_pop">
+						<ul>
+							<a href="#"><li>수정</li></a>
+							<a href="#"><li>삭제</li></a>
+						</ul>
+                       </span>  
+                 </div>
+              </div>
+              <div class="comment_ctt"><span class="work_status reject">반송</span><span class="mg_lft_5">의견은 기본적으로 게시판의 의견과 99퍼 동일합니다. 다만, 답글의 개념이 없어서 모든 의견은 DEPTH가 같습니다. </span></div>
+            </div>
+            <div class="comment_view">
+              <div class="comment_info mine"> <a href="">의견입력자</a> <span class="date">2015.06.21</span>
+                  <div class="go_modify">
+                       <span class="set"></span>
+                       <span class="layer_pop">
+						<ul>
+							<a href="#"><li>수정</li></a>
+							<a href="#"><li>삭제</li></a>
+						</ul>
+                       </span>  
+                 </div>
+              </div>
+              <div class="comment_ctt"><span class="work_status delegate">위임</span><span class="mg_lft_5">자신의 의견이라면(.comment_info 에 .mine 함께 사용) 의견박스(.comment_view영역)위에 마우스 오버시 세팅 아이콘이 보여지고, 세팅아이콘을 클릭하면 .go_modify에 on이 add되어-수정/삭제의 레이어 팝업이 보여집니다. 현재 참고용 스크립트는 html 본문에 첨부되어 있습니다. </span> </div>
+            </div>
+            <div class="comment_view">
+              <div class="comment_info"> <a href="">상태없는의견자</a> <span class="date">2015.06.21</span>
+                  <div class="go_modify">
+                       <span class="set"></span>
+                       <span class="layer_pop">
+						<ul>
+							<a href="#"><li>수정</li></a>
+							<a href="#"><li>삭제</li></a>
+						</ul>
+                       </span>  
+                 </div>
+              </div>
+              <div class="comment_ctt"><span class=""></span><span class="">상태없는 의견은 span의 클래스가 없습니다 </span> </div>
+            </div>
+            <div class="comment_view modi">
+              <div class="comment_info mine"> <a href="">의견입력자</a> <span class="date">2014.04.02</span>
+                <div class="go_modify">
+                       <span class="set"></span>
+                       <span class="layer_pop">
+						<ul>
+							<a href="#"><li>수정</li></a>
+							<a href="#"><li>삭제</li></a>
+						</ul>
+                       </span> 
+                 </div>
+                 <div class="ing_modify">
+                     <span class="modi_cncl">수정취소</span> </div>
+              </div>
+              <textarea class="txtarea">댓글 수정 중입니다.</textarea>
+              <input type='button' width='68' height='51' border='0' name='submitBtn' value="의견입력" class="inp">
+            </div>           
+            
+          </div>
+</div>
+</div>
+</div>
+<!-- //의견 리스트 화면 -->
+</body>
+</html>

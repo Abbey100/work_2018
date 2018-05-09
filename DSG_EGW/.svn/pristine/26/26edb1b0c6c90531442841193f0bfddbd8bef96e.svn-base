@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>주소록 내보내기</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>주소록</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>주소록</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn new">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn selected">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont handy-scroll">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 --> 
+			<!-- body -->
+			<div class="body"> 
+				<!-- 주소록 -->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action half">
+							<a class="action_btn">주소추가</a>
+							<a class="action_btn">그룹추가</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<!-- 즐겨찾기 -->
+								<!--전체주소록 스펙아웃으로 주석처리 171130-->
+								<!--<div class="lnb_menu">
+<a class="menu_title">전체 주소록</a>
+</div>-->
+								<div class="lnb_menu">
+									<a class="menu_title">즐겨찾는</a>
+								</div>
+								<div class="lnb_menu divide">
+									<a class="menu_title">VIP</a>
+								</div>
+								<!-- 내연락처 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">내 연락처</a>
+									<a class="ico_btn small setting">내 그룹 설정</a>
+									<ul class="sub_lst">
+										<li><a>개인주소주소주소주소록</a><span class="shared">공유됨</span></li>
+										<li><a>가족</a><span class="shared">공유됨</span></li>
+										<li><a>친구</a></li>
+									</ul>
+								</div>
+								<!-- 공유 연락처 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">공유받은  연락처</a>
+									<ul class="sub_lst">
+										<li><a >우리그룹</a></li>
+										<li><a>EGW TFT 외</a></li>
+									</ul>
+								</div>
+								<!-- 스퀘어 그룹 연락처 삭제 주석처리 171130 -->
+								<!--<div class="lnb_menu divide open">
+<a class="menu_title category">스퀘어 그룹 연락처</a>
+<ul class="sub_lst">
+<li><a class="selected">우리그룹</a></li>
+<li><a>EGW TFT 외</a></li>
+<li><a>EGW TFT</a></li>
+</ul>
+</div>-->
+								<!-- 조직도 삭제 171130 -->
+								<ul class="lnb_menu">
+									<li><a>주소록 가져오기</a></li>
+									<li><a class="selected">주소록 내보내기</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- // 주소록 -->
+				<!-- content -->
+				<div class="container_area handy-scroll" >
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>주소록 내보내기</h2>
+							</div>
+							<!-- // 타이틀 영역 -->
+							<!-- form -->
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width:124px;">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th><span>파일 형식</span></th>
+											<td>
+												<div class="option">
+													<span class="form">
+														<input type="radio" name="type" id="type_vcard" />
+														<label for="type_vcard">vCard</label></span>
+													<span class="form">
+														<input type="radio" name="type" id="type_csv" />
+														<label for="type_csv">CSV</label></span>
+												</div>
+												<ol class="description mg_t_15">
+                                                    <li>구글 주소록 등 주소록 저장 표준 규격(vCard)를 지원하는 프로그램을 실행합니다.</li>
+                                                    <li>각각의 프로그램에서 가져오기 형식을 주소록 저장 표준 규격인 vCard로 선택합니다.</li>
+                                                    <li>[가져오기]를 클릭합니다.
+                                                    </li>
+												</ol>
+                                                    <p class="additional">* MS Outlool/Love 이메일 등에서 가져올 경우 저장한 파일을 편집기(노트패드 등)를 이용하여 불러온 뒤, 인코딩을 "ANSI"로 설정하여 다른이름으로 저장하셔야 합니다.</p>
+												
+												<!-- CSV 용 -->
+												<!--
+													<ol class="description mg_t_15">
+                                                    <li>Outlook에 이용가능. 쉼표로 항목을 구분한 텍스트 파일형식(CSV)을 지원하는프로그램을 실행합니다.</li>
+                                                    <li>각각의 프로그램에서 가져오기 형식을 CSV로 선택합니다.</li>
+                                                    <li>[가져오기]를 클릭합니다.
+                                                    </li>
+												</ol>
+                                                    <p class="additional">* 인코딩 타입: UTF-8 + BO<(Bytr Order Mark)</p>-->
+											</td>
+										</tr>
+                                        <tr>
+											<th><span>데이터 형식</span></th>
+											<td>
+												<p class="description">
+													성명, 성별, 회사/소속, 부서명, 직위, 이메일, 주소, 휴대폰 번호, 직장 전화번호, 회사 팩스번호, 집 팩스 번호, 홈페이지, 생년월일, 기념일, 배우자, 메모
+												</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="btns_area">
+									<a class="action_btn" href="#">내보내기</a>
+								</div>
+							</div>
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

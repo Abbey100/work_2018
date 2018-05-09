@@ -1,0 +1,109 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+<div>
+<!-- 버튼 영역 -->
+<div class="title_area">
+  <h1>게시물읽기</h1>
+</div>
+<div class="btn_area">
+  <ul class="btns first">
+    <li><span><a href="#" class="fnt_bold">답장</a></span></li>
+    <!-- [D] 버튼끼리 붙이기 -->
+    <li><span class="send"><a href="#">보내기</a></span></li>
+  </ul>
+  <ul class="btns first">
+    <li><span><a href="#">찬성</a></span></li>
+    <!--[D] del 클래스는 x 아이콘 -->
+    <li  class="mg_lft_-8"><span><a href="#">반대</a></span></li>
+    <!-- [D] 버튼끼리 붙이기 -->
+    <li><span class="slt"><a href="#">이동</a></span></li>
+    </li>
+  </ul>
+  <ul class="btns">
+    <li><span><a href="#">인쇄하기</a></span></li>
+  </ul>
+  <div class="array_sort mg_tp_9"> <span class="array_up"><a href="#">위</a></span> <span class="array_down"><a href="#">아래</a></span> </div>
+</div>
+<!-- //버튼 영역 -->
+<form>
+  <table class="etc_info_area">
+    <tr>
+      <th>조회</th>
+      <td>169</td>
+      <th>찬성</th>
+      <td>100</td>
+      <th>반대</th>
+      <td>3</td>
+      <th>의견</th>
+      <td>4</td>
+      <th>조회/의견권한</th>
+      <td>실명</td>
+    </tr>
+  </table>
+  <SAVEBODYHEAD></SAVEBODYHEAD>
+  <div class="write_form_box brdr_0">
+    <ISBBSINFOSTART></ISBBSINFOSTART>
+    <ISBBSINFOEND></ISBBSINFOEND>
+    <BBSINFO></BBSINFO>
+    <table class="reading">
+      <tbody>
+        <tr>
+          <th scope="row" id="RC_SUBJECT" class="item_list">제목</th>
+          <td colspan="3"><table class="emptytable">
+              <tr>
+                <bbspreface>
+                <td class="subj">[말머리자리]여기 제목이 들어가는 거지요????!!</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_POSTER" class="item_list">게시자</th>
+          <td colspan="3">핸 사원(다산그룹,핸디소프트)</td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_BOARD" class="item_list">게시판</th>
+          <td> 8.3게시판 </td>
+          <th scope="row" id="RC_POSTDATE" class="item_list">게시일</th>
+          <td id='bbspdate' name='bbspdate' class="duration">2014.12.30</td>
+        </tr>
+        <tr>
+          <th scope="row" id="RC_OPTION" class="item_list">옵션</th>
+          <td><label class='pd_rgt_20'>
+              <input type='checkbox' id='BBSEXPRESS' name='BBSEXPRESS' value='1'>
+              긴급</label>
+            <bbsannounce>
+            <BBSREPONSETYPE>
+            <BBSRESPONSEVIEW>
+            <bbssecurity></td>
+          <th scope="row" id="RC_EXPIREDDATE" class="item_list">종료일</th>
+          <td id='bbsedate' name='bbsedate' class="duration" > ~ 2015.02.30 </td>
+        </tr>
+        <bbsanndate>
+        <bbsmainpop>
+      </tbody>
+    </table>
+    <div class="brdr_dble"></div>
+    <BBSATTACH>
+    <div class='write_area'>
+      <TEXTAREA style="width: 100%;" class="input02" id='BODY' name="BODY" rows="27"></TEXTAREA>
+    </div>
+  </div>
+  <FIRSTATTACHVIEW>
+  <WEBDOCATTACH>
+</form>
+<script type="text/javascript" src="/jsp/bbs/form/FORMLANGS.jsp"></script>
+</body>
+</html>

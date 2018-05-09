@@ -1,0 +1,106 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap"> 
+  
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>게시물쓰기</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#" class="fnt_bold">게시하기</a></span></li>
+      <li><span><a href="#" >임시저장</a></span></li>
+    </ul>
+    <div class="layout_rgt">
+      <select style="min-width:120px">
+        <option value="일반양식">일반양식</option>
+      </select>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  <SAVEBODYHEAD></SAVEBODYHEAD>
+  <div class="writting">
+    <table width="100%" borderspacing='0' border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="TblTopNoImg"></td>
+      </tr>
+      <ISBBSINFOSTART></ISBBSINFOSTART>
+      <tr>
+        <th class="BoxBdrSmll"></th>
+      </tr>
+      <ISBBSINFOEND></ISBBSINFOEND>
+      <TR >
+        <TD><form>
+            <BBSINFO></BBSINFO>
+            <table WIDTH='100%' border='0' cellpadding='0' cellspacing='0'>
+              <tr>
+                <th class="VSHead"  nowrap>제목</th>
+                <td class="Bsc"><input class="intxt" name='SUBJECT' type='text' /></td>
+              </tr>
+              <tr>
+                <th class="VSHead"  nowrap>게시자</th>
+                <td class="Bsc"><SENDER> </SENDER></td>
+              </tr>
+            </table>
+            <table WIDTH='100%' border='0' cellpadding='0' cellspacing='0'>
+              <tr>
+                <th class="VSHead"  nowrap><input type=button name=b value='게시판' onclick='BBSView()'/></th>
+                <td class="Bsc"><input class="intxt" name='BOARDNAME' type='text' size=30 readonly onfocus='blur()'/></td>
+                <th class="VSHead"  nowrap>게시일</th>
+                <td class="Bsc" nowrap><bbspostdate name=BBSPOSTDATE></bbspostdate>
+                  <div class="wr_form_td">
+                    <div class="datepic_box">
+                      <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                      <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                    <select class="basic_select">
+                      <option value="12">12</option>
+                    </select>
+                    <span class="pd_rgt_7_lft_1">시</span>
+                    <select class="basic_select">
+                      <option value="31">31</option>
+                    </select>
+                    <span class="pd_rgt_7_lft_1">분</span> </div></td>
+              </tr>
+              <tr>
+                <th class="VSHead"  nowrap>옵션</th>
+                <td class="Bsc" nowrap><BBSRESPONSETYPE>
+                  <BBSRESPONSEVIEW>
+                  <bbssecurity>
+                  <input type='checkbox' name='BBSEXPRESS' value='1'>
+                  긴급
+                  <bbsFirstPublished>
+                  <bbsannounce></td>
+                <th class="VSHead"  nowrap>종료일</th>
+                <td class="Bsc" nowrap><bbsenddate name=BBSENDDATE></bbsenddate></td>
+              </tr>
+            </table>
+            <table class="mg_tp_9" WIDTH='100%' HEIGHT='300' cellpadding='0' cellspacing='0' >
+              <tr>
+                <td class='BoxBdr'><TEXTAREA cols=46 name=BODY rows=12 style="FONT-SIZE:10pt;WIDTH:100%;HEIGHT:300px;border-color:#c6c6c6;border-width:1px; " wrap=physical></TEXTAREA></td>
+              </tr>
+              <tr>
+                <td height='2'></td>
+              </tr>
+            </table>
+            <FIRSTATTACHVIEW>
+            <BBSATTACH>
+            <WEBDOCATTACH>
+          </FORM></TD>
+      </TR>
+    </table>
+  </div>
+</div>
+</body>
+</html>

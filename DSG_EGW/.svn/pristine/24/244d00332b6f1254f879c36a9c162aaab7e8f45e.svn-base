@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<!--좌측 메뉴 영역-->
+<div class="left_menu"> 
+  <!--Action Btn start-->
+  <div class="btn_large"> <a href="#" title="업무요청">업무요청</a></div>
+  <!--// Action Btn END--> 
+  <!--Quick Btn start-->
+  <ul class="quickbtn_area four">
+    <li class="btn_noread quickbtn_on"><a href="#" title="안읽은업무"><span>안읽음</span></a></li>
+    <li class="btn_emgcy"><a href="#" title="긴급업무"> <span>긴급</span></a></li>
+    <li class="btn_bkmrk"><a href="#" title="즐겨찾기"><span>즐겨찾기</span></a></li>
+    <li class="btn_attach"><a href="#" title="첨부"><span>첨부</span> </a></li>
+  </ul>
+  <!--Quick Btn END--> 
+  <!--Menu List start-->
+  <ul id="folder_list" class="snb_lst">
+    <li class="snb_my_task"> <a href="#"> <span>처리할 업무<span class="count">5</span></span></a></li>
+    <li class="snb_ing_task"> <a href="#" class="slct"><span>진행중인 업무<span class="count">99+</span></span></a></li>
+    <li class="snb_end_task"> <a href="#"> <span>종료된 업무</span></a></li>
+    <li class="snb_send_task"> <a href="#"> <span>보낸 업무</span></a></li>
+  </ul>
+  <!--// Menu List end--> 
+  <!--Tree Area-->
+  <div id="folderDiv" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'tree_contents_area');">개인분류함</span><a class="btn_tree_cnfg" href="#"> </a> </div>
+    <!--Tree Box-->
+    <div id="tree_contents_area" class="tree_cntnts_area">
+      <div id="webfx-tree-object-4" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);return false;">디자인업무</a></div>
+      <div id="webfx-tree-object-4-cont" class="webfx-tree-container">
+        <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);">제품디자인</a></div>
+        <div id="webfx-tree-object-5-cont" class="webfx-tree-container">
+          <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item select" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-indent-0" src="../../img/I.png"><img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.개인부서메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);">개인부서메일함</a> </div>
+          <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-indent-0" src="../../img/I.png"><img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.부서안의부서', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);">부서안의부서</a> </div>
+          <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+        </div>
+        <div id="webfx-tree-object-8" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-8-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-8-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.부서메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-8-anchor" onfocus="webFXTreeHandler.focus(this);">부서메일</a> </div>
+        <div id="webfx-tree-object-8-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-9" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-9-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-9-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.완전 긴 메일이름으로 한번 지어봅시다완전 긴', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-9-anchor" onfocus="webFXTreeHandler.focus(this);">완전 긴 메일이름으로 한번 지어봅시다완전 긴</a> </div>
+        <div id="webfx-tree-object-9-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-10" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-10-plus" src="../../img/Lplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-10-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.작업메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-10-anchor" onfocus="webFXTreeHandler.focus(this);">작업메일</a> </div>
+      </div>
+    </div>
+  </div>
+  <!--Tree Area END --> 
+  <!--Menu List start-->
+  <ul class="snb_lst">
+    <li class="snb_tmp"><a href="#" ><span>임시 보관함</span></a></li>
+    <li class="snb_trsh"> <a href="#"> <span>휴지통</span></a><a class="btn_trshbx_dl" href="#" title="휴지통비우기">휴지통비우기</a></li>
+  </ul>
+  <!-- Config --> 
+  <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+  <!-- //Config -->
+  <!--Menu List END-->
+</div>
+<!--좌측 메뉴 영역 END--> 
+<!-----------------------> 
+<!----------------------->
+<div id="list_content" class="container_list_box"></div>
+<div id="security_content" class="view_content_box" style="display: none;"></div>
+<div id="message_content" class="view_content_box"></div>
+<!----------------------->
+
+</body>
+</html>

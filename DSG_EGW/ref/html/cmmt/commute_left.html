@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+
+<!--좌측 메뉴 영역-->
+<div id="folder_content" class="left_menu"> 
+  <!--Action Btn start-->
+  <div class="btn_large_half"> <a class="btn_l" href="" title="출근">출근</a> <a class="btn_r" href="" title="퇴근">퇴근</a> </div>
+  <!--// Action Btn END--> 
+  <!--Menu List start-->
+  <ul id="folder_list" class="snb_lst">
+    <li class="snb_cmmt_cond"> <a href="#"> <span>나의 근태현황</span></a></li>
+    <li class="snb_cmmt_sum"> <a class="slct" href="#"> <span>나의 근태집계</span></a></li>
+    <li class="snb_cmmt_out"> <a href="#" > <span>외부활동관리</span></a></li>
+  </ul>
+  <!--// Menu List end--> 
+    
+  <!-- Admin Menu List start-->
+  <ul id="folder_list" class="snb_lst" style="display:none;">
+    <li class="snb_cmmt_pr_cond"> <a href="#"> <span>개인별 근태정보</span></a></li>
+    <li class="snb_cmmt_pr_sum"> <a href="#"> <span>개인별 근태집계</span></a></li>
+    <li class="snb_cmmt_team_sum"> <a href="#" > <span>부서별 근태집계</span></a></li>
+    <li class="snb_cmmt_team_pol"> <a href="#" > <span>부서별 근태정책 관리</span></a></li>
+    <li class="snb_cmmt_prsnl_pol"> <a href="#" > <span>개인별 근태규칙 관리</span></a></li>
+    <li class="snb_cmmt_vactn"> <a href="#" > <span>휴일관리</span></a></li>
+  </ul>
+  <!--// Admin Menu List end--> 
+    
+</div>
+<!--좌측 메뉴 영역 END--> 
+<!-----------------------> 
+<!----------------------->
+<div id="list_content" class="container_list_box"></div>
+<div id="security_content" class="view_content_box" style="display: none;"></div>
+<div id="message_content" class="view_content_box"></div>
+<!----------------------->
+
+</body>
+</html>

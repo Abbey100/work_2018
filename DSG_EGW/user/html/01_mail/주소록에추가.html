@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 주소록에 추가 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="popup_container" style="width:490px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						주소록에 추가
+					</h2>
+					<div class="form_table">
+						<table>
+							<colgroup>
+								<col style="width:130px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								
+                                <tr>
+                                    <th><span class="necessary">성명</span></th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" value="김핸디">
+											<div class="group">
+												<span class="form favorite">
+													<input type="checkbox" name="from_check" id="check003" />
+													<label for="check003" class="blind">즐겨찾기</label></span>
+											</div>
+										</div>
+									</td>
+								</tr>                                
+								
+                                <tr>
+									<th>이메일</th>
+									<td>
+										<p class="txt">handy@handy.com</p>
+									</td>
+								</tr>
+                                <tr>
+									<th>그룹설정</th>
+									<td class="text_input">
+										<div class="selectbox br_bttm">
+											<select> 
+												<option> 그룹설정안함 </option>	
+											</select>
+										</div>
+									</td>
+								</tr>                               
+							</tbody>
+						</table>                       
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">저장</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>신청 게시판_목록</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>		
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>게시판</h1>
+                <div class="aside">
+                    <fieldset>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>게시판</option>
+                                <option>통합</option>
+                            </select>
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>				
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>	
+            </div>
+            <!-- //header -->
+
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->
+            <!-- body -->
+            <div class="body"> 
+                <!-- LnB-->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action">
+                            <a class="action_btn">게시하기</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">
+                                <!-- 즐겨찾기 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">즐겨찾는 게시판</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">카드 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 전체게시판 -->
+                                <div class="lnb_menu tree divide open">
+                                    <a class="menu_title category">전체 게시판</a>
+                                    <fieldset>
+                                        <div class="srch_group on">
+                                            <input type="text" placeholder="검색" />
+                                            <a class="btn_srch">검색</a>
+                                            <a class="btn_return">이전</a>
+                                        </div>
+                                    </fieldset>
+                                    <div class="folder">
+                                        <div class="group">
+                                            <a class="text_btn">모두접기</a>
+                                            <a class="text_btn">모두펴기</a>
+                                            <a class="text_btn">새로고침</a>
+                                        </div>
+                                        <ul class="dynatree-container handy-scroll">
+                                            <li class="">
+                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                    <span class="dynatree-expander"></span>
+                                                    <span class="dynatree-icon"></span>
+                                                    <a href="#" class="dynatree-title">
+                                                        <span class="node-folder" >EGW As-Is</span>
+                                                    </a>
+                                                </div>
+                                                <ul style="">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">회의 내용</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="dynatree-lastsib">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                            </a>
+                                                        </div></li>
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </div>                
+                                <div class="lnb_menu">
+                                    <a class="menu_title">임시 저장함</a><span class="count">4</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title">플래그 게시판</a><span class="count">7</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">키워드 게시물</a>
+                                    <ul class="sub_lst">
+                                        <li><a>MFC 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title">게시판 신청</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="container_area" >
+                    <div class="handy-scroll">
+                        <!-- 본문 영역 -->
+                        <div class="container">
+                            <!-- 상세 검색 영역 -->
+                            <div class="srch_area detail">
+                            </div>
+                            <!-- // 상세 검색 영역 -->
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup">
+                                <h2>게시판 신청</h2>
+                            </div>
+                            <!-- // 타이틀 영역 -->	
+                            <!-- 기본 버튼 영역 -->
+                            <div class="btns_area">
+                                <div class="align_lf">
+                                    <div class="group">
+                                        <span class="form"><input type="checkbox"/><label class="blind">게시물 전체선택</label></span> 
+                                    </div>
+                                    <a href="#" class="btn">신청</a>
+                                    <a href="#" class="btn">삭제</a>
+                                    <div class="group">
+                                        <span>필터 : </span>
+                                        <div class="selectbox">
+                                            <select> 
+                                                <option> 전체 </option>
+                                                <option> 안읽은 </option>
+                                                <option> 수신 </option>
+                                                <option> 참조 </option>
+                                                <option> 첨부 </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="align_rg">
+                                    <div class="group">
+                                        <a href="#" class="ico_btn view_lst on">리스트형</a>
+                                        <a href="#" class="ico_btn view_vertical">분할</a>
+                                    </div>
+                                    <!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+                                    <div class="selectbox page_num">
+                                        <select> 
+                                            <option> 15개 </option>
+                                            <option> 20개 </option>
+                                            <option> 30개 </option>
+                                            <option> 40개 </option>
+                                            <option> 50개 </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="new_lst_info">		
+                                    <span class="new">8</span>
+                                    <span>/ 450</span>
+                                    <a class="ico rfsh">새로고침</a>
+                                </div>
+                            </div>
+                            <!-- // 기본 버튼 영역 -->
+                            <!-- 리스트 영역 -->
+                            <div class="content_table">	
+                                <div class="table_head">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:37px;">
+                                            <col style="width:29px;">
+                                            <col style="width:*;">
+                                            <col style="width:120px;">
+                                            <col style="width:137px;">
+                                            <col style="width:87px;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th><span class="blind">상태</span></th>
+                                                <th><span class="title">제목</span></th>
+                                                <th class="ascend"><a href="#" class="name">작성자</a></th>
+                                                <th class="descend"><a href="#" class="date">작성일</a><span></span></th>
+                                                <th><span>상태</span></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="table_body scroll_area handy-scroll">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:37px;">
+                                            <col style="width:29px;">
+                                            <col style="width:*;">
+                                            <col style="width:120px;">
+                                            <col style="width:137px;">
+                                            <col style="width:87px;">
+                                        </colgroup>
+                                        <tbody>
+                                            <!-- 공지는 항상 상단 -->
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board new">안읽은 게시물 중 새글</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <span class="badge notice">공지</span>
+                                                        <!-- // 뱃지 -->
+                                                        <a href="#" class="subject">2017년 EGW UX 개선 방안 아이디어</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state waiting">대기</span>
+                                                    <!-- <span class="state companion">반려</span>
+<span class="state acknowledgment">승인</span> -->
+                                                </td>
+                                            </tr>
+                                            <!-- 기본 : 읽음 -->
+                                            <tr>
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board read">읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <span class="badge notice">공지</span>
+                                                        <span class="badge emergency">긴급</span>
+                                                        <span class="badge security">보안</span>
+                                                        <!-- // 뱃지 -->
+                                                        <a href="#" class="subject">월 구내 식당 식단표</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state waiting">대기</span>													
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board read">읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">EGW 작업 재 요청</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state companion">반려</span>
+                                                </td>
+                                            </tr>
+                                            <!-- 기본 : 안읽음 -->
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">2017년 EGW UX 개선 방안 아이디어</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board read">읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">EGW 재 작업 요청</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board read">읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">9월 본사 교육 안내</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">월 구내 식당 식단표</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">EGW 재 작업 요청</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">2017년 EGW UX 개선 방안 아이디어</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">EGW 재 작업 요청</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">9월 본사 교육 안내</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>										
+                                                </td>
+                                            </tr>
+                                            <tr class="unread">
+                                                <td> 
+                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                </td>
+                                                <td><span class="ico_board unread">안읽은 게시물</span></td>
+                                                <td>
+                                                    <div class="title">
+                                                        <a href="#" class="subject">9월 본사 교육 안내</a>
+                                                        <div class="info">
+                                                            <a href="#" class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="name">김핸디</a>
+                                                </td>
+                                                <td class="date">21:55</td>
+                                                <td>
+                                                    <span class="state acknowledgment">승인</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="paginate_area">
+                                    <div class="paginate">	
+                                        <a class="first disabled">처음 페이지</a>
+                                        <a class="pre disabled">이전 페이지</a>	
+                                        <!-- // 1페이지가 아닌경우, disabled 삭제 -->
+                                        <a class="selected">1</a>
+                                        <a>2</a>
+                                        <a>3</a>
+                                        <a>4</a>
+                                        <a>5</a>
+                                        <a>6</a>		
+                                        <a>7</a>
+                                        <a>8</a>
+                                        <a>9</a>
+                                        <a>10</a>		
+                                        <a class="next">다음 페이지</a>
+                                        <a class="last">마지막 페이지</a>
+                                    </div>
+                                    <div class="page_num">
+                                        <input type="text" value="1"> / 118
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 리스트 영역 -->
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

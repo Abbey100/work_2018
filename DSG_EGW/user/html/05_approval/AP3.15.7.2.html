@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>이력보기</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper --> 
+		<div class="popup open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:600px;">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						이력보기
+					</h2>
+					<!-- 기본 버튼 영역 -->
+					<div class="nav">
+						<ul class="tab">
+							<li><a href="" class="">본문</a></li>
+							<li><a href="" class="">결재경로</a></li>
+							<li><a href="" class="selected">첨부파일</a></li>
+						</ul>
+					</div>						
+					<!-- // 기본 버튼 영역 -->
+
+					<div class="">
+						<!-- 리스트 영역 -->
+						<div class="content_table">	
+							<div class="table_head">
+								<table>
+									<colgroup>
+										<col style="width:70px;">
+										<col style="width:150px;">
+										<col style="width:*;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th><span class="mg_l_10">구분</span></th>
+											<th><span>처리일</span></th>
+											<th><span>파일명</span></th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div class="table_body handy-scroll">
+								<table>
+									<colgroup>										
+										<col style="width:70px;">
+										<col style="width:150px;">
+										<col style="width:*;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><span>수정</span></td>
+											<td><span>2017-10-18 12:00</span></td>
+											<td><a class="">Screenshot_2017-12-01_09:55:23_from_iPhone_10_iCloud_List_file.jpg</a></td>
+										</tr>											
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- // 리스트 영역 -->
+					</div>
+
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

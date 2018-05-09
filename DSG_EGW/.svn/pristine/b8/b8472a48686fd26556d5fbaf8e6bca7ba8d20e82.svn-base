@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 게시판 신청 정보 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<!-- header -->
+		<h1>게시판 신청 정보</h1>
+		<div class="util paginate">
+			<a href="#" class="prev">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" href="#">승인</a>
+					<a class="btn" href="#">반려</a>
+				    <a class="btn" href="#">삭제</a>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="vertical_table scroll_area ">	
+				<div class="handy-scroll">
+					<table>
+						<colgroup>
+							<col style="width:120px;">
+							<col style="width:*;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><span>게시판 위치</span></th>
+								<td>
+									<span>EGW UX 개선 > EGW 샘플</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>게시판 유형</span></th>
+								<td>
+									<span>공개 게시판</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>게시판 명</span></th>
+								<td>
+									<span>샘플</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>신청자</span></th>
+								<td>
+									<span>홍길동 사원(동그라미그룹.네모소프트(주).제품전략실.제품기획팀)</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>신청일</span></th>
+								<td>
+									<span>2017.08.30</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>상태</span></th>
+								<td>
+									<span>신청</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>홈페이지 주소</span></th>
+								<td>
+									<span></span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>만료일</span></th>
+								<td>
+									<span>영구</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>의견 사용여부</span></th>
+								<td>
+									<span>의견가능</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>답글 방식</span></th>
+								<td>
+									<span>비업무용</span>
+								</td>
+							</tr>
+							<tr>
+								<th><span>게시판 공개여부</span></th>
+								<td>
+									<span>공개</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

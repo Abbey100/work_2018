@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 일정 등록 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>일정 등록</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="schedule_pop ">
+                <ul class="contents_tab has_bg">
+                    <!--[D] 메뉴는 최다(스퀘어)기준 5개, 최장(결재) 기준 5글자 -->
+                    <li><a class="selected">일정상세</a></li>
+                    <li><a class="">공유자 &middot; 설비일정확인</a></li>				
+                </ul>
+                <div class="handy-scroll">
+                    <div class="form_table">
+                        <table>
+                            <col style="width: 110px">
+                            <col style="width:*">
+                            <tbody>
+                                <tr>                
+                                    <th><span class="necessary">제목</span></th>
+                                    <td>	
+                                        <span class="form flag"><input type="checkbox" />
+                                            <label class="blind"></label>
+                                        </span>
+                                        <div class="input_group focused">
+                                            <input type="text" class="basic_input" placeholder="일정 제목을 입력하세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span class="necessary">달력</span></th>
+                                    <td>
+                                        <div class="input_group has_select double">     	
+                                            <div class="selectbox" t>
+                                                <select>
+                                                    <option>개인달력</option>
+                                                    <option>스퀘어달력</option>
+                                                </select>
+                                            </div>
+                                            <div class="select group">
+                                                <!-- // open 클래스 추가시 레이어 open -->
+                                                <a class="btn_equip">달력 선택</a>
+                                                <div class="select_lst schedule_lypop ">
+                                                    <div class="">
+                                                        <ul class="multi_opt add_cal_list handy-scroll" style="max-width:184px;">
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="radio" id="check005" />
+                                                                    <label for="check005">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type06">달력구분</span>
+                                                                            스퀘어 달력은 단일선택되기 때문에 라디오로표현
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="radio" id="check006" />
+                                                                    <label for="check006">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type01">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check007" />
+                                                                    <label for="check007">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type03">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check008" />
+                                                                    <label for="check008">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type07">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check009" />
+                                                                    <label for="check009">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type09">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check009" />
+                                                                    <label for="check009">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type09">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check009" />
+                                                                    <label for="check009">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type09">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btns_area border">
+                                                        <a class="btn align_rg">확인</a>
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                            <input class="basic_input" type="text" value="1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama" onfocus="blur();" readonly>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>일시</span></th>
+                                    <td>
+                                        <div class="input_group has_select sche_case1">
+                                            <div class="selectbox" style="width:58px">
+                                                <select>
+                                                    <option selected>양력</option>
+                                                    <option>음력</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="datepic_area">
+                                                <div class="date_box">
+                                                    <input type="text" class="date_input" value="2017.11.02" style="width:92px;" readonly="">
+                                                    <a class="date_btn" title="">달력</a>
+                                                </div>
+                                                <div class="selectbox" style="width:92px;">
+                                                    <select> 
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                    </select>
+                                                </div>
+                                                <span>~</span>
+                                                <div class="date_box">  
+                                                    <input type="text" class="date_input" value="2017.12.02" style="width:92px;" readonly="">
+                                                    <a class="date_btn" title="">달력</a>
+                                                </div>
+                                                <div class="selectbox" style="width:92px;">
+                                                    <select> 
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                    </select>
+                                                </div>
+                                                <a class="btn small" href="#">반복설정</a>
+                                            </div>
+
+                                            <div class="group">
+                                                <span class="form">
+                                                    <input type="checkbox" id="check001" />
+                                                    <label for="check001">종일</label></span>
+                                                <span class="form">
+                                                    <input type="checkbox" id="check002" />
+                                                    <label for="check002">기념일</label></span>
+                                            </div>
+                                        </div>
+                                        <p class="blue_txt">매월 4번째 목요일 반복</p>
+                                    </td>
+                                </tr>
+                                <!-- 아래부분은 반복 설정시 나오는 부분 -->
+                                <tr>
+                                    <th><span>일시</span></th>
+                                    <td>
+                                        <span class="badge samll b_lgray">음력</span>
+                                        <span class="help_txt date"> 2017-09-20 ~2017-09-22, 오전11:00 ~ 오후 3:00</span>
+                                        <div class="align_rg">
+                                            <a class="btn small" href="#">수정</a>
+                                            <a class="btn small" href="#">삭제</a>
+                                        </div>
+
+                                        <p class="blue_txt">매월 반복</p>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>공유자</span></th>
+                                    <td>
+                                        <div class="input_group sche_case2">
+                                            <div class="token-input sche_only_delete">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                </ul>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                            <div class="posi_r">
+                                                <a class="btn">공유자일정확인</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>설비</span></th>
+                                    <td>
+                                        <div class="input_group sche_case3">
+                                            <div class="add_equip_wrap open"> <!-- 펼치면 open 클래스 추가 -->
+                                                <a href="#" class="btn_equip">설비추가</a>
+                                                <div class="add_equip_cont">
+                                                    <div class="pos_l handy-scroll">
+                                                        <ul class="add_equip_list">
+                                                            <li class="selected"><a href="#">회의실</a></li>
+                                                            <li class="on"><a href="#">빔 프로젝터 내용이 길 경우</a></li>
+                                                            <li><a href="#">노트북</a></li>
+                                                            <li><a href="#">차량</a></li>
+                                                            <li><a href="#">설비A</a></li>
+                                                            <li><a href="#">노트북</a></li>
+                                                            <li><a href="#">차량</a></li>
+                                                            <li><a href="#">설비A</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="pos_r schedule_lypop handy-scroll">
+                                                        <ul class="add_equip_list multi_opt">
+                                                            <li>
+                                                                <p class="help_txt">등록된 설비가 없습니다.</p>	
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check006" />
+                                                                    <label for="check006">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type01">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check007" />
+                                                                    <label for="check007">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type03">달력구분</span>
+                                                                            UI팀프로젝트 일정공유일정공유일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+                                                            <li>
+                                                                <div class="form">
+                                                                    <input type="checkbox" id="check008" />
+                                                                    <label for="check008">
+                                                                        <div class="sche_st5">
+                                                                            <span class="dal_color type07">달력구분</span>
+                                                                            UI팀프로젝트 일정공유
+                                                                        </div>
+                                                                    </label>
+                                                                </div>			
+                                                            </li>
+
+                                                           
+                                                        </ul>
+                                                    </div>
+                                                    <div class="pos_bt"><a class="btn">확인</a></div>
+                                                </div>
+                                            </div>
+                                            <input class="basic_input tooltip" type="text" value="1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama" title="1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama, 1층 Bahama" readonly>
+                                            <!--
+<div class="token-input sche_only_delete">
+<ul class="token-input-list ui-sortable">
+<li class="token-input-token">
+<p>UI팀 프로젝트 일정공유</p>
+<span class="token-input-delete-token">delete</span>
+</li>
+<li class="token-input-token">
+<p>내 일정</p>
+<span class="token-input-delete-token">delete</span>
+</li>
+<li class="token-input-token">
+<p>UI팀 프로젝트 일정공유</p>
+<span class="token-input-delete-token">delete</span>
+</li>
+</ul>
+</div>
+-->
+                                            <div class="posi_r">
+                                                <a class="btn">설비일정확인</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>알림</span></th>
+                                    <td>
+                                        <div class="has_select sche_case4">
+                                            <!-- 알림 한셋 -->
+                                            <div class="notify_wrap">
+                                                <div class="selectbox">
+                                                    <select> 
+                                                        <option selected>10분 전</option>
+                                                        <option>20분 전</option>
+                                                    </select>
+                                                </div>
+                                                <div class="hgroup_btn">
+                                                    <div class="group">
+                                                        <a class="btn on">알림</a>
+                                                        <a class="btn">메일</a>
+                                                    </div>
+                                                    <a class="btn_delete">알림 삭제</a>
+                                                </div>
+                                            </div>
+                                            <!-- //알림 한셋 -->
+
+                                            <!-- 알림 한셋 -->
+                                            <div class="notify_wrap">
+                                                <div class="selectbox">
+                                                    <select> 
+                                                        <option>10분 전</option>
+                                                        <option selected>20분 전</option>
+                                                    </select>
+                                                </div>
+                                                <div class="hgroup_btn">
+                                                    <div class="group">
+                                                        <a class="btn on">알림</a>
+                                                        <a class="btn">메일</a>
+                                                    </div>
+                                                    <a class="btn_delete">알림 삭제</a>
+                                                </div>
+                                            </div>
+                                            <!-- //알림 한셋 -->
+
+                                        </div>
+                                        <a class="text_btn add" href="#">알림추가</a>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>내용</span></th>
+                                    <td>
+                                        <textarea class="border_textarea" placeholder="텍스트를 입력해 주세요" rows="1"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>기타항목</span></th>
+                                    <td>
+                                        <div class="input_group sche_case5">
+                                            <div class="pos_l">
+                                                <input type="text" class="border_input" placeholder="제목을 입력하세요.">
+                                            </div>
+                                            <div class="pos_con">
+                                                <input type="text" class="border_input" placeholder="내용을 입력하세요.">
+                                                <a class="btn_delete">알림 삭제</a>
+                                            </div>
+                                        </div>
+                                        <a class="text_btn add" href="#">추가입력</a>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>첨부목록</span></th>
+                                    <td class="att_type01">
+                                        <div class="file_lst download ">
+                                            <ul>
+                                                <li>
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                    <span class="file_size">311KB</span>
+                                                    <a class="cancel" ></a>
+                                                </li>
+                                                <li class="ready">  
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                    <span class="file_size">311KB</span>
+                                                    <a class="return" ></a>
+                                                </li>
+                                                <li>
+
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>														
+                                                    <span class="file_size">311KB</span>
+                                                    <a class="cancel" ></a>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><a class="btn_open txt" onclick="javascript:$(this).toggleClass('open'); $('#display_test').toggleClass('dsp_none');">파일첨부</a>
+                                    </th>
+                                    <td class="">
+                                        <div class="attached_box">
+                                            <!-- 파일첨부 -->
+                                            <div class="attached_files">
+                                                <div class="group file_input">
+                                                    <a class="btn small" >
+                                                        <input type="file" onclick="blur()" >
+                                                        내PC
+                                                    </a>
+                                                </div>
+                                                <!-- 저장 버튼 그룹-->
+                                                <div class="align_rg text_group">
+                                                    <!-- 기본형 버튼 1개 -->
+                                                    <a class="text_btn all_delete">모두삭제</a>												
+                                                    <!-- 결재용 버튼 2개 -->
+                                                    <a class="text_btn files">저장</a>
+                                                    <a class="text_btn files">삭제</a>
+                                                </div>
+
+                                                <!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+                                                <div class="file_lst upload handy-scroll dsp_none" id="display_test">
+                                                    <ul class="">
+                                                        <li>
+                                                            <!--															<a class="move">항목이동</a>-->
+                                                            <a class="file_name"><span class="badge my_file">내파일</span>IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+                                                            <!-- 다운로드 횟수 및 기간 -->
+                                                            <div class="download_info">(<em>~2017-09-30</em> / 잔여 <em>100회</em>)</div>
+                                                            <span class="file_size">9,999 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <!--															<a class="move">항목이동</a>-->
+                                                            <a class="file_name"><span class="badge my_file">내파일</span>EGW_GUI_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">28 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <!--															<a class="move">항목이동</a>-->
+                                                            <a class="file_name">EGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 10%;">10%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">2 MB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <!--															<a class="move">항목이동</a>-->
+                                                            <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">284 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                        <li>
+                                                            <!--															<a class="move">항목이동</a>-->
+                                                            <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                            <!--prograss -->
+                                                            <div class="uploaded_file">
+                                                                <div class="process_bar">
+                                                                    <span class="pr_per" style="width: 40%;">40%</span>
+                                                                    <span class="pr_bg">background</span>
+                                                                </div>												
+                                                            </div>
+                                                            <!-- // prograss -->
+                                                            <span class="file_size">284 KB</span>
+                                                            <a class="cancel" ></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- 파일정보 -->
+                                            <dl class="file_info">
+                                                <dt>내PC(2) : </dt>
+                                                <dd><em>7.93MB</em>/2GB</dd>
+                                                <dt>내파일(2) : </dt>
+                                                <dd><em>93MB</em></dd>
+                                            </dl>
+                                        </div>
+                                    </td>
+                                </tr>		
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- 의견 -->
+                    <div class="replybox sche_replybox_wrap">
+                        <div>
+                            <span class="ico comment">의견</span>
+                            <span class="count"> 0/500 </span></div>
+                        <div class="write">
+                            <textarea placeholder="의견을 입력하세요" rows="1"></textarea>
+                            <a href="#" class="text_btn">등록</a>
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                <div class="cont">		
+                                    <a href="#" class="name">홍길동 사원</a>
+                                    <span class="department">&middot; 경영지원센터</span>
+                                    <span class="time">2017-08-18 13:55</span>
+                                    <p>알겠습니다~</p>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="ico modify">수정</a>
+                                    <a href="#" class="ico del">삭제</a>
+                                </div>
+                            </li>
+                            <!-- 작성 중 의견 -->
+                            <li class="thread comment">
+                                <!-- 포커스된 인풋은 write에 focus를 넣고 간다 -->
+                                <div class="cont write focus">	
+                                    <textarea placeholder="의견을 입력하세요" rows="1">박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</textarea>
+
+                                    <a href="#" class="text_btn fir">저장</a><a href="#" class="text_btn">취소</a>
+
+                                </div>
+                                <span class="align_rg size_txt"><span class="count">0</span>/500</span>
+                            </li>
+                            <!-- //작성 중 의견 -->
+                            <li>
+                                <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                <div class="cont">		
+                                    <a href="#" class="name">홍길동 사원</a>
+                                    <span class="department">&middot; 경영지원센터</span>
+                                    <span class="time">2017-08-18 13:55</span>
+                                    <p>알겠습니다~</p>
+                                </div>
+                                <div class="group">
+                                    <a href="#" class="ico modify">수정</a>
+                                    <a href="#" class="ico del">삭제</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //의견 -->
+                </div>
+            </div>
+            <div class="btns_area bttm border">
+                <div class="align_lf">
+                    <a class="btn">일정 복사</a>
+                    <a class="btn">일정 삭제</a>
+                </div>
+                <div class="align_rg">
+                    <a class="action_btn">수정</a>
+                    <a class="btn">취소</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

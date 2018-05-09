@@ -1,0 +1,485 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<!--좌측 메뉴 영역-->
+<div class="left_menu"> 
+  <!--Action Btn start-->
+  <div class="btn_large"> <a href="#" title="업무요청">업무요청</a></div>
+  <!--// Action Btn END--> 
+  <!--Quick Btn start-->
+  <ul class="quickbtn_area four">
+    <li class="btn_noread quickbtn_on"><a href="#" title="안읽은업무"><span>안읽음</span></a></li>
+    <li class="btn_emgcy"><a href="#" title="긴급업무"> <span>긴급</span></a></li>
+    <li class="btn_bkmrk"><a href="#" title="즐겨찾기"><span>즐겨찾기</span></a></li>
+    <li class="btn_attach"><a href="#" title="첨부"><span>첨부</span> </a></li>
+  </ul>
+  <!--Quick Btn END--> 
+  <!--Menu List start-->
+  <ul id="folder_list" class="snb_lst">
+    <li class="snb_my_task"> <a href="#"> <span>처리할 업무<span class="count">5</span></span></a></li>
+    <li class="snb_ing_task"> <a href="#" class="slct"><span>진행중인 업무<span class="count">99+</span></span></a></li>
+    <li class="snb_end_task"> <a href="#"> <span>종료된 업무</span></a></li>
+    <li class="snb_send_task"> <a href="#"> <span>보낸 업무</span></a></li>
+  </ul>
+  <!--// Menu List end--> 
+  <!--Tree Area-->
+  <div id="folderDiv" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span class="tree_ttl one" onclick="javascript:toggle_div(this,'tree_contents_area');">개인분류함</span><a class="btn_tree_cnfg" href="#"> </a> </div>
+    <!--Tree Box-->
+    <div id="tree_contents_area" class="tree_cntnts_area">
+      <div id="webfx-tree-object-4" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);return false;">디자인업무</a></div>
+      <div id="webfx-tree-object-4-cont" class="webfx-tree-container">
+        <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);">제품디자인</a></div>
+        <div id="webfx-tree-object-5-cont" class="webfx-tree-container">
+          <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item select" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-indent-0" src="../../img/I.png"><img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.개인부서메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);">개인부서업무함</a> </div>
+          <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-indent-0" src="../../img/I.png"><img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.부서안의부서', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);">부서안의부서</a> </div>
+          <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+        </div>
+        <div id="webfx-tree-object-8" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-8-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-8-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.부서메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-8-anchor" onfocus="webFXTreeHandler.focus(this);">부서업무</a> </div>
+        <div id="webfx-tree-object-8-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-9" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-9-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-9-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.완전 긴 메일이름으로 한번 지어봅시다완전 긴', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-9-anchor" onfocus="webFXTreeHandler.focus(this);">완전 긴 분류함 이름으로 한번 지어봅시다완전 긴</a> </div>
+        <div id="webfx-tree-object-9-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-10" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-10-plus" src="../../img/Lplus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-10-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.작업메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-10-anchor" onfocus="webFXTreeHandler.focus(this);">작업</a> </div>
+      </div>
+    </div>
+  </div>
+  <!--Tree Area END --> 
+  <!--Menu List start-->
+  <ul class="snb_lst">
+    <li class="snb_tmp"><a href="#" ><span>임시 보관함</span></a></li>
+    <li class="snb_trsh"> <a href="#"> <span>휴지통</span></a><a class="btn_trshbx_dl" href="#" title="휴지통비우기">휴지통비우기</a></li>
+  </ul>
+  <!-- Config --> 
+  <a class="left_config" id="" href="#"><span>환경설정</span></a> 
+  <!-- //Config --> 
+  <!--Menu List END--> 
+</div>
+<!--좌측 메뉴 영역 END-->
+<div class="container_box container_list_box">
+  <div class="title_area">
+    <h2 class="title">진행중인 업무</h2>
+    <div id="left_btn_close" class="btn_flip_left"><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right"><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- 검색 영역 -->
+  <div class="srch_area">
+    <fieldset class="search">
+      <input type="text" id="term" name="term" size="15" value="보낸이+제목">
+      <a href="#" title="검색" class="srch_btn" alt="검색">검색</a>
+    </fieldset>
+  </div>
+  <!-- //검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span class="slt"><a href="#">처리</a></span> 
+        <!-- [D] 처리버튼 리스트 레이어 팝업 -->
+        <div class="layer_pop dsp_block"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">업무 강제종료</a></li>
+            <li><a href="#">삭제</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 --> 
+      </li>
+      <li><span><a href="#">복사</a></span> 
+        <!-- [D] 개인분류함 트리 오픈 일번버튼 -->
+      <li><span class="slt"><a href="#">복사</a></span> 
+        <!-- [D] 개인분류함 리스트 셀렉트버튼 --> 
+        <!-- [D] 개인분류함 레이어 팝업 -->
+        <div class="layer_pop dsp_block"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">개인분류함01</a></li>
+            <li><a href="#">개인분류함02</a></li>
+            <li><a href="#">개인분류함03</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 --> 
+      </li>
+    </ul>
+    <div class="layout_rgt">
+      <select>
+        <option value="전체">전체</option>
+        <option value="읽지않은업무">읽지않은업무</option>
+        <option value="즐겨찾기업무">즐겨찾기업무</option>
+        <option value="긴급업무">긴급업무</option>
+        <option value="보안업무">보안업무</option>
+        <option value="참조업무">참조업무</option>
+        <option value="지연업무">지연업무</option>
+        <option value="승인대기업무">승인대기업무</option>
+        <option value="회수업무">회수업무</option>
+        <option value="위임업무">위임업무</option>
+        <option value="반송업무">반송업무</option>
+        <option value="반려업무">반려업무</option>
+      </select>
+      <select>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <p class="btn_rfrsh"><a href="#">새로고침</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 리스팅 기본형(좌측) --> 
+  <!-- 게시판 header -->
+  <!-- 게시판 header -->
+  <div class="content_lst content_lst_head">
+    <table>
+      <colgroup>
+      <col style="width:118px">
+      <col style="width:76px">
+      <col class="col_title" style="width:*">
+      <col style="width:50px">
+      <col style="width:148px">
+      <col style="width:130px">
+      <col style="width:130px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th> <input type="checkbox">
+            <a href="#" class="btn_star"></a><span class="lst_status">상태</span><img src="../../img/ico_q.gif">
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+          </th>
+          <th class="txt_align_cnt pd_0">진행상태</th>
+          <th>제목</th>
+          <th class="txt_align_cnt pd_0">의견</th>
+          <th>작성자</th>
+          <th><a href="#" class="descend">시작일</a></th>
+          <th><a href="#" class="descend">기한일</a></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <!-- // 게시판 header --> 
+  <!-- 게시판 list -->
+  <div class="content_lst content_lst_body work_lst">
+    <table>
+      <colgroup>
+      <col style="width:118px">
+      <col style="width:76px">
+      <col class="col_title" style="width:*">
+      <col style="width:50px">
+      <col style="width:148px">
+      <col style="width:130px">
+      <col style="width:114px">
+      </colgroup>
+      <tbody>
+        <tr class="td_list_bold">
+        <!-- [D] 안읽은 리스트 tr에 td_list_bold 클래스 추가 -->
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="lock"></span><span class="status unread"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status beforecomplete">승인대기</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="lock"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status beforecomplete">승인대기</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_atch"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status beforecomplete">승인대기</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_atch"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_delay_atch"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status overdued">지연</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_delay_atch"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status withdrawed">회수</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_atch_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status delegate">위임</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_atch_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status reject">반송</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_delay_atch_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status return">반려</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_delay_atch_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status completed">종료</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status forced_completed">강제종료</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_delay"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_delay"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr class="td_list_bold">
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status unread_delay_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read_delay_cc"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="lock"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="lock"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star on">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="lock"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox">
+            <a href="#" class="btn_star">즐겨찾기 토글</a> 
+            <!-- [D] 즐겨찾기 클릭시 on 클래스 추가 -->
+            <span class="warning"></span><span class="lock"></span><span class="status read"></span></td>
+          <td class="txt_align_cnt pd_0"><a href="#"><span class="work_status running">진행중</span></a></td>
+          <td class="subj"><a href="#">나이가 사라진 시대(Amortallity)의 비즈니스</a></td>
+          <td class="txt_align_cnt pd_0"><a href="#">15</a></td>
+          <td class="writer"><a href="#">김민우</a></td>
+          <td class="date">2014.03.04 19:07</td>
+          <td class="date">2014.03.04 19:07</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- // content list END-->
+  <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+    <div class="paginate"><a href="javascript:void(0)" class="first">맨뒤로</a><a href="javascript:void(0)" class="prev">뒤로</a><a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#" class="next on">앞으로</a><a href="#" class="last on">맨앞으로</a></div>
+    <div class="pagi_num">
+      <input type="text" value="1">
+      / 123 </div>
+  </div>
+  <!-- // 메일 리스팅 기본형(좌측) --> 
+</div>
+</body>
+</html>

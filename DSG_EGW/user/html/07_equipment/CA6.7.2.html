@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>설비</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>설비</h1>
+				<div class="aside">
+					<legend>검색</legend>
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>설비</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>	
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn selected new">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont handy-scroll">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 -->  
+			<!-- body -->
+			<div class="body"> 
+				<!-- 설비 -->			
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">설비 예약하기</a>
+						</div>
+
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">						
+								<ul class="lnb_menu divide">
+									<li><a href="#">내가 예약한 설비</a></li>
+									<li><a class="selected" href="#">승인 대기중인 설비</a><span class="count">3</span></li>
+								</ul>							
+								<!-- 개인달력 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">설비 목록</a>
+									<a class="ico_btn small add" href="#">추가</a>
+
+									<ul class="sub_lst">
+										<!-- 회의실-->
+										<li class="sub_title open">
+											<a href="#">회의실</a>
+											<div class="group">
+												<a class="ico modify" href="#">수정</a>
+												<a class="ico add" href="#">추가</a>
+											</div>
+											<ul class="sub_lst">
+												<li>
+													<div class="pick_cal type02">
+														<input type="checkbox" id="check_type22"/>
+														<span class="color "></span>
+														<label for="check_type22">1층 A회의실</label>
+														<a class="ico info">정보</a>
+													</div>
+												</li>
+												<li>
+													<div class="pick_cal type14">
+														<input type="checkbox" id="check_type14"/>
+														<span class="color "></span>
+														<label for="check_type14">1층 B회의실</label>
+														<a class="ico info">정보</a>
+													</div>
+												</li>
+												<li>
+													<div class="pick_cal type18">
+														<input type="checkbox" id="check_type28"/>
+														<span class="color"></span>
+														<label for="check_type28">1층 C회의실<a class="ico info">정보</a></label>
+													</div>
+												</li>
+											</ul>									
+										</li>
+										<!-- 노트북 -->
+										<li class="sub_title">
+											<a href="#">노트북</a>
+											<div class="group">
+												<a class="ico modify" href="#">수정</a>
+												<a class="ico add" href="#">추가</a>
+											</div>
+											<ul class="sub_lst">
+												<li>
+													<div class="pick_cal type02">
+														<input type="checkbox" id="check_type52"/>
+														<span class="color "></span>
+														<label for="check_type52">노트북 A</label>
+														<a class="ico info">정보</a>
+													</div>
+												</li>
+												<li>
+													<div class="pick_cal type14">
+														<input type="checkbox" id="check_type54"/>
+														<span class="color "></span>
+														<label for="check_type54">노트북 B</label>
+														<a class="ico info">정보</a>
+													</div>
+												</li>
+												<li>
+													<div class="pick_cal type18">
+														<input type="checkbox" id="check_type58"/>
+														<span class="color"></span>
+														<label for="check_type58">노트북 C<a class="ico info">정보</a></label>
+													</div>
+												</li>
+											</ul>									
+										</li>
+									</ul>
+								</div>
+								<!-- 설비 목록 -->
+								<div class="lnb_menu open">
+									<a class="menu_title category">설비 목록</a>
+									<a class="ico_btn small add">설비 목록 추가</a>
+									<ul class="sub_lst">
+										<li><a href="">그룹1</a></li>
+										<li><a href="">그룹2</a></li>
+									</ul>
+								</div>      
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- //설비 --> 
+				<!-- content -->
+				<div class="container_area" >
+					<div class="handy-scroll">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h2>승인 대기중인 설비</h2>
+								<span class="length"><em>3</em>건</span> 
+							</div>
+							<!-- // 타이틀 영역 -->	
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group">
+										<span class="form"><input type="checkbox"/><label class="blind">전체선택</label></span> 
+									</div>
+									<div class="group">
+										<a href="#" class="btn">승인</a>
+										<a href="#" class="btn">승인취소</a>	
+									</div>
+									<div class="group">
+										<a href="#" class="btn">반려</a>
+										<a href="#" class="btn">반려취소</a>	
+									</div>
+									<div class="group">
+										<span>필터 : </span>
+										<div class="selectbox">
+											<select> 
+												<option> 모든상태 </option>
+												<option> 대기 </option>
+												<option> 승인 </option>
+												<option> 반려 </option>
+												<option> 승인취소 </option>
+												<option> 반려취소 </option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="align_rg">									
+									<!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+									<div class="selectbox page_num">
+										<select> 
+											<option> 15개 </option>
+											<option> 20개 </option>
+											<option> 30개 </option>
+											<option> 40개 </option>
+											<option> 50개 </option>
+										</select>
+									</div>
+								</div>
+								<div class="new_lst_info align_rg">		
+									<a href="#" class="ico_btn rfsh">새로고침</a>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							<!-- 리스트 영역 -->
+							<div class="content_table">	
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:37px;">
+											<col style="width:*;">
+											<col style="width:120px;">
+											<col style="width:120px;">
+											<col style="width:160px;">
+											<col style="width:75px;">
+											<col style="width:87px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>제목</th>
+												<th><a href="#">설비</a></th>
+												<th><a href="#" class="date">예약일</a></th>
+												<th><a href="#" class="date">사용기간</a></th>
+												<th>반복일정</th>
+												<th>상태</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table_body scroll_area handy-scroll">
+									<table>
+										<colgroup>
+											<col style="width:37px;">
+											<col style="width:*;">
+											<col style="width:120px;">
+											<col style="width:120px;">
+											<col style="width:160px;">
+											<col style="width:80px;">
+											<col style="width:87px;">
+										</colgroup>
+										<tbody>
+											<tr class="unread">
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												</td>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state waiting">대기</span>
+													<!-- <span class="state companion">반려</span>
+<span class="state acknowledgment">승인</span> -->
+												</td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state waiting">대기</span>													
+												</td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state companion">반려</span>
+												</td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state agree">승인</span>
+												</td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state cancel">승인취소</span>
+												</td>
+											</tr>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td><a href="#">노트북 1 설비 신청</a></td>
+												<td><a href="#">노트북 1</a>
+												<td class="date">2017-10-10</td>
+												<td class="date">2017-10-10~2017-10-25</td>
+												<td class="date">매월 23일</td>
+												<td>
+													<span class="state cancel">반려취소</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="paginate_area">
+									<div class="paginate">	
+										<a class="first disabled">처음 페이지</a>
+										<a class="pre disabled">이전 페이지</a>	
+										<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+										<a class="selected">1</a>
+										<a>2</a>
+										<a>3</a>
+										<a>4</a>
+										<a>5</a>
+										<a>6</a>		
+										<a>7</a>
+										<a>8</a>
+										<a>9</a>
+										<a>10</a>		
+										<a class="next">다음 페이지</a>
+										<a class="last">마지막 페이지</a>
+									</div>
+									<div class="page_num">
+										<input type="text" value="1"> / 118
+									</div>
+								</div>
+							</div>
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>				
+			</div>
+			<!-- //body -->
+			<!-- note message -->
+			<div class="note" style="">
+				<p>승인 처리되었습니다.</p>
+				<a class="confirm" href="#">확인</a>
+			</div>
+		</div>
+		<!-- //wrapper -->
+		<!-- modal -->
+		<div class="popup open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:840px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						중복 예약 확인
+					</h2>
+					<div class="handy-scroll">
+						<div  class="popup_table" style="max-height:650px;">
+							<p class="help_txt">동일 시간대에 예약 신청된 설비가 있습니다.</p>
+							<div class="section">
+								<dl class="table_desc">
+									<dt>설비</dt>
+									<dd class="name">노트북1</dd>
+									<dt>사용기간</dt>
+									<dd class="due">2017-10-20 09:00</dd>
+								</dl>
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:37px">
+											<col style="width:*">
+											<col style="width:120px">
+											<col style="width:80px">
+											<col style="width:100px">
+											<col style="width:*">
+											<col style="width:90px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>제목</th>
+												<th>설비</th>
+												<th>예약자</th>
+												<th>예약(신청)일</th>
+												<th>사용 기간</th>
+												<th>반복일정</th>
+											</tr>
+										</thead>
+									</table>
+								</div>							
+								<div class="table_body" >
+									<table>
+										<colgroup>
+											<col style="width:37px">
+											<col style="width:*">
+											<col style="width:120px">
+											<col style="width:80px">
+											<col style="width:100px">
+											<col style="width:*">
+											<col style="width:90px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="section">
+								<dl class="table_desc">
+									<dt>설비</dt>
+									<dd class="name">노트북1</dd>
+									<dt>사용기간</dt>
+									<dd class="due">2017-10-20 09:00</dd>
+								</dl>
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:37px">
+											<col style="width:*">
+											<col style="width:120px">
+											<col style="width:80px">
+											<col style="width:100px">
+											<col style="width:*">
+											<col style="width:90px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>제목</th>
+												<th>설비</th>
+												<th>예약자</th>
+												<th>예약(신청)일</th>
+												<th>사용 기간</th>
+												<th>반복일정</th>
+											</tr>
+										</thead>
+									</table>
+								</div>							
+								<div class="table_body" >
+									<table>
+										<colgroup>
+											<col style="width:37px">
+											<col style="width:*">
+											<col style="width:120px">
+											<col style="width:80px">
+											<col style="width:100px">
+											<col style="width:*">
+											<col style="width:90px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의에 사용하려고하는 설비예약건이라고 길게 써봅니다.
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2, 의자12석, 마우스포인터1, HDMI 케이블
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1, 노트북2, 빔2
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+											<tr>
+												<td><span class="form"><input type="radio"><label class="blind">선택</label></span></td>	
+												<td>
+													기업금융사업부 주간회의
+												</td>
+												<td>
+													노트북1
+												</td>
+												<td>
+													<a href="" class="name">홍길동</a>
+												</td>
+												<td class="date">2017-12-08</td>
+												<td class="date">2017-12-08 ~ 2017-12-18</td>											
+												<td class="date">매월 23일</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="btns_area bttm border">	
+						<!-- [D] 라디오 선택된 경우만 노출 -->
+						<div class="align_lf">
+							<p class="description">선택한 설비 예약건을 승인하겠습니까?</p>
+						</div>
+						<div class="align_rg">
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script><script>
+	function approval_pw(){
+		
+		if($("#private_approval_pw").is(":checked")){
+			$("#approval_pw_ctt").css("display","block");
+		} else {
+			$("#approval_pw_ctt").css("display","none");
+		}
+	}
+</script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">부재설정</h2>
+  </div>
+  <div class="pd_all_18">
+    <div class="content_configlist">
+      <table>
+        <colgroup>
+        <col style="width:150px;">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>부재기간</th>
+            <td class="inp_ctt"><div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+              <select class="basic_select">
+                <option value="11">11시</option>
+              </select>
+              <select class="basic_select">
+                <option value="30">30분</option>
+              </select>
+              ~
+              <div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+              <select class="basic_select">
+                <option value="11">11시</option>
+              </select>
+              <select class="basic_select">
+                <option value="30">30분</option>
+              </select></td>
+          </tr>
+          <tr>
+            <th>부재사유</th>
+            <td class="inp_ctt"><select class="basic_select" style="width:278px;">
+                <option>선택하세요.</option>
+              </select></td>
+          </tr>
+          <tr>
+            <th>메일<br>
+              자동응답<br>
+              메시지</th>
+            <td class="inp_ctt"><textarea class="basic_txtarea" style="width:546px;"> </textarea></td>
+          </tr>
+          <tr>
+            <th>자동응답<br>
+              수신자지정</th>
+            <td class="inp_ctt"><ul class="config_lst_opt">
+                <li>
+                  <input type="radio" name="" id="all">
+                  <label class="all">모두</label>
+                </li>
+              </ul>
+              <ul class="config_lst_opt">
+                <li>
+                  <input type="radio" name="" id="part">
+                  <label class="part">지정</label>
+                </li>
+                <li>
+                  <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:450px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div>
+                </li>
+              </ul></td>
+          </tr>
+          <tr>
+            <th>결재<br>
+              처리방법 지정</th>
+            <td class="inp_ctt"><ul class="config_lst_opt rdo">
+                <li>중간결재 시
+                  <input type="radio" id="m_approval">
+                  <label for="m_approval">결재대기</label>
+                  <input type="radio" id="m_approval2">
+                  <label for="m_approval2">결재 안 함</label>
+                </li>
+              </ul>
+              <ul class="config_lst_opt rdo">
+                <li>최종결재 시
+                  <input type="radio" id="f_approval">
+                  <label for="f_approval">결재대기</label>
+                </li>
+              </ul>
+              
+              <!--중간결재 시 <input type="radio" id="m_approval"><label for="m_approval">결재대기</label><input type="radio" id="m_approval2"><label for="m_approval2">결재 안 함</label><br>
+							최종결재 시 <input type="radio" id="f_approval"><label for="f_approval">결재대기</label>--></td>
+          </tr>
+          <tr>
+            <th>대리업무<br>
+              담당자지정</th>
+            <td class="inp_ctt"><ul class="config_lst_opt mg">
+                <li>메일수신</li>
+                <li>
+                  <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="config_lst_opt mg">
+                <li>결재자</li>
+                <li>
+                  <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="config_lst_opt mg">
+                <li>발송자</li>
+                <li>
+                  <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="config_lst_opt mg">
+                <li>접수자</li>
+                <li>
+                  <div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                    <div class="input_box" style="width:180px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div>
+                </li>
+              </ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

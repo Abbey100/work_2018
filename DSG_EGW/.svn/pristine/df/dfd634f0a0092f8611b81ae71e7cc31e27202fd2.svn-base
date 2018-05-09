@@ -1,0 +1,764 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script>
+$(document).ready(function(e) {
+    /* 테이블 리스트 세로값 리사이징 가변 처리 */
+    if($(".content_lst").length > 0) { // .content_lst 클래스가 있을경우만 실행
+        var tableListBoxMinusNum = null;
+        var tableListHeight = null;
+        $(window).resize(function(e) {
+            fn_tableListHeight();
+        });
+        function fn_tableListHeight(){
+            tableListBoxMinusNum = $(".detail_srch_wrap").outerHeight() + $(".title_area").outerHeight() + $(".container_box>.btn_area").outerHeight() + $(".paginate_box").outerHeight() + $(".content_lst_head").outerHeight();
+            tableListHeight = $("body").outerHeight() - tableListBoxMinusNum;
+            
+            if($(".report_area")[0].style.display == "block"){
+                $(".content_lst_body").css("height", tableListHeight - 366);
+            }
+        }
+        fn_tableListHeight();
+    }
+});
+
+</script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">기록물등록대장<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  
+  <!-- 상세 검색 영역 -->
+  <div class="detail_srch_wrap srch_document">
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="완료함" style="width:894px">
+          <colgroup>
+          <col style="width:70px">
+          <col style="width:170px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td ><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:170px">
+                </div></td>
+              <th scope="row">수(발)신자</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:180px">
+                </div></td>
+              <th scope="row">원기안문번호</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:230px">
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+            <tr>
+              <th scope="row">기안부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:140px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">결재경로</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th><label for="prdctnTy0">결재유형</label></th>
+              <td><input id="prdctnTy0" name="sanctnDocTy" class="Lradio" type="radio" value="" checked="checked">
+                <label for="prdctnTy0"></label>
+                전체&nbsp;
+                <input id="prdctnTy1" name="sanctnDocTy" class="Lradio" type="radio" value="1,2,7">
+                <label for="prdctnTy1"></label>
+                생산&nbsp;
+                <input id="prdctnTy2" name="sanctnDocTy" class="Lradio" type="radio" value="3">
+                <label for="prdctnTy2"></label>
+                접수 </td>
+            </tr>
+            <tr>
+              <th scope="row">서식명</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:170px">
+                </div></td>
+              <th scope="row">문서종류</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:180px">
+                </div></td>
+              <th scope="col"><label for="">문서종류</label></th>
+              <td><select id="" name="" class="basic_select" style="width:100%;">
+                  <option value="" selected="selected">전체</option>
+                  <option title="결재양식함" value="J10CB121430000001000">결재양식함</option>
+                  <option title="보고서식(내부결재)" value="J10CB121430000002000">보고서식(내부결재)</option>
+                  <option title="신청서" value="J10CB121430000003000">신청서</option>
+                  <option title="연동서식" value="J10CB121500000059000">연동서식</option>
+                  <option title="협조문(발수신서식)" value="JHOMS131290000295000">협조문(발수신서식)</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th><label for="end">처리현황</label></th>
+              <!-- 처리현황 -->
+              <td><div class="inp_box">
+                  <label>
+                    <input id="end" name="afterSttus" class="Lcheckbox" type="checkbox" value="end">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    종료</label>
+                  <label>
+                    <input id="sndng" name="afterSttus" class="Lcheckbox" type="checkbox" value="sndng">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    발송</label>
+                  <label>
+                    <input id="rcept" name="afterSttus" class="Lcheckbox" type="checkbox" value="rcept">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    접수</label>
+                  <label>
+                    <input id="rceptIng" name="afterSttus" class="Lcheckbox" type="checkbox" value="rceptIng">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    진행</label>
+                  <!-- promise ID : 107103-1, 2012.05.24 by KHW -->
+                  
+                </div></td>
+              <th><label for="extrnl">시행종류</label></th>
+              <!-- <td><input type="checkbox" class="Lcheckbox" id="dmst" name="opertnSe" value="" /> <label for="dmst">대내</label><input type="checkbox" class="Lcheckbox" id="extrnl" name="opertnSe" value="" /> <label for="extrnl">대외</label></td> -->
+              <td colspan="3"><div class="inp_box">
+                  <label>
+                    <input id="extrnl" name="opertnSe" class="Lcheckbox" type="checkbox" value="extrnl">
+                    <input type="hidden" name="_opertnSe" value="on">
+                    대외시행&nbsp;&nbsp;</label>
+                  <label>
+                  <input id="dmst" name="opertnSe" class="Lcheckbox" type="checkbox" value="dmst">
+                  <label for="dmst"></label>
+                  <input type="hidden" name="_opertnSe" value="on">
+                  대내시행&nbsp;&nbsp;
+                  </label>
+                  <label>
+                  <input id="dept" name="opertnSe" class="Lcheckbox" type="checkbox" value="dept">
+                  <label for="dept"></label>
+                  <input type="hidden" name="_opertnSe" value="on">
+                  내부결재
+                  </label>
+                </div></td>
+            <tr>
+              <th><label for="readngLmtt">열람제한(보안)</label></th>
+              <!-- 열람제한 -->
+              <td><div class="inp_box">
+                  <label>
+                    <input id="readngLmtt" name="readngLmtt" class="Lcheckbox" type="checkbox" value="lmtt">
+                    <input type="hidden" name="_readngLmtt" value="on">
+                    열람제한여부</label>
+                </div></td>
+              <th scope="row">소속부서</th>
+              <td colspan="3"><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                  <label>
+                  &nbsp;&nbsp;
+                  <input id="" name="" type="checkbox" value="Y" class="Lcheckbox" >
+                  <label for=""></label>
+                  <input type="hidden" name="" value="on">
+                  하위부서포함&nbsp;&nbsp;
+                  </label>
+                </div></td>
+            </tr>
+            </tbody>
+            </table>
+            
+        </div></div>
+        </div>
+  <!-- //상세 검색 영역 -->
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">문서정보</a></span></li>
+      <li><span><a href="#">첨부기안</a></span></li>
+      <li><span><a href="#">공람</a></span></li>
+      <li><span><a href="#">편철</a></span></li>
+      <li><span><a href="#">편철취소</a></span></li>
+      <li class="add_slct"><span><a href="#" class="none_bg">더보기</a></span>
+        <!-- [D] 추가기능 레이어 팝업 -->
+        <div class="layer_pop dsp_none"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">비전자문서등록</a></li>
+            <li><a href="#">수정</a></li>
+            <li><a href="#">열람제한공유</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 -->
+      </li>
+    </ul>
+    <div class="layout_rgt">
+      <select>
+        <option value="전체">전체</option>
+      </select>
+      <p class="btn_rfrsh"><a href="#">새로고침</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  
+  
+  <!-- 메일 리스팅 기본형(좌측) -->
+  <div>
+    <div class="document_list_wrap">
+      <div class="content_lst content_lst_head">
+        <table>
+          <colgroup>
+          <col style="width:88px">
+          <col style="width:110px">
+          <col style="width:120px">
+          <col style="width:70px">
+          <col style="width:214px">
+          <col style="width:86px">
+          <col style="width:86px">
+          <col style="width:70px">
+          <col style="width:70px">
+          <col style="width:90px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:40px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:220px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:80px">
+          </colgroup>
+          <thead>
+            <tr>
+              <th> <input type="checkbox">
+                상태 <img src="../../img/ico_q.gif"> </th>
+              <th>등록구분</th>
+              <th>문서번호</th>
+              <th>첨부번호</th>
+              <th>제목</th>
+              <th>기안(접수)자</th>
+              <th>결재자</th>
+              <th>기안일자</th>
+              <th><a href="#" class="list_sort">등록일자</a></th>
+              <th>수신(발신)자</th>
+              <th>생산(접수)<br>
+                등록번호</th>
+              <th>시행일자</th>
+              <th>쪽수</th>
+              <th>문서과<br>
+                배부번호</th>
+              <th>생산기관<br>
+                등록번호</th>
+              <th>전자기록물<br>
+                여부</th>
+              <th>공개여부</th>
+              <th>공개제한<br>
+                부분표시</th>
+              <th>분류번호</th>
+              <th>특수기록물</th>
+              <th>검색어1</th>
+              <th>검색어2</th>
+              <th>검색어3</th>
+              <th>편철상태</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- // 게시판 header -->
+      <!-- 게시판 list -->
+      <div class="content_lst content_lst_body">
+        <table>
+          <colgroup>
+          <col style="width:88px">
+          <col style="width:110px">
+          <col style="width:120px">
+          <col style="width:70px">
+          <col style="width:214px">
+          <col style="width:86px">
+          <col style="width:86px">
+          <col style="width:70px">
+          <col style="width:70px">
+          <col style="width:90px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:40px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:220px">
+          <col style="width:75px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:65px">
+          <col style="width:74px">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+              <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+              <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+              <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            <tr>
+              <td>RND</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+              <td>RND-1</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- // 게시판 list -->
+    <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+      <div class="paginate"><a href="#" class="first">맨뒤로</a><a href="#" class="prev">뒤로</a><a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#" class="next on">앞으로</a><a href="#" class="last on">맨앞으로</a></div>
+      <div class="pagi_num">
+        <input type="text" value="1">
+        / 123 </div>
+    </div>
+    <!-- report area -->
+    
+    <div id="dvMainBottom" class="report_area" style="display:block;">
+      <iframe id="apprInfoWnd" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="321px" scrolling="no" title="문서정보" src="tab.html"> </iframe>
+      </div>
+      
+      
+</div>
+</div>
+</body>
+</html>

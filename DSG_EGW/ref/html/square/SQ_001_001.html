@@ -1,0 +1,1359 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>square 그룹 정보보기 화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(function() {
+                $('.topic_sentence li p').dotdotdot();
+            });
+        </script>
+</head>
+<body>
+		<div class="co_work">
+			<!--좌측 메뉴 영역-->
+			<div class="left_menu">
+				<!--Action Btn start-->
+				<div class="btn_large mg_bttm_15">
+					<a class="btn_l" href="#" onclick="" title="그룹 만들기">그룹 만들기</a>
+				</div>
+				<!--Tree Area-->
+				<!--즐겨찾는 그룹-->
+				<div id="" class="with_del tree_area">
+					<!--Tree Title Area-->
+					<div class="tree_ttl_area">
+						<span class="tree_ttl" onclick="javascript:$('#myFavoriteGroupMenu').toggle();">즐겨찾는 그룹</span>
+					</div>
+					<!--업무방 Box-->
+					<ul class="tree_cntnts_area bttm_no_scroll"><li><span onclick="" class="group_name">UX디자인팀</span><a class="delete" href=''>delete</a></li><li><span onclick="" class="group_name">스퀘어TFT</span><a class="delete" href=''>delete</a></li></ul>
+				</div>
+				<!--// 즐겨찾는 그룹-->
+				<!-- 나의 업무 그룹-->
+				<div class="tree_area bttm_ln">
+					<!--Tree Title Area-->
+					<div class="tree_ttl_area">
+						<span class="tree_ttl" onclick="javascript:$('#myWorkGroupMenu').toggle();">진행중인 그룹</span>
+<!-- 						<a class="btn_tree_cnfg" href="#"> </a> -->
+					</div>
+					<!--업무방 Box-->
+					<ul class="tree_cntnts_area bttm_no_scroll"><li><span onclick="" class="group_name">그룹</span><a class="delete" href='' style="display:none;">delete</a></li><li><span onclick="" class="group_name">보기화면</span><a class="delete" href='' style="display:none;">delete</a></li><li ><span id="groupName" onclick="" class="group_name">새그룹</span><a class="delete" href='' style="display:none;">delete</a></li><li class="on"><span class="group_name">디자인 스퀘어</span><a class="delete" style="display:none;">delete</a></li></ul>
+				</div>
+				<!-- 종료된 업무 그룹-->
+				<div id="" class="tree_area bttm_ln">
+					<!--Tree Title Area-->
+					<div class="tree_ttl_area">
+						<span class="tree_ttl" onclick="javascript:$('#endGroupMenu').toggle();">종료된 그룹</span>
+<!-- 						<a class="btn_tree_cnfg" href="#"> </a> -->
+					</div>
+					<!--업무방 Box-->
+					<ul class="tree_cntnts_area bttm_no_scroll"><li ><span onclick="" class="group_name">부서 개설</span></li><li><span onclick="" class="group_name">어므나 그룹의 이름이 느무느무 길지 않습니까?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요? 이를 어쩐이를 어쩐 어쩐 어쩐다요?</span></li></ul>
+				</div>
+				<!-- Config -->
+<!-- 				<a class="left_config" id="" href="#"><span>환경 설정</span></a> -->
+				<!-- //Config -->
+			</div>
+			<!--좌측 메뉴 영역 END-->
+			<!-- 중앙 컨텐츠 영역 Center Contents Area -->
+			<div class="container_box container_list_box">
+
+
+
+	
+		
+	
+	
+
+
+<div id="workGroup">
+	<div class="title_area">
+		<h2 class="title">
+			<a id="onTitleArea" href="#" onclick="javascript:jQuery('.title_area').toggleClass('on');titleMenuInit();return;">
+				<span class="btn_ttl_menu">디자인 스퀘어</span>
+			</a>
+			
+							<a id="favoriteIcon" href="javascript:addFavorite('01ad5mxai');" class="btn_star" title="즐겨찾기 등록">
+								즐겨찾기
+							</a>
+			<span id="systemMessage" style="display: none;"></span>
+			<span class="loading" style="display:none"></span>
+			<!--[D] btn_star 에 on 클래스 추가 하면 활성화-->
+		</h2>
+		<div id="left_btn_close" class="btn_flip_left">
+			<a href="javascript:toggle_LFrame()"></a>
+		</div>
+		<div id="right_btn_close" class="btn_flip_right on">
+			<a href="javascript:toggle_RFrame();"></a>
+		</div>
+		
+				<div class="layer_pop ttl_menu" style="width:150px">
+					<ul>
+						
+							
+								<li id="sqAdminGroupMenu1" onclick="javascript:jQuery('.title_area').toggleClass('on');modifySquareMemberView();">
+									구성원 추가
+								</li>
+							
+						
+						<li id="sqUserGroupMenu1" onclick="javascript:jQuery('.title_area').toggleClass('on');openAlarmPopup();">
+							알림 설정
+						</li>
+						<li id="sqAdminGroupMenu2" onclick="javascript:jQuery('.title_area').toggleClass('on');modifySquareView();">
+							그룹정보수정
+						</li>
+						<li id="sqAdminGroupMenu3" onclick="javascript:jQuery('.title_area').toggleClass('on');openAdminPopup();">
+							관리자추가/삭제
+						</li>
+						<li id="sqAdminGroupMenu4" onclick="javascript:jQuery('.title_area').toggleClass('on');deleteSquare('01ad5mxai');">
+							그룹종료
+						</li>
+					</ul>
+				</div>
+		
+	</div>
+	<div class="ttl_menu">
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+	<!-- // Title area END-->
+    
+    
+	<div class="list_vertical" style="height: 1028px;">
+		<div class="container_wrap_left" style="width: 518px;">
+          <div id="viewContents" class="content_lst content_lst_body" style=""> 
+            
+            <!-- ARTICLE_BOX : 일반사용자 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <!--시스템정보-->
+              <ul class="usr_opinion system_info_group">
+                <li> <span  class="name" onclick="">admin</span> <span id="" class="class">(system 관리자)</span> </li>
+                <li> <span class="inform"> <em>그룹</em> 그룹이 생성되었습니다. </span> <span id="" class="date">07.03 16:20</span> </li>
+              </ul>
+            </div>
+            
+            <!-- SYSTEM : DATE -->
+            <div id="" class="system_date tempdate"> <span>2015.09.04</span> </div>
+            
+            <!-- ARTICLE_BOX : 업무지시 --> 
+            <!-- 로그인 당사자 -->
+            <div id="" class="article_box work">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion topic_sentence mine">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span  class="name" onclick="">나주인</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_01" class="go_more" onclick="javascript:$('#test_go_more_01').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">업무지시</span> </h3>
+                  <p id="chargerList" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">나주인</em></p>
+                  <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">ㅇㅇㅇ</p>
+                  <input type="hidden" name="originalBody" value="ㅇㅇㅇ">
+                </li>
+                <li  style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                </li>
+                <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file"><em></em></span>
+                  <input type="hidden"  name="commentCount" value="0">
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 일반사용자 -->
+            <div id="" class="article_box work">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion topic_sentence">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span  class="name" onclick="">핸과장</span> <span  class="class">(제품기획팀 선임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_02" class="go_more" onclick="javascript:$('#test_go_more_02').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">업무지시</span> </h3>
+                  <p id="chargerList" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">나주인</em></p>
+                  <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">ㅇㅇㅇ</p>
+                  <input type="hidden" name="originalBody" value="ㅇㅇㅇ">
+                </li>
+                <li  style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                </li>
+                <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file"><em></em></span>
+                  <input type="hidden"  name="commentCount" value="0">
+                </li>
+              </ul>
+            </div>
+            <!-- // ARTICLE_BOX : 업무지시 END --> 
+            
+            <!-- ARTICLE_BOX : 인스턴트 --> 
+            <!-- 로그인 당사자 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion mine">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span  class="name" onclick="">나주인</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_03" class="go_more" onclick="javascript:$('#test_go_more_03').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <p style="word-wrap: break-word"><span>스퀘어는 팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 
+                    공간입니다</span>                          <span class="noty_modified">&#40;수정됨&#41;
+                      <span class="tooltip_layer">
+                          <span class="square_tooltip_box">2016.01.04 09:05</span>
+                          <span class="square_tooltip_arr"></span>
+                      </span>
+                      </span></p>
+                </li>
+                <li style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">스퀘어는 팀원들간의 공유 공간으로 공지, 아이디어 공유, 자료 공유 등 자유롭게 커뮤니케이션 할 수 있는 
+공간입니다</textarea>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 로그인 당사자 : 글 수정 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul class="usr_opinion mine modify_mod">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span  class="name" onclick="">나주인</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: ;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_04" class="go_more" onclick="javascript:$('#test_go_more_04').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li style="display: none;">
+                  <p style="word-wrap: break-word"><em>@핸과장님</em> 이번주 회식의 메뉴는 역시나 돼지고기를 먹는거겠죠? 난 소처럼 일하는데ㅠ </p>
+                </li>
+                <li style="display: ;">
+                  <textarea class="textarea" style=""> @핸과장님 이번주 회식의 메뉴는 역시나 돼지고기를 먹는거겠죠? 난 소처럼 일하는데ㅠ </textarea>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 일반사용자 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span  class="name" onclick="">핸과장</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_05" class="go_more" onclick="javascript:$('#test_go_more_05').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <p style="word-wrap: break-word"><em>@핸과장님</em> 이번주 회식의 메뉴는 역시나 돼지고기를 먹는거겠죠? 난 소처럼 일하는데...<em>#i소U</em></p>
+                </li>
+                <li style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">@핸과장님 이번주 회식의 메뉴는 역시나 돼지고기를 먹는거겠죠? 난 소처럼 일하는데... #i소U</textarea>
+                </li>
+              </ul>
+            </div>
+            <!-- // ARTICLE_BOX : 인스턴트 END --> 
+            
+            <!-- SYSTEM : DATE -->
+            <div id="" class="system_date tempdate"> <span>2016.01.04</span> </div>
+            
+            <!-- ARTICLE_BOX : 토픽 --> 
+            <!-- 로그인 당사자 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion topic_sentence mine">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span class="name" onclick="">나주인</span> <span class="class">(제품기획팀 주임연구원)</span> <span class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_06" class="go_more" onclick="javascript:$('#test_go_more_06').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <h3 onclick=""><span>새로운 화제는 토픽으로 이야기 해보자</span>                          <span class="noty_modified">&#40;수정됨&#41;
+                      <span class="tooltip_layer right">
+                          <span class="square_tooltip_box">2016.01.04 09:05</span>
+                          <span class="square_tooltip_arr"></span>
+                      </span>
+                      </span> </h3>
+                  <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">토픽을 이야기해볼 때는 이렇게 화제를 던지고 의견으로 이어가게되겠지요. 의견은 아래 의견추가로 덧붙이곤 하는겁니다.</p>
+                  <input type="hidden" name="originalBody" value="ㅇㅇㅇ">
+                </li>
+                <li  style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">토픽을 이야기해볼 때는 이렇게 화제를 던지고 의견으로 이어가게되겠지요. 의견은 아래 의견추가로 덧붙이곤 하는겁니다.</textarea>
+                </li>
+                
+                <!-- 첨부파일 -->
+                
+                <li id="" class="attached_file">
+                  <div id="" class="file_info">
+                    <div id="" class="file_type  zip" onclick=""></div>
+                    <ul class="file_txt">
+                      <li> <span id="" class="file_ttl main_contents_temp" onclick="">square <font class="dot_file_name">_1223.zip</font></span> </li>
+                      <li> <span id="" class="capacity">621.1 KB</span> </li>
+                      <li> <span id="" class="ico bookmark" onclick=""></span> </li>
+                    </ul>
+                    <div id="" class="detail_menu"> 
+                      <!-- on 클래스를 추가 하면 메뉴가 활성화 --> 
+                      <span id="test_a_01" class="more" onclick="javascript:$('#test_a_01').toggleClass('on');">more</span>
+                      <div class="layer_pop more_file_menu">
+                        <ul>
+                          <li id="" style="display:none" onclick="">원문보기</li>
+                          <li id="" onclick="">다운로드</li>
+                          <li id="" style="display:none">삭제</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="attached" onclick=""> <span class="commnt">의견 <em>2</em></span> <span class="file">파일 <em>1</em></span>
+                  <input type="hidden"  name="commentCount" value="0">
+                </li>
+              </ul>
+            </div>
+            
+            <!-- 일반사용자 -->
+            <div id="" class="article_box">
+              <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+              <ul  class="usr_opinion topic_sentence">
+                <!-- '내 글'에는 mine 추가  -> 내용 변경(160105) 모든글에 MORE 메뉴 추가로 mine 클래스시 레이어 내용만 다름 -->
+                <li> <span class="name" onclick="">핸과장</span> <span class="class">(제품기획팀 선임연구원)</span> <span class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                <li id="test_go_more_07" class="go_more" onclick="javascript:$('#test_go_more_07').toggleClass('on');"> <span class="ico more"></span>
+                  <div class="layer_pop">
+                    <ul>
+                      <li class="copy">복사</li>
+                      <li class="edit">수정</li>
+                      <li class="del">삭제</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <h3 onclick=""><span>남이쓴 토픽도 카피카피는 된다규요</span> </h3>
+                  <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">토픽을 이야기해볼 때는 이렇게 화제를 던지고 의견으로 이어가게되겠지요. 의견은 아래 의견추가로 덧붙이곤 하는겁니다.</p>
+                  <input type="hidden" name="originalBody" value="ㅇㅇㅇ">
+                </li>
+                <li  style="display: none;">
+                  <textarea class="textarea" style="width: 738px;">토픽을 이야기해볼 때는 이렇게 화제를 던지고 의견으로 이어가게되겠지요. 의견은 아래 의견추가로 덧붙이곤 하는겁니다.</textarea>
+                </li>
+                <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file"><em></em></span>
+                  <input type="hidden"  name="commentCount" value="0">
+                </li>
+              </ul>
+            </div>
+            <!-- // ARTICLE_BOX : 토픽 END --> 
+            
+            <!-- SYSTEM : DATE -->
+            <div id="" class="system_date tempdate"> <span>2016.01.05</span> </div>
+            <!-- // SYSTEM : DATE END --> 
+            
+            <!-- ARTICLE_BOX : system_msg -->
+            
+            <div id="" class="article_box system_msg">
+              <div id="" class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png" onclick=""> <img class="photo" src="../../img/thmb_ttl_mini.png" onclick=""> </div>
+              <ul id="" class="usr_opinion topic_sentence" onclick="">
+                <li>
+                  <h3> <span class="duty" style="display: none;"></span> <span id="" class="temp_title_sysmsg" style="max-width: 230px;">새로운 화제는 토픽으로 이야기 해보자</span> </h3>
+                </li>
+                <li> <span id="fixBody" class="note">의견이 추가되었습니다.</span> </li>
+              </ul>
+            </div>
+            <!-- // SYSTEM : DATE END --> 
+            
+            <!-- COMMENT_BOX -->
+            
+            <div id="" class="comment_box">
+              <div id="" class="article_box cmnt">
+                <div id="" class="comment">
+                  <div class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                  <ul  class="usr_comment">
+                    <li> <span class="name" onclick="">디과장</span> <span class="class">(제품기획팀 선임연구원)</span> <span class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                    <li id="" class="confirm_mod" style="display: none;"> <span id="" class="modify">저장</span> <span id="" class="cancle">취소</span> </li>
+                    <li id="test_go_more_08" class="go_more" onclick="javascript:$('#test_go_more_08').toggleClass('on');"> <span class="ico more"></span>
+                      <div class="layer_pop">
+                        <ul>
+                          <li id="">수정</li>
+                          <li id="">삭제</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li id="">
+                      <p id="">토픽과 업무에는 의견이 달리잖아요?</p>
+                    </li>
+                    <li id="" style="display: none;">
+                      <textarea id="" class="textarea" style="width: 502px;">-_-</textarea>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- // COMMENT_BOX --> 
+            
+            <!-- COMMENT_BOX -->
+            
+            <div id="" class="comment_box">
+              <div id="" class="article_box cmnt">
+                <div id="" class="comment">
+                  <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                  <ul  class="usr_comment mine">
+                    <li> <span class="name" onclick="">나주인</span> <span class="class">(제품기획팀 주임연구원)</span> <span class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                    <li id="" class="confirm_mod" style="display: none;"> <span id="" class="modify">저장</span> <span id="" class="cancle">취소</span> </li>
+                    <li id="test_go_more_09" class="go_more" onclick="javascript:$('#test_go_more_09').toggleClass('on');"> <span class="ico more"></span>
+                      <div class="layer_pop">
+                        <ul>
+                          <li id="modify">수정</li>
+                          <li id="delete">삭제</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li id="">
+                      <p id="">토픽과 업무에는 의견이 달리잖아요?</p>
+                    </li>
+                    <li id="" style="display: none;">
+                      <textarea id="" class="textarea" style="width: 502px;">-_-</textarea>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- // COMMENT_BOX -->
+            
+            <div id="" title="Loading....." align="center" style="display:none;"> <img src="../../square/images/ajax_loader.gif"></div>
+          </div>
+          <!-- // content_lst_body --> 
+          
+          <!-- INPUT_BOX -->
+          <div id="" class="paginate_box entr0">
+            <div id="inputArea" class="input_area"> 
+              <!-- 입력창 -->
+              <div id="inputBox" class="input_box"> <a onclick="javascript:$('#inputBox').toggleClass('on');setContentsFileUploader();" class="select_menu"><span class="btn_upload"></span></a>
+                <div class="layer_pop write_type">
+                  <ul>
+                    <li class="type_file">
+                      <div id="fileUpload" name="fileUpload" class="fileUpload"></div>
+                      <span class="ico file"></span><span>파일등록</span> </li>
+                    <li onclick="javascript:showAddTopic('01e4x976k');" class="type_topic"><span class="ico topic"></span><span>토픽등록</span></li>
+                    <li onclick="javascript:showAddOrder('01e4x976k');" class="type_work"><span class="ico work"></span><span>업무요청</span></li>
+                  </ul>
+                </div>
+                <textarea id="message" class="instant_inp" onkeydown="javascript:return textAreaKeyEvent(event);"></textarea>
+              </div>
+              <!-- 입력버튼 --> 
+              <a href="javascript:addMessage();" class="btn_write"><span>등록</span></a> </div>
+          </div>
+          <!-- //  INPUT_BOX -->
+          
+          <div class="btn_flip_open" style="display:none;"> <a href="javascript:hideDetailArea(false)"></a> </div>
+        </div>
+        
+    <!---- right-area --->
+    <!---- right-area --->
+    <!---- right-area --->
+        
+		<div id="vertical_message_content" class="view_content_box view_box off" style="margin-left: 518px;">
+			<!--div>
+				<input onclick="javascript:PAGE_CONTROLLER.goBack(false);" type="button" value="back"/>
+			</div-->
+			<div class="inner_box">
+				<div class="top_area">
+					<div>
+						<div class="btn_flip_close">
+							<a href="javascript:hideDetailArea(true);"></a>
+						</div>
+					</div>
+					<span class="search">
+						<input id="searchKeyword" type="search" placeholder="Search" onkeypress="javascript:searchGroupDataByEnter(event);">
+						<a href="javascript:showSearchResult();" class="btn_search"> </a>
+					</span>
+					<span id="btnMore" class="detail_menu" onclick="javascript:showMore(event);">
+						<span id="btnMoreList" class="more_detail_menu"></span>
+						<span class="layer_pop more_dtl_menu">
+							<ul>
+								<li onclick="javascript:showGroupInfo('01ad5mxai');">
+									그룹정보
+								</li>
+								<li onclick="javascript:showFileList('01ad5mxai');">
+									파일
+								</li>
+								<li onclick="javascript:showFavoriteList('01ad5mxai');">
+									즐겨찾기
+								</li>
+								<li onclick="javascript:showInstructionList('01ad5mxai');">
+									업무요청
+								</li>
+							</ul>
+						</span>
+					</span>
+				</div>
+				
+				<div id="contents_details" class="cowork_detail"><div id="groupInfo" class="detail_area" style="height: 974px;">
+	<div class="group_info article_box">
+		<div id="groupBaseInfo">
+		<h2 class="title nodepth">
+			<span id="groupName">디자인 스퀘어</span>
+		</h2>
+			<dl>
+				<dt id="groupAdminTitleArea">개설자</dt>
+				<dd id="groupAdminValueArea"><a href="javascript:show_buddy_card('001013122');">나주인</a></dd>
+				<dt>개설일</dt>
+				<dd id="createDateArea">
+					<span id="createDate">2015.06.01</span>
+				</dd>
+				<dt id="dueDateTitleArea">
+					기한
+				</dt>
+				<dd id="dueDateValueArea">
+					<span id="dueDate">영구</span>
+					<span id="squareStatus" class="ing">진행</span>
+				</dd>			
+			</dl>
+			
+			<div id="groupDescription" class="details">
+				<p>
+					<span id="descriptionBody">임시</span>
+					<span id="editDescription" class="ico modify" onclick="modifySquareView();">
+						수정
+					</span>
+				</p>
+			</div>
+		</div>
+	 	<div class="detail_info_member open">
+                <h4>구성원<span class="mg_lft_6 fnt_bold">50</span></h4>
+                <div class="members">
+                    <span class="usr_pic">
+                    <span class="admin">
+                    </span>
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                    <span class="usr_pic">
+                <img class="mask" src="../../img/pic_mask_members.png" />
+                <img class="photo" src="../../img/thmb_nopic_mini.png" />
+                    </span>
+                </div>
+            <div class="member_more">더보기</div>
+            <!--//[D]SQ-001-001_참여자UI_펴기 :  OPEN 시는 "detail_info_member"를 "detail_info_member open"으로 CLOSE 시는 "detail_info_member"를 "detail_info_member close"로 사용 
+스트링은 close 시 "더보기",
+open시 "접어보기" -->
+            
+            </div>
+	</div>
+</div></div>
+				<input type="hidden" id="detailContentsId" name="detailContentsId" value="01ad5mxai">
+			</div>
+		</div>
+		<div class="controlbar ui-draggable" style="left: 518px;">
+			<div class="bar">
+				<em>control</em>
+			</div>
+		</div>
+		<div id="detailAttachDownload" class="common_layer_pop" style="display: none;">
+			<div class="inner_box">
+				<div class="tit">
+					<b>전체파일저장</b>
+					<span>
+						<a href="javascript:closeDownloadAllForm();"><img src="../../img/btn_layer_close.gif" alt="닫기"></a>
+					</span>
+				</div>
+				<div class="cont_pop">
+					<div class="file_dwn_list">
+						<div class="file_list_head" style="display: block">
+							<table>
+								<colgroup>
+									<col style="width: 22px">
+									<col style="width: 270px">
+									<col style="width: 122px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th><input id="selectAllList" type="checkbox" onclick="javascript:selectAllList(event);" checked="checked"></th>
+										<th scope="col">파일명</th>
+										<th scope="col">크기</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="file_list_body" style="display: block">
+							<table>
+								<colgroup>
+									<col style="width: 22px">
+									<col style="width: 270px">
+									<col style="width: 107px">
+								</colgroup>
+								<tbody id="attachList" style="display:none;"></tbody>
+							</table>
+						</div>
+					</div>
+					<div class="desc_dwn_file">
+						<span id="msgDownloadCount"></span>
+					</div>
+					<div class="footer full_width">
+						<ul class="btns layout_cnt" id="" name="pop_footer">
+							<li><span>
+								<a class="fnt_bold" href="javascript:downloadAttachList();" onfocus="blur();">
+									저장
+								</a>
+							</span></li>
+							<li><span>
+								<a href="javascript:closeDownloadAllForm();" onfocus="blur();">
+									취소
+								</a>
+							</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="squareInfo">
+		<input type="hidden" id="squareId" name="squareId" value="01ad5mxai">
+		<input type="hidden" id="status" name="status" value="0">
+	</div>
+	<div id="modifyInfo">
+		<input type="hidden" id="contentsId" name="contentsId" value="">
+		<input type="hidden" id="contentsType" name="contentsType" value="">
+		<input type="hidden" id="body" name="body" value="">
+		<input type="hidden" id="title" name="title" value="">
+		<input type="hidden" id="dueDate" name="dueDate" value="">
+		<input type="hidden" id="sysFileNames" name="sysFileNames" value="">
+		<input type="hidden" id="orgFileNames" name="orgFileNames" value="">
+		<input type="hidden" id="member" name="member" value="">
+	</div>
+	<form id="popupForm" name="popupForm" action="" method="post">
+		<input type="hidden" id="squareId" name="squareId" value="">
+		<input type="hidden" id="contentsId" name="contentsId" value="">
+		<input type="hidden" id="userID" name="userID" value="">
+		<input type="hidden" id="K" name="K" value="">
+	</form>
+</div></div>
+			<div id="userInfo">
+				<input type="hidden" id="userId" name="userId" value="001013122">
+				<input type="hidden" id="key" name="key" value="00kSr30gE">
+				<input type="hidden" id="nodejsURL" name="nodejsURL" value="123.212.190.148:8090">
+				<input type="hidden" id="usePicture" name="usePicture" value="true">
+				<input type="hidden" id="maxUploadSize" name="maxUploadSize" value="31457280">
+			</div>
+			<div id="body_pages" style="display: none;">
+
+
+
+	
+		
+	
+	
+
+
+<div id="TEMPLATE_topicType_0" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="topicInfo" class="usr_opinion topic_sentence">
+		<!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="favoriteFlag" class="ico bookmark"></span>
+		</li>
+		<li id="modifyMenu" class="confirm_mod" style="display: none;">
+			<span id="apply" class="modify">저장</span>
+			<span id="modifyCancel" class="cancle">취소</span>
+		</li>
+		<li id="contentsMenu" class="go_modify" style="display: none;">
+			<span class="ico set"></span>
+			<div class="layer_pop">
+				<ul>
+					<li id="modify">수정</li>
+					<li id="delete">삭제</li>
+				</ul>
+			</div>
+		</li>
+		<!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+		<li id="mainContentsBody">
+			<h3>
+				<span id="title"></span>
+			</h3>
+			<p id="body" style="word-wrap: break-word">
+			</p>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+		<li id="modifyTextArea" style="display: none;">
+			<textarea id="textArea" class="textarea">			</textarea>
+		</li>
+		<li id="attached" class="attached">
+			<span id="comment" class="commnt">의견<em></em></span>
+			<span id="file" class="file">첨부<em></em></span>
+			<input type="hidden" id="commentCount" name="commentCount" value="0">
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="0">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_1" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="topicInfo" class="usr_opinion">
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="favoriteFlag" class="ico bookmark"></span>
+		</li>
+		<li id="modifyMenu" class="confirm_mod" style="display: none;">
+			<span id="apply" class="modify">저장</span>
+			<span id="modifyCancel" class="cancle">취소</span>
+		</li>
+		<li id="contentsMenu" class="go_modify" style="display: none;">
+			<span class="ico set"></span>
+			<div class="layer_pop">
+				<ul>
+					<li id="modify">수정</li>
+					<li id="delete">삭제</li>
+				</ul>
+			</div>
+		</li>
+		<li id="mainContentsBody">
+			<p id="body">
+			</p>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+		<li id="modifyTextArea" style="display: none;">
+			<textarea id="textArea" class="textarea">			</textarea>
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="1">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_2" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="topicInfo" class="usr_opinion topic_sentence">
+		<!-- 기본형은 user_opinion만 사용, 토픽에는 topic_sentence가 추가됨 -->
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="favoriteFlag" class="ico bookmark"></span>
+		</li>
+		<li id="modifyMenu" class="confirm_mod" style="display: none;">
+			<span id="apply" class="modify">저장</span>
+			<span id="modifyCancel" class="cancle">취소</span>
+		</li>
+		<li id="contentsMenu" class="go_modify" style="display: none;">
+			<span class="ico set"></span>
+			<div class="layer_pop">
+				<ul>
+					<li id="modify" style="display: none;">수정</li>
+					<li id="delete">삭제</li>
+				</ul>
+			</div>
+		</li>
+		<!--모든 h3 내부에는 span으로 구분이 추가되었음 -->
+		<li id="mainContentsBody">
+			<h3>
+				<span id="title"></span>
+			</h3>
+			<p id="body" style="word-wrap: break-word">
+			</p>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+		<li id="modifyTextArea" style="display: none;">
+			<textarea id="textArea" class="textarea">			</textarea>
+		</li>
+		<li id="attached" class="attached">
+			<span id="comment" class="commnt">의견<em></em></span>
+			<span id="file" class="file">첨부<em></em></span>
+			<input type="hidden" id="commentCount" name="commentCount" value="0">
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="2">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_originalCommentBox" class="comment_box">
+</div>
+<div id="TEMPLATE_topicType_originalCommentBox_clone" class="comment_box">
+</div>
+<div id="TEMPLATE_topicType_3" class="article_box cmnt">
+	<div id="topicType_comment" class="comment">
+		<div id="userPic" class="usr_pic">
+			<img class="mask" src="/img/pic_mask_40.png">
+			<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+		</div>
+		<ul id="topicInfo" class="usr_comment">
+			<li>
+				<span id="name" class="name"></span>
+				<span id="positionName" class="class"></span>
+				<span id="createDate" class="date"></span>
+				<span id="favoriteFlag" class="ico bookmark"></span>
+			</li>
+			<li id="modifyMenu" class="confirm_mod" style="display: none;">
+				<span id="apply" class="modify">저장</span>
+				<span id="modifyCancel" class="cancle">취소</span>
+			</li>
+			<li id="contentsMenu" class="go_modify" style="display: none;">
+				<span class="ico set"></span>
+				<div class="layer_pop">
+					<ul>
+						<li id="modify">수정</li>
+					<li id="delete">삭제</li>
+					</ul>
+				</div>
+			</li>
+			<li id="mainContentsBody">
+				<p id="body">
+				</p>
+				<input type="hidden" id="originalBody" name="originalBody" value="">
+			</li>
+			<li id="modifyTextArea" style="display: none;">
+				<textarea id="textArea" class="textarea">				</textarea>
+			</li>
+		</ul>
+	</div>
+	<input type="hidden" id="contentsType" name="topicType" value="3">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_4" class="article_box system_msg">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img class="photo" src="/img/thmb_ttl_mini.png">
+	</div>
+	<ul id="mainContentsBody" class="usr_opinion topic_sentence">
+		<li><h3>
+				<span class="duty" style="display: none;"></span>
+				<span id="title" class="temp_title_sysmsg" style="max-width: 857px;"></span>
+			</h3>
+		</li>
+		<li>
+			<span id="fixBody" class="note">의견이 추가되었습니다.</span>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="4">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_5" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="topicInfo" class="usr_opinion topic_sentence">
+		<!-- '내 글'에는 mine 추가 -->
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="favoriteFlag" class="ico bookmark"></span>
+		</li>
+		<li id="modifyMenu" class="confirm_mod" style="display: none;">
+			<span id="apply" class="modify">저장</span>
+			<span id="modifyCancel" class="cancle">취소</span>
+		</li>
+		<li id="contentsMenu" class="go_modify" style="display: none;">
+			<span class="ico set"></span>
+			<div class="layer_pop">
+				<ul>
+					<li id="modify">수정</li>
+					<li id="delete">삭제</li>
+				</ul>
+			</div>
+		</li>
+		<li id="mainContentsBody">
+			<h3 id="contentsBody">
+				<span class="duty">업무요청</span>
+				<span id="title"></span>
+			</h3>
+			<p id="chargerList" class="in_charge" style="word-wrap: break-word;">
+			</p>
+			<p id="body" style="word-wrap: break-word">
+			</p>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+		<li id="modifyTextArea" style="display: none;">
+			<textarea id="textArea" class="textarea">			</textarea>
+		</li>
+		<li id="attached" class="attached">
+			<span id="comment" class="commnt">의견<em></em></span>
+			<span id="file" class="file">첨부<em></em></span>
+			<input type="hidden" id="commentCount" name="commentCount" value="0">
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="5">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="orderStatus" name="orderStatus" value="0">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_6" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul class="usr_opinion system_info_group">
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+		</li>
+		<li>
+			<span class="inform">
+				<em id="groupName"></em>
+				그룹이 생성되었습니다.
+			</span>
+			<span id="createDate" class="date"></span>
+	</li></ul>
+	<input type="hidden" id="originalBody" name="originalBody" value="">
+	<input type="hidden" id="contentsType" name="topicType" value="6">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<div id="TEMPLATE_topicType_7" class="article_box">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="topicInfo" class="usr_opinion">
+		<li>
+			<span id="name" class="name"></span>
+			<span id="positionName" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="favoriteFlag" class="ico bookmark" style="display:none"></span>
+		</li>
+		<li id="mainContentsBody">
+			<p id="body">
+			</p>
+			<input type="hidden" id="originalBody" name="originalBody" value="">
+		</li>
+	</ul>
+	<input type="hidden" id="contentsType" name="topicType" value="1">
+	<input type="hidden" id="contentsId" name="contentsId" value="">
+	<input type="hidden" id="parentId" name="parentId" value="">
+	<input type="hidden" id="originalParentId" name="originalParentId" value="">
+	<input type="hidden" id="indexDate" name="indexDate" value="">
+	<input type="hidden" id="cloneFlag" name="cloneFlag" value="0">
+</div>
+<li id="TEMPLATE_attachedComment">
+	<div id="fileInfo" class="file_info">
+		<div id="commentFileType" class="file_type"></div>
+		<ul class="file_txt">
+			<li>
+				<span id="commentFileName" class="file_ttl main_contents_temp" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">물물물</span>
+			</li>
+			<li>
+				<span id="commentFileSize" class="capacity">646KB</span>
+			</li>
+			<li>
+				<span id="commentFileFavorite" class="ico bookmark"></span>
+			</li>
+		</ul>
+		<div id="commentDetailMenu" class="detail_menu">		<!-- on 클래스를 추가 하면 메뉴가 활성화 -->
+			<span id="btnMore" class="more">more</span>
+			<div class="layer_pop more_file_menu">
+				<ul>
+					<li id="commentAttachDownload" style="display:none">원문보기</li>
+					<li id="commentAttachDownload">다운로드</li>
+					<li id="commentAttachDelete" style="display:none">삭제</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</li>
+<div id="TEMPLATE_topicTypeDetail_1" class="comment">
+	<div id="userPic" class="usr_pic">
+		<img class="mask" src="/img/pic_mask_40.png">
+		<img id="photo" class="photo" src="/img/thmb_nopic.gif">
+	</div>
+	<ul id="commentBodyArea" class="usr_comment">
+		<li id="commentWriterArea">
+			<span id="name" class="name"></span>
+			<span id="position" class="class"></span>
+			<span id="favorite" class="ico bookmark"></span>
+		</li>
+		<li id="editTools" class="confirm_mod" style="display: none;">
+			<span id="edit" class="modify">저장</span>
+			<span id="cancelEdit" class="cancle">취소</span>
+		</li>
+		<li class="go_modify" onclick="javascript:showMore(event);">
+			<span class="ico set"></span>
+			<div class="layer_pop">
+				<ul>
+					<li id="edit">수정</li>
+					<li id="delete">삭제</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<p id="commentBody"></p>
+			<input type="hidden" id="originalCommentBody" name="originalCommentBody" value="">
+		</li>
+		<li id="modifyTextArea" style="display:none">
+			<textarea id="textArea" class="textarea"></textarea>
+		</li>
+		<li>
+			<span id="modifyDate" class="date"></span>
+		</li>
+		<li>
+			<div id="contentsAttach_" class="file_info">
+				<div id="fileType" class="file_type"></div>
+				<ul id="commentAttachArea" class="file_txt">
+					<li>
+						<span class="file_ttl_width">
+							<span id="fileName" class="file_ttl comment_attach_temp" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"></span>
+						</span>
+					</li>
+					<li>
+						<span id="fileSize" class="capacity"></span>
+					</li>
+					<li>
+						<span id="favorite" class="ico bookmark"></span>
+					</li>
+				</ul>
+				<div class="detail_menu" onclick="javascript:showMore(event);">
+					<span class="more"></span>
+					<div class="layer_pop more_file_menu">
+						<ul>
+							<li id="attachDownload">다운로드</li>
+							<li id="commentDeletable" style="display: none;">삭제</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<input type="hidden" id="topicTypeDetail" name="topicTypeDetail" value="1">
+</div>
+<div id="TEMPLATE_topicTypeDetail_2" class="article_box search_box">
+	<ul id="attachSearchList_" class="usr_opinion topic_sentence duty">
+		<li id="authorInfoArea" class="writer_info">
+			<span id="name" class="name"></span>
+			<span id="position" class="class"></span>
+			<span id="createDate" class="date"></span>
+			<span id="contentsBookmark" class="ico bookmark"></span>
+		</li>
+		<li id="contentsArea">
+			<h3>
+				<span id="instructionsMark" class="duty">
+					업무요청
+				</span>
+				<span id="title"></span>
+			</h3>
+			<p id="bodyArea" style="word-wrap: break-word;"></p>
+		</li>
+		<li id="statusArea" class="work_state" style="display: none;">
+			<span id="status"></span>
+			<span class="classify">
+				업무기한
+			</span>
+			<span id="duedate"></span>
+		</li>
+		<li id="countArea" class="attached" style="display: none;">
+			<span id="commentCount" class="commnt">의견<em></em></span>
+			<span id="attachCount" class="file">첨부<em></em></span>
+		</li>
+	</ul>
+	<div class="btn_func one">
+		<div class="func one">
+			<div id="_favorite" class="ico bookmark"></div>
+		</div>
+	</div>
+	<input type="hidden" id="topicTypeDetail" name="topicTypeDetail" value="2">
+</div>
+<div id="TEMPLATE_topicTypeDetail_3" class="article_box search_box">
+	<ul id="attachSearchList_" class="topic_sentence srch_file">
+		<div id="fileFavoriteInfo" class="file_info">
+			<div id="fileIcon" class="file_type"></div>
+			<ul class="file_txt">
+				<li id="fileInfoArea" class="file_dscrpt">
+					<span class="file_ttl_width">
+						<span id="fileName" class="file_ttl file_favorite_temp" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"></span>
+						<span id="capacity" class="capacity"></span>
+						<span id="fileFavorite" class="ico bookmark"></span>
+					</span>
+				</li>
+				<li id="authorArea" class="file_dscrpt">
+					<span id="name" class="name"></span>
+					<span id="date" class="date"></span>
+				</li>
+			</ul>
+		</div>
+	</ul>
+	<div class="btn_func two">
+		<div class="func">
+			<div id="_favorite" class="ico bookmark"></div>
+		</div>
+		<div class="func">
+			<div class="ico down"></div>
+		</div>
+	</div>
+	<input type="hidden" id="topicTypeDetail" name="topicTypeDetail" value="2">
+</div>
+<div id="TEMPLATE_topicTypeDetail_4" class="article_box search_box">
+	<ul class="topic_sentence srch_file">
+		<div id="fileSearchInfo" class="file_info">
+			<div id="fileType" class="file_type"></div>
+			<ul class="file_txt">
+				<li class="file_dscrpt">
+					<span id="fileName" class="file_ttl">
+					</span>
+					<span id="capacity" class="capacity"></span>
+					<span id="favorite" class="ico bookmark"></span>
+				</li>
+				<li class="file_dscrpt">
+					<span id="userName" class="name"></span>
+					<span id="date" class="date"></span>
+				</li>
+			</ul>
+			<div id="detailMenu" class="detail_menu">
+				<span id="btnMore" class="more">more</span>
+				<div class="layer_pop more_file_menu">
+					<ul>
+						<li id="searchDetailView">원문보기</li>
+						<li id="searchAttachDownload">다운로드</li>
+						<li id="searchAttachDelete" style="display:none">삭제</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</ul>
+</div>
+<div id="TEMPLATE_attachedDetailComment" class="file_info">
+	<div id="commentFileType" class="file_type"></div>
+	<ul class="file_txt">
+		<li>
+			<span id="commentFileName" class="file_ttl main_contents_temp" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"></span>
+		</li>
+		<li>
+			<span id="commentFileSize" class="capacity">646KB</span>
+		</li>
+		<li>
+			<span id="commentFileFavorite" class="ico bookmark"></span>
+		</li>
+	</ul>
+	<div id="commentDetailMenu" class="detail_menu">		<!-- on 클래스를 추가 하면 메뉴가 활성화 -->
+		<span id="btnMore" class="more">more</span>
+		<div class="layer_pop more_file_menu">
+			<ul>
+				<li id="commentDetailView" style="display:none">원문보기</li>
+				<li id="commentAttachDownload">다운로드</li>
+				<li id="commentAttachDelete" style="display:none">삭제</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+	
+		
+	
+	
+
+
+<div id="TEMPLATE_groupInfo" class="detail_area" style="height: 974px;">
+	<div class="group_info article_box">
+		<div id="groupBaseInfo">
+		<h2 class="title nodepth">
+			<span id="groupName"></span>
+		</h2>
+			<dl>
+				<dt id="groupAdminTitleArea" style="display: none;">개설자</dt>
+				<dd id="groupAdminValueArea" style="display: none;"></dd>
+				<dt>개설일</dt>
+				<dd id="createDateArea">
+					<span id="createDate"></span>
+				</dd>
+				<dt id="dueDateTitleArea" style="display: none;">
+					기한
+				</dt>
+				<dd id="dueDateValueArea" style="display: none;">
+					<span id="dueDate"></span>
+					<span id="squareStatus"></span>
+				</dd>			
+			</dl>
+			
+			<div id="groupDescription" class="details">
+				<p>
+					<span id="descriptionBody"></span>
+					<span id="editDescription" class="ico modify" onclick="modifySquareView();" style="display: none;">
+						수정
+					</span>
+				</p>
+			</div>
+		</div>
+	 	<div class="detail_info_member">
+	 		<h4>구성원</h4>
+	 		<div id="groupMemberInfo" class="members" style="display: none !important;">
+			</div>
+			<div id="nopicGroupMemberInfo" style="display: none;">
+				<h5 class="admin">관리자</h5>
+				<p id="adminMemberList"></p>
+				<h5 class="member">구성원</h5>
+				<p id="userMemberList"></p>
+			</div>
+		</div>
+	</div>
+</div></div>
+		</div>
+
+<script type="text/javascript">
+    /* 창크기 조절 */
+    var listContainerWidth = null;
+    $('.controlbar').draggable({
+            opacity: 0.7,
+            containment: 'html',
+            axis : 'x',
+            start : function(){
+                $('.list_vertical').css('opacity', 0.6);
+            },
+            stop : function(){
+                $('.list_vertical').css('opacity', 1);
+                listContainerWidth = $(this).position().left;
+                //console.log("스크롤바 위치 : " + listContainerWidth + " / 왼쪽컨텐츠 사이즈 : " + (listContainerWidth ))
+                $('.list_vertical .container_wrap_left').css('width', listContainerWidth);
+                $('.list_vertical .view_content_box').css('margin-left', listContainerWidth);
+                $('.list_vertical .container_wrap_left .textarea').css('width', listContainerWidth - 100 );
+            }
+    })
+</script>
+</body>
+</html>

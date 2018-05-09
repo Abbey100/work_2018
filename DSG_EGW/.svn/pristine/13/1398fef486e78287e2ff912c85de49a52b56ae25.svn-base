@@ -1,0 +1,766 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<style>
+body, .container_box {
+	overflow-y: auto;
+}
+</style>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">기본<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table style="width:770px">
+          <colgroup>
+          <col style="width:88px">
+          <col style="width:245px">
+          <col style="width:104px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row">제목</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:190px">
+                  <label class="pd_lf10">
+                    <input type="checkbox">
+                    보안</label>
+                </div></td>
+              <th scope="row">등록일자</th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.10" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row">문서번호</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row">수(발)신자</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:230px">
+                </div></td>
+            </tr>
+            <tr>
+              <th scope="row">기안부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">결재경로</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">원기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <th scope="row">서식명</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row">종류/유형</th>
+              <td><div class="inp_box">
+                  <select class="basic_select" style="width:103px">
+                    <option value="문서전체">문서전체</option>
+                  </select>
+                  <span class="partition">/</span>
+                  <select class="basic_select" style="width:103px">
+                    <option value="결재전채">결재전체</option>
+                  </select>
+                </div></td>
+            </tr>
+            <tr>
+              <th scope="row">서식명</th>
+              <td><div class="inp_box">
+                  <label>
+                    <input type="checkbox">
+                    종료</label>
+                  <label>
+                    <input type="checkbox">
+                    발송</label>
+                  <label>
+                    <input type="checkbox">
+                    접수</label>
+                  <label>
+                    <input type="checkbox">
+                    진행</label>
+                </div></td>
+              <th scope="row">시행종류</th>
+              <td><div class="inp_box">
+                  <label>
+                    <input type="checkbox">
+                    대외시행</label>
+                  <label>
+                    <input type="checkbox">
+                    대내시행</label>
+                  <label>
+                    <input type="checkbox">
+                    내부결재</label>
+                </div></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+              <td class="btn_box btn_s " ><ul class="layout_rgt">
+                  <li><span><a href="#" class="fnt_bold_n" >조건선택</a></span></li>
+                  <li><span><a href="#" class="fnt_bold_n">조건저장</a></span></li>
+                </ul></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 -->
+  <div class="title_area">
+    <h2 class="title">서식함<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  
+  <!-- 서식함 -->
+  <div class="detail_srch_wrap srch_document"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="formatNm">서식명</label></th>
+              <td><input id="formatNm" name="formatNm" class="basic_inp" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="col"><label for="formatClNm">서식분류</label></th>
+              <td><select id="formatClNm" name="formatClNm" class="basic_select" style="width:100%;">
+                  <option value="" selected="selected">전체</option>
+                  <option title="결재양식함" value="J10CB121430000001000">결재양식함</option>
+                  <option title="보고서식(내부결재)" value="J10CB121430000002000">보고서식(내부결재)</option>
+                  <option title="신청서" value="J10CB121430000003000">신청서</option>
+                  <option title="연동서식" value="J10CB121500000059000">연동서식</option>
+                  <option title="협조문(발수신서식)" value="JHOMS131290000295000">협조문(발수신서식)</option>
+                </select></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">결재대기<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  
+  <!-- 상세 검색 영역 --> 
+  <!-- 결재대기 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="결재대기상세조회" style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="sj">제목</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+            </tr>
+            <tr>
+              <th scope="row">결재경로</th>
+              <td colspan="3"><div class="inp_box"> <a href="#" class="btn_human">결재경로</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">결재진행<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 결재진행 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="결재진행상세조회"style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="sj">제목</label></th>
+              <td><input id="sj" name="sj" class="basic_inp" title="제목" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row"><label for="process">처리상태</label></th>
+              <td><div class="inp_box">
+                  <label class="" for="process">
+                    <input id="process" name="sttus" type="checkbox" value="process"/>
+                    <input type="hidden" name="_sttus" value="on"/>
+                    진행</label>
+                  <label class="" for="reExmnt">
+                    <input id="reExmnt" name="sttus" type="checkbox" value="reExmnt"/>
+                    <input type="hidden" name="_sttus" value="on"/>
+                    반려</label>
+                  <label class="" for="reAppn">
+                    <input id="reAppn" name="sttus" type="checkbox" value="reAppn"/>
+                    <input type="hidden" name="_sttus" value="on"/>
+                    재지정요청</label>
+                  <label for="rtrvl">
+                    <input id="rtrvl" name="sttus" type="checkbox" value="rtrvl"/>
+                    <input type="hidden" name="_sttus" value="on"/>
+                    회수</label>
+                </div></td>
+            </tr>
+            <tr>
+              <th class="pop_search"><div onclick="javascript:fncSearchOrgzntUserPopInit('')"><span>결재경로</span></div></th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">사람</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">공람대기/완료<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 공람대기/완료 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="공람대기_공람완료상세조회" style="width:750px">
+          <colgroup>
+          <col style="width:83px">
+          <col style="width:240px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="sj" name="sj" class="basic_inp" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="actorName">공람지정자</label></th>
+              <td><input id="actorName" name="actorName" class="basic_inp" type="text" value="" style="width:100%;"/></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+            </tr>
+            <tr>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">사람</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:230px">
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">보낸공람<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 보낸공람 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="공람지정상세조회" style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="sj">제목</label></th>
+              <td><input id="sj" name="sj" class="basic_inp" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">사람</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <th scope="row">공람자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">발송대기<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 발송대기 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="발송대기상세조회" style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="sj">제목</label></th>
+              <td colspan="3"><input id="sj" name="sj" class="basic_inp" type="text" value="" style="width:245px"/></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+            </tr>
+            <tr>
+              <th>결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">사람</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="extrnl">시행종류</label></th>
+              <td><div class="inp_box">
+                  <label class="pd_rgt_10">
+                    <input type="checkbox">
+                    대외시행</label>
+                  <label class="pd_rgt_10">
+                    <input type="checkbox">
+                    대내시행</label>
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">발송현황<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 발송현황 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="발송현황상세조회" style="width:750px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:245px">
+          <col style="width:90px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="sj">제목</label></th>
+              <td><input id="sj" name="sj" class="basic_inp" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:200px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:100%">
+                </div></td>
+              <th scope="row"><label for="receivers">수신자</label></th>
+              <td><input id="receivers" name="receivers" class="basic_inp" type="text" value="" style="width:100%;"/></td>
+            </tr>
+            <tr>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">사람</a>
+                  <div class="input_box" style="width:215px"> <span class="recipient"><em>사람</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td ><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="extrnl">시행종류</label></th>
+              <td colspan="3"><div class="inp_box">
+                  <label class="pd_rgt_10">
+                    <input type="checkbox">
+                    대외시행</label>
+                  <label class="pd_rgt_10">
+                    <input type="checkbox">
+                    대내시행</label>
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">수신반송<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 수신반송 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="수신반송조회">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:160px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">반송자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">반송부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td colspan="5"><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:160px">
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 --> 
+  
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">접수대기<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+    <div class="ttl_filter">
+      <select class="basic_select">
+        <option>부서</option>
+        <option>UX디자인팀</option>
+      </select>
+      <select class="basic_select">
+        <option>처리현황</option>
+        <option> </option>
+      </select>
+      <select class="basic_select">
+        <option>서식명</option>
+        <option> </option>
+      </select>
+    </div>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 접수대기 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="수신반송조회">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:160px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">반송자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">반송부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row">발송유형</th>
+              <td colspan="5"><label class="pd_rgt_10">
+                  <input type="checkbox">
+                  전체</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  수신문서(대내)</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  수신문서(대외)</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  협조문서</label>
+                <label>
+                  <input type="checkbox">
+                  감사문서</label></td>
+            </tr>
+            <tr>
+              <th scope="row">발송유형</th>
+              <td colspan="5"><label class="pd_rgt_10">
+                  <input type="checkbox">
+                  도착</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  진행</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  내부반려</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  내부회수</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  반송/외부반송</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  협조외부/감사외부</label>
+                <label>
+                  <input type="checkbox">
+                  재발송요청</label></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 --> 
+</div>
+</body>
+</html>

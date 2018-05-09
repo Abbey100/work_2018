@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/*
+ layout.css 추가 
+.header h1.community {padding:0 0 0 90px; line-height:54px; font-size: 19px; color: #000; font-weight: normal; display:inline-block;}
+.header .gohome{display:inline-block;padding:0 10px 0 18px;margin-top:-3px;background: url('../img/community/ico_dot01.png') no-repeat 10px 7px;position: relative;top: -3px;}
+.header .gohome a{font-size:12px;color:#969696;line-height:18px;-top:-3px;} 
+.header .gohome a:hover{text-decoration:unline;}
+*/

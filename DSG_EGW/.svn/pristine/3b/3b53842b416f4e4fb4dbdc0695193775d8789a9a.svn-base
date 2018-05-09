@@ -1,0 +1,303 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<title>HANDY GROUPWARE</title>
+<script src="../js/jquery-latest.min.js"></script>
+<script>	
+			
+		 var first_page = 1;
+		 var link_flag = false;	
+		 var more_flag = true;
+		
+		$(document).ready(function(){	
+			
+			var menu_length = $(".menu li").length;
+			var menu_w = $(".menu li").width();	//82
+			
+			var header_w = $("#header").outerWidth();	//전체
+			var logo_w = $("#header h1").outerWidth();	//로고	
+			var more_w = $(".menu_more").outerWidth();	//more_menu
+			var info_w = $(".info_wrap").outerWidth();	//info_wrap
+			var all_menu_w = menu_length * menu_w;
+			
+			var box_w = header_w - logo_w - info_w;	//add - select menu border 2px 
+			var box_min_w = menu_w * 8 + 2;
+			var n = Math.floor(box_w / menu_w);
+			var left_n = Math.floor(menu_w * n);
+			
+			var link_left_w = logo_w + box_w + more_w;
+			
+			//alert("box_w : "+box_w + ", link_left_w : "+link_left_w + ", ");
+			if(box_w > all_menu_w){ 	
+				var box_w = header_w - logo_w - info_w;
+				var link_left_w = logo_w + box_w;
+				more_flag = false;
+				$(".menu_more").css("display","none");
+				$(".menu_area").width(box_w);
+				$(".menu_link_list").width(box_w);
+				if(link_flag){
+					$(".link_menu_area").css("left","214px");
+				}else {
+					$(".link_menu_area").css("left",link_left_w);
+				}
+			} else {
+				more_flag = true;				
+				$(".menu_more").css("display","block");
+				
+				if(box_w < box_min_w){
+					$(".menu_area").width(box_min_w);
+					$(".menu_link_list").width(box_min_w);					
+                    $(".menu_link_list").width(box_min_w);		
+				} else{
+					$(".menu_area").width(box_w);
+					$(".menu_link_list").width(box_w);
+                    $(".menu_link_list").width(box_min_w);		
+				}
+				
+				
+				if(link_flag){
+					$(".link_menu_area").css("left","214px");
+				}else {
+					$(".link_menu_area").css("left",link_left_w);
+				}				
+			}						
+		});			
+		
+			$(window).bind('resize', function(){
+			var menu_length = $(".menu li").length;
+			var menu_w = $(".menu li").width();	//82
+			
+			var header_w = $("#header").outerWidth();	//전체
+			var logo_w = $("#header h1").outerWidth();	//로고	
+			var more_w = $(".menu_more").outerWidth();	//more_menu
+			var info_w = $(".info_wrap").outerWidth();	//info_wrap
+			var all_menu_w = menu_length * menu_w;
+			
+			var box_w = header_w - logo_w - info_w;
+			var box_min_w = menu_w * 10;
+			var n = Math.floor(box_w / menu_w);
+			var left_n = Math.floor(menu_w * n);
+			var link_left_w = logo_w + box_w + more_w;
+			
+			if(box_w > all_menu_w){ 	
+				more_flag = false;
+			
+				var box_w = header_w - logo_w - info_w;
+				var link_left_w = logo_w + box_w + more_w;	
+								
+				if(!link_flag){				
+					$(".menu_more").css("display","block");
+				}	
+				
+				$(".menu_area").width(box_w);
+				$(".menu_link_list").width(link_left_w);
+				$(".menu").css("left","0");
+				/*링크 */
+				if(link_flag){
+					$(".link_menu_area").css("left","214px");					
+				}else {
+					$(".link_menu_area").css("left",link_left_w);					
+				}
+							
+			} else {
+				more_flag = true;				
+				if(!link_flag){				
+					$(".menu_more").css("display","block");
+				}				
+				if(box_w < box_min_w){
+					$(".menu_area").width(box_min_w);	
+					$(".menu_link_list").width(link_left_w);										
+				} else{
+					$(".menu_area").width(box_w);
+					$(".menu_link_list").width(link_left_w);
+				}
+								
+				if(link_flag){
+					$(".link_menu_area").css("left","214px");
+				}else {
+					$(".link_menu_area").css("left",link_left_w);
+				}			
+			}		
+			}); 
+				
+				
+		  function moremenu_open(){			
+				var menu_area_w = $(".menu_area").outerWidth();
+				var menu_w = $(".menu li").outerWidth();
+				var n = Math.floor(menu_area_w/menu_w);
+				var menu_l = 0;
+							
+				$itemsBox = $('.menu');
+				
+				if(first_page == 0){										
+					$(".menu_more").removeClass("more_right");								
+				} else {								
+					$(".menu_more").addClass("more_right");																						
+				}
+				
+				for(var i=0;i<n;i++){
+					menu_l += $('.menu li')[i].offsetWidth;				
+				}				
+								
+				$itemsBox.animate(
+					{'left' : '-' + menu_l * first_page + 'px' }
+					,300							
+				);
+				first_page = first_page == 0 ? 1:0;				
+			}
+			
+			
+			function link_on(){
+								
+				var move_w = $("#header h1").outerWidth() + $('.menu_area').outerWidth() + 7;
+				
+				
+				if(more_flag == true){
+					move_w = move_w +$(".menu_more").outerWidth();
+				}
+				
+				if(link_flag){		
+								
+					$('.menu_link').removeClass('link_on');					
+				} else {	//on
+					
+					$(".menu_more").css("display","none");
+					move_w = '214px';
+					$('.menu_link').addClass('link_on');					
+				}
+								
+				$itemsBox = $('.link_menu_area');
+				$itemsBox.animate(
+					{'left' :  move_w} 
+					,400 
+					,'swing'
+					,function(){
+						if(link_flag){
+							link_flag=false;
+							if(more_flag && !link_flag){								
+								$(".menu_more").css("display","block");
+							}
+							
+						} else {
+							link_flag=true;							
+						}
+					}							
+				);					
+			}
+            
+</script>
+<script> 
+$(document).ready(function(){
+    $(".dw_arrw").click(function(){
+        $(".lst_lgn").slideDown("fast");
+    });
+});
+    
+$(document).ready(function(){
+    $(".box_cls").click(function(){
+        $(".lst_lgn").slideUp("fast");
+    });
+});    
+</script>
+</head>
+<body>
+<div id="wrap_menu">
+  <div id="header">
+    <h1> <a href=""><img src="../img/logo.png" alt="HANDY Groupware" width="175" height="37"></a> </h1>
+    <div class="nav_area">
+      <div class="menu_area">
+        <ul id="normal_menu" class="menu">
+          <li class="menu_mail menu_on "><a id="menu_0" href="frame.html" target="_parent">메일</a></li>
+          <li class="menu_board"><a id="menu_1" href="board_frame.html" target="_parent">게시판</a></li>
+          <li class="menu_work"><a id="menu_2" href="#" target="_parent">업무넷</a></li>
+          <li class="menu_documentflow"><a id="menu_3" href="document_frame.html" target="_parent">결재</a></li>
+          <li class="menu_document"><a id="menu_4" href="approval_frame.html" target="_parent">문서함</a></li>
+          <li class="menu_calendar"><a id="menu_5" href="calendar_frame.html" target="_parent">일정</a></li>
+          <li class="menu_equipment"><a id="menu_6" href="equipment_frame.html" target="_parent">설비예약</a></li>
+          <li class="menu_cloud"><a id="menu_7" href="cloud_frame.html" target="_parent">클라우드</a></li>
+          <li class="menu_contact"><a id="menu_8" href="contact_frame.html" target="_parent">주소록</a></li>
+          <li class="menu_research"><a id="menu_9" href="research_frame.html" target="_parent">설문</a></li>
+          <li class="menu_club"><a id="menu_10" href="">동호회</a></li>
+          <li class="menu_meeting"><a id="menu_11" href="">회의</a></li>
+          <li class="menu_sns"><a id="menu_12" href="">SNS</a></li>
+          <li class="menu_ams"><a id="menu_13" href="">근태</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="info_wrap">
+      <div class="menu_more"> <a href="javascript:moremenu_open()">more</a> </div>
+      <div class="menu_link"> <a href="#" onclick="javascript:link_on();">link</a> </div>
+      <div class="menu_admin"> <a href="#" onclick="javascript:admin_link_on();">link</a> </div>
+      <div class="menu_alram"> <a href="#" onclick="javascript:alram_layer_on();">link</a> </div>
+      <div class="user_area">
+      <!-- 마지막 접속 정보 시작 -->
+        <!-- 정보내용 DIV -->
+        <div class="lst_lgn">
+          <!-- 정보내용 DIV 닫기버튼 -->
+          <span><a href="#" class="box_cls" title="닫기"></a></span>
+          <h3>마지막 접속 정보</h3>
+          <ul>
+            <!-- 날짜표시 -->
+            <li>2014.11.15 12:30</li>
+            <!-- IP표시 -->
+            <li>IP. 10.21.3.178</li>
+          </ul>
+        </div>
+        <!-- 정보내용 DIV 열기버튼 -->
+        <span><a class="dw_arrw" href="#" title="마지막 접속 정보"></a></span>
+        <!-- // 마지막 접속 정보 끝 -->
+        <span class="alarm_area"><a href="#"><p class="count">9</p></a></span>
+        <span class="user_pic"><img src="../img/@aoi.jpg" alt="홍길동(주임 연구원)"></span> <span class="user_inform">
+        <p class="user_dept">품질관리팀</p>
+        <p class="user_name">김민우(주임 연구원)aaaa</p>
+        <p class="add_officer"  style="display:none;">
+          <select>
+            <option value="홍길동(주임 연구원)">홍길동(주임 연구원)</option>
+            <option value="강감찬(책임 연구원)">강감찬(책임 연구원)</option>
+          </select>
+        </p>
+        </span> <span class="user_config">
+        <ul class="gnb">
+          <li><a href="" class="config" title="환경설정"></a></li>
+          <li><a href="" class="logout" title="로그아웃"></a></li>
+        </ul>
+        </span> </div>
+    </div>
+    <div class="link_menu_area">
+      <ul id="link_menu" class="menu_link_list">
+        <li><a href="">CSD</a></li>
+        <li><a href="">EDMS</a></li>
+        <li class="link_selct"><a href="">Humanest</a></li>
+        <li><a href="">Insight</a></li>
+        <li><a href="">KMS</a></li>
+        <li><a href="">Promise</a></li>
+        <li><a href="">SPIM</a></li>
+        <li><a href="">Lukas</a></li>
+        <li><a href="">QMS</a></li>
+        <li><a href="">Homepage</a></li>
+        <li><a href="">식단</a></li>
+      </ul>
+    </div>
+    <div class="admin_menu_area" style="display:none">
+      <ul id="admin_menu" class="admin_link_list">
+        <li><a href="">조직도</a></li>
+        <li><a href="">결재관리</a></li>
+        <li class="link_selct"><a href="">자료관</a></li>
+        <li><a href="">게시판</a></li>
+        <li><a href="">시스템정보</a></li>
+        <li><a href="">동호회</a></li>
+        <li><a href="">BBS</a></li>
+        <li><a href="">메일</a></li>
+        <li><a href="">클라우드</a></li>
+        <li><a href="">엑션로그</a></li>
+        <li><a href="">결재통계</a></li>
+        <li><a href="">연동서식</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

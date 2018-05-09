@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>스퀘어 Main</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<link href="../../css/fotorama.css" rel="stylesheet"> <!-- 갤러리 플러그인 css -->
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- fotorama.js. -->
+        <script src="../../js/lib/fotorama.js"></script>
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/square.css" />
+		
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>스퀘어</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>주소록</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">                 
+				<div class="gnb">
+					<a class="home"> 
+					</a>
+					<ul class="gnb_menu">
+						<li class=""><a class="mail">메일</a></li>
+						<li class=""><a class="board">게시판</a></li>
+						<li class=""><a class="square">스퀘어</a></li>
+						<li class=""><a class="approval">결재</a></li>
+						<li class=""><a class="schedule">일정</a></li>
+						<li class=""><a class="equipment">설비</a></li>
+						<li class=""><a class="contact">주소록</a></li>
+						<li class=""><a class="storage">스토리지</a></li>                    
+						<li class=""><a class="community">동호회</a></li>
+						<li class=""><a class="research">설문</a></li>
+						<li class=""><a class="link" title="연결된 기능 목록">추가메뉴</a></li>
+					</ul>
+				</div>            
+			</div> 
+			<!-- //메뉴영역 -->      
+			<!-- body -->
+			<div class="body"> 
+				
+			<!-- 스퀘어 -->
+			<div class="lnb_area">   
+				<div class="lnb_lst">
+					<!-- Action Button Area -->
+					<div class="big_action">
+						<a class="action_btn">그룹 만들기</a>
+					</div>
+					<!-- basic list menu area -->   
+					<div class="lnb_menu_area">
+						<div class="handy-scroll">
+							<!-- 태그 메뉴 -->
+							<div class="lnb_menu">
+								<a class="menu_title selected">워크피드</a>
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title">플래그 글<span class="count">4</span></a>
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title">멘션 글<span class="count">4</span></a>
+							</div>
+							<div class="lnb_menu divide">
+								<a class="menu_title">VIP</a>
+								<a class="ico_btn small setting">내 그룹 설정</a>
+							</div>
+							<!-- 즐겨찾는 -->
+							<div class="lnb_menu divide">
+								<a class="menu_title category">즐겨찾는 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>							
+							<!-- 내 그룹 -->
+							<div class="lnb_menu  divide open">
+								<a class="menu_title category">내 그룹</a> 
+								<div class="group">
+									<a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+									<a class="ico_btn small setting">내 그룹 설정</a>
+								</div>
+								<!-- 트리 시작 -->
+								<div class="tree">
+									<ul class="dynatree-container">
+										<li class="">
+											<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+												<span class="dynatree-expander"></span>
+												<span class="dynatree-icon"></span>
+												<a href="#" class="dynatree-title">
+													<span class="node-folder" >2015</span>
+												</a>
+											</div>
+											<ul style="">
+												<li class="">
+													<span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+														<span class="dynatree-connector"></span>
+														<span class="dynatree-icon"></span>
+														<a href="#" class="dynatree-title">
+															<span class="node-group" >file_1</span>
+														</a>
+													</span>
+												</li>
+												<li class="dynatree-lastsib">
+													<span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+														<span class="dynatree-connector"></span>
+														<span class="dynatree-icon"></span>
+														<a href="#" class="dynatree-title">
+															<span class="node-group">file_2</span>
+														</a>
+													</span></li>
+											</ul>
+										</li>
+										<li class="">
+											<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >2016</span></a></span>
+											<ul style="display: none;">
+												<li class="">
+													<span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+												</li>
+												<li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+												<li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+											</ul>
+										</li>
+									</ul>
+								</div>	
+							</div>
+							<div class="lnb_menu">
+								<a class="menu_title category">공개 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>	
+							<div class="lnb_menu divide">
+								<a class="menu_title category">종료된 그룹</a>
+								<ul class="sub_lst">
+									<li><a class="selected">기본 그룹</a></li>
+									<li><a>EGW TFT</a></li>
+								</ul>
+							</div>
+							<ul class="lnb_menu">
+								<li><a>그룹 초대</a><span class="count">4</span></li>
+							</ul>
+						</div>
+					</div>
+					<!-- setting menu area -->
+					<div class="setting_area">
+						<a class="btn_setting">설정</a>
+					</div>
+					<!-- // setting menu area -->
+				</div>
+			</div>
+			<!-- // 스퀘어 -->
+				<!-- content -->
+				<div class="container_area square" >	
+					<!-- 본문 영역 -->
+					<div class="container">
+						<!-- 타이틀 영역 -->
+						<div class="hgroup">
+							<h2>이미지뷰어 레이어팝업 sample</h2>
+						</div>
+
+						<div>
+							<br><br>
+							<p style="font-size:18px;">사용방법</p><br>
+							<ol style="font-size:14px;">
+								<li style="padding:0 0 10px 0;">1. 페이지의 head 태그에 플러그인 관련 css 추가 <span style="color:red;">link href="../../css/fotorama.css" rel="stylesheet"</span></li>
+								<li style="padding:0 0 10px 0;">2. 페이지의 head 태그에 플러그인 관련 js 추가 <span style="color:red;">script src="../../js/lib/fotorama.js"</span></li>
+								<li style="padding:0 0 10px 0;">3. 레이어팝업을 불러오려는 이미지에 클래스 추가 <span style="color:red;">class="imgView_link"</span></li>
+								<li style="padding:0 0 10px 0;">4. 닫는 body 태그 위에 레이어팝업 소스 추가 <span style="color:red;">lypop_imgviewer_wrap에 해당하는 내용</span></li>
+								<li style="padding:0 0 10px 0;">5. 아래 이미지 클릭하면 레이어팝업을 볼 수 있습니다.</li>
+							</ol>
+							<br><br>
+							<a href="#" class="imgView_link"><img src="../../img/square/ex_img_01.jpg" /></a>
+							<a href="#" class="imgView_link"><img src="../../img/square/ex_img_01.jpg" /></a>
+						</div>
+
+					</div>
+					<!-- // 본문 영역 -->		
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+
+		<!-- lypop_imgviewer_wrap -->
+		<div class="lypop_imgviewer_wrap">
+			<div class="lypop_imgviewer_head">
+				<div class="imgviewer_title"><span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span><em>EGW 벤치마킹 이미지 01.jpg 이름이 길어지면 알아서 말줄임 됩니다. 이름이 길어지면 알아서 말줄임 됩니다.이름이 길어지면 알아서 말줄임 됩니다.</em></div>
+				<div class="imgviewer_img_num"><span class="now">1</span>&nbsp;/&nbsp;4</div>
+				<ul class="imgviewer_menu_wrap">
+					<li><a href="#" class="imgviewer_btn down">다운로드</a></li>
+					<li><a href="#" class="imgviewer_btn alldown">전체다운로드</a></li>
+					<li><a href="#" class="imgviewer_btn delete">삭제</a></li>
+				</ul>
+				<a href="#" class="imgviewer_btn_close">레이어 팝업 닫기</a>
+			</div>
+			<div class="lypop_imgviewer_cont">
+				<!-- 
+					이미지 갤러리 플러그인 옵션
+
+					data-width="100px"                       // 이미지 넓이
+					data-height="100px"                      // 이미지 높이
+					data-nav="thumbs"                       // 섬네일 사용 유무
+					data-thumbwidth="78px"                  // 섬네일 넓이
+					data-thumbheight="78px"                 // 섬네일 높이
+					data-ratio="800/600"                    // 해상도
+					data-fit="cover"                        // 큰 이미지가 컨테이너 영역보다 작거나 클 경우 처리  contain (default), cover, scaledown, none
+					data-transition="slid"                  // 다음 이미지로 넘기는 모션 slid(default), crossfade
+					data-Loop="true"                        // 무한 루프 설정
+					data-autoplay="1000"                    // 자동 롤링
+					data-navposition="top"                  // 네이게이션 위치
+					data-direction="rtl"                    // 큰 이미지 컨테이너 영역에서의 이미지 정렬  rtl (오른쪽 정렬)
+					data-arrows="true"                      // 화살표 이미지 숨기기
+				-->
+				
+				<div class="lypop_imgviewer_inner">
+					<div class="fotorama" data-width="800px" data-nav="thumbs" data-thumbwidth="100px" data-thumbheight="100px" data-Loop="true" data-transition="slid" data-fit="none">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+						<img src="../../img/sample/thumb_fotorama_01.jpg">
+					</div>
+				</div>
+				
+				<!-- //이미지 갤러리 -->
+			</div>
+		</div>
+		<!-- //lypop_imgviewer_wrap -->
+
+	</body>
+</html>

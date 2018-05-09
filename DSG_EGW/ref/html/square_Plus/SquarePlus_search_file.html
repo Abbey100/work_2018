@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 검색 및 결과 : 01</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/common.js"></script>
+        <script src="../../js/square_guide.js"></script>
+  </head>
+<body class="sq_plus">
+<!-- 컨테이너 -->
+<div class="">
+<!-- 좌측 메뉴 영역 Left Menu Area -->
+<div id="" class="left_menu">
+ 
+<!-- Action Btn -->
+  <div class="btn_large"> <a class="" href="" title="그룹 만들기">그룹 만들기</a></div>
+<!-- // Action Btn --> 
+<!-- Quick Btn -->
+  <ul class="quickbtn_area three">
+      <li class="btn_go_workpeed">
+          <a title="워크피드" href="">
+              <span>워크피드</span>
+          </a>
+      </li>
+      <li class="btn_gathering">
+          <a title="관심글" href="">
+              <span>관심글</span>
+          </a>
+      </li>
+      <li class="btn_mention">
+          <a title="멘션" href="">
+              <span>멘션</span>
+          </a>
+      </li>
+  </ul>
+<!-- // Quick Btn -->
+<!--Tree Area-->  
+  <!--즐겨찾는 그룹-->    
+  <div id="" class="tree_area mg_tp_7 with_del">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> 
+          <span class="tree_ttl" onclick="">즐겨찾기 그룹</span> 
+      </div>
+        <!--// Tree Title Area-->
+        <!-- Group List-->
+       <ul id="" class="tree_cntnts_area">
+        <li id="" ondblclick="" class="">
+            <span class="group_name">우리그룹</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li id="" ondblclick="" class="all_branch">
+            <span class="group_name">재무회계팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>  
+        <li id="" ondblclick="" class="">
+            <span class="group_name">프로젝트 그룹웨어 스퀘어 플러스</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="" class="all_branch">
+            <span class="group_name">제품기획팀</span>
+            <a class="delete" href=""> delete</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li> 
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="delete" href="">delete</a>
+        </li>     
+       </ul>
+      <!-- // Group List-->   
+  </div>
+  <!--// 즐겨찾는 그룹-->
+  <!-- 나의 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl one tree_close" onclick="javascript:$(this).toggleClass('tree_close');">나의 그룹</span>
+          <a class="btn_tree_add" href="#"> </a>
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="my_group" style="display:none;">
+          <div id="tree">
+          <ul class="dynatree-container">
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2015">기본폴더</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+           <ul>
+           <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="전사공지">전사공지</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>   
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="제품기획팀">제품기획팀</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>          
+         </ul>
+          
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+          <span class="dynatree-expander"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2016">새폴더(1)</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          <ul>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="스퀘어룸01">스퀘어룸01</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="프로젝트 그룹웨어 스퀘어 플러스">
+             프로젝트 그룹웨어 스퀘어 플러스             
+          </span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-group" key="우리그룹">우리그룹</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span>
+          </li></ul>
+          </li>
+          <li class="">
+          <span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="2017">2017</span>
+          <a class="more" href="">more</a> 
+          </a></span>
+          </li>
+          <li class="dynatree-lastsib">
+          <span class="dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf">
+          <span class="dynatree-connector"></span>
+          <span class="dynatree-icon"></span>
+          <a class="dynatree-title">
+          <span class="node-folder" key="folder_0">folder</span>
+          <a class="more" href="">more</a> 
+          </a>
+          </span></li>
+          </ul></div>      
+      <!-- // Tree Part -->
+      <!-- Group "List" Part -->
+      <ul id="" class="tree_cntnts_area with_move">
+        <li id="" ondblclick="" class="">
+            <span class="group_name">프로젝트 그룹웨어 스퀘어 플러스의 다른 그룹</span>
+            <a class="move" href=""> move</a> 
+        </li>  
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>
+        <li id="" ondblclick="" class="">
+            <span class="group_name">경쟁사 동향분석</span>
+            <a class="move" href=""> move</a> 
+        </li>      
+       </ul>
+      <!-- // Group List Part -->   
+      </div>
+      <!-- // 나의 그룹 그룹부분-->
+   </div>
+   <!-- // 나의 그룹-->
+   <!-- 전사 그룹-->
+  <div id="" class="tree_area">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl" onclick="javascript:$(this).toggleClass('tree_close'); $('#test_all_group').css('display', 'none') ">전사 그룹</span> 
+      </div>
+      <!-- // Tree Title Area-->
+      <!-- Tree Part -->
+      <div class="tree_cntnts_area" style="" id="test_all_group">
+			<iframe frameborder="no" scrolling="no" height="100%" width="100%" cellspacing="0" cellpadding="0" src="square_org_All.html"></iframe>
+      </div>
+      <!-- // Tree Part -->            
+   </div>
+   <!-- // 전사 그룹-->
+    <!-- 종료 그룹-->
+  <div id="" class="tree_area with_hide">
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area">
+          <span class="tree_ttl" onclick="">종료 그룹</span> 
+      </div>
+        <!-- Group List-->
+       <ul class="tree_cntnts_area">
+            <span class="none"><p>종료된 그룹이 없습니다.</p></span>
+        <li class="">
+            <span class="group_name">프로젝트 스퀘어</span>
+            <a class="hide" href="">hide</a> 
+        </li>  
+      </ul>
+      <!-- Tree Part -->
+      <div class="tree_cntnts_area" style="display:none;">
+			<iframe frameborder="no" scrolling="no" height="100%" width="100%" cellspacing="0" cellpadding="0" src="square_org_All.html"></iframe>
+      </div>
+      <!-- // Tree Part -->            
+   </div>
+   <!-- // 종료 그룹-->
+   <!-- // 전사 그룹--> 
+   
+ <!-- Config -->
+   <a class="left_config" id="" href="#"><span>환경설정</span></a>
+ <!-- //Config -->
+</div>
+<!-- // 좌측 메뉴 영역 Left Menu Area ->
+
+<!-- 중앙 컨텐츠 영역 Center Contents Area -->
+<div class="container_box container_list_box">
+  
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글 for 커뮤니케이터</a></div>
+   
+<!-- Title area END-->     
+   <div class="title_area">
+      <h2 class="title">
+           <span class="bookmark" onclick="javascript:$(this).toggleClass('on');">bookmark</span>
+            <span class="title_name">         
+               <a>UX디자인팀</a>
+            </span>
+          <!-- [D] 관심글, 멘션, 검색, 파일, 공지사항에서 보여지는 서브타이틀입니다. 
+                   클릭 시 (close) 키워드 제거 (span.searched 삭제)
+                   타이틀 클릭 시 (close) 해당 그룹의 메인이나 워크피드로 이동합니다. -->
+            <span class="sub_title_area">
+                <span class="sub_title">
+                    <span class="sub_menu">검색</span>
+                    <span class="searched"><span>:</span><em>변화</em>
+                    <a class="btn_close">삭제</a>
+                </span>
+            </span>
+       <!--span class="loading"></span-->
+      </h2>
+     
+   </div>
+<!-- // Title area END-->
+    
+<!-- CONTENTs AREA START -->
+   <div class="content_lst content_lst_body">
+       <!-- CONTENTs 좌측 -->
+       <div class="contents_area">
+           <!-- 검색용 탭 -->
+           <ul class="search_tab">
+               <li>컨텐츠</li>
+               <li class="on">파일</li>
+           </ul>
+          <!-- 검색 필터 -->
+           <div class="search_filter">
+               <div class="filter">
+                   <span onclick="javascript:$(this).parent('div').toggleClass('open');" class="tit">파일타입<span class="cont">전체</span></span>
+                   <!-- 메뉴 레이어 팝 -->
+                    <div class="layer_pop layer_menu">
+                    <ul>
+                      <li class="selected"><a>전체</a></li>
+                      <li><a>문서</a></li>
+                      <li><a>이미지</a></li>
+                      <li><a>기타</a></li>
+                    </ul>
+                    </div>
+                    <!-- // 메뉴 레이어 팝 -->
+               </div>
+               <div class="filter">
+                   <span onclick="javascript:$(this).parent('div').toggleClass('open');" class="tit">등록자<span class="cont">전체</span></span>
+                    <!-- 메뉴 레이어 팝 -->
+                        <!-- [D] 사용자 선택 레이어팝업 자리입니다. -->
+                    <!-- // 메뉴 레이어 팝 -->
+               </div>
+           </div>
+           <!-- // 검색 필터 -->
+
+           <!--검색결과가 없을때 사용
+           <div class="searched_word">
+               <span class="none_result on">
+                   검색된 결과가 없습니다.
+               </span>
+           </div> -->
+           <div class="searched_word">
+               <span class="searched"><em>변화</em>검색결과</span>
+               <span class="count">15</span>
+           </div>
+           
+          <!-- 파일 1 -->
+           <div class="contents_wrap file">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>워크피드에서 보는 파일화면은 출처그룹이 필요합니다 :) -> 해당그룹 메인으로 이동</a></span> 
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->  
+               
+               <!-- 파일 아이콘 -->
+               <div class="file_area">
+                   <a class="file_download">
+                       <span class="file_type img"></span>
+                       <span class="file_name">파일명자리 :) 검색결과 파일카드에는 더보기 메뉴 버튼이 없습니다. 추후 추가 시, .collect의 right값 조정 필요합니다</span>
+                       <span class="size">123 KB</span>
+                   </a>
+               </div>
+               <!-- // 파일 아이콘 -->
+               
+               <!-- 모아보기 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 모아보기 -->
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김파일
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                        <!-- // 텍스트 영역 -->
+               <!-- // 썸네일 영역 -->    
+                   </div>                     
+              </div>
+              <!-- // 본문 영역-->   
+            </div>
+           <!-- // 파일 1 -->  
+           
+           <!-- 파일 2 -->
+           <div class="contents_wrap file">
+           <div class="article_box">
+                <!-- 본문 영역 -->  
+               
+               <!-- 파일 아이콘 -->
+               <div class="file_area">
+                   <a class="file_download">
+                       <span class="file_type txt"></span>
+                       <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요요 161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                       <span class="size">123 KB</span>
+                   </a>
+               </div>
+               <!-- // 파일 아이콘 -->
+               
+               <!-- 모아보기 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 모아보기 -->
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김파일
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           2016.10.24 11:25
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                        <!-- // 텍스트 영역 -->
+               <!-- // 썸네일 영역 -->    
+                   </div>                     
+              </div>
+              <!-- // 본문 영역-->   
+            </div>
+           <!-- // 파일 1 --> 
+           
+     </div>
+        <!-- //  CONTENTs 좌측(기본 화면) -->
+        <!-- CONTENTs 우측(기본 화면) -->
+        <div id="" class="right_area" >
+            <div class="right_box">
+			<div class="card search_box">
+			  <input type="search" placeholder="검색어를 입력해 주세요."/>			  
+			</div>
+			
+			<div class="layer_pop_select select_on">                         
+                <ul class="ul_select">
+                    <li class=""><em class="keyword">변화</em>전체</li>
+                    <li class=""><em class="keyword">변화</em>작성자</li>
+                    <li class=""><em class="keyword">변화</em>태그</li>
+                    <li class=""><em class="keyword">변화</em>파일명</li>
+               </ul>
+             </div>
+             
+             
+			<!-- 태그 영역 -->
+			
+			    <div class="card tag">
+                    <div class="card_title">
+                       <span class="title">인기태그</span>
+                    </div>
+                    <ul class="card_contents">
+                       <li><a class="top high_lank"><span>업무보고</span></a></li> 
+                        <li><a class="high_lank"><span>그룹웨어</span></a></li> 
+                        <li><a class="high_lank"><span>트렌드</span></a></li> 
+                        <li><a><span>스퀘어플러스스퀘어플러스스스스스스스스퀘</span></a></li> 
+                        <li><a><span>스퀘어플러스스퀘어플러스스스스스스스스퀘</span></a></li> 
+                        <li><a><span>스퀘어플러스스퀘어플러스스스스스스스스퀘</span></a></li> 
+                        <li><a><span>스퀘어맴버</span></a></li> 
+                        <li><a><span>스퀘어맴버</span></a></li> 
+                        <li><a><span>스퀘어맴버</span></a></li> 
+                        <li><a><span>UX/UI</span></a></li> 
+                    </ul>
+                </div>
+			<!-- // 태그 영역 -->
+			<!-- 파일 영역 -->
+			<div class="card latelyfile">
+                    <div class="card_title">
+                        <span class="title">파일</span>
+                        <a class="go_more">
+                            <span>더보기</span>
+                        </a>
+                    </div>
+                     <ul class="card_contents file_list">
+                       <li class="file">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요.jpg</span>
+                           </a>                          
+                       </li>
+                       <li class="file">
+                           <a class="file_download">
+                              <span class="file_type txt"></span>
+                               <span class="file_name">말줄임이 중앙에서 되게 해주세요.jpg</span>
+                           </a>                          
+                       </li>
+                   </ul>
+                </div>
+			<!-- // 파일 영역 -->
+			<!-- 공지 영역 -->
+			<div class="card notice">
+                    <div class="card_title">
+                        <span class="title">공지사항</span>
+                        <a class="go_more">
+                            <span>더보기</span>
+                        </a>
+                    </div>
+                    <ul class="card_contents">
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                       <li>
+                           <a href="#"><span class="org_tit">Design Square</span></a>
+                           <span class="date">2016.11.08</span>
+                           <a href="#"><span class="cont">다가온 미래 : 2017년 UX 디자인 #트렌드</span></a>
+                       </li> 
+                    </ul>
+                </div>
+			<!-- // 공지 영역 -->
+			
+			</div>           
+     </div>
+  </div>
+
+<!-- // 중앙 컨텐츠 영역 Center Contents Area -->                   
+          <!-- 파일 다운로드 -->
+          
+        </div>
+
+  <!-- 블랙 레이어 배경 -->     
+   <div class="black_bg">               
+   </div> 
+   <!-- // 블랙 레이어 배경 -->
+   
+ </div>
+<!-- // 컨테이너 -->    
+   
+   
+  <script> // 높이와 넓이 관련
+        var $Content_body = $('.content_lst_body');        
+        var $WriteBox = $('.contents_area .write_box');
+        
+        
+        SquareContent();  // 컨텐츠 영역 관련    
+        $(window).resize(function(e) {
+        SquareContent();
+        });
+      
+    function SquareContent(){
+      var scrollbarWidth = 16;      
+      
+        
+    $('.contents_area').css('width', $Content_body.innerWidth() - scrollbarWidth - $('.right_area').outerWidth());
+        $('.right_area').css('left', $('.contents_area').innerWidth() + 'px');
+        $('.write_layer_pop').css('width', $WriteBox.outerWidth());
+        
+        
+      //  var WriteBox_top = $WriteBox.offset().top;
+      // var WriteBox_left = $WriteBox.offset().left;
+        
+      // $('.write_layer_pop').css({top:WriteBox_top, left:WriteBox_left});
+        
+        
+        
+        
+        if ($('body').innerWidth() <= 1024 ){
+            $Content_body.css('overflow-x','scroll');
+        } else {$Content_body.css('overflow-x','hidden');}
+    } 
+      
+  </script>
+</body>
+</html>

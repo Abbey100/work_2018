@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../01_GW8.3/javascripts/jquery.fileUpload/fileUpload.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript">
+            // 파일첨부
+            $(document).ready(function(e) {
+                $('.btn_trig').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.attach_lst_wrap').hide();
+                    }else{
+                        $(this).addClass('on');
+                        $('.attach_lst_wrap').show();
+                    }
+                });
+                $('.detail_btn_area').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.simple_detail').hide();
+                    }else{
+                        $(this).addClass('on');
+                        $('.simple_detail').show();
+                    }
+                });
+                $('.btn_detail_ctt').on('click', function(){
+                    if($(this).hasClass('on')){
+                        $(this).removeClass('on');
+                        $('.detail_ctt_box').removeClass('on');
+                    }else{
+                        $(this).addClass('on');
+                        $('.detail_ctt_box').addClass('on');
+
+                    }
+                });
+            });
+        </script>
+    </head>
+    <!-- 뷰포트 사이즈 : 984px(w) x 768px(h) 고정 -->
+    <body>
+        <!-- 모든 쓰기, 읽기 팝업 유형 공통 사항 -->
+        <div class="pop_wrap apprvl_simple_write">
+            <div class="container_box">
+                <div class="title_area">
+                    <h1>기안</h1>
+                </div>
+                <!-- 버튼 영역 -->
+                <div class="btn_area">
+                    <ul class="btns">
+                        <li><span><a href="#" class="fnt_bold">결재올림</a></span></li>
+                        <li><span><a href="#">결재경로</a></span></li>
+                        <li><span><a href="#">요약</a></span></li>
+                        <li><span><a href="#">임시저장</a></span></li>
+                        <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span></li>
+                    </ul>
+                </div>
+                <!-- // 모든 쓰기, 읽기 팝업 유형 공통 사항 --> 
+                <!-- 팝업의 본문영역(padding 값 17px 20px을 가지고 있음) -->
+                <div class="pop_container" style="height:100%;">
+                    <!---- 파일영역 오픈시 pop_container의 넓이값 조정 ----->
+                    <div class="write_box apprvl_write">
+                        <!-- 쓰기영역 -->
+                        <div class="write_form">
+                            <!-- 상단 제목 & 첨부영역 -->
+                            <div class="ctt_box">
+                                <div class="detail_ctt_box">
+                                    <dl class="subj">
+                                        <dt><span class="tit_l">제목<em class="fnt_orng fnt_bold_n">&#42;</em></span></dt>
+                                        <dd><input type="text" class="basic_inp" style="width:100%" value="제목을 입력해주세요"></dd>
+                                    </dl>
+                                    <dl class="subj attach_area">
+                                        <dt><span class="tit_l">첨부<a href="#" class="btn_trig">펼치기,접기</a></span></dt>
+                                        <dd>
+                                            <div class="btn_box btn_s">
+                                                <div class="fileUpload" id="fileUpload">
+                                                    <div class="add_filebg">
+                                                        <div id="wfw_file_box" class="wfw_file_box_popup">
+                                                            <form name="fileUploadForm" id="fileUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data"><input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" multiple style="opacity: 0;">
+                                                            </form>
+                                                            <ul>
+                                                                <li><a href="#" class="attach_add">찾아보기</a></li>
+                                                            </ul>
+                                                            <form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST"><input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="apprvl_write_rgt_attach" id="fileBox" ondragover="javascript:showDropZone(event);">
+                                                <div id="filelistlayer" class="filelistlayer_popup">
+                                                    <ul id="filelist" class="filelist_popup">
+                                                    </ul>
+                                                </div>
+                                                <div class="btn_desc">
+                                                    <ul class="filelist_popup">
+                                                        <li class="" id="divAttCnt"><strong> <span id="attCnt">0</span></strong>개의 첨부파일이 있습니다.</li>
+                                                        <li class=""><span id="attsize"><b>0 KB</b> / 100 MB</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="attach_lst_wrap">
+                                                    <div class="btn_box btn_ss">
+                                                        <ul>
+                                                            <li><span><a href="#">저장</a></span></li>
+                                                            <li><span><a href="#">삭제</a></span></li>
+                                                            <li class="item_move_btn">
+                                                                <ul class="item_move">
+                                                                    <li class="up" id="btnAttUp"><a href="#">위로</a></li>
+                                                                    <li class="down" id="btnAttDown"><a href="#">아래로</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="write_file_list">
+                                                        <table>
+                                                            <colgroup>
+                                                                <col style="width:75%">
+                                                                <col style="width:15%">
+                                                                <col style="width:10%">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col"><input type="checkbox" id="allbox" onclick="paintAllTr(this.checked)" class="inchk">파일명</th>
+                                                                    <th scope="col">크기</th>
+                                                                    <th scope="col">공개여부</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- [D] 파일첨부전은 tbody 가 display:none 처리 되어있음 -->
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><input type="checkbox" class="inchk"><img src="../../img/ico_clip.gif" alt="파일"><a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                                                                    <td class="file_size">53 KB <a href="#" class="btn_del"><img src="../../img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                                                                    <td><input type="checkbox" class="inchk"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!-- [D] 파일 올리기전 설명 이미지 -->
+                                                        <p class="file_list_desc"><img src="../../img/img_email_write_list_desc.gif" alt="마우스로 파일을 끌어오세요"><span class="desc_txt">마우스로 파일을 끌어오세요</span></p>
+                                                        <!-- // [D] 파일 올리기전 설명 이미지 --> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <!-- //상단 제목 & 첨부영역 -->
+                            <div class="write_area">
+                                <!-- [D] 임시 이미지이며 editor 여기에 넣어주세요 -->
+                                <img src="../../img/@hseditor.gif" style="width:100%">
+                            </div>
+                            <div class="simple_detail">
+                                <!-- 결재경로 -->
+                                <div class="ctt_box">
+                                    <p id="Detail-01" class="ttl_ctt">결재경로</p>
+                                    <div class="btn_box btn_s">
+                                        <ul>
+                                            <li><span><a href="#">결재경로지정</a></span></li>
+                                        </ul>
+                                    </div>
+                                    <table class="tbl_list">
+                                        <colgroup>
+                                            <col style="width:50px">
+                                            <col style="width:15%">
+                                            <col style="width:25%;">
+                                            <col style="width:20%;">
+                                            <col style="width:20%;">
+                                            <col style="width:20%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>순번</th>
+                                                <th>상태</th>
+                                                <th>기관/부서</th>
+                                                <th>직위/직급</th>
+                                                <th>처리방법</th>
+                                                <th>처리자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>결재</td>
+                                                <td>UX디자인팀</td>
+                                                <td>책임연구원</td>
+                                                <td>일반</td>
+                                                <td>김팀장님</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>결재</td>
+                                                <td>UX디자인팀</td>
+                                                <td>선임연구원</td>
+                                                <td>전결</td>
+                                                <td>이수석님</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //결재경로 --> 
+                                <!-- 시행정보 -->
+                                <div class="ctt_box">
+                                    <p id="Detail-02" class="ttl_ctt">시행정보</p>
+                                    <div class="btn_box btn_s">
+                                        <ul>
+                                            <li><span><a href="#">수신자지정</a></span></li>
+                                        </ul>
+                                    </div>
+                                    <table class="tbl_list horizon">
+                                        <colgroup>
+                                            <col style="width:114px">
+                                            <col style="width:35%">
+                                            <col style="width:114px">
+                                            <col style="width:35%">
+                                        </colgroup>
+                                        <tr>
+                                            <th>수신자</th>
+                                            <td colspan="3">경영지원팀장</td>
+                                        </tr>
+                                        <tr>
+                                            <th>기관명</th>
+                                            <td>핸디소프트</td>
+                                            <th>발신명의</th>
+                                            <td>
+                                                <select class="basic_select" style="width:100%;">
+                                                    <option>UX디자인팀장</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>시행종류</th>
+                                            <td colspan="3">대내시행</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!-- //시행정보 --> 
+                                <!-- 공람자 -->
+                                <div class="ctt_box">
+                                    <p id="Detail-03" class="ttl_ctt">공람자</p>
+                                    <div class="btn_box btn_s">
+                                        <ul>
+                                            <li><span><a href="#">공람자지정</a></span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="detail_ctt_box">
+                                        <textarea class="human_slt" readonly>[경영지원팀], [CS사업부], 홍길동, 강감찬, 이순신, 윤미래, 손호준, 차승원, 이휘재, 국민배우, 이서진,이승기, 동해물과, 백두산이, 마르고, 닳도록[경영지원팀], [CS사업부], 홍길동, 강감찬, 이순신, 윤미래, 손호준, 차승원, 이휘재, 국민배우, 이서진,이승기, 동해물과, 백두산이, 마르고, 닳도록</textarea>
+                                    </div>
+                                </div>
+                                <!-- //공람자 --> 
+                                <!-- 관련문서 -->
+                                <div class="ctt_box">
+                                    <p id="Detail-04" class="ttl_ctt">관련문서</p>
+                                    <div class="btn_box btn_s">
+                                        <ul>
+                                            <li><span><a href="#">관련문서</a></span></li>
+                                        </ul>
+                                    </div>
+                                    <table class="tbl_list">
+                                        <colgroup>
+                                            <col style="width:50px">
+                                            <col style="width:15%">
+                                            <col style="width:25%; ">
+                                            <col style="width:20%; ">
+                                            <col style="width:20%;">
+                                            <col style="width:20%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>순번</th>
+                                                <th>문서번호</th>
+                                                <th>제목</th>
+                                                <th>처리자</th>
+                                                <th>기안부서</th>
+                                                <th>처리일시</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>UX디자인팀-2015-007</td>
+                                                <td>결재를 위한 관련문서의 제목 자리라고 합니요~예이예이예이~~~^ㅁ^</td>
+                                                <td>김팀장</td>
+                                                <td>UX디자인팀</td>
+                                                <td>2015-03-20 09:27</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //관련문서 --> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_btn_area">
+                    <a href="#Detail-01" class="btn_detail">자세히 입력하기</a>
+                    <div class="count_btn">
+                        <ul>
+                            <li><a href="#Detail-03">공람자 : 0</a></li>
+                            <li><a href="#Detail-04">관련문서 : 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

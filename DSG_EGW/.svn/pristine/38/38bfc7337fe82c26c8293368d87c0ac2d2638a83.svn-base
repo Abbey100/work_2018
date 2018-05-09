@@ -1,0 +1,95 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<div id="Right_contentWrap" class="container_box" name="Right_contentWrap">
+<form id="clubBuild" encType="multipart/form-data" method="POST" name="clubBuild" action="/hcop/clubBuild.do">
+<div class="title_area">
+  <h2 class="title"> 동호회 만들기 </h2>
+  <div class="btn_flip_left"> <a href="javascript:toggleLFrame();">&nbsp;</a> </div>
+  <div class="btn_flip_right on"> <a href="javascript:toggleRFrame();">&nbsp;</a> </div>
+</div>
+<div class="pd_all_18">
+  <div class="stepbox">
+    <div class="box">
+      <ul>
+        <li class="step1"><span>기본속성</span></li>
+        <li class="step2"><span>회원구성</span></li>
+        <li class="step3 active"><span>메뉴구성</span></li>
+        <li class="step4"><span>완료</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content_configlist">
+    <table>
+      <colgroup>
+      <col style="width:45%">
+      <col style="width:50px">
+      <col style="width:50%">
+      </colgroup>
+      <tbody>
+        <tr>
+          <th colspan="2"><label for="buildstep1">제공되는 기능명</label></th>
+          <th colspan="2"><label for="buildstep2">선택한 기능</label></th>
+        </tr>
+        <tr>
+          <td class="basic_list_box"><select style="width:100%;height:200px;" id="buildstep1" multiple="multiple" name="selOptions" ondblclick="javascript:clubBuildObj.addMenuList(document.clubBuild3.selOptions,document.clubBuild3.selSelected);commTextConter.textCheck(clubBuild3.cnts_nm, clubBuild3.cnts_len, 100);">
+              <option value="000000001">공지사항</option>
+              <option value="000000002">일반게시판</option>
+              <option value="000000003">자료실</option>
+              <option value="000000004">승인게시판</option>
+              <option value="000000008">앨범게시판</option>
+              
+              <!-- link or separator does not print. --> 
+              <!-- link or separator does not print. -->
+            </select></td>
+          <td class="slct_list_box"><ul class="lst_move">
+              <a href="#">
+              <li class="add">넣기</li>
+              </a> <a href="#">
+              <li class="del">빼기</li>
+              </a>
+            </ul></td>
+          <td class="slct_list_box"><div class="move_btn_box">
+              <ul class="item_move layout_rgt">
+                <a href="#" onclick="">
+                <li class="down">아래</li>
+                </a> <a href="#" onclick="">
+                <li class="up">위</li>
+                </a>
+              </ul>
+            </div>
+            <div class="slct_list">
+              <select multiple="multiple">
+                <option>일반이 아닌 특별 게시판</option>
+                <option>일반게시판</option>
+                <option>공지사항</option>
+              </select>
+            </div>
+            <div class="slct_list_opt"> <span>
+              <input type="text" class="basic_inp" style="width:176px;" value="이름바꾸기">
+              </span> <span class="btn_config"><a href="#">이름변경</a></span> </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    <ul class="btns">
+      <li> <span> <a href="javascript:clubBuildObj.previousPage3();">이전</a> </span> </li>
+      <li> <span> <a href="javascript:clubBuildObj.nextPage3();">다음</a> </span> </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

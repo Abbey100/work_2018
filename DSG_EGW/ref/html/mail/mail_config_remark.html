@@ -1,0 +1,81 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div id="main_table" class="left_wrap_content"> 
+  <!-- title start-->
+  <div class="title_area">
+    <h2 class="title">메일 환경 설정</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- title end-->
+  
+  <div class="pd_all_18" id="tab-pane-1">
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab">기본 설정</li>
+        </a> <a href="#">
+        <li class="tab">메일함 관리</li>
+        </a> <a href="#">
+        <li class="tab">메일 필터링</li>
+        </a> <a href="#">
+        <li class="tab selected">맺음말</li>
+        </a> <a href="#">
+        <li class="tab">외부 메일 가져오기</li>
+        </a>
+      </ul>
+    </div>
+    <div class="content_configlist">
+      <table>
+        <colgroup>
+        <col style="width:150px;">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>맺음말 설정</th>
+            <td><label class="pd_rgt_10">
+                <input type="radio" id="on" name="remark_ctt" onclick="javascript:remark_on(this)">
+                사용함</label>
+              <label>
+                <input type="radio" id="off" name="remark_ctt" onclick="javascript:remark_on(this)" checked="checked">
+                사용안함</label>
+              <p class="dscr_tip">맺음말은 최대 3개까지 만들 수 있습니다.</p></td>
+          </tr>
+          <tr>
+            <th rowspan="2"><span>맺음말관리</span></th>
+            <td class="rdio_"><div class="tabs">
+                <p class="on"><a href="#">맺음말01</a></p>
+                <p><a href="#">맺음말02</a></p>
+                <p><a href="#">맺음말03</a></p>
+              </div>
+              <div class="editor_area">
+              <div class="editor_btn_area">
+                <label>
+                  <input type="checkbox">
+                  자동 맺음말 설정</label>
+                <span class="inline_btn"><a href="#" title="맺음말 저장">저장</a></span></div>
+              <div class="editor"><img src="../../img/@tmp_editor.jpg" /></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

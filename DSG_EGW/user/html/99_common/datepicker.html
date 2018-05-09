@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>HANDY GROUPWARE - datepicker</title>		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" /><!-- 공통 css -->	
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css" />
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>
+
+	</head>
+	<body>
+		<!--datepicker : date1-->
+		<div class="datepicker" style="left:10px; top:10px;">
+			<dl>
+				<dt><a href="#">2017년 11월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="disable"><a href="#">1</a></td>
+								<td class="disable"><a href="#">2</a></td>
+								<td class="disable"><a href="#">3</a></td>
+								<td class="disable"><a href="#">4</a></td>
+							</tr>
+							<tr>
+								<td class="disable"><a href="#">5</a></td>
+								<td class="disable"><a href="#">6</a></td>
+								<td class="disable"><a href="#">7</a></td>
+								<td class="today"><a href="#">8</a></td>
+								<td><a href="#">9</a></td>
+								<td><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+		<!--datepicker : date2-->
+		<div class="datepicker" style="left:300px; top:10px;">
+			<dl>
+				<dt><a href="#">2017년 12월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="disable"><a href="#">1</a></td>
+								<td class="disable"><a href="#">2</a></td>
+							</tr>
+							<tr>
+								<td class="disable"><a href="#">3</a></td>
+								<td class="disable"><a href="#">4</a></td>
+								<td class="disable"><a href="#">5</a></td>
+								<td class="disable"><a href="#">6</a></td>
+								<td class="disable"><a href="#">7</a></td>
+								<td class="disable"><a href="#">8</a></td>
+								<td class="disable"><a href="#">9</a></td>
+							</tr>
+							<tr>
+								<td class="today"><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">31</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+		<!--datepicker : date3-->
+		<div class="datepicker" style="left:10px; top:310px;">
+			<dl>
+				<dt><a href="#">2017년 12월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#">1</a></td>
+								<td><a href="#">2</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">3</a></td>
+								<td><a href="#">4</a></td>
+								<td><a href="#">5</a></td>
+								<td><a href="#">6</a></td>
+								<td><a href="#">7</a></td>
+								<td><a href="#">8</a></td>
+								<td><a href="#">9</a></td>
+							</tr>
+							<tr>
+								<td class="today"><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">31</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<p class="lunar"><a href="#">오늘</a><span>음력 2017.03.18</span></p>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+		<!--datepicker : date4-->
+		<div class="datepicker" style="left:300px; top:310px;">
+			<dl>
+				<dt><a href="#">2017년 11월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="disable"><a href="#">1</a></td>
+								<td class="disable"><a href="#">2</a></td>
+								<td class="disable"><a href="#">3</a></td>
+								<td class="disable"><a href="#">4</a></td>
+							</tr>
+							<tr>
+								<td class="disable"><a href="#">5</a></td>
+								<td class="disable"><a href="#">6</a></td>
+								<td class="disable"><a href="#">7</a></td>
+								<td class="disable"><a href="#">8</a></td>
+								<td class="disable"><a href="#">9</a></td>
+								<td class="disable"><a href="#">10</a></td>
+								<td class="today"><a href="#">11</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<div class="booking">
+				<span>예약시간 </span>
+				<div class="selectbox">
+					<select title="시 선택">
+						<option value="">00시</option>
+						<option value="">01시</option>
+						<option value="">02시</option>
+						<option value="">03시</option>
+						<option value="">05시</option>
+						<option value="">06시</option>
+						<option value="">07시</option>
+						<option value="">08시</option>
+						<option value="">09시</option>
+						<option value="">10시</option>
+						<option value="">11시</option>
+						<option value="">12시</option>
+						<option value="">13시</option>
+						<option value="">14시</option>
+						<option value="">15시</option>
+						<option value="">16시</option>
+						<option value="">17시</option>
+						<option value="">18시</option>
+						<option value="">19시</option>
+						<option value="">20시</option>
+						<option value="">21시</option>
+						<option value="">22시</option>
+						<option value="">23시</option>
+						<option value="">24시</option>
+					</select>
+				</div>
+				<div class="selectbox">
+					<select title="분 선택">
+						<option value="">00분</option>
+						<option value="">05분</option>
+						<option value="">10분</option>
+						<option value="">15분</option>
+						<option value="">20분</option>
+						<option value="">25분</option>
+						<option value="">30분</option>
+						<option value="">35분</option>
+						<option value="">40분</option>
+						<option value="">45분</option>
+						<option value="">50분</option>
+						<option value="">55분</option>
+					</select>
+				</div>
+				<p>
+					<a href="#" class="action_btn">확인</a>
+					<a href="#" class="btn">취소</a>
+				</p>
+			</div>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+
+		<!--datepicker : month -->
+		<div class="datepicker" style="left:600px; top:10px">
+			<dl>
+				<dt><a href="#">2017년</a></dt>
+				<dd>
+					<table>
+						<tr>
+							<td><a href="#">1월</a></td>
+							<td><a href="#">2월</a></td>
+							<td><a href="#">3월</a></td>
+							<td><a href="#">4월</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">5월</a></td>
+							<td><a href="#">6월</a></td>
+							<td><a href="#">7월</a></td>
+							<td><a href="#">8월</a></td>
+						</tr>
+						<tr>
+							<td class="selected"><a href="#">9월</a></td>
+							<td><a href="#">10월</a></td>
+							<td><a href="#">11월</a></td>
+							<td><a href="#">12월</a></td>
+						</tr>
+						<tr>
+							<td class="disable"><a href="#">1월</a></td>
+							<td class="disable"><a href="#">2월</a></td>
+							<td class="disable"><a href="#">3월</a></td>
+							<td class="disable"><a href="#">4월</a></td>
+						</tr>
+					</table>
+				</dd>
+			</dl>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+
+
+		<!--datepicker : year -->
+		<div class="datepicker" style="left:900px; top:10px;">
+			<dl>
+				<dt><a href="#">2010년~2019년</a></dt>
+				<dd>
+					<table>
+						<tr>
+							<td class="disable"><a href="#">2009</a></td>
+							<td><a href="#">2010</a></td>
+							<td><a href="#">2011</a></td>
+							<td><a href="#">2012</a></td>
+						</tr>
+						<tr>
+							<td><a href="#">2013</a></td>
+							<td><a href="#">2014</a></td>
+							<td><a href="#">2015</a></td>
+							<td><a href="#">2016</a></td>
+						</tr>
+						<tr>
+							<td class="selected"><a href="#">2017</a></td>
+							<td><a href="#">2018</a></td>
+							<td><a href="#">2019</a></td>
+							<td class="disable"><a href="#">2020</a></td>
+						</tr>
+						<tr>
+							<td class="disable"><a href="#">2021</a></td>
+							<td class="disable"><a href="#">2022</a></td>
+							<td class="disable"><a href="#">2023</a></td>
+							<td class="disable"><a href="#">2024</a></td>
+						</tr>
+					</table>
+				</dd>
+			</dl>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+		<!--datepicker : multi -->
+		<div class="datepicker multi" style="left:10px; top:700px;">
+			<dl>
+				<dt><a href="#">2017년 11월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#">1</a></td>
+								<td><a href="#">2</a></td>
+								<td><a href="#">3</a></td>
+								<td><a href="#">4</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">5</a></td>
+								<td><a href="#">6</a></td>
+								<td><a href="#">7</a></td>
+								<td><a href="#">8</a></td>
+								<td><a href="#">9</a></td>
+								<td><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#" class="start">16</a></td>
+								<td><a href="#" class="period">17</a></td>
+								<td><a href="#" class="period">18</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="start">19</a></td>
+								<td><a href="#" class="period">20</a></td>
+								<td><a href="#" class="period">21</a></td>
+								<td><a href="#" class="period">22</a></td>
+								<td><a href="#" class="end">23</a></td>
+								<td><a href="#" class="period">24</a></td>
+								<td><a href="#" class="period">25</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="period">26</a></td>
+								<td><a href="#" class="period">27</a></td>
+								<td><a href="#" class="period">28</a></td>
+								<td><a href="#" class="period">29</a></td>
+								<td><a href="#" class="period">30</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+
+			<dl>
+				<dt><a href="#">2017년 12월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#" class="period">1</a></td>
+								<td><a href="#" class="period">2</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="period">3</a></td>
+								<td><a href="#" class="period">4</a></td>
+								<td><a href="#" class="period">5</a></td>
+								<td><a href="#" class="period">6</a></td>
+								<td><a href="#" class="period">7</a></td>
+								<td><a href="#" class="period">8</a></td>
+								<td><a href="#" class="end">9</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="end">10</a></td>
+								<td><a href="#">11</a></td>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">31</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+
+
+		<!--datepicker : multi2 -->
+		<div class="datepicker multi" style="left:600px; top:700px;">
+			<dl>
+				<dt><a href="#">2017년 11월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#">1</a></td>
+								<td><a href="#">2</a></td>
+								<td><a href="#">3</a></td>
+								<td><a href="#">4</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">5</a></td>
+								<td><a href="#">6</a></td>
+								<td><a href="#">7</a></td>
+								<td><a href="#">8</a></td>
+								<td><a href="#">9</a></td>
+								<td><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+								<td><a href="#">17</a></td>
+								<td><a href="#" class="start">18</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="period">19</a></td>
+								<td><a href="#" class="period">20</a></td>
+								<td><a href="#" class="period">21</a></td>
+								<td><a href="#" class="period">22</a></td>
+								<td><a href="#" class="period">23</a></td>
+								<td><a href="#" class="period">24</a></td>
+								<td><a href="#" class="period">25</a></td>
+							</tr>
+							<tr>
+								<td><a href="#" class="period">26</a></td>
+								<td><a href="#" class="period">27</a></td>
+								<td><a href="#" class="period">28</a></td>
+								<td><a href="#" class="period">29</a></td>
+								<td><a href="#" class="period">30</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+
+			<dl>
+				<dt><a href="#">2017년 12월</a></dt>
+				<dd class="day">
+					<table>						
+						<thead>
+							<tr>
+								<th scope="col">일</th>
+								<th scope="col">월</th>
+								<th scope="col">화</th>
+								<th scope="col">수</th>
+								<th scope="col">목</th>
+								<th scope="col">금</th>
+								<th scope="col">토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#" class="period">1</a></td>
+								<td><a href="#" class="end">2</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">3</a></td>
+								<td><a href="#">4</a></td>
+								<td><a href="#">5</a></td>
+								<td><a href="#">6</a></td>
+								<td><a href="#">7</a></td>
+								<td><a href="#">8</a></td>
+								<td><a href="#">9</a></td>
+							</tr>
+							<tr>								
+								<td><a href="#">10</a></td>
+								<td><a href="#">11</a></td>
+								<td><a href="#">12</a></td>
+								<td><a href="#">13</a></td>
+								<td><a href="#">14</a></td>
+								<td><a href="#">15</a></td>
+								<td><a href="#">16</a></td>
+							</tr>
+							<tr>
+								
+								<td><a href="#">17</a></td>
+								<td><a href="#">18</a></td>
+								<td><a href="#">19</a></td>
+								<td><a href="#">20</a></td>
+								<td><a href="#">21</a></td>
+								<td><a href="#">22</a></td>
+								<td><a href="#">23</a></td>
+							</tr>
+							<tr>								
+								<td><a href="#">24</a></td>
+								<td><a href="#">25</a></td>
+								<td><a href="#">26</a></td>
+								<td><a href="#">27</a></td>
+								<td><a href="#">28</a></td>
+								<td><a href="#">29</a></td>
+								<td><a href="#">30</a></td>
+							</tr>
+							<tr>								
+								<td><a href="#">31</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</dd>
+			</dl>
+
+			<p class="txt">시작일이 선택되었습니다. 종료일을 선택해 주세요.</p>
+
+			<a href="#" class="pre">이전</a>
+			<a href="#" class="next">다음</a>
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>HANDY GROUPWARE</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+    </head>
+
+    <body>
+        <div class="left_menu">
+            <div class="pd_lft_42">
+                <ul class="bd_card">
+                    <li class="bd_img_area">
+                        <div> <img class="mask" src="../../img/user_photo_mask.png"><span class="co_pic" style="background: url('../../img/NOIMAGE.GIF') 0 0 no-repeat;"></span><!-- <img class="photo" src="../../img/NOIMAGE.GIF" alt="회원정보"> --></div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="pd_lft_15 mg_tp_160">
+                <li><span class="user_info_name">백은경</span><span class="user_respn">(주임연구원)</span> </li>
+                <li><span class="user_deprt">UX디자인팀</span></li>
+            </ul>
+            <ul id="menu_list" class="snb_lst mg_tp_9 brdr_top">
+                <li> <a id="menu_01" href="javascript:callUrl('/jsp/setting/UserDetailUpdate.jsp?K=00RPA2sr81');selectFolder('menu_01');" title="개인정보설정" class="slct">개인정보설정</a> </li>
+                <li> <a id="menu_02" href="javascript:callUrl('/jsp/setting/PasswdSet.jsp?K=00RPA2sr81');selectFolder('menu_02');" title="암호설정" class="">암호설정</a> </li>
+                <li> <a id="menu_03" href="javascript:callUrl('/jsp/setting/AbsenceSetList.jsp?K=00RPA2sr81');selectFolder('menu_03');" title="부재설정" class="">부재설정</a> </li>
+                <li> <a id="menu_04" href="javascript:callUrl('/jsp/setting/GroupList.jsp?K=00RPA2sr81');selectFolder('menu_04');" title="그룹관리" class="">그룹관리</a> </li>
+                <li> <a id="menu_05" href="javascript:callUrl('/jsp/setting/SignFrame.jsp?K=00RPA2sr81');selectFolder('menu_05');" title="서명관리" class="">서명관리</a> </li>
+                <li> <a id="menu_06" href="javascript:callUrl('/jsp/setting/NotifySet.jsp?K=00RPA2sr81');selectFolder('menu_06');" title="알림설정" class="">알림설정</a> </li>
+                <li> <a id="menu_09" href="javascript:callUrl('/wma/composePreference.jsp?K=00RPA2sr81');selectFolder('menu_09');" title="웹메일설정" class="">웹메일설정</a> </li>
+                <li> <a id="menu_10" href="javascript:callUrl('/hscalendar/jsp/main_setting.jsp?USER_ID=001013122&K=00RPA2sr81&loc=ko_KR');selectFolder('menu_10');" title="일정설정" class="">일정설정</a> </li>
+            </ul>
+        </div>
+    </body>
+</html>

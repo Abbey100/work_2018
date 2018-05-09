@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 결재경로 비교 </title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 1200 x 500 -->
+	<body>
+		<!-- header -->
+		<h1>결재경로 비교</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->
+			<div class="vertical_ui">
+				<div class="vertical_lf compare">
+					<dl class="dfine_info">
+						<dt>원본</dt>
+						<dd>홍길동 사원</dd>
+						<dd class="date">2018-01-30 12:55</dd>
+					</dl>
+					<div class="content_table">	
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:70px;">
+									<col style="width:90px;">
+									<col style="width:*;">
+									<col style="width:70px;">
+									<col style="width:140px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>순번</th>
+										<th><span>처리방법</span></th>
+										<th><span>처리자</span></th>
+										<th><span>상태</span></th>
+										<th><span>처리일</span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body handy-scroll">
+							<table>
+								<colgroup>
+									<col style="width:70px;">
+									<col style="width:90px;">
+									<col style="width:*;">
+									<col style="width:70px;">
+									<col style="width:140px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td><span>3</span></td>
+										<td><span>결재</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>대기</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>	
+									<tr>
+										<td><span>2</span></td>
+										<td><span>확인</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>대기</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>
+									<tr>
+										<td><span>1</span></td>
+										<td><span>기안</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>완료</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>	
+				<div class="vertical_rg compare">
+					<dl class="dfine_info">
+						<dt>수정</dt>
+						<dd>홍길동 사원</dd>
+						<dd class="date">2018-01-30 12:55</dd>
+					</dl>
+					<div class="content_table">	
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:70px;">
+									<col style="width:90px;">
+									<col style="width:*;">
+									<col style="width:70px;">
+									<col style="width:140px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>순번</th>
+										<th><span>처리방법</span></th>
+										<th><span>처리자</span></th>
+										<th><span>상태</span></th>
+										<th><span>처리일</span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body handy-scroll">
+							<table>
+								<colgroup>
+									<col style="width:70px;">
+									<col style="width:90px;">
+									<col style="width:*;">
+									<col style="width:70px;">
+									<col style="width:140px;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td><span>3</span></td>
+										<td><span>결재</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>대기</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>	
+									<tr>
+										<td><span>2</span></td>
+										<td><span>확인</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>대기</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>
+									<tr>
+										<td><span>1</span></td>
+										<td><span>기안</span></td>
+										<td><span>박명수 과장</span></td>
+										<td><span>완료</span></td>
+										<td><span>2017-10-18 12:00</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

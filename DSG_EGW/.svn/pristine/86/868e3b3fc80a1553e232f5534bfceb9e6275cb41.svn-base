@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 동호회만들기_기본정보입력_팝업 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>동호회만들기</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area handy-scroll">
+                <div class="">
+                    <div class="appr_flow_wrap mg_1">
+                        <div class="inner_wrap">
+                            <ul>
+                                <li class="on"><p class="appr_flow">기본정보입력</p></li>
+                                <li><p class="appr_flow">메뉴구성</p></li>
+                                <li><p class="appr_flow">미리보기 및 작성완료</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form_table handy-scroll">
+                        <table>
+                            <colgroup>
+                                <col style="width:160px;">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>동호회명</th>
+                                    <td>
+                                        <div class="input_group txt_btn focused">
+                                            <!-- focus 상황에서 + "focused" -->
+                                            <input type="text" class="basic_input" value="핸디소프트 농구 동호회">
+                                            <a class="btn small mg_0" href="#">중복검색</a>
+                                        </div>
+                                        <span class="align_rg size_txt"><span class="count">14</span>/60</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>카테고리</th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <input type="text" class="basic_input" placeholder="카테고리를 선택하세요." name="categoli">
+                                            <a class="ico group" href="#">카테고리</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>소개</th>
+                                    <td>
+                                        <textarea type="text" class="box_textarea" rows="4" placeholder="동호회를 소개해 주세요."></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>키워드</th>
+                                    <td>
+                                        <div class="input_group">
+                                            <input type="text" class="basic_input" placeholder="키워드을 입력하세요." name="keyword">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>회원 선택</th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <div class="token-input">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li title="" class="token-input-token">
+                                                        <p>김핸디</p>														
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-input-token-directory ui-sortable-handle">
+                                                        <input type="text" style="outline: none; width: 110px;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                    </li>
+                                                </ul>
+                                                <input type="text" style="display: none;">
+                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                <a class="ico_btn small add" href="#">조직도</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>가입 방식</th>
+                                    <td>
+                                        <span class="form">
+                                            <input type="radio" name="from_join" id="from_join01" checked>
+                                            <label for="from_radio01">가입제(가입 신청시 자동가입)</label></span>
+                                        <span class="form">
+                                            <input type="radio" name="from_join" id="from_join02">
+                                            <label for="from_join02">승인제(동호회 운영자 승엔 따라 가입)</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>별명사용여부</th>
+                                    <td>
+                                        <span class="form">
+                                            <input type="radio" name="from_nickname" id="from_nickname01" checked>
+                                            <label for="from_nickname01">사용함
+                                            </label></span>
+                                        <span class="form">
+                                            <input type="radio" name="from_nickname" id="from_nickname02">
+                                            <label for="from_nickname02">사용안함(회원 이름 사용)</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>대표 이미지</th>
+                                    <td>
+                                        <div class="file_box community">
+                                            <input type="text" class="file_name" id="file_name02" value="A456tyop444.jpg" readonly/>
+                                            <span class="cancel"></span>
+                                            <span class="ico file">
+                                                <input  type="file" id="file" style="" onchange="document.getElementById('file_name02').value=this.value;">
+                                            </span> 
+                                        </div>
+                                        <p class="file_info fnt_grey">
+                                            gif, jpg, ipeg, png 파일만 등록 가능합니다.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>회원 가입시 인사말</th>
+                                    <td>
+                                        <textarea type="text" class="box_textarea" rows="4" ></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>가입 질문</th>
+                                    <td>
+                                        <div class="input_group has_btn">
+                                            <input type="text" class="basic_input" placeholder="내용을 입력하세요." name="etc">
+                                            <a class="ico_btn2 del" href="#">삭제</a>
+                                        </div>
+                                        <a href="#" class="btn_addwrite">추가입력</a>
+                                    </td>
+                                </tr>	
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="btns_area bttm top_line">
+                <div class="align_lf">
+                    <a class="btn">이전</a>
+                </div>
+                <div class="align_rg">
+                    <a class="action_btn">다음</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

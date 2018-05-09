@@ -1,0 +1,121 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <title>HANDY GROUPWARE</title>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+    <!--[D] jqueryUI -->
+    <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script language=javascript>
+
+    </script>
+    </head>
+    <body>
+<div class="container_box container_list_box mg_lft_0">
+      <div class="title_area">
+    <h2 class="title">나의 근태집계</h2>
+    <div id="left_btn_close" class="btn_flip_left"><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right"><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+ <!-- 검색 영역 -->
+      <div class="srch_area">
+			<fieldset class="cmmt_search">
+				<div class="datepic_box" style="float:left">
+				<input type="text"class="basic_inp" style="width:100px; height: 25px;" readonly="" value="">
+				<a href="#"><img src="../../img/btn_datepicker.gif" class="btn_date"></a>
+				</div>
+				<span>~</span>
+				<div class="datepic_box" style="float:left">
+				<input type="text" class="basic_inp" style="width:100px; height: 25px;">
+				<a href="#"><img src="../../img/btn_datepicker.gif" class="btn_date"></a>
+				</div>
+				<a href="#" title="검색" class="srch_btn" alt="검색" style="margin-left: 0px">검색</a>
+			</fieldset>
+		</div>
+      <!-- //검색 영역 --> 
+        <!-- 버튼 영역 -->
+      <div class="btn_area">
+          <ul class="btns">
+            <li class="add_slct" style="display:none;"><span><a href="#" class="none_bg">추가기능</a></span> 
+              <!-- [D] 추가기능 레이어 팝업 -->
+              <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+                <ul>
+                  <li><a href="#">CSV 내보내기</a></li>
+                  <li><a href="#">엑셀다운로드</a></li>
+                  <li><a href="#">인쇄보기</a></li>
+                </ul>
+              </div>
+              <!-- // [D] 추가기능 레이어 팝업 --> 
+            </li>
+			</ul>
+			<div class="layout_rgt">
+			<ul class="btns">
+				<p class="btn_rfrsh" title="새로고침"><a href="#" title="새로고침">새로고침</a></p>
+			</ul>
+			</div>
+		</div>
+      <!-- //버튼 영역 --> 
+      <!-- 리스팅 기본형(좌측) -->
+      <div class="mail_wrap_left"> 
+    <!-- 근태집계 header -->
+    <div class="content_lst content_lst_head">
+          <table>
+          <colgroup>
+              <col style="width:200px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+          </colgroup>
+        <thead>
+              <tr>
+            <th>조회기간</th>
+            <th>근무일수</th>
+            <th>근무</th>
+            <th>지각</th>
+            <th>조퇴</th>
+            <th>결근</th>
+            <th>휴일근무</th>
+          </tr>
+            </thead>
+      </table>
+        </div>
+    <!-- // 근태집계 header --> 
+    <!-- 근태집계 list -->
+    <div class="content_lst content_lst_body">
+          <table>
+          <colgroup>
+              <col style="width:200px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:85px">
+              <col style="width:69px">
+          </colgroup>
+        <tbody>
+          <tr>
+            <td class="date">2015.06.01 - 2015.06.30</td>
+            <td>22</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>21</td>
+            <td>0</td>
+          </tr>
+
+            </tbody>
+      </table>
+        </div>
+    <!-- // 근테집계 list -->
+  </div>
+    </div>
+</div>
+</body>
+</html>

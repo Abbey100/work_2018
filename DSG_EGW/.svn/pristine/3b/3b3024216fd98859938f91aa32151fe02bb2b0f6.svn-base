@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 스퀘어 팝업 글쓰기 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/square.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 610 x 700 -->
+	<body>
+		<!-- header -->
+		<h1>스퀘어 글쓰기</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<!-- 본문 영역 -->
+			<div class="scroll_area handy-scroll">
+				<div class="form_table_square">
+					<div class="write_group_area">
+						<div class="write_group_select open"><!-- [D] open 추가 그룹검색 열림 -->
+							<a href="#" class="group_title"><span>EGW UX개선</span></a>
+							<!-- 그룹검색 -->
+							<div class="group_box">									
+								<fieldset>
+									<legend>그룹 검색</legend>
+									<div class="srch_group">
+										<input type="text" placeholder="검색하실 그룹명을 입력해 주세요" />
+										<a class="btn_srch">검색</a>
+									</div>
+								</fieldset>
+								<div class="group_lst handy-scroll"><!-- [D]2017-11-20 그룹목록 마크업 구조 변경 -->
+									<ul>
+										<li><a href="#">1.스퀘어플러스 풀컨텐츠</a></li>
+										<li><a href="#" class="selected">UX디자인팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+										<li><a href="#">제품기획팀</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="write">
+						<div contenteditable="true" class="textComplete">	
+							<p><input id="" class="selectedMention" value="@김명진" style="width: 54px">그룹웨어 공지사항 확인요망. <input id="" class="selectedTag" value="#회식" style="width: 35px"> <input id="" class="selectedTag" value="#수요일" style="width: 50px"></p>
+						</div>
+					</div>
+
+					<div class="linkfeed">
+						<a href="#" class="link">
+							<em>사이트명</em>
+							설명문구 미정
+							<span>www.abcd.com</span>
+						</a>
+
+						<a href="#" class="link">
+							<img src="../../img/square/@temp_naver_68_68.png" alt="" />
+							<em>사이트명</em>
+							설명문구 미정
+							<span>www.naver.com</span>
+						</a>	
+					</div>
+
+					<!-- 이미지 첨부 -->
+					<div class="form_thumb_area">
+						<ul>
+							<li class="thumnail">
+								<span class="thumnail_box"><img src="../../img/square/ex_img_01.jpg" alt=""><a href="#" class="del">삭제</a></span>
+							</li>
+							<li class="thumnail">
+								<span class="thumnail_box"><img src="../../img/square/ex_img_02.jpg" alt=""><a href="#" class="del">삭제</a></span>
+							</li>
+							<li class="thumnail">
+								<span class="thumnail_box"><img src="../../img/square/ex_img_03.jpg" alt=""><a href="#" class="del">삭제</a></span>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 첨부파일 -->
+					<div class="form_file_area">
+						<h3>첨부파일</h3>
+						<span class="file_count">(<strong>3</strong>/10)</span>
+						<div class="file_lst upload handy-scroll">
+							<ul class="">
+								<li>
+									<a class="move" href="#"></a>
+									<span class="file_name">EGW_GUI_Visual_Concept_0804_Concept_0804_Concept_0804.ppt </span>
+									<span class="file_size">284 KB</span>
+									<a class="cancel"  href="#"></a>
+								</li>
+								<li>
+									<a class="move" href="#"></a>
+									<span class="file_name">EGW_GUI_Visual_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804_Concept_0804.ppt </span>
+									<span class="file_size">284 KB</span>
+									<a class="cancel"  href="#"></a>
+								</li>
+								<li>
+									<a class="move" href="#"></a>
+									<span class="file_name">EGW_GUI_Visual_Concept_0804_Concept_0804_Concept_0804.ppt </span>
+									<span class="file_size">2 KB</span>
+									<a class="cancel"  href="#"></a>
+								</li>
+								<li>
+									<a class="move" href="#"></a>
+									<span class="file_name">EGW_GUI_Visual_Concept_0804_Concept_0804_Concept_0804.ppt </span>
+									<span class="file_size">284 KB</span>
+									<a class="cancel" ></a>
+								</li>
+								<li>
+									<a class="move" href="#"></a>
+									<span class="file_name">EGW_GUI_Visual_Concept_0804_Concept_0804_Concept_0804.ppt </span>
+									<span class="file_size">284 KB</span>
+									<a class="cancel" href="#" ></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 해시태그 -->
+					<div class="form_tag_area open"><!-- [D] open 추가 그룹검색 열림 -->
+						<div class="selected_tag">
+							<span class="hash">#회식<span class="cancel_select">del</span></span>
+							<span class="hash">#수요일<span class="cancel_select">del</span></span>
+							<span class="hash">#다음주_수요일_오후_3시<span class="cancel_select">del</span></span>
+							<span class="hashinput" contenteditable="true">#태그를 입력하세요</span>
+						</div>
+						<div class="tag_lst" style="top:63px;left:0;">
+							<div class="handy-scroll">
+								<ul>
+									<li><strong>최근 태그</strong>
+										<ul>
+											<li>수요일 9시</li>
+											<li>회식</li>
+											<li>EGW TFT</li>
+										</ul>
+									</li>
+									<li><strong>추천 태그</strong>
+										<ul>
+											<li>수요일 9시</li>
+											<li>회식</li>
+											<li>EGW TFT</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btns_area sq_pop">
+				<div class="align_lf ">
+					<div class="feedWrite_section">
+						<div class="btn_feedWrite">
+							<a href="#" class="photo">사진</a>
+							<a href="#" class="file">파일</a>
+							<a href="#" class="plan open">일정</a>
+							<a href="#" class="report">보고</a>
+							<a href="#" class="noti">공지</a>
+						</div>
+
+						<!-- 보고 -->
+						<div class="form_table">
+							<table>
+								<colgroup>
+									<col style="width:39px;">
+									<col width="*">
+									<col style="width:59px;">
+									<col style="width:215px">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>제목</th>
+										<td class="text_input">
+											<input type="text" class="border_input" id="input" placeholder="제목을 입력해주세요">
+										</td>
+										<th>보고일</th>
+										<td>
+											<div class="datepic_area">
+												<div class="date_box">
+		                							<input type="text" class="date_input" value="2017-09-03" style="width:200px;" readonly="">
+													<a class="date_btn" title="">달력</a>
+												</div>
+	                						</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<!-- 공지 
+						<div class="form_table">
+							<table>
+								<colgroup>
+									<col style="width:62px;">
+									<col width="*">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th>게재기간</th>
+										<td>
+											<div class="datepic_area">
+												<div class="date_box">
+		                							<input type="text" class="date_input" value="2017-09-03 ~ 2017.10.03" style="width:473px;" readonly="">
+													<a class="date_btn" title="">달력</a>
+												</div>
+	                						</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div> -->
+						
+					</div>
+				</div>
+				<div class="align_rg">
+					<div class="selectbox bottom">
+						<select> 
+							<option>보내기</option>
+							<option>등록 및 메일로 전송</option>
+							<option>등록 및 업무 요청</option>
+						</select>
+					</div>
+					<!-- 등록 -->
+					<a class="action_btn">등록</a>
+					<a class="btn">취소</a>
+				</div>
+			</div>            
+		</div>
+		<!-- // body -->
+		
+		<!-- 사람 태그 검색 -->
+		<div class="member_select_lst " style="top:148px;left:38px;">
+			<div class="member_lst handy-scroll">
+				<ul>
+					<li class="active">
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../img/square/@temp_person.png" alt="" class="profile_photo"><span class="name">강미나</span><span>선임</span><span class="team">디자인팀</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+						<!-- 일정 간편 등록 시작 -->
+		<div class="popup open handy-scroll">
+			<div class="">
+				<div class="comm_lypop_type1"><!-- 팝업 열렸을때 open -->
+					<div class="lypop_head"><span class="ly_tit">일정 간편등록</span></div>
+					<div class="lypop_cont">
+						<!-- 팝업 알맹이 영역 -->
+						<div class="schedule_lypop">
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width:54px;">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th><span class="necessary">제목</span></th>
+											<td>
+												<div class="input_group">
+													<input type="text" class="basic_input" placeholder="일정 제목을 입력하세요." />	
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th class="important">시간</th>
+											<td>
+												<div class="datepic_area">
+													<div class="date_box">
+														<input type="text" class="date_input" value="2017-09-03(목)" style="width:166px;" readonly="">
+														<a class="date_btn" title="">달력</a>
+													</div>
+													<div class="sched_group mg_b_5">
+														<div class="datepic_area">
+															<span class="selectbox" style="width:62px;">
+																<select> 
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																</select>
+															</span>
+															<span class="period">~</span>
+															<span class="selectbox" style="width:62px;">
+																<select> 
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																</select>
+															</span>
+														</div>
+														<div class="group pd_t_4">
+															<span class="form">
+																<input type="checkbox" id="check001" />
+																<label for="check001">종일</label></span>
+															<span class="form">
+																<input type="checkbox" id="check002" />
+																<label for="check002">기념일</label></span>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="btns_area bttm">
+								<div class="align_lf">
+									<a class="btn">상세입력</a>
+								</div>
+								<div class="align_rg">
+									<a class="action_btn">완료</a>
+									<a class="btn">취소</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //팝업 일정 영역 -->
+				</div>
+			</div>
+		</div>
+		<!-- // 일정 간편 등록 끝 -->
+	</body>
+</html>

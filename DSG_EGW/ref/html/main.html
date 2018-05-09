@@ -1,0 +1,1947 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/square_plus.css" type="text/css" />
+<link rel="stylesheet" href="../css/buttons.css " type="text/css" />
+<link rel="stylesheet" href="../css/noty_theme_facebook.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery.noty.css " type="text/css" />
+<!--***-->
+
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script src="../js/square_guide.js"></script>
+<!--script>	
+$(document).ready(function(){
+    
+        
+              //분류항목 말줄임
+            $('.alarm_details .identity').each(function(){   
+                var idlength = 3; // 제한 글자수   
+
+            if($(this).siblings().size() > 1){
+                $(this).each(function(){                   
+                         if($(this).text().length > idlength){
+                        $(this).text($(this).text().substr(0,idlength) + '...');
+                    }
+
+                });
+            }
+            });
+            
+              //이름항목 말줄임
+            $('.alarm_details .name').each(function(){   
+                var namelength = 3; // 제한 글자수   
+
+            if($(this).siblings().size() > 1){
+                $(this).each(function(){                 
+                         if($(this).text().length > namelength){
+                        $(this).text($(this).text().substr(0,namelength) + '...');
+                    }
+
+                });
+            }
+            });
+    
+            //팀항목 말줄임
+            $('.alarm_details .team').each(function(){   
+                var teamlength = 5; // 제한 글자수   
+
+            if($(this).siblings().size() > 1){
+                $(this).each(function(){              
+                         if( $(this).text().length > teamlength){
+                        $(this).text($(this).text().substr(0,teamlength) + '...');
+                    }
+
+                });
+            }
+            });    
+    
+    
+});
+ 
+    
+</script-->
+
+<script>	
+$(document).ready(function(){
+    if ($('.alarm').children('div').hasClass('approval')){
+        $('this').css('width','20%');
+    }
+});    
+
+</script>
+</head>
+
+<body id="main">
+<!--* 스퀘어 팝업 -->
+<!--* 스퀘어 팝업 -->
+<!--* 스퀘어 팝업 -->
+    
+    <!-- 블랙 레이어 배경 -->     
+   <div class="black_bg">               
+   </div> 
+    <!-- // 블랙 레이어 배경 -->
+    <!-- 그룹 선택 : 레이어 팝 -->
+    <div class="squear_layer_pop">
+        <div class="inner_box">
+            <div>
+                <div class="tit">
+                    <p class="on"><span class="fnt_bold">그룹 선택</span></p>
+                    <span><a onclick="javascript:$('.squear_layer_pop').removeClass('pop_open');"><img src="../img/btn_layer_close.gif"></a></span>
+                </div>
+                <div class="cont_pop">                    
+                    <div class="tab01">                    
+                    <div class="input_box">                        
+                        <dl class="">
+                            <dt><span>즐겨찾는 그룹</span></dt>
+                            <dd onclick="javascript:$('.write_layer_pop.workpeed').addClass('pop_open'); $('.squear_layer_pop').removeClass('pop_open');"><span>다음화면으로 넘어가기 위한 예시 그룹</span></dd>
+                            <dd><span>재무회계팀</span></dd>
+                            <dd><span>프로젝트 그룹웨어 스퀘어 플러스</span></dd>
+                            <dd><span>제품기획팀</span></dd>
+                        </dl>
+                        <dl class="">
+                            <dt><span>나의 그룹</span></dt>
+                            <dd><span>경쟁사 동향분석</span></dd>
+                            <dd><span>전사공지</span></dd>
+                            <dd><span>우리그룹</span></dd>
+                            <dd><span>스퀘어룸01</span></dd>
+                            <dd><span>스퀘어룸02</span></dd>
+                        </dl>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    
+    
+ <!-- 글 입력 박스 : 레이어 팝 -->
+     <div class="write_layer_pop workpeed">              
+           <div class="write_box">
+              <!-- 그룹 이름 영역 --> 
+              <div class="group_title">
+                  <span>선택한 그룹명으로 고정</span>
+              </div>     
+              <!-- // 그룹 이름 영역 -->     
+              <!-- 본문 영역 -->  
+               <div class="write_area"  contenteditable="true"  onclick="javascript:$(this).html('')">
+                  <span class="placeholder">
+                      새로운 소식을 공유하세요
+                  </span>                       
+               </div>       
+              <!-- // 본문 영역 -->     
+              <!-- 태그 영역 -->
+               <div class="tag_box" onclick="javascript:$('#tag_selector').toggleClass('select_on');$(this).children('.placeholder').css('display', 'none'); $('.selected_tag').css('display', 'block'); $('.hashinput').focus()">
+                  <span class="placeholder">
+                      태그를 입력하세요
+                  </span>
+                  <span class="selected_tag"   style="display:none;">
+                      <span class="hashinput" contenteditable="true" >
+
+                      </span>
+                  </span>
+                  <!-- 태그 선택영역 -->
+                  <div id="tag_selector" class="layer_pop_select" contenteditable="false" >                          
+                        <ul class="ul_select">
+                            <li class="list title hover">최근 사용한 태그</li>
+                            <li class="list">우리그룹</li>
+                            <li class="list">프로젝트 그룹웨어 스퀘어 플러스욥</li>
+                            <li class="list title">그룹 내 인기태그</li>
+                            <li class="list">스퀘어 TFT 이름을 변경</li>
+                            <li class="list">제품기획팀</li>
+                            <li class="list">HandySoft</li>
+                            <li class="list">Square Thinking</li>
+                            <li class="list">UX+UI</li>
+                       </ul>
+                    </div>                      
+                  <!-- // 태그 선택영역 -->
+              </div>
+               <!-- // 태그 영역 -->
+               <div class="write_btn_area">
+                   <ul class="icon_btns" >
+                       <li class="icon_btn img"><span>img_atach</span></li>
+                       <li class="icon_btn file">
+                       <input type="file" class="" value="file" size="1" >
+                       <span>file_atach</span>
+                       </li>
+                       <li class="line"><span></span></li>
+                       <li class="icon_btn notice"><span>set_notice</span></li>
+                       <li class="icon_btn report"><span>work_report</span></li>                       
+                   </ul>                       
+                   <span class="btn cancel" onclick="javascript:$('.write_layer_pop').removeClass('pop_open'); $('.black_bg').removeClass('on');">취소</span>
+                   <span class="btn submit" onclick="javascript:$('.write_layer_pop').removeClass('pop_open'); $('.black_bg').removeClass('on');">등록</span>
+               </div>                   
+           </div>
+       </div>
+ <!-- // 글 입력 박스 -->
+
+    
+<!-- // 스퀘어 팝업 -->    
+
+<!-- 레이어 팝업 - LEFT 일정에 대한 NOTY -->
+<ul class="noty_cont noty_layout_bottomLeft">
+  <li>
+    <div class="noty_bar noty_theme_facebook noty_layout_bottomLeft noty_notification" id="noty_notification_1428294221471" style="display: none;">
+      <div class="noty_message" ><span class="noty_text">일정을 삭제하시겠습니까?
+        (반복일정은 선택된 일정만 삭제됩니다.)</span>
+        <div class="noty_buttons">
+          <button class="btn btn-primary">삭제</button>
+          <button class="btn btn-danger">취소</button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<!--// 레이어 팝업 - LEFT 일정에 대한 NOTY --> 
+<!--레이어 팝업 - 중앙 일정에 대한 NOTY -->
+<div class="noty_bar noty_theme_facebook noty_layout_center noty_notification" id="noty_notification_1428299276254" style="left: 50%; display: none;">
+  <div class="noty_message"> <span class="noty_text"> <span class="tit">제목 :
+    <p>여기서부터 제목 영역입니다. 제목이 긴경우는 어떤 방식으로 나오는지 궁금합니다.</p>
+    </span> <span class="date">날짜 :
+    <p>2015.03.06 14:00 ~ 2015.04.06 18:30</p>
+    </span> <span class="name">작성자 :
+    <p>김민우</p>
+    </span> <span class="cal">달력 :
+    <p>나의달력</p>
+    </span> <span class="content" style="display: block">내용
+    <p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용<br>
+      내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+    </span> </span>
+    <div class="noty_buttons">
+      <button class="btn btn-primary">확인</button>
+    </div>
+  </div>
+</div>
+<!--// 레이어 팝업 - 중앙 일정에 대한 NOTY --> 
+<!-- 레이어 팝업 - 일정 수정, 추가 -->
+<div id="showPopupSchedule" class="common_layer_pop">
+  <div id="sched_popup" class="inner_box">
+    <div id="sched_popup_div" style="display: none;">
+      <div class="tit"> <span id="sched_title" class="fnt_bold">나의 일정 수정</span> <span><a id="schedule_cancel" name="schedule_cancel" href="javascript:home_common.cancelEvent('schedule');"><img src="../img/btn_layer_close.gif" alt=""></a></span> </div>
+      <div class="cont_pop">
+        <div class="tab01">
+          <dl>
+            <dt><strong>일정</strong></dt>
+            <dd>
+              <input name="schedule_title" id="schedule_title" type="text" class="basic_inp" style="width:175px">
+            </dd>
+          </dl>
+          <dl>
+            <dt><strong>종일일정</strong></dt>
+            <dd>
+              <input class="mg_lft_6 mg_tp_3" type="checkbox" id="all_time" name="all_time" onclick="javascript:home_schedule.check_all_time();">
+            </dd>
+          </dl>
+          <dl>
+            <dt><strong>시간</strong></dt>
+            <dd>
+              <select class="pop_select" id="start_time" name="start_time" onchange="javascipt:home_schedule.setInitEndTime();" selected="selected">
+                <option value="00:00" selected="">00:00</option>
+                <option value="00:30" selected="">00:30</option>
+                <option value="01:00" selected="">01:00</option>
+                <option value="01:30" selected="">01:30</option>
+                <option value="02:00" selected="">02:00</option>
+                <option value="02:30" selected="">02:30</option>
+                <option value="03:00" selected="">03:00</option>
+                <option value="03:30" selected="">03:30</option>
+                <option value="04:00" selected="">04:00</option>
+                <option value="04:30" selected="">04:30</option>
+                <option value="05:00" selected="">05:00</option>
+                <option value="05:30" selected="">05:30</option>
+                <option value="06:00" selected="">06:00</option>
+                <option value="06:30" selected="">06:30</option>
+                <option value="07:00" selected="">07:00</option>
+                <option value="07:30" selected="">07:30</option>
+                <option value="08:00" selected="">08:00</option>
+                <option value="08:30" selected="">08:30</option>
+                <option value="09:00" selected="">09:00</option>
+                <option value="09:30" selected="">09:30</option>
+                <option value="10:00" selected="">10:00</option>
+                <option value="10:30" selected="">10:30</option>
+                <option value="11:00" selected="">11:00</option>
+                <option value="11:30" selected="">11:30</option>
+                <option value="12:00" selected="">12:00</option>
+                <option value="12:30" selected="">12:30</option>
+                <option value="13:00" selected="">13:00</option>
+                <option value="13:30" selected="">13:30</option>
+                <option value="14:00" selected="">14:00</option>
+                <option value="14:30" selected="">14:30</option>
+                <option value="15:00" selected="">15:00</option>
+                <option value="15:30" selected="">15:30</option>
+                <option value="16:00" selected="">16:00</option>
+                <option value="16:30" selected="">16:30</option>
+                <option value="17:00" selected="">17:00</option>
+                <option value="17:30" selected="">17:30</option>
+                <option value="18:00" selected="">18:00</option>
+                <option value="18:30" selected="">18:30</option>
+                <option value="19:00" selected="">19:00</option>
+                <option value="19:30" selected="">19:30</option>
+                <option value="20:00" selected="">20:00</option>
+                <option value="20:30" selected="">20:30</option>
+                <option value="21:00" selected="">21:00</option>
+                <option value="21:30" selected="">21:30</option>
+                <option value="22:00" selected="">22:00</option>
+                <option value="22:30" selected="">22:30</option>
+                <option value="23:00" selected="">23:00</option>
+              </select>
+              <span class="swung"> ~ </span>
+              <select class="pop_select" id="end_time" name="end_time" selected="selected">
+                <option value="00:00" selected="">00:00</option>
+                <option value="00:30" selected="">00:30</option>
+                <option value="01:00" selected="">01:00</option>
+                <option value="01:30" selected="">01:30</option>
+                <option value="02:00" selected="">02:00</option>
+                <option value="02:30" selected="">02:30</option>
+                <option value="03:00" selected="">03:00</option>
+                <option value="03:30" selected="">03:30</option>
+                <option value="04:00" selected="">04:00</option>
+                <option value="04:30" selected="">04:30</option>
+                <option value="05:00" selected="">05:00</option>
+                <option value="05:30" selected="">05:30</option>
+                <option value="06:00" selected="">06:00</option>
+                <option value="06:30" selected="">06:30</option>
+                <option value="07:00" selected="">07:00</option>
+                <option value="07:30" selected="">07:30</option>
+                <option value="08:00" selected="">08:00</option>
+                <option value="08:30" selected="">08:30</option>
+                <option value="09:00" selected="">09:00</option>
+                <option value="09:30" selected="">09:30</option>
+                <option value="10:00" selected="">10:00</option>
+                <option value="10:30" selected="">10:30</option>
+                <option value="11:00" selected="">11:00</option>
+                <option value="11:30" selected="">11:30</option>
+                <option value="12:00" selected="">12:00</option>
+                <option value="12:30" selected="">12:30</option>
+                <option value="13:00" selected="">13:00</option>
+                <option value="13:30" selected="">13:30</option>
+                <option value="14:00" selected="">14:00</option>
+                <option value="14:30" selected="">14:30</option>
+                <option value="15:00" selected="">15:00</option>
+                <option value="15:30" selected="">15:30</option>
+                <option value="16:00" selected="">16:00</option>
+                <option value="16:30" selected="">16:30</option>
+                <option value="17:00" selected="">17:00</option>
+                <option value="17:30" selected="">17:30</option>
+                <option value="18:00" selected="">18:00</option>
+                <option value="18:30" selected="">18:30</option>
+                <option value="19:00" selected="">19:00</option>
+                <option value="19:30" selected="">19:30</option>
+                <option value="20:00" selected="">20:00</option>
+                <option value="20:30" selected="">20:30</option>
+                <option value="21:00" selected="">21:00</option>
+                <option value="21:30" selected="">21:30</option>
+                <option value="22:00" selected="">22:00</option>
+                <option value="22:30" selected="">22:30</option>
+                <option value="23:00" selected="">23:00</option>
+                <option value="23:30" selected="">23:30</option>
+              </select>
+            </dd>
+          </dl>
+          <dl>
+            <dd>
+              <div class="btn_area" style="padding-left:70px">
+                <ul class="btns" id="">
+                  <li id="sched_save_li"><span><a class="fnt_bold" href="javascript:home_common.enterEvent();" id="schedule_save" name="schedule_save">수정</a></span></li>
+                  <li id="sched_delete_li" style="display: list-item;"><span><a href="javascript:home_schedule.deleteSchedule();" id="schedule_delete" name="schedule_delete">삭제</a></span></li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <input type="hidden" id="event_id" name="event_id" value="00000000000000002231">
+      <input type="hidden" id="calendar_id" name="calendar_id" value="">
+      <input type="hidden" id="startdate" name="startdate" value="2015.03.06">
+      <input type="hidden" id="enddate" name="enddate" value="2015.03.06">
+      <input type="hidden" id="recur_tp" name="recur_tp" value="0">
+      <input type="hidden" id="recur_cycle" name="recur_cycle">
+      <input type="hidden" id="recur_rule" name="recur_rule" value="null">
+    </div>
+  </div>
+</div>
+<!-- //레이어 팝업 - 일정 수정, 추가 --> 
+
+<!------ LEFT MENU AREA ------> 
+<!------ LEFT MENU AREA ------> 
+<!------ LEFT MENU AREA ------> 
+<!------ LEFT MENU AREA ------> 
+<!------ LEFT MENU AREA ------> 
+<!------ LEFT MENU AREA ------>
+<div id="left" class="left_menu pd_0"> 
+  <!-- 업무알림
+        : 업무알림에서 카운트는 "0"일경우 나타나지 않게 합니다. -->
+  <div id="count_open" class="alram_area on"> 
+    <!-- 업무알림
+        : 기본상태에서 alram_area에 on이 붙으면 display:block이 됩니다.--> 
+    <a href="">
+    <h2><span>업무알림</span><span class="alram_bell" onclick="alramBell">onoff<span class="new">N</span><span class="main_flip"></span></span> </h2>
+    </a>
+    <div id="alram_box" class="alram_box">
+      <div class="mail">
+        <h3 class="">메일</h3>
+        <ul class="work_lst">
+          <li> <a href=""><span class="lst">안읽은편지</span><span class="count" id="">0</span></a></li>
+        </ul>
+      </div>
+      <div class="apprvl">
+        <h3 class="">결재</h3>
+        <ul class="work_lst">
+          <li><a href="javascript:;"><span class="lst">결재대기</span><span class="count">0</span></a></li>
+          <li><a href="javascript:;"><span class="lst">개인접수</span><span class="count">0</span></a></li>
+          <li><a href="javascript:;"><span class="lst">수신반송</span><span class="count">0</span></a></li>
+        </ul>
+      </div>
+      <div class="board">
+        <h3 class="">게시판</h3>
+        <ul class="work_lst">
+          <li><a href=""><span class="lst">최근게시물</span> <span id="" class="count">43</span> </a></li>
+          <li><a href=""> <span class="lst">업무용</span> <span id="" class="count">0</span></a></li>
+          <li><a href=""> <span class="lst">비업무용</span> <span id="" class="count">43</span></a></li>
+        </ul>
+      </div>
+      <div class="work">
+        <h3 class="">업무넷</h3>
+        <ul class="work_lst">
+          <li><a href=""> <span class="lst">새알림이력</span> <span class="count" id="">0</span></a></li>
+          <li><a href=""> <span class="lst">안읽은 업무</span> <span class="count" id="">0</span></a></li>
+          <li><a href=""> <span class="lst">승인대기 업무</span> <span class="count" id="">0</span></a></li>
+        </ul>
+      </div>
+      <div class="mttng">
+        <h3 class="">회의</h3>
+        <ul class="work_lst">
+          <li><a href=""> <span class="lst">오늘의 회의</span> <span class="count" id="">0</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //업무알림 --> 
+  <!-- 나의 일정 -->
+  <div class="main_lft_area sched on"> <a href="">
+    <h2><span>나의 일정</span><span class="lst_clse">open</span></h2>
+    </a>
+    <div class="sched_box"> 
+      <!-- sched --> 
+      <!-- 초기화면 달력 -->
+      <div id="" class="calendar_tree_box">
+        <div class="mini_cal_date"> <span class="today"><a href="">오늘</a></span><span class="yyyymm">2014. 04</span> <span class="btn_month"><a class="btn_month_pre" href="#" title="이전 달">이전달</a> <a class="btn_month_next" href="#" title="다음 달">다음달</a></span> </div>
+        <div id="left_calendar_tree" class="left_calendar_tree">
+          <div id="info_calendar">
+            <table id="calendar" name="calendar" border="0" cellspacing="0" cellpadding="0" class="calendar">
+              <colgroup>
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              <col width="27px">
+              </colgroup>
+              <thead id="calendar_head" name="calendar_head">
+                <tr id="week_name" name="week_name">
+                  <th class="holisun">일</th>
+                  <th>월</th>
+                  <th>화</th>
+                  <th>수</th>
+                  <th>목</th>
+                  <th>금</th>
+                  <th class="holisat">토</th>
+                </tr>
+              </thead>
+              <tbody id="calendar_body" name="calendar_body" >
+                <tr id="calendar_table_body_tr_0" name="calendar_table_body_tr_0">
+                  <td id="calendar_table_body_td_0" name="calendar_table_body_td_0" class="other"><a id="calendar_table_body_a_0" name="calendar_table_body_a_0" class="holisun" schd_data="0330" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 3, 30);">30</a></td>
+                  <td id="calendar_table_body_td_1" name="calendar_table_body_td_1" class="other"><a id="calendar_table_body_a_1" name="calendar_table_body_a_1" class="schd" schd_data="0331" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 3, 31);">31</a></td>
+                  <td id="calendar_table_body_td_2" name="calendar_table_body_td_2" class=""><a id="calendar_table_body_a_2" name="calendar_table_body_a_2" class="" schd_data="0401" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 1);">1</a></td>
+                  <td id="calendar_table_body_td_3" name="calendar_table_body_td_3" class=""><a id="calendar_table_body_a_3" name="calendar_table_body_a_3" class="" schd_data="0402" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 2);">2</a></td>
+                  <td id="calendar_table_body_td_4" name="calendar_table_body_td_4" class=""><a id="calendar_table_body_a_4" name="calendar_table_body_a_4" class="" schd_data="0403" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 3);">3</a></td>
+                  <td id="calendar_table_body_td_5" name="calendar_table_body_td_5" class=""><a id="calendar_table_body_a_5" name="calendar_table_body_a_5" class="" schd_data="0404" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 4);">4</a></td>
+                  <td id="calendar_table_body_td_6" name="calendar_table_body_td_6" class=""><a id="calendar_table_body_a_6" name="calendar_table_body_a_6" class="holisat" schd_data="0405" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 5);">5</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_1" name="calendar_table_body_tr_1">
+                  <td id="calendar_table_body_td_7" name="calendar_table_body_td_7" class=""><a id="calendar_table_body_a_7" name="calendar_table_body_a_7" class="holisun" schd_data="0406" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 6);">6</a></td>
+                  <td id="calendar_table_body_td_8" name="calendar_table_body_td_8" class=""><a id="calendar_table_body_a_8" name="calendar_table_body_a_8" class="" schd_data="0407" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 7);">7</a></td>
+                  <td id="calendar_table_body_td_9" name="calendar_table_body_td_9" class=""><a id="calendar_table_body_a_9" name="calendar_table_body_a_9" class="" schd_data="0408" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 8);">8</a></td>
+                  <td id="calendar_table_body_td_10" name="calendar_table_body_td_10" class=""><a id="calendar_table_body_a_10" name="calendar_table_body_a_10" class="" schd_data="0409" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 9);">9</a></td>
+                  <td id="calendar_table_body_td_11" name="calendar_table_body_td_11" class="day_on today"><a id="calendar_table_body_a_11" name="calendar_table_body_a_11" class="schd" schd_data="0410" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 10);">10</a></td>
+                  <td id="calendar_table_body_td_12" name="calendar_table_body_td_12" class=""><a id="calendar_table_body_a_12" name="calendar_table_body_a_12" class="" schd_data="0411" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 11);">11</a></td>
+                  <td id="calendar_table_body_td_13" name="calendar_table_body_td_13" class=""><a id="calendar_table_body_a_13" name="calendar_table_body_a_13" class="holisat" schd_data="0412" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 12);">12</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_2" name="calendar_table_body_tr_2">
+                  <td id="calendar_table_body_td_14" name="calendar_table_body_td_14" class="day_on"><a id="calendar_table_body_a_14" name="calendar_table_body_a_14" class="holisun" schd_data="0413" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 13);">13</a></td>
+                  <td id="calendar_table_body_td_15" name="calendar_table_body_td_15" class=""><a id="calendar_table_body_a_15" name="calendar_table_body_a_15" class="schd" schd_data="0414" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 14);">14</a></td>
+                  <td id="calendar_table_body_td_16" name="calendar_table_body_td_16" class=""><a id="calendar_table_body_a_16" name="calendar_table_body_a_16" class="" schd_data="0415" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 15);">15</a></td>
+                  <td id="calendar_table_body_td_17" name="calendar_table_body_td_17" class=""><a id="calendar_table_body_a_17" name="calendar_table_body_a_17" class="" schd_data="0416" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 16);">16</a></td>
+                  <td id="calendar_table_body_td_18" name="calendar_table_body_td_18" class=""><a id="calendar_table_body_a_18" name="calendar_table_body_a_18" class="" schd_data="0417" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 17);">17</a></td>
+                  <td id="calendar_table_body_td_19" name="calendar_table_body_td_19" class=""><a id="calendar_table_body_a_19" name="calendar_table_body_a_19" class="schd" schd_data="0418" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 18);">18</a></td>
+                  <td id="calendar_table_body_td_20" name="calendar_table_body_td_20" class=""><a id="calendar_table_body_a_20" name="calendar_table_body_a_20" class="holisat" schd_data="0419" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 19);">19</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_3" name="calendar_table_body_tr_3">
+                  <td id="calendar_table_body_td_21" name="calendar_table_body_td_21" class=""><a id="calendar_table_body_a_21" name="calendar_table_body_a_21" class="holisun" schd_data="0420" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 20);">20</a></td>
+                  <td id="calendar_table_body_td_22" name="calendar_table_body_td_22" class=""><a id="calendar_table_body_a_22" name="calendar_table_body_a_22" class="schd" schd_data="0421" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 21);">21</a></td>
+                  <td id="calendar_table_body_td_23" name="calendar_table_body_td_23" class=""><a id="calendar_table_body_a_23" name="calendar_table_body_a_23" class="" schd_data="0422" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 22);">22</a></td>
+                  <td id="calendar_table_body_td_24" name="calendar_table_body_td_24" class=""><a id="calendar_table_body_a_24" name="calendar_table_body_a_24" class="" schd_data="0423" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 23);">23</a></td>
+                  <td id="calendar_table_body_td_25" name="calendar_table_body_td_25" class=""><a id="calendar_table_body_a_25" name="calendar_table_body_a_25" class="" schd_data="0424" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 24);">24</a></td>
+                  <td id="calendar_table_body_td_26" name="calendar_table_body_td_26" class=""><a id="calendar_table_body_a_26" name="calendar_table_body_a_26" class="" schd_data="0425" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 25);">25</a></td>
+                  <td id="calendar_table_body_td_27" name="calendar_table_body_td_27" class=""><a id="calendar_table_body_a_27" name="calendar_table_body_a_27" class="holisat" schd_data="0426" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 26);">26</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_4" name="calendar_table_body_tr_4">
+                  <td id="calendar_table_body_td_28" name="calendar_table_body_td_28" class=""><a id="calendar_table_body_a_28" name="calendar_table_body_a_28" class="holisun" schd_data="0427" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 27);">27</a></td>
+                  <td id="calendar_table_body_td_29" name="calendar_table_body_td_29" class=""><a id="calendar_table_body_a_29" name="calendar_table_body_a_29" class="" schd_data="0428" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 28);">28</a></td>
+                  <td id="calendar_table_body_td_30" name="calendar_table_body_td_30" class=""><a id="calendar_table_body_a_30" name="calendar_table_body_a_30" class="" schd_data="0429" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 29);">29</a></td>
+                  <td id="calendar_table_body_td_31" name="calendar_table_body_td_31" class=""><a id="calendar_table_body_a_31" name="calendar_table_body_a_31" class="" schd_data="0430" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 4, 30);">30</a></td>
+                  <td id="calendar_table_body_td_32" name="calendar_table_body_td_32" class="other"><a id="calendar_table_body_a_32" name="calendar_table_body_a_32" class="" schd_data="0501" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 1);">1</a></td>
+                  <td id="calendar_table_body_td_33" name="calendar_table_body_td_33" class="other"><a id="calendar_table_body_a_33" name="calendar_table_body_a_33" class="schd" schd_data="0502" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 2);">2</a></td>
+                  <td id="calendar_table_body_td_34" name="calendar_table_body_td_34" class="other"><a id="calendar_table_body_a_34" name="calendar_table_body_a_34" class="holisat" schd_data="0503" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 3);">3</a></td>
+                </tr>
+                <tr id="calendar_table_body_tr_5" name="calendar_table_body_tr_5">
+                  <td id="calendar_table_body_td_35" name="calendar_table_body_td_35" class="other"><a id="calendar_table_body_a_35" name="calendar_table_body_a_35" class="holisun" schd_data="0504" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 4);">4</a></td>
+                  <td id="calendar_table_body_td_36" name="calendar_table_body_td_36" class="other"><a id="calendar_table_body_a_36" name="calendar_table_body_a_36" class="" schd_data="0505" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 5);">5</a></td>
+                  <td id="calendar_table_body_td_37" name="calendar_table_body_td_37" class="other"><a id="calendar_table_body_a_37" name="calendar_table_body_a_37" class="schd" schd_data="0506" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 6);">6</a></td>
+                  <td id="calendar_table_body_td_38" name="calendar_table_body_td_38" class="other"><a id="calendar_table_body_a_38" name="calendar_table_body_a_38" class="" schd_data="0507" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 7);">7</a></td>
+                  <td id="calendar_table_body_td_39" name="calendar_table_body_td_39" class="other"><a id="calendar_table_body_a_39" name="calendar_table_body_a_39" class="schd" schd_data="0508" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 8);">8</a></td>
+                  <td id="calendar_table_body_td_40" name="calendar_table_body_td_40" class="other"><a id="calendar_table_body_a_40" name="calendar_table_body_a_40" class="" schd_data="0509" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 9);">9</a></td>
+                  <td id="calendar_table_body_td_41" name="calendar_table_body_td_41" class="other"><a id="calendar_table_body_a_41" name="calendar_table_body_a_41" class="" schd_data="0510" href="javascript:home_calendar.setAttributeCalendarNavi(2014, 5, 10);">10</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sched_list -->
+    <ul id="sched_list" class="tlbar_lst">
+      <li id="" class="added_sched"> <a id="" href="javascript:home_schedule.openSchedulePopup(0);"> <span class="add">dot </span> <span class="text">am10:00 일정이 등록되어있습니다.</span></a></li>
+      <input type="hidden" id="" value="">
+      <li id="" class="sched_add"> <a id="" href="javascript:home_schedule.openSchedulePopup(0);"> <span class="add">add </span> <span class="text">일정추가</span></a></li>
+      <input type="hidden" id="" value="">
+      <!-- 일정추가 li는 등록되어있는 갯수 + 1개만 보여지게합니다. -->
+    </ul>
+  </div>
+  <!-- //나의 일정--> 
+  
+  <!-- 투표 -->
+  <div class="main_lft_area vote"> 
+    <!-- main_lft_area vote 뒤에 off 가 추가되면 display:none; 됩니다--> 
+    <a href="">
+    <h2><span>투표</span><span class="lst_clse">close</span></h2>
+    </a>
+    <div id="" class="vote_box">
+      <ul>
+        <table width="100%" border="0">
+          <tbody>
+            <tr>
+              <td class="fnt_gray"><!--img src="../img/home/ARROW.GIF" width="12" height="7" align="absmiddle"--> 
+                진행 중인 투표가 없습니다. </td>
+            </tr>
+          </tbody>
+        </table>
+      </ul>
+    </div>
+  </div>
+  <!-- //투표 --> 
+</div>
+<!------ // LEFT MENU AREA ------> 
+<!------ // LEFT MENU AREA ------> 
+<!------ // LEFT MENU AREA ------> 
+<!------ // LEFT MENU AREA ------> 
+<!------ // LEFT MENU AREA ------> 
+<!------ // LEFT MENU AREA ------> 
+
+<!------ CONTENTS AREA ------> 
+<!------ CONTENTS AREA ------> 
+<!------ CONTENTS AREA ------> 
+<!------ CONTENTS AREA ------>
+<div class="main_body"> 
+  <!-- 접고펴기 버튼 -->
+  <div class="body_contents"> 
+    <!-- 왼쪽 접고 펴기
+     <div id="acco_left_arr" name="acco_left_arr" class="btn_flip_left"><a href="javascript:;" onclick="toggle_folder_content();"></a></div> 왼쪽 접고펴기는 추후 적용 -->
+    <div id="acco_right_arr" name="acco_right_arr" class="btn_flip_right"> <a href="javascript:;" onclick="toggleRFrame();"></a></div>
+    <!-- 메인배너 이미지 banner 
+    <div id="" class="">
+      <table width="100%" border="0">
+        <tbody>
+          <tr>
+            <td class="main_banner"><p><img src="../img/main_banner.jpg"></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // 메인배너 이미지 --> 
+    <!-- 주간일정 w_cal_area 
+    <div class="">
+      <div class="box_area off">
+        <div class="title_area">
+          <h2 class="title dsp_inblck">2014. 03. 31 ~ 2014. 04. 06
+            <div class="btn_box_date">
+              <div class="btn_area_xs"> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> <span class="date_today"><a href="#" title="오늘">오늘</a></span> </div>
+            </div>
+            <span class="lst_clse clse">close</span></h2>
+        </div>
+        <div class="" style="display:;">
+          <div class="">
+            <div class="event_contents">
+              <div class="event_month"> 
+                <!-- [D] 일정 표시 bar
+                <div class="events_entry_box"> 
+                  <!-- [D] 첫째주
+                  <div id="allday_events_row_0">
+                    <div class="lon color01" style="left:1px; top:28px; width:136px;">
+                      <p>일정입니당</p>
+                    </div>
+                    <div class="lon color03" style="left:1px; top:52px; width:136px;">
+                      <p>워크샵</p>
+                    </div>
+                    <div class="lon color12" style="left:1px; top:76px; width:136px;">
+                      <p>오후 12:00 팀 회식</p>
+                    </div>
+                    <div class="lon color18" style="left:1px; top:100px; width:136px;">
+                      <p>오전 07:00 UX 디자인 회의</p>
+                    </div>
+                    <div class="lon share_cal" style="left:1px; top:124px; width:136px;">
+                      <p><img  src="../img/ico_share_cal.png" alt="공유일정">오후 13:00 Handy Soft</p>
+                    </div>
+                  </div>
+                  <!-- [D] 전사달력
+                  
+                  <!-- // [D] 전사달력
+                  <!-- [D] 달력(월) 리스트 
+                  <div class="month_table">
+                    <table>
+                      <colgroup>
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.5%">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="sunday">일(30)</th>
+                          <th scope="col">월(1)</th>
+                          <th scope="col">화(2)</th>
+                          <th scope="col">수(3)</th>
+                          <th scope="col">목(4)</th>
+                          <th scope="col">금(5)</th>
+                          <th scope="col" class="saturday">토(6)</th>
+                        </tr>
+                      </thead>
+                    </table>
+                    <table>
+                      <colgroup>
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.25%">
+                      <col style="width:14.5%">
+                      </colgroup>
+                      <tbody>
+                        <tr class="bg_on">
+                          <td class="day_hidden sunday"><!-- [D] day_hidden 은 비활성화 날짜
+                            
+                            <div class="month_cell"> <span  class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a>
+                              <p class="today"></p>
+                              <!--[D] class="today" 오늘날짜만 표시
+                            </div>
+                            <div class="allview on"><a href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div>
+                            
+                            <!-- [D] 일정 자세히 보기 레이어
+                            
+                            <div class="month_more">
+                              <div class="p_eventall">
+                                <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                                <ul>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em>03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                  <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            
+                            <!-- // [D] 일정 자세히 보기 레이어 </td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                          <td class="friday"><div  class="month_cell"> <span class="month_cell_date"></span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                            <div class="allview"><a data-brackets-id="484" href="#">
+                              <p><img src="../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                              </a> </div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // [D] 달력(월) 리스트 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- // 주간일정  
+      <!--  left side --> 
+      
+      <!-- 공지사항 -->
+      
+      <div class="left">
+        <div class="box_area">
+          <div class="title_area">
+            <h2 class="title">공지사항</h2>
+          </div>
+          <div class="box_area_content" >
+            <table>
+              <colgroup>
+              <col style="width:*;">
+              <col style="width:50px;">
+              <col style="width:90px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- // 공지사항 --> 
+        
+   <div class="box_area board mg_tp_10">
+          <div class="title_area">
+            <h2 class="title">최근게시물</h2>
+          </div>
+          <div class="box_area_content" >
+            <table>
+              <colgroup>
+              <col style="width:*;">
+              <col style="width:50px;">
+              <col style="width:90px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료 &#93;</a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료 &#93;</a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- 메일리스트 -->
+        <div class="box_area  mg_tp_10 last_cont">
+          <div class="title_area">
+            <h2 class="title">메일</h2>
+          </div>
+          <div class="box_area_content" >
+            <table>
+              <colgroup>
+              <col style="width:*;">
+              <col style="width:50px;">
+              <col style="width:90px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#" class="new">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+                <tr>
+                  <td class="subj"><a href="#">UC 서비스 장애의 건  &#91; 복구 완료&#93; </a></td>
+                  <td class="writer">글쓴이</td>
+                  <td class="date">2015.03.15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <!-- // 공지사항 --> 
+      </div>
+      <!-- ///// left side --> 
+      
+      <!-- right side -->
+      
+      <div class="right">
+        
+        
+        <!-- * 스퀘어 * --> 
+        <!-- * 스퀘어 * --> 
+        <!-- * 스퀘어 * --> 
+        <!-- * 스퀘어 * -->
+        <!-- 본문영역의 멘션, 해쉬태그 / 의견영역의 멘션의 링크(기능)를 제거할 때, 클래스 .link_none 추가 -->
+        <div class="box_area square link_none sq_plus"> 
+          <!-- 같은 right 박스에 게시판 등 다른 요소 박스가 같이 들어가면, 위에 mg_tp_10을 사용하고 스크립트 높이값을 조절해 줍니다. -->
+          <div class="title_area">
+            <h2 class="title">스퀘어 <a class="ttl_link" href=""> 바로가기 </a> </h2>
+          </div>
+          <div class="box_area_content" > 
+            <!-- CONTENTs AREA START -->
+
+           <!-- 글 입력 박스 -->
+           <div class="write_box workpeed" onclick="javascript:$('.squear_layer_pop').addClass('pop_open'); $('.black_bg').addClass('on');">            
+               <div class="write_area">
+                  <span>
+                          새로운 소식을 공유하세요
+                  </span> 
+               </div>
+           </div>
+           <!-- // 글 입력 박스 -->
+           
+           <!-- 컨텐츠 1 -->
+           <div class="contents_wrap">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>디자이노디자이노</a></span> 
+                  <span class="act">그룹에 새로운 소식을 게시했습니다.</span> 
+                    <!-- [D] 메인 스퀘어는 act는 2가지 타입으로 구분합니다.
+                        1. 새 글 알림 : 그룹에 새로운 소식을 게시했습니다.
+                        2. 새 의견 알림 : 그룹에 의견을 남겼습니다.
+                    -->
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../img/pic_mask_40.png">
+                   <img class="photo" src="../img/thmb_nopic.gif">
+               </div>
+               <!-- // 사용자 사진 -->
+               <!-- 관심글 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 관심글 -->
+               <!-- 메뉴 -->
+               <div>
+               <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                 메뉴
+               </div>
+               <!-- 메뉴 레이어 팝 -->
+               <div class="layer_pop layer_menu" style="width:80px;">
+                               <ul>
+                                   <li><a>저장</a></li>
+                                   <li><a>복사</a></li>
+                               </ul>
+               </div>
+               </div>
+               <!-- // 메뉴 --> 
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김핸디
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           3시간 전
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                      <!-- 본문 -->
+                       <p class="article">메인에서 본문 카드 UI입니다. 컨텐츠의 내용은 2줄까지만 표시되고 말줄임과 ‘... 더보기’ 버튼을 사용합니다.  <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>은 box_area.square Div에 link_none 클래스를 제거하여 활성화 합니다. 메인에서 링크카드는 표시하지 않습니다.
+                       </p>
+                       <!-- // 본문 -->
+                       <a class="p_more">
+                           더보기
+                       </a>
+                        <!-- // 텍스트 영역 -->
+               <!-- 썸네일 영역 -->
+               <div class="sum_area">
+                   <div class="sum_wrap">
+                    <a class="btn pre">pre</a>
+                       <ul class="sumnails">                  
+                           <!-- 이미지 01 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_01.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 02 -->
+                         <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_02.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 03 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_03.jpg" />
+                              </span>
+                          </li> 
+                           <!-- 이미지 04 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_04.jpg" />
+                              </span>
+                          </li>  
+                           <!-- 이미지 05 -->
+                         <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_05.jpg" />
+                              </span>
+                          </li>
+                          <!-- 이미지 01 -->
+                         <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_01.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 02 -->
+                         <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_02.jpg" />
+                              </span>
+                          </li>
+                           <!-- 이미지 03 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_03.jpg" />
+                              </span>
+                          </li> 
+                           <!-- 이미지 04 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_04.jpg" />
+                              </span>
+                          </li>  
+                           <!-- 이미지 05 -->
+                          <li class="sumnail">
+                              <span class="sumnail_box">
+                                  <img src="../img/square_plus/ex_img_05.jpg" />
+                              </span>
+                          </li>
+                       </ul>
+                       <a class="btn next">next</a>
+                       </div>
+                   </div>
+                  
+               <!-- 파일 영역 -->
+               <div class="file_area">
+                   <div class="file_wrap">
+                   <div class="file_list_tit">
+                       <span class="title">파일<span>2</span></span>
+                       <a class="check_all">전체선택</a>
+                       <a class="file_save">PC저장</a>
+                      <span class="f_more" onclick="javascript:$(this).parent('div').toggleClass('open');">메뉴</span>
+                        <!-- 메뉴 레이어 팝 -->
+                        <div class="layer_pop layer_menu">
+                           <ul>
+                               <li><a>삭제</a></li>
+                           </ul>
+                        </div>
+                   </div>
+                   <ul class="file_list">
+                       <li class="file">
+                           <input type="checkbox">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">파일UI입니다. 현재 펼쳐진 상태입니다. default는 접힘상태 (file_list display:none;) 입니다.</span>
+                               <span class="size">123 KB</span>
+                               <span class="cancel_select">del</span>
+                           </a>
+                           <div>               
+                           <!-- 관심글 -->
+                            <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                                collect
+                           </div>
+                           <!-- // 관심글 -->
+                           </div>
+                       </li>
+                      <li class="file">
+                          <input type="checkbox">
+                           <a class="file_download">
+                              <span class="file_type img"></span>
+                               <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                               <span class="size">26.9 MB</span>
+                               <span class="cancel_select">del</span>
+                           </a>
+                           <div>               
+                           <!-- 관심글 -->
+                            <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                                collect
+                           </div>
+                           <!-- // 관심글 -->
+                           </div>
+                       </li>
+                   </ul>
+                   </div>
+               </div>
+               <!-- // 파일 영역 -->
+               </div>          
+               <!-- 카운팅 영역 -->
+               <div class="count_wrap">
+                   <div class="face_count">
+                       <!-- [D] 
+                            Case 1. 표정이 선택되지 않았을 경우 span의 string은 표정짓기로 표기합니다.
+                            <span class="face_count_tit">표정짓기</span>
+    
+                            Case 2. 사용자가 표정을 선택했을 경우, .mine 과 표정 클래스를 추가합니다.
+                            span의 string은 표정으로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            .like : 좋아요, .smile : 웃겨요, .best : 최고예요, .surprise 놀랐어요, .sad : 슬퍼요, .angry : 화나요
+                            <span class="face_count_tit mine like">표정<em>1</em></span>
+
+                            Case 3. 사용자 외 다른 사람만 표정을 선택했을 경우, span의 string은 표정짓기로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            <span class="face_count_tit mine like">표정짓기<em>1</em></span>
+                        -->
+                       <span class="face_count_tit mine like" onclick="javascript:$(this).parent('div').toggleClass('open');">표정</span>
+                       <div class="count">
+                           <em>3</em>
+                           <!-- 멤버리스트 툴팁:레이어 -->
+                           <div class="tooltip_layer">
+                                <ul class="have_face_list">
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span class="more">... 외 99999명</span></a></li>
+                                </ul>
+                                <span class="square_tooltip_arr"></span>
+                            </div>
+                           <!-- // 멤버리스트 툴팁:레이어 -->
+                        </div>
+                       <!-- 표정짓기 레이어메뉴 -->
+                       <div class="layer_pop layer_menu">
+                           <ul class="face_list">
+                               <li><span class="face like" onclick="javascript:$(this).parent('li').toggleClass('on');">좋아요</span></li>
+                               <li><span class="face smile" onclick="javascript:$(this).parent('li').toggleClass('on');">웃겨요</span></li>
+                               <li><span class="face best" onclick="javascript:$(this).parent('li').toggleClass('on');">최고예요</span></li>
+                               <li><span class="face surprise" onclick="javascript:$(this).parent('li').toggleClass('on');">놀랐어요</span></li>
+                               <li><span class="face sad" onclick="javascript:$(this).parent('li').toggleClass('on');">슬퍼요</span></li>
+                               <li><span class="face angry" onclick="javascript:$(this).parent('li').toggleClass('on');">화나요</dspaniv></li>
+                           </ul>
+                       </div>
+                       <!-- // 표정짓기 레이어메뉴 -->
+                   </div>
+                   <div class="comm_count">
+                       <span class="comm_count_tit">의견<em>2</em></span>
+                   </div>
+                </div>
+               <!-- // 카운팅 영역 -->               
+          </div>
+          <!-- // 본문 영역-->     
+               <!-- 의견 영역 -->
+               <!-- [D] 표정과 의견이 없는 경우 nohave 를 붙여줍니다. -->
+                <div class="comment_box">
+                    <!-- 의견 쓰기 영역 -->
+                    <div class="write_comment" contenteditable="true">
+                       <span class="placeholder">
+                          [Shift] + [Enter]로 줄바꿈이 가능합니다.
+                      </span> 
+                    </div>
+                    <!-- // 의견 쓰기 영역 -->
+
+                    
+                    <!-- 의견 컨텐츠 1 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../img/pic_mask_40.png">
+                           <img class="photo" src="../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    내가쓴의견
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    메인화면에서의 본문카드 안의 의견영역 UI입니다. 말줄임기능 없이 전체 내용을 모두 보여줍니다. <em class="at"><a href="#">김멘션</a></em> 기능은 box_area.square Div에 link_none 클래스를 제거하여 활성화 합니다.
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 1 -->
+                    
+                    <!-- 의견 컨텐츠 2 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../img/pic_mask_40.png">
+                           <img class="photo" src="../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    입출력장치의 변화
+                                    <em class="at"><a href="#">박핸디</a></em>
+                                    공유드립니다.
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 2 -->
+           
+                </div>
+               <!-- // 의견 영역 -->                            
+           
+           </div>
+           <!-- // 컨텐츠 -->   
+          
+           <!-- 의견 컨텐츠 1 -->
+           <div class="contents_wrap comment">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>디자이노</a></span> 
+                  <span class="act">그룹에 의견을 남겼습니다.</span> 
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../img/pic_mask_40.png">
+                   <img class="photo" src="../img/thmb_ttl_mini.png">
+               </div>
+               <!-- // 본문 영역-->     
+               <!-- 의견 영역 -->
+               <!-- [D] 표정과 의견이 없는 경우 nohave 를 붙여줍니다. -->
+                <div class="comment_box">
+                    <!-- 의견 컨텐츠 1 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../img/pic_mask_40.png">
+                           <img class="photo" src="../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    내가쓴의견
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    메인화면에서의 본문카드 안의 의견영역 UI입니다. 말줄임기능 없이 전체 내용을 모두 보여줍니다. <em class="at"><a href="#">김멘션</a></em> 기능은 box_area.square Div에 link_none 클래스를 제거하여 활성화 합니다.
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 1 -->
+                    
+                    <!-- 의견 컨텐츠 2 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../img/pic_mask_40.png">
+                           <img class="photo" src="../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    김핸디
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    동일한 본문카드에 연속으로 의견을 작성했을 경우, 의견작성자와 의견내용을 이어서 표시합니다. 메인에서 의견의 내용은 말줄임 표시 없이 전체 스트링을 표시해줍니다. 메인에서 의견의 내용은 말줄임 표시 
+없이 전체 스트링을 표시해줍니다. 
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 2 -->
+           
+                </div>
+               <!-- // 의견 영역 -->
+               <!-- 출처 본문 정보 -->
+               <div class="article_wrap">
+                   <p class="article">출처 본문의 내용은 브라우저 사이즈에 맞춘 1줄 까지만 표시된 후 말줄임 표시합니다. <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>는 비활성화합니다. 출처 본문의 내용은 브라우저 사이즈에 맞춘 1줄 까지만 표시된 후 말줄임 표시합니다. <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>는 비활성화합니다.
+                       </p>                   
+               </div>
+               <!-- // 출처 본문 정보 -->
+           
+           </div>
+           <!-- // 컨텐츠 -->  
+
+          
+              
+            
+          </div>
+           <!-- // 의견 컨텐츠 1 -->          
+          
+           <!-- 컨텐츠 1 -->
+           <div class="contents_wrap">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>디자이노</a></span> 
+                  <span class="act">그룹에 새로운 소식을 게시했습니다.</span> 
+                    <!-- [D] 메인 스퀘어는 act는 2가지 타입으로 구분합니다.
+                        1. 새 글 알림 : 그룹에 새로운 소식을 게시했습니다.
+                        2. 새 의견 알림 : 그룹에 의견을 남겼습니다.
+                    -->
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../img/pic_mask_40.png">
+                   <img class="photo" src="../img/thmb_nopic.gif">
+               </div>
+               <!-- // 사용자 사진 -->
+               <!-- 관심글 -->
+               <div class="collect" onclick="javascript:$(this).toggleClass('on');">
+                            collect
+               </div>
+               <!-- // 관심글 -->
+               <!-- 메뉴 -->
+               <div>
+               <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                 메뉴
+               </div>
+               <!-- 메뉴 레이어 팝 -->
+               <div class="layer_pop layer_menu" style="width:80px;">
+                               <ul>
+                                   <li><a>저장</a></li>
+                                   <li><a>복사</a></li>
+                               </ul>
+               </div>
+               </div>
+               <!-- // 메뉴 --> 
+               <!-- 텍스트 영역 -->            
+               <div class="article_wrap">   
+                     <!-- 사용자, 팀, 날짜 정보 -->
+                     <div class="info">
+                         <span class="name">
+                         김핸디
+                         </span>
+                         <span class="team">
+                          제품기획팀
+                         </span>
+                         <span class="date">
+                           3시간 전
+                         </span>
+                     </div>
+                       <!-- // 사용자, 팀, 날짜 정보 -->
+                      <!-- 본문 -->
+                       <p class="article">메인에서 본문 카드 UI입니다. 컨텐츠의 내용은 2줄까지만 표시되고 말줄임과 ‘... 더보기’ 버튼을 사용합니다.  <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>은 box_area.square Div에 link_none 클래스를 제거하여 활성화 합니다. 메인에서 링크카드는 표시하지 않습니다.
+                       </p>
+                       <!-- // 본문 -->
+                       <a class="p_more">
+                           더보기
+                       </a>
+                        <!-- // 텍스트 영역 -->
+               </div>          
+               <!-- 카운팅 영역 -->
+               <div class="count_wrap">
+                   <div class="face_count">
+                       <!-- [D] 
+                            Case 1. 표정이 선택되지 않았을 경우 span의 string은 표정짓기로 표기합니다.
+                            <span class="face_count_tit">표정짓기</span>
+    
+                            Case 2. 사용자가 표정을 선택했을 경우, .mine 과 표정 클래스를 추가합니다.
+                            span의 string은 표정으로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            .like : 좋아요, .smile : 웃겨요, .best : 최고예요, .surprise 놀랐어요, .sad : 슬퍼요, .angry : 화나요
+                            <span class="face_count_tit mine like">표정<em>1</em></span>
+
+                            Case 3. 사용자 외 다른 사람만 표정을 선택했을 경우, span의 string은 표정짓기로 표기, <em>을 추가하여 count정보를 표시합니다.
+                            <span class="face_count_tit mine like">표정짓기<em>1</em></span>
+                        -->
+                       <span class="face_count_tit mine like" onclick="javascript:$(this).parent('div').toggleClass('open');">표정</span>
+                       <div class="count">
+                           <em>3</em>
+                           <!-- 멤버리스트 툴팁:레이어 -->
+                           <div class="tooltip_layer">
+                                <ul class="have_face_list">
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span>김핸디</span></li>
+                                    <li><span class="more">... 외 99999명</span></a></li>
+                                </ul>
+                                <span class="square_tooltip_arr"></span>
+                            </div>
+                           <!-- // 멤버리스트 툴팁:레이어 -->
+                        </div>
+                       <!-- 표정짓기 레이어메뉴 -->
+                       <div class="layer_pop layer_menu">
+                           <ul class="face_list">
+                               <li><span class="face like" onclick="javascript:$(this).parent('li').toggleClass('on');">좋아요</span></li>
+                               <li><span class="face smile" onclick="javascript:$(this).parent('li').toggleClass('on');">웃겨요</span></li>
+                               <li><span class="face best" onclick="javascript:$(this).parent('li').toggleClass('on');">최고예요</span></li>
+                               <li><span class="face surprise" onclick="javascript:$(this).parent('li').toggleClass('on');">놀랐어요</span></li>
+                               <li><span class="face sad" onclick="javascript:$(this).parent('li').toggleClass('on');">슬퍼요</span></li>
+                               <li><span class="face angry" onclick="javascript:$(this).parent('li').toggleClass('on');">화나요</dspaniv></li>
+                           </ul>
+                       </div>
+                       <!-- // 표정짓기 레이어메뉴 -->
+                   </div>
+                   <div class="comm_count">
+                       <span class="comm_count_tit">의견<em>2</em></span>
+                   </div>
+                </div>
+               <!-- // 카운팅 영역 -->               
+          </div>
+          <!-- // 본문 영역-->     
+           <!-- // 컨텐츠 -->   
+          
+           <!-- 의견 컨텐츠 1 -->
+           <div class="contents_wrap comment">
+            <!-- 출처 정보 -->
+            <div class="origins">
+                  <span class="group"><a>디자이노</a></span> 
+                  <span class="act">그룹에 의견을 남겼습니다.</span> 
+            </div>
+            <!-- // 출처 정보 --> 
+           <div class="article_box">
+                <!-- 본문 영역 -->             
+               <!-- 사용자 사진 -->
+               <div  class="usr_pic">
+                   <img class="mask" src="../img/pic_mask_40.png">
+                   <img class="photo" src="../img/thmb_ttl_mini.png">
+               </div>
+               <!-- // 본문 영역-->     
+               <!-- 의견 영역 -->
+                <div class="comment_box">
+                    <!-- 의견 컨텐츠 1 -->
+                    <!-- [D] 자신의 의견일 경우 edit를 추가합니다. -->
+                    <div class="comment_cont edit">
+                        <!-- 사용자 사진 -->
+                       <div  class="usr_pic">
+                           <img class="mask" src="../img/pic_mask_40.png">
+                           <img class="photo" src="../img/thmb_nopic.gif">
+                       </div>
+                       <!-- // 사용자 사진 -->
+                         <!-- 관심글 -->
+                        <div class="collect"  onclick="javascript:$(this).toggleClass('on');">
+                            collect
+                        </div>
+                        <!-- // 관심글 -->
+                        <!-- 메뉴 -->
+                        <div>
+                           <div class="a_more" onclick="javascript:$(this).parent('div').toggleClass('open');">
+                             메뉴
+                           </div>
+                           <!-- 메뉴 레이어 팝 -->
+                           <div class="layer_pop layer_menu">
+                                           <ul>
+                                               <li><a>저장</a></li>
+                                               <li><a>복사</a></li>
+                                           </ul>
+                           </div>
+                        </div>
+                           <!-- // 메뉴 -->
+                        <!-- 텍스트 영역 -->
+                           <div class="comment_wrap">
+                            <!-- 사용자, 팀, 날짜 정보 -->
+                            <div class="info">
+                                <span class="name">
+                                    내가쓴의견
+                                </span>
+                                <span class="team">
+                                    제품기획팀
+                                </span>
+                                <span class="date">
+                                    2016.10.24 11:25
+                                </span>
+                            </div>
+                            <!-- // 사용자, 팀, 날짜 정보 -->
+                            <!-- 의견본문 -->                            
+                                <p class="comment">
+                                    메인화면에서의 본문카드 안의 의견영역 UI입니다. 말줄임기능 없이 전체 내용을 모두 보여줍니다. <em class="at"><a href="#">김멘션</a></em> 기능은 box_area.square Div에 link_none 클래스를 제거하여 활성화 합니다.
+                                </p>
+                            </div>
+                            <!-- // 의견본문 -->
+                        <!-- // 텍스트 영역 -->
+                       
+                    </div>
+                    <!-- // 의견 컨텐츠 1 -->
+           
+                </div>
+               <!-- // 의견 영역 -->
+               <!-- 출처 본문 정보 -->
+               <div class="article_wrap">
+                   <p class="article">출처 본문의 내용은 브라우저 사이즈에 맞춘 1줄 까지만 표시된 후 말줄임 표시합니다. <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>는 비활성화합니다. 출처 본문의 내용은 브라우저 사이즈에 맞춘 1줄 까지만 표시된 후 말줄임 표시합니다. <em class="hash"><a href="#">태그</a></em>와 <em class="at"><a href="#">멘션</a></em>는 비활성화합니다.
+                       </p>                   
+               </div>
+               <!-- // 출처 본문 정보 -->
+           </div>
+           <!-- // 컨텐츠 -->  
+          </div>
+           <!-- // 의견 컨텐츠 1 -->  
+          <!-- // 업무넷 --> 
+        </div>
+        <!-- //// right side --> </div>
+    </div>
+    <!------ // CONTENTS AREA ------> 
+  
+</div>
+
+    
+<!-- 웹 알리미 UI -->
+<div class="alarm_pop"> <span class="alarm_position">alarm</span> 
+  <!-- 알리미 타이틀 영역 -->
+  <div class="alarm_pop_title">
+    <h3>새로운 알림<span class="count">13</span></h3>
+    <a href="#" class="btn_read_all">모두 읽음</a> </div>
+  <!-- 알리미 모음 영역 -->
+  <ul class="alarm_cont_wrap">
+    <!-- 알리미 00 : 노링크 -->
+    <li class="alarm_cont"> <a href="" class="alarm no_link"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img admin"> mail </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">노링크예시</span> </div>
+        <div class="alarm_title"> 노링크는 클래스 alram인 a에게 no_link클래스 추가 </div>
+        <div class="alarm_time"> <span class="time">12분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 01 : 메일 --> 
+    <!-- 알리미 01 : 메일 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img mail"> mail </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">메일이 도착하였습니다.</span> </div>
+        <div class="alarm_title"> 웹 알리미 및 조직도 개선안 </div>
+        <div class="alarm_details"> <span class="identity">보낸이항목이영문같은경우는길꺼잖아요</span> <span class="name">백은경이라고길수도있는걱</span> <span class="team">(제품기획팀이름이 길수도 있어요)</span> </div>
+        <div class="alarm_time"> <span class="time">12분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 01 : 메일 --> 
+    <!-- 알리미 02 : 결재 -->
+    <li  class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img approval"> approval </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">결재문서가 완료되었습니다.</span> </div>
+        <div class="alarm_title"> 창조경제밸리 2단계 1차년도 폰트 구입 품의 </div>
+        <div class="alarm_details"> <span class="identity">기안자</span> <span class="name">백은경</span> <span class="team">(제품기획팀)</span> <span class="identity">처리자</span> <span class="name">김광종</span> <span class="team">(제품기획팀)</span> </div>
+        <div class="alarm_time"> <span class="time">21분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 02 : 결재 --> 
+    <!-- 알리미 03 : 게시판 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img board"> board </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">공지사항</span> <span class="action">게시글이 등록되었습니다.</span> </div>
+        <div class="alarm_title"> 2016년 10월 시스템 정기 점검의 건(2016/10/24/월요일. 10:00~18:00) </div>
+        <div class="alarm_details"> <span class="identity">게시자</span> <span class="name">관리자</span> <span class="team">(핸디소프트)</span> </div>
+        <div class="alarm_time"> <span class="time">32분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 03 : 게시판 --> 
+    <!-- 알리미 04 : 일정 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img schedule"> calendar </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">일정이 등록되었습니다.</span> </div>
+        <div class="alarm_title"> GW 8.3.8 UX/UI 개선방향에 대한 회의 </div>
+        <!--div class="alarm_details">
+                       항목이 없으면 비워갑니다.                       
+                       <span class="identity">보낸이</span>
+                       <span class="name">백은경</span>
+                       <span class="team">(제품기획팀)</span>
+                   </div-->
+        <div class="alarm_time"> <span class="time">3시간 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 04 : 일정 --> 
+    <!-- 알리미 05 : square -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img square"> square </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">핸디그룹룸</span> <span class="action">콘텐츠가 등록되었습니다.</span> </div>
+        <div class="alarm_title"> 한국소프트웨어기술진흥협회(KOSTA) 2016년 10월 무료 교육에 대해 공유드립니다. </div>
+        <div class="alarm_details"> <span class="identity">작성자</span> <span class="name">김핸디</span> <span class="team">(경영지원팀)</span> </div>
+        <div class="alarm_time"> <span class="time">5시간 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 05 : square --> 
+    <!-- 알리미 06 : 업무넷 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img work"> work </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">업무가 회수되었습니다.</span> </div>
+        <div class="alarm_title"> HANDY GMS UI 개선 작업을 위한 화면설계서를 요청드립니다. </div>
+        <!--div class="alarm_details">
+                       항목이 없으면 비워갑니다.                       
+                       <span class="identity">보낸이</span>
+                       <span class="name">백은경</span>
+                       <span class="team">(제품기획팀)</span>
+                   </div-->
+        <div class="alarm_time"> <span class="time">12시간 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 06 : 업무넷 --> 
+    <!-- 알리미 07 : 웹폴더 -->
+    <li class="alarm_cont" id="text100"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img webfolder"> webfolder </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">파일이 공유 해제되었습니다.</span> </div>
+        <div class="alarm_title"> 웹알리미_수정시안.jpg </div>
+        <div class="alarm_details"> <span class="identity">보낸이</span> <span class="name">백은경(제품제품제품제품기획팀)</span> </div>
+        <div class="alarm_time"> <span class="time">2016.10.26 12:30</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 07 : 웹폴더 --> 
+    <!-- 알리미 08 : 동호회 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img cop"> cop </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">신규 동호회 승인 바랍니다.</span> </div>
+        <div class="alarm_title"> 핸디소프트 중국어스터디 </div>
+        <div class="alarm_details"> <span class="identity">신청자</span> <span class="name">김핸디</span> <span class="team">(핸디팀)</span> </div>
+        <div class="alarm_time"> <span class="time">2016.10.26 17:56</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read
+      <div class="alarm_tooltip"> <span>읽음 상태로 표시</span> </div>
+      </span> </a> </li>
+    <!-- // 알리미 08 : 동호회 -->
+    
+  </ul>
+</div>
+<!-- // 웹 알리미 UI --> 
+<!-- 토스트 알리미 UI -->
+<div class="alarm_pop toast"> 
+  <!-- 알리미 모음 영역 -->
+  <ul class="alarm_cont_wrap">
+    <!-- 알리미 01 : 메일 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img mail"> mail </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">메일이 도착하였습니다.</span> </div>
+        <div class="alarm_title"> 웹 알리미 및 조직도 개선안 </div>
+        <div class="alarm_details"> <span class="identity">보낸이</span> <span class="name">백은경</span> <span class="team">(제품기획팀)</span> </div>
+        <div class="alarm_time"> <span class="time">12분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read</span> </a> </li>
+    <!-- // 알리미 01 : 메일 --> 
+    <!-- 알리미 02 : 결재 -->
+    <li  class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img approval"> approval </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">결재문서가 완료되었습니다.</span> </div>
+        <div class="alarm_title"> 창조경제밸리 2단계 1차년도 폰트 구입 품의rr </div>
+        <div class="alarm_details"> <span class="identity">기안자</span> <span class="name">백은경은경은경은경</span> <span class="team">(제품기획획획획획팀)</span> <span class="identity">처리자</span> <span class="name">김광종</span> <span class="team">(제품기획팀)</span> </div>
+        <div class="alarm_time"> <span class="time">21분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read </span> </a> </li>
+    <!-- // 알리미 02 : 결재 --> 
+    <!-- 알리미 03 : 게시판 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img board"> board </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">공지사항</span> <span class="action">게시글이 등록되었습니다.</span> </div>
+        <div class="alarm_title"> 2016년 10월 시스템 정기 점검의 건(2016/10/24/월요일. 10:00~18:00) </div>
+        <div class="alarm_details"> <span class="identity">게시자</span> <span class="name">관리자</span> <span class="team">(핸디소프트)</span> </div>
+        <div class="alarm_time"> <span class="time">32분 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read </span> </a> </li>
+    <!-- // 알리미 03 : 게시판 --> 
+    <!-- 알리미 04 : 일정 -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img schedule"> calendar </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> 
+          <!--span class="place">위치 항목이 없으면 비워갑니다.</span--> 
+          <span class="action">일정이 등록되었습니다.</span> </div>
+        <div class="alarm_title"> GW 8.3.8 UX/UI 개선방향에 대한 회의 </div>
+        <!--div class="alarm_details">
+                       항목이 없으면 비워갑니다.                       
+                       <span class="identity">보낸이</span>
+                       <span class="name">백은경</span>                        <span class="team">(제품기획팀)</span>
+                   </div-->
+        <div class="alarm_time"> <span class="time">3시간 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read </span> </a> </li>
+    <!-- // 알리미 04 : 일정 --> 
+    <!-- 알리미 05 : square -->
+    <li class="alarm_cont"> <a href="" class="alarm"> 
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img admin"> square </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">핸디그룹룸</span> <span class="action">콘텐츠가 등록되었습니다.</span> </div>
+        <div class="alarm_title"> 한국소프트웨어기술진흥협회(KOSTA) 2016년 10월 무료 교육에 대해 공유드립니다. </div>
+        <div class="alarm_details"> <span class="identity">작성자</span> <span class="name">김핸디</span> <span class="team">(경영지원팀)</span> </div>
+        <div class="alarm_time"> <span class="time">5시간 전</span> </div>
+      </div>
+      </a> 
+      <!-- 읽음 처리 버튼 --> 
+      <a class="btn_read" onclick="javascript:$(this).children('span').toggleClass('off');"> <span class="read off" >read </span> </a> </li>
+    <!-- // 알리미 05 : square -->
+    
+  </ul>
+</div>
+<!-- // 토스트 알리미 UI --> 
+
+<!-- 관리자용 알리미 UI -->
+<div class="admin_alarm"> 
+  <!-- 알림 영역: 중앙 알림 -->
+  <ul class="">    
+   <!-- 관리자 알리미 : 알림-->
+    <li class="alarm_cont notice">
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img admin"> square </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">알림</span></div>
+        <div class="alarm_title"> 근데 혹시 알림이 세 개 동시에 보이는 경우는 없나요? </div>
+        <div class="alarm_text">
+             <p>혹시 글이 여러개가 함께 보여지는 경우가 있다면, 링크를 삭제하지도 말고, 배경색도 빼고, 위치도 가에 존재해야하는게 아닌가-어쩐가 해서요. 현재의 뷰는, 알림이 도착하는 순간 모든 것보다 알림 내용이 중심되야한다-라는 가정 하에, 배경도 블랙으로 넣은 거고 확인해서 닫아야하는 개념이라고 생각했고, 그래서 각 알림은 단일로만 보여져야한다고 판단하였습니다.하지만, 만약 중복으로 보이는 경우가 있다면 포지션 값을 조절해야하니 알려주세요.^0^</p></div>
+        <div class="alarm_time"> <span class="time">2017.02.02 10:42</span> </div>
+      </div>
+      <!-- 읽음 처리 버튼 --> 
+      <a class="read_check" onclick="javascript:$(this).parents('li').css('display','none');">
+      <span class="read" >확인</span> </a></li>
+    <!-- 관리자 알리미 : 주의-->
+    <li class="alarm_cont caution">
+      <!-- 이미지 영역 -->
+      <div class="alarm_img admin"> 시스탬 알림 </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">주의</span></div>
+        <div class="alarm_title">  시스탬 알림글은 중요한 글이라고 판단되기 때문에 제목이나 본문 모두 말줄임하지 않겠습니다. </div>
+        <div class="alarm_text">
+             <p>본문에 작성했던 전문이 그대로 보여집니다. 글에 대해서는 css 스타일로는 줄바꿈 처리도 하지 않았습니다. 해당 내용은 본문 내용에 적은 그대로 보여지게 하는 편이 맞을 것 같습니다. 일부러 확인 버튼 부분도 조금더 명시적으로 바꾸었습니다.</p>
+         </div>
+        <div class="alarm_time"> <span class="time">2017.02.02 10:42</span> </div>
+      </div>
+      <!-- 읽음 처리 버튼 --> 
+      <a class="read_check" onclick="javascript:$(this).parents('li').css('display','none');">
+      <span class="read">확인</span> </a> </li>
+    <!-- // 알리미 --> 
+    <!-- 관리자 알리미 : 경고-->
+    <li class="alarm_cont warning">
+      <!-- 어플리케이션 이미지 영역 -->
+      <div class="alarm_img admin"> square </div>
+      <div class="alarm_contents">
+        <div class="alarm_state"> <span class="place">경고</span></div>
+        <div class="alarm_title">시스탬 경고 메시지 </div>   <div class="alarm_text">
+             <p>이 것은 경고용 글입니다.</p></div>   
+        <div class="alarm_time"> <span class="time">2017.02.02 10:42</span> </div>
+      </div>
+      
+      <!-- 읽음 처리 버튼 --> 
+      <a class="read_check" onclick="javascript:$(this).parents('li').css('display','none');">
+      <span class="read">확인</span> </a>
+      
+    </li>
+    <!-- // 알리미--> 
+    
+  </ul>
+</div>
+<!-- // 관리자용 알리미 UI -->
+</body>
+</html>

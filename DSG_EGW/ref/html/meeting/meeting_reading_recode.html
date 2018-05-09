@@ -1,0 +1,110 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../../../03_common/javascripts/jquery.fileUpload/fileUpload.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+    <div class="container_box meeting">
+<!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>회의록 조회</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">편집</a></span></li>
+      <li><span><a href="#">닫기</a></span></li>
+    </ul>
+    <p class="btn_prnt"><a href="#">프린트</a></p>
+ </div>
+<!-- //버튼 영역 -->
+<!-- 컨텐츠 영역 -->
+  <div class="view_body_contents read recode">
+<!-- 회의 정보영역 -->
+    <div class="subj_box">
+    <table class="meeting_table">
+        <colgroup>
+            <col style="width:86px;">
+            <col style="width:*;">
+            <col style="width:120px;">
+            <col style="width:100px;">
+        </colgroup>
+        <tbody>
+          <tr class="subject">
+            <th>제목</th>
+            <td class="subj" colspan="3">여기는 회의록을 조회하는 화면입니다</td>
+          </tr>
+          <tr class="name">
+            <th><span>등록자</span></th>
+            <td class="leader" colspan="3">
+                <span><a title="엄유정" href="#">김나정</a></span>
+            </td>
+          </tr>
+          <tr class="name">
+            <th><span>참여자</span></th>
+            <td>
+                <span>엄유정</span>
+                <span>최희선</span>
+                <span>김나정</span>
+                <span>엄유정</span>
+                <span>최희선</span>
+                <span>김나정</span>
+              </td>
+          </tr>
+          <tr class="name">
+            <th><span>회의록 작성자</span></th>
+            <td colspan="3"><span><a title="엄유정" href="#">엄유정</a></span></td>
+          </tr>
+        <tr class="due">
+            <th>시작일시</th>
+            <td class="start">07.03 00:00</td>
+            <th>종료일시</th>
+            <td>07.03 00:00</td>
+        </tr>
+        <tr class="reform">
+            <th>최종 수정일시</th>
+            <td>07.03 00:00</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // 회의 정보영역 -->
+    <!-- 첨부파일 -->
+          <div class="add_file_list"> <span class="list_num"><strong>첨부파일</strong> <a href="#" class="btn_trig">리스트펴기,닫기</a></span> <span><a href="#"  class="file_all_save">모두저장</a></span> <span><a href="#" class="file_save">첨부저장</a></span>
+        <div class="file_list">
+          <ul>
+            <li>
+              <input type="checkbox" checked>
+              <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+            <li>
+              <input type="checkbox" checked>
+              <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+          </ul>
+        </div>
+      </div>
+    <!-- // 첨부파일 -->
+
+    <!-- 회의내용 -->
+      <div class="view_area">
+        <p>회의록의 내용이 들어갈 부분입니다.</p>
+      </div>
+    <!-- // 회의내용 -->
+  
+        
+        
+  </div>
+      
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box view_box"> 
+    <!-- 버튼 영역 -->
+    <div class="title_area">
+      <h1>게시판 정보</h1>
+    </div>
+    <div class="write_form_box info_view">
+      <table style="max-width:750px ">
+        <colgroup>
+        <col style="width:90px">
+        <col style="width:280px">
+        <col style="width:100px">
+        <col style="width:280px">
+        </colgroup>
+        <tr>
+          <th>게시판명</th>
+          <td>공지사항<span class="more_ctt">2012. 12. 09 생성</span></td>
+          <th>기본양식</th>
+          <td>HTML</td>
+        </tr>
+        <tr>
+          <th>유형</th>
+          <td>공개</td>
+          <th>목록유형</th>
+          <td>순차</td>
+        </tr>
+        <tr>
+          <th>속성</th>
+          <td><div class="chk_custom"> <span>보안</span> <span>실명</span> <span>익명</span> <span class="on">알림</span> <span>업무용</span> </div></td>
+          <th>의견</th>
+          <td>의견불가</td>
+        </tr>
+        <tr>
+          <th>기본권한</th>
+          <td><div class="chk_custom"> <span class="on">제목읽기</span> <span class="on">본문읽기</span> <span>쓰기</span> <span>답글</span> <span>의견</span> </div></td>
+          <th>종료일수정</th>
+          <td>수정가능</td>
+        </tr>
+        <tr>
+          <th>관리자</th>
+          <td>ADMIN</td>
+          <th>게시기간</th>
+          <td>영구게시</td>
+        </tr>
+        <tr>
+          <th>홈페이지</th>
+          <td colspan="3">없음</td>
+        </tr>
+        <tr>
+          <th colspan="2">게시판 구성원</th>
+          <td colspan="2"></td>
+        </tr>
+        <tr class="mbr_lst_box">
+          <td colspan="4"><ul class="mbr_lst">
+              <li class="user">모든사용자</li>
+              <li class="admin">관리자</li>
+              <li class="team">부서A</li>
+            </ul></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 접수 </title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 1210 x 950 -->
+	<body>
+		<!-- header -->
+		<h1>접수</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn">접수</a>
+					<a class="btn">지정</a>
+					<a class="btn">배부</a>
+					<div class="selectbox noFirst">
+						<select> 
+							<option>추가기능</option>
+							<option>PC저장</option>
+							<option>EML업로드</option>
+							<option>엑셀다운로드</option>
+							<option>인쇄보기</option>
+							<option>일정으로 보내기</option>
+							<option>스퀘어로 보내기</option>
+							<option>동호회로 보내기</option>
+						</select>
+					</div>	
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="vertical_ui ">
+				<div class="vertical_lf scroll_area handy-scroll">
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="appr_pop_inner">
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width: 120px">
+										<col style="width:*">
+									</colgroup>
+									<tbody>
+										<tr>                
+											<th><span class="necessary">제목</span></th>
+											<td>
+												<div class="input_group multi appr_case1">
+													<input type="text" class="basic_input" placeholder="글을 입력해 주세요" value="2017 추석 휴가 수요 조사" />
+													<div class="group">
+														<span class="form">
+															<input type="checkbox" id="check001" />
+															<label for="check001" class="emergency">긴급</label>
+														</span>
+														<span class="form">
+															<input type="checkbox" id="check002" />
+															<label for="check002">열람 시 암호 확인</label>
+														</span>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+											<td class="">	
+												<div class="attached_box">	
+													<!-- 파일첨부 -->
+													<div class="attached_files">
+														<div class="group file_input">
+															<a class="btn small" >
+																<input type="file" onclick="blur()" >
+																내PC
+															</a>
+														</div>
+														<!-- 저장 버튼 그룹-->
+														<div class="align_rg text_group">
+															<!-- 기본형 버튼 1개 -->
+															<a class="text_btn all_delete">모두삭제</a>												
+															<!-- 결재용 버튼 2개 -->
+															<a class="text_btn files">저장</a>
+															<a class="text_btn files">삭제</a>
+														</div>
+														<!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+														<div class="file_lst upload handy-scroll" id="display_test">
+															<ul class="use_file_opt">
+																<li>
+																	<a class="move">항목이동</a>
+																	<!-- 파일 리스트 순서 조절용 선택 영역 -->
+																	<span class="form">
+																		<input type="checkbox">
+																		<label class="blind"></label>
+																	</span>
+																	<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+																	<!--prograss -->
+																	<div class="uploaded_file">
+																		<div class="process_bar">
+																			<span class="pr_per" style="width: 90%;">40%</span>
+																			<span class="pr_bg">background</span>
+																		</div>												
+																	</div>
+																	<!-- // prograss -->
+																	<span class="file_size">9,999 KB</span>
+																	<div class="toggle group">
+																		<a class="btn small on">공개</a>
+																		<a class="btn small">비공개</a>
+																	</div>
+																	<a class="cancel" ></a></li>
+																<li>
+																	<a class="move">항목이동</a>
+																	<!-- 파일 리스트 순서 조절용 선택 영역 -->
+																	<span class="form">
+																		<input type="checkbox">
+																		<label class="blind"></label>
+																	</span>
+																	<a class="file_name">EGW_GUI_Visual_Concisual_Concisual_Concept_0804.ppt </a>	
+																	<!--prograss -->
+																	<div class="uploaded_file">
+																		<div class="process_bar">
+																			<span class="pr_per" style="width: 40%;">40%</span>
+																			<span class="pr_bg">background</span>
+																		</div>												
+																	</div>
+																	<!-- // prograss -->
+																	<div class="toggle group">
+																		<a class="btn small on">공개</a>
+																		<a class="btn small">비공개</a>
+																	</div>
+																	<span class="file_size">28 KB</span>
+																	<a class="cancel" ></a></li>
+																<li>
+																	<a class="move">항목이동</a>
+																	<!-- 파일 리스트 순서 조절용 선택 영역 -->
+																	<span class="form">
+																		<input type="checkbox">
+																		<label class="blind"></label>
+																	</span>
+																	<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+																	<!--prograss -->
+																	<!-- 100%가 되면 삭제
+<div class="uploaded_file">
+<div class="process_bar">
+<span class="pr_per" style="width: 100%;">40%</span>
+<span class="pr_bg">background</span>
+</div>												
+</div>
+-->
+																	<!-- // prograss -->
+																	<div class="toggle group">
+																		<a class="btn small on">공개</a>
+																		<a class="btn small">비공개</a>
+																	</div>
+																	<span class="file_size">284 KB</span>
+																	<a class="cancel" ></a></li>
+																<li>
+																	<a class="move">항목이동</a>
+																	<!-- 파일 리스트 순서 조절용 선택 영역 -->
+																	<span class="form">
+																		<input type="checkbox">
+																		<label class="blind"></label>
+																	</span>
+																	<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+																	<!--prograss -->
+																	<div class="uploaded_file">
+																		<div class="process_bar">
+																			<span class="pr_per" style="width: 4%;">40%</span>
+																			<span class="pr_bg">background</span>
+																		</div>												
+																	</div>
+																	<!-- // prograss -->
+																	<div class="toggle group">
+																		<a class="btn small">공개</a>
+																		<a class="btn small on">비공개</a>
+																	</div>
+																	<span class="file_size">284 KB</span>
+																	<a class="cancel" ></a></li>
+																<li>
+																	<a class="move">항목이동</a>
+																	<!-- 파일 리스트 순서 조절용 선택 영역 -->
+																	<span class="form">
+																		<input type="checkbox">
+																		<label class="blind"></label>
+																	</span>
+																	<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+																	<!--prograss -->
+																	<div class="uploaded_file">
+																		<div class="process_bar">
+																			<span class="pr_per" style="width: 99.9%;">40%</span>
+																			<span class="pr_bg">background</span>
+																		</div>												
+																	</div>
+																	<!-- // prograss -->
+																	<div class="toggle group">
+																		<a class="btn small">공개</a>
+																		<a class="btn small on">비공개</a>
+																	</div>
+																	<span class="file_size">284 KB</span>
+																	<a class="cancel" ></a></li>
+															</ul>
+														</div>
+													</div>
+													<!-- 파일정보 -->
+													<dl class="file_info">
+														<dt>내PC:</dt>
+														<dd><em>7.93MB</em>/2GB</dd>
+														<!--<dt> 내파일</dt><dd>(213MB/<em>2GB</em>)</dd>-->
+													</dl>
+												</div>
+												<!-- // 파일 기본 부분 -->
+												<!-- *** 결재용 특수 버튼 ***-->
+												<!-- 순서 조정버튼-->
+												<div class="icon_groups btn_up_dw">
+													<a class="ico_btn move_lst up">위로</a>
+													<a class="ico_btn  move_lst down">아래로</a>
+												</div>
+												<!-- 저장 버튼-->
+											</td>
+										</tr>
+										<tr>                
+											<th><span>문서번호</span></th>
+											<td class="text_input">
+												<input type="text" class="border_input" id="" placeholder="" value="2018-제품기획팀-41">
+											</td>
+										</tr>
+										<tr>                
+											<th><span>문서분류</span></th>
+											<td class="">
+												<div class="input_group has_btn">
+													<input type="text" class="basic_input" placeholder="" value="기록물철">
+													<a class="ico group"  href="#">조직도</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th><span>열람범위</span></th>
+											<td>
+												<span class="form">
+													<input type="radio" name="from_radio" id="from_radio01" />
+													<label for="from_radio01">전체</label></span>
+												<span class="form">
+													<input type="radio" name="from_radio" id="from_radio02" />
+													<label for="from_radio02">소속기관</label></span>
+												<span class="form">
+													<input type="radio" name="from_radio" id="from_radio02" />
+													<label for="from_radio03">부서</label></span>
+											</td>
+										</tr>
+										<tr>
+											<th>열람제</th>
+											<td>
+												<span class="form">
+													<input type="radio" name="from_radio1" id="from_radio04" />
+													<label for="from_radio04">설정안함</label></span>
+												<span class="form">
+													<input type="radio" name="from_radio1" id="from_radio05" />
+													<label for="from_radio05">설정</label></span>
+												<span class="form">
+													<input type="radio" name="from_radio1" id="from_radio06" />
+													<label for="from_radio06">영구제한</label></span>
+												<div class="datepic_area">
+													<div class="date_box">
+														<input type="text" class="date_input line" value="2017.11.02" style="width:118px;" readonly="">
+														<a class="date_btn" title="">달력</a>
+													</div>													
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+
+					</div>	
+				</div>	
+				<div class="vertical_rg scroll_area handy-scroll">
+					<div class="">
+						<div class="appr_pop_inner">
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap">
+								<div class="title_wrap">
+									<h3 class="title">결재선</h3>
+									<span class="num"><em>4</em>명</span>
+									<a href="#" class="btn small">결재경로</a>
+								</div>
+								<!-- 결재 라인 -->
+								<div class="appr_line_list">
+									<ul>
+										<!-- 
+appr_line_wrap에 상황별 클래스 추가
+- 진행 중 : ing
+- 완료 : end
+-->
+
+										<!-- 결재 라인 한셋 (완료)-->										
+										<li>
+											<!-- 결재 라인 한셋 (대기중)-->
+											<div class="appr_line_wrap">
+												<div class="appr_line_progress">
+													<span class="ic">결재 대기</span>
+													<span class="txt"><span>병렬병렬병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="오상식"></span>
+													<div class="al_mid">
+														<span class="name"><em>오오오오오오오오오오오오상식</em> 책책책책책책책책책책책책임</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+<span class="state b_gray">대기</span>
+<span class="state b_rblue">확인</span>
+<span class="state b_lgray">완료</span>
+<span class="state b_dgray">반려</span>
+<span class="state b_orange">보류</span>
+-->
+													<span class="state b_gray">대기</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 결재 라인 한셋 (대기중)-->
+											<div class="appr_line_wrap">
+												<div class="appr_line_progress">
+													<span class="ic">결재 대기</span>
+													<span class="txt"><span>병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="조지원"></span>
+													<div class="al_mid">
+														<span class="name"><em>조지원</em> 수석</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+<span class="state b_gray">대기</span>
+<span class="state b_rblue">확인</span>
+<span class="state b_lgray">완료</span>
+<span class="state b_dgray">반려</span>
+<span class="state b_orange">보류</span>
+-->
+													<span class="state b_gray">대기</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 결재 라인 한셋 (진행중)-->
+											<div class="appr_line_wrap ing">
+												<div class="appr_line_progress">
+													<span class="ic">결재 진행</span>
+													<span class="txt"><span>병렬협조</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="김민성"></span>
+													<div class="al_mid">
+														<span class="name"><em>김김</em> 선선선선선선선선선임</span>
+														<span class="date">2017-09-01 13:50</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+<span class="state b_gray">대기</span>
+<span class="state b_rblue">확인</span>
+<span class="state b_lgray">완료</span>
+<span class="state b_dgray">반려</span>
+<span class="state b_orange">보류</span>
+-->
+													<span class="state b_rblue">확인</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+										<li>
+											<!-- 
+appr_line_wrap에 상황별 클래스 추가
+- 진행 중 : ing
+- 완료 : end
+-->
+
+											<!-- 결재 라인 한셋 (완료)-->
+											<div class="appr_line_wrap end">
+												<div class="appr_line_progress">
+													<span class="ic">결재 완료</span>
+													<span class="txt"><span>검토</span></span>
+												</div>
+												<div class="appr_line_man">
+													<span class="photo"><img src="../../img/profile_photo_blank.png" alt="김미나"></span>
+													<div class="al_mid">
+														<span class="name"><em>김미나</em> 선임</span>
+														<span class="date">2017-09-01 13:50</span>
+													</div>
+												</div>
+												<div class="appr_line_state">
+													<!-- 
+<span class="state b_gray">대기</span>
+<span class="state b_rblue">확인</span>
+<span class="state b_lgray">완료</span>
+<span class="state b_dgray">반려</span>
+<span class="state b_orange">보류</span>
+-->
+													<span class="state b_lgray">완료</span>
+												</div>
+											</div>
+											<!-- //결재 라인 한셋 -->
+										</li>
+									</ul>
+								</div>
+								<!-- //결재 라인 -->
+							</div>
+							<!-- //블럭 한셋 -->						
+
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap"><!-- 펼쳐지면 open 클래스 추가 -->
+								<div class="title_wrap">
+									<h3 class="title">공람자</h3>
+									<span class="num"><em>99</em>명</span>
+									<a href="#" class="btn small">공람지정</a>
+								</div>
+								<a href="#" class="btn_visible">내용 펼치기</a>
+								<div class="arrp_block_cont">
+									<div class="sche_share_list handy-scroll">
+										<div class="inner">
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동,
+											이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수, 강미나, 홍길동, 김미나, 이미연, 최태민, 이은수
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //블럭 한셋 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

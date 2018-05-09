@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <title>HANDY GROUPWARE</title>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+    <!-- &#91;D&#93; jqueryUI -->
+    <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script language=javascript>
+
+    </script>
+    </head>
+    <title>문서정보</title>
+
+    <body>
+    <div class="report_box"> 
+      <!--content Start--> 
+      <!--tab_area Start-->
+      <div class="tab_box info">
+        <ul class="tab_menu">
+          <a href="#a" onclick="showInfo('/bms/cz/cb/viw/retrieveReportCours.act','1')">
+          <li class="tab">결재경로</li>
+          </a> <a href="#a" onclick="showInfo('/bms/cz/cb/viw/retrieveDlryRecptnInfo.act','2')">
+          <li class="tab">발송정보</li>
+          </a> <a href="#a" onclick="showInfo('/bms/cz/cb/viw/retrieveDocInfo.act','3')">
+          <li class="tab">문서정보</li>
+          </a> <a href="#a" onclick="showInfo('/bms/cz/cb/viw/retrieveCnrsInfo.act','7')">
+          <li class="tab selected">공람정보 (1)</li>
+          </a>
+        </ul>
+        <a href="#" onclick="" class="btn_clse"> </a> </div>
+      <!--//tab_area End-->
+      <div id="docInfoDiv" class="">
+        <iframe src="docinfo.html" name="docInfoFrame" id="docInfoFrame" height="281px" frameborder="0" width="100%" title="문서정보상세" scrolling="no"></iframe>
+      </div>
+      <!--//content End--> 
+    </div>
+</body>
+</html>

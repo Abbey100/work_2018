@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge,chrome=1" >
+        <title> 홈화면  </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <link href="../../css/fotorama.css" rel="stylesheet"> <!-- 갤러리 플러그인 css -->
+
+        <link rel="stylesheet" type="text/css" href="../../js/jqplot/jquery.jqplot.css" >
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- fotorama.js. -->
+        <script src="../../js/lib/fotorama.js"></script>
+        <!--graph-->
+        <script type="text/javascript" src="../../js/jqplot/jquery.jqplot.js"></script>		
+        <script type="text/javascript" src="../../js/jqplot/jqplot.donutRenderer.js"></script>
+
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>
+                    <span><img src="../../img/logo_img.png" alt="handysoft"/></span>
+                </h1>
+                <div class="aside">		
+                    <div class="util">
+                        <a href="#" class="btn_me" onclick="javascript:$('#for_test2').toggleClass('open')"><img src="../../img/profile_photo_blank.png" alt="김핸디"></a>
+                        <a class="usr_more open" onclick="javascript:$(this).toggleClass('open'); $('#for_test').toggleClass('open')"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support" onclick="javascript: $('#for_test3').toggleClass('open')">서포트</a> 
+                    </div>
+                    <!-- 개인정보 영역 -->
+                    <ul class="ps_option plural" id="for_test">
+                        <li><a href="#" class="link">관리자 모드</a></li>
+                        <li class="">
+                            <span class="open_toggle"  onclick="javascript:$(this).parent().toggleClass('open')">겸직자 전환</span>
+                            <ul class="usr_lst">									
+                                <li class="selected"><a href="#">
+                                    <span class="usr_photo xsmall"><img src="../../img/profile_photo_blank.png" /></span>
+                                    <span>김핸디김핸디김핸디</span>
+                                    <span>주임연구원주임연구원주임연구원주임연구원</span>
+                                    <span>제품기획팀제품기획팀제품기획팀제품기획팀</span>
+                                    </a></li>
+                                <li class=""><a href="#">
+                                    <span class="usr_photo xsmall"><img src="../../img/sample/thumb_album_01.png" /></span>
+                                    <span>정유미</span>
+                                    <span>선임연구원</span>
+                                    <span>제품기획팀</span>
+                                    </a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <!-- 개인정보 카드 -->
+                    <ul class="ps_option profile" id="for_test2">
+                        <li class="usr_profile">
+                            <div class="usr_photo xlarge">
+                                <img src="../../img/profile_photo_blank.png" alt="김핸디">
+                            </div>
+                            <p class="usr_name">김핸디핸디핸디핸디핸디핸디핸디</p>
+                            <div class="usr_info"><span>선임연구원</span><span>제품기획기획팀</span><span>핸디핸디핸디소프트</span></div>
+                        </li>
+                        <li class="timecard">
+                            <dl><dt>금주 업무시간</dt><dd><em>35</em>시간</dd></dl>
+                            <dl><dt>남은 휴가일수</dt><dd><em>9</em>일</dd></dl>
+                            <dl><dt>마지막 접속정보</dt><dd>12-26 18:00 (125.125.125.125)</dd></dl>
+                        </li>
+                        <li class="profile_btns">
+                            <a href="" class="btn_log_out">로그아웃</a>
+                            <a href="" class="btn_setting">환경설정</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //header -->
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area selected">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn new">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+            </div>
+            <!-- //메뉴영역 -->
+            <!-- SNS 링크보기 -->
+            <div class="link_wrap">
+                <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                    <span class="arrow">방향</span>
+                    <div class="sns_head">
+                        <a href="#" class="sns_head_close">팝업 닫기</a>
+                    </div>
+                    <div class="sns_cont_wrap">
+                        <!-- 팝업 컨텐츠 영역 -->
+                        <div class="sns_cont handy-scroll">
+                            <div class="wrap-hs">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- //팝업 컨텐츠 영역 -->
+                    </div>
+                </div>
+                <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+            </div>
+            <!-- SNS 링크보기 -->   
+            <!-- body -->
+            <!-- 홈화면 용 컨텐츠 -->
+            <div class="body main"> 
+                <!-- 메인화면 좌측 컨텐츠 -->
+                <div class="main_aside">
+                    <div class="banner_area">
+                        <ul class="fotorama" data-width="100%" data-height="100%" data-autoplay="true" data-fit="cover" data-nav="dots" data-navposition="top" >
+                            <li>
+                                <span style="background-image: url('../../img/sample/main_banner01.png'); padding: 68px 40px; color: #fff; font-size: 30px; line-height: 36px; font-family: 'Nanum Gothic'; font-weight: lighter;">Working smart<br>
+                                    Living smart</span>
+                            </li>
+                            <li>
+                                <span style="background-image: url('../../img/sample/main_banner02.png');">
+                                </span></li>
+                            <li><span style="background-image: url('../../img/sample/thumb_album_02.png')"></span></li>
+                        </ul>
+
+                    </div>
+                    <div class="notice_area">
+                        <h3>공지사항</h3>
+                        <ul class="notice_lst">
+                            <li>
+                                <a class="title new unread">
+                                    <span class="notice_origin">그룹공지</span>
+                                    워크샵 준비위준비위준비위준비위준비위준비위 팀 구성하기</a>
+                                <a class="date">2018-02-28</a>
+                            </li>
+                            <li>
+                                <a class="title new">
+                                    <span class="notice_origin">그룹공지</span>
+                                    워크샵 준비위</a>
+                                <a class="date">2018-02-28</a>
+                            </li>
+                            <li>
+                                <a class="title new">
+                                    워크샵 준비위준비위준비위준비위준비위준비위 팀 구성하기</a>
+                                <a class="date">2018-02-28</a>
+                            </li>
+                            <li>
+                                <a class="title">
+                                    워크샵 준비위준비위준비위준비위준비위준비위 팀 구성하기</a>
+                                <a class="date">2018-02-28</a>
+                            </li>
+                            <li>
+                                <a class="title">
+                                    워크샵 준비위준비위</a>
+                                <a class="date">2018-02-28</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main_wrap handy-scroll">
+                    <div class="wrap-hs">
+                        <div class="main_cont_wrap">
+                            <!-- 메인화면 타이틀 -->
+                            <div class="main_ttl_area">
+                                <div class="today_date">
+                                    <span>9</span>
+                                    <span>월</span>
+                                    <span>22</span>
+                                    <span>일</span>
+                                    <span>월요일</span>
+                                </div>
+                                <div class="w_info good">
+                                    <span>맑음, 어제보다 2℃ 높아요</span>
+                                </div>
+                                <a class="page_next">다음</a>
+                            </div>
+                            <!-- 알리미 -->
+                            <div class="cont_area col1">
+                                <ul class="bg_work_alram">
+                                    <!-- 안읽은 메일 -->
+                                    <li class="single">
+                                        <div class="work_alram">
+                                            <div class="mail icon">
+                                                <i>메일</i>
+                                            </div>
+                                            <div class="group">
+                                                <a href="" class=""><dl><dt>Unread</dt><dd> 99+ </dd></dl></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- 최근 게시물 -->
+                                    <li class="single">
+                                        <div class="work_alram">
+                                            <div class="board icon">
+                                                <i>게시판</i>
+                                            </div>
+                                            <div class="group">
+                                                <a href="" class="">
+                                                    <dl><dt>News</dt><dd>99+</dd></dl>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="double">
+                                        <div class="work_alram">
+                                            <div class="approval icon">
+                                                <i>결재</i>
+                                            </div>
+                                            <div class="group">
+                                                <a href="" class=""><dl><dt>Approval</dt><dd>99+</dd> </dl></a>
+                                                <a href="" class=""><dl><dt>Prsnl Recpt.</dt><dd>99+</dd></dl></a>		
+                                                <a href="" class=""><dl><dt>Rtrnd Recpt.</dt><dd>99+</dd></dl></a>
+                                                <a href="" class=""><dl><dt>Rejected</dt><dd>99+</dd></dl></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="single">
+                                        <div class="work_alram">
+                                            <div class="square icon">
+                                                <i>스퀘어</i>
+                                            </div>
+                                            <div class="group">
+                                            <a href="" class="">
+                                                <dl><dt>Mention me</dt><dd>99+</dd></dl>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- 메인화면 컨텐츠 리스트타입 : 1단-->
+                            <div class="cont_area col1" id="test_foldding">
+                                <ul class="tab">
+                                    <li class="selected"><a href="">최근메일</a></li>
+                                    <li><a href="">최근 게시글</a></li>
+                                    <li><a href="">처리할 결재</a></li>
+                                    <li><a href="">스퀘어</a></li>
+                                </ul>
+                                <div class="cont_box fold handy-scroll">
+                                    <div class="wrap-hs">
+                                        <!-- 메일 -->
+                                        <ul class="cont_lst">
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title unread">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">8분전</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸핸핸핸핸디</a>
+                                                <a href="" class="title unread">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 립니다.</a>
+                                                <span class="date">2시간전</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title unread">PDF파일을 위장한 악성코드가 퍼지고.</a>
+                                                <span class="date">2018-03-07</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디핸디핸디핸디핸디핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다.</a>
+                                                <span class="date">2018-03-07</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">2018-03-05</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">2018-03-01</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">2018-02-20</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">2018-02-19</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다. 임원 여러분께서는 파일 다운로드시 각별히 주의해 주시길 부탁드립니다.</a>
+                                                <span class="date">2018-02-15</span>
+                                            </li>
+                                            <li>
+                                                <span class="usr_photo"><img src="../../img/profile_photo_blank.png" alt="김핸디"></span>
+                                                <a href="" class="name">김핸디</a>
+                                                <a href="" class="title">PDF파일을 위장한 악성코드가 퍼지고 있습니다.</a>
+                                                <span class="date">2018-02-10</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="open_lst" onclick="javascript:$('#test_foldding').toggleClass('open');GetNScrollReset()">열기</a>						
+                            </div>
+
+                            <!-- 메인화면 컨텐츠 : 2단 1. 결재 -->
+                            <div class="cont_area with_grp left">
+                                <h3>내가 올린기안</h3>
+                                <div class="util pagenate">
+                                    <a class="btn_pre">이전</a>
+                                    <span class="page_num"><em>50</em>/50</span>
+                                    <a class="btn_next">다음</a>
+                                </div>
+                                <div class="cont_box">
+                                    <ul class="cont_card">
+                                        <li>
+                                            <a href="" class="doc_title">EGW핸디소프트 UX/UI개선 프로젝트 EGW 핸디소프트 프로젝트에 관한 품의서</a>
+                                            <div class="doc_info">
+                                                <span class="usr_photo">
+                                                    <img src="../../img/sample/thumb_album_03.png"  />
+                                                </span>
+                                                <a href="" class="name">김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸디김핸 팀팀팀팀장 </a>	
+                                                <span class="state b_rblue">진행</span>
+                                            </div>
+                                            <!-- prograss -->							
+                                            <div class="doc_state">
+                                                <div class="progress">
+                                                    <span class="pr_per b_rblue" style="width: 87%;">87%</span>
+                                                </div>
+                                                <span class="rate">
+                                                    <p><em>7</em>/8</p>
+                                                </span>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <a href="" class="doc_title">EGW핸디소프트 UX/UI개선</a>
+                                            <div class="doc_info">
+                                                <span class="usr_photo">
+                                                    <img src="../../img/profile_photo_blank.png"  />
+                                                </span>
+                                                <a href="" class="name">이핸디 팀장 </a>	
+                                                <span class="state b_orange">보류</span>
+                                            </div>
+                                            <!-- prograss -->							
+                                            <div class="doc_state">
+                                                <div class="progress">
+                                                    <span class="pr_per b_orange" style="width: 50%;">50%</span>
+                                                </div>
+                                                <span class="rate">
+                                                    <p><em>3</em>/6</p>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 메인화면 컨텐츠 : 2단 2-->
+                            <div class="cont_area graph right">
+                                <h3>메일/내파일 현황</h3>
+                                <!-- 도넛 그래프 01 -->
+                                <div class="use_mail donut_chart" >		
+                                    <!-- 정보 -->
+                                    <dl class="chart_inner">
+                                        <dd>80<sup>%</sup></dd>									
+                                        <dt>메일 사용량</dt>
+                                    </dl>
+                                    <!-- 그래프 -->
+                                    <div class="" id="chart1" style="height:143px; width:130px;"></div>
+                                    <script class="code" type="text/javascript">
+                                        $(document).ready(function(){
+                                            var data = [
+                                                ['remaining space', 20],['used', 80]
+                                            ];
+
+                                            var plot4 = $.jqplot('chart1', [data], {
+                                                seriesDefaults: {
+                                                    // make this a donut chart.
+                                                    renderer:$.jqplot.DonutRenderer,
+                                                    rendererOptions:{
+                                                        // Donut's can be cut into slices like pies.
+                                                        sliceMargin: 0,
+                                                        // Pies and donuts can start at any arbitrary angle.
+                                                        startAngle: -162,
+                                                        //													showDataLabels: true,
+                                                        //													// By default, data labels show the percentage of the donut/pie.
+                                                        //													// You can show the data 'value' or data 'label' instead.
+                                                        //													dataLabels: 'value',
+                                                        //													// "totalLabel=true" uses the centre of the donut for the total amount
+                                                        //													totalLabel: true,
+                                                        shadow:false,
+                                                        seriesColors: ["#f5f5f5", "#ff5a5a"],
+                                                        thickness: 5,
+                                                        padding: 0,
+                                                        margin: 0,													
+                                                        //													ringMargin: 10,
+                                                        //													fill: true,
+                                                        //													lineWidth: 1,
+                                                        highlightColors: ["#f5f5f5", "#ff5a5a"]
+
+                                                    }
+
+
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <div class="chart_info">
+                                        <dl class=""><dt>총 용량</dt><dd>5GB</dd></dl>
+                                        <dl class=""><dt>현재 사용량</dt><dd><em>4</em>GB</dd></dl>
+                                    </div>
+
+                                </div>
+
+                                <!-- 도넛 그래프 02 -->
+                                <div class="use_file donut_chart" >
+                                    <!-- 정보 -->
+                                    <dl class="chart_inner">
+                                        <dd>25<sup>%</sup></dd>									
+                                        <dt>내파일 사용량</dt>
+                                    </dl>
+                                    <div class="" id="chart2" style="height:143px; width:130px;"></div>
+                                    <script class="code" type="text/javascript">
+                                        $(document).ready(function(){
+                                            var data = [
+                                                ['remaining space', 75],['used', 25]
+                                            ];
+
+                                            var plot4 = $.jqplot('chart2', [data], {
+                                                seriesDefaults: {
+                                                    // make this a donut chart.
+                                                    renderer:$.jqplot.DonutRenderer,
+                                                    rendererOptions:{
+                                                        // Donut's can be cut into slices like pies.
+                                                        sliceMargin: 0,
+                                                        // Pies and donuts can start at any arbitrary angle.
+                                                        startAngle: 0,
+                                                        //													//													showDataLabels: true,
+                                                        //													// By default, data labels show the percentage of the donut/pie.
+                                                        //													// You can show the data 'value' or data 'label' instead.
+                                                        //													//													dataLabels: 'value',
+                                                        //													// "totalLabel=true" uses the centre of the donut for the total amount
+                                                        //													totalLabel: true,
+                                                        shadow:false,
+                                                        seriesColors: ["#f5f5f5", "#3a8ef9"],
+                                                        thickness: 5,
+                                                        padding: 0,
+                                                        margin: 0,
+                                                        //													fill: true,
+                                                        //													lineWidth: 1,
+                                                        highlightColors: ["#f5f5f5", "#3a8ef9"]
+
+                                                    }
+
+
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <div class="chart_info">
+                                        <dl class=""><dt>총 용량</dt><dd>5GB</dd></dl>
+                                        <dl class=""><dt>현재 사용량</dt><dd><em>1.5</em>GB</dd></dl>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- 메인화면 컨텐츠 : 3단 -->
+                            <div class="cont_area col1">						
+                                <h3>2018.04.29 ~ 2018.05.05</h3>
+                                <div class="util day">					
+                                    <a href="#" class="btn_today">오늘</a>
+                                    <a class="btn_pre">이전</a>
+                                    <a class="btn_next">다음</a>			
+                                </div>
+                                <div class="cont_box">
+                                    <div class="monthly_list content_table">
+                                        <!-- 리스트 영역 -->
+                                        <div class="table_head">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:12.5%">
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">											
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">
+                                                    <col style="width:12.5%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <div class="sunday">
+                                                                <span class="day_date">29 일</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="today">
+                                                                <span class="day_date">30 월</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">													
+                                                            <div class="today holiday">
+                                                                <span class="day_date">1 화</span>
+                                                                <span class="holiday_name">근로자의 날</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">												
+                                                            <div class="holiday">
+                                                                <span class="day_date">2 수</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="">
+                                                                <span class="day_date">3 THU</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="holiday">
+                                                                <span class="day_date">4 FRI</span>
+                                                                <span class="holiday_name">Mother's Day</span>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="saturday holiday">
+                                                                <span class="day_date">5 토</span>
+                                                                <span class="holiday_name">어린이날</span>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <div class="table_body">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:12.5%">
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">											
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">
+                                                    <col style="width:15%">
+                                                    <col style="width:12.5%">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <!-- 
+td 에 경우의 수 별로 클래스 부여
+- 토요일 : <td class="saturday">
+- 일요일 : <td class="sunday">
+- 공휴일 : <td class="holiday">
+-->
+                                                        <td class="sunday">
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+                                                                <a href="#" class="day_schedule_more">+4개</a>
+                                                                <!-- 일정 더보기 -->
+                                                                <div class="day_schedule_more_wrap al_top"><!-- 달력 위치에 따라서 화살표 방향이 다릅니다. al_top, al_bottom, 달력의 맨 왼쪽 라인은 pl 클래스 추가 -->
+                                                                    <!-- (레이어팝업) 일정 더보기 펼침 시작 -->
+                                                                    <div class="comm_lypop_type2"><!-- 레이어팝업 보이기 open 클래스 -->
+                                                                        <span class="arrow">방향</span>
+                                                                        <div class="lypop_head">
+                                                                            <span class="ly_tit">8월 8일(화요일)	<span class="total">6</span></span>
+                                                                            <a href="#" class="ly_btn_close">팝업 닫기</a>
+                                                                        </div>
+                                                                        <div class="lypop_cont">
+                                                                            <!-- 팝업 알맹이 영역 -->
+                                                                            <div class="schedule_more_lypop handy-scroll">
+                                                                                <div class="wrap-hs">
+                                                                                    <ul class="schedule_more_list">
+                                                                                        <li><a href="#" class="txt_wrap"><span class="time">오전 10:00</span>회의실 A</a></li>
+                                                                                        <li><a href="#" class="txt_wrap"><span class="time">오후 1:00</span>빔 프로젝터</a></li>
+                                                                                        <li><a href="#" class="txt_wrap"><span class="time">오전 8:30</span>회의</a></li>
+                                                                                        <li><a href="#" class="txt_wrap"><span class="time">오전 10:00</span>차량</a></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- //팝업 알맹이 영역 -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- // (레이어팝업) 일정 더보기 펼침 끝 -->
+                                                                </div>
+                                                                <!-- //일정 더보기 -->
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>														
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="month_cell">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="saturday">
+                                                            <div class="month_cell saturday">
+                                                                <a href="#" class="day_schedule_add">일정등록</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- // 리스트 영역 -->
+
+                                        <!-- events_entry_box 시작 -->
+                                        <div class="events_entry_box">
+                                            <!-- 일정 나열 -->
+                                            <div class="schedule_txt type04" style="left:0;top:46px; width:14.25%;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt"><span class="time">14:00</span>치과 예약 길면 알아서 잘립니다.</a></div>									
+
+                                            <div class="schedule_txt type07 end" style="left:0;top:64px; "><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt"><span class="time">14:00</span>끝난 일정 일때</a></div>
+
+                                            <div class="schedule_txt type04" style="left:690px; top:46px; width:14.25%;"><span class="dal_ic">달력 구분 아이콘</span><a href="#" class="sch_txt"><span class="time">14:00</span>치과 예약 길면 알아서 잘립니다.</a></div>
+                                        </div>
+                                        <!-- events_entry_box 끝 -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 홈화면 용 컨텐츠 -->
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+        <div class="support_area" id="for_test3">
+            <ul class="tab">
+                <li class=""><a href="">Calendar</a></li>
+                <li class="selected"><a href="">People</a></li>
+            </ul>
+            <!-- calendar -->
+            <div class="sp_cal" style="display: none;">
+                <!-- 미니달력 -->
+                <div class="calendar">
+                    <div class="datepicker">
+                        <dl>
+                            <dt><a href="#">2017.11</a></dt>
+                            <dd class="day">
+                                <table>						
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">일</th>
+                                            <th scope="col">월</th>
+                                            <th scope="col">화</th>
+                                            <th scope="col">수</th>
+                                            <th scope="col">목</th>
+                                            <th scope="col">금</th>
+                                            <th scope="col">토</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <!-- 스케쥴이 있으면 sched / 오늘은 today/ 선택된 날짜는 day_on / 휴일은 holiday -->
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="passed"><a href="#">29</a></td>
+                                            <td class="passed"><a href="#">30</a></td>
+                                            <td class="passed"><a href="#">31</a></td>
+                                            <td class=""><a href="#">1</a></td>
+                                            <td class=""><a href="#">2</a></td>
+                                            <td class=""><a href="#">3</a></td>
+                                            <td class=""><a href="#">4</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sched"><a href="#">5</a></td>
+                                            <td class="sched"><a href="#">6</a></td>
+                                            <td class=""><a href="#">7</a></td>
+                                            <td class="today"><a href="#">8</a></td>
+                                            <td><a href="#">9</a></td>
+                                            <td class="day_on sched"><a href="#">10</a></td>
+                                            <td><a href="#">11</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="sched"><a href="#">12</a></td>
+                                            <td><a href="#">13</a></td>
+                                            <td><a href="#">14</a></td>
+                                            <td class="sched"><a href="#">15</a></td>
+                                            <td><a href="#">16</a></td>
+                                            <td><a href="#">17</a></td>
+                                            <td><a href="#">18</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">19</a></td>
+                                            <td><a href="#">20</a></td>
+                                            <td class="sched"><a href="#">21</a></td>
+                                            <td class="sched"><a href="#">22</a></td>
+                                            <td class="holiday sched day_on"><a href="#">23</a></td>
+                                            <td><a href="#">24</a></td>
+                                            <td><a href="#">25</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">26</a></td>
+                                            <td><a href="#">27</a></td>
+                                            <td class="holiday"><a href="#">28</a></td>
+                                            <td><a href="#">29</a></td>
+                                            <td class="holiday sched"><a href="#">30</a></td>
+                                            <td class="passed"><a href="#">1</a></td>
+                                            <td class="passed"><a href="#">2</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="passed"><a href="#">3</a></td>
+                                            <td class="passed"><a href="#">4</a></td>
+                                            <td class="passed"><a href="#">5</a></td>
+                                            <td class="passed"><a href="#">6</a></td>
+                                            <td class="passed"><a href="#">7</a></td>
+                                            <td class="passed"><a href="#">8</a></td>
+                                            <td class="passed"><a href="#">9</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </dd>
+                        </dl>
+                        <a href="#" class="pre">이전</a>
+                        <a href="#" class="next">다음</a>
+                        <a href="#" class="today">오늘</a>
+                    </div>
+                </div>
+                <!-- 일정 목록 -->
+                <div class="sch_lst handy-scroll">
+                    <div class="wrap-hs">
+                        <h4>10일(목)</h4>
+                        <ul>
+                            <li>
+                                <a class="schedule">Basic Research 참고자료 수집</a>
+                                <div class="time">종일일정</div>
+                            </li>
+
+                            <li>
+                                <a class="schedule">컨퍼런스 참석</a>
+                                <div class="time">오전 09:00 ~ 11:00</div>
+                            </li>
+                            <li>
+                                <a class="schedule">조직도 화면 리디자인 회의</a>
+                                <div class="time">오후 01:00 ~ 02:00</div>
+                            </li>
+
+                            <li>
+                                <a class="schedule">조직도 화면조직도 화면조직도 화면조직도 화면조직도 화면조직도 화면 리디자인 회의</a>
+                                <div class="time">오후 01:00 ~ 02:00</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <a class="add_sch">일정 추가</a>
+            </div>
+            <!-- people -->
+            <div class="sp_pp" style="display: block;">
+                <fieldset>
+                    <div class="srch_group on">
+                        <!-- // 검색 이후 되돌아가는 버튼을 위해 on 추가, open은 포커스 되었을 때 레이어 오픈 효과 -->
+                        <input type="text" placeholder="주소록 검색" onfocus="javascript:$(this).parent().toggleClass('open');"/>
+                        <a class="btn_srch">검색</a>
+                        <!-- 현재 아이콘 미정 : 추후 적용예정 -->
+                        <a class="btn_return">이전</a>
+                        <!-- 처음 검색어 없이 입력창에 포커스 했을 때는, 최근검색어 표현시 검색어+위치-->
+                        <div class="srched_layer handy-scroll">
+                            <div class="wrap-hs">
+                                <ul class="">
+                                    <li><a href="#" class="">
+                                        <span class="co_name">강미나</span>
+                                        <span class="dot_divider">:</span>
+                                        <span class="addr_loc">주소록</span>
+                                        </a></li>
+                                    <li><a href="#" class="">
+                                        <span class="co_name">강미나</span>
+                                        <span class="dot_divider">:</span>
+                                        <span class="addr_loc">조직도</span>
+                                        </a></li>
+                                    <li><a href="#" class="">
+                                        <span class="co_name">그룹이름이사람이름대신들어올수도있다구요</span>
+                                        <span class="dot_divider">:</span>
+                                        <span class="addr_loc">주소록</span>
+                                        </a></li>
+                                    <!-- 검색어를 입력하기 시작하면 위치+검색어 순서 -->
+                                    <li><a href="#" class="">
+                                        <span class="addr_loc">조직도</span>								
+                                        <span class="dot_divider">:</span>
+                                        <span class="co_name">강미나</span>
+                                        </a></li>
+                                    <li><a href="#" class="">
+                                        <span class="addr_loc">주소록</span>
+                                        <span class="dot_divider">:</span>
+                                        <span class="co_name">강미나</span>
+                                        </a></li>
+                                    <li><a href="#" class="">
+                                        <span class="addr_loc">주소록</span>
+                                        <span class="dot_divider">:</span>
+                                        <span class="co_name">그룹이름이사람이름대신들어올수도있다구요</span>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="address">
+                    <!-- 즐겨찾는 연락처 : 등록된 내용이 없는 경우 -->
+                    <div class="addr_block open">
+                        <span class="tg_ttl">즐겨찾는 연락처 </span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="no_worker">
+                                    <span>즐겨찾는 연락처가 없습니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 즐겨찾는 연락처 : 등록된 내용이 있는 경우 -->
+                    <div class="addr_block open">
+                        <span class="tg_ttl">즐겨찾는 연락처 </span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="co_worker">
+                                    <a href="#" title="주소록그룹">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name group">EGW프로젝트그룹주소록</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">(외주)</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">주임연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 최근연락처 : 등록된 연락처가 없는 경우 + 접힌경우 -->
+                    <div class="addr_block">
+                        <span class="tg_ttl">최근 사용한 연락처 </span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="no_worker">
+                                    <span>최근 사용한 연락처가 없습니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 최근연락처 : 등록된 연락처가 있는 경우  -->
+                    <div class="addr_block open">
+                        <span class="tg_ttl">최근 사용한 연락처 </span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="co_worker">
+                                    <a href="#" title="주소록그룹">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name group">EGW프로젝트그룹주소록</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">(외주)</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">주임연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                            </ul>
+                            <div id="recently_search_reset" class="srch_reset on">
+                                <span class="btn_reset">
+                                    <a href="javascript:remove_recently_list();" title="지우기">지우기</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 나의부서 -->
+                    <div class="addr_block open">
+                        <span class="tg_ttl">나의 부서 </span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">사원<em>(나)</em></span>
+                                        <!-- //[D] 사용자 본인에 대해서는em태그로 '(나)' 표시 -->
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디</span>
+                                        <span class="co_info">주임연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+                                <li class="co_worker">
+                                    <a href="#" title="김핸디 주임연구원">
+                                        <span class="co_pic">								
+                                            <img class="photo" src="../../img/profile_photo_blank.png"></span>
+                                        <span class="co_name">김핸디핸디핸디</span>
+                                        <span class="co_info">주임연구연구연구연구원</span>
+                                    </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 조직도-->
+                    <div class="addr_block open folder">
+                        <span class="tg_ttl">조직도 </span>
+                        <div class="addr_lst">
+                            <ul class="lst_wrap">
+                                <li class="depth">
+                                    <div class="h_group">
+                                        <a href="" class="g_name depth_open">system</a> 
+                                        <a href="" class="group_info"></a> 
+                                        <a href="" class="sms_org"></a> 
+                                    </div>
+                                    <!-- user -->
+                                    <ul class="picz_lst">
+                                        <li class="co_worker"> <a href="#"> <span class="co_pic"> 
+                                            <img class="photo" src="../../img/profile_photo_blank.png">photo of 관리자</span> 
+                                            <span class="co_name">관리자</span> </a> </li>
+                                    </ul>
+
+                                    <!-- dept -->
+                                    <ul class="lst_wrap_1st">
+                                        <li class="depth">
+                                            <div class="h_group"> 
+                                                <a href="" class="g_name depth_clse" title="다산네트웍스">다산네트웍스</a>
+                                                <a href="" class="group_info"></a>
+                                                <a href="" class="sms_org"></a> </div>
+                                        </li>
+                                        <li class="depth">
+                                            <div class="h_group"> 
+                                                <a href="" class="g_name depth_open" title="핸디소프트">핸디소프트</a>
+                                                <a href="" class="group_info"></a>
+                                                <a href="" class="sms_org"></a> 
+                                            </div>
+                                            <!-- user -->
+                                            <ul class="picz_lst">
+                                                <li class="co_worker"> 
+                                                    <a href="#"> 
+                                                        <span class="co_pic"> 
+                                                            <img class="photo" src="../../img/profile_photo_blank.png">photo of 관리자</span>
+                                                        <span class="co_name">Ramyun</span>
+                                                    </a> 
+                                                </li>
+                                                <li class="co_worker"> 
+                                                    <a href="#">
+                                                        <span class="co_pic"> 
+                                                            <img class="photo" src="../../img/profile_photo_blank.png">photo of 관리자</span>
+                                                        <span class="co_name">관리자관리자관리자</span>
+                                                    </a> 
+                                                </li>
+                                                <li class="co_worker"> 
+                                                    <a href="#">
+                                                        <span class="co_pic"> 
+                                                            <img class="photo" src="../../img/profile_photo_blank.png">photo of 관리자</span>
+                                                        <span class="co_name">관리자관리자관리자관리자</span>
+                                                    </a> 
+                                                </li>
+                                                <li class="co_worker"> 
+                                                    <a href="#">
+                                                        <span class="co_pic"> 
+                                                            <img class="photo" src="../../img/profile_photo_blank.png">photo of 관리자</span>
+                                                        <span class="co_name">관리자관리자관리자관리자관리자관리자</span>
+                                                    </a> 
+                                                </li>
+                                            </ul>
+
+                                            <!-- dept -->
+                                            <ul class="lst_wrap_1st">
+                                                <li id="" class="depth">
+                                                    <div class="h_group"> 
+                                                        <a href="" class="g_name depth_clse" title="고문">고문</a> 
+                                                        <a href="" class="group_info"></a> 
+                                                        <a href="" class="sms_org"></a>
+                                                    </div>
+                                                </li>
+                                                <li id="" class="depth">
+                                                    <div class="h_group">
+                                                        <a href="" class="g_name depth_clse" title="">대표이사Staff</a>
+                                                        <a href="" class="group_info"></a> 
+                                                        <a href="" class="sms_org"></a>
+                                                    </div>
+                                                </li>
+                                                <li id="" class="depth">
+                                                    <div class="h_group"> 
+                                                        <a href="" class="g_name depth_clse" title="정보전략실">정보전략실</a>
+                                                        <a href="" class="group_info"></a>
+                                                        <a href="" class="sms_org"></a>
+                                                    </div>
+                                                </li>
+                                                <li id="" acco="open" class="depth">
+                                                    <div class="h_group"> 
+                                                        <a href="" class="g_name depth_open" title="제품전략실">제품전략실</a>
+                                                        <a href="" class="group_info"></a>
+                                                        <a href="" class="sms_org"></a>
+                                                    </div>
+                                                    <!-- user -->
+                                                    <ul class="picz_lst">
+                                                        <li class="co_worker">
+                                                            <a href="#"> 
+                                                                <span class="co_pic"> 
+                                                                    <img class="photo" src="../../img/profile_photo_blank.png">photo of 김이름</span>
+                                                                <span class="co_name">김이름</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+
+                                                    <!-- dept -->
+                                                    <ul class="lst_wrap_1st">
+                                                        <li id="ui-id-org-000022721" acco="clse" class="depth">
+                                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000022721');" class="g_name depth_clse" title="제품기획팀">제품기획팀</a> <a href="javascript:showPopDeptInfo('000022721');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000022721');" class="sms_org"></a> </div>
+                                                        </li>
+                                                        <li id="ui-id-org-000024006" acco="open" class="depth">
+                                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000024006');" class="g_name depth_open" title="UX디자인팀">UX디자인팀</a> <a href="javascript:showPopDeptInfo('000024006');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024006');" class="sms_org"></a> </div>
+
+                                                            <!-- user -->
+                                                            <ul class="picz_lst">
+                                                                <li class="co_worker"> 
+                                                                    <a href="#"> 
+                                                                        <span class="co_pic"> 
+                                                                            <img class="photo" src="../../img/sample/thumb_album_01.png">photo of 관리자</span>
+                                                                        <span class="co_name">Ramyun</span>
+                                                                    </a> 
+                                                                </li>
+                                                                <li class="co_worker"> 
+                                                                    <a href="#">
+                                                                        <span class="co_pic"> 
+                                                                            <img class="photo" src="../../img/sample/thumb_album_02.png">photo of 관리자</span>
+                                                                        <span class="co_name">관리자관리자관리자</span>
+                                                                    </a> 
+                                                                </li>
+                                                                <li class="co_worker"> 
+                                                                    <a href="#">
+                                                                        <span class="co_pic"> 
+                                                                            <img class="photo" src="../../img/sample/thumb_album_03.png">photo of 관리자</span>
+                                                                        <span class="co_name">관리자관리자관리자관리자</span>
+                                                                    </a> 
+                                                                </li>
+                                                                <li class="co_worker"> 
+                                                                    <a href="#">
+                                                                        <span class="co_pic"> 
+                                                                            <img class="photo" src="../../img/sample/thumb_album_04.png">photo of 관리자</span>
+                                                                        <span class="co_name">관리자관리자관리자관리자관리자관리자</span>
+                                                                    </a> 
+                                                                </li>
+                                                            </ul>
+
+                                                            <!-- dept -->
+                                                            <ul class="lst_wrap_1st">
+                                                            </ul>
+                                                        </li>
+                                                        <li id="ui-id-org-000011305" acco="clse" class="depth">
+                                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000011305');" class="g_name depth_clse" title="마케팅팀">마케팅팀</a> <a href="javascript:showPopDeptInfo('000011305');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000011305');" class="sms_org"></a> </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li id="ui-id-org-500609344" acco="clse" class="depth">
+                                                    <div class="h_group"> <a href="javascript:mainOrgAcco('500609344');" class="g_name depth_clse" title="경영지원팀">경영지원팀</a> <a href="javascript:showPopDeptInfo('500609344');" class="group_info"></a> <a href="javascript:showPopSms('OD', '500609344');" class="sms_org"></a> </div>
+                                                </li>
+                                                <li id="ui-id-org-000024706" acco="clse" class="depth">
+                                                    <div class="h_group"> <a href="javascript:mainOrgAcco('000024706');" class="g_name depth_clse" title="SW사업부">SW사업부</a> <a href="javascript:showPopDeptInfo('000024706');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024706');" class="sms_org"></a> </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li id="ui-id-org-000011800" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000011800');" class="g_name depth_clse" title="다산RND">다산RND</a> <a href="javascript:showPopDeptInfo('000011800');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000011800');" class="sms_org"></a> </div>
+                                        </li>
+                                        <li id="ui-id-org-000021707" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000021707');" class="g_name depth_clse" title="차산네트웍스">차산네트웍스</a> <a href="javascript:showPopDeptInfo('000021707');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000021707');" class="sms_org"></a> </div>
+                                        </li>
+                                        <li id="ui-id-org-000021900" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000021900');" class="g_name depth_clse" title="디엠씨">디엠씨</a> <a href="javascript:showPopDeptInfo('000021900');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000021900');" class="sms_org"></a> </div>
+                                        </li>
+                                        <li id="ui-id-org-000024601" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000024601');" class="g_name depth_clse" title="DYTS">DYTS</a> <a href="javascript:showPopDeptInfo('000024601');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000024601');" class="sms_org"></a> </div>
+                                        </li>
+                                        <li id="ui-id-org-000022102" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000022102');" class="g_name depth_clse" title="팬더미디어">팬더미디어</a> <a href="javascript:showPopDeptInfo('000022102');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000022102');" class="sms_org"></a> </div>
+                                        </li>
+                                        <li id="ui-id-org-000010600" acco="clse" class="depth">
+                                            <div class="h_group"> <a href="javascript:mainOrgAcco('000010600');" class="g_name depth_clse" title="유통테스트">유통테스트</a> <a href="javascript:showPopDeptInfo('000010600');" class="group_info"></a> <a href="javascript:showPopSms('OD', '000010600');" class="sms_org"></a> </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>						
+                        </div>
+                    </div>
+                    <!-- 주소록 -->
+                    <div class="addr_block open folder">
+                        <span class="tg_ttl">주소록</span>
+                        <div class="addr_lst">
+                            <ul class="picz_lst">
+                                <li class="no_worker">
+                                    <span>연락처가 없습니다.</span>
+                                </li>
+                            </ul>		
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- 그룹명 말줄임 처리 -->
+    <script>
+        $('.co_name.group').each(function(){
+            var length = 9;
+            if($(this).text().length >= length){
+                $(this).text($(this).text().substr(0,length)+'...');
+            }	
+        });
+
+    </script>
+</html>

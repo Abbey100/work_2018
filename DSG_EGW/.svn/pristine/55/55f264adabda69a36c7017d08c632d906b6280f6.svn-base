@@ -1,0 +1,109 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+
+<!--좌측 메뉴 영역-->
+<div class="left_menu"> 
+  <!--Action Btn start-->
+  <div class="btn_large"> <a href="javascript:postMTRL();" title="동호회 만들기">동호회 만들기</a> </div>
+  <!--// Action Btn END--> 
+  <!--Quick Btn start
+  <ul class="quickbtn_area four">
+    <li class="btn_noread quickbtn_on"><a href="#"> <span>안읽음</span></a></li>
+    <li class="btn_imprt"><a href="#"> <span>중요</span></a></li>
+    <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+    <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+  </ul>
+  -Quick Btn END--> 
+  <!--Menu List start-->
+  <ul id="folder_list" class="snb_lst">
+    <li class="snb_club_noti"> <a href="javascript:;" > <span>공지사항</span></a></li>
+    <li class="snb_good_club"> <a href="javascript:;" > <span>우수동호회</span></a></li>
+    <li class="snb_new_club"> <a href="javascript:;" > <span>신규동호회</span></a></li>
+    <li class="snb_my_club"> <a href="javascript:;" > <span>나의동호회요약</span></a></li>
+    <li class="snb_club_board"> <a href="javascript:;" > <span>동호회홍보게시판</span></a></li>
+    <li class="snb_club_talk"> <a href="javascript:;" > <span>토론실</span></a></li>
+  </ul>
+  <!--// Menu List end--> 
+  <!--Tree Area-->
+  <div id="folderDiv" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'tree_contents_area');"></span> <a class="btn_tree_add" href="#"> </a> <a class="btn_tree_cnfg" href="#"> </a>
+      <select class="tree_ttl_slct">
+        <option>나의 동호회</option>
+      </select>
+    </div>
+    <!--Tree Box-->
+    <div id="tree_contents_area" class="tree_cntnts_area">
+      <div id="webfx-tree-object-4" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-4-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-4-anchor" onfocus="webFXTreeHandler.focus(this);return false;">분류</a> </div>
+      <div id="webfx-tree-object-4-cont" class="webfx-tree-container">
+        <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-5-plus" src="../../img/Tminus.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);;return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);">스포츠</a> </div>
+        <div id="webfx-tree-object-5-cont" class="webfx-tree-container">
+          <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item select" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-6-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.개인부서메일함', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);">스포츠1</a> </div>
+          <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+          <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"><img id="webfx-tree-object-7-indent-0" src="../../img/blank.png"><img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"><img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"><a href="#" onclick="getMessages('개인 편지함.개인메일함.부서안의부서', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);">부서안의부서</a> </div>
+          <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Tree Area END --> 
+  <!--TAG area-->
+  
+  <DIV class="tag_area ">
+    <DIV class="tag_box">
+      <DIV class=tag_ttl>
+        <H2><SPAN>게시물태그</SPAN> <A class="popular" title=popular href="javascript:copTagOrder('POPULAR')"><IMG alt=popular src="../../img/tag_hot.png"> </A> <A class="new" title=new href="javascript:copTagOrder('NEW')"><IMG alt=new src="../../img/tag_new.png"> </A> </H2>
+      </DIV>
+      <UL id=copTagLi name="copTagLi">
+        <LI class="g4 s1"><A onclick="javascript:searchTagList('1')" href="#">뿅1</A>
+          <INPUT id=tagItem_1 name=tagItem_1 value=뿅1 type=hidden>
+        </LI>
+        <LI class="g10"><A onclick="javascript:searchTagList('2')" href="#">3333</A>
+          <INPUT id=tagItem_2 name=tagItem_2 value=3333 type=hidden>
+        </LI>
+        <LI class="g5 s2"><A onclick="javascript:searchTagList('3')" href="#">444</A>
+          <INPUT id=tagItem_3 name=tagItem_3 value=444 type=hidden>
+        </LI>
+        <LI class="g0 s3"><A onclick="javascript:searchTagList('4')" href="#">22222</A>
+          <INPUT id=tagItem_4 name=tagItem_4 value=22222 type=hidden>
+        </LI>
+        <LI class="g1"><A onclick="javascript:searchTagList('5')" href="#">123</A>
+          <INPUT id=tagItem_5 name=tagItem_5 value=123 type=hidden>
+        </LI>
+      </UL>
+      <SCRIPT>
+					copTagOrder(localStorage.getItem('cop_maintag_order'));
+				</SCRIPT> 
+    </DIV>
+  </DIV>
+</DIV>
+
+<!--//--> 
+
+<!--Setting & Info Area start-->
+<div class="info_area">
+  <ul>
+    <li class="config"> <a href="#" title='관리'> <span>관리</span></a></li>
+    <li class="cpcty_area mileage"> <span class="cpcty_grp"> 나의 마일리지 <span class="point">20.0</span> 점 </span> </li>
+  </ul>
+</div>
+<!--Setting & Info Area END--> 
+<!--좌측 메뉴 영역 END--> 
+<!-----------------------> 
+<!-----------------------> 
+<!----------------------->
+</body>
+</html>

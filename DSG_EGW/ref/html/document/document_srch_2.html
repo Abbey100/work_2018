@@ -1,0 +1,355 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<style>
+body, .container_box {
+	overflow-y: auto;
+}
+</style>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0"> 
+  
+  <!-- 상세 검색 영역 --> 
+  
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">수신반송<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 수신반송 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="수신반송조회"  style="width:890px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:160px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">반송자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">반송부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td colspan="5"><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:160px">
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 --> 
+  
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">접수대기<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+    <div class="ttl_filter">
+      <select class="basic_select">
+        <option>부서</option>
+        <option>UX디자인팀</option>
+      </select>
+      <select class="basic_select">
+        <option>처리현황</option>
+        <option> </option>
+      </select>
+      <select class="basic_select">
+        <option>서식명</option>
+        <option> </option>
+      </select>
+    </div>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 접수대기 -->
+  <div class="detail_srch_wrap srch_document on"><!--[D] 문서함은 srch_document 클래스 추가함(제목의 체크박스 JS 예외처리), 상세검색이 한줄이 기본으로 노출됨 -->
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="접수대기"  style="width:890px">
+          <colgroup>
+          <col style="width:78px">
+          <col style="width:160px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">반송자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">반송부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row">발송유형</th>
+              <td colspan="5"><label class="pd_rgt_10">
+                  <input type="checkbox">
+                  전체</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  수신문서(대내)</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  수신문서(대외)</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  협조문서</label>
+                <label>
+                  <input type="checkbox">
+                  감사문서</label></td>
+            </tr>
+            <tr>
+              <th scope="row">발송유형</th>
+              <td colspan="5"><label class="pd_rgt_10">
+                  <input type="checkbox">
+                  도착</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  진행</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  내부반려</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  내부회수</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  반송/외부반송</label>
+                <label class="pd_rgt_10">
+                  <input type="checkbox">
+                  협조외부/감사외부</label>
+                <label>
+                  <input type="checkbox">
+                  재발송요청</label></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h2 class="title">완료함<span class="line"> </span><a href="#" class="btn_star">즐겨찾기</a></h2>
+  </div>
+  <!-- 상세 검색 영역 --> 
+  <!-- 완료함 -->
+  <div class="detail_srch_wrap srch_document on">
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <table summary="완료함" style="width:892px">
+          <colgroup>
+          <col style="width:70px">
+          <col style="width:170px">
+          <col style="width:70px">
+          <col style="width:180px">
+          <col style="width:70px">
+          <col style="width:229px">
+          <col style="*">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th scope="row"><label for="basicSj">제목</label></th>
+              <td><input id="basicSj" name="basicSj" class="basic_inp" title="제목" onkeydown="if (event.keyCode==13) fncSearch();" type="text" value="" style="width:100%"/></td>
+              <th scope="row">기안자</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">게시자검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row"><label for="reportDe">등록일자</label></th>
+              <td ><div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+                <span class="date_wave">~</span>
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.17" style="width:105px;">
+                  <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div></td>
+              <td class="btn_box btn_s"><ul>
+                  <li><span><a href="#">검색</a></span></li>
+                  <li><a href="#" class="none_bg btn_detail_srch_flip"><span>상세</span></a></li>
+                </ul></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="docNo">문서번호</label></th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:170px">
+                </div></td>
+              <th scope="row">수(발)신자</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:180px">
+                </div></td>
+              <th scope="row">원기안문번호</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:230px">
+                </div></td>
+              <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+            </tr>
+            <tr>
+              <th scope="row">기안부서</th>
+              <td><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:140px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th scope="row">결재경로</th>
+              <td><div class="inp_box"> <a href="#" class="btn_human">결재경로</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                </div></td>
+              <th><label for="prdctnTy0">결재유형</label></th>
+              <td><input id="prdctnTy0" name="sanctnDocTy" class="Lradio" type="radio" value="" checked="checked">
+                <label for="prdctnTy0"></label>
+                전체&nbsp;
+                <input id="prdctnTy1" name="sanctnDocTy" class="Lradio" type="radio" value="1,2,7">
+                <label for="prdctnTy1"></label>
+                생산&nbsp;
+                <input id="prdctnTy2" name="sanctnDocTy" class="Lradio" type="radio" value="3">
+                <label for="prdctnTy2"></label>
+                접수 </td>
+            </tr>
+            <tr>
+              <th scope="row">서식명</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:170px">
+                </div></td>
+              <th scope="row">문서종류</th>
+              <td><div class="inp_box">
+                  <input type="text" class="basic_inp" style="width:180px">
+                </div></td>
+              <th scope="col"><label for="">문서종류</label></th>
+              <td><select id="" name="" class="basic_select" style="width:100%;">
+                  <option value="" selected="selected">전체</option>
+                  <option title="결재양식함" value="J10CB121430000001000">결재양식함</option>
+                  <option title="보고서식(내부결재)" value="J10CB121430000002000">보고서식(내부결재)</option>
+                  <option title="신청서" value="J10CB121430000003000">신청서</option>
+                  <option title="연동서식" value="J10CB121500000059000">연동서식</option>
+                  <option title="협조문(발수신서식)" value="JHOMS131290000295000">협조문(발수신서식)</option>
+                </select></td>
+            </tr>
+            <tr>
+              <th><label for="end">처리현황</label></th>
+              <!-- 처리현황 -->
+              <td><div class="inp_box">
+                  <label>
+                    <input id="end" name="afterSttus" class="Lcheckbox" type="checkbox" value="end">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    종료</label>
+                  <label>
+                    <input id="sndng" name="afterSttus" class="Lcheckbox" type="checkbox" value="sndng">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    발송</label>
+                  <label>
+                    <input id="rcept" name="afterSttus" class="Lcheckbox" type="checkbox" value="rcept">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    접수</label>
+                  <label>
+                    <input id="rceptIng" name="afterSttus" class="Lcheckbox" type="checkbox" value="rceptIng">
+                    <input type="hidden" name="_afterSttus" value="on">
+                    진행</label>
+                  <!-- promise ID : 107103-1, 2012.05.24 by KHW --> 
+                  
+                </div></td>
+              <th><label for="extrnl">시행종류</label></th>
+              <!-- <td><input type="checkbox" class="Lcheckbox" id="dmst" name="opertnSe" value="" /> <label for="dmst">대내</label><input type="checkbox" class="Lcheckbox" id="extrnl" name="opertnSe" value="" /> <label for="extrnl">대외</label></td> -->
+              <td colspan="3"><div class="inp_box">
+                  <label>
+                    <input id="extrnl" name="opertnSe" class="Lcheckbox" type="checkbox" value="extrnl">
+                    <input type="hidden" name="_opertnSe" value="on">
+                    대외시행&nbsp;&nbsp;</label>
+                  <label>
+                  <input id="dmst" name="opertnSe" class="Lcheckbox" type="checkbox" value="dmst">
+                  <label for="dmst"></label>
+                  <input type="hidden" name="_opertnSe" value="on">
+                  대내시행&nbsp;&nbsp;
+                  </label>
+                  <label>
+                  <input id="dept" name="opertnSe" class="Lcheckbox" type="checkbox" value="dept">
+                  <label for="dept"></label>
+                  <input type="hidden" name="_opertnSe" value="on">
+                  내부결재
+                  </label>
+                </div></td>
+            <tr>
+              <th><label for="readngLmtt">열람제한(보안)</label></th>
+              <!-- 열람제한 -->
+              <td><div class="inp_box">
+                  <label>
+                    <input id="readngLmtt" name="readngLmtt" class="Lcheckbox" type="checkbox" value="lmtt">
+                    <input type="hidden" name="_readngLmtt" value="on">
+                    열람제한여부</label>
+                </div></td>
+              <th scope="row">소속부서</th>
+              <td colspan="3"><div class="inp_box"> <a href="#" class="btn_group">부서검색</a>
+                  <div class="input_box" style="width:150px"> <span class="recipient"><em>디자인팀</em><a href="#" class="btn_close">삭제</a></span>
+                    <input type="text" style="width:50px">
+                  </div>
+                  <label>
+                  &nbsp;&nbsp;
+                  <input id="" name="" type="checkbox" value="Y" class="Lcheckbox" >
+                  <label for=""></label>
+                  <input type="hidden" name="" value="on">
+                  하위부서포함&nbsp;&nbsp;
+                  </label>
+                </div></td>
+            </tr>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+</div>
+</body>
+</html>

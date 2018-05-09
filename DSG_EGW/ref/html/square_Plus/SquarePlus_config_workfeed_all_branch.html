@@ -1,0 +1,121 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 환결설정</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.textcomplete.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        <script>
+      </script>
+  </head>
+
+<body class="sq_plus">
+  <!-- title start-->
+<div class="container_box container_list_box">
+  
+   <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+   <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글 for 커뮤니케이터</a></div>
+   
+<!-- Title area END-->     
+   <div class="title_area">
+      <h2 class="title">
+      <span class="title_name">스퀘어 환경설정</span>
+       <!--span class="loading"></span-->
+      </h2>
+     
+   </div>
+<!-- // Title area END-->
+    
+  <div class="content_lst content_lst_body">
+    <div class="config"> 
+        <div class="tab_box">
+          <ul class="tab_menu">
+            <a href="#">
+            <li class="tab">알람설정</li>
+            </a> <a href="#">
+            <li class="tab selected">워크피드 설정</li>
+            </a> <a href="#">
+            <li class="tab">종료그룹 관리</li>
+            </a>
+          </ul>
+        </div>
+        <div>
+        <div class="tab_ctt"> 
+            <!-- group_list_box -->
+            <div class="group_list_box">
+                <!-- filter_area -->
+                <div class="filter_area pd_lft_10 pd_tp_5">
+                    <a>나의그룹</a>
+                    <a class="on">전사그룹</a>
+                    <a>공개그룹</a>
+                    <div class="pd_rgt_10" >
+                    </div>
+                </div>
+                <!-- //filter_area -->
+                <!-- tree_lst -->
+                        <div class="org_content">
+                            <div id="directory-workspace-org">
+                                <div class="left_tree_box no_toggle_filter" id="left_tree_box">
+
+                                    <div id="tree_search" class="tree_search search_off">
+                                        <input type="text" value="" placeholder="부서명&nbsp;검색">
+                                        <a class="org_search" href="#">검색</a>
+                                        <a class="prev_list" href="#">목록보기</a>
+                                    </div>
+
+                                    <div class="left_tree">
+                                        <div id="orgTree" class="org_tree_area" style="width: 100%"><ul class="dynatree-container dynatree-no-connector"><li class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-lastsib dynatree-exp-el dynatree-ico-ef"><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">핸디소프트(주)</a></span><ul style=""><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy ui-dynatree-unselectable ui-dynatree-statusnode-rbox dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><span style="display:inline-block;" class="dynatree-title">고문</span></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">대표이사Staff</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">경영관리실</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">정보전략실</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children ui-dynatree-unselectable ui-dynatree-statusnode-rbox dynatree-exp-e dynatree-ico-ef"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><span style="display:inline-block;" class="dynatree-title">제품전략실</span></span><ul style=""><li class=""><span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">제품기획팀</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-selected dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">UX디자인팀</a></span></li><li class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-cf"><span class="dynatree-connector"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">마케팅팀</a></span></li></ul></li><li class=""><span class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">경영지원팀</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">SW사업부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">CS사업부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">전략사업부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">금융사업부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">클라우드사업부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">연구개발본부</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">품질관리실</a></span></li><li class=""><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy ui-dynatree-unselectable ui-dynatree-statusnode-rbox dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><span style="display:inline-block;" class="dynatree-title">관계사</span></span></li><li class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf"><span class="dynatree-expander"></span><input type="checkbox"><span class="dynatree-icon"></span><a style="cursor:pointer;" class="dynatree-title">감사부서</a></span></li></ul></li></ul></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                    </div>
+                <!-- //tree_lst -->
+            </div>
+            <!-- //group_list_box -->
+
+             <!-- slct_list_box -->
+             <div class="slct_list_box">
+                <!-- list_move -->
+                <ul class="list_move">
+                    <a id="addGroupAddBtn" href="#"><li class="add">추가</li></a>
+                    <a id="addGroupDelBtn" href="#"><li class="del">제거</li></a>
+                </ul>
+                <!-- //list_move -->
+                <!-- slct_list -->
+                <div class="slct_list">
+                    <span class="none"><p>워크피드의 기본 화면은 '나의그룹'의 소식입니다.</p><p>그룹을 추가하여 재설정할 수 있습니다.</p></span>
+                        <!-- select id="sel_addr" multiple="multiple">
+                            <option>선택된그룹이름이름이름이름름이름이름름이름이름</option>
+                            <option>업무그룹</option>
+                        </select>
+                        <div class="slct_list_opt">
+                            <span class="btn_config"><a href="#">초기화</a></span>
+                        </div-->
+                </div>
+                <!-- //slct_list -->
+             </div>
+             <!-- slct_list_box -->
+
+        </div>
+        </div>
+        <div class="footer">
+          <ul class="btns">
+            <li><span><a href="#" alt="저장" style="float:right">저장</a></span></li>
+          </ul>
+        </div>   
+            </div>
+</div>
+    </div>
+</body>
+</html>

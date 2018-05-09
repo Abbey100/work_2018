@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 결재 처리 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+
+		<div class="popup open">
+			<div class="handy-scroll">
+				<div class="popup_container" style="width:460px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						결재 처리
+					</h2>
+					<div class="vertical_table">	
+						<table>
+							<colgroup>
+								<col style="width:80px;">
+								<col style="width:*;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th><span>처리</span></th>
+									<td>
+										<span class="form"><input type="radio" name="radio1" id="radio1_1"><label for="radio1_1">결재</label></span>
+										<span class="form"><input type="radio" name="radio1" id="radio1_2"><label for="radio1_2">반려</label></span>
+										<span class="form"><input type="radio" name="radio1" id="radio1_3"><label for="radio1_3">보류</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th rowspan="2"><span>서명</span></th>
+									<td>										
+										<span class="form"><input type="radio" name="radio2" id="radio2_1"><label for="radio2_1">도장</label></span>
+										<span class="form"><input type="radio" name="radio2" id="radio2_2"><label for="radio2_2">문자서명</label></span>	
+								</tr>
+								<tr>									
+									<td>	
+										<ul class="sign_dojang handy-scroll">
+										<li>
+											<span class="form img"><input type="radio" name="radio3" id="radio3_1"><label for="radio3_1">
+												<img src="../../img/sample/thumb_album_01.png" alt="도장 이미지">
+												</label></span>
+										</li>
+										<li>
+											<span class="form img"><input type="radio" name="radio3" id="radio3_2"><label for="radio3_2">
+												<img src="../../img/sign_dojang.jpg" alt="도장 이미지">
+												</label></span>
+										</li>
+										<li>
+											<span class="form img"><input type="radio" name="radio3" id="radio3_3"><label for="radio3_3">
+												<img src="../../img/sign_dojang.jpg" alt="도장 이미지">
+												</label></span>
+										</li>
+										<li>
+											<span class="form img"><input type="radio" name="radio3" id="radio3_4"><label for="radio3_4">
+												<img src="../../img/sign_dojang.jpg" alt="도장 이미지">
+												</label></span>
+										</li>
+										
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th><span>의견</span></th>
+									<td>
+										<textarea type="text" style="height: 150px;" class="box_textarea" rows="5"></textarea>
+										<span class="align_rg size_txt"><span class="count">0</span>/4000</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>					
+					<div class="btns_area bttm mg_t_20">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

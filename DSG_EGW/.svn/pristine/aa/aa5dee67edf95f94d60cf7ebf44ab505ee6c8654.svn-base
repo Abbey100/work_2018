@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>환경설정_외부메일 가져오기</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>메일</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>메뉴명</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->    
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action group">
+                            <a class="action_btn">메일쓰기</a>
+                            <a class="big_split">추가 선택</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">
+                                <ul class="lnb_menu divide">
+                                    <li><a>전체메일</a></li>
+                                    <li><a>받은편지함</a><span class="count">12</span></li>
+                                    <li><a>내게 쓴 편지함</a></li>
+                                    <li><a>보낸편지함</a>
+                                        <a class="small btn">수신확인</a></li>
+                                    <li><a>임시보관함</a></li>
+                                    <li><a>예약편지함</a></li>
+                                    <li><a>휴지통</a>
+                                        <a class="ico trash">휴지통 비우기</a></li>
+                                    <!--// 비울것이 있을 떄만 활성화-->
+                                </ul>
+                                <!-- tag_type -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title">플래그 메일</a><span class="count">4</span>
+                                </div>
+                                <!-- vip -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">VIP 메일</a><a class="ico_btn small add">VIP 추가</a>
+                                    <ul class="sub_lst">
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김광수 팀장님</a>
+                                        </li>
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김핸디 과장</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 키워드 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">키워드 메일</a>
+									<a class="ico_btn small add">키워드 추가</a>
+									<ul class="sub_lst">
+										<li><div class="menu_name">
+										<a class="selected">카드 프로젝트프로젝트프로젝트프로젝트</a>
+										<a class="ico modify"></a>
+										<a class="ico del2"></a>
+										</div></li>
+									<li><div class="menu_name"><a>설계모음</a>
+										<a class="ico modify"></a>
+										<a class="ico del2"></a>
+										</div></li>
+									</ul>
+								</div>               
+                                <!-- 개인보관함 -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">개인 보관함</a> 
+                                    <div class="group">
+                                        <a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+                                        <a class="ico_btn small setting">개인 보관함 설정</a>
+                                    </div>
+                                    <!-- 트리 시작 -->
+                                    <div class="tree">
+                                        <ul class="dynatree-container">
+                                            <li class="">
+                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                    <span class="dynatree-expander"></span>
+                                                    <span class="dynatree-icon"></span>
+                                                    <a href="#" class="dynatree-title">
+                                                        <span class="node-folder" >2015</span>
+                                                    </a>
+                                                </div>
+                                                <ul style="">
+                                                    <li class="">
+                                                        <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-group" >file_1</span>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="dynatree-lastsib">
+                                                        <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-group">file_2</span>
+                                                            </a>
+                                                        </span></li>
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >2016</span></a></span>
+                                                <ul style="display: none;">
+                                                    <li class="">
+                                                        <span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+                                                    </li>
+                                                    <li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+                                                    <li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </div>
+                                <!-- // 개인보관함 -->  
+                            </div>
+                        </div>
+
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>
+                            <div class="mail_capacity">
+                                <span class="now_num">2.31GB</span>
+                                <span class="total_num">5GB</span>
+                            </div>
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+				<!-- content -->
+				<div class="container_area handy-scroll" >
+					<div class="">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+							<!-- 타이틀 영역 -->
+							<div class="hgroup border">
+								<h2>메일설정</h2>
+
+								<ul class="tab">
+									<li><a href="#">일반설정</a></li>
+									<li><a href="#">편지함 관리</a></li>
+									<li><a href="#">포워딩 설정</a></li>
+									<li><a href="#">메일 자동분류</a></li>
+									<li><a href="#">서명 관리</a></li>
+									<li><a href="#" class="selected">외부메일 가져오기</a></li>
+									<li><a href="#">VIP 메일함</a></li>
+									<li><a href="#">키워드 편지함</a></li>
+								</ul>
+							</div>
+							<!-- // 타이틀 영역 -->	
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area etc">
+								<div class="align_lf">
+									<a href="#" class="btn">외부메일 추가</a>
+									<a href="#" class="btn">삭제</a>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							<!-- 리스트 영역 -->
+							<div class="content_table">	
+								<div class="table_head">
+									<table>
+										<colgroup>
+											<col style="width:45px;">
+											<col style="width:*;">
+											<col style="width:350px;">
+											<col style="width:110px;">
+										</colgroup>
+										<thead>
+											<tr>
+												<th><span class="form"><input type="checkbox" /><label class="blind"></label></span></th>
+												<th>메일주소</th>
+												<th>저장메일함</th>
+												<th>수정/삭제</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table_body">
+									<table>
+										<colgroup>
+											<col style="width:45px;">
+											<col style="width:*;">
+											<col style="width:350px;">
+											<col style="width:110px;">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+												</td>
+												<td>honggildong@handysoft.co.kr</td>
+                                                <td>기본메일함</td>
+												<td class="text_btn">
+													<a href="#">수정</a>
+													<a href="#">삭제</a>
+												</td>
+											</tr>
+                                        </tbody>
+									</table>
+
+									<div class="btns_area">
+										<a href="#" class="action_btn">저장</a>
+										<a href="#" class="btn">취소</a>
+									</div>
+								</div>
+
+							</div>
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+		 <!-- 이름변경 -->
+        <div class="popup">
+			<!--  open 추가시 레이어 팝업 -->
+			<div>
+				<div class="popup_container" style="width:420px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						이름 변경
+					</h2>
+					<div class="form_table">
+						<table>
+							<colgroup>
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<td class="no_title">
+										<div class="text_input">
+											<input type="text" class="border_input" id="input" value="생성폴더">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

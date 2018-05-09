@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 비전자문서 상세 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 814 -->
+	<body>
+		<!-- header -->
+		<h1>법인카드 비용 정산서</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="btn" href="#">수정</a>
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="scroll_area handy-scroll">
+				<div class="appr_pop_inner">				
+					<div class="form_table">
+						<table>
+							<col style="width: 120px">
+							<col style="width:*">
+							<tbody>
+								<tr>                
+									<th><span class="necessary">제목</span></th>
+									<td>
+										<span>법인카드 비용 정산서</span>
+									</td>
+								</tr>
+								<tr>
+									<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+									<td class="">	
+										<div class="attached_box read">	
+											<!-- 파일첨부 -->
+											<div class="attached_files">
+												<!--
+<div class="group file_input">
+<a class="btn small" >
+<input type="file" onclick="blur()" >
+내PC
+</a>
+</div>
+-->
+												<!-- 저장 버튼 그룹-->
+												<div class="align_rg text_group">
+													<!-- 기본형 버튼 1개 -->
+													<a class="text_btn all_delete">모두삭제</a>												
+													<!-- 결재용 버튼 2개 -->
+													<a class="text_btn files">저장</a>
+													<!--                                                    <a class="text_btn files">삭제</a>-->
+												</div>
+												<!-- 파일리스트의 기본 상태는 class="file_lst dsp_none" 사용, open 버튼을 통해 열었을 경우,  dsp_none 클래스 삭제 -->
+												<div class="file_lst upload handy-scroll" id="display_test">
+													<ul class="use_file_opt">
+														<li>
+															
+															<!-- 파일 리스트 순서 조절용 선택 영역 -->
+															<span class="form">
+																<input type="checkbox">
+																<label class="blind"></label>
+															</span>
+															<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+															<span class="file_size">9,999 KB</span>
+															<span class="toggled">공개</span>
+														</li>
+														<li>
+															
+															<!-- 파일 리스트 순서 조절용 선택 영역 -->
+															<span class="form">
+																<input type="checkbox">
+																<label class="blind"></label>
+															</span>
+															<a class="file_name">EGW_GUI_Visual_Concisual_Concisual_Concept_0804.ppt </a>	
+															<span class="toggled">비공개</span>
+															<span class="file_size">28 KB</span>
+														</li>
+														<li>
+															
+															<!-- 파일 리스트 순서 조절용 선택 영역 -->
+															<span class="form">
+																<input type="checkbox">
+																<label class="blind"></label>
+															</span>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+
+															<span class="toggled">비공개</span>
+															<span class="file_size">284 KB</span>
+														</li>
+														<li>
+															
+															<!-- 파일 리스트 순서 조절용 선택 영역 -->
+															<span class="form">
+																<input type="checkbox">
+																<label class="blind"></label>
+															</span>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+
+															<span class="toggled">비공개</span>
+															<span class="file_size">284 KB</span>
+														</li>
+														<li>
+															
+															<!-- 파일 리스트 순서 조절용 선택 영역 -->
+															<span class="form">
+																<input type="checkbox">
+																<label class="blind"></label>
+															</span>
+															<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+
+															<span class="toggled">비공개</span>
+															<span class="file_size">284 KB</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- 파일정보 -->
+											<dl class="file_info">
+												<dt>내PC:</dt>
+												<dd>3개(<em>7.93MB</em>/2GB)</dd>
+												<!--<dt> 내파일</dt><dd>(213MB/<em>2GB</em>)</dd>-->
+											</dl>
+										</div>
+										<!-- // 파일 기본 부분 -->
+										<!-- *** 결재용 특수 버튼 ***-->
+										<!-- 순서 조정버튼
+<div class="icon_groups btn_up_dw">
+<a class="ico_btn move_lst up">위로</a>
+<a class="ico_btn  move_lst down">아래로</a>
+</div>-->
+										<!-- 저장 버튼-->
+									</td>
+								</tr>
+								<!-- 경로정보 -->
+								<tr>                
+									<th>경로정보</th>
+									<td>
+										<!-- vertical_table write -> vertical_table read 로 사용 -->
+										<div class="vertical_table read">	
+											<table>
+												<colgroup>
+													<col style="width: 133px;">
+													<col>
+													<col style="width: 133px;">
+													<col>
+												</colgroup>
+												<tbody>
+													<tr>
+														<th>원기안자</th>
+														<td>
+															<span>홍길동</span>
+														</td>
+														<th><span class="necessary">원기안(발신)부서</span></th>
+														<td>
+															<span>홍길동</span>
+														</td>
+													</tr>
+													<tr>
+														<th><span class="necessary">접수자</span></th>
+														<td>
+															<span>홍길동</span>
+														</td>
+														<th><span class="necessary">기안일자</span></th>
+														<td>
+															<span>2018-03-22</span>
+														</td>
+													</tr>
+													<tr>
+														<th><span class="necessary">결재자</span></th>
+														<td>
+															<span>홍길동</span>
+														</td>
+														<th><span class="necessary">결재일자</span></th>
+														<td>
+															<span>2018-03-22</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<!-- 시행정보 -->
+								<tr>                
+									<th>시행정보</th>
+									<td>
+										<div class="vertical_table read">	
+											<table>
+												<colgroup>
+													<col style="width: 133px;">
+													<col>
+													<col style="width: 133px;">
+													<col>
+												</colgroup>
+												<tbody>
+													<tr>
+														<th><span class="necessary">생산기관문서번호</span></th>
+														<td>
+															<span>2018-03-22dddd</span>
+														</td>
+														<th>등록일자</th>
+														<td>
+															<span>2018-03-22</span>
+														</td>
+													</tr>
+													<tr>
+														<th>시행종류</th>
+														<td>
+															대내시행
+														</td>
+														<th>시행일자</th>
+														<td>
+															<span>2018-03-22</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+								<!-- 문서정보 -->
+								<tr>                
+									<th>문서정보</th>									
+									<td>
+										<div class="vertical_table read">	
+											<table>
+												<colgroup>
+													<col style="width: 133px;">
+													<col>
+												</colgroup>
+												<tbody>
+													<tr>
+														<th>등록구분</th>
+														<td>
+															<span>수신</span>
+														</td>
+													</tr>
+													<tr>
+														<th>문서분류</th>
+														<td>
+															<span></span>
+														</td>
+													</tr>
+													<tr>
+														<th>열람범위(내부)</th>
+														<td>
+															<span>전체</span>
+														</td>
+													</tr>
+													<tr>
+														<th>열람제한(보안)</th>
+														<td>
+															<span>영구제한 2018-03-30</span>
+														</td>
+													</tr>
+													<tr>
+														<th>보안등급</th>
+														<td>
+															
+															<span>없음</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<!-- // body -->		
+	</body>
+</html>

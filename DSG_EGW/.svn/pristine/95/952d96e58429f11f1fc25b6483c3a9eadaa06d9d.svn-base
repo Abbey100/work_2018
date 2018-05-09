@@ -1,0 +1,197 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+<div> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>게시물쓰기</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#" class="fnt_bold">게시하기</a></span></li>
+      <li><span><a href="#" >임시저장</a></span></li>
+    </ul>
+    <div class="layout_rgt">
+      <select style="min-width:120px">
+        <option value="일반양식">일반양식</option>
+      </select>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  <div id='pop_container'>
+    <div class='contents writting'>
+      <form>
+        <SAVEBODYHEAD></SAVEBODYHEAD>
+        <ISBBSINFOSTART></ISBBSINFOSTART>
+        <ISBBSINFOEND></ISBBSINFOEND>
+        <BBSINFO></BBSINFO>
+        <table class='basic_table' border='0' cellSpacing='0' cellPadding='0' width='100%'>
+          <col>
+          <col>
+          <col>
+          <col>
+          <tr>
+            <th><span id="RC_SUBJECT">제목</span></th>
+            <td colspan="3"><table class="emptytable">
+                <tr>
+                  <bbspreface>
+                  <td><select class="basic_select preface">
+                      <option value="머릿말이지요">머릿말이지요</option>
+                    </select>
+                    <input class='intxt' style="width:75%;" id="SUBJECT" name="SUBJECT" type="text"/></td>
+                </tr>
+              </table></td>
+          </tr>
+          <tr>
+            <th><span id="RC_POSTER">게시자</span></th>
+            <td colspan="3"><SENDER></SENDER></td>
+          </tr>
+          <tr>
+            <th id="boardName" ><span id="RC_BOARD">게시판</span></th>
+            <td class='btntitle'><input class='intxt' type="text" id='BOARDNAME' name="BOARDNAME" readonly onfocus="blur()" style="width:98%;"/>
+              <a href='javascript:BBSView();' >버튼</a></td>
+            <th><span id="RC_POSTDATE">게시일</span></th>
+            <td id='bbspdate' name='bbspdate'><div class="wr_form_td">
+                <div class="datepic_box">
+                  <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                  <a href="#"><img src="/img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                <select class="basic_select">
+                  <option value="12">12</option>
+                </select>
+                <span class="pd_rgt_7_lft_1">시</span>
+                <select class="basic_select">
+                  <option value="31">31</option>
+                </select>
+                <span class="pd_rgt_7_lft_1">분</span> </div></td>
+          </tr>
+          <tr>
+            <th><span id="RC_OPTION">옵션</span></th>
+            <td><BBSREPONSETYPE>
+              <BBSRESPONSEVIEW>
+              <bbssecurity>
+              <span class='inp_raochk'>
+              <input type='checkbox' id='BBSEXPRESS' name='BBSEXPRESS' value='1'>
+              <span id="RC_EMERGENCY">긴급</span></span>
+              <bbsannounce></td>
+            <th><span id="RC_EXPIREDDATE">종료일</span></th>
+            <td id='bbsedate' name='bbsedate' class="box_col04"><bbsenddate id='BBSENDDATE' name='BBSENDDATE'></bbsenddate></td>
+          </tr>
+          <bbsanndate>
+          <bbsmainpop>
+        </table>
+        <table class="add_file_table">
+          <tbody>
+            <tr>
+              <th scope="row">파일첨부 <a href="#" class="btn_trig btn_addfile">열기,닫기</a></th>
+              <td><div class="wr_form_td">
+                  <div class="btn_box btn_s">
+                    <ul>
+                      <li><span><a href="#">내 PC</a></span></li>
+                      <li><span><a href="#">대용량첨부</a></span></li>
+                      <li class="btn_desc"><strong>0</strong>개의 첨부파일이 있습니다.</li>
+                    </ul>
+                  </div>
+                </div></td>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td colspan="3"><div class="write_file_list">
+                  <table>
+                    <colgroup>
+                    <col style="width:61%">
+                    <col style="width:21%">
+                    <col style="width:18%">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">파일명</th>
+                        <th scope="col">파일위치</th>
+                        <th scope="col">크기</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- [D] 파일첨부전은 tbody 가 display:none 처리 되어있음 -->
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                      <tr>
+                        <td><img src="/img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사_배포용.xls</a></td>
+                        <td>내PC</td>
+                        <td>53 KB <a href="#" class="btn_del"><img src="/img/btn_mail_write_file_list_del.gif" alt="삭제"></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div></td>
+            </tr>
+        </table>
+      </form>
+      <div id='contentArea' class='write_area'>
+        <TEXTAREA style="width: 100%;" class="input02" id='BODY' name="BODY" rows="27"></TEXTAREA>
+        </td>
+      </div>
+      <FIRSTATTACHVIEW>
+      <BBSATTACH>
+      <WEBDOCATTACH>
+    </div>
+    <!--//contents --> 
+  </div>
+  <!--//pop_container--> 
+</div>
+<!--//pop_wrap--> 
+<script type="text/javascript">
+/* 스크립트 임시 작업 */
+
+// 파일첨부
+$('.btn_trig').on('click', function(){
+	if($(this).hasClass('on')){
+		$(this).removeClass('on');
+		$('.write_file_list').hide();
+	}else{
+		$(this).addClass('on');
+		$('.write_file_list').show();
+	}
+});
+</script>
+</body>
+</html>

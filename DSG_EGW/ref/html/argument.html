@@ -1,0 +1,228 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+<div id="bbsContents" name="bbsContents">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<div class="title_area">
+	<h2 class="title">
+					토론실
+	</h2>
+	<div class="btn_flip_left">
+		<a href="javascript:toggleLFrame();">&nbsp;</a>
+	</div>
+	<div class="btn_flip_right on">
+		<a href="javascript:toggleRFrame();">&nbsp;</a>
+	</div>
+</div>
+
+<div class="view_cont">
+	<div class="view_content_box">
+		<div class="view_body_contents" style="height: 923px;">
+<!-- 토론 내용 -->
+			<form name="discussOpinionListForm" id="discussOpinionListForm" method="POST" action="discussOpinion.do">
+				<input type="hidden" id="U" name="U" value="001013122">
+				<input type="hidden" id="registUserID" name="registUserID" value="001002905">
+				<input type="hidden" id="discussSubjectID" name="discussSubjectID" value="000000683">
+				<input type="hidden" id="discussDocumentID" name="discussDocumentID" value="">
+				<input type="hidden" id="threadID" name="threadID" value="">
+				<input type="hidden" id="threadDepth" name="threadDepth" value="">
+				<input type="hidden" id="threadSequence" name="threadSequence" value="">
+				<input type="hidden" id="parentID" name="parentID" value="">
+				<input type="hidden" id="content" name="content" value="">
+				<input type="hidden" id="method" name="method" value="">
+				<input type="hidden" id="param" name="param" value="">
+				
+				<input type="hidden" id="kind" name="kind" value="1">
+				<input type="hidden" id="isFromSelect" name="isFromSelect" value="N">
+				
+				<!-- Message -->
+				<input type="hidden" id="insertcontent" name="insertcontent" value="토론내용을 작성해주세요">
+				<input type="hidden" id="cannotdelete" name="cannotdelete" value="댓글이 있는 경우 삭제할 수 없습니다.">
+				<input type="hidden" id="cannotmodify" name="cannotmodify" value="댓글이 있는 경우 수정할 수 없습니다.">
+				<input type="hidden" id="deletecomplete" name="deletecomplete" value="삭제되었습니다.">
+				<input type="hidden" id="modifycomplete" name="modifycomplete" value="수정되었습니다.">
+				<input type="hidden" id="deletefail" name="deletefail" value="삭제를 실패하였습니다.	">
+				<input type="hidden" id="modifyfail" name="modifyfail" value="수정을 실패하였습니다.">
+				<table class="etc_info_area poll_tabl">
+					<tbody>
+						<tr>
+							<th>전체의견</th>
+							<td><input class="txt" readonly="" type="text" id="entire" name="entire" value="1"></td>
+							<th>찬성</th>
+							<td><input class="txt" readonly="" type="text" id="approval" name="approval" value="0"></td>
+							<th>반대</th>
+							<td><input class="txt" readonly="" type="text" id="opposition" name="opposition" value="0"></td>
+							<th>기타</th>
+							<td><input class="txt" readonly="" type="text" id="etc" name="etc" value="1"></td>
+							<td>
+								<select id="kindOrder" name="kindOrder" onchange="javascript:discussOpinionListObj.onListFromSelect()" class="basic_select">
+						           <!--<option>:::::정렬순서:::::</option>-->
+						           <option value="">:::::전체:::::</option>
+						           <option value="1">찬성</option>
+						           <option value="0">반대</option>
+						           <option value="2">기타</option>
+						       </select>
+				       		</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="comment_area about_poll">
+					<div class="comment_write" id="opinion1_000000683" name="opinion1_000000683">
+                        <textarea class="txtarea">
+                        </textarea>
+				   		
+				   </div>
+				   <div id="opinion_000000683" name="opinion_000000683">
+					
+
+
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript" src="/hbbs/javascripts/discuss/discussOpinionList.js"></script>
+
+
+<input type="hidden" id="resCancelComment" name="resCancelComment" value="댓글취소">
+<input type="hidden" id="resCancelModify" name="resCancelModify" value="수정취소">
+<input type="hidden" id="SESSIONID" name="SESSIONID" value="073B999F949CD2890E4A4DE8145353EE">
+<input type="hidden" id="pageNumber" name="pageNumber" value="1">
+<input type="hidden" id="listSize" name="listSize" value="10">
+<input type="hidden" id="approvalCount" name="approvalCount" value="0">
+<input type="hidden" id="rejectCount" name="rejectCount" value="0">
+<input type="hidden" id="etcCount" name="etcCount" value="1">
+
+<!-- MSSQL 에서는 Date 타입의 '시분초'값이 없더라도 무조건 가져오므로 날짜형식으로 변환-->
+
+
+				
+		
+		
+		
+		
+		<input type="hidden" id="COMMENTMENU000000581" name="COMMENTMENU000000581" value="">
+		<!--의견 Start-->
+		<div class="comment_view" id="comment_view000000581">
+			<input type="hidden" id="isChildComment000000581" value="0">
+			<div class="comment_info">
+				<!-- 상태(찬성,반대,기타) 이미지-->
+				
+					
+					
+					
+						<span class="poll"><img class="choice" src="/img/states_etc.gif" alt="기타"><span class="agree">[기타]</span></span>
+					
+				
+                <a>손세호</a>
+                <span class="date">2015.07.16 16:15</span> 
+				<!-- 진행중인 토론에 대해서만 기능 버튼 제공-->
+				
+			</div>
+			<div class="comment_ctt" id="content_view_000000581">기타일세</div>
+			<!-- 답글쓰기-->
+			<div class="comment_repl" id="replyOpinion_000000581" style="display:none"> 
+				<textarea class="txtarea" wrap="HARD" id="replyOpinion_input_000000581" rows="4" cols="20" style="ime-mode:active;" onkeyup="commTextConter.textCheck(discussOpinionListForm.replyOpinion_input_000000581, discussOpinionListForm.replyOpinionLen_000000581, 2000);"></textarea>
+				<input width="68" height="51" class="inp" onclick="javascript:discussOpinionListObj.onReplyInsert('000000683', '000000581', '000000581', '0', '0', '2');return false;" type="button" value="의견입력">
+				<input readonly="" type="hidden" name="replyOpinionLen_000000581" size="3" value="0">
+			</div>     
+			<!-- 본문 수정-->
+			<div class="comment_ctt ctt_poll" id="content_000000581" style="display:none">
+				
+					<a href="#" class="mshort" onclick="showHide('imclist000000581');return false">
+						
+						
+						
+							<img class="brdr_0" id="approvalImg_000000581" name="approvalImg_000000581" src="/img/states_agree.gif" alt="찬성" border="0" style="display:none">
+							<img class="brdr_0" id="disagreeImg_000000581" name="disagreeImg_000000581" src="/img/states_disagree.gif" alt="반대" style="display:none">
+							<img class="brdr_0" id="etcImg_000000581" name="etcImg_000000581" src="/img/states_etc.gif" alt="기타">
+						
+					</a>
+					<ul class="mshort_select" id="imclist000000581" name="imclist000000581" style="display:none;">
+						<li class="imcover"><a href="#" onclick="showHide('imclist000000581');discussOpinionListObj.onReplyKindSelect('000000581',1);return false"><img src="/img/states_agree.gif" alt="찬성" class="vam"><b class="agree">[찬성]</b></a></li>
+						<li class="imcover"><a href="#" onclick="showHide('imclist000000581');discussOpinionListObj.onReplyKindSelect('000000581',0);return false"><img src="/img/states_disagree.gif" alt="반대" class="vam"><b class="disagree">[반대]</b></a></li>
+						<li class="imcover"><a href="#" onclick="showHide('imclist000000581');discussOpinionListObj.onReplyKindSelect('000000581',2);return false"><img src="/img/states_etc.gif" alt="기타" class="vam"><b class="agree">[기타]</b></a></li>
+					</ul>
+				
+				<input type="hidden" size="1" id="kind_000000581" name="kind_000000581" value="2">
+				<textarea class="txtarea mshort_tx_box" wrap="HARD" id="content_input_000000581" name="content_input_000000581" rows="4" cols="65" style="ime-mode:active;" onkeyup="commTextConter.textCheck(discussOpinionListForm.content_input_000000581, discussOpinionListForm.contentLen_000000581, 2000);">기타일세</textarea>
+				<input width="68" height="51" class="inp" onclick="javascript:discussOpinionListObj.onUpdate('000000581', '000000581', '0', '0');" type="button" border="0" value="의견입력">
+				<input readonly="" type="hidden" name="contentLen_000000581" size="3" value="0">
+			</div>
+		</div><!-- End text or text rep1 -->
+		
+		
+
+		
+		<div class="paginate_box">
+			
+                    <div class="paginate">
+
+
+                        
+                             
+							
+								<a class="first">처음</a>
+							
+						
+
+
+
+                        
+                            
+								<a class="prev">
+									이전페이지
+								</a>
+                            
+                                                  
+                        
+                       
+
+
+                        
+                        	
+								
+									<a class="on">1</a>
+								
+								
+							
+                        
+                       
+
+
+                        
+                            
+                            
+	                            <a class="next">다음페이지</a>
+								<a class="last">
+									마지막
+								</a>
+							
+						
+
+                    </div>
+
+		</div>
+	
+
+	
+				   </div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>

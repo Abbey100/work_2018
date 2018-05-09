@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>주소록 가져오기</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>주소록</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>주소록</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">                 
+				<div class="gnb">
+					<a class="home"> 
+					</a>
+					<ul class="gnb_menu">
+						<li class=""><a class="mail">메일</a></li>
+						<li class=""><a class="board">게시판</a></li>
+						<li class=""><a class="square">스퀘어</a></li>
+						<li class=""><a class="approval">결재</a></li>
+						<li class=""><a class="schedule">일정</a></li>
+						<li class=""><a class="equipment">설비</a></li>
+						<li class=""><a class="contact">주소록</a></li>
+						<li class=""><a class="storage">스토리지</a></li>                    
+						<li class=""><a class="community">동호회</a></li>
+						<li class=""><a class="research">설문</a></li>
+						<li class=""><a class="link" title="연결된 기능 목록">추가메뉴</a></li>
+					</ul>
+				</div>            
+			</div> 
+			<!-- //메뉴영역 -->      
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">연락처 추가하기</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<!-- 즐겨찾기 -->
+								<div class="lnb_menu">
+									<a class="menu_title">전체 주소록</a>
+								</div>
+								<div class="lnb_menu">
+									<a class="menu_title">즐겨찾는</a>
+								</div>
+								<div class="lnb_menu divide">
+									<a class="menu_title">VIP</a>
+								</div>
+								<!-- 내연락처 -->
+								<div class="lnb_menu divide">
+									<a class="menu_title category">내 연락처</a>
+									<ul class="sub_lst">
+										<li><a class="selected">기본 그룹</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+								<!-- 공유 연락처 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">공유 연락처</a>
+									<ul class="sub_lst">
+										<li><a>우리그룹</a></li>
+										<li><a>EGW TFT 외</a></li>
+									</ul>
+								</div>
+								<!-- 스퀘어 그룹 연락처 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">스퀘어 그룹 연락처</a>
+									<ul class="sub_lst">
+										<li><a>우리그룹</a></li>
+										<li><a>EGW TFT 외</a></li>
+										<li><a>EGW TFT</a></li>
+									</ul>
+								</div>
+
+
+								<!-- 조직도 -->
+								<div class="lnb_menu tree divide open">
+									<a class="menu_title category">조직도</a>
+									<div class="folder">
+										<ul class="dynatree-container handy-scroll">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >핸디소프트</span>
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+															<span class="dynatree-expander"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder" >연구개발본부</span>
+															</a>
+														</div>
+														<ul style="">
+															<li class="">
+																<div class="dynatree-node dynatree-folder  dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+																	<span class="dynatree-expander"></span>
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-folder" >SW연구소</span>
+																	</a>
+																</div>
+																<ul style="">
+																	<li class="">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">다큐플로 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																	<li class="dynatree-lastsib">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">기록관 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																</ul>
+															</li>
+															<li class="dynatree-lastsib">
+																<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+																	<span class="dynatree-expander"></span>
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-folder" >클라우드 연구소</span>
+																	</a>
+																</div>
+																<ul style="">
+																	<li class="">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">컨포넌트 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																	<li class="dynatree-lastsib">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">모바일 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+													<li class="dynatree-lastsib">
+														<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+															<span class="dynatree-expander"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder" >전략사업부</span>
+															</a>
+														</div>
+														<ul style="">
+															<li class="">
+																<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+																	<span class="dynatree-expander"></span>
+																	<span class="dynatree-icon"></span>
+																	<a href="#" class="dynatree-title">
+																		<span class="node-folder" >플랫폼 연구소</span>
+																	</a>
+																</div>
+																<ul style="">
+																	<li class="">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">플랫폼 기획 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																	<li class="dynatree-lastsib">
+																		<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+																			<span class="dynatree-connector"></span>
+																			<span class="dynatree-icon"></span>
+																			<a href="#" class="dynatree-title">
+																				<span class="node-folder">플랫폼 개발 팀</span>
+																			</a>
+																		</div>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>									
+										</ul>
+									</div>
+								</div>	
+
+								<ul class="lnb_menu">
+									<li><a  class="selected">주소록 가져오기</a></li>
+									<li><a>주소록 내보내기</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- content -->
+				<div class="container_area" >
+					<div class="handy-scroll">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<h1>주소록 가져오기</h1>	
+							</div>
+							<!-- // 타이틀 영역 -->
+							<!-- form -->
+							<div class="form_table">
+								<table>
+									<colgroup>
+										<col style="width:124px;">
+										<col width="*">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th>가져오기 방식</th>
+											<td>
+												<span class="form">
+													<input type="radio" name="import" id="from_file" />
+													<label for="from_file">파일에서 가져오기</label></span>
+												<span class="form">
+													<input type="radio" name="import" id="from_oth" />
+													<label for="from_oth">외부 가져오기</label></span>
+											</td>
+										</tr>
+										<tr>
+											<th>파일 형식</th>
+											<td>
+												<div class="option">
+													<span class="form">
+														<input type="radio" name="type" id="type_vcard" />
+														<label for="type_vcard">vCard</label></span>
+													<span class="form">
+														<input type="radio" name="type" id="type_csv" />
+														<label for="type_csv">CSV</label></span>
+												</div>
+												<div class="file_box"> 
+													<input type="text" class="file_name" id="file_name" value="파일 불러오기" readonly/>
+													<span class="ico file">
+														<input  type="file" id="file" style="" onchange="document.getElementById('file_name').value=this.value;" onclick="blur()" />
+													</span> 
+												</div>
+												<p class="description">
+													각 주소 사이는 쉼표로 항목을 구분한 텍스트 파일형식(CSV) 입니다. <br>
+													주소록의 CSV 파일 데이타 제목은 아래 칼럼명을 가지고 있어야 합니다.<br>
+													이름, 회사, 부서, 직함, 근무지 주소 번지, 근무지 우편 번호, 집 번지, 집 주소 우편 번호, 근무지 팩스, 근무처 전화, 집 전화, 휴대폰, 메모,<br>
+													개인 웹 페이지, 전자 메일 주소, 전자 메일 2 주소, 전자 메일 3 주소, 회사 웹 페이지, 기타 전화
+												</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="btns_area">
+									<a class="action_btn" href="#">가져오기</a>
+								</div>
+							</div>
+							<!-- 리스트 영역 -->
+							<div class="content_table">
+								<!-- 정보 -->
+								<div class="summary">
+									<ul class="tab">
+										<li><a class="selected">전체<span class="count">99</span></a></li>
+										<li><a class="">신규<span class="count">85</span></a></li>				
+										<li><a class="">중복<span class="count">10</span></a></li>				
+										<li><a class="">잘못된 주소<span class="count">4</span></a></li>			
+									</ul>
+									<div class="option">
+										<span class="form">
+											<input type="radio" name="save_option" id="save_new" />
+											<label for="save_new">중복 신규저장</label></span>
+										<span class="form">
+											<input type="radio" name="save_option" id="save_over" />
+											<label for="save_over">중복 덮어쓰기</label></span>
+									</div>
+								</div>
+								<div class="handy-scroll">										
+									<div class="table_head">
+										<a class="col_option"></a>
+										<table>
+											<colgroup>
+												<col style="width:37px;">
+												<col style="width:51px;">
+												<col style="width:90px;">
+												<col style="width:150px;">
+												<col style="width:150px;">
+												<col style="width:90px;">
+												<col style="width:180px;">
+												<col style="width:175px;">
+											</colgroup>
+											<thead>
+												<tr>
+													<th> 
+														<span class="form"><input type="checkbox" /><label class="blind">주소록선택</label></span>
+													</th>
+													<th>구분</th>
+													<th><span class="name">성명</span></th>
+													<th>회사, 소속</th>
+													<th>부서명</th>
+													<th>직책</th>
+													<th>이메일</th>
+													<th>휴대폰</th>
+												</tr>
+											</thead>
+										</table>
+									</div>
+									<div class="table_body">
+										<table>
+											<colgroup>
+												<col style="width:37px;">
+												<col style="width:51px;">
+												<col style="width:90px;">
+												<col style="width:150px;">
+												<col style="width:150px;">
+												<col style="width:90px;">
+												<col style="width:180px;">
+												<col style="width:175px;">
+											</colgroup>
+											<tbody>
+												<tr>
+												<td> 
+													<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+												</td>
+												<td>신규</td>
+												<td><a class="name">김핸핸핸디</a></td>
+												<td>삼성전자</td>	
+												<td>클라우드사업팀</td>	
+												<td>대리</td>	
+												<td>handyhandyhandyhandy@handy.co.kr</td>
+												<td>010-1234-5678</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="btns_area">
+									<a class="action_btn" href="#">주소록에 저장</a>
+								</div>
+							</div>
+
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

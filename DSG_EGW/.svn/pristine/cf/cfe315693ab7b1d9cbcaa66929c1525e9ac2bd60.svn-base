@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>HANDY GROUPWARE</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../../css/login.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+		<script src="../../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../../js/common.js" ></script>		
+	</head>
+<body>
+<div class="login_area">
+	<div class="logins">  
+		<div class="logins_box">
+			<div class="loginbox">
+				<div class="login_txt">
+					<strong class="tit"><img src="../../../img/login/login_tit.png" alt="Log In"></strong>
+					<p class="txt">Working Smart,<br>
+					Living Smart,<br>
+					<span>Global Smart.</span></p>
+					<div class="sel">
+						<div class="selectbox" style="width:140px;">
+							<select>
+								<option>한국어</option>
+								<option>中国语</option>
+								<option>日本语</option>
+								<option>English</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="login_box">
+					<strong class="logos"><img src="../../../img/login/login_logo.png" alt="HANDY Groupware"></strong>
+
+					<div class="logs_cont">
+						<p class="logos_des2">
+							<strong class="tits">비밀번호 변경</strong>
+							초기 비밀번호는 일괄적으로 설정되었습니다.<br>
+							개인 정보를 보호하기 위해 비밀번호를 변경하십시오.
+						</p>
+
+						<ul class="logs_txt2">
+							<li>
+								<input type="password" placeholder="이전 비밀번호" title="이전비밀번호입력">
+							</li>
+							<li>
+								<input type="password" placeholder="새 비밀번호" title="새비밀번호입력">
+							</li>
+							<li>
+								<input type="password" placeholder="비밀번호 확인" title="비밀번호확인입력">
+							</li>
+						</ul>
+						<div class="checks">
+							<input type="checkbox" id="pass" checked="checked"> <label for="pass"><span></span>결재암호 동일하게 변경.</label>
+						</div>
+					</div>
+
+					<div class="btns">
+						<a href="#" class="bts">로그인</a>
+						<p class="others">
+							<a href="#">다른 사용자로 로그인</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span class="login_footer">ⓒ DASAN Handysoft Corp.</span>
+</div>
+</body>
+</html>

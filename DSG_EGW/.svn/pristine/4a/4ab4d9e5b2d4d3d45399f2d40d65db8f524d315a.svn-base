@@ -1,0 +1,251 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<link type="text/css" rel="stylesheet" href="../../css/dynatree-1.2.4/ui.dynatree.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="left_menu" id="left_menu" name="left_menu">
+  <div class="btn_large"> <a href="#" onclick="javascript:addFile();" title="파일업로드">파일업로드</a> </div>
+  <ul class="quickbtn_area four">
+    <li class="btn_txts quickbtn_on"><a href="#"> <span>문서</span></a></li>
+    <li class="btn_imprt"><a href="#"> <span>사진</span></a></li>
+    <li class="btn_emgcy"><a href="#"> <span>긴급</span></a></li>
+    <li class="btn_scrty"><a href="#"><span>보안</span> </a></li>
+  </ul>
+  <div id="tree_div" class="tree_area_box mglast">
+    <div class="tree_ttl_area"> <span class="tree_ttl two" onclick="javascript:toggle_div(this,'folder_tree');">나의 클라우드</span> <a class="btn_tree_add" href="#"> </a> <a class="btn_tree_cnfg" href="#"> </a> </div>
+    <div id="folder_tree" name="folder_tree" class="tree_box">
+      <ul class="dynatree-container">
+        <li id="ui-dynatree-id-014kk622w" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-lastsib dynatree-exp-el dynatree-ico-ef"><span class="dynatree-expander"></span><img alt="" src="../../img/dynatree-1.2.4/ltFld_1.gif"><a style="cursor: pointer;" class="dynatree-title">클라우드 홈</a></span>
+          <ul>
+            <li id="ui-dynatree-id-014l10th5"><span class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">디자인소스</a></span></li>
+            <li id="ui-dynatree-id-014kks1oj"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">회사양식보관</a></span></li>
+            <li id="ui-dynatree-id-014kks1oj"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a style="cursor: pointer;" class="dynatree-title">주간업무보고</a></span></li>
+            <li id="ui-dynatree-id-014l10imm" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf"><span class="dynatree-expander"></span><img alt="" src="../../img/dynatree-1.2.4/ltFld_2.gif"><a style="cursor: pointer;" class="dynatree-title">팀워크샵사진</a></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'share_tree');">공유 받은 폴더</span> </div>
+    <div id="share_tree" name="share_tree" class="tree_box">
+      <ul class="dynatree-container">
+        <li id="ui-dynatree-id-shared" class="dynatree-lastsib">
+          <ul>
+            <li id="ui-dynatree-id-014wa0jmp"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">GW8.3 디자인</a></span></li>
+            <li id="ui-dynatree-id-014wa0vz5"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">GW8.3 퍼블리싱</a></span></li>
+            <li id="ui-dynatree-id-014wadvzc"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-exp-cd dynatree-ico-cf"><span class="dynatree-connector"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">주간회의록</a></span></li>
+            <li id="ui-dynatree-id-014wafxqm" class="dynatree-lastsib"><span class="dynatree-node dynatree-folder dynatree-has-children dynatree-lazy dynatree-lastsib dynatree-exp-cdl dynatree-ico-cf dynatree-active"><span class="dynatree-expander"></span><span class="dynatree-icon"><img alt="" src="../../img/dynatree-1.2.4/ltFld_3.gif"></span><a style="cursor: pointer;" class="dynatree-title">팀양식공유폴더</a></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="snb_lst">
+    <ul>
+      <li class="snb_lagfile"><a href="#" id="" onclick='javascript:initStatisticsList();' title='대용량첨부파일'><span>대용량첨부파일<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_history"><a href="#" id="" onclick='javascript:initStatisticsList();' title='이력보기'><span>이력보기<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_stats"><a href="#" id="" onclick='javascript:initStatisticsList();' title='통계보기'><span>통계보기<span class="folder_msg_count"></span></span></a></li>
+      <li class="snb_trsh"><a href="#" id="cf_menu_trash" onclick='javascript:initTrashList();' title='휴지통'><span>휴지통</span></a> <a class="btn_trshbx_dl" href="#" title="휴지통비우기">휴지통비우기</a></li>
+    </ul>
+  </div>
+  <div class="info_area">
+    <ul>
+      <li class="config"><a href="javascript:setUserSettings();" title='환경설정'><span>환경설정</span></a></li>
+      <li class="cpcty_area"> <img id="gagequota" src="../../img/BAR_BG_ON.GIF" width="0%" height="12px" style="width:56px;"><img id="gagequotabg" src="../../img/BAR_BG.GIF" width="0%" height="12px" style="width:100px;"> <span class="cpcty_grp"> <span id="usequota">128MB</span><span class="fnt_gray">/</span><span id="limitquota">1000</span>MB </span> </li>
+    </ul>
+  </div>
+</div>
+<div class="container_box container_list_box none_mg_left">
+  <div class="title_area">
+    <h2 class="title">디자인 소스<span>2개의 파일을 선택했습니다.</span></h2>
+  </div>
+  <!-- 검색 영역 -->
+  <div class="srch_area">
+    <fieldset class="search">
+      <input type="text" id="term" name="term" size="15" value="파일명 + 공유자">
+      <a href="#" title="검색" class="srch_btn" alt="검색">검색</a>
+    </fieldset>
+  </div>
+  <!-- //검색 영역 --> 
+  <!-- 상세 검색 영역 --> 
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 --> 
+  <!-- 버튼 영역 다음버전 올리기 내리기 버튼 사용시 주석처리 삭제
+	<div class="btn_area">
+		<ul class="btn_cloud">
+			<li class="btn_up" title="파일업로드"><a href="#">파일업로드</a></li>
+			<li class="btn_down" title="파일다운로드"><a href="#">파일다운로드</a></li>
+			<li class="btn_share" title="폴더공유"><a href="#">폴더공유</a></li>
+		</ul>
+		<ul class="btns first">
+			<li><span class="send"><a href="#">보내기</a></span>
+				<div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스
+					<ul>
+						<li><a href="#">메일 첨부</a></li>
+						<li><a href="#">게시물 첨부</a></li>
+						<li><a href="#">SNS 첨부</a></li>
+					</ul>
+				</div>
+			</li><!-- [D] slt 는 셀렉트형태의 버튼
+		</ul>
+		<ul class="btns">
+			<li><span><a href="#">삭제</a></span></li>
+			<li><span><a href="#">수정</a></span></li>
+			<li><span><a href="#">이동</a></span></li>
+			<li><span><a href="#">새폴더</a></span></li>
+		</ul>
+		<div class="layout_rgt">
+			<ul class="btns">
+				<li><span class="slt"><a href="#">15</a></span>
+					<div class="layer_pop" style="width:44px"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스
+						<ul>
+							<li><a href="#">15</a></li>
+							<li><a href="#">20</a></li>
+							<li><a href="#">30</a></li>
+							<li><a href="#">40</a></li>
+							<li><a href="#">50</a></li>
+						</ul>
+					</div>
+				</li><!-- [D] slt 는 셀렉트형태의 버튼
+			</ul>
+			<p class="btn_rfrsh" title="새로고침"><a href="#">새로고침</a></p>
+			<p class="btn_cloud_lst on"><a href="#" title="목록보기">목록보기</a></p>
+			<p class="btn_cloud_thum"><a href="#" title="썸네일보기">썸네일보기</a></p>
+		</div>
+	</div> // 주석처리 마지막 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">올리기</a></span></li>
+      <li><span><a href="#">새폴더</a></span></li>
+      <li><span><a href="#">삭제</a></span></li>
+      <li><span><a href="#">이름수정</a></span></li>
+      <li><span><a href="#">이동</a></span></li>
+      <li><span><a href="#">공유</a></span></li>
+      <li><span class="slt"><a href="#">폴더편집</a></span>
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">추가</a></li>
+            <li><a href="#">수정</a></li>
+            <li><a href="#">삭제</a></li>
+            <li><a href="#">이동</a></li>
+            <li><a href="#">공유</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- [D] slt 는 셀렉트형태의 버튼 -->
+      <li><span class="send" title="보내기"><a href="#">보내기</a></span>
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">메일 첨부</a></li>
+            <li><a href="#">게시물 첨부</a></li>
+            <li><a href="#">SNS 첨부</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- [D] slt 는 셀렉트형태의 버튼 -->
+    </ul>
+    <div class="layout_rgt">
+      <ul class="btns">
+        <select>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+          <option value="50">50</option>
+        </select>
+        <!-- DIV 셀렉트
+				<li><span class="slt"><a href="#">15</a></span>
+					<div class="layer_pop" style="width:44px"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스
+						<ul>
+							<li><a href="#">15</a></li>
+							<li><a href="#">20</a></li>
+							<li><a href="#">30</a></li>
+							<li><a href="#">40</a></li>
+							<li><a href="#">50</a></li>
+						</ul>
+					</div>
+				</li><!-- [D] slt 는 셀렉트형태의 버튼
+                -->
+      </ul>
+      <p class="btn_rfrsh" title="새로고침"><a href="#">새로고침</a></p>
+      <p class="btn_cloud_lst on" title="목록보기"><a href="#" >목록보기</a></p>
+      <p class="btn_cloud_thum" title="썸네일보기"><a href="#">썸네일보기</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 클라우드 썸네일리스트 -->
+  <div class="cloud_list"> 
+    <!-- 게시판 header -->
+    <div class="content_lst content_lst_head cloud_list">
+      <table>
+        <colgroup>
+        <col style="width:*">
+        </colgroup>
+        <thead>
+          <tr>
+            <th> <input type="checkbox">
+              전체선택 </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- // 게시판 header --> 
+    <!-- 게시판 list -->
+    <div class="content_lst content_lst_body cloud_list"><!--[D] cloud 는 cloud_list 클래스 추가(세로값다름) -->
+      <div class="cloud_list_thum">
+        <ul>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum03">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <img src="../../img/@thum.jpg"> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum04">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum04">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum05">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum06">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li class="on">
+            <input type="checkbox" class="thum_chk" checked>
+            <div class="list"> <a href="#"> <span class="thum_ico thum07">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li class="on">
+            <input type="checkbox" class="thum_chk" checked>
+            <div class="list"> <a href="#"> <span class="thum_ico thum08">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+          <li>
+            <input type="checkbox" class="thum_chk">
+            <div class="list"> <a href="#"> <span class="thum_ico thum13">아이콘</span> <em></em> </a> </div>
+            <a href="#" class="list_subj">파일명.jpg</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- // 클라우드 썸네일리스트 --> 
+</div>
+<div class="show_img">
+  <div class="btn_pop_arr"> </div>
+  <div class="img_box"> <img src="../../img/@lee.jpg" /> </div>
+</div>
+</body>
+</html>

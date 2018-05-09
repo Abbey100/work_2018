@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 설비 추가 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+    </head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>설비 추가</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area">
+                <div class="handy-scroll">
+                    <div>
+                        <div class="form_table">
+                            <table>
+                                <col style="width: 110px">
+                                <col style="width:*">
+                                <tbody>
+                                    <tr>                
+                                        <th><span class="necessary">설비명</span></th>
+                                        <td>
+                                            <div class="input_group focused">
+                                                <input type="text" class="basic_input" placeholder="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span class="necessary">관리자</span></th>
+                                        <td>
+                                            <div class="input_group eqip_case1">
+                                                <div class="handy-scroll">
+                                                    <div class="token-input sche_only_delete">
+                                                        <ul class="token-input-list ui-sortable">
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-input-token-directory ui-sortable-handle">
+                                                                <input type="text" style="outline: none; width: 110px;">
+                                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                            </li>
+                                                        </ul>
+                                                        <input type="text" id="hwto" name="hwto" style="display: none;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+
+                                                    </div>
+                                                </div>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><span>색상</span></th>
+                                        <td>
+                                            <ul class="sche_add_colorlist">
+                                                <li><a href="#" class="dal_color type01">달력 구분 01</a></li>
+                                                <li><a href="#" class="dal_color type02">달력 구분 02</a></li>
+                                                <li><a href="#" class="dal_color type03">달력 구분 03</a></li>
+                                                <li><a href="#" class="dal_color type04">달력 구분 04</a></li>
+                                                <li><a href="#" class="dal_color type05">달력 구분 05</a></li>
+                                                <li><a href="#" class="dal_color type06">달력 구분 06</a></li>
+                                                <li><a href="#" class="dal_color type07">달력 구분 07</a></li>
+                                                <li class="on"><a href="#" class="dal_color type08">달력 구분 08</a></li><!-- 선택된 달력에 on 클래스 -->
+                                                <li><a href="#" class="dal_color type09">달력 구분 09</a></li>
+                                                <li><a href="#" class="dal_color type10">달력 구분 10</a></li>
+                                                <li><a href="#" class="dal_color type11">달력 구분 11</a></li>
+                                                <li><a href="#" class="dal_color type12">달력 구분 12</a></li>
+                                                <li><a href="#" class="dal_color type13">달력 구분 13</a></li>
+                                                <li><a href="#" class="dal_color type14">달력 구분 14</a></li>
+                                                <li><a href="#" class="dal_color type15">달력 구분 15</a></li>
+                                                <li><a href="#" class="dal_color type16">달력 구분 16</a></li>
+                                                <li><a href="#" class="dal_color type17">달력 구분 17</a></li>
+                                                <li><a href="#" class="dal_color type18">달력 구분 18</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>설비 상태</span></th>
+                                        <td>
+                                            <span class="form">
+                                                <input type="radio" name="from_radio1" id="from_radio1_1" checked="">
+                                                <label for="from_radio1_1">사용가능</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="radio" name="from_radio1" id="from_radio1_2" checked="">
+                                                <label for="from_radio1_2">사용불가</label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>승인제여부</span></th>
+                                        <td>
+                                            <span class="form">
+                                                <input type="radio" name="from_radio1" id="from_radio1_1" checked="">
+                                                <label for="from_radio1_1">선정</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="radio" name="from_radio1" id="from_radio1_2" checked="">
+                                                <label for="from_radio1_2">승인</label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>설비분류명</span></th>
+                                        <td>
+                                            <div class="selectbox" style="width:90px;">
+                                                <select title="설비 분류명 선택"> 
+                                                    <option selected>회의실</option>
+                                                    <option>설비분류명</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>공유자</span></th>
+                                        <td>
+                                            <div class="input_group eqip_case1">
+                                                <div class="handy-scroll">
+                                                    <div class="token-input sche_only_delete">
+                                                        <ul class="token-input-list ui-sortable">
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li title="" class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-input-token-directory ui-sortable-handle">
+                                                                <input type="text" style="outline: none; width: 110px;">
+                                                                <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+                                                            </li>
+                                                        </ul>
+                                                        <input type="text" id="hwto" name="hwto" style="display: none;">
+                                                        <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                                        <input type="button" class="ico_btn small add">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>설명</span></th>
+                                        <td>
+                                            <textarea class="border_textarea" placeholder="텍스트를 입력해 주세요" rows="1"></textarea>
+                                            <span class="align_rg size_txt"><span class="count">0</span>/500</span>
+                                        </td>
+                                    </tr>
+                                    <tr>                
+                                        <th><span>설비사진</span></th>
+                                        <td>
+                                            <div class="group file_input">
+                                                <a class="btn small" href="#">
+                                                    <input type="file" onclick="blur()">
+                                                    파일찾기
+                                                </a>
+                                            </div>
+
+                                            <!-- 이미지 첨부 -->
+                                            <div class="comm_form_thumb_area">
+                                                <ul>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_01.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_02.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_03.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_03.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_03.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_01.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_02.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                    <li class="thumnail">
+                                                        <span class="thumnail_box"><img src="../../img/square/ex_img_03.jpg" alt=""><a href="#" class="del">삭제</a></span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btns_area bttm">
+                <div class="align_rg">
+                    <!-- 등록 -->
+                    <a class="action_btn">설비등록</a>
+                    <a class="btn">취소</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

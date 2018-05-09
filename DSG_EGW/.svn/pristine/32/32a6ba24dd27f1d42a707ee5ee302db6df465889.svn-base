@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 설비 그룹 추가 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 800 x 374 -->
+	<body>
+		<!-- header -->
+		<h1>설비 그룹 추가</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="cont_wrap container_area">				
+			<!-- 본문 영역 -->
+			<div class="scroll_area">
+				<div class="form_table handy-scroll">
+					<table>
+						<colgroup>
+							<col style="width:100px;">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><span class="necessary">그룹명</span></th>
+								<td>
+									<div class="input_group multi focused">
+										<!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+										<input type="text" class="basic_input" value="노트북" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="necessary">그룹항목</span></th>
+								<td>
+									<div class="input_group sche_case3">
+										<div class="add_equip_wrap open"> <!-- 펼치면 open 클래스 추가 -->
+											<a href="#" class="btn_equip">설비추가</a>
+											<div class="add_equip_cont">
+												<div class="pos_l handy-scroll">
+													<ul class="add_equip_list">
+														<li class="selected"><a href="#">회의실</a></li>
+														<li class="on"><a href="#">빔 프로젝터 내용이 길 경우</a></li>
+														<li><a href="#">노트북</a></li>
+														<li><a href="#">차량</a></li>
+														<li><a href="#">설비A</a></li>
+														<li><a href="#">노트북</a></li>
+														<li><a href="#">차량</a></li>
+														<li><a href="#">설비A</a></li>
+													</ul>
+												</div>
+												<span class="bar">&nbsp;</span>
+												<div class="pos_r handy-scroll">
+													<ul class="add_equip_list">
+														<li><div class="pick_cal type02">
+															<input type="checkbox" id="check_type22"/>
+															<label for="check_type22"><span class="color "></span>1층 A회의실</label>
+															</div></li>
+														<li class="on"><div class="pick_cal type14">
+															<input type="checkbox" id="check_type14"/>
+
+															<label for="check_type14"><span class="color "></span>1층 B회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+														<li><div class="pick_cal type18">
+															<input type="checkbox" id="check_type28"/>
+
+															<label for="check_type28"><span class="color"></span>1층 C회의실</label>
+															</div></li>
+													</ul>
+												</div>
+												<div class="pos_bt"><a class="btn">확인</a></div>
+											</div>
+										</div>
+										<input class="basic_input" type="text" value="1층 Bahama, 1층 Bahama" onfocus="blur();" readonly>		
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>공유자</th>
+								<td>
+									<div class="input_group has_btn">
+										<div class="token-input">
+											<ul class="token-input-list ui-sortable">
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>													
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+												<li title="" class="token-input-token">
+													<p>이핸디</p>
+													<span class="token-input-delete-token">delete</span>
+												</li>
+											</ul>
+											<input type="text" style="display: none;">			
+											<a class="ico_btn small add" href="#">조직도</a>
+										</div>
+									</div>
+								</td>
+							</tr>								
+							<tr>
+								<th>설명</th>
+								<td>
+									<textarea class="border_textarea" placeholder="텍스트를 입력해 주세요" rows='1'></textarea>
+									<span class="align_rg size_txt"><span class="count">0</span>/500</span>
+								</td>
+							</tr>	
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="btns_area bttm">
+				<div class="align_rg">
+					<!-- 등록 -->
+					<a class="action_btn">완료</a>
+					<a class="btn">취소</a>
+				</div>
+			</div>            
+
+		</div>	
+		<!-- note message -->
+		<div class="note" style="">
+			<p>설비 목록이 추가되었습니다.</p>
+			<a class="confirm" href="#">확인</a>
+		</div>
+	</body>
+</html>

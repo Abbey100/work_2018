@@ -1,0 +1,216 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+</head>
+<body onload="fncOnLoad();" >
+
+<div class="pop_wrap">
+  <div class="container_box">
+    <form name=" Form" id=" Form" action="" method="post">
+      <div class="title_area">
+        <h1>일괄결재</h1>
+      </div>
+      <!-- 상단 의견/서명구분 영역 -->
+      <div class="pd_all_18">
+        <div class="content_configlist">
+          <table>
+            <colgroup>
+            <col style="width:150px;">
+            <col width="*">
+            </colgroup>
+            <tbody>
+              <tr id="trOpinionWritng">
+                <th> 의견 <span class="essntal" style="display:none" id="opinionWritngAsterisk">*</span><br>
+                  <span class="fnt_bold_n" id="commentLen">0/4000</span> </th>
+                <td class="inp_ctt"><textarea class="basic_txtarea" style="width:100%;" name="opinionWritng" id="opinionWritng" onkeyup="textCheck( Form.opinionWritng, 'commentLen', 4000);" rows="4"></textarea>
+                  <span class="dsp_blck fnt_gray mg_tp_2">※ 의견은4000bytes까지 입력 가능합니다.</span></td>
+              </tr>
+              
+              <!-- ==== SignDialog Start ==== -->
+              <tr id="trSignDlg" style="min-height:200px;">
+                <th><label for="">서명구분</label></th>
+                <td><script type="text/javascript" language="javascript" defer="defer">
+function setSign(type, img) {    setRadioSelected(document.getElementsByName('SIGNTYPE'), type);
+    var selSign=-1;
+    if(type=='image') {
+    	//alert('img='+img+' type='+type+' img.src='+img.src+' img.bigSrc='+img.bigSrc+' img.value='+img.value)
+        if(img) {
+            D$('SIGNSTAMP').src=img.src;
+            D$('SIGNSTAMP').value=img.value;
+            selSign=img.cnt;
+        }
+        D$('SIGNTEXT').hide();
+        D$('SIGNSTAMP').show();
+
+    } else if(type=='text') {
+        D$('SIGNSTAMP').hide();
+        D$('SIGNTEXT').show();
+    }
+
+    for(var i=0;i<30;i++) {
+        var obj=D$('sfr'+i);
+        if(!obj)
+            break;
+        if(i==selSign) {
+        	obj.addClassName('stamp_selected');
+            obj.removeClassName('stamp_unselected');
+        } else {
+            obj.removeClassName('stamp_selected');
+        	obj.addClassName('stamp_unselected');
+        }
+    }
+}
+</script>
+                  <!--popup Start-->
+                  
+                  <table class="basic_table" width="100%" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td><fieldset class="txt_align_lft">
+                            <legend style="display:block">서명종류</legend>
+                            <input type="radio" name="SIGNTYPE" value="image" onclick="setSign(&quot;image&quot;)">
+                            <label for="IDC_RADIO_STAMP" class="formTitle"> 도장</label>
+                            &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="SIGNTYPE" value="text" onclick="setSign(&quot;text&quot;)">
+                            <label for="IDC_RADIO_STAMP" class="formTitle"> 문자서명</label>
+                          </fieldset></td>
+                      </tr>
+                      <tr>
+                        <td align="center"><div  class="txt_align_lft" style="min-height:80px; width:100%;"> <!--서명-->
+                            <img id="SIGNSTAMP" src="http://123.212.190.148:8300/bms/cz/cb/wrt/manageFileDwld.act?TRID=2f32303135303431352f31302f35332f31303036313662383634393536353835356130643231363733396232313563376530376664" alt="" height="100%" value=""> <img id="SIGNTEXT" src="../../../cz/cb/wrt/manageFileDwld.act?TRID=2f32303135303431352f31302f35332f31303035396431313366373166623635646537313632623366323031346262373138363837" value="" style="display: none;"> </div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="slider" style="min-height:40px; overflow:auto; zoom:1;">
+                            <ul>
+                              <li style="float:left"><img id="sign0" cnt="0" fid="2f32303135303431352f31302f35332f31303035376562666631333833636333653331393831613034303461343137626161336464" width="80px" height="60px" alt="" border="1" src="../../../cz/cb/wrt/manageFileDwld.act?TRID=2f32303135303431352f31302f35332f31303036313662383634393536353835356130643231363733396232313563376530376664"></li>
+                            </ul>
+                          </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <!--popup End--></td>
+              </tr>
+              <!-- ==== SignDialog End ==== -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- // 상단 의견/서명구분 영역 END-->
+      <!-- 하단 리스트 목록 영역 -->
+      <div class="pd_all_18 mg_tp_-18 list">
+      <div class="center_accpt_box approval_lst brdr_top">
+          <div class="content_lst content_lst_head">
+          <table style="min-width:656px">
+            <colgroup>
+            <col style="width:500px">
+            <col style="width:*">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>제목</th>
+                <th>처리상태</th>
+              </tr>
+            </thead>
+          </table>
+            </div>
+         <div class="content_lst content_lst_body">
+          <table style="min-width:640px">
+            <colgroup>
+            <col style="width:500px">
+            <col style="width:*">
+            </colgroup>
+            <tbody>
+            <input type="hidden" name=" " id="" value="JHOMS150970001188000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001176000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+            <input type="hidden" name=" " id="" value="JHOMS150970001187000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001174000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+            <input type="hidden" name=" " id="" value="JHOMS150970001186000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001172000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+            <input type="hidden" name=" " id="" value="JHOMS150970001185000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001170000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+            <input type="hidden" name=" " id="" value="JHOMS150970001184000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001168000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+             <input type="hidden" name=" " id="" value="JHOMS150970001184000,1,100001223,1,7,7,4097,NNNNNY,1010000000000000000000000000000000000000000000000000,0,1,다큐플로팀-@N,0,000022725,0,JHOMS150970001168000,0,false,">
+            <tr>
+              <td class="title"><span title="박범진 지일구 공람 sendmethod 섞어서">박범진 지일구 공람 sendmethod 섞어서</span></td>
+              <td class="cen">결재대기</td>
+            </tr>
+              </tbody>
+            
+          </table>
+        </div>
+      
+     </div>
+               <!-- // center : 적용 영역 -->
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+        </div></form></div>
+</div>
+<!-- 결재암호확인 DIV_POP-->
+          <div id="passwd_mask" class="common_layer_pop cal_confirm" style="left:40%; top:50%;display:;">
+            <div class="inner_box">
+              <div class="tit">
+                <p class="fnt_bold">결재암호확인</p>
+                <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+              <div class="cont_pop">
+                <!-- [D] 일정 -->
+                <div class="tab01">
+                 <table>
+                    <colgroup>
+                    <col style="width:100px;">
+                    <col width="*">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="txt_align_lft"><label for="password">결재암호</label></th>
+                            <td>
+                                                                        <input type="password" name="passwd" id="IDC_PASSWORD_CONTROL" style="width: 100%" onkeydown="return keyevent(event);" class="basic_inp">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                  
+                  <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                      <div class="btn_area mg_tp_10 mg_lft_20">
+                        <ul class="btns">
+                          <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+                          <li><span><a href="#">취소</a></span></li>
+                        </ul>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+                </div>
+                </div>
+                </div>
+<!-- // 결재암호확인 DIV_POP-->
+</body>
+</html>

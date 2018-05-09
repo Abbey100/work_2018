@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>동호회_홈</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->
+			<div class="header">
+				<h1 class="">동호회</h1>
+				<div class="aside">
+					<fieldset>
+						<legend>search_box</legend>
+						<div class="selectbox">
+							<select>
+								<option selected>동호회</option>
+								<option>통합</option>
+							</select>
+
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a>
+					</div>
+				</div>
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+			<div class="gnb_area">    
+				<div class="home_area">
+					<a href="#">
+						<i class="icon home">홈</i>
+						<span>홈</span>
+					</a>
+				</div>
+				<div class="gnb_menu">           
+					<ul class="menus"> 
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon mail">메일</i>
+								<span class="menu_name">메일</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon board">게시판</i>
+								<span class="menu_name">게시판</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon square">스퀘어</i>
+								<span class="menu_name">스퀘어</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon approval">결재</i>
+								<span class="menu_name">결재</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon schedule">일정</i>
+								<span class="menu_name">일정</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon equipment">설비예약</i>
+								<span class="menu_name">설비예약</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon storage">스토리지</i>
+								<span class="menu_name">스토리지</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon contact">주소록</i>
+								<span class="menu_name">주소록</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+
+						<li class="nav_btn selected new">
+							<a href="#">
+								<i class="icon community">동호회</i>
+								<span class="menu_name">동호회</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn">
+							<a href="#">
+								<i class="icon research">설문</i>
+								<span class="menu_name">설문</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+						<li class="nav_btn linked_menu">
+							<a href="#" title="연결된 기능 목록">
+								<i class="icon linked">링크</i>
+								<span class="menu_name">링크</span>
+								<span class="dot_new">New</span>
+							</a>
+						</li>
+					</ul>
+				</div>    
+				<div class="controll_area">
+					<div class="controller">
+						<a class="down_btn">down_btn</a>
+						<a class="up_btn">up_btn</a>
+					</div>
+				</div> 
+				<!-- SNS 링크보기 -->
+				<div class="link_wrap">
+					<!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+					<div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+						<span class="arrow">방향</span>
+						<div class="sns_head">
+							<a href="#" class="sns_head_close">팝업 닫기</a>
+						</div>
+						<div class="sns_cont_wrap">
+							<!-- 팝업 컨텐츠 영역 -->
+							<div class="sns_cont handy-scroll">
+								<ul class="sns_cont_list">
+									<li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+									<li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+								</ul>
+							</div>
+							<!-- //팝업 컨텐츠 영역 -->
+						</div>
+					</div>
+					<!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+				</div>
+				<!-- SNS 링크보기 -->
+			</div>
+			<!-- //메뉴영역 -->     
+			<!-- body -->
+			<div class="body">
+				<!-- content -->
+				<div class="container_area club" >
+					<!-- 본문 영역 -->
+					<div class="container_club">
+						<!-- 타이틀 영역 -->
+						<div class="hgroup_club">
+							<ul class="tab_club">
+								<li><a href="#">홈</a></li>
+								<li><a href="#"  class="selected">공지</a></li>
+								<li><a href="#">우수</a></li>
+								<li><a href="#">신규</a></li>
+								<li><a href="#">홍보</a></li>
+								<li><a href="#">토론</a></li>
+							</ul>
+						</div>	
+						<div class="scroll_area handy-scroll pd_rg">
+							<div class="area_club">
+								<div class="section">
+									<!-- 기본 버튼 영역 -->
+									<div class="btns_area">
+									<div class="align_lf">
+									<a href="#" class="btn">답글</a>
+									<a href="#" class="btn">수정</a>
+									<a href="#" class="btn">삭제</a>
+									<div class="group"><a href="#" class="btn">게시판 전달</a>
+										<a href="#" class="btn">게시판 전달</a>
+										</div>
+									<a href="#" class="btn">인쇄보기</a>
+								</div>	
+										<div class="align_rg">
+									<div class="util paginate">
+								<a class="back_list">목록</a>
+								<a class="prev">이전</a>
+								<a class="next">다음</a>
+							</div>
+								</div>
+									</div>
+									<!-- // 기본 버튼 영역 -->
+									<div class="form_table read gray">
+										<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>	
+										<table>
+											<col style="width: 90px">
+											<col style="width:*">
+											<tbody>
+												<tr class="subject">                
+													<th>제목</th>
+													<td colspan="2">
+														<div>															
+															<h3><span>[머리글]</span> 요영역에글자수는50자제한입다확인하여알아봅니다요영역에글자수에제한이있는지 확인합니다만다요기러아끝</h3>
+															<div class="group">
+																<span class="form">
+																	<input type="checkbox" id="check001" checked/>
+																	<label for="check001" class="emergency">긴급</label></span>
+																<span class="form">
+																	<input type="checkbox" id="check002" checked/>
+																	<label for="check002" class="noti">공지</label></span>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr><th>게시판 위치</th><td>EGW As-Is</td></tr>
+												<tr><th>작성자</th><td>김핸디</td></tr>
+												<tr><th>작성일</th><td>2017-08-18</td></tr>
+												<tr><th>종료일</th><td>2018-08-18</td></tr>
+											</tbody>
+										</table>
+										<!-- 추가정보 -->
+										<div class="key_info">
+											<div class="sub2">
+												<dt>번호</dt>
+												<dd>726</dd>
+												<dt>조회수</dt>
+												<dd>217</dd>
+												<dt class="ico comment">의견</dt>
+												<dd>4</dd>			
+											</div>
+										</div>
+
+									</div>
+									<!-- 첨부파일 -->
+									<div class="additional_info">
+										<dl class="file_info">
+											<dt><a class="btn_open open"></a>첨부파일</dt>
+											<dd>
+												<a class="text_btn">전체선택</a>
+												<a class="text_btn">저장</a>
+												&#40;<span class="txt">일반첨부 10</span>
+												<span class="divider"></span>
+												<span class="txt">대용량 1</span>															
+											</dd>
+										</dl>
+
+										<div class="file_lst download">
+											<ul>
+												<li>
+													<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+													<a class="ico_btn small download">다운로드</a>
+													<a class="ico_btn small storage">스토리지로저장</a>
+													<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+													<span class="file_size">311KB</span>
+												</li>
+												<li>
+													<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+													<a class="ico_btn small download">다운로드</a>
+													<a class="ico_btn small storage">스토리지로저장</a>
+													<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+													<span class="file_size">311KB</span>
+												</li>
+												<li>
+													<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+													<a class="ico_btn small download">다운로드</a>
+													<a class="ico_btn small storage">스토리지로저장</a>
+													<a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+													<span class="file_downopt">
+														&#40;
+														<em>~2017-09-03</em>
+														/&nbsp;잔여
+														<em>100회</em>&#41;
+													</span>
+													<span class="file_size">311KB</span>
+
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="content">
+										안녕하세요. 핸디소프트의 박책임입니다. <br>
+										본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+										간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+										<br>
+										EGW GUI컨셉 문서<br>
+										UI 프레임워크 <br>
+										Screen shot파일<br>
+										<br>
+										감사합니다.
+									</div>
+									<div class="replybox">
+										<div>
+											<span class="ico comment">의견</span>
+											<span class="count"> 0/500 </span></div>
+										<div class="pw_group">
+											<p class="description">*암호 입력 불가시 의견 수정/불가합니다.</p>
+											<label for="password" class="">비밀번호</label>
+											<input id="password" type="password" class="box_input" placeholder="비밀번호를 입력하세요">
+										</div>
+										<div class="write">
+											<textarea placeholder="의견을 입력하세요" rows="1"></textarea>
+											<a href="#" class="text_btn">등록</a>
+										</div>
+										<ul class="list">
+											<li>
+												<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+												<div class="cont">
+													<a href="#" class="name">김선임</a>
+													<span class="time">30분 전</span>
+													<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+													<a href="#" class="text_btn">의견 입력</a>
+												</div>
+												<div class="group">
+													<a href="#" class="ico modify">수정</a>
+													<a href="#" class="ico del">삭제</a>
+												</div>
+											</li>
+											<li class="thread">
+												<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+												<div class="cont">
+													<a href="#" class="name">최주임</a>
+													<span class="time">30분 전</span>
+													<p> 박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</p>
+												</div>
+											</li>
+											<li class="thread">
+												<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+												<div class="cont">
+													<a href="#" class="name">이정해</a>
+													<span class="time">30분 전</span>
+													<p> 프로젝트 준비로 고생하셨습니다. 좋은 결과 기대할께요.</p>
+												</div>
+											</li>
+											<li>
+												<a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+												<div class="cont">
+													<a href="#" class="name">양선임</a>
+													<span class="time">30분 전</span>
+													<p> 박책임님 프로젝트 준비로 고생하셨습니다. 내일 뵙겠습니다.</p>
+													<a href="#" class="text_btn">의견 입력</a>
+												</div>
+											</li>
+											<!-- 작성 중 의견 -->
+											<li class="thread comment">
+												<!-- 포커스된 인풋은 write에 focus를 넣고 간다 -->
+												<div class="cont write focus">
+													<textarea placeholder="의견을 입력하세요" rows="1">박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</textarea>
+													<a href="#" class="text_btn">등록</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+
+								<!-- aside-->
+								<div class="aside">
+									<!-- 액션버튼 -->
+									<div class="make_club">
+										<a href="#" class="btn_club">동호회 만들기</a>
+									</div>
+									<!-- //액션버튼 -->
+									<!-- 그룹내용 -->
+									<div class="club_box">
+
+										<!-- 타이틀 & 탭버튼 -->
+										<div class="club_header">
+											<ul class="club_tab">
+												<li><a href="#" class="active">내 동호회</a></li>
+												<li><a href="#">전체동호회</a></li>
+											</ul>
+										</div>
+										<!-- //타이틀 & 탭버튼-->
+										<!-- 컨텐츠내용 -->
+										<div class="club_contents handy-scroll">
+											<div class="">											
+											<!-- 즐겨찾기동호회 리스트 -->
+											<div class="club_list">
+												<h3>즐겨찾기 동호회</h3>
+												<ul class="type01">
+													<li>
+														<a href="#" class="club_img"><img src="../../img/login/bg_login.png" /></a>
+														<div class="new_club">
+															<a class="club_name">이름이 엄청나게 긴 신규 동호회</a>
+															<span class="ico_new">new</span>
+														</div>
+														<span class="time">23시간 전</span>
+													</li>
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+														<div class="new_club">
+															<a class="club_name">신규 동호회</a>
+															<span class="ico_new">new</span>
+														</div>
+														<span class="time">12-23</span>
+													</li>													
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+														<div>
+															<a class="club_name">농구 동호회</a>
+														</div>
+														<span class="time">12-23</span>
+													</li>	
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+														<div class="no_new">
+															<a class="club_name">이름이 엄청나게 긴 농구 동호회</a>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<!-- //즐겨찾기 동호회 리스트 -->
+											<!-- 기본 동호회 리스트 -->
+											<div class="club_list">
+												<h3>기본 동호회</h3>
+												<ul class="type01">
+													<li>
+														<a href="#" class="club_img">
+														
+														</a>
+														<div class="new_club">
+															<a class="club_name">이미지를 등록하지 않은 동호회</a>
+															<span class="ico_new">new</span>
+														</div>
+														<span class="time">23시간 전</span>
+													</li>
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb05.png" /></a>
+														<div class="new_club">
+															<a class="club_name">신규 동호회</a>
+															<span class="ico_new">new</span>
+														</div>
+														<span class="time">12-23</span>
+													</li>													
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+														<div>
+															<a class="club_name">농구 동호회</a>
+														</div>
+														<span class="time">12-23</span>
+													</li>	
+													<li>
+														<a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+														<div>
+															<a class="club_name">이름이 엄청나게 긴 농구 동호회</a>
+														</div>
+														<span class="time">12-23</span>
+													</li>													
+												</ul>
+											</div>
+											<!-- //기본 동호회 리스트 -->
+											<!-- 내 알림설정 리스트 -->
+											<div class="club_list no_border">
+												<h3>내 댓글 알림</h3>
+												<ul class="type02">
+													<li>
+														<a href="#" class="usr_img">
+															<img src="../../img/profile_photo_blank.png" />
+														</a>
+														<div class="club_usr">
+															<a href="#" class="member_name">김지지영영영</a>
+															<a href="#" class="club_name">농구 동호동호동호동호동호회</a>							
+														</div>				
+														<p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+														<span class="time">23시간 전</span>
+													</li>
+													<li>
+														<a href="#" class="usr_img">
+															<!--															<img src="../../img/community/img_thumb_s01.png" />-->
+														</a>
+														<div class="club_usr">
+															<a href="#" class="member_name no_link">무명</a>
+															<a href="#" class="club_name">농구 동호회</a>							
+														</div>				
+														<p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+														<span class="time">23시간 전</span>
+													</li>
+
+													<li>
+														<a href="#" class="usr_img">
+															<!--															<img src="../../img/community/img_thumb_s01.png" />-->
+														</a>
+														<div class="club_usr">
+															<a href="#" class="member_name">김지영</a>
+															<a href="#" class="club_name">이름이 매우많이 긴 동호회</a>							
+														</div>				
+														<p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+														<span class="time">23시간 전</span>
+													</li>
+												</ul>
+											</div>
+											<!-- //내 알림설정 리스트 -->
+												</div>
+										</div>
+										<!-- //컨텐츠내용 -->
+									</div>
+									<!-- //그룹내용 -->
+								</div>
+								<!-- //aside-->
+							</div>
+						</div>							
+
+					</div>
+					<!-- // 본문 영역 -->		
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+	</body>
+</html>

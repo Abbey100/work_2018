@@ -1,0 +1,96 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap"> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>게시물읽기</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns first">
+      <li><span><a href="#" class="fnt_bold">답장</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span class="send"><a href="#">보내기</a></span></li>
+    </ul>
+    <ul class="btns first">
+      <li><span><a href="#">찬성</a></span></li>
+      <!--[D] del 클래스는 x 아이콘 -->
+      <li  class="mg_lft_-8"><span><a href="#">반대</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span class="slt"><a href="#">이동</a></span></li>
+      </li>
+    </ul>
+    <ul class="btns">
+      <li><span><a href="#">인쇄하기</a></span></li>
+    </ul>
+    <div class="array_sort mg_tp_9"> <span class="array_up"><a href="#">위</a></span> <span class="array_down"><a href="#">아래</a></span> </div>
+  </div>
+  <!-- //버튼 영역 -->
+  
+  <div class="reading mg_tp_70">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <form>
+      
+      <SAVEBODYHEAD></SAVEBODYHEAD>
+      <ISBBSINFOSTART></ISBBSINFOSTART>
+      <ISBBSINFOEND></ISBBSINFOEND>
+        <TR>
+      
+      <TD><BBSINFO></BBSINFO>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box_table">
+          <tr>
+            <td nowrap class="ttl"><span res="RC_SUBJECT">제목</span></td>
+            <td colspan="3" class="subj">여기 제목이 들어가는 거지요????!!</td>
+          </tr>
+          <tr>
+            <td nowrap class="ttl"><span res="RC_POSTER">게시자</span></td>
+            <td colspan="3" class="info">핸 사원(다산그룹,핸디소프트)</td>
+          </tr>
+          <tr>
+            <td nowrap class="ttl"><span res="RC_BOARD" >게시판</span></td>
+            <td> 7.x 게시판 </td>
+            <td nowrap class="ttl"><span res="RC_POSTDATE" >게시일</span></td>
+            <td class="duration">2014.04.04</td>
+          </tr>
+          <tr>
+            <td nowrap class="ttl"><span res="RC_OPTION" >옵션</span></td>
+            <td class="check_box"><BBSREPONSETYPE>
+              <BBSRESPONSEVIEW>
+              <bbssecurity>
+              <input type='checkbox' name='BBSEXPRESS' value='1'>
+              <span res="RC_EMERGENCY">긴급</span>
+              <bbsannounce></td>
+            <td nowrap class="ttl"><span res="RC_EXPIREDDATE" >종료일</span></td>
+            <td class="duration">~2014.04.14</td>
+          </tr>
+            </tr>
+          
+        </table>
+        <div class="brdr_dble"></div>
+        <table height="100%" border="0" cellspacing="0" cellpadding="0" class="box_view">
+          <tr>
+            <td id="contentbody" style="vertical-align:top;word-break:break-all"><TEXTAREA class="input02" name="BODY" rows="16"></TEXTAREA></td>
+          </tr>
+        </table></td>
+        </tr>
+      
+    </table>
+    <FIRSTATTACHVIEW>
+    <BBSATTACH>
+    <WEBDOCATTACH>
+  </div>
+</div>
+<script type="text/javascript" src="/jsp/bbs/form/FORMLANGS.jsp"></script>
+</body>
+</html>

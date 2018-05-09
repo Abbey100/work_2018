@@ -1,0 +1,103 @@
+
+/* Dynatree Customized by ek100@handysoft.co.kr */
+/*
+ * Expander icon
+ * Note: IE6 doesn't correctly evaluate multiples class names,
+ *		 so we create combined class names that can be used in the CSS.
+ *
+ * Prefix: dynatree-exp-
+ * 1st character: 'e': expanded, 'c': collapsed
+ * 2nd character (optional): 'd': lazy (Delayed)
+ * 3rd character (optional): 'l': Last sibling
+ */
+
+ul.dynatree-container
+{position:relative;	display: block; width:100%; padding: 3px; margin: 0; box-sizing: border-box; white-space: nowrap; border: 0; border-top: 1px solid #dadada;}
+
+ul.dynatree-container li
+{position:relative; background: url(../img/square_plus/dyna_sq_vertical_line.png) 0 0 repeat-y; margin: 0;	padding: 0;
+    -moz-background-clip:border;
+	-moz-background-inline-policy: continuous;
+	-moz-background-origin: padding; }
+
+
+ul.dynatree-container li > ul {padding-left: 21px;}
+ul.dynatree-container li .dynatree-ico-cf + ul {display: none}
+ul.dynatree-container li .dynatree-ico-ef + ul {display: block;}
+
+
+
+ul.dynatree-container .dynatree-node {position: relative; display: block;}
+ul.dynatree-container li span  {position: relative; display: inline-block; height: 22px;}
+
+ul.dynatree-container a {color: #666; text-decoration: none;font-size: 12px;}
+ul.dynatree-container a:hover {text-decoration: none; color: #F26522 !important; }
+span.dynatree-active a {color: #F26522 !important; /* @ IE6 */	font-weight: bold !important;}
+
+.dynatree-expander {position:relative; display: inline-block; width:22px; height:22px;float:left;}
+.dynatree-connector {position:relative; display: inline-block; width:22px; height:22px; float:left;}
+.dynatree-expander:hover, .dynatree-connector:hover {cursor: pointer;}
+
+span.dynatree-icon /* Default icon 기본상태 */
+{position:relative; display: inline-block; width:22px; height:22px; background: none; float:left;}
+
+/* Collapsed Folder 접힌상태 */
+.dynatree-ico-cf {background: url(../img/square_plus/dyna_sq_list.png) 0 0 no-repeat;}
+.dynatree-ico-cf.dynatree-has-children {background: url(../img/square_plus/dyna_sq_folder_plus.png) 0 0 no-repeat;}
+.dynatree-ico-cf span.dynatree-icon {background: url(../img/square_plus/dyna_sq_folder.png) 0 0 no-repeat;}
+
+/* Expanded Folder 펼친상태 */
+.dynatree-ico-ef {background: url(../img/square_plus/dyna_sq_folder_minus.png) 0 0 no-repeat;}
+.dynatree-ico-ef span.dynatree-icon {background: url(../img/square_plus/dyna_sq_folder.png) 0 0 no-repeat;}
+
+
+
+.dynatree-node a {font-size: 12px; display: inline-block;letter-spacing: -1px; padding-left: 3px; padding-right: 3px; }
+.dynatree-node .dynatree-title {cursor: pointer; float:left; }
+.dynatree-node .dynatree-title .node-folder {padding: 4px 0; box-sizing: border-box;}
+.dynatree-node .dynatree-title .node-group {padding: 4px 0; box-sizing: border-box;}
+
+
+/* Suppress lines if level is fixed expanded (option minExpandLevel) */
+ul.dynatree-no-connector > li
+{background-image: none;}
+
+/* Style, when control is disabled */
+.ui-dynatree-disabled ul.dynatree-container {opacity: 0.5;}
+span.dynatree-connector {}
+.dynatree-ico-c .dynatree-connector {background: url(../img/square_plus/dyna_sq_list.png) 0 0 no-repeat;}
+/* child node */
+ul.dynatree-container li > ul .dynatree-ico-c .dynatree-icon {display: none;}
+/* last child node */
+ul.dynatree-container li.dynatree-lastsib {background: url(../img/square_plus/dyna_sq_list_last.png) 0 0 no-repeat;}
+ul.dynatree-container li.dynatree-lastsib .dynatree-ico-c .dynatree-connector {background: none;}
+ul.dynatree-container li.dynatree-lastsib .dynatree-ico-cf {background: none;}
+
+
+/* Drag'n'drop support */
+
+div.dynatree-drag-helper
+{}
+div.dynatree-drag-helper a
+{position:absolute; top:0; padding:5px 10px 5px 20px;min-width:105px;border:1px solid #788dea;color:#333333;background:#fff url(../img/tooltip_mail_move.png) no-repeat 4px 0px;z-index:999; cursor: none;}
+
+/*** Drop marker icon *********************************************************/
+
+#dynatree-drop-marker {width: 150px;position: absolute; background:#6870cd; margin: 0; border: 1px solid #6870cd; 
+}
+#dynatree-drop-marker.dynatree-drop-after,
+#dynatree-drop-marker.dynatree-drop-before
+{width: 150px; background-color: #e0e0e0;}
+
+/***  움직이는 원본 ***/
+span.dynatree-drag-source { background: #f3f4f5;}
+span.dynatree-drag-source a {color: #ff6210;}
+
+/*** Target node while dragging cursor is over it *****************************/
+
+span.dynatree-drop-target.dynatree-drop-accept a {background-color: #3169C6 ! important; color: white !important; /* @ IE6 */text-decoration: none;}
+span.dynatree-drop-target.dynatree-drop-reject {}
+.dynatree-drop-reject.dynatree-drag-helper a
+{position:absolute; top:0; padding:5px 10px 5px 20px;min-width:105px;border:1px solid #d68a66;color:#333333;background:#fff url(../img/tooltip_mail_move.png) no-repeat 4px -28px;z-index:999; cursor: none;}
+
+

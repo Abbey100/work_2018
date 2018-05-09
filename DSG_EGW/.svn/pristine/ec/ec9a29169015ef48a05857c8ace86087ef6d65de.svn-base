@@ -1,0 +1,328 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 환경설정</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.textcomplete.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        <script>
+      </script>
+  </head>
+
+<body class="sq_plus">
+<div id="" class="admin"> 
+  <!-- title start-->
+  <div class="title_area">
+    <h2 class="title">공지사항 등록</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- title end-->
+  <div>
+    
+<!-- 버튼 영역 -->
+    <div class="btn_area">
+    <ul class="btns">
+          <li><span><a href="#">등록</a></span></li>
+      </li>
+    </ul>
+  </div>
+<!-- //버튼 영역 --> 
+    
+<!-- 글쓰기 영역 -->
+<div class="write_layer_pop workpeed">              
+           <div class="write_box">
+               <!-- 그룹 이름 영역 --> 
+                  <div class="group_title">
+                      <span class="placeholder" onclick="javascript:$('#group_list').toggleClass('select_on')">
+                          그룹을 선택하세요
+                      </span>
+                      <!-- 그룹이름 검색 -->
+                      <div id="group_list" class="layer_pop_select group">                         
+                          <div class="srch_area">
+                            <input class="group_srch search">
+                            <a class="btn_search">search</a>
+                          </div>  
+                          <!-- [D] .select_on 추가하여 활성화 -->
+                          <div class="layer_pop_select group_filter">                         
+                              <ul class="ul_select">
+                                  <li class=""><em class="keyword">UX</em>그룹명</li>
+                                  <li class=""><em class="keyword">UX</em>개설자</li>
+                             </ul>
+                          </div>
+                          <div class="srch_result">
+                              <ul class="ul_select">
+                                    <li class="list title hover">진행중인 그룹</li>
+                                    <li class="list"><span>우리그룹</span>
+                                                    <span class="name">김핸디 외 3명</span></li>
+                                    <li class="list"><span>프로젝트 그룹웨어 스퀘어 플러스욥</span>
+                                                    <span class="name">김핸디 외 3명</span></li>
+                                    <li class="list title">공개 그룹</li>
+                                    <li class="list"><span>제품기획팀</span>
+                                                    <span class="name">김핸디 외 3명</span></li>
+                                    <li class="list"><span>HandySoft</span>
+                                                    <span class="name">김핸디 외 3명</em></li>
+                                    <li class="list"><span>스퀘어 TFT 이름을 변경</span>
+                                                    <span class="name">김핸디 외 3명</span></li>
+                               </ul>
+                          </div>
+                        </div>
+                      <!-- //그룹이름 선택영역 -->
+                  </div>     
+                  <!-- // 그룹 이름 영역 -->       
+              <!-- 본문 영역 -->  
+               <div class="write_area" >
+                  <div class="textComplete" contenteditable="true" >
+                   <p>네이버문화재단에서 후원하는 헬로!아티스트의 오프라인 전시 시리즈인 <input id="" class="selectedTag" value="#아트" disabled="disabled" unselectable="on" type="text">어라운드 세 번째 전시가  스페이스 윌링앤 딜링에서열린다. <input id="" class="selectedMention" value="@강현성" disabled="disabled" style="" unselectable="on">작가와 호상근 작가가 참여하는 이 전시의 제목은 [튀어나온 돌과 펜스]이다. 이제목은 호상근 작가의 작업에서 빌어왔다. Write_box Max-Height는 530px로 해주세요. http://story.pxd.co.kr/1186 링크테스트   </p>  
+              </div>
+              <!-- 링크 영역 -->
+           <div class="link_area" >
+               <!-- 링크 1 -->
+                   <div class="link_wrap">
+                       <!-- 링크 이미지 -->
+                       <div class="link_img">
+                           <span class="btn_att_del">등록취소</span>
+                            <span>
+                               <img src="http://coresos.phinf.naver.net/a/2hf099_e/e1jUd015ierprwblkfa_o5t70a.png?type=s150" alt="네이버 메인" class="thumb">
+                           </span>    
+                       </div>
+                       <!-- // 링크 이미지 -->
+                       <!-- 링크 컨텐츠 -->
+                       <div class="link_cont">
+                          <span class="btn_att_del">등록취소</span>
+                           <span class="link_tit">네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인네이버 메인</span>
+                           <span class="link_txt">네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요</span>
+                           <span class="link_url">http://story.pxd.co.kr/1186</span>
+                       </div>                           
+                       <!-- // 링크 컨텐츠 -->                           
+                   </div>
+               <!-- // 링크 1 -->
+               <!-- 링크 2 -->
+                   <div class="link_wrap">
+                       <!-- 링크 이미지-->
+                       <div class="link_img">
+                           <span class="btn_att_del">등록취소</span>
+                            <span>
+                               <img src="http://coresos.phinf.naver.net/a/2hf099_e/e1jUd015ierprwblkfa_o5t70a.png?type=s150" alt="네이버 메인" class="thumb">
+                           </span>    
+                       </div>
+                       <!-- // 링크 이미지 -->
+                       <!-- 링크 컨텐츠 -->
+                       <div class="link_cont">
+                           <span class="btn_att_del">등록취소</span>
+                           <span class="link_tit">네이버 메인</span>
+                           <span class="link_txt">네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요</span>
+                           <span class="link_url">www.naver.com</span>
+                       </div>                           
+                       <!-- // 링크 컨텐츠   -->                     
+                   </div>
+               <!-- // 링크 2 -->                    
+           </div>
+           <!-- // 링크 영역 -->                
+            <!-- 썸네일 영역 -->
+           <div class="sum_area" contenteditable="false">
+               <div class="sum_wrap">
+                   <ul class="sumnails">                  
+                       <!-- 이미지 01 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                          <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_01.jpg" />
+                          </span>                              
+                      </li>
+                       <!-- 이미지 02 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                           <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_02.jpg" />
+                          </span>
+                      </li>
+                       <!-- 이미지 03 -->
+                       <li class="sumnail">
+
+                         <span class="btn_att_del">등록취소</span>
+                          <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_03.jpg" />
+                          </span>
+                      </li> 
+                       <!-- 이미지 04 -->
+                       <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                          <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_04.jpg" />
+                          </span>
+                      </li>  
+                       <!-- 이미지 05 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                           <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_05.jpg" />
+                          </span>
+                      </li>
+                      <!-- 이미지 01 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                           <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_01.jpg" />
+                          </span>
+                      </li>
+                       <!-- 이미지 02 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                           <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_02.jpg" />
+                          </span>
+                      </li>
+                       <!-- 이미지 03 -->
+                       <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                           <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_03.jpg" />
+                          </span>
+                      </li> 
+                       <!-- 이미지 04 -->
+                       <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                          <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_04.jpg" />
+                          </span>
+                      </li>  
+                       <!-- 이미지 05 -->
+                      <li class="sumnail">
+                         <span class="btn_att_del">등록취소</span>
+                          <span class="sumnail_box">
+                              <img src="../../img/square_plus/ex_img_05.jpg" />
+                          </span>
+                      </li>
+                   </ul>
+                   </div>
+               </div>                   
+           <!-- // 썸네일 영역 -->                           
+                 <!-- 파일 영역 -->
+           <div class="file_area" contenteditable="false">
+               <div class="file_wrap">                  
+               <ul class="file_list">
+                   <li class="file">
+                          <span class="file_type img"></span>
+                           <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                           <span class="size">123 KB</span>
+                           <span class="cancel_select">del</span>  
+
+                   </li>
+                   <li class="file">
+                          <span class="file_type img"></span>
+                          <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                          <span class="size">123 KB</span>                       
+                          <span class="cancel_select">del</span>         
+                    </li>
+                    <li class="file">
+                          <span class="file_type img"></span>
+                          <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                          <span class="size">123 KB</span>                       
+                          <span class="cancel_select">del</span>         
+                    </li>
+                    <li class="file">
+                          <span class="file_type img"></span>
+                          <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                          <span class="size">123 KB</span>                       
+                          <span class="cancel_select">del</span>         
+                    </li>
+                    <li class="file">
+                          <span class="file_type img"></span>
+                          <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                          <span class="size">123 KB</span>                       
+                          <span class="cancel_select">del</span>         
+                    </li>
+                    <li class="file">
+                          <span class="file_type img"></span>
+                          <span class="file_name">161025_다산GW프로젝트_제목이 길어지면 말줄임이 중앙에서 되게 해주세요</span>
+                          <span class="size">123 KB</span>                       
+                          <span class="cancel_select">del</span>         
+                    </li>
+               </ul>
+               </div>
+           </div>
+           <!-- // 파일 영역 -->                                                                                                                                         
+
+               </div>       
+              <!-- // 본문 영역 -->     
+              <!-- 태그 영역 -->
+               <div class="tag_box" onclick="javascript:$('#tag_selector').toggleClass('select_on');$(this).children(' span').removeClass('placeholder');"  contenteditable="false">
+                  <div class="selected_tag" >
+                     <span class="hash">#우리그룹<span class="cancel_select">del</span></span>
+                     <span class="hash">#디자인<span class="cancel_select">del</span></span>
+                     <span class="hash">#디자인<span class="cancel_select">del</span></span>
+                     <span class="hash">#디자디자디자인<span class="cancel_select">del</span></span>
+                     <span class="hash">#우리그룹<span class="cancel_select">del</span></span>
+                     <span class="hash erase">#지울때_적용되게_해줘요<span class="cancel_select">del</span></span>
+                     <span class="hashinput" contenteditable="true" >
+                     #요기가지금입력창이숨어
+                      </span>
+
+                  </div>
+
+                  <!-- 추천태그 선택영역 -->
+                  <!-- [D] 태그영역에 최초 입력 시 제공되는 태그 선택 UI입니다. -->
+                  <!-- [D] 레이어팝업이 위로 펼쳐질 때, .top 추가 -->
+
+                  <div id="tag_selector" class="layer_pop_select recommend top" contenteditable="false">                          
+                        <ul class="ul_select">
+                            <li class="list title hover">추천태그</li>
+                            <li class="list">#UX/UI</li>
+                            <li class="list">#프로젝트그룹웨어스퀘어플러스욥</li>
+                            <li class="list">#스퀘어TFT이름을_변경</li>
+                            <li class="list">#제품기획팀</li>
+                            <li class="list">#HandySoft</li>
+                            <li class="list">#Square_Thinking</li>
+                            <li class="list">#태그를길게길게길게길게길게길게넣어보기</li>
+                            <li class="list">#태그</li>
+                            <li class="list">#업무보고</li>
+                            <li class="list">#태그태그</li>
+                       </ul>
+                    </div>   
+
+                  <!-- 태그 선택영역 
+                  <div id="tag_selector" class="layer_pop_select" contenteditable="false" >                          
+                        <ul class="ul_select">
+                            <li class="list title hover">최근 사용한 태그</li>
+                            <li class="list">#우리그룹</li>
+                            <li class="list">#프로젝트그룹웨어스퀘어플러스욥</li>
+                            <li class="list title">그룹내 추천 태그</li>
+                            <li class="list">#스퀘어TFT이름을_변경</li>
+                            <li class="list">#제품기획팀</li>
+                            <li class="list">#HandySoft</li>
+                            <li class="list">#Square_Thinking</li>
+                            <li class="list">#UX+UI</li>
+                       </ul>
+                    </div>                      
+                  <!-- // 태그 선택영역 -->
+
+                  <!-- // 태그 선택영역 -->
+              </div>
+               <!-- // 태그 영역 -->
+               <div class="write_btn_area">
+                   <ul class="icon_btns" >
+                       <li class="icon_btn img"><span>img_attach</span></li>
+                       <li class="icon_btn file">
+                       <input type="file" class="">
+                       <span>file_attach</span>
+                       </li>
+                   </ul>                       
+               </div>                   
+           </div>
+       </div>
+    
+    <!-- // 글쓰기 영역 -->
+    
+    
+      
+    
+</body>
+</html>

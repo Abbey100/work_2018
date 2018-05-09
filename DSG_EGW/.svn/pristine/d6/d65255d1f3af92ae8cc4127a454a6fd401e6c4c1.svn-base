@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>설문_미응답자보기</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+        <!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>		
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>설문</h1>
+                <div class="aside">
+                    <fieldset>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>설문</option>
+                                <option>통합</option>
+                            </select>
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>				
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>	
+            </div>
+            <!-- //header -->
+
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->     
+            <!-- body -->
+            <div class="body"> 
+                <!-- LnB-->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action half">
+                            <a class="action_btn">설문등록</a>
+                            <a class="action_btn">투표등록</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">	
+                                <div class="lnb_menu divide open">
+                                    <!-- // 설문,투표는 항상 open 사용 - 펼쳐둡니다 -->
+                                    <a class="menu_title">설문</a>
+                                    <ul class="sub_lst">
+                                        <li><a href="#" class="selected">진행중인 설문</a><span class="count">24</span></li>
+                                        <li><a href="#">종료 설문</a></li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu open">
+                                    <!-- // 설문,투표는 항상 open 사용 - 펼쳐둡니다 -->
+                                    <a class="menu_title">투표</a>
+                                    <ul class="sub_lst">
+                                        <li><a href="#">진행중인 투표</a><span class="count">8</span></li>
+                                        <li><a href="#">종료 투표</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="container_area handy-scroll">
+                    <div class="">
+                        <!-- 본문 영역 -->
+                        <div class="container details">
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup">
+                                <h2>진행중인 설문</h2>	
+                            </div>
+                            <div class="util paginate">
+                                <a class="back_list">목록</a>
+                                <a class="prev">이전</a>
+                                <a class="next">다음</a>
+                            </div>
+                            <!-- // 타이틀 영역 -->
+
+                            <!-- 기본 버튼 영역 -->
+                            <div class="btns_area">		
+                                <div class="align_lf">
+                                    <a href="#" class="btn">설문송부</a>
+                                    <a href="#" class="btn">등록</a>
+                                    <a href="#" class="btn">참여기간변경</a>
+                                    <a href="#" class="btn">미응답자보기</a>
+                                    <a href="#" class="btn">엑셀저장</a>						
+                                    <a href="#" class="btn">응답하기</a>						
+                                    <a href="#" class="btn">삭제</a>						
+                                </div>								
+                            </div>
+                            <!-- // 기본 버튼 영역 -->							
+
+                            <div class="scroll_area handy-scroll">
+                                <div class="">
+                                    <div class="key_info">
+                                        <div class="subject">
+                                            <h3>[사회] 직장인 의견 조사</h3>
+                                        </div>
+                                        <div class="sub1 border_none">
+                                            <dt>작성자</dt>
+                                            <dd class="name">김민우</dd>
+                                            <dt class="blind">소속</dt>
+                                            <dd class="team">제품기획팀</dd>
+                                            <dt>작성일</dt>
+                                            <dd class="date">2017-08-18 13:55</dd>
+                                        </div>
+                                    </div>
+                                    <div class="additional_info">	
+                                        <dl>
+                                            <dt>참여기간</dt><dd>2017-09-01 13:46 ~ 2017-09-27 15:00</dd></dl>
+                                        <dl>
+                                            <dt>유형</dt><dd>공개, 기명</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>참여율</dt>
+                                            <dd>
+                                                <div class="progress">
+                                                    <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                <a class="small btn" href="#">응답자보기</a>
+                                            </dd>
+                                        </dl>
+                                        <dl class="file_info">
+                                            <dt><a class="btn_open open"></a>첨부파일</dt>
+                                            <dd>
+                                                <a class="text_btn">전체선택</a>
+                                                <a class="text_btn">저장</a>
+                                                &#40;<span class="txt">일반첨부 2</span>
+                                                <span class="divider"></span>
+                                                <span class="txt">대용량 1</span>
+                                                <em>~2017-09-03</em>
+                                                /&nbsp;잔여
+                                                <em>100회</em>&#41;
+                                            </dd>
+                                        </dl>
+                                        <div class="file_lst download">
+                                            <ul>
+                                                <li>
+                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="ico_btn small storage">스토리지로저장</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                    <span class="file_size">311KB</span>
+                                                </li>
+                                                <li>
+                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="ico_btn small storage">스토리지로저장</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                    <span class="file_size">311KB</span>
+                                                </li>
+                                                <li>
+                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                    <a class="ico_btn small download">다운로드</a>
+                                                    <a class="ico_btn small storage">스토리지로저장</a>
+                                                    <a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                    <span class="file_size">311KB</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <dl class="total_srch">
+                                            <dt>집계대상</dt>
+                                            <dd>
+                                                <div class="input_group sche_case2">
+                                                    <div class="token-input sche_only_delete">
+                                                        <ul class="token-input-list ui-sortable">
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                            <li class="token-input-token">
+                                                                <p>김핸디</p>
+                                                                <span class="token-input-delete-token">delete</span>
+                                                            </li>
+                                                        </ul>
+                                                        <input type="button" class="ico_btn small add">
+                                                    </div>
+                                                    <div class="posi_r">
+                                                        <a class="small btn">통계보기</a>
+                                                        <a class="small btn">초기화</a>
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+
+                                    </div>
+                                    <div class="content research">
+                                        <div class="purpose">
+                                            <span class="tit">취지</span>
+                                            <div class="txt">회사원들의 노고 반영<br>- 회사원들이 가장 많이 받는 다는 스트레스의 원인<br>- 과로사와 탈모, 극심한 스트레스성 위염의 발생</div>
+                                        </div>
+                                        <div class="question">
+                                            <span class="tit">1.<span class="blind">객관식</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                            <div class="progress_box">
+                                                <div class="progress">
+                                                    <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                            </div>
+                                            <div class="photo">
+                                                <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                            </div>
+                                            <div class="form_table question_read">
+                                                <table>
+                                                    <col style="width: 30px">
+                                                    <col style="width: *">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>1)</th>
+                                                            <td>
+                                                                <span class="txt">업무량</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>2)</th>
+                                                            <td>
+                                                                <span class="txt">출퇴근 시간</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>3)</th>
+                                                            <td>
+                                                                <span class="txt">팀원간의 소통</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>4)</th>
+                                                            <td>
+                                                                <span class="txt">상사와의 관계</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="question">
+                                            <span class="tit">2.<span class="blind">주관식</span> 회사에서 가장 힘들었던 문제는?</span>
+                                            <div class="progress_box">
+                                                <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                <a class="small btn" href="#">개인별 응답보기</a>
+                                            </div>
+                                        </div>
+                                        <div class="question">
+                                            <span class="tit">3.<span class="blind">수량형</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                            <div class="progress_box">
+                                                <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                <a class="small btn" href="#">개인별 응답보기</a>
+                                            </div>
+                                            <div class="photo">
+                                                <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                            </div>
+                                            <div class="form_table question_read">
+                                                <table>
+                                                    <col style="width: 30px">
+                                                    <col style="width: *">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>1)</th>
+                                                            <td>
+                                                                <span class="txt">업무량</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>2)</th>
+                                                            <td>
+                                                                <span class="txt">출퇴근 시간</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>3)</th>
+                                                            <td>
+                                                                <span class="txt">팀원간의 소통</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>4)</th>
+                                                            <td>
+                                                                <span class="txt">상사와의 관계</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="question">
+                                            <span class="tit">4.<span class="blind">순위형</span> 다음 중 귀댁이나 귀하께서 2016년 1월부터 현재까지 했던/있었던 활동은 무엇입니까? 해당하는 활동을 모두 선택해주세요. 문제가 길면 줄바꿈 처리가 됩니다.</span>
+                                            <div class="progress_box">
+                                                <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                <a class="small btn" href="#">개인별 응답보기</a>
+                                            </div>
+                                            <div class="photo">
+                                                <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                            </div>
+                                            <div class="form_table question_read">
+                                                <table>
+                                                    <col style="width: 30px">
+                                                    <col style="width: *">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>1)</th>
+                                                            <td>
+                                                                <span class="txt">업무량</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                                <div class="photo">
+                                                                    <img src="../../img/square/ex_img_01.jpg" style="width: 120px; height: 120px;">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>2)</th>
+                                                            <td>
+                                                                <span class="txt">출퇴근 시간</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>3)</th>
+                                                            <td>
+                                                                <span class="txt">팀원간의 소통</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>4)</th>
+                                                            <td>
+                                                                <span class="txt">상사와의 관계</span>
+                                                                <div class="progress_box">
+                                                                    <div class="progress">
+                                                                        <div class="progress_bar" role="progressbar" style="width: 60%;">
+                                                                            <span class="sr-only">60% Complete</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="progress_txt"><span class="percent">72%</span><span class="person">(47/60명)</span></div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <div class="popup open handy-scroll">
+            <div class="">
+                <div class="popup_container" style="width:550px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        미응답자 보기
+                    </h2>
+                    <a href="#" class="btn_close">팝업 닫기</a>
+                    <!-- form -->
+                    <div class="popup_table">
+                        <div class="btns_area"><a class="btn" href="#">설문송부</a></div>
+                        <div class="table_head">
+                            <table>
+                                <colgroup>
+                                    <col style="width:60px;">
+                                    <col style="width:290px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>순번</th>
+                                        <th>이름</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="table_body" style="height: 360px;">
+                            <div class="handy-scroll">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:60px;">
+                                        <col style="width:290px;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td><a class="name">김민우 · 제품기획팀</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="paginate_area num_none">
+                            <!-- 페이지네이션 페이지 이동 UI 삭제일때 num_none 클래스 추가 -->
+                            <div class="paginate">	
+                                <a class="first disabled">처음 페이지</a>
+                                <a class="pre disabled">이전 페이지</a>	
+                                <!-- // 1페이지가 아닌경우, disabled 삭제 -->
+                                <a class="selected">1</a>
+                                <a>2</a>
+                                <a>3</a>
+                                <a>4</a>
+                                <a>5</a>
+                                <a>6</a>		
+                                <a>7</a>
+                                <a>8</a>
+                                <a>9</a>
+                                <a>10</a>		
+                                <a class="next">다음 페이지</a>
+                                <a class="last">마지막 페이지</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 본문 영역 -->
+                </div>
+            </div>
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

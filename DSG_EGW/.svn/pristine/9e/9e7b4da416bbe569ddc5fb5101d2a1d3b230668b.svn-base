@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>스토리지_내폴더_그리드형</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">    
+			<!-- header -->  
+			<div class="header">
+				<h1>스토리지</h1>
+				<ul class="tab">
+					<li><a class="selected">내파일</a></li>
+					<li><a class="">문서함</a></li>	
+				</ul>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>게시판</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+
+			<!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->     
+			<!-- body -->
+			<div class="body"> 
+				<!-- LnB-->
+				<div class="lnb_area">   
+					<div class="lnb_lst">
+						<!-- Action Button Area -->
+						<div class="big_action">
+							<a class="action_btn">파일올리기</a>
+						</div>
+						<!-- basic list menu area -->   
+						<div class="lnb_menu_area">
+							<div class="handy-scroll">
+								<!-- 플래그 -->
+								<div class="lnb_menu divide open">
+									<a class="menu_title">플래그 파일</a>	
+								</div>
+								<!-- 즐겨찾기 -->
+								<div class="lnb_menu">
+									<a class="menu_title category">즐겨찾는 폴더</a>
+									<div class="folder">									
+										<ul class="dynatree-container handy-scroll">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >EGW As-Is</span>
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder">회의 내용</span>
+															</a>
+														</div>
+													</li>
+													<li class="dynatree-lastsib">
+														<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+															</a>
+														</div></li>
+												</ul>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+											</li>
+										</ul>
+									</div>	
+								</div>                
+								<div class="lnb_menu tree divide open">
+									<a class="menu_title category">내 폴더</a>	
+									<div class="group">
+										<a class="ico_btn small add">추가</a>
+										<a class="ico_btn small setting">내 그룹 설정</a>
+									</div>
+									<div class="folder">									
+										<ul class="dynatree-container handy-scroll">
+											<li class="">
+												<div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+													<span class="dynatree-expander"></span>
+													<span class="dynatree-icon"></span>
+													<a href="#" class="dynatree-title">
+														<span class="node-folder" >EGW As-Is</span>
+														<span class="shared">공유된폴더</span>
+														<!-- //공유된 폴더 형 -->
+													</a>
+												</div>
+												<ul style="">
+													<li class="">
+														<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder">회의 내용</span>
+															</a>
+														</div>
+													</li>
+													<li class="dynatree-lastsib">
+														<div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+															<span class="dynatree-connector"></span>
+															<span class="dynatree-icon"></span>
+															<a href="#" class="dynatree-title">
+																<span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+															</a>
+														</div></li>
+												</ul>
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+											</li>
+											<li class="">
+												<span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span>
+													<span class="shared">공유된폴더</span>
+													</a></span>			
+											</li>
+										</ul>
+									</div>	
+								</div>                
+								<div class="lnb_menu">
+									<a class="menu_title">공유받은 폴더</a>
+								</div>
+								<div class="lnb_menu">
+									<a class="menu_title">공유중인 폴더</a>
+								</div>
+								<div class="lnb_menu divide open">
+									<a class="menu_title category">스퀘어 폴더</a>
+									<ul class="sub_lst">
+										<li><a href="#">MFC 프로젝트</a></li>
+										<li><a href="#">UI 설계모음</a></li>
+									</ul>
+								</div>
+								<div class="lnb_menu">
+									<a class="">휴지통</a>
+									<a class="ico trash">휴지통 비우기</a>
+									<!-- // 비울 항목이 있을 때만 노출 -->
+								</div>
+							</div>
+						</div>
+						<!-- setting menu area -->
+						<div class="setting_area">
+							<a class="btn_setting">설정</a>
+							<div class="mail_capacity">
+								<span class="now_num">2.31GB</span>
+								<span class="total_num">5GB</span>
+							</div>
+						</div>
+						<!-- // setting menu area -->
+					</div>
+				</div>
+				<!-- content -->
+				<div class="container_area" >
+					<div class="handy-scroll">
+						<!-- 본문 영역 -->
+						<div class="container">
+							<!-- 상세 검색 영역 -->
+							<div class="srch_area detail">
+							</div>
+							<!-- // 상세 검색 영역 -->
+							<!-- 타이틀 영역 -->
+							<div class="hgroup">
+								<span class="form favorite"><input type="checkbox"><label class="blind">플래그</label></span>
+								<span class="flag_share">공유</span>
+								<h2>폴더명 A</h2>
+							</div>
+							<!-- // 타이틀 영역 -->	
+							<!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group">
+										<span class="form"><input type="checkbox"/><label class="blind">게시물 전체선택</label></span> 
+									</div>
+									<div class="group">
+										<a href="#" class="btn">올리기</a>
+										<a href="#" class="btn">내려받기</a>
+									</div>
+									<a href="#" class="btn">삭제</a>
+									<a href="#" class="btn">새폴더</a>
+									<div class="selectbox noFirst">
+										<select> 
+											<option>편집</option>
+											<option>수정</option>
+											<option>이동</option>
+											<option>잘라내기</option>
+											<option>복사</option>
+										</select>
+									</div>
+									<a href="#" class="btn">공유관리</a>
+									<div class="selectbox noFirst">
+										<select> 
+											<option>보내기</option>
+											<option>메일쓰기</option>
+											<option>게시물 쓰기</option>
+										</select>
+									</div>	
+									<div class="group">
+										<span>필터 : </span>
+										<div class="selectbox">
+											<select> 
+												<option>모든종류</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="align_rg">
+									<div class="group">
+										<a href="#" class="ico_btn grid on">그리드형</a>
+										<a href="#" class="ico_btn view_lst">리스트형</a>
+									</div>
+								</div>
+								<div class="new_lst_info">		
+									<span class="new">8</span>
+									<span>/ 450</span>
+									<a class="ico rfsh">새로고침</a>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->
+							<!-- 리스트 영역 -->
+							<div class="content_table">	
+								<div class="grid_list_head">
+									<div class="sorting">
+										<span>정렬 : </span>
+										<div class="selectbox">
+											<select> 
+												<option>수정일 내림 차순</option>
+												<option>수정일 오름 차순</option>
+												<option>크기 내림 차순</option>
+												<option>크기 오름 차순</option>
+												<option>이름 내림 차순</option>
+												<option>이름 오름 차순</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="table_body scroll_area handy-scroll">
+									<ul class="grid_list">
+										<li>																						
+											<dl>
+												<dt class="filename">
+													<span class="filename">...</span>
+												</dt>	
+												<dd class="file parent_folder">
+													<a href="#" title="상위폴더로 이동"><span class="item">폴더 이동</span></a>
+												</dd>																					
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">폴더명 A_1</span>
+												</dt>
+												<dd class="file folder">
+													<a href="#" title="해당폴더로 이동"><span class="item">폴더</span></a>	
+												</dd>																				
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form favorite"><input type="checkbox"><label class="blind">favorite</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">병원서비스</span>
+												</dt>
+												<dd class="file folder">
+													<a href="#" title="해당폴더로 이동"><span class="item">폴더</span></a>	
+												</dd>																				
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form favorite"><input type="checkbox"><label class="blind">favorite</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">자동차 UX 개선</span>
+												</dt>
+												<dd class="file shared_folder">
+													<a href="#" title="공유한 파일로 이동"><span class="item">공유한 폴더</span></a>	
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form favorite"><input type="checkbox"><label class="blind">favorite</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">프로젝트 TF</span>
+												</dt>
+												<dd class="file fellow_folder">
+													<a href="#" title="공유된 폴더로 이동"><span class="item">공유된 폴더</span></a>	
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form favorite"><input type="checkbox"><label class="blind">favorite</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li class="selected">																				
+											<dl>
+												<dt>
+													<span class="filename">파일명은 두줄까지 파일명은 두줄까지 파일명은 두줄까지 파일명은 두줄까지.pdf</span>
+												</dt>
+												<dd class="file ppt">
+													<a href="#" title="파일 다운로드"><span class="item">파일</span></a>	
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox" checked="checked"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">EGW 프로젝트 임원보고 문서.pdf</span>
+												</dt>
+												<dd class="file doc">
+													<a href="#" title="파일 다운로드"><span class="item">파일</span></a>
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">EGW 프로젝트 임원보고 문서.pdf</span>
+												</dt>
+												<dd class="file zip">
+													<a href="#" title="파일 다운로드"><span class="item">파일</span></a>
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">대림미술관 전경.jpg</span>
+												</dt>
+												<dd class="file image">
+													<a href="#" title="파일 다운로드"><img src="../../img/sample/thumb_imgfile_01.png" alt="대림미술관 전경"></a>	
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">VR메인 시안용 사진.png</span>
+												</dt>
+												<dd class="file image">
+													<a href="#" title="파일 다운로드"><img src="../../img/sample/thumb_imgfile_02.png" alt="VR메인 시안용 사진"></a>		
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">EGW 프로젝트 임원보고 문서.pdf</span>
+												</dt>
+												<dd class="file pdf">
+													<a href="#" title="파일 다운로드"><span class="item">파일</span></a>
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>
+										<li>																				
+											<dl>
+												<dt>
+													<span class="filename">EGW 프로젝트 임원보고 문서.pdf</span>
+												</dt>
+												<dd class="file xls">
+													<a href="#" title="파일 다운로드"><span class="item">파일</span></a>
+												</dd>																			
+												<dd class="check">
+													<span class="form"><input type="checkbox"><label class="blind">선택</label></span>
+													<span class="form flag"><input type="checkbox"><label class="blind">플래그</label></span>
+												</dd>													
+											</dl>
+										</li>									
+									</ul>
+
+								</div>
+								<div class="paginate_area">
+									<div class="paginate">	
+										<a class="first disabled">처음 페이지</a>
+										<a class="pre disabled">이전 페이지</a>	
+										<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+										<a class="selected">1</a>
+										<a>2</a>
+										<a>3</a>
+										<a>4</a>
+										<a>5</a>
+										<a>6</a>		
+										<a>7</a>
+										<a>8</a>
+										<a>9</a>
+										<a>10</a>		
+										<a class="next">다음 페이지</a>
+										<a class="last">마지막 페이지</a>
+									</div>
+									<div class="page_num">
+										<input type="text" value="1"> / 118
+									</div>
+								</div>
+							</div>
+							<!-- // 리스트 영역 -->
+						</div>
+						<!-- // 본문 영역 -->
+					</div>
+				</div>
+			</div>
+			<!-- //body -->
+		</div>
+		<!-- //wrapper -->
+		<div class="popup open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:450px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">공유 관리</h2>	
+
+					<h3 class="mg_t_7">공유 폴더</h3>				
+					<div class="form_table">
+						<table>
+							<colgroup>
+								<col style="width:90px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>폴더명</th>
+									<td class="box">
+										<div class="input_group">
+											<input type="text" class="basic_input" value="대용량 첨부폴더">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<h3 class="">공유자</h3>
+					<div class="popup_table">
+						<div class="btns_area">
+							<a class="btn">추가</a>
+							<a class="btn">해제</a>
+						</div>
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:37px;">
+									<col style="width:*;">
+									<col style="width:50px;">
+									<col style="width:50px;">
+									<col style="width:75px;">
+									<col style="width:92px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th> 
+											<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+										</th>
+										<th>성명</th>
+										<th>등록</th>
+										<th>수정</th>
+										<th>삭제/이동</th>
+										<th>공유시작일</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body handy-scroll" >
+							<div style="max-height:245px;">
+								<table>
+									<colgroup>
+										<col style="width:37px;">
+										<col style="width:*;">
+										<col style="width:50px;">
+										<col style="width:50px;">
+										<col style="width:75px;">
+										<col style="width:92px;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+										<tr>
+											<td> 
+												<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+											</td>
+											<td><a class="name">김핸디</a></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td><span class="form"><input type="checkbox" /><label class="blind">선택</label></span></td>
+											<td class="date">2017-08-11</td>
+										</tr>
+									</tbody>
+								</table>							
+							</div>
+						</div>
+
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">확인</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

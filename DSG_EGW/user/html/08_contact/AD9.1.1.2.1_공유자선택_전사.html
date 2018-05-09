@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>공유자 선택 전사 팝업</title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+    <!-- popup 기본 사이즈는 280 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>공유자 선택</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+			<div class="scroll_area">
+            <div class="group_menu contact_tree">
+                <!-- 부서 영역 -->
+                <div class="org_group">
+                    <ul class="tab">
+                        <li><a href="">조직도</a></li>
+                        <li><a href="">부서</a></li>
+                        <li><a href="" class="selected">전사</a></li>
+                    </ul>
+                    <div class="contact_radio_wrap handy-scroll">
+                        <ul class="contact_radio_list">
+                            <li>
+                                <span class="form">
+                                    <input type="radio" name="radio1" id="radio1_1" checked="">
+                                    <label for="radio1_1">전사 그룹D</label>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //부서 영역 -->
+            </div>
+			</div>
+            <div class="btns_area bttm">
+                <div class="align_rg">
+                    <!-- 등록 -->
+                    <a class="action_btn">확인</a>
+                    <a class="btn">취소</a>
+                </div>
+            </div>      
+        </div>
+        <!-- // body -->		
+    </body>
+</html>

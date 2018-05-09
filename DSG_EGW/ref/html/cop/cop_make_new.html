@@ -1,0 +1,157 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+
+<body>
+<div id="Right_contentWrap" class="container_box" name="Right_contentWrap">
+  <form id="clubBuild" encType="multipart/form-data" method="POST" name="clubBuild" action="/hcop/clubBuild.do">
+    <div class="title_area">
+      <h2 class="title"> 동호회 만들기 </h2>
+      <div class="btn_flip_left"> <a href="javascript:toggleLFrame();">&nbsp;</a> </div>
+      <div class="btn_flip_right on"> <a href="javascript:toggleRFrame();">&nbsp;</a> </div>
+    </div>
+    <div class="view_body_contents">
+      <div class="pd_all_18">
+        <div class="stepbox">
+          <div class="box">
+            <ul>
+              <li class="step1 active"><span>기본속성</span></li>
+              <li class="step2"><span>회원구성</span></li>
+              <li class="step3"><span>메뉴구성</span></li>
+              <li class="step4"><span>완료</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="write_form_box content_configlist pd_0">
+          <table>
+            <colgroup>
+            <col style="width: 200px;">
+            <col>
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>*&nbsp;동호회 명</th>
+                <td><input style="width: 50%;" id="buildstep1" class="basic_inp" onkeyup='document.clubBuild.dupChk.value = ""; clubBuildObj.text_size(this,100);' name="clubName" maxLength="100" value="" type="text">
+                  <input style="width: 50%; display: none;" id="flagIsFreshName" class="basic_inp" name="flagIsFreshName" type="text">
+                  <span class="btn_config"> <a onclick="javascript:clubBuildObj.isExistCopName('view');" href="#"> 중복검사 </a> </span> (한글 50자,영문 100자 이내) </td>
+              </tr>
+              <tr>
+                <th>*&nbsp;동호회 분류</th>
+                <td><div class="wr_form_td half_width">
+                    <p class="form_position_a mg_lft_0" >
+                      <input style="width: 100%;" id="buildstep2" class="basic_inp" onclick="javascript:clubBuildObj.categoryPopup();return false;" name="categoryName" readOnly="" value="" type="text">
+                      <a class="ico_doc" onclick="javascript:clubBuildObj.categoryPopup();return false;" href="#"> <img alt="동호회 분류" src="/img/ico_docment.png"> </a> </p>
+                  </div></td>
+              </tr>
+              <tr>
+                <th>*&nbsp;동호회 키워드</th>
+                <td><input style="width: 50%;" id="buildstep4" class="basic_inp" name="clubKeyWord" maxLength="100" value="" size="80" type="text"></td>
+              </tr>
+              <tr>
+                <th>동호회 소개</th>
+                <td><textarea id="buildstep5" cols="98" rows="3" name="clubIntroduceMessage" value=""></textarea></td>
+              </tr>
+              <tr>
+                <th>가입방식</th>
+                <td><label class="pd_rgt_20">
+                    <input id="buildstep6_1" name="clubJoinPlan" value="1" CHECKED="" type="radio">
+                    가입제
+                    &nbsp;(가입 신청시 자동 가입됨.) </label>
+                  <label class="pd_rgt_20">
+                    <input id="buildstep6_2" name="clubJoinPlan" value="2" type="radio">
+                    승인제
+                    &nbsp;(동호회운영자 허가에 따라 가입됨.) </label></td>
+              </tr>
+              <tr>
+                <th>별칭사용여부</th>
+                <td><label class="pd_rgt_20">
+                    <input id="buildstep8_1" name="clubAllowNickName" value="Y" type="radio">
+                    사용함 </label>
+                  <label class="pd_rgt_20">
+                    <input id="buildstep8_2" name="clubAllowNickName" value="N" CHECKED="" type="radio">
+                    사용안함 </label></td>
+              </tr>
+              <tr>
+                <th>회원가입시 인사말</th>
+                <td><textarea id="buildstep10" cols="98" rows="3" name="clubJoinMessage"></textarea></td>
+              </tr>
+              <tr class="add_cop_info">
+                <th>기타정보
+                  <ul class="layout_rgt mg_rgt_18">
+                    <li> <span class="btn_trig"> <a  onclick="javascript:clubBuildObj.addField();return false;" href="#"> 항목추가 </a> </span> </li>
+                    <li> <span class="btn_trig on"> <a  onclick="javascript:clubBuildObj.addField();return false;" href="#"> 항목추가 </a> </span> </li>
+                  </ul>
+                </th>
+                <td><ul>
+                    <li style="display: ;" id="id_1" name="id_1">
+                      <input id="clubAdditionalInfo1" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(1);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo1" value="" size="100" type="text">
+                    </li>
+                    <li style="display: ;" id="id_2" name="id_2">
+                      <input id="clubAdditionalInfo2" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(2);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo2" value="" size="100" type="text">
+                    </li>
+                    <li style="display:none;" id="id_3" name="id_3">
+                      <input id="clubAdditionalInfo3" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(3);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo3" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_4"  name="id_4">
+                      <input id="clubAdditionalInfo4" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(4);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo4" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_5" name="id_5">
+                      <input id="clubAdditionalInfo5" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(5);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo5" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_6" name="id_6">
+                      <input id="clubAdditionalInfo6" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(6);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo6" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_7" name="id_7">
+                      <input id="clubAdditionalInfo7" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(7);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo7" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_8" name="id_8">
+                      <input id="clubAdditionalInfo8" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(8);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo8" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_9" name="id_9">
+                      <input id="clubAdditionalInfo9" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(9);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo9" value="" size="100" type="text">
+                    </li>
+                    <li style="display: none;" id="id_10" name="id_10">
+                      <input id="clubAdditionalInfo10" class="basic_inp" onfocus="clubBuildObj.checkAddInfoFocus(10);" onkeyup="clubBuildObj.text_size(this,100);" name="clubAdditionalInfo10" value="" size="100" type="text">
+                    </li>
+                  </ul></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="footer">
+          <ul class="btns">
+            <li> <span> <a id="nextStep" onclick="javascript:clubBuildObj.nextSubmit(); return false;" href="#" name="nextStep">다음</a> </span> </li>
+          </ul>
+        </div>
+      </div>
+      <input id="stage" name="stage" value="1" type="hidden">
+      <input id="fileGubun" name="fileGubun" value="tempupload" type="hidden">
+      <input id="selectValue" name="selectValue" value="" type="hidden">
+      <input id="selectText" name="selectText" value="" type="hidden">
+      <input id="U" name="U" value="001013122" type="hidden">
+      <input id="clubCategoryID" name="clubCategoryID" value="" type="hidden">
+      <input id="clubCategoryName" name="clubCategoryName" value="" type="hidden">
+      <input id="clubSysopID2" name="clubSysopID2" value="" type="hidden">
+      <input id="clubSysopName2" name="clubSysopName2" value="" type="hidden">
+      <input id="clubSysopName" name="clubSysopName" value="백은경" type="hidden">
+      <input id="kCategoryID" name="kCategoryID" type="hidden">
+      <input id="kCategoryName" name="kCategoryName" type="hidden">
+      <input id="clubAdditionalInfos" name="clubAdditionalInfos" type="hidden">
+    </div>
+  </form>
+  <script>
+clubBuildObj.init();
+</script> 
+</div>
+</body>
+</html>

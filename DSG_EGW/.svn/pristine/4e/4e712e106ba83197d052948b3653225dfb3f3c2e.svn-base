@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>LNB</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../js/common.js" ></script>		
+        <link rel="stylesheet" type="text/css" href="../css/sub.css" />
+        <style>
+            .body .lnb_area {vertical-align: top;}
+            .body.lnb_guide {top:0; left:0; width:100%; height:100%; }
+            .body.lnb_guide .lnb_area {position:relative; top:0; left:0; display: inline-block; height:100%;}
+            body {overflow-x:auto; width: 2300px }
+        </style>
+    </head>
+    <body>  
+        <div class="body lnb_guide">
+            <!-- 메일-->
+            <!-- LnB-->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action group">
+                        <a class="action_btn" href="#">메일쓰기</a>
+                        <a class="big_split" href="#">추가 선택</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                            <div class="wrap-hs">
+                                <ul class="lnb_menu divide">
+                                    <li><a class="selected" href="#">전체메일</a></li>
+                                    <li><a href="#">받은편지함</a><span class="count">12</span></li>
+                                    <li><a href="#">내게 쓴 편지함</a></li>
+                                    <li><a href="#">보낸편지함</a>
+                                        <a class="small btn" href="#">수신확인</a></li>
+                                    <li><a href="#">임시보관함</a></li>
+                                    <li><a href="#">예약편지함</a></li>
+                                    <li><a href="#">휴지통</a>
+                                        <a class="ico trash" href="#">휴지통 비우기</a></li>
+                                    <!--// 비울것이 있을 떄만 활성화-->
+                                </ul>
+                                <!-- tag_type -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title" href="#">플래그 메일</a><span class="count">4</span>
+                                </div>
+                                <!-- vip -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category" href="#">VIP 메일</a><a class="ico_btn small add">VIP 추가</a>
+                                    <ul class="sub_lst">
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김광수 팀장님</a>
+                                        </li>
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김핸디 과장</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">키워드 메일</a>
+                                    <a class="ico_btn small add">키워드 추가</a>
+                                    <ul class="sub_lst">
+                                        <li><div class="menu_name">
+                                            <a class="selected">카드 프로젝트프로젝트프로젝트프로젝트</a>
+                                            <a class="ico modify"></a>
+                                            <a class="ico del2"></a>
+                                            </div></li>
+                                        <li><div class="menu_name"><a>UI 설계모 설계모 설계모 설계모음</a>
+                                            <a class="ico modify"></a>
+                                            <a class="ico del2"></a>
+                                            </div></li>
+                                    </ul>
+                                </div>                  
+                                <!-- 개인보관함 -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">개인 보관함</a> 
+                                    <div class="group">
+                                        <a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+                                        <a class="ico_btn small setting">개인 보관함 설정</a>
+                                    </div>
+                                    <div class="handy-scroll">
+                                        <div class="wrap-hs">
+                                            <div class="tree">
+                                                <ul class="dynatree-container">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                            <span class="dynatree-expander"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder" >
+                                                                    프로젝트2017
+                                                                </span>	
+                                                            </a>
+                                                            <a class="ico add"></a>
+                                                            <a class="ico modify"></a>
+                                                        </div>
+                                                        <ul style="">
+                                                            <li class="">
+                                                                <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-group" >
+                                                                            보관함1
+                                                                            <input class="" type="text" value="새폴더" style="display: none;">
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </li>
+                                                            <li class="dynatree-lastsib">
+                                                                <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-group" >
+                                                                            보관함도 폴더니까 노드가 폴더려나요?이건 잘 몰라서 패스(일단은 그룹이나 폴더나 동일하게 작업)
+                                                                            <input class="" type="text" value="새폴더" style="display: none;">
+                                                                        </span>
+                                                                    </a>
+                                                                </span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                            <span class="dynatree-expander"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">	
+                                                                <span class="node-folder" >여기호버</span>
+                                                            </a>
+                                                            <a class="ico add"></a>
+                                                            <a class="ico modify"></a>
+                                                            <!--
+<a class="ico modify"></a>
+<a class="ico add"></a>
+-->
+                                                        </div>
+                                                        <ul style="">
+                                                            <li class="">
+                                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                    <span class="dynatree-expander"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-folder" >
+                                                                            <input class="" type="text" value="인풋" >
+                                                                        </span>
+                                                                    </a>
+                                                                    <!--
+
+<a class="ico modify"></a>
+<a class="ico add"></a>
+-->
+                                                                </div>
+                                                                <ul style="">
+                                                                    <li class="">
+                                                                        <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                                                                            <span class="dynatree-connector"></span>
+                                                                            <span class="dynatree-icon"></span>
+                                                                            <a href="#" class="dynatree-title">
+                                                                                <span class="node-group" >
+                                                                                    <input class="" type="text" value="새폴더생성완료는 포커스 아웃+엔터.">
+                                                                                </span>
+                                                                            </a>
+                                                                        </span>
+                                                                    </li>
+                                                                    <li class="dynatree-lastsib">
+                                                                        <span class="dynatree-node  dynatree-folder dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+                                                                            <span class="dynatree-connector"></span>
+                                                                            <span class="dynatree-icon"></span>
+                                                                            <a href="#" class="dynatree-title">	
+                                                                                <span class="node-group" >여기호버하면 수정아이콘나옵니다</span>
+                                                                            </a>
+                                                                            <a class="ico modify"></a>
+                                                                        </span></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="dynatree-lastsib">
+                                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">	
+                                                                        <span class="node-folder" >여기호버</span>
+                                                                    </a>
+                                                                    <a class="ico add"></a>
+                                                                    <a class="ico modify"></a>
+                                                                </span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="">
+                                                        <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">	
+                                                                <span class="node-folder" >수정아이콘!</span>
+                                                            </a>
+                                                            <a class="ico add"></a>
+                                                            <a class="ico modify"></a>
+                                                        </span>
+                                                        <ul style="display: none;">
+                                                            <li class="">
+                                                                <span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+                                                            </li>
+                                                            <li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+                                                            <li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+
+                                            </div>	
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 개인보관함 -->  
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [D]수정버튼 클릭시 레이어메뉴(컨텍스트 메뉴)를 띄워주세요 -->
+                    <ul class="context-menu-list context-menu-root" style="width: 8px; top: 550px; left: 140px; z-index: 111; display:;">
+                        <li class="context-menu-item icon icon-edit">
+                            <a>수정</a></li>
+                        <li class="context-menu-item icon icon-delete">
+                            <a >삭제</a></li>
+                    </ul>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                        <div class="mail_capacity">
+                            <span class="now_num">2.31GB</span>
+                            <span class="total_num">5GB</span>
+                        </div>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 메일 -->
+            <!-- 게시판 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">게시하기</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                            <div class="wrap-hs">
+                                <!-- 즐겨찾기 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">즐겨찾는 게시판</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">카드 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 전체게시판 -->
+                                <div class="lnb_menu tree divide open">
+                                    <a class="menu_title category">전체 게시판</a>
+                                    <fieldset>
+                                        <div class="srch_group on">
+                                            <input type="text" placeholder="검색" />
+                                            <a class="btn_srch">검색</a>
+                                            <a class="btn_return">이전</a>
+                                        </div>
+                                    </fieldset>
+                                    <div class="handy-scroll">
+
+                                        <div class="folder wrap-hs">
+                                            <div class="group">
+                                                <a class="text_btn">모두접기</a>
+                                                <a class="text_btn">모두펴기</a>
+                                                <a class="text_btn">새로고침</a>
+                                            </div>
+                                            <ul class="dynatree-container">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                        <span class="dynatree-expander"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder" >EGW As-Is</span>
+                                                        </a>
+                                                    </div>
+                                                    <ul style="">
+                                                        <li class="">
+                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                <span class="dynatree-connector"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">
+                                                                    <span class="node-folder">회의 내용</span>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dynatree-lastsib">
+                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                <span class="dynatree-connector"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">
+                                                                    <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                                </a>
+                                                            </div></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="">
+                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                                </li>
+                                                <li class="">
+                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>                
+                                <div class="lnb_menu">
+                                    <a class="menu_title">임시 보관함</a><span class="count">4</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title">플래그 게시판</a><span class="count">7</span>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">키워드 게시물</a>
+                                    <ul class="sub_lst">
+                                        <li><a>MFC 프로젝트</a></li>
+                                        <li><a>UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title">게시판 신청</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 게시판 -->
+            <!-- 스퀘어 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">그룹 만들기</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                            <div class="wrap-hs">
+                                <!-- 태그 메뉴 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title selected">워크피드</a>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title">플래그 글<span class="count">4</span></a>
+                                </div>
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title">멘션 글<span class="count">4</span></a>
+                                </div>
+                                <!-- vip -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">VIP 글
+                                        <span class="count">99+</span></a>
+                                    <a class="ico_btn small add">VIP 추가</a>
+                                    <ul class="sub_lst">
+                                        <li class="my_vip selected">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김광수광수광수광수 팀장님</a>
+                                            <span class="count">99+</span>
+                                            <a class="ico del2"></a>	
+                                        </li>
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김광수광수광수광수 팀장님</a>
+                                            <span class="count">1</span>
+                                            <a class="ico del2"></a>	
+                                        </li>
+                                        <li class="my_vip">
+                                            <div class="usr_mask"></div>
+                                            <div class="usr_photo"> 
+                                                <img src="../../img/profile_photo_blank.png" alt="">
+                                            </div>
+                                            <a class="usr_name">김핸디 과장</a>											
+                                            <span class="count">1</span>
+                                            <a class="ico del2"></a>	
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 즐겨찾는 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">즐겨찾는 그룹</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>							
+                                <!-- 내 그룹 -->
+                                <div class="lnb_menu  divide open">
+                                    <a class="menu_title category">내 그룹</a> 
+                                    <div class="group">
+                                        <a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+                                        <a class="ico_btn small setting">내 그룹 설정</a>
+                                    </div>
+                                    <!-- 트리 시작 -->
+
+                                    <div class="handy-scroll">
+                                        <div class="wrap-hs">
+                                            <div class="tree">
+                                                <ul class="dynatree-container">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                            <span class="dynatree-expander"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder" >
+                                                                    기본그룹
+                                                                </span>	
+                                                            </a>
+
+                                                            <a class="ico modify"></a>
+                                                        </div>
+                                                        <ul style="">
+                                                            <li class="">
+                                                                <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-group" >
+                                                                            제품기획팀
+                                                                            <input class="" type="text" value="새폴더" style="display: none;">
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </li>
+                                                            <li class="dynatree-lastsib">
+                                                                <span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-group" >
+                                                                            SW연구소
+                                                                            <input class="" type="text" value="새폴더" style="display: none;">
+                                                                        </span>
+                                                                    </a>
+                                                                </span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                            <span class="dynatree-expander"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">	
+                                                                <span class="node-folder" >EGW프로젝트</span>
+                                                            </a>
+                                                            <a class="ico modify"></a>
+                                                            <!--
+<a class="ico modify"></a>
+<a class="ico add"></a>
+-->
+                                                            <a class="ico modify"></a>
+                                                        </div>
+                                                        <ul style="">
+                                                            <li class="">
+                                                                <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-group" >
+                                                                            <input class="" type="text" value="새폴더생성완료는 포커스 아웃+엔터.">
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </li>	
+                                                        </ul>
+                                                    </li>
+                                                    <li class="">
+                                                        <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">	
+                                                                <span class="node-folder" >수정아이콘!</span>
+                                                            </a>
+                                                            <a class="ico modify"></a>
+                                                        </span>
+                                                        <ul style="display: none;">
+                                                            <li class="">
+                                                                <span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_1</span></a></span>
+                                                            </li>
+                                                            <li class=""><span class="dynatree-node dynatree-exp-c dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_2</span></a></span></li>
+                                                            <li class="dynatree-lastsib"><span class="dynatree-node dynatree-lastsib dynatree-exp-cl dynatree-ico-c"><span class="dynatree-connector"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-group" >group_3</span></a></span></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+
+                                            </div>		
+                                        </div>		
+                                    </div>		
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">공개 그룹</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>	
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">종료된 그룹</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!--
+<ul class="lnb_menu">
+<li><a>그룹 초대</a><span class="count">4</span></li>
+</ul>
+-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 스퀘어 -->
+            <!-- 결재 -->
+            <!-- 결재 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action group">
+                        <a class="action_btn">기안 작성하기</a>
+                        <a class="big_split">추가 선택</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">							
+                            <div class="wrap-hs">							
+                                <!-- 즐겨찾는 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">즐겨찾는 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected" href="#">기안한 문서</a><span class="count">4</span></li>
+                                    </ul>
+                                </div>							
+                                <!-- 올린문서 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category" href="#">올린 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="" href="#">기안한 문서</a></li>
+                                        <li><a class="" href="#">접수한 문서</a></li>
+                                        <li><a class="" href="#">반려된 문서</a></li>
+                                        <li><a class="" href="#">공람요청한 문서</a></li>
+                                        <li><a class="" href="#">수신반송된 문서</a></li>
+                                        <li><a class="" href="#">회신요청한 문서</a></li>
+                                        <li><a class="" href="#">예약상신한 문서</a></li>
+                                    </ul>
+                                </div>	
+                                <!-- 처리할 문서 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category" href="#">처리할 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="" href="#">결재할 문서</a></li>
+                                        <li><a class="" href="#">접수할 문서</a></li>
+                                        <li><a class="" href="#">공람할 문서</a></li>
+                                        <li><a class="" href="#">회신할 문서</a></li>
+                                    </ul>
+                                </div>	
+                                <!-- 기타 메뉴 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title" href="#">완료된 문서</a>
+                                </div>
+                                <div class="lnb_menu">	
+                                    <a class="menu_title" href="#">임시 보관함</a>
+                                </div>
+                                <div class="lnb_menu">								
+                                    <a class="menu_title" href="#">미완료 문서</a>
+                                </div>
+                                <div class="lnb_menu  divide">
+                                    <a class="menu_title" href="#">휴지통</a>
+                                    <a class="ico trash">휴지통 비우기</a>
+                                    <!-- // 비울 항목이 있을 때만 노출 -->
+                                </div>
+                                <!-- 플래그 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">플래그 결재</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 키워드 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">키워드 결재</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 개인보관함 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">개인 보관함</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>	
+                                <!-- 공유 문서 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">공유 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 결재 -->
+            <!-- // 결재 -->
+            <!--문서함 -->
+            <!-- LnB-->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area pd_t_15">
+                        <div class="handy-scroll">
+                            <div class="wrap-hs">
+                                <div class="lnb_menu">
+                                    <a class="menu_title selected" href="#">최근 찾은 문서</a>
+                                </div>
+                                <!-- 플래그 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">플래그 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!--부서 문서 -->
+                                <div class="lnb_menu tree divide open">
+                                    <a class="menu_title category">부서 문서</a>									
+                                    <div class="selectbox mg_t_7 pd_l_13" >
+                                        <select>
+                                            <option>2018</option>
+                                            <option>2017</option>
+                                        </select>
+                                    </div>	
+                                    <div class="inp_group">
+                                        <a href="" class="ico_btn add align_lf">선택</a>
+                                        <span class="align_rg"><input type="text" class="basic_inp" value="제품기획팀"></span>
+                                    </div>													
+                                    <!-- 대장 -->
+                                    <div class="lnb_menu tree open divide">	
+                                        <a class="menu_title category">대장</a>
+                                        <div class="">									
+                                            <ul class="dynatree-container handy-scroll">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">기안완료함</span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="dynatree-lastsib">
+                                                    <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">수신완료함</span>
+                                                        </a>
+                                                    </div></li>
+                                            </ul>
+                                        </div>	
+                                    </div> 
+
+                                    <!-- 부서 문서 -->
+                                    <div class="lnb_menu tree open">	
+                                        <a class="menu_title category">부서 문서함</a> 
+                                        <div class="group">
+                                            <a class="ico_btn small add" href="javascript:handleMessage.createFolder();">추가</a>
+                                            <a class="ico_btn small setting">개인 보관함 설정</a>
+                                        </div>
+                                        <div class="handy-scroll">
+                                            <div class="wrap-hs">
+                                                <div class="folder">									
+                                                    <ul class="dynatree-container">
+                                                        <li class="">
+                                                            <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                <span class="dynatree-expander"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">
+                                                                    <span class="node-folder" >
+                                                                        기 등록된 폴더 타이틀
+                                                                    </span>	
+                                                                </a>
+                                                                <a class="ico add"></a>
+                                                                <a class="ico modify"></a>
+                                                            </div>
+                                                            <ul style="">
+                                                                <li class="">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf">
+                                                                        <span class="dynatree-connector"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder">첫번째</span>
+                                                                        </a>															
+                                                                        <a class="ico add"></a>
+                                                                        <a class="ico modify"></a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf">
+                                                                        <span class="dynatree-connector"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder">두번째 폴더함</span>
+                                                                        </a>															
+                                                                        <a class="ico add"></a>
+                                                                        <a class="ico modify"></a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="dynatree-lastsib">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf dynatree-lastsib">
+                                                                        <span class="dynatree-connector"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder">하위메뉴마지막</span>
+                                                                        </a>															
+                                                                        <a class="ico add"></a>
+                                                                        <a class="ico modify"></a>
+                                                                    </div>
+                                                                </li>													
+                                                            </ul>
+                                                        </li>
+                                                        <li class="">
+                                                            <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                <span class="dynatree-expander"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">	
+                                                                    <span class="node-folder" >여기호버</span>
+                                                                </a>
+                                                                <a class="ico add"></a>
+                                                                <a class="ico modify"></a>
+                                                                <!--
+<a class="ico modify"></a>
+<a class="ico add"></a>
+-->
+                                                            </div>
+                                                            <ul style="">
+                                                                <li class="">
+                                                                    <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                                        <span class="dynatree-expander"></span>
+                                                                        <span class="dynatree-icon"></span>
+                                                                        <a href="#" class="dynatree-title">
+                                                                            <span class="node-folder" >
+                                                                                <input class="" type="text" value="인풋" >
+                                                                            </span>
+                                                                        </a>
+                                                                        <!--
+
+<a class="ico modify"></a>
+<a class="ico add"></a>
+-->
+                                                                    </div>
+                                                                    <ul style="">		
+                                                                        <li class="dynatree-lastsib">
+                                                                            <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf dynatree-lastsib">
+                                                                                <span class="dynatree-connector"></span>
+                                                                                <span class="dynatree-icon"></span>
+                                                                                <a href="#" class="dynatree-title">
+                                                                                    <span class="node-folder">
+                                                                                        <input class="" type="text" value="새폴더생성완료는 포커스 아웃+엔터."></span>
+                                                                                </a>															
+                                                                                <!--
+<a class="ico add"></a>
+<a class="ico modify"></a>
+-->
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </li>													
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>	
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <!-- 공유 문서 -->
+                                <div class="lnb_menu tree divide open">	
+                                    <a class="menu_title category">공유 문서함</a>
+                                    <div class="selectbox mg_t_7 pd_l_13" >
+                                        <select>
+                                            <option>2018</option>
+                                            <option>2017</option>
+                                        </select>
+                                    </div>	
+                                    <div class="handy-scroll">
+                                        <div class="wrap-hs">
+                                            <div class="folder">									
+                                                <ul class="dynatree-container">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                            <span class="dynatree-expander"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder" >제품기획팀</span>
+                                                            </a>
+                                                        </div>
+                                                        <ul style="">
+                                                            <li class="">
+                                                                <div class="dynatree-node dynatree-folder dynatree-exp-c dynatree-ico-cf">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-folder">기안완료함</span>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                            <li class="dynatree-lastsib">
+                                                                <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                    <span class="dynatree-connector"></span>
+                                                                    <span class="dynatree-icon"></span>
+                                                                    <a href="#" class="dynatree-title">
+                                                                        <span class="node-folder">수신완료함</span>
+                                                                    </a>
+                                                                </div></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>	
+                                        </div>	
+                                    </div>	
+                                </div>   
+                                <!-- 키워드 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">키워드 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 문서함-->
+            <!-- LnB-->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">일정 등록하기</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                            <div class="wrap-hs">
+                                <!-- 미니달력 -->
+                                <div class="calendar divide">
+                                    <div class="datepicker">
+                                        <dl>
+                                            <dt><a href="#">2017년 11월</a></dt>
+                                            <dd class="day">
+                                                <table>						
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">일</th>
+                                                            <th scope="col">월</th>
+                                                            <th scope="col">화</th>
+                                                            <th scope="col">수</th>
+                                                            <th scope="col">목</th>
+                                                            <th scope="col">금</th>
+                                                            <th scope="col">토</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                                <!-- 스케쥴이 있으면 sched / 오늘은 today/ 선택된 날짜는 day_on / 휴일은 holiday -->
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="passed"><a href="#">29</a></td>
+                                                            <td class="passed"><a href="#">30</a></td>
+                                                            <td class="passed"><a href="#">31</a></td>
+                                                            <td class=""><a href="#">1</a></td>
+                                                            <td class=""><a href="#">2</a></td>
+                                                            <td class=""><a href="#">3</a></td>
+                                                            <td class=""><a href="#">4</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sched"><a href="#">5</a></td>
+                                                            <td class="sched"><a href="#">6</a></td>
+                                                            <td class=""><a href="#">7</a></td>
+                                                            <td class="today"><a href="#">8</a></td>
+                                                            <td><a href="#">9</a></td>
+                                                            <td class="day_on sched"><a href="#">10</a></td>
+                                                            <td><a href="#">11</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="sched"><a href="#">12</a></td>
+                                                            <td><a href="#">13</a></td>
+                                                            <td><a href="#">14</a></td>
+                                                            <td class="sched"><a href="#">15</a></td>
+                                                            <td><a href="#">16</a></td>
+                                                            <td><a href="#">17</a></td>
+                                                            <td><a href="#">18</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="#">19</a></td>
+                                                            <td><a href="#">20</a></td>
+                                                            <td class="sched"><a href="#">21</a></td>
+                                                            <td class="sched"><a href="#">22</a></td>
+                                                            <td class="holiday sched day_on"><a href="#">23</a></td>
+                                                            <td><a href="#">24</a></td>
+                                                            <td><a href="#">25</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><a href="#">26</a></td>
+                                                            <td><a href="#">27</a></td>
+                                                            <td class="holiday"><a href="#">28</a></td>
+                                                            <td><a href="#">29</a></td>
+                                                            <td class="holiday sched"><a href="#">30</a></td>
+                                                            <td class="passed"><a href="#">1</a></td>
+                                                            <td class="passed"><a href="#">2</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="passed"><a href="#">3</a></td>
+                                                            <td class="passed"><a href="#">4</a></td>
+                                                            <td class="passed"><a href="#">5</a></td>
+                                                            <td class="passed"><a href="#">6</a></td>
+                                                            <td class="passed"><a href="#">7</a></td>
+                                                            <td class="passed"><a href="#">8</a></td>
+                                                            <td class="passed"><a href="#">9</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </dd>
+                                        </dl>
+                                        <a href="#" class="pre">이전</a>
+                                        <a href="#" class="next">다음</a>
+                                    </div>
+                                </div>
+                                <!-- // 미니달력 -->
+                                <div class="lnb_menu mg_t_15">
+                                    <a class="menu_title">홈으로</a>
+                                </div>
+                                <div class="lnb_menu pd_l_13 divide">
+                                    <span class="form">
+                                        <input type="checkbox">
+                                        <label>전체 달력</label>
+                                    </span>
+                                </div>			
+                                <!-- 개인달력 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">개인 달력</a>
+                                    <div class="group">
+                                        <a class="ico_btn small add" href="#">추가</a>
+                                        <a class="ico_btn small setting">개인 달력</a>
+                                    </div>
+                                    <ul class="sub_lst">
+                                        <li>
+                                            <div class="pick_cal type13">
+                                                <input type="checkbox" id="check_type13"/>
+                                                <label for="check_type13"><span class="color"></span>나의 달력</label>
+                                                <a class="ico info">정보</a></div>
+                                        </li>
+                                        <li>
+                                            <div class="pick_cal type10 shared_cal">
+                                                <input type="checkbox" id="check_type100"/>
+                                                <label for="check_type100"><span class="color "></span>김핸디일정
+
+                                                </label>
+                                                <span class="shared">공유</span>	
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="pick_cal type10 shared_cal">
+                                                <input type="checkbox" id="check_type10"/>
+                                                <label for="check_type10"><span class="color "></span>
+                                                    김핸디 업무일정업무일정업무일정업무일정업무일정업무일정업무일정
+
+                                                </label>
+                                                <span class="shared">공유</span>	
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pick_cal type08">
+                                                <input type="checkbox" id="check_type08"/>			
+                                                <label for="check_type08"><span class="color"></span>공유받은 일정<span class="count">4</span></label>
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 공유받은 달력 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">공유받은 달력</a>
+                                    <a class="ico_btn small setting">공유받은 달력 설정</a>
+                                    <ul class="sub_lst">
+                                        <li>
+                                            <div class="pick_cal type05">
+                                                <input type="checkbox" id="check_type05"/>
+                                                <label for="check_type05"><span class="color "></span>UI팀프로젝트 일정공유</label>
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pick_cal type16">
+                                                <input type="checkbox" id="check_type16"/>
+
+                                                <label for="check_type16"><span class="color "></span>휴가일 공유</label>
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>         
+                                <!-- 스퀘어 달력 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">스퀘어 달력</a>
+                                    <a class="ico_btn small setting">스퀘어 달력 설정</a>
+                                    <ul class="sub_lst">
+                                        <li>
+                                            <div class="pick_cal type07">
+                                                <input type="checkbox" id="check_type07"/>
+
+                                                <label for="check_type07"><span class="color "></span>UI팀프로젝트<span class="count">4</span></label>
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="pick_cal type11">
+                                                <input type="checkbox" id="check_type11"/>
+
+                                                <label for="check_type11"><span class="color "></span>휴가일 공유<span class="count">4</span></label>
+                                                <a class="ico info">정보</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>  
+                                <!-- 구독 달력 -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">구독 달력</a>
+                                    <ul class="sub_lst">
+                                        <li>
+                                            <div class="pick_cal type02">
+                                                <input type="checkbox" id="check_type02"/>
+
+                                                <label for="check_type02"><span class="color "></span>전사일정</label></div>
+                                        </li>
+                                        <li>
+                                            <div class="pick_cal type04">
+                                                <input type="checkbox" id="check_type04"/>
+
+                                                <label for="check_type04"><span class="color "></span>대한민국 휴일</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- //일정 --> 	
+            <!-- 설비 -->			
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">설비 예약하기</a>
+                    </div>
+
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">						
+                            <div class="wrap-hs">						
+                                <ul class="lnb_menu divide">
+                                    <li><a class="selected" href="#">내가 예약한 설비</a></li>
+                                    <li><a href="#">승인 대기중인 설비</a><span class="count">3</span></li>
+                                </ul>							
+                                <!-- 개인달력 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">설비 목록</a>
+                                    <a class="ico_btn small add" href="#">추가</a>
+
+                                    <ul class="sub_lst">
+                                        <!-- 회의실-->
+                                        <li class="sub_title open">
+                                            <div class="group">
+                                                <a href="#">회의실회의실회의실회의실회의실회의실회의실회의실회의실회의실회의실회의실회의실</a>
+                                                <a class="ico info" href="#">정보</a>
+                                                <a class="ico add" href="#">추가</a>
+                                            </div>
+                                            <ul class="sub_lst">
+                                                <li>
+                                                    <div class="pick_cal type02">
+                                                        <input type="checkbox" id="check_type22"/>
+                                                        <label for="check_type22"><span class="color "></span>1층 A회의실</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="pick_cal type14">
+                                                        <input type="checkbox" id="check_type14"/>
+
+                                                        <label for="check_type14"><span class="color "></span>1층 B회의실</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="pick_cal type18">
+                                                        <input type="checkbox" id="check_type28"/>
+
+                                                        <label for="check_type28"><span class="color"></span>1층 C회의실</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                            </ul>									
+                                        </li>
+                                        <!-- 노트북 -->
+                                        <li class="sub_title">
+                                            <a href="#">노트북</a>
+                                            <div class="group">
+                                                <!--
+<a class="ico modify" href="#">수정</a>
+<a class="ico add" href="#">추가</a>
+-->
+                                                <a class="ico info" href="#">정보</a>
+                                                <a class="ico add" href="#">추가</a>
+                                            </div>
+                                            <ul class="sub_lst">
+                                                <li>
+                                                    <div class="pick_cal type02">
+                                                        <input type="checkbox" id="check_type52"/>
+
+                                                        <label for="check_type52"><span class="color "></span>노트북 A</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="pick_cal type14">
+                                                        <input type="checkbox" id="check_type54"/>
+
+                                                        <label for="check_type54"><span class="color "></span>노트북 B</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="pick_cal type18">
+                                                        <input type="checkbox" id="check_type58"/>
+                                                        <label for="check_type58"><span class="color"></span>노트북 C</label>
+                                                        <a class="ico info">정보</a>
+                                                    </div>
+                                                </li>
+                                            </ul>									
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 설비 목록 -->
+                                <div class="lnb_menu open">
+                                    <a class="menu_title category">설비 목록</a>
+                                    <a class="ico_btn small add">설비 목록 추가</a>
+                                    <ul class="sub_lst">
+                                        <li><a href="">그룹1</a>
+                                            <a class="ico info">정보</a>
+                                        </li>
+                                        <li><a href="">그룹2</a>
+                                            <a class="ico info">정보</a>
+                                        </li>
+                                    </ul>
+                                </div>      
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- //설비 --> 
+            <!-- 주소록 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action half">
+                        <a class="action_btn">주소추가</a>
+                        <a class="action_btn">그룹추가</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                        <div class="wrap-hs">
+                            <!-- 즐겨찾기 -->
+                            <!--전체주소록 스펙아웃으로 주석처리 171130-->
+                            <!--<div class="lnb_menu">
+<a class="menu_title">전체 주소록</a>
+</div>-->
+                            <div class="lnb_menu">
+                                <a class="menu_title">즐겨찾는</a>
+                            </div>
+                            <div class="lnb_menu divide">
+                                <a class="menu_title">VIP</a>
+                            </div>
+                            <!-- 내연락처 -->
+                            <div class="lnb_menu divide open">
+                                <a class="menu_title category">내 연락처</a>
+                                <ul class="sub_lst">
+                                    <li><a class="selected">개인주소록</a></li>
+                                    <li><a>가족</a></li>
+                                    <li><a>친구</a></li>
+                                </ul>
+                            </div>
+                            <!-- 공유 연락처 -->
+                            <div class="lnb_menu divide open">
+                                <a class="menu_title category">공유받은  연락처</a>
+                                <ul class="sub_lst">
+                                    <li><a class="selected">우리그룹</a></li>
+                                    <li><a>EGW TFT 외</a></li>
+                                </ul>
+                            </div>
+                            <!-- 스퀘어 그룹 연락처 삭제 주석처리 171130 -->
+                            <!--<div class="lnb_menu divide open">
+<a class="menu_title category">스퀘어 그룹 연락처</a>
+<ul class="sub_lst">
+<li><a class="selected">우리그룹</a></li>
+<li><a>EGW TFT 외</a></li>
+<li><a>EGW TFT</a></li>
+</ul>
+</div>-->
+                            <!-- 조직도 삭제 171130 -->
+                            <ul class="lnb_menu">
+                                <li><a>주소록 가져오기</a></li>
+                                <li><a>주소록 내보내기</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 주소록 -->				
+            <!-- 스토리지 내파일 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">파일올리기</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">
+                        <div class="wrap-hs">
+                            <!-- 플래그 -->
+                            <div class="lnb_menu divide open">
+                                <a class="menu_title">플래그 파일</a>	
+                            </div>
+                            <!-- 즐겨찾기 -->
+                            <div class="lnb_menu divide open">
+                                <a class="menu_title category">즐겨찾는 폴더</a>
+                                
+                                <div class=" handy-scroll">									
+                                <div class="wrap-hs">									
+                                <div class="folder">									
+                                    <ul class="dynatree-container">
+                                        <li class="">
+                                            <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                <span class="dynatree-expander"></span>
+                                                <span class="dynatree-icon"></span>
+                                                <a href="#" class="dynatree-title">
+                                                    <span class="node-folder" >EGW As-Is</span>
+                                                </a>
+                                            </div>
+                                            <ul style="">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">회의 내용</span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="dynatree-lastsib">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                        </a>
+                                                    </div></li>
+                                            </ul>
+                                        </li>
+                                        <li class="">
+                                            <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                        </li>
+                                        <li class="">
+                                            <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                        </li>
+                                    </ul>
+                                </div>	
+                                </div>	
+                                </div>	
+                                
+                            </div>                
+                            <div class="lnb_menu tree divide open">
+                                <a class="menu_title category">내 폴더</a>	
+                                <div class="group">
+                                    <a class="ico_btn small add">추가</a>
+                                    <a class="ico_btn small setting">내 그룹 설정</a>
+                                </div>
+                                <div class="handy-scroll">
+                                    <div class="wrap-hs">
+                                        <div class="folder">									
+                                            <ul class="dynatree-container">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                        <span class="dynatree-expander"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder" >EGW As-Is</span>
+                                                            <span class="shared">공유된폴더</span>
+                                                            <!-- //공유된 폴더 형 -->
+                                                        </a>
+                                                    </div>
+                                                    <ul style="">
+                                                        <li class="">
+                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                <span class="dynatree-connector"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">
+                                                                    <span class="node-folder">회의 내용</span>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                        <li class="dynatree-lastsib">
+                                                            <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                                <span class="dynatree-connector"></span>
+                                                                <span class="dynatree-icon"></span>
+                                                                <a href="#" class="dynatree-title">
+                                                                    <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                                </a>
+                                                            </div></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="">
+                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                                </li>
+                                                <li class="">
+                                                    <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span>
+                                                        <span class="shared">공유된폴더</span>
+                                                        </a></span>			
+                                                </li>
+                                            </ul>
+                                        </div>	
+                                    </div>
+                                </div>
+                            </div>                
+                            <div class="lnb_menu">
+                                <a class="menu_title">공유받은 폴더</a>
+                            </div>
+                            <div class="lnb_menu">
+                                <a class="menu_title">공유중인 폴더</a>
+                            </div>
+                            <div class="lnb_menu divide open">
+                                <a class="menu_title category">스퀘어 폴더</a>
+                                <ul class="sub_lst">
+                                    <li><a href="#">MFC 프로젝트</a></li>
+                                    <li><a href="#">UI 설계모음</a></li>
+                                </ul>
+                            </div>
+                            <div class="lnb_menu">
+                                <a class="">휴지통</a>
+                                <a class="ico trash">휴지통 비우기</a>
+                                <!-- // 비울 항목이 있을 때만 노출 -->
+                            </div>
+                            <div class="lnb_menu">
+                                <a class="">이력보기</a>
+                            </div>
+                            <div class="lnb_menu">
+                                <a class="">통계보기</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                        <div class="mail_capacity">
+                            <span class="now_num">2.31GB</span>
+                            <span class="total_num">5GB</span>
+                        </div>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 스토리지 내파일 -->
+            <!-- 동호회 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action">
+                        <a class="action_btn">게시하기</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">	
+                        <div class="wrap-hs">
+                            
+                            <ul class="tab">
+                                <li><a class="selected">정보</a></li>
+                                <li><a class="">내 활동</a></li>	
+                            </ul>
+                            <div class="club_info divide">
+                                <a class="club_name best">우수동호회</a>
+                                <!-- // 종류 : 일반, 우수 -->
+                                <dl>
+                                    <dt>운영자</dt>
+                                    <dd><a href="#">박민철 대리</a></dd>
+                                </dl>
+                                <dl>
+                                    <dt>회원수</dt>
+                                    <dd>40</dd>
+                                </dl>
+                                <dl>
+                                    <dt>게시물</dt>
+                                    <dd>82</dd>
+                                </dl>
+                                <dl>
+                                    <dt>개설일</dt>
+                                    <dd>2016.08.10</dd>
+                                </dl>
+                                <dl>
+                                    <dt>마일리지</dt>
+                                    <dd>220점</dd>
+                                </dl>
+                            </div>							
+                            <ul class="lnb_menu">
+                                <li><a>전체 게시물</a><span class="new">new</span></li>
+                                <li><a>공지사항</a></li>
+                                <li><a>일반게시판</a></li>
+                                <li><a>자료실</a></li>
+                                <li><a>승인게시판</a></li>
+                                <li><a>앨범게시판</a></li>
+                                <!--								<li><a>동영상게시판</a></li>-->
+                                <li><a>토론실</a></li>
+                                <li><a>회원목록</a></li>
+                            </ul>
+                        </div>
+                        </div>                        
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                        <div class="mail_capacity">
+                            <span class="now_num">2.31GB</span>
+                            <span class="total_num">5GB</span>
+                        </div>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 동호회 -->	
+            <!-- 설문 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- Action Button Area -->
+                    <div class="big_action half">
+                        <a class="action_btn">설문등록</a>
+                        <a class="action_btn">투표등록</a>
+                    </div>
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area">
+                        <div class="handy-scroll">	
+                        <div class="wrap-hs">	
+                            <div class="lnb_menu divide open">
+                                <!-- // 설문,투표는 항상 open 사용 - 펼쳐둡니다 -->
+                                <a class="menu_title">설문</a>
+                                <ul class="sub_lst">
+                                    <li><a href="#">진행중인 설문</a><span class="count">24</span></li>
+                                    <li><a href="#">종료 설문</a></li>
+                                </ul>
+                            </div>
+                            <div class="lnb_menu open">
+                                <!-- // 설문,투표는 항상 open 사용 - 펼쳐둡니다 -->
+                                <a class="menu_title">투표</a>
+                                <ul class="sub_lst">
+                                    <li><a href="#">진행중인 설문</a><span class="count">8</span></li>
+                                    <li><a href="#">종료 투표</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>						
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 설문 -->	
+            <!-- 스토리지 문서함 -->
+            <div class="lnb_area">   
+                <div class="lnb_lst">
+                    <!-- basic list menu area -->   
+                    <div class="lnb_menu_area pd_t_15">
+                        <div class="handy-scroll">
+                            <div class="lnb_menu">
+                                <a class="menu_title selected" href="#">최근 찾은 문서</a>
+                            </div>
+                            <!-- 플래그 -->
+                            <div class="lnb_menu divide">
+                                <a class="menu_title category">플래그 문서</a>
+                                <ul class="sub_lst">
+                                    <li><a class="selected">기본 그룹</a></li>
+                                    <li><a>EGW TFT</a></li>
+                                </ul>
+                            </div>
+                            <!--부서 문서 -->
+                            <div class="lnb_menu tree divide open">
+                                <a class="menu_title category">부서 문서</a>									
+                                <div class="selectbox mg_t_7" >
+                                    <select>
+                                        <option>제품기획팀</option>
+                                    </select>
+                                </div>									
+                                <div class="folder mg_t_7">									
+                                    <ul class="dynatree-container handy-scroll">
+                                        <li class="">
+                                            <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                <span class="dynatree-expander"></span>
+                                                <span class="dynatree-icon"></span>
+                                                <a href="#" class="dynatree-title">
+                                                    <span class="node-folder" >대장</span>
+                                                </a>
+                                            </div>
+                                            <ul style="">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">완료함</span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="dynatree-lastsib">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">기안완료함</span>
+                                                        </a>
+                                                    </div></li>
+                                            </ul>
+                                        </li>
+                                        <li class="">
+                                            <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >부서문서함</span></a></span>	
+                                        </li>
+                                    </ul>
+                                </div>	
+                            </div> 
+                            <!-- 공유 문서 -->
+                            <div class="lnb_menu tree divide open">	
+                                <a class="menu_title category">공유 문서함</a>
+                                <div class="folder">									
+                                    <ul class="dynatree-container handy-scroll">
+                                        <li class="">
+                                            <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                <span class="dynatree-expander"></span>
+                                                <span class="dynatree-icon"></span>
+                                                <a href="#" class="dynatree-title">
+                                                    <span class="node-folder" >제품기획팀</span>
+                                                </a>
+                                            </div>
+                                            <ul style="">
+                                                <li class="">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">기안완료함</span>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="dynatree-lastsib">
+                                                    <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                        <span class="dynatree-connector"></span>
+                                                        <span class="dynatree-icon"></span>
+                                                        <a href="#" class="dynatree-title">
+                                                            <span class="node-folder">수신완료함</span>
+                                                        </a>
+                                                    </div></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>	
+                            </div>   
+                            <!-- 키워드 -->
+                            <div class="lnb_menu">
+                                <a class="menu_title category">키워드 문서</a>
+                                <ul class="sub_lst">
+                                    <li><a class="selected">기본 그룹</a></li>
+                                    <li><a>EGW TFT</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- setting menu area -->
+                    <div class="setting_area">
+                        <a class="btn_setting">설정</a>
+                    </div>
+                    <!-- // setting menu area -->
+                </div>
+            </div>
+            <!-- // 스토리지 문서함 -->
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+       <title>결재할 문서 결재대기 리스트 분할형</title>
+        <!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	   
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>결재</h1>
+                <div class="aside">
+                    <fieldset>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>메일</option>
+                                <option>통합</option>
+                            </select>
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>             
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>  
+            </div>
+            <!-- //header -->
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->
+            <!-- body -->
+            <div class="body"> 
+                <!-- LnB-->
+                <!-- 결재 -->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action group">
+                            <a class="action_btn">기안 작성하기</a>
+                            <a class="big_split">추가 선택</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">                          
+                                <!-- 즐겨찾는 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">즐겨찾는 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected" href="#">기안한 문서</a><span class="count">4</span></li>
+                                    </ul>
+                                </div>                          
+                                <!-- 올린문서 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category" href="#">올린 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="" href="#">기안한 문서</a></li>
+                                        <li><a class="" href="#">접수한 문서</a></li>
+                                        <li><a class="" href="#">반려된 문서</a></li>
+                                        <li><a class="" href="#">공람요청한 문서</a></li>
+                                        <li><a class="" href="#">수신반송된 문서</a></li>
+                                        <li><a class="" href="#">회신요청한 문서</a></li>
+                                        <li><a class="" href="#">예약상신한 문서</a></li>
+                                    </ul>
+                                </div>  
+                                <!-- 처리할 문서 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category" href="#">처리할 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="" href="#">결재할 문서</a></li>
+                                        <li><a class="" href="#">접수할 문서</a></li>
+                                        <li><a class="" href="#">공람할 문서</a></li>
+                                        <li><a class="" href="#">회신할 문서</a></li>
+                                    </ul>
+                                </div>  
+                                <!-- 기타 메뉴 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title" href="#">완료된 문서</a>
+                                </div>
+                                <div class="lnb_menu">  
+                                    <a class="menu_title" href="#">임시 보관함</a>
+                                </div>
+                                <div class="lnb_menu">                              
+                                    <a class="menu_title" href="#">미완료 문서</a>
+                                </div>
+                                <div class="lnb_menu  divide">
+                                    <a class="menu_title" href="#">휴지통</a>
+                                    <a class="ico trash">휴지통 비우기</a>
+                                    <!-- // 비울 항목이 있을 때만 노출 -->
+                                </div>
+                                <!-- 플래그 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">플래그 결재</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 키워드 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">키워드 결재</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 개인보관함 -->
+                                <div class="lnb_menu divide">
+                                    <a class="menu_title category">개인 보관함</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>  
+                                <!-- 공유 문서 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">공유 문서</a>
+                                    <ul class="sub_lst">
+                                        <li><a class="selected">기본 그룹</a></li>
+                                        <li><a>EGW TFT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+                <!-- // 결재 -->
+                <!-- content -->
+                <div class="container_area approval handy-scroll" >
+                    <div class="">
+                        <!-- 본문 영역 -->
+                        <div class="container">
+                            <!-- 상세 검색 영역 -->
+                            <div class="srch_area detail">
+
+                                <div class="btn_area">
+                                    <a class="text_btn">항목 초기화</a>
+                                    <a class="action_btn">검색</a>
+                                    <a class="basic_btn">닫기</a>
+                                </div>
+                            </div>
+                            <!-- // 상세 검색 영역 -->
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup">
+                                <h2>결재할 문서</h2>                             
+                                <span class="length"><em>3</em></span>
+
+                                <ul class="tab">
+                                    <li><a class="">결재예정</a></li>
+                                    <li><a class="selected">결재대기</a></li>             
+                                    <li><a class="">결재처리</a></li>             
+                                </ul>
+                            </div>
+                            <!-- // 타이틀 영역 -->
+
+                           <!-- 기본 버튼 영역 -->
+							<div class="btns_area">
+								<div class="align_lf">
+									<div class="group"><!-- open 클래스 제거시 레이어 close -->
+										<span class="form"><input type="checkbox"/><label class="blind">선택</label></span> 	
+										<div class="selectbox noTxt">
+											<select>
+												<option><a href="#">모든메일</a></option>
+												<option><a href="#">읽지않은메일</a></option>
+												<option><a href="#">읽은메일</a></option>
+												<option><a href="#">핀메일</a></option>
+
+												<option><a href="#">선택해제</a></option>
+											</select>
+										</div>									
+									</div>									
+									<a href="#" class="btn">일괄참조</a>
+									<a href="#" class="btn">일괄결재</a>
+									<div class="group"><!-- open 클래스 제거시 레이어 close -->	
+										<a href="#" class="btn">개인문서함 저장</a>
+										<div class="select_lst check_type" style="width:144px;">
+											<ul class="handy-scroll">
+												<li class="selected"><a href="" >가족</a></li>
+												<li class=""><a href="" >친구구구구</a></li>
+												<li class=""><a href="" >&nbsp;└ 친구</a></li>
+												<li class=""><a href="" >&nbsp;└ EGW관련 프로젝트메일모음</a></li>
+												<li class=""><a href="" >EGW관련 프로젝트메일모음</a></li>
+											</ul>
+											<div class="btns_area align_rg border">
+												<a href="#" class="btn">이동</a>
+												<a href="#" class="btn">복사</a>
+											</div>
+										</div>
+									</div>	
+									<div class="selectbox noFirst">
+										<select> 
+											<option>추가기능</option>
+											<option>열람제한공유</option>
+											<option>공람</option>
+											<option>이동/복사</option>
+											<option>엑셀다운로드</option>
+											<option>PC저장</option>
+											<option>인쇄</option>
+										</select>
+									</div>										
+								</div>
+								<div class="align_rg">
+									<div class="group">
+										<a href="#" class="ico_btn view_lst on">대화형</a>
+										<a href="#" class="ico_btn view_vertical">리스트형</a>
+									</div>
+									<!-- 필터 : 셀렉트 UI 결정 후, ui 수정 -->
+									<div class="selectbox page_num">
+										<select> 
+											<option> 15개 </option>
+											<option> 20개 </option>
+											<option> 30개 </option>
+											<option> 40개 </option>
+											<option> 50개 </option>
+										</select>
+									</div>
+								</div>
+
+								<div class="new_lst_info">							
+									<div class="selectbox">
+										<select> 
+											<option>고길동_관리자</option>
+											<option selected>홍길동_제품기획팀</option>
+											<option>홍길동_제품기획팀</option>
+										</select>
+									</div>	
+									<a href="#" class="ico_btn rfsh">새로고침</a>
+									<a class="btn_d_search" onclick="$(this).toggleClass('open');$('.d_srch_layer').toggleClass('open')">검색</a>
+									<!-- detail srch layer -->
+									<div class="d_srch_layer" style="width:340px;">
+										<!-- detail srch layer : 상세 탭-->
+										<div class="s_cont open">
+											<table>
+												<colgroup>
+													<col style="width:77px;">
+													<col width="*">
+												</colgroup>
+												<tbody>
+													<tr>
+														<th>제목</th>
+														<td class="text_input">
+															<input type="text" class="border_input focused" placeholder="">
+														</td>
+													</tr>
+													<tr>
+														<th>기안자</th>
+														<td>
+															<div class="input_group has_btn">
+																<div class="token-input">
+<!--
+																	<ul class="token-input-list ui-sortable">
+																		<li title="" class="token-input-token">
+																			<p>김핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																		<li title="" class="token-input-token">
+																			<p>박핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																		<li title="" class="token-input-token">
+																			<p>이핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																	</ul>-->
+																	<input type="text" style="display: ;">
+																	<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+																	<a class="ico_btn small add" href="#">조직도</a>
+																</div>
+															</div>
+														</td>
+													</tr>													
+													<!-- 상세보기 open 시 보이는 영역 - 접기 상태에서는 tr에 class="display_none"-->
+													<tr class="">
+														<th>문서번호</th>
+														<td class="text_input">
+															<input type="text" class="border_input" placeholder="">
+														</td>
+													</tr>
+													<tr class="">
+														<th>결재경로</th>
+														<td>
+															<div class="input_group has_btn">
+																<div class="token-input">
+																	<ul class="token-input-list ui-sortable">
+																		<li title="" class="token-input-token">
+																			<p>김핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																		<li title="" class="token-input-token">
+																			<p>박핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																		<li title="" class="token-input-token">
+																			<p>이핸디</p>
+																			<span class="token-input-delete-token">delete</span>
+																		</li>
+																	</ul>
+																	<input type="text" style="display: none;">
+																	<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+																	<a class="ico_btn small add" href="#">조직도</a>
+																</div>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>서식명</th>
+														<td class="text_input">
+															<input type="text" class="border_input" placeholder="">
+														</td>
+													</tr>
+													<tr>
+														<th>서식분류</th>
+														<td class="text_input">
+															<input type="text" class="border_input" placeholder="">
+														</td>
+													</tr>
+													<tr>
+														<th>등록일자</th>
+														<td>
+															<div class="input_group">
+																<div class="datepic_area">
+																	<div class="date_box">
+																		<input type="text" class="date_input" value="2017.11.02" style="width:92px;" readonly="">
+																		<a class="date_btn" title="">달력</a>
+																	</div>
+																	~
+																	<div class="date_box">  
+																		<input type="text" class="date_input" value="2017.12.02" style="width:92px;" readonly="">
+																		<a class="date_btn" title="">달력</a>
+																	</div>                                     
+																</div>
+															</div>
+														</td>
+													</tr>	
+												</tbody>
+											</table>	
+											<a class="flip" href="#">
+												<span class="text_btn">상세보기</span>
+												<span class="ico close">상세정보 닫기</span>											</a>
+											<!-- // "상세보기" 클로즈를 위해서는 ico open 사용 -->
+										</div>		
+										<div class="btns_area">												
+											<div class="align_lf">
+												<a class="text_btn">항목초기화</a>
+											</div>
+											<div class="align_rg">
+												<a class="action_btn">검색</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- // 기본 버튼 영역 -->                         
+
+                            <!-- 리스트 영역 -->
+                            <div class="lst_area vertical_ui">
+                                <div class="vertical_lf">
+                                    <!-- 리스트 영역 -->
+                                    <dl class="thread_lst appr_list">
+                                        <dt>
+                                            <span class="sub_info">선택, 플래그 설정, 메일상태</span>
+                                            <span class="person ascend"><a href="#">보낸 사람</a></span>
+                                            <span class="title ascend"><a href="#">제목</a></span>
+                                            <span class="date ascend"><a href="#">받은날짜</a></span>
+                                            <span class="size ascend"><a href="#">크기</a></span>
+                                        </dt>
+                                        <dd class="scroll_area handy-scroll" > 
+                                            <ul>
+                                                <!-- 기본 -->
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <span class="badge emergency">긴급</span>
+                                                        <!-- // 뱃지 -->
+                                                        <a class="subject">상반기 원가 내역서</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                        
+                                                         <!-- 문서 종류 -->
+														<span class="prop draft">기안한문서</span>
+														<!--
+                                                        <span class="prop receive">수신문서</span>
+														<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop doc">관련문서</span>
+														<span class="prop restricted">열람제한</span>
+														<span class="prop history">이력관리</span>
+														<span class="prop cmmt">의견</span>
+                                                        
+                                                    </div>
+                                                    <span class="date">2016-12-31 15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" checked /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox" checked/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <!-- // 뱃지 -->
+                                                        <a class="subject">BB프로젝트 결재정보</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">협조</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                         <!-- 문서 종류 -->
+														<span class="prop draft">기안한문서</span>
+														<!--
+                                                        <span class="prop receive">수신문서</span>
+														<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop doc">관련문서</span>
+														<span class="prop restricted">열람제한</span>
+														<span class="prop history">이력관리</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                                <!-- 안읽음 -->
+                                                <li class="unread">
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <span class="badge security">보안</span>
+                                                        <!-- // 뱃지 -->
+                                                        <a class="subject">BB프로젝트 결재정보</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">결재</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <span class="badge emergency">긴급</span>
+                                                        <a class="subject">상반기 원가 내역서 내용이 길어지면 자동으로 말줄임 처리 됩니다.</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                         <!-- 문서 종류 -->
+														<span class="prop draft">기안한문서</span>
+														<!--
+                                                        <span class="prop receive">수신문서</span>
+														<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop doc">관련문서</span>
+														<span class="prop restricted">열람제한</span>
+                                                    </div>
+                                                    <span class="date">2016-12-31 15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">상반기 원가 내역서 내용이 길어지면 자동으로 말줄임 처리 됩니다.</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                         <!-- 문서 종류 -->
+														
+                                                        <span class="prop receive">수신문서</span>
+														<!--<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">상반기 원가 내역서</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                         <!-- 문서 종류 -->
+														<span class="prop draft">기안한문서</span>
+														<!--
+                                                        <span class="prop receive">수신문서</span>
+														<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop restricted">열람제한</span>
+														<span class="prop history">이력관리</span>
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">2016-12-31 15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">BB프로젝트 결재정보</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span> 
+                                                        <!-- 문서 종류 -->
+														<span class="prop draft">기안한문서</span>
+														<!--
+                                                        <span class="prop receive">수신문서</span>
+														<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop history">이력관리</span>
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">상반기 원가 내역서</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                        <!-- 문서 종류 -->
+														
+                                                        <span class="prop receive">수신문서</span>
+														<!--<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cc">공람</span>
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">2016-12-31 15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">BB프로젝트 결재정보</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                         <!-- 문서 종류 -->
+														
+                                                        <span class="prop receive">수신문서</span>
+														<!--<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">상반기 원가 내역서</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                        <span class="ico file">첨부</span>
+                                                         <!-- 문서 종류 -->
+														
+                                                        <span class="prop receive">수신문서</span>
+														<!--<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">2016-12-31 15:30</span>
+                                                </li>
+                                                <li>
+                                                    <div class="sub_info">
+                                                        <span class="form"><input type="checkbox" /><label class="blind">메일선택</label></span>
+                                                        <span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+                                                    </div>
+                                                    <div class="title case1">
+                                                        <a class="subject">BB프로젝트 결재정보</a>
+                                                        <a class="ico pop_up">새창으로 보기</a>
+                                                    </div>
+                                                    <span class="state standby">검토</span>
+                                                    <div class="appr_prop_wrap">
+                                                         <!-- 문서 종류 -->														
+                                                        <span class="prop receive">수신문서</span>
+														<!--<span class="prop n_elect">비전자문서</span>
+														<span class="prop filing">편철</span>-->
+
+                                                         <!-- 상태 -->
+														
+														<span class="prop cmmt">의견</span>
+                                                    </div>
+                                                    <span class="date">15:30</span>
+                                                </li>
+                                            </ul>
+                                        </dd>   
+                                        <!-- 분할화면 페이지 네이션은 다음페이지 없는 경우 3개, 넘기기버튼이 있는 경우 2개 -->
+                                        <dd>
+                                            <div class="paginate_area">
+                                                <div class="paginate">  
+                                                    <a class="first disabled">처음 페이지</a>
+                                                    <a class="pre disabled">이전 페이지</a>  
+                                                    <!-- // 1페이지가 아닌경우, disabled 삭제 -->
+                                                    <a class="selected">1</a>
+                                                    <a>2</a>        
+                                                    <a class="next">다음 페이지</a>
+                                                    <a class="last">마지막 페이지</a>
+                                                </div>
+                                                <div class="page_num">
+                                                    <input type="text" value="1"> / 118
+                                                </div>
+                                            </div>
+                                        </dd>           
+                                    </dl>
+                                    <!-- // 리스트 영역 -->
+                                </div>
+                                <!-- // vertical left area -->
+                                <div class="controlbar ui-draggable"></div>
+                                <!-- 본문 영역 -->
+                                <div class="vertical_rg">
+                                            <div class="">
+                                                <!-- appr_view_wrap  -->
+                                                <div class="appr_view_wrap">
+                                                    <div class="appr_view_head">
+                                                        <div class="title">
+                                                            <span class="form flag"><input type="checkbox" checked=""><label class="blind">플래그</label></span>
+                                                            <!-- <span class="badge emergency">긴급</span> -->
+                                                            <a class="subject">BB프로젝트 결재정보</a>
+                                                            <a class="ico pop_up">새창으로 보기</a>
+                                                        </div>
+                                                        <div class="sub_info">
+                                                            <span class="date"><em>업무담당</em> 김명민 과장</span><span class="date"><em>수신일</em> 2017-09-01 13:57</span><span class="date"><em>처리일</em> 2017-09-01 13:57</span>
+                                                        </div>
+                                                        <a href="#" class="ico_btn print">인쇄</a>
+                                                        <!-- 탭 글릭 시 아래 해당 내용으로 바로 이동 -->
+                                                        <ul class="contents_tab">
+                                                            <li><a class="selected" href="#point_1">문서정보</a></li>
+                                                            <li><a class="" href="#point_3">결재경로</a></li>				
+                                                            <li><a class="" href="#point_5">발송정보</a></li>				
+                                                            <li><a class="" href="#point_7">댓글</a></li>				
+                                                        </ul>
+                                                    </div>
+
+                                        <div class="scroll_area handy-scroll">
+                                                    <!--파일 다운로드-->
+                                                    <div class="attached">
+                                                        <dl class="file_info">
+                                                            <dt><a class="btn_open open"></a><span class="sche_pop_txt02">첨부파일</span></dt>
+                                                            <dd>
+                                                                <a class="text_btn">전체선택</a>
+                                                                <a class="text_btn">저장</a>
+                                                                &#40;<span class="txt">일반첨부 2</span>
+                                                                <span class="divider"></span>
+                                                                <span class="txt">대용량 1</span>&#41;
+                                                            </dd>
+                                                        </dl>
+                                                        <div class="file_lst download">
+                                                            <ul>
+                                                                <li>
+                                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                                    <a class="ico_btn small download">다운로드</a>
+                                                                    <a class="ico_btn small cloud">스토리지로저장</a>
+                                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                                    <span class="file_size">311KB</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                                    <a class="ico_btn small download">다운로드</a>
+                                                                    <a class="ico_btn small cloud">스토리지로저장</a>
+                                                                    <a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+                                                                    <span class="file_size">311KB</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+                                                                    <a class="ico_btn small download">다운로드</a>
+                                                                    <a class="ico_btn small cloud">스토리지로저장</a>
+                                                                    <a class="file_name"><span class="badge bigdata">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt<span class="downopt">(<em>~2017-09-03</em> / 잔여 <em>100회</em>)</span></a>
+                                                                    <span class="file_size">311KB</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!--//파일 다운로드-->
+
+                                                    <div class="appr_view_cont">
+                                                        <div id="point_1">
+                                                            <div class="cont_title">
+                                                                <strong>문서 기본정보</strong>
+                                                            </div>
+                                                            <div class="vertical_table">	
+                                                                <table>
+                                                                    <colgroup>
+                                                                        <col style="width:120px;">
+                                                                        <col style="width:*;">
+                                                                    </colgroup>
+                                                                    <tbody>
+                                                                        <tr>
+																			<th><span>문서번호</span></th>
+																			<td><span>2017-제품기획팀-41</span></td>
+                                                                        </tr>
+                                                                        <tr>
+																			<th><span>문서종류</span></th>
+                                                                            <td><span>발신</span></td>
+                                                                        </tr>
+                                                                        <tr>
+																			<th><span>본문 미리보기</span></th>
+																			<td><span>수주하는 제안서 작성을 위한 전략 도출 또는 제안 프로세스 선진사례를 통하여 분석하고, 개인 역량을 향상시켜 제안 성공에 이르도록 하기 위한 교육입니다.  제안서 작성하는 데 많은 도움이 될 것으로 사료되어 교육을 수강하고자 하오니 재가 부탁드립니다.</span></td>
+                                                                        </tr>
+                                                                        <tr>
+																			<th><span>문서분류</span></th>
+                                                                            <td><span>-</span></td>
+                                                                        </tr>
+                                                                        <tr>
+																			<th><span>열람방향</span></th>
+                                                                            <td><span>발신</span></td>
+                                                                        </tr>
+                                                                        <tr>
+																			<th><span>문서종류</span></th>
+                                                                            <td><span>발신</span></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div id="point_2">
+                                                            <div class="cont_title">
+                                                                <strong>관련문서</strong>
+                                                                <span class="num">4건</span>
+                                                            </div>
+                                                            <div class="file_lst document handy-scroll">
+                                                                <ul class="">
+                                                                    <li>
+                                                                        <a class="file_name">BB프로젝트 견적서</a>									
+                                                                        <span class="name">홍미나 과장</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="file_name">BB프로젝트 UI/UX 개선 프로젝트 중도금 요청</a>			
+                                                                        <span class="name">홍미나 과장</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="file_name">BB프로젝트 견적서</a>									
+                                                                        <span class="name">홍미나 과장</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="file_name">BB프로젝트 견적서</a>									
+                                                                        <span class="name">홍미나 과장</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a class="file_name">BB프로젝트 견적서</a>									
+                                                                        <span class="name">홍미나 과장</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div id="point_3">
+                                                            <div class="cont_title">
+                                                                <strong>결재선</strong>
+                                                            </div>
+                                                            <!-- 결재 라인 -->
+                                                            <div class="appr_line_list">
+                                                                <ul>
+                                                                    <li>
+                                                                        <!-- 
+                                                                            appr_line_wrap에 상황별 클래스 추가
+                                                                            - 진행 중 : ing
+                                                                            - 완료 : end
+                                                                         -->
+
+                                                                        <!-- 결재 라인 한셋 (완료)-->
+                                                                        <div class="appr_line_wrap end">
+                                                                            <div class="appr_line_progress">
+                                                                                <span class="ic">결재 대기</span>
+                                                                                <span class="txt"><span>기안</span></span>
+                                                                            </div>
+                                                                            <div class="appr_line_man">
+                                                                                <span class="photo"><img src="../../img/profile_photo_blank.png" alt="김지영"></span>
+                                                                                <span class="name"><em>김지영</em> 선임</span>
+                                                                            </div>
+                                                                            <div class="appr_line_date">2017-09-01 13:50</div>
+                                                                            <div class="appr_line_state">
+                                                                                <!-- 
+                                                                                    <span class="state b_rblue">확인</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">반려</span>
+                                                                                    <span class="state b_orange">보류</span>
+                                                                                -->
+                                                                                <span class="state b_lgray">완료</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- //결재 라인 한셋 -->
+                                                                    </li>
+                                                                    <li>
+                                                                        <!-- 결재 라인 한셋 (진행중, 의견 있을 경우 - 펼침)-->
+                                                                        <div class="appr_line_wrap ing">
+                                                                            <div class="appr_line_progress">
+                                                                                <span class="ic">결재 진행</span>
+                                                                                <span class="red_dot">의견 있음</span><!-- 의견이 있을 경우 추가 -->
+                                                                                <span class="txt"><span>검토</span></span>
+                                                                            </div>
+                                                                            <div class="appr_line_man">
+                                                                                <span class="photo"><img src="../../img/profile_photo_blank.png" alt="김민성"></span>
+                                                                                <span class="name"><em>김민성</em> 선임</span>
+                                                                                <a href="#" class="btn_msg">의견 펼치기</a><!-- 의견이 있을 경우 추가 -->
+                                                                            </div>
+                                                                            <div class="appr_line_date">2017-09-01 13:50</div>
+                                                                            <div class="appr_line_state">
+                                                                                <!-- 
+                                                                                    <span class="state b_rblue">확인</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">반려</span>
+                                                                                    <span class="state b_orange">보류</span>
+                                                                                -->
+                                                                                <span class="state b_rblue">확인</span>
+                                                                            </div>
+                                                                            <div class="appr_line_msg open"><!-- 의견 펼치기 open -->
+                                                                                <ul>
+                                                                                    <li>1. 교육일정을 수정했습니다.</li>
+                                                                                    <li>2. 결재선을 변경했습니다.</li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- //결재 라인 한셋 -->
+                                                                    </li>
+                                                                    <li>
+                                                                        <!-- 결재 라인 한셋 (대기중)-->
+                                                                        <div class="appr_line_wrap">
+                                                                            <div class="appr_line_progress">
+                                                                                <span class="ic">결재 대기</span>
+                                                                                <span class="txt"><span>병렬협조</span></span>
+                                                                            </div>
+                                                                            <div class="appr_line_man">
+                                                                                <span class="photo"><img src="../../img/profile_photo_blank.png" alt="조지원"></span>
+                                                                                <span class="name"><em>조지원</em> 수석</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- //결재 라인 한셋 -->
+                                                                    </li>
+                                                                    <li>
+                                                                        <!-- 결재 라인 한셋 (대기중)-->
+                                                                        <div class="appr_line_wrap">
+                                                                            <div class="appr_line_progress">
+                                                                                <span class="ic">결재 대기</span>
+                                                                                <span class="txt"><span>병렬협조</span></span>
+                                                                            </div>
+                                                                            <div class="appr_line_man">
+                                                                                <span class="photo"><img src="../../img/profile_photo_blank.png" alt="오상식"></span>
+                                                                                <span class="name"><em>오상식</em> 책임</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- //결재 라인 한셋 -->
+                                                                    </li>
+                                                                    <li>
+                                                                        <!-- 결재 라인 한셋 (대기중)-->
+                                                                        <div class="appr_line_wrap">
+                                                                            <div class="appr_line_progress">
+                                                                                <span class="ic">결재 대기</span>
+                                                                                <span class="txt"><span>결재</span></span>
+                                                                            </div>
+                                                                            <div class="appr_line_man">
+                                                                                <span class="photo"><img src="../../img/profile_photo_blank.png" alt="민지원"></span>
+                                                                                <span class="name"><em>민지원</em> 팀장</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- //결재 라인 한셋 -->
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <!-- //결재 라인 -->
+                                                        </div>
+                                                        <div id="point_4">
+                                                            <div class="cont_title">
+                                                                <strong>공람정보</strong>
+                                                                <span class="num">99명</span>
+                                                                <div class="pos_r">
+                                                                    <a class="btn">회수</a>
+                                                                </div>
+                                                            </div>
+                                                            <!-- 리스트 영역 -->
+                                                            <div class="content_table">	
+                                                                <div class="table_head">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:37px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:65px;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th><span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span></th>
+                                                                                <th><span class="title">공람자</span></th>
+                                                                                <th><span>부서</span></th>
+                                                                                <th><span>직위</span></th>
+                                                                                <th><span>확인일시</span></th>
+                                                                                <th><span>의견</span></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="table_body handy-scroll">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:37px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:65px;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                                <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 있을 경우 (펼친 상태) -->
+                                                                                    <a class="flip open" href="#">
+                                                                                        <span class="ico open">상세정보 닫기</span>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="tb_cont open"><!-- 펼쳐지면 open 클래스 추가 -->
+                                                                                <td></td>
+                                                                                <td colspan="5">
+                                                                                    <div>
+                                                                                        안녕하세요. 핸디소프트의 박책임입니다. <br>
+                                                                                        본 메일의 수신인은 이번 EGW 프로젝트 2투입 인력들입니다. <br>
+                                                                                        확인바랍니다.<br>
+                                                                                        M:010-1265-5569 / T:1564-5697
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                                <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 있을 경우 (접힌 상태) -->
+                                                                                    <a class="flip close" href="#">
+                                                                                        <span class="ico close">상세정보 닫기</span>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="tb_cont">
+                                                                                <td></td>
+                                                                                <td colspan="5">
+                                                                                    <div>
+                                                                                        안녕하세요. 핸디소프트의 박책임입니다. <br>
+                                                                                        본 메일의 수신인은 이번 EGW 프로젝트 2투입 인력들입니다. <br>
+                                                                                        확인바랍니다.<br>
+                                                                                        M:010-1265-5569 / T:1564-5697
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                                <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>미열람</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                               <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>미열람</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                                <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>미열람</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td> 
+                                                                                    <span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+                                                                                </td>
+                                                                               <td><span>최보람</span></td>
+                                                                                <td><span>제품기획팀</span></td>
+                                                                                <td><span>과장</span></td>
+                                                                                <td><span>미열람</span></td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <!-- // 리스트 영역 -->
+                                                        </div>
+                                                        <div id="point_5">
+                                                            <div class="cont_title">
+                                                                <strong>발송이력</strong>
+                                                            </div>
+                                                            <!-- 리스트 영역 -->
+                                                            <div class="content_table">	
+                                                                <div class="table_head">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:50px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:100px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>순번</th>
+                                                                                <th><span class="title">담당자</span></th>
+                                                                                <th><span>수신자명</span></th>
+                                                                                <th><span>수신(처리)일시</span></th>
+                                                                                <th><span>상태</span></th>
+                                                                                <th><span>의견</span></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="table_body handy-scroll">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:50px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:100px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <tbody>
+                                                                            <tr>
+																				<td class="txtc"><span>1</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 있을 경우 -->
+                                                                                    <a class="flip open" href="#">
+                                                                                        <span class="ico open">상세정보 닫기</span>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="tb_cont open"><!-- 펼쳐지면 open 클래스 추가 -->
+                                                                                <td></td>
+                                                                                <td colspan="5">
+                                                                                    <div>
+                                                                                        안녕하세요. 핸디소프트의 박책임입니다. <br>
+                                                                                        본 메일의 수신인은 이번 EGW 프로젝트 2투입 인력들입니다. <br>
+                                                                                        확인바랍니다.<br>
+                                                                                        M:010-1265-5569 / T:1564-5697
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>2</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>3</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <!-- // 리스트 영역 -->
+                                                        </div>
+                                                        <div id="point_6">
+                                                            <div class="cont_title">
+                                                                <strong>발송이력</strong>
+                                                            </div>
+                                                            <!-- 리스트 영역 -->
+                                                            <div class="content_table">	
+                                                                <div class="table_head">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:50px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:100px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>순번</th>
+                                                                                <th><span class="title">담당자</span></th>
+                                                                                <th><span>수신자명</span></th>
+                                                                                <th><span>수신(처리)일시</span></th>
+                                                                                <th><span>상태</span></th>
+                                                                                <th><span>의견</span></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="table_body handy-scroll">
+                                                                    <table>
+                                                                        <colgroup>
+                                                                            <col style="width:50px;">
+                                                                            <col style="width:80px;">
+                                                                            <col style="width:*;">
+                                                                            <col style="width:120px;">
+                                                                            <col style="width:100px;">
+                                                                            <col style="width:35px;">
+                                                                        </colgroup>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>1</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 있을 경우 -->
+                                                                                    <a class="flip open" href="#">
+                                                                                        <span class="ico open">상세정보 닫기</span>
+                                                                                    </a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="tb_cont open"><!-- 펼쳐지면 open 클래스 추가 -->
+                                                                                <td></td>
+                                                                                <td colspan="5">
+                                                                                    <div>
+                                                                                        안녕하세요. 핸디소프트의 박책임입니다. <br>
+                                                                                        본 메일의 수신인은 이번 EGW 프로젝트 2투입 인력들입니다. <br>
+                                                                                        확인바랍니다.<br>
+                                                                                        M:010-1265-5569 / T:1564-5697
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>2</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                               <td class="txtc"><span>3</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="re1">화살표</span><span class="state b_gray">도착</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>4</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="re1">화살표</span><span class="state b_dgray">배부</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txtc"><span>5</span></td>
+																				<td><span>최보람</span></td>
+																				<td><span>제품기획팀</span></td>
+																				<td><span>2017-10-18 12:00</span></td>
+                                                                                <td>
+                                                                                    <span class="re1">화살표</span><span class="re1">화살표</span><span class="state b_gray">도착</span>
+                                                                                    <!-- 
+                                                                                    <span class="state b_gray">도착</span>
+                                                                                    <span class="state b_rblue">접수</span>
+                                                                                    <span class="state b_lgray">완료</span>
+                                                                                    <span class="state b_dgray">배부</span>
+                                                                                    -->
+                                                                                </td>
+                                                                                <td>
+                                                                                    <!-- 의견이 없을 경우 -->
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <!-- // 리스트 영역 -->
+                                                        </div>
+
+                                                        <!-- 댓글 -->
+                                                        <div class="replybox" id="point_7">
+                                                            <div>
+                                                                <span class="ico comment">댓글</span>
+                                                                <span class="size_txt"><span class="count"> 0</span>/500 </span>
+                                                            </div>
+                                                            <div class="write">
+                                                                <textarea placeholder="의견을 입력하세요" rows="1"></textarea>
+                                                                <a href="#" class="text_btn">등록</a>
+                                                            </div>
+                                                            <ul class="list">
+                                                                <li>
+                                                                    <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                                                    <div class="cont">		
+                                                                        <a href="#" class="name">김선임</a>
+                                                                        <span class="time">30분 전</span>
+                                                                        <p> 박책임님 프로젝트 준비로 고생하셨습니다.</p>
+                                                                        <a href="#" class="text_btn">댓글 입력</a>
+                                                                    </div>
+                                                                    <div class="group">
+                                                                        <a href="#" class="ico modify">수정</a>
+                                                                        <a href="#" class="ico del">삭제</a>
+                                                                    </div>
+                                                                </li>
+                                                                <!-- 작성 중 의견 -->
+                                                                <li class="thread comment">
+                                                                    <!-- 포커스된 인풋은 write에 focus를 넣고 간다 -->
+                                                                    <div class="cont write focus">	
+                                                                        <textarea placeholder="의견을 입력하세요" rows="1">박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.박책임님 프로젝트 준비로 고생하셨습니다. 금주 내로 일정 확인하여 회신 드리겠습니다.</textarea>
+                                                                        <a href="#" class="text_btn fir">저장</a>
+                                                                        <a href="#" class="text_btn">취소</a>
+                                                                    </div>
+                                                                </li>
+                                                                <li class="thread">
+                                                                    <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                                                    <div class="cont">		
+                                                                        <a href="#" class="name">이정혜</a>
+                                                                        <span class="time">30분 전</span>
+                                                                        <p>프로젝트 고생 많았습니다. 좋은 결과 기대할게요.</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="usr_photo medium"><img src="../../img/profile_photo_blank.png" alt="프로필 이미지"></a>
+                                                                    <div class="cont">		
+                                                                        <a href="#" class="name">양선임</a>
+                                                                        <span class="time">30분 전</span>
+                                                                        <p>책임님 프로젝트 준비로 고생하셨습니다. 내일 뵙겠습니다.</p>
+                                                                    </div>
+                                                                </li>
+                                                                
+                                                            </ul>
+                                                        </div>
+                                                        <!-- //댓글 -->
+
+                                                    </div>
+
+                                                </div>
+                                                <!-- //appr_view_wrap  -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=1260"/><!-- 모바일 접속시 컨텐츠 넓이 -->  
+
+		<title>HANDY Groupware</title>
+
+		<!-- 컨텐츠 css -->
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/admin_content.css">
+		<link rel="stylesheet" type="text/css" href="../css/ui.dynatree.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery-select.css">
+
+		<!-- 개발요건 js -->
+		<script type="text/javascript" src="../js/jquery-1.12.3.js"></script> 
+		<script type="text/javascript" src="../js/jquery-ui-1.12.1.min.js"></script>
+        <script type="text/javascript" src="../../user/js/jquery.nicescroll.min.js"></script>
+
+		<!-- 트리 관련 js -->
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../js/jquery.contextMenu-custom.js"></script>
+		<script type="text/javascript" src="../js/tree.js"></script>
+		<script type="text/javascript" src="../js/jquery.tokeninput.js"></script>
+		<!-- 컨텐츠 js -->
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../../user/js/common.js"></script>
+
+	</head>
+	<body>
+		<!-- wrapper -->
+		<div class="wrapper">
+            <div class="popup al_pop open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:600px; ">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						알림
+						<!-- 주의 or 경고 -->
+					</h2>
+					<!-- contents -->
+					<div class="">
+						<!-- sender -->
+						<div class="sender">
+							<div class="sd_info noti">알림</div>
+							<!--<div class="sd_info caution">주의</div>
+<div class="sd_info warning">경고</div>-->
+						</div>
+						<!-- content -->
+						<div class="ms_cont">
+							<!-- message details -->
+							<span class="org_title"><p>서비스점검서비스점검서비스점검서비
+								스점검서비스점검서비스점검서비스점검서
+								비스점검서비스점검서비스점검서비스점검서비스점검서비스점
+								</p></span>
+							<span class="message">서버점검으로 인하여 오전 12시 30분까지 접속이 제한됩니다. 서버점검으로 
+								인하여 오전 12시 30분까지 접속이 제한됩니다. 서버점검으로 인하여 오전 12시 30분
+								까지 접속이 제한됩니다. 서버점검으로 인하여 오전 12시 30분까지 접속이 제한됩니다. 
+								서버점검으로 인하</span>
+						</div>	
+						<div class="btns_area bttm border">
+							<div class="align_rg">
+								<a class="btn">확인</a>
+							</div>
+						</div>   
+					</div>
+					<!-- // body -->	
+				</div>
+			</div>
+		</div>
+			<!-- header -->
+			<div class="header">
+				<!-- <h1 class="logo"><a title="HANDY GROUPWARE">HANDY GROUPWARE</a></h1>
+2017-09-05 사용자단 ux 적용으로 인해 로고 영역 삭제 by 백은경 -->
+				<!-- Area Title -->
+				<h1 class="area_title">기본설정관리</h1>
+				<div class="aside">		
+					<div class="util">
+						<a href="#" class="btn_me" onclick="javascript:$('#for_test2').toggleClass('open')"><img src="../img/profile_photo_blank.png" alt="김핸디"></a>
+						<a class="usr_more open" onclick="javascript:$(this).toggleClass('open'); $('#for_test').toggleClass('open')"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+					<!-- 개인정보 영역 -->
+					<ul class="ps_option plural open" id="for_test">
+						<li><a href="#" class="link">관리자 모드</a></li>
+						<li class="">
+							<span class="open_toggle"  onclick="javascript:$(this).parent().toggleClass('open')">겸직자 전환</span>
+							<ul class="usr_lst">									
+								<li class="selected"><a href="#">
+									<span class="usr_photo xsmall"><img src="../img/profile_photo_blank.png" /></span>
+									<span>김핸디김핸디김핸디</span>
+									<span>주임연구원주임연구원주임연구원주임연구원</span>
+									<span>제품기획팀제품기획팀제품기획팀제품기획팀</span>
+									</a></li>
+								<li class=""><a href="#">
+									<span class="usr_photo xsmall"><img src="../img/sample/thumb_album_01.png" /></span>
+									<span>정유미</span>
+									<span>선임연구원</span>
+									<span>제품기획팀</span>
+									</a></li>
+							</ul>
+						</li>
+
+					</ul>
+					<!-- 개인정보 카드 -->
+					<ul class="ps_option profile open" id="for_test2">
+						<li class="usr_profile">
+							<div class="usr_photo xlarge">
+								<img src="../img/profile_photo_blank.png" alt="김핸디">
+							</div>
+							<p class="usr_name">김핸디핸디핸디핸디핸디핸디핸디</p>
+							<div class="usr_info"><span>선임연구원</span><span>제품기획기획팀</span><span>핸디핸디핸디소프트</span></div>
+						</li>
+						<li class="timecard">
+							<dl><dt>금주 업무시간</dt><dd><em>35</em>시간</dd></dl>
+							<dl><dt>남은 휴가일수</dt><dd><em>9</em>일</dd></dl>
+							<dl><dt>마지막 접속정보</dt><dd>12-26 18:00 (125.125.125.125)</dd></dl>
+						</li>
+						<li class="profile_btns">
+							<a href="" class="btn_log_out">로그아웃</a>
+							<a href="" class="btn_setting">환경설정</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //header -->
+			
+			
+			<!-- gnb -->
+			<div class="gnb_area"> 
+				<!-- 메뉴영역 -->
+				<div class="gnb">
+					<ul>
+						<li class="gnb_menu first home">  
+							<!--
+<div class="gnb_menu second">
+<h2>홈</h2>
+</div>
+-->
+						</li>
+						<li class="gnb_menu first set">
+							<div class="gnb_menu second">
+								<h2>기본 설정 관리</h2>
+								<ul>
+									<li class="drop_down"><a class="second_ttl" title="조직도">조직도</a>
+										<ul class="gnb_menu third">
+											<li><a class="current" title="조직/구성원 관리">조직/구성원 관리</a></li>
+											<li><a title="클래스 관리">클래스 관리</a></li>
+											<li><a title="배치 관리">배치 관리</a></li>
+										</ul>
+									</li>
+									<li><a class="second_ttl" title="권한 설정">권한 설정</a></li>
+									<li><a class="second_ttl" title="GNB 메뉴">GNB 메뉴</a></li>
+									<li><a class="second_ttl" title="초기 화면">초기 화면</a></li>
+									<li><a class="second_ttl" title="메인 배너">메인 배너</a></li>
+									<li><a class="second_ttl" title="환경 변수">환경 변수</a></li>
+									<li><a class="second_ttl" title="긴급 공지">긴급 공지</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="gnb_menu first menu">
+							<div class="gnb_menu second">
+								<h2>메뉴 관리</h2>
+								<ul>
+									<li class="drop_down"><a class="second_ttl" title="결재/서식">결재/서식</a>
+										<ul class="gnb_menu third">
+											<li><a title="서식 관리">서식 관리</a></li>
+											<li><a title="서식 분류">서식 분류</a></li>
+											<li><a title="표어 관리">표어 관리</a></li>
+											<li><a title="관인 관리">관인 관리</a></li>
+											<li><a title="모듈 관리">모듈 관리</a></li>
+											<li><a title="한글 서식 관리">한글 서식 관리</a></li>
+										</ul>
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="게시판">게시판</a>
+										<ul class="gnb_menu third">
+											<li><a title="게시판 관리">게시판 관리</a></li>
+											<li><a title="양식 관리">양식 관리</a></li>
+											<li><a title="캐시 관리">캐시 관리</a></li>
+										</ul>
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="동호회">동호회</a>
+										<ul class="gnb_menu third">
+											<li><a title="동호회 관리">동호회 관리</a></li>
+											<li><a title="환경 설정">환경 설정</a></li>
+											<li><a title="토론실 관리">토론실 관리</a></li>
+											<li><a title="마일리지 관리">마일리지 관리</a></li>
+											<li><a title="가산점 관리">가산점 관리</a></li>
+										</ul>
+
+
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="스퀘어 그룹">스퀘어 그룹</a>
+										<ul class="gnb_menu third">
+											<li><a title="진행중인 그룹">진행중인 그룹</a></li>
+											<li><a title="종료된 그룹">종료된 그룹</a></li>
+										</ul>
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="웹폴더">웹폴더</a>
+										<ul class="gnb_menu third">
+											<li><a title="파일 관리">파일 관리</a></li>
+										</ul>
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="">일정/설비</a>
+										<ul class="gnb_menu third">
+											<li><a title="">관리자 유실 달력 관리</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="gnb_menu first system">
+							<div class="gnb_menu second">
+								<h2>시스템 정보</h2>
+								<ul>
+									<li><a class="second_ttl" title="라이선스 정보">라이선스 정보</a></li>
+									<li class="drop_down"><a class="second_ttl" title="시스템 디스크 현황">시스템 디스크 현황</a>
+										<ul class="gnb_menu third">
+											<li><a title="웹메일">웹메일</a></li>
+											<li><a title="웹폴더">웹폴더</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="gnb_menu first statistics">
+							<div class="gnb_menu second">
+								<h2>통계정보</h2>
+								<ul>
+									<li class="drop_down"><a class="second_ttl" title="통계">통계</a>
+										<ul class="gnb_menu third">
+											<li><a title="결재 통계">결재 통계</a></li>
+											<li><a title="웹메일 통계">웹메일 통계</a></li>
+											<li><a title="웹폴더 통계">웹폴더 통계</a></li>
+											<li><a title="동호회 통계">동호회 통계</a></li>
+										</ul>
+									</li>
+									<li class="drop_down"><a class="second_ttl" title="액션로그">액션로그</a>
+										<ul class="gnb_menu third">
+											<li><a title="로그인">로그인</a></li>
+											<li><a title="게시판">게시판</a></li>
+											<li><a title="결재">결재</a></li>
+											<li><a title="권한">권한</a></li>
+											<li><a title="업무넷">업무넷</a></li>
+											<li><a title="스퀘어">스퀘어</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- //메뉴영역 -->
+			</div>        
+			<!-- //gnb -->  
+			<!-- body -->
+			<div class="body">
+				<div class="lnb_area">
+					<ul class="lnb">
+						<li class="lnb_menu first drop_down open"><!-- [D]클릭시 open 추가 -->
+							<a class="first_ttl">조직도</a> 
+							<ul class="lnb_menu second">
+								<li class="current"><a class="second_ttl" title="조직/구성원 관리">조직/구성원 관리</a></li>
+								<li class=""><a class="second_ttl" title="클래스 관리">클래스 관리</a></li>
+								<li class=""><a class="second_ttl" title="배치 관리">배치 관리</a></li>
+							</ul>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="권한 설정">권한 설정</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="GNB 메뉴">GNB 메뉴</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="초기 화면">초기 화면</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="메인 배너">메인 배너</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="긴급 공지">긴급 공지</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="환경 변수">환경 변수</a>
+						</li>
+						<li class="lnb_menu first">
+							<a class="first_ttl" title="긴급 공지">긴급 공지</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="container_area"><!-- [D] <div class="left_area"> 영역이 빠질경우 tree_out 추가. <div class="container_area tree_out"> -->
+					<div class="title_area">
+						<h2><span class="title" title="">조직/구성원 관리</span></h2>
+					</div>
+
+					<div class="content_section">
+
+						<!-- left_area -->
+						<div class="left_area">
+							<div class="srch_area">
+								<div class="input_group"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+									<label for="" class="hidden">검색어 입력</label>
+									<input id="" type="text" class="form_control" name="" placeholder="검색">
+									<a class="btn_srch" title="검색하기">검색하기</a>
+								</div>
+								<a class="btn_rfsh" title="새고로침">새고로침</a>
+							</div>
+
+							<div><img src="../img/blank_tree.gif" alt="트리이미지"></div>
+						</div>
+						<!-- //left_area -->
+
+						<div class="content_area">
+
+							<!-- sub_title -->
+							<h3 class="sub_title"><span class="title">구성원 상세 정보</span></h3>
+
+							<!-- 서브 탭 -->
+							<div class="tab_area">
+								<ul>
+									<li class="current"><a href="#"><span class="tab_title">부서 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보구성원 정보구성원 정보</span><span class="list_num">99</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+								</ul>
+							</div>
+
+							<!-- 서브 탭 3개 이상일 경우 -->
+							<div class="tab_area tab_multi"><!-- [D] 탭 갯수가 3개 이상일 경우 tab_multi 추가. <div class="tab_area tab_multi"> -->
+								<ul>
+									<li class="current"><a href="#"><span class="tab_title">부서 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보구성원 정보구성원 정보</span><span class="list_num">30</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+								</ul>
+							</div>
+
+							<!-- 서브 탭 9개인 경우 -->
+							<div class="tab_area tab_multi2"><!-- [D] 탭 갯수가 9개인 경우 tab_multi2 추가. <div class="tab_area tab_multi2"> -->
+								<ul>
+									<li class="current"><a href="#"><span class="tab_title">부서 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보구성원 정보구성원 정보</span><span class="list_num">5</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+									<li><a href="#"><span class="tab_title">구성원 정보</span></a></li>
+								</ul>
+							</div>
+
+							<!-- 컨텐츠 스크롤 -->
+							<div style="position:relative;height:80%;overflow-y: auto">
+
+								<!-- sub_title -->
+								<h4 class="sub_title_02"><span class="title">기본 정보</span></h4>
+
+								<p style="padding-top:10px">input 검색형</p>
+								<div class="input_group srch"><!-- [D] 검색용인 경우 srch 추가. <div class="input_group srch"> -->
+									<label for="" class="hidden">검색어 입력</label>
+									<input id="" type="text" class="form_control" name="" placeholder="검색">
+									<a href="#" class="btn_srch">검색하기</a>
+								</div>
+
+								<p style="padding-top:10px">input 검색형 글자 입력시</p>
+								<div class="input_group srch infocus"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+									<label for="" class="hidden">검색어 입력</label>
+									<input id="" type="text" class="form_control" name="" placeholder="검색">
+									<a href="#" class="btn_srch">검색하기</a>
+								</div>
+
+								<p style="padding-top:10px">input 달력형</p>
+								<div class="input_group calendar"><!-- [D] 달력형인 경우 calendar 추가. <div class="input_group calendar"> -->
+									<input id="" type="text" class="form_control" name="" value="2017-08-09">
+									<a href="#" class="btn_calendar">달력</a>
+								</div>
+
+								<p style="padding-top:10px">input 달력형 비활성화</p>
+								<div class="input_group disabled calendar"><!-- [D] input 비활성인 경우 disabled 추가. <div class="input_group disabled"> -->
+									<input id="" type="text" class="form_control" name="" value="2017-08-09" disabled>
+									<a href="#" class="btn_calendar">달력</a>
+								</div>
+
+								<p style="padding-top:10px">input 기본형</p>
+								<div class="input_group">
+									<input id="" type="text" class="form_control" name="">
+								</div>
+
+								<p style="padding-top:10px">input 기본형 글자 입력시</p>
+								<div class="input_group infocus"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+									<input id="" type="text" class="form_control" name="">
+								</div>
+
+								<p style="padding-top:10px">목록 쓰기형 - input 기본형 글자 입력시 + 되돌리기 버튼</p>
+								<div class="input_group return infocus"><!-- [D] input 클릭시 infocus 추가. <div class="input_group infocus"> -->
+									<input id="" type="text" class="form_control" name="">
+									<a href="#" class="btn_return">취소</a>
+								</div>
+
+								<p style="padding-top:10px">input 입력 오류</p>
+								<div class="input_group errorfocus"><!-- [D] input 오류시 errorfocus 추가. <div class="input_group errorfocus"> -->
+									<input id="" type="text" class="form_control" name="">
+								</div>
+
+								<p style="padding-top:10px">input byte 숫자 우측 정렬</p>
+								<div class="input_group t_byte"><!-- [D] input 글자수 영역 추가 시 t_byte 추가. <div class="input_group t_byte"> -->
+									<input id="" type="text" class="form_control" name="">
+									<span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+								</div>
+
+								<p style="padding-top:10px">input byte 숫자 하단 정렬 + 입력 오류</p>
+								<div class="input_group errorfocus t_byte2"><!-- [D] input 글자수 영역 추가 시 t_byte2 추가. <div class="input_group t_byte2"> -->
+									<input id="" type="text" class="form_control" name="">
+									<span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+								</div>
+
+								<p style="padding-top:10px">input 비활성화</p>
+								<div class="input_group disabled"><!-- [D] input 비활성인 경우 disabled 추가. <div class="input_group disabled"> -->
+									<input id="" type="text" class="form_control" name="" value="제품전략실 > 제품기획팀" disabled>
+								</div>
+
+								<p style="padding-top:10px">textarea byte 숫자 우측 정렬</p>
+								<div class="input_group textarea_control t_byte">                           
+									<textarea rows="3" cols="" placeholder="내용을 작성해 주세요."></textarea>
+									<span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+								</div>
+
+								<p style="padding-top:10px">textarea byte 숫자 하단 정렬</p>
+								<div class="input_group textarea_control t_byte2">                           
+									<textarea rows="3" cols="" placeholder="내용을 작성해 주세요."></textarea>
+									<span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+								</div>
+
+								<p style="padding-top:10px">textarea + 입력 오류</p>
+								<div class="input_group textarea_control errorfocus t_byte2"><!-- [D] textarea 오류시 errorfocus 추가. <div class="input_group errorfocus"> -->
+									<textarea rows="3" cols="" placeholder="내용을 작성해 주세요."></textarea>
+									<span class="t_byte_num"><span class="count">100</span> / 100 Byte</span>
+								</div>
+
+								<p style="padding-top:10px">select 기본형</p>
+								<!-- 셀렉트 박스 -->
+								<div class="selectbox">
+									<select>
+										<option selected>메일</option>
+										<option>통합</option>
+									</select>
+								</div>
+								<div class="selectbox">
+									<select >
+										<option>활성된</option>
+										<option disabled="disabled">비활성된 옵션</option>
+									</select>
+								</div>
+								<div class="selectbox">
+									<select disabled="disabled">
+										<option>비활성01</option>
+										<option>비활성02</option>
+									</select>
+								</div>
+
+								<p style="padding-top:10px">체크박스, 라디오버튼 기본+체크+비활성화</p>
+								<!-- 체크박스, 라디오버튼 -->
+								<div>
+									<ul class="radio_list">
+										<li>
+											<span class="checkbox">
+												<label class="checked" for="check-1"  onclick="javascript:$(this).toggleClass('checked');">조직도</label>   
+												<input type="checkbox" name="selection" id="check-1" value="" checked="" />
+											</span>
+										</li>
+										<li >
+											<span class="checkbox">
+												<label for="check-2" onclick="javascript:$(this).toggleClass('checked');">권한설정</label>
+												<input type="checkbox" name="selection" id="check-2" value="" />       
+											</span>
+										</li>
+										<li >
+											<span class="checkbox">
+												<label for="check-3" class="disabled">권한설정</label><!-- [D] 비활성인 경우 disabled 추가. -->
+												<input type="checkbox" name="selection" id="check-3" value="" disabled="" />
+											</span>
+										</li>
+										<li>
+											<span class="radio">
+												<label class="checked" for="radio-1" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">조직도</label>
+												<input type="radio" name="opinions" id="radio-1" value="" checked="" />
+											</span>
+										</li>
+										<li>   
+											<span class="radio">
+												<label for="radio-2" onclick="javascript:$(this).addClass('checked');$('.radio > label').not(this).removeClass('checked');">권한설정</label>
+												<input type="radio" name="opinions" id="radio-2" value="" />
+											</span>
+										</li>
+										<li>
+											<span class="radio">
+												<label for="radio-3" class="disabled">권한설정</label><!-- [D] 비활성인 경우 disabled 추가. -->
+												<input type="radio" name="opinions" id="radio-3" value="" disabled="" />
+											</span>
+										</li>
+									</ul>
+								</div>
+
+								<p style="padding-top:10px">부서위치 선택</p>
+								<div class="division_area">
+									<span class="division_box">제품기획팀</span>
+									<a href="#" class="btn_division_select">부서선택</a>
+								</div>
+
+								<p style="padding-top:10px">관리자 선택</p>
+								<div class="manager_add_group">
+									<div class="input_group">                           
+										<input id="" type="text" class="form_control" name="" onclick="javascript:$('#test_auto_frame').toggleClass('open')">
+										<!-- 자동완성 레이어 -->
+										<div id="test_auto_frame" class="auto_frame">
+											<ul>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li> 
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<a href="#" class="btn_manager_add">관리자 추가</a>
+								</div>
+								<ul class="name_list">
+									<li><span class="name">홍길동</span><a href="#" class="btn_close">삭제</a></li>
+									<li><span class="name">홍길동</span><a href="#" class="btn_close">삭제</a></li>
+									<li><span class="name">홍길동</span><a href="#" class="btn_close">삭제</a></li>
+								</ul>
+
+								<p style="padding-top:10px">자동완성 사용</p>
+								<div class="manager_add_group token-input">
+									<!-- 자동완성 영역 -->
+									<div class="input_group">                           
+										<ul class="token-input-list" onclick="javascript:$('#test_auto_frame2').toggleClass('open')">
+											<li class="token-input-token">
+												<p>홍길동</p>
+												<span class="token-input-modi-token">×</span>
+												<span class="token-input-delete-token">×</span>
+											</li>
+											<li class="token-input-token">
+												<p>홍길동</p>
+												<span class="token-input-modi-token">×</span>
+												<span class="token-input-delete-token">×</span>
+											</li>
+											<li class="token-input-token">
+												<p>홍길동</p>
+												<span class="token-input-modi-token">×</span>
+												<span class="token-input-delete-token">×</span>
+											</li>
+											<li class="token-input-token">
+												<p>홍길동</p>
+												<span class="token-input-modi-token">×</span>
+												<span class="token-input-delete-token">×</span>
+											</li>
+											<li class="token-input-token">
+												<p>홍길동</p>
+												<span class="token-input-modi-token">×</span>
+												<span class="token-input-delete-token">×</span>
+											</li>
+											<li class="token-input-input-token">
+												<input type="text"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+											</li>
+										</ul>
+										<!-- 자동완성 레이어 -->
+										<div id="test_auto_frame2" class="auto_frame">
+											<ul>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li> 
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="frame_area">
+														<div class="photo">
+															<img src="../../img/profile_photo_blank_small.png" alt="">
+														</div>
+														<div class="info">
+															<span class="name"><strong class="select">홍</strong>길동</span> <!-- [D] 입력한 글자 strong class="select" -->
+															<span class="team">디자인팀</span>
+															<span class="mail">honggildong@handysoft.com</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<a href="#" class="btn_manager_add">관리자 추가</a>
+								</div>								
+
+								<p style="padding-top:10px">csv다운로드 + 엑셀다운로드</p>
+								<a href="#" class="btn_csv_down" title="CSV 다운로드">다운로드</a>
+								<a href="#" class="btn_excel_down" title="엑셀 다운로드">다운로드</a>
+
+								<!-- 메일 주소 리스트 -->
+								<div>
+									<ul class="name_list">
+										<li><span class="name">홍길동</span><a href="#" class="btn_open">새창열기</a><a href="#" class="btn_close">삭제</a></li>
+										<li><span class="name">홍길동</span><a href="#" class="btn_open">새창열기</a><a href="#" class="btn_close">삭제</a></li>
+										<li><span class="name">홍길동</span><a href="#" class="btn_open">새창열기</a><a href="#" class="btn_close">삭제</a></li>
+									</ul>
+								</div>
+
+								<!-- 게시판 목록 페이징 -->
+                                <div class="paginate_area">
+                                    <!-- 목록갯수 -->
+                                    <div class="board_num">
+                                        <div class="selectbox">
+                                            <select>
+                                                <option>15</option>
+                                                <option>30</option>
+                                                <option>40</option>
+                                                <option>50</option>
+                                                <option>70</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- 페이징 -->
+                                    <div class="paginate_box">
+                                        <a href="#" class="btn_first">처음</a>
+                                        <a href="#" class="btn_pre">이전</a>
+                                        <a href="#" class="current">1</a>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">5</a>
+                                        <a href="#">6</a>
+                                        <a href="#">7</a>
+                                        <a href="#">8</a>
+                                        <a href="#">9</a>
+                                        <a href="#">10</a>
+                                        <a href="#" class="btn_next">다음</a>
+                                        <a href="#" class="btn_last">마지막</a>
+                                    </div>
+                                </div>
+
+								<p style="padding-top:10px">게시판 좌측 버튼 영역, 게시판 우측 검색 영역</p>
+								<div class="cont_srch_area">
+									<!-- 우측 검색영역 -->
+									<div class="right_srch">  
+										<!-- 게시판 검색 -->
+										<div class="list_srch_box">
+											<div class="selectbox">
+												<select>
+													<option selected>메일</option>
+													<option>통합</option>
+												</select>
+											</div>
+
+											<div class="input_group">
+												<label for="" class="hidden">검색어 입력</label>
+												<input id="" type="text" class="form_control" name="" placeholder="검색">
+												<a href="#" class="btn_srch">검색하기</a>
+											</div>
+											<a class="btn_srch_detail" onclick="javascript:$('.cont_srch_area').toggleClass('open')">상세</a>
+										</div>                                            
+									</div>
+									<!-- 상세 검색 영역 -->
+									<div class="detail_srch_wrap">
+										ddd
+									</div>
+								</div>
+
+								<!-- 게시판 목록 상단 버튼 -->
+								<div class="list_btn_area">
+									<!-- 좌측 버튼영역 -->
+									<div class="left_btn">
+										<a href="#">재승인</a>
+										<a href="#">폐쇄</a>
+									</div>
+
+									<!-- 게시판 필터 -->
+									<div class="list_filter_area">
+										<a href="#" onclick="toggleLayer('test_layer_filter');" title="필터" class="btn_list_filter">필터</a>
+										<div id="test_layer_filter" class="list_filter_box" style="display:none;">
+											<ul>
+												<li><a href="#" class="on">전체</a></li>
+												<li><a href="#">운영</a></li>
+												<li><a href="#">폐쇄</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<p style="height:100px;"></p>
+
+								<!-- 게시판 상세 하단 버튼 -->
+								<div class="view_btn_area role_fixed_btn">
+									<a href="#" class="btn_cancel">취소</a>
+									<a href="#" class="btn_complete">저장</a>
+									<a href="#" class="btn_list">목록</a>
+									<a href="#" class="btn_del">삭제</a>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- //body -->
+
+		</div>
+		<!-- //wrapper -->
+
+		<div class="support_area" id="for_test3">
+			<ul class="tab">
+				<li class="selected"><a href="">Calendar</a></li>
+				<li class=""><a href="">People</a></li>
+			</ul>
+			<!-- calendar -->
+			<div class="sp_cal" style="display: block;">
+				<!-- 미니달력 -->
+				<div class="calendar">
+					<div class="datepicker">
+						<dl>
+							<dt><a href="#">2017.11</a></dt>
+							<dd class="day">
+								<table>						
+									<thead>
+										<tr>
+											<th scope="col">일</th>
+											<th scope="col">월</th>
+											<th scope="col">화</th>
+											<th scope="col">수</th>
+											<th scope="col">목</th>
+											<th scope="col">금</th>
+											<th scope="col">토</th>
+										</tr>
+									</thead>
+								</table>
+								<!-- 스케쥴이 있으면 sched / 오늘은 today/ 선택된 날짜는 day_on / 휴일은 holiday -->
+								<table>
+									<tbody>
+										<tr>
+											<td class="passed"><a href="#">29</a></td>
+											<td class="passed"><a href="#">30</a></td>
+											<td class="passed"><a href="#">31</a></td>
+											<td class=""><a href="#">1</a></td>
+											<td class=""><a href="#">2</a></td>
+											<td class=""><a href="#">3</a></td>
+											<td class=""><a href="#">4</a></td>
+										</tr>
+										<tr>
+											<td class="sched"><a href="#">5</a></td>
+											<td class="sched"><a href="#">6</a></td>
+											<td class=""><a href="#">7</a></td>
+											<td class="today"><a href="#">8</a></td>
+											<td><a href="#">9</a></td>
+											<td class="day_on sched"><a href="#">10</a></td>
+											<td><a href="#">11</a></td>
+										</tr>
+										<tr>
+											<td class="sched"><a href="#">12</a></td>
+											<td><a href="#">13</a></td>
+											<td><a href="#">14</a></td>
+											<td class="sched"><a href="#">15</a></td>
+											<td><a href="#">16</a></td>
+											<td><a href="#">17</a></td>
+											<td><a href="#">18</a></td>
+										</tr>
+										<tr>
+											<td><a href="#">19</a></td>
+											<td><a href="#">20</a></td>
+											<td class="sched"><a href="#">21</a></td>
+											<td class="sched"><a href="#">22</a></td>
+											<td class="holiday sched day_on"><a href="#">23</a></td>
+											<td><a href="#">24</a></td>
+											<td><a href="#">25</a></td>
+										</tr>
+										<tr>
+											<td><a href="#">26</a></td>
+											<td><a href="#">27</a></td>
+											<td class="holiday"><a href="#">28</a></td>
+											<td><a href="#">29</a></td>
+											<td class="holiday sched"><a href="#">30</a></td>
+											<td class="passed"><a href="#">1</a></td>
+											<td class="passed"><a href="#">2</a></td>
+										</tr>
+										<tr>
+											<td class="passed"><a href="#">3</a></td>
+											<td class="passed"><a href="#">4</a></td>
+											<td class="passed"><a href="#">5</a></td>
+											<td class="passed"><a href="#">6</a></td>
+											<td class="passed"><a href="#">7</a></td>
+											<td class="passed"><a href="#">8</a></td>
+											<td class="passed"><a href="#">9</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+						</dl>
+						<a href="#" class="pre">이전</a>
+						<a href="#" class="next">다음</a>
+						<a href="#" class="today">오늘</a>
+					</div>
+				</div>
+				<!-- 일정 목록 -->
+				<div class="sch_lst handy-scroll">
+					<h4>10일(목)</h4>
+					<ul>
+						<li>
+							<a class="schedule">Basic Research 참고자료 수집</a>
+							<div class="time">종일일정</div>
+						</li>
+
+						<li>
+							<a class="schedule">컨퍼런스 참석</a>
+							<div class="time">오전 09:00 ~ 11:00</div>
+						</li>
+						<li>
+							<a class="schedule">조직도 화면 리디자인 회의</a>
+							<div class="time">오후 01:00 ~ 02:00</div>
+						</li>
+
+						<li>
+							<a class="schedule">조직도 화면조직도 화면조직도 화면조직도 화면조직도 화면조직도 화면 리디자인 회의</a>
+							<div class="time">오후 01:00 ~ 02:00</div>
+						</li>
+					</ul>
+
+
+					<!-- 일정 간편 등록 시작 -->
+					<div class="comm_lypop_type1 open" style="left:auto; right:50px;" ><!-- 팝업 열렸을때 open -->
+						<div class="lypop_head"><span class="ly_tit">일정 간편등록</span></div>
+						<div class="lypop_cont">
+							<!-- 팝업 알맹이 영역 -->
+							<div class="schedule_lypop">
+								<div class="form_table">
+									<table>
+										<colgroup>
+											<col style="width:54px;">
+											<col width="*">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th class="important">제목</th>
+												<td>
+													<div class="input_group">
+														<input type="text" class="basic_input" placeholder="일정 제목을 입력하세요." />	
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th class="important">시간</th>
+												<td>
+													<p class="description sche_st2 txt_b">2017년 8월 22일 (화)</p>
+													<div class="sched_group mg_b_5">
+
+														<div class="datepic_area">
+															<span class="selectbox" style="width:62px;">
+																<select> 
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																</select>
+															</span>
+															<span class="period">~</span>
+															<span class="selectbox" style="width:62px;">
+																<select> 
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																	<option> 11:00 </option>
+																</select>
+															</span>
+														</div>
+
+														<div class="group pd_t_4">
+															<span class="form">
+																<input type="checkbox" id="check001" />
+																<label for="check001">종일</label></span>
+															<span class="form">
+																<input type="checkbox" id="check002" />
+																<label for="check002">기념일</label></span>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th class="important">달력</th>
+												<td>
+													<div class="input_group has_select">
+														<div class="select group">
+															<!-- // open 클래스 추가시 레이어 open -->
+															<a class="btn_equip">달력 선택</a>
+															<div class="select_lst">
+																<div class="handy-scroll">
+																	<ul class="multi_opt add_cal_list">
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check005" />
+																				<label for="check005">
+																					<div class="sche_st5">
+																						<span class="dal_color type06">달력구분</span>
+																						UI팀프로젝트 일정일정UI팀프로젝트일정일정팀프로젝트일정일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check006" />
+																				<label for="check006">
+																					<div class="sche_st5">
+																						<span class="dal_color type01">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check007" />
+																				<label for="check007">
+																					<div class="sche_st5">
+																						<span class="dal_color type03">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check008" />
+																				<label for="check008">
+																					<div class="sche_st5">
+																						<span class="dal_color type07">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check009" />
+																				<label for="check009">
+																					<div class="sche_st5">
+																						<span class="dal_color type09">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check009" />
+																				<label for="check009">
+																					<div class="sche_st5">
+																						<span class="dal_color type09">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																		<li>
+																			<div class="form">
+																				<input type="checkbox" id="check009" />
+																				<label for="check009">
+																					<div class="sche_st5">
+																						<span class="dal_color type09">달력구분</span>
+																						UI팀프로젝트 일정공유
+																					</div>
+																				</label>
+																			</div>			
+																		</li>
+																	</ul>
+																</div>
+																<div class="btns_area border">
+																	<a class="btn align_rg">확인</a>
+																</div>
+															</div>
+														</div>	
+														<input class="basic_input" type="text" value="1층 Bahama, 1층 Bahama" onfocus="blur();" readonly>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="btns_area bttm">
+									<div class="align_lf">
+										<a class="btn">상세입력</a>
+									</div>
+									<div class="align_rg">
+										<a class="action_btn">완료</a>
+										<a class="btn">취소</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //팝업 알맹이 영역 -->
+					</div>
+					<!-- // 일정 간편 등록 끝 -->
+
+				</div>
+				<a class="add_sch">일정 추가</a>
+			</div>
+			<!-- people -->
+			<div class="sp_pp" style="display: none;">
+				<fieldset>
+					<div class="srch_group on">
+						<!-- // 검색 이후 되돌아가는 버튼을 위해 on 추가 -->
+						<input type="text" placeholder="주소록 검색" />
+						<a class="btn_srch">검색</a>
+						<!-- 현재 아이콘 미정 : 추후 적용예정 -->
+						<a class="btn_return">이전</a>
+					</div>
+				</fieldset>
+				<div class="">
+					<span>즐겨찾는 연락처 </span>
+				</div>
+			</div>
+		</div>
+        <div class="gb alarm">
+			<div class="al_title">
+				<span class="title">새로운알림</span>
+				<span class="count">2</span>
+				<span class="util"><a href="#">모두확인</a></span>
+			</div>
+			<div class="handy-scroll">
+                <div class="wrap-hs">
+				<!-- today -->
+				<ul>
+					<!-- 알림 message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<div class="sd_info noti">
+									<img class="sd_photo" src="../img/bg_admin_al.png" />	
+								</div>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">알림</span>
+									<span class="time">30분 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+								<span class="message">알림메시지가 도착했습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- 주의 message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<div class="sd_info caution">
+									<img class="sd_photo" src="../img/bg_admin_al.png" />	
+								</div>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">주의</span>
+									<span class="time">30분 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+								<span class="message">주의메시지가 도착했습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- 경고 message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<div class="sd_info warning">
+									<img class="sd_photo" src="../img/bg_admin_al.png" />	
+								</div>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">경고</span>
+									<span class="time">30분 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+								<span class="message">경고메시지가 도착했습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- mail message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">메일</span>
+									<span class="time">30분 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+								<span class="message">메일이 도착했습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- mail message 2 -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">handysoft@handy.com</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">메일</span>
+									<span class="time">59분 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>원문의 제목영역 입니다.</p></span>
+								<span class="message">메일이 도착했습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- board message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디이름이길지요</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">게시판</span>
+									<span class="time">21시간 전</span>
+									<span class="new on">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>그룹웨어 "네트워크 Q&amp;A"관련 이용 방법</p></span>
+								<span class="ms_locate">[Groupware Q&amp;A]</span>
+								<span class="message">새 게시물이 등록되었습니다.</span>
+							</div>						
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- square message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">스퀘어</span>
+									<span class="time">01-01 19:30</span>
+									<span class="new">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+								<span class="ms_locate">[EGW TFT]</span>
+								<span class="message">새 글이 등록되었습니다.</span>
+							</div>						
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- square message2 -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">스퀘어</span>
+									<span class="time">01-01 19:30</span>
+									<span class="new">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>&#91;업무보고&#93;2017-12-28</p></span>
+								<span class="ms_locate">[EGW TFT]</span>
+								<span class="message">업무보고가 등록되었습니다.</span>
+							</div>						
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- square message3 -->
+					<li class="al_cont">						
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">스퀘어</span>
+									<span class="time">01-01 19:30</span>
+									<span class="new">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>&#91;공지&#93;이번주 그룹 소모임을 하려고 합니다.</p></span>
+								<span class="ms_locate">[EGW TFT]</span>
+								<span class="message">공지사항이 등록되었습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- club message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">김핸디</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">동호회</span>
+									<span class="time">01-01 19:30</span>
+									<span class="new">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>&#91;승인요청&#93;테니스 동호회</p></span>
+								<span class="message">회원가입 승인이 요청되었습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+					<!-- approval message -->
+					<li class="al_cont">
+						<a href="" class="al_link">
+							<!-- sender -->
+							<div class="sender">
+								<figure class="sd_info">
+									<img class="sd_photo" src="../img/profile_photo_blank.png" />
+									<figcaption class="sd_name">기안자이름</figcaption>
+								</figure>
+							</div>
+							<!-- content -->
+							<div class="ms_cont">
+								<!-- from -->
+								<div class="inform">
+									<span class="app_name">결재</span>
+									<span class="time">2017-12-31 23:59</span>
+									<span class="new">new</span>
+								</div>
+								<!-- message details -->
+								<span class="org_title"><p>교육수강 신청</p></span>
+								<span class="ms_people">처리자 : 홍길동</span>
+								<span class="message">결재를 승인 완료하였습니다.</span>
+							</div>
+						</a>
+						<a class="al_read">읽음처리</a>
+					</li>
+				</ul>
+                </div>
+			</div>
+			<div class="set_area">
+				<a class="setting">setting</a></div>
+		</div>
+        <!-- 토스트 알람은 슬라이드 인, 5초 딜레이 -->
+		<div class="tst alarm" style="display: block;">
+			<ul>
+				<!-- mail message -->
+				<li class="al_cont">
+					<a href="" class="al_link">
+						<!-- sender -->
+						<div class="sender">
+							<figure class="sd_info">
+								<img class="sd_photo" src="../img/profile_photo_blank.png" />
+								<figcaption class="sd_name">김핸디</figcaption>
+							</figure>
+						</div>
+						<!-- content -->
+						<div class="ms_cont">
+							<!-- from -->
+							<div class="inform">
+								<span class="app_name">메일</span>
+								<span class="time">30분 전</span>
+							</div>
+							<!-- message details -->
+							<span class="org_title"><p>퇴직연금 사업자 설명회 및 개인별 퇴직연금 가입 안내</p></span>
+							<span class="message">메일이 도착했습니다.</span>
+						</div>
+					</a>
+				</li>
+				<!-- mail message 2 -->
+				<li class="al_cont">
+					<a href="" class="al_link">
+						<!-- sender -->
+						<div class="sender">
+							<figure class="sd_info">
+								<img class="sd_photo" src="../img/profile_photo_blank.png" />
+								<figcaption class="sd_name">handysoft@handy.com</figcaption>
+							</figure>
+						</div>
+						<!-- content -->
+						<div class="ms_cont">
+							<!-- from -->
+							<div class="inform">
+								<span class="app_name">메일</span>
+								<span class="time">59분 전</span>
+							</div>
+							<!-- message details -->
+							<span class="org_title"><p>원문의 제목영역 입니다.</p></span>
+							<span class="message">메일이 도착했습니다.</span>
+						</div>
+					</a>
+				</li>
+				<!-- board message -->
+				<li class="al_cont">
+					<a href="" class="al_link">
+						<!-- sender -->
+						<div class="sender">
+							<figure class="sd_info">
+								<img class="sd_photo" src="../img/profile_photo_blank.png" />
+								<figcaption class="sd_name">김핸디이름이길지요</figcaption>
+							</figure>
+						</div>
+						<!-- content -->
+						<div class="ms_cont">
+							<!-- from -->
+							<div class="inform">
+								<span class="app_name">게시판</span>
+								<span class="time">21시간 전</span>
+							</div>
+							<!-- message details -->
+							<span class="org_title"><p>그룹웨어 "네트워크 Q&amp;A"관련 이용 방법</p></span>
+							<span class="message">새 게시물이 등록되었습니다.</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

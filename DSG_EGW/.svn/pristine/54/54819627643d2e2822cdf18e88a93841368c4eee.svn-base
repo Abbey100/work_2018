@@ -1,0 +1,702 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>square 상세 즐찾 업무 화면</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/square.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+<script type="text/javascript" language="javascript">
+$(function() {
+$('.topic_sentence li p').dotdotdot();
+});
+</script>
+</head>
+<body>
+<div class="co_work" id=""> 
+  
+  <!--임시보관함의 layer pop -->
+  <div class="square_layer_pop two second"> <span class="layer_arr"></span>
+    <div class="inner_box">
+      <div class="tit">보관<span class="count">28</span> <a class="more">more</a>
+        <div class="layer_pop">
+          <ul>
+            <li >업무요청추가</li>
+            <li >토픽추가</li>
+            <li >일괄삭제</li>
+          </ul>
+        </div>
+        <a class="close">close</a></div>
+      <div class="contents">
+        <div class="layer_search">
+          <input id="searchKeyword" type="search" placeholder="업무명을 입력하여 검색하세요" onkeypress="">
+          <a href="" class="btn_search"> </a> </div>
+        <div class="modi_btn_area">
+          <div class="guide">
+            <div class="fnt_prpl"><strong>선택한 보관 콘텐츠 삭제하기</strong></div>
+            <div class="fnt_gray">삭제할 보관 콘텐츠를 선택하여 주십시오</div>
+          </div>
+          <div class="btns checked"> 
+            <!-- [D] 리스트가 하나라도 체크되면 btns에 checked 라는 class 가 추가됩니다.--> 
+            <span class="del">
+            <p>2</p>
+            삭제</span> <span class="cancel">취소</span> </div>
+        </div>
+        <table class="table_list modify">
+          <!--기본항목-->
+          <thead>
+            <tr>
+              <th>업무명</th>
+              <th class="date">등록일자</th>
+              <th class="select">선택</th>
+            </tr>
+          </thead>
+          <!--리스트-->
+          <tbody>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox" ></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"  checked></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>E&amp;G TFT 실무 그룹</td>
+              <td class="date">2015.12.25</td>
+              <td class="select"><input type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <p class="fnt_gray">* 최근 5일간 등록된 컨텐츠 입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/// 임시보관함의 layer pop END --> 
+  
+  <!-- 좌측 메뉴 영역 -->
+  <div id="" class="left_menu "> 
+    <!--Action Btn start-->
+    <div class="btn_large"> <a class="btn_l" href="#" onclick="" title="">그룹 만들기</a> </div>
+    <!--Action Btn END--> 
+    <!--Quick Btn start--> 
+    <!--[D] 
+1. 퀵버튼의 버튼이 두개일때 two, 네개일때 four...
+2. 카운트는 해당 li 안에 <span></span>으로 사용
+-->
+    <ul class="quickbtn_area two">
+      <li class="btn_s_work quickbtn_on"><a href="#"> <span>업무</span></a></li>
+      <li class="btn_s_temp"><a href="#"> <span>보관</span><span class="count">13</span></a></li>
+    </ul>
+    <!--Quick Btn END--> 
+    <!--Tree Area--> 
+    <!--즐겨찾는 그룹-->
+    <div id="" class="with_del tree_area mg_tp_7"> 
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span id="myFavoriteTree" class="tree_ttl" onclick="javascript:$('#myFavoriteGroupMenu').toggle();">즐겨찾는 그룹</span> </div>
+      <!--업무방 Box-->
+      <ul id="myFavoriteGroupMenu" class="tree_cntnts_area bttm_no_scroll ">
+        <li id=""><span onclick="" class="group_name">UX디자인팀</span><a class="delete" href="">delete</a></li>
+        <li id=""><span onclick="" class="group_name">스퀘어TFT</span><a class="delete" href="">delete</a></li>
+      </ul>
+    </div>
+    <!--// 즐겨찾는 그룹--> 
+    <!-- 나의 업무 그룹-->
+    <div id="" class="tree_area bttm_ln"> 
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span id="myTree" class="tree_ttl" onclick="javascript:$('#myGroupMenu').toggle();">진행중인 그룹</span> 
+        <!-- <a class="btn_tree_cnfg" href="#"> </a> --> 
+      </div>
+      <!--업무방 Box-->
+      <ul id="myGroupMenu" class="tree_cntnts_area bttm_no_scroll">
+        <li id="" class=""><span id="" onclick="" class="group_name">그룹</span><a class="delete" href="" style="display:;">delete</a></li>
+        <li id=""><span id="groupName" onclick="" class="group_name">보기화면</span><a class="delete" href="" style="display:;">delete</a></li>
+      </ul>
+    </div>
+    <!-- 종료된 업무 그룹-->
+    <div id="" class="tree_area bttm_ln"> 
+      <!--Tree Title Area-->
+      <div class="tree_ttl_area"> <span id="endTree" class="tree_ttl" onclick="javascript:$('#endGroupMenu').toggle();">종료된 그룹</span> 
+        <!-- 						<a class="btn_tree_cnfg" href="#"> </a> --> 
+      </div>
+      <!--업무방 Box-->
+      <ul id="endGroupMenu" class="tree_cntnts_area bttm_no_scroll">
+        <li id=""><span id="" onclick="" class="group_name">부서 개설</span></li>
+        <li id=""><span id="" onclick="" class="group_name">어므나 그룹의 이름이 느무느무 길지 않습니까?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요?  이를 어쩐이를 어쩐 어쩐 어쩐다요? 이를 어쩐이를 어쩐 어쩐 어쩐다요?</span></li>
+      </ul>
+    </div>
+    <!-- Config --> 
+    <!-- 				<a class="left_config" id="" href="#"><span>환경 설정</span></a> --> 
+    <!-- //Config --> 
+  </div>
+  <!--/// 좌측 메뉴 영역 END--> 
+  
+  <!-- 중앙 컨텐츠 영역 Center Contents Area -->
+  <div class="container_box container_list_box">
+    <div id="workGroup"> 
+      
+      <!-- Title area -->
+      <!--div class="title_area">
+        <h2 class="title"> 업무관리</h2>
+        <div id="left_btn_close" class="btn_flip_left"> <a href="javascript:toggle_LFrame()"></a> </div>
+        <div id="right_btn_close" class="btn_flip_right on"> <a href="javascript:toggle_RFrame();"></a> </div>
+      </div>
+      <!-- // Title area END--> 
+      
+      <!-- Contents area -->
+      <div class="list_vertical managering_work" style=""> 
+        
+        <!-- Contents area - LEFT -->
+        <div class="container_wrap_left control_mod" style="width: 518px;">
+          <div class="tab_area">
+            <div class="tab_box">
+              <ul class="tab_menu">
+                <a href="#">
+                <li class="tab selected">나의 처리 업무</li>
+                </a> <a href="#">
+                <li class="tab">내가 요청한 업무<span>12개</span></li>
+                </a>
+              </ul>
+            </div>
+          </div>
+          <div class="sort_condition">
+            <ul class="state">
+              <li class="on"><a><span>진행</span><span>(5)</span></a></li>
+              <li><a><span>지연</span><span>(1)</span></a></li>
+            </ul>
+            <ul class="btn_area">
+              <li class="btn_fin_set"><a href="" ><span class=""> 일괄 완료처리</span> </a></li>
+              <li class="btn_fin on"><a href="" ><span class=""> 완료하기 </span></a></li>
+              <li class="btn_cancel"><a href="" ><span class=""> 취소 </span></a></li>
+            </ul>
+          </div>
+          <div id="viewContents" class="content_lst content_lst_body" style=""> 
+            
+            <!-- SYSTEM : DATE -->
+            <div id="" class="system_date tempdate"> <span>2016.01.08</span> </div>
+            
+            <!-- ARTICLE_BOX : 업무지시 -->
+            <div>
+              <div id="" class="article_box work">
+                <div class="check_box">
+                  <input type="checkbox" class="check" id="test" checked>
+                </div>
+                <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                <label for="test"></label>
+                <ul class="usr_opinion topic_sentence">
+                  <li> <span  class="name" onclick="">강감찬</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                  <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                  <li id="test_go_more_01" class="go_more" onclick="javascript:$('#test_go_more_01').toggleClass('on');"> <span class="ico more"></span>
+                    <div class="layer_pop">
+                      <ul>
+                        <li class="copy">복사</li>
+                        <li class="edit">수정</li>
+                        <li class="del">삭제</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">거란 오랑캐 침입대책</span> </h3>
+                    <p id="chargerList" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">강민첨,박종검,유참, 나주인</em></p>
+                    <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">강민첨, 박종검, 유참 장군은 군사 20만 8천 3백 명을 거느리고 영주에 주둔하여 대기합니다.</p>
+                  </li>
+                  <li  style="display: none;">
+                    <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                  </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부 <em>1</em></span> <span  class="origin">출처 : <em>귀주대첩TF팀</em></span>
+                    <input type="hidden"  name="commentCount" value="0">
+                  </li>
+                </ul>
+              </div>
+              <!-- // ARTICLE_BOX : 업무지시 --> 
+              <!-- ARTICLE_BOX : 업무지시 -->
+              <div id="" class="article_box work">
+                <div class="check_box">
+                  <input type="checkbox" class="check" id="">
+                </div>
+                <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                <label for=""></label>
+                <ul  class="usr_opinion topic_sentence">
+                  <li> <span  class="name" onclick="">핸과장</span> <span  class="class">(제품기획팀 선임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                  <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                  <li id="test_go_more_01" class="go_more" onclick="javascript:$('#test_go_more_01').toggleClass('on');"> <span class="ico more"></span>
+                    <div class="layer_pop">
+                      <ul>
+                        <li class="copy">복사</li>
+                        <li class="edit">수정</li>
+                        <li class="del">삭제</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">스퀘어 UI 개선을 위한 기획 &amp; 디자인</span> </h3>
+                    <p id="chargerList" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">나주인, 고영희, 고철수</em></p>
+                    <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">기획파트: 경쟁사 제품의 UI와 스퀘어 UI를 비교하여 보고바랍니다.
+                      디자인파트: GW제품에 스퀘어 UI가 개선되어야 할 부분을 생각하시고 정리된 시안을 작성하여 주시기 바랍니다.</p>
+                  </li>
+                  <li  style="display: none;">
+                    <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                  </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부 <em>1</em></span> <span  class="origin">출처 : <em>제품기획팀</em></span>
+                    <input type="hidden"  name="commentCount" value="0">
+                  </li>
+                </ul>
+              </div>
+              <!-- // ARTICLE_BOX : 업무지시 --> 
+              <!-- ARTICLE_BOX : 업무지시 -->
+              <div id="" class="article_box work">
+                <div class="check_box">
+                  <input type="checkbox" class="check" id="">
+                </div>
+                <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                <label for=""></label>
+                <ul  class="usr_opinion topic_sentence">
+                  <li> <span  class="name" onclick="">핸과장</span> <span  class="class">(제품기획팀 주임연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                  <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                  <li id="test_go_more_02" class="go_more" onclick="javascript:$('#test_go_more_02').toggleClass('on');"> <span class="ico more"></span>
+                    <div class="layer_pop">
+                      <ul>
+                        <li class="copy">복사</li>
+                        <li class="edit">수정</li>
+                        <li class="del">삭제</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">스퀘어 UI 개선을 위한 기획 &amp; 디자인</span> </h3>
+                    <p id="chargerList2" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">나주인, 고영희, 고철수</em></p>
+                    <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">기획파트: 경쟁사 제품의 UI와 스퀘어 UI를 비교하여 보고바랍니다.
+                      디자인파트: GW제품에 스퀘어 UI가 개선되어야 할 부분을 생각하시고 정리된 시안을 작성하여 주시기 바랍니다.</p>
+                  </li>
+                  <li  style="display: none;">
+                    <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                  </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부 <em>1</em></span> <span  class="origin">출처 : <em>제품기획팀</em></span>
+                    <input type="hidden"  name="commentCount" value="0">
+                  </li>
+                </ul>
+              </div>
+              <!-- // ARTICLE_BOX : 업무지시 --> 
+              
+              <!-- SYSTEM : DATE -->
+              <div id="" class="system_date tempdate"> <span>2016.01.06</span> </div>
+              
+              <!-- ARTICLE_BOX : 업무지시 -->
+              <div id="" class="article_box work">
+                <div class="check_box">
+                  <input type="checkbox" class="check" id="">
+                </div>
+                <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                <label for=""></label>
+                <ul  class="usr_opinion topic_sentence">
+                  <li> <span  class="name" onclick="">이순신</span> <span  class="class">(제품기획팀 수석연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                  <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                  <li id="test_go_more_03" class="go_more" onclick="javascript:$('#test_go_more_03').toggleClass('on');"> <span class="ico more"></span>
+                    <div class="layer_pop">
+                      <ul>
+                        <li class="copy">복사</li>
+                        <li class="edit">수정</li>
+                        <li class="del">삭제</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">거북선을 만들어 왜의 침입을 차단하도록 합시다.</span> </h3>
+                    <p id="chargerList3" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">정운, 나대용, 이억기, 나주인</em></p>
+                    <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">정운과 이억기 장군은 나대용을 도와 거북선을 만들 수 있도록 협조하시고,
+                      나대용은 거북선의 크기와 탑승인원이 어떻게 되는지 확인하여 보고 바랍니다. 매주 월요일 주간회의를 소집하여 주시기 바랍니다.</p>
+                  </li>
+                  <li  style="display: none;">
+                    <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                  </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부 <em>1</em></span> <span  class="origin">출처 : <em>거북선 만들기 TF</em></span>
+                    <input type="hidden"  name="commentCount" value="0">
+                  </li>
+                </ul>
+              </div>
+              <!-- // ARTICLE_BOX : 업무지시 --> 
+              <!-- ARTICLE_BOX : 업무지시 -->
+              <div id="" class="article_box work">
+                <div class="check_box">
+                  <input type="checkbox" class="check" id="">
+                </div>
+                <div  class="usr_pic"> <img class="mask" src="../../img/pic_mask_40.png"> <img class="photo" src="../../img/thmb_nopic.gif"> </div>
+                <label for=""></label>
+                <ul  class="usr_opinion topic_sentence">
+                  <li> <span  class="name" onclick="">유재석</span> <span  class="class">(제품기획팀 수석연구원)</span> <span  class="date">09.04 16:50</span> <span id="" class="ico bookmark" onclick=""></span> </li>
+                  <li class="confirm_mod" style="display: none;"><span  class="modify">저장</span><span class="cancle">취소</span> </li>
+                  <li id="test_go_more_04" class="go_more" onclick="javascript:$('#test_go_more_04').toggleClass('on');"> <span class="ico more"></span>
+                    <div class="layer_pop">
+                      <ul>
+                        <li class="copy">복사</li>
+                        <li class="edit">수정</li>
+                        <li class="del">삭제</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <h3 onclick=""> <span class="duty">업무요청</span><span  class="todo">만들어진 모든 스퀘어 그룹에도 ‘메뉴 관리’ 설정에 관계없이 적용할 수 있도록 기능 개선해야함</span> </h3>
+                    <p id="chargerList5" class="in_charge" style="word-wrap: break-word;">업무 담당자 : <em onclick="javascript:show_buddy_card('001013122');">정형돈, 나주인</em></p>
+                    <p style="word-wrap: break-word" onclick="javascript:showDetailInfo('01e5cdw8r', false);">그룹의 구성원에게 꼭 알려야 할 사항이 있을 경우 필독공지로 알려보세요.
+                      그룹의 메인페이지의 가장 상단에 노출됩니다. (모바일/PC에 동일하게 적용)</p>
+                  </li>
+                  <li  style="display: none;">
+                    <textarea class="textarea" style="width: 738px;">ㅇㅇㅇ</textarea>
+                  </li>
+                  <li  class="attached" onclick=""> <span  class="commnt">의견 작성<em></em></span> <span  class="file">첨부 <em>1</em></span> <span  class="origin">출처 : <em>무한도전팀</em></span>
+                    <input type="hidden"  name="commentCount" value="0">
+                  </li>
+                </ul>
+              </div>
+              <!-- // ARTICLE_BOX : 업무지시 --> 
+            </div>
+            <div id="" title="Loading....." align="center" style="display:none;"> <img src="../../square/images/ajax_loader.gif"></div>
+          </div>
+          <!-- // content_lst_body --> 
+          
+          <!-- INPUT_BOX -->
+          <div id="" class="paginate_box entr0">
+            <div id="inputArea" class="input_area"> 
+              <!-- 입력창 -->
+              <div id="inputBox" class="input_box"> <a onclick="javascript:$('#inputBox').toggleClass('on');setContentsFileUploader();" class="select_menu"><span class="btn_upload"></span></a>
+                <div class="layer_pop write_type">
+                  <ul>
+                    <li class="type_file">
+                      <div id="fileUpload" name="fileUpload" class="fileUpload"></div>
+                      <span class="ico file"></span><span>파일등록</span> </li>
+                    <li onclick="javascript:showAddTopic('01e4x976k');" class="type_topic"><span class="ico topic"></span><span>토픽등록</span></li>
+                    <li onclick="javascript:showAddOrder('01e4x976k');" class="type_work"><span class="ico work"></span><span>업무요청</span></li>
+                  </ul>
+                </div>
+                <textarea id="message" class="instant_inp" onkeydown="javascript:return textAreaKeyEvent(event);"></textarea>
+              </div>
+              <!-- 입력버튼 --> 
+              <a href="javascript:addMessage();" class="btn_write"><span>등록</span></a> </div>
+          </div>
+          <!-- //  INPUT_BOX -->
+          
+          <div class="btn_flip_open" style="display:none;"> <a href="javascript:hideDetailArea(false)"></a> </div>
+        </div>
+        
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        <!-- // CONTENTs 좌측(기본 화면) --> 
+        
+        <!--  CONTENTs 우측(디테일 화면) -->
+        <div id="" class="view_content_box view_box off" style="margin-left: 518px;">
+          <div class="inner_box">
+            <div class="top_area">
+              <div>
+                <div class="btn_flip_close"> <a href=""></a> </div>
+              </div>
+              <span class="search">
+              <input id="" type="search" placeholder="Search" onkeypress="">
+              <a href="" class="btn_search"> </a> </span>
+                <!--span  class="detail_menu" onclick=""> <span id="" class="more_detail_menu"></span> <span class="layer_pop more_dtl_menu">
+              <ul>
+                <li onclick=""> 그룹정보 </li>
+                <li onclick=""> 파일 </li>
+                <li onclick=""> 즐겨찾기 </li>
+                <li onclick=""> 업무요청 </li>
+              </ul>
+              </span> </span--> </div>
+            <div id="" class="cowork_detail">
+              <div id="">
+                <div class="detail_title"> <a id="" href="javascript:backDetail();" class="btn_back" style="display: none;"></a>
+                  <h2 id="" class="title nodepth">업무검색</h2>
+                  
+                  <!--현재 위치 관련 메뉴 --> 
+                </div>
+                <!--div class="serch_area">
+                  <div class="serch_box">
+                    <span class="search">
+						<input id="searchKeyword" type="search" placeholder="검색어를 입력하세요" onkeypress="">
+						<a href="" class="btn_search"> </a>
+					</span>
+                      </div>
+                    <div class="img_guide" style="display:none;">
+                    <img src="../../img/guide_serch.png">                    
+                    </div> </div-->
+                
+                <div  class="detail_area control_mod" style="height:;">
+                  <div class="sort_condition">
+                    <ul class="btn_area">
+                      <li class="btn_fin_set"><a href="" ><span class=""> 일괄 완료처리</span> </a></li>
+                      <li class="btn_fin"><a href="" ><span class=""> 완료하기 </span></a></li>
+                      <li class="btn_cancel"><a href="" ><span class=""> 취소 </span></a></li>
+                    </ul>
+                  </div>
+                  <div class="strings"> <em>스퀘어</em>에 대한 검색 결과 <em>8건</em></div>
+                  <div class="square_btn_area"> 
+                    <!--[D] 업무지시 유형 각 버튼의 눌려진 상태는 ON 추가-->
+                    <ul class="state_btns two">
+                      <li> <a href="#" class="ing"><span>진행</span></a> </li>
+                      <li> <a href="#" class="delay"><span>지연</span></a> </li>
+                    </ul>
+                  </div>
+                  
+                  <!-- 진행글 -->
+                  
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="test_detail_check">
+                    </div>
+                    <label for="test_detail_check" ></label>
+                    <ul class="usr_opinion topic_sentence">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(관리팀 책임연구원)</span> <span class="date">12:30 PM</span> <span class="ico bookmark">즐찾</span></li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.</p>
+                      </li>
+                      <li class="work_state"> <span class="ing">진행</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- 지연글 -->
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="">
+                    </div>
+                    <ul class="usr_opinion topic_sentence duty">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(품질관리팀 책임연구원)</span> <span class="date">12:30 PM</span> <span class="ico bookmark">즐찾</span></li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.종료일까
+                          지 보고 바랍니다.</p>
+                      </li>
+                      <li class="work_state"> <span class="delay">지연</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- 종료글 -->
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="">
+                    </div>
+                    <ul class="usr_opinion topic_sentence duty">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(품질관리팀 책임연구원)</span> <span class="date">2015.05.19 12:30 PM</span><span class="ico bookmark on">즐찾</span> </li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.랍니다.랍니다.랍니다.랍니다..</p>
+                      </li>
+                      <li class="work_state"> <span class="fin">종료</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark on">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 종료글 -->
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="">
+                    </div>
+                    <ul class="usr_opinion topic_sentence duty">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(품질관리팀 책임연구원)</span> <span class="date">2015.05.19 12:30 PM</span><span class="ico bookmark on">즐찾</span> </li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.랍니다.랍니다.랍니다.랍니다..</p>
+                      </li>
+                      <li class="work_state"> <span class="fin">종료</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark on">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 종료글 -->
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="">
+                    </div>
+                    <ul class="usr_opinion topic_sentence duty">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(품질관리팀 책임연구원)</span> <span class="date">2015.05.19 12:30 PM</span><span class="ico bookmark on">즐찾</span> </li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.랍니다.랍니다.랍니다.랍니다..</p>
+                      </li>
+                      <li class="work_state"> <span class="fin">종료</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark on">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 종료글 -->
+                  <div class="article_box search_box">
+                    <div class="check_box">
+                      <input type="checkbox" class="check" id="">
+                    </div>
+                    <ul class="usr_opinion topic_sentence duty">
+                      <li class="writer_info"> <span class="name">강감찬</span> <span class="class">(품질관리팀 책임연구원)</span> <span class="date">2015.05.19 12:30 PM</span><span class="ico bookmark on">즐찾</span> </li>
+                      <li>
+                        <h3><span class="duty">업무지시</span><span>mGW UI 관련 협의</span></h3>
+                        <p>mGW UI/UX관련 개선안을 준비해서 종료일까
+                          지 보고 바랍니다.랍니다.랍니다.랍니다.랍니다..</p>
+                      </li>
+                      <li class="work_state"> <span class="fin">종료</span> <span class="classify">업무종료일</span><span>2015.11.15</span> </li>
+                      <li class="attached"> <span class="commnt">5개</span> <span class="file">10개</span> </li>
+                    </ul>
+                    <div class="btn_func one">
+                      <div class="func one">
+                        <div class="ico bookmark on">즐찾</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /// 상세 정보 영역 --> 
+                  
+                </div>
+                <div id="" class="paginate_box entr0">
+                  <div class="input_area">
+                    <div class="input_box"> <a class="select_menu">
+                      <div id="" name="commentUpload" class="fileUpload"> </div>
+                      <span class="btn_upload"> </span> </a>
+                      <div class="file_upload" style="display:none">
+                        <ul class="file_type_input">
+                          <li class="file_type_ttl"> <span id="" class="file_ttl"></span> <span id="" class="capacity"></span> <span class="cancel" onclick=""></span> </li>
+                          <li class="file_type_txtarea">
+                            <textarea id="" class="instant_inp" onkeydown=""></textarea>
+                          </li>
+                        </ul>
+                      </div>
+                      <textarea id="" class="instant_inp" onkeydown=""></textarea>
+                    </div>
+                    <a href="javascript:addComment();" class="btn_write"><span></span></a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="controlbar ui-draggable" style="left: 518px;">
+          <div class="bar"> <em>control</em> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    /* 창크기 조절 */
+    var listContainerWidth = null;
+    $('.controlbar').draggable({
+            opacity: 0.7,
+            containment: 'html',
+            axis : 'x',
+            start : function(){
+                $('.list_vertical').css('opacity', 0.6);
+            },
+            stop : function(){
+                $('.list_vertical').css('opacity', 1);
+                listContainerWidth = $(this).position().left;
+                //console.log("스크롤바 위치 : " + listContainerWidth + " / 왼쪽컨텐츠 사이즈 : " + (listContainerWidth ))
+                $('.list_vertical .container_wrap_left').css('width', listContainerWidth);
+                $('.list_vertical .view_content_box').css('margin-left', listContainerWidth);
+                $('.list_vertical .container_wrap_left .textarea').css('width', listContainerWidth - 100 );
+            }
+    })
+</script>
+</body>
+</html>

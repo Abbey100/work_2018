@@ -1,0 +1,168 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<!-- width:686px;height:664px;-->
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box org_all"> 
+    <!-- 버튼 영역 -->
+    <div class="title_area">
+      <h1>메일 주소록</h1>
+    </div>
+    <div class="pop_contents">
+    <!-- tab -->
+    <div class="tab_area">
+      <div class="tab_box">
+        <ul class="tab_menu">
+          <a href="#">
+          <li class="tab">조직도</li>
+          </a> <a href="#">
+          <li class="tab">주소록/그룹</li>
+          </a> <a href="#">
+          <li class="tab selected">직위</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <!-- //tab -->
+    
+    <div class="tab_ctt">
+      <div class="center_tree_box">
+        <div class="org_lst">
+          <div class="content_lst content_lst_head">
+            <table>
+              <thead>
+                <tr>
+                  <th><input type="checkbox">
+                    직위명</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="content_lst content_lst_body" style="height:373px !important;">
+            <table>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox">
+                    책임연구위원</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox">
+                    과장</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- bottom tab -->
+      <div class="bottom_area">
+        <ul class="vertical_tab">
+          <li class="tab_nomal">받는사람</li>
+          <li class="tab_select">참조</li>
+          <li class="tab_nomal">숨은참조</li>
+        </ul>
+        <div class="vertical_tab_ctt">
+          <textarea id="hwbcc" readonly>$UX디자인팀;김군;이군;양군</textarea>
+        </div>
+      </div>
+      <!-- //bottom tab --> 
+     </div>
+      </div>
+    <div class="footer layout_bttm full_width">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

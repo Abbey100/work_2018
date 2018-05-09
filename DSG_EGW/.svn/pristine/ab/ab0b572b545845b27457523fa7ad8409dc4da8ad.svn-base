@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 원결재선 </title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 1210 x 950 -->
+	<body>
+		<!-- header -->
+		<h1>원결재선</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+            <div class="scroll_area handy-scroll">			
+			<!-- 본문 영역 -->
+						<div class="appr_pop_inner">
+							<!-- 블럭 한셋 -->
+							<div class="arrp_block_wrap no_brdr">
+								 <!-- 결재 라인 -->
+                                        <div class="appr_line_list">
+                                            <ul>
+                                                <li>
+                                                    <!-- 결재 라인 한셋 (완료)-->
+                                                    <div class="appr_line_wrap end">
+                                                        <div class="appr_line_progress">
+                                                            <span class="ic">결재 대기</span>
+                                                            <span class="txt"><span>기안기안두줄까지</span></span>
+                                                        </div>
+                                                        <div class="appr_line_man">
+                                                            <span class="photo"><img src="../../img/profile_photo_blank.png" alt="김지영"></span>
+                                                            <span class="name"><em>김지영</em> 선임</span>
+                                                        </div>
+                                                        <div class="appr_line_date">2017-09-01 13:50</div>
+                                                        <div class="appr_line_state">
+                                                            <span class="state b_lgray">완료</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //결재 라인 한셋 -->
+                                                </li>
+                                                <li>
+                                                    <!-- 결재 라인 한셋 (진행중, 의견 있을 경우 - 펼침)-->
+                                                    <div class="appr_line_wrap ing">
+                                                        <div class="appr_line_progress">
+                                                            <span class="ic">결재 진행</span>
+                                                            <span class="red_dot">의견 있음</span><!-- 의견이 있을 경우 추가 -->
+                                                            <span class="txt"><span>검토</span></span>
+                                                        </div>
+                                                        <div class="appr_line_man">
+                                                            <span class="photo"><img src="../../img/profile_photo_blank.png" alt="김민성"></span>
+                                                            <span class="name"><em>김민성</em> 선임</span>
+                                                            <a href="#" class="btn_msg">의견 펼치기</a><!-- 의견이 있을 경우 추가 -->
+                                                        </div>
+                                                        <div class="appr_line_date">2017-09-01 13:50</div>
+                                                        <div class="appr_line_state">
+                                                            <span class="state b_rblue">확인</span>
+                                                        </div>
+                                                        <div class="appr_line_msg open"><!-- 의견 펼치기 open -->
+                                                            <ul>
+                                                                <li>1. 교육일정을 수정했습니다.</li>
+                                                                <li>2. 결재선을 변경했습니다.</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //결재 라인 한셋 -->
+                                                </li>
+                                                <li>
+                                                    <!-- 결재 라인 한셋 (대기중)-->
+                                                    <div class="appr_line_wrap">
+                                                        <div class="appr_line_progress">
+                                                            <span class="ic">결재 대기</span>
+                                                            <span class="txt"><span>병렬협조</span></span>
+                                                        </div>
+                                                        <div class="appr_line_man">
+                                                            <span class="photo"><img src="../../img/profile_photo_blank.png" alt="조지원"></span>
+                                                            <span class="name"><em>조지원</em> 수석</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //결재 라인 한셋 -->
+                                                </li>
+                                                <li>
+                                                    <!-- 결재 라인 한셋 (대기중)-->
+                                                    <div class="appr_line_wrap">
+                                                        <div class="appr_line_progress">
+                                                            <span class="ic">결재 대기</span>
+                                                            <span class="txt"><span>병렬협조</span></span>
+                                                        </div>
+                                                        <div class="appr_line_man">
+                                                            <span class="photo"><img src="../../img/profile_photo_blank.png" alt="오상식"></span>
+                                                            <span class="name"><em>오상식</em> 책임</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //결재 라인 한셋 -->
+                                                </li>
+                                                <li>
+                                                    <!-- 결재 라인 한셋 (대기중)-->
+                                                    <div class="appr_line_wrap">
+                                                        <div class="appr_line_progress">
+                                                            <span class="ic">결재 대기</span>
+                                                            <span class="txt"><span>결재</span></span>
+                                                        </div>
+                                                        <div class="appr_line_man">
+                                                            <span class="photo"><img src="../../img/profile_photo_blank.png" alt="민지원"></span>
+                                                            <span class="name"><em>민지원</em> 팀장</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //결재 라인 한셋 -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- //결재 라인 -->
+							</div>
+
+						</div>
+            </div>
+            <div class="btns_area bttm border">
+                <a class="btn align_rg">확인</a>
+            </div>
+		</div>
+	</body>
+</html>

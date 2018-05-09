@@ -1,0 +1,103 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../css/xtree.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+</head>
+<body>
+<div id="main_table" class="left_wrap_content"> 
+  <!-- title start-->
+  <div class="title_area">
+    <h2 class="title">메일 환경 설정</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- title end-->
+  
+  <div class="pd_all_18" id="tab-pane-1">
+    <div class="tab_box">
+      <ul class="tab_menu">
+        <a href="#">
+        <li class="tab selected">기본 설정</li>
+        </a> <a href="#">
+        <li class="tab">메일함 관리</li>
+        </a> <a href="#">
+        <li class="tab">메일 필터링</li>
+        </a> <a href="#">
+        <li class="tab">맺음말</li>
+        </a> <a href="#">
+        <li class="tab">외부 메일 가져오기</li>
+        </a>
+      </ul>
+    </div>
+    <div class="content_configlist">
+      <table>
+        <colgroup>
+        <col style="width:150px;">
+        <col width="*">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>메일 읽기</th>
+            <td class="rdio_"><label>
+                <input type="checkbox">
+                새 창에서 보기</label></td>
+          </tr>
+          <tr>
+            <th>메일 보관 기간</th>
+            <td> 받은메일/보낸메일
+              <input type="text" class="basic_inp" style="width:38px;"/>
+              일, 삭제한 메일
+              <input type="text" class="basic_inp" style="width:38px;"/>
+              일
+              <p class="dscr_tip">0은 영구 보관. 입력하지 않으면 시스템 기본값으로 설정됩니다.</p></td>
+          </tr>
+          <tr>
+            <th>보낸메일 저장</th>
+            <td><input type="checkbox">
+              보낸메일함에 보낸메일 저장
+              <p class="dscr_tip">0은 영구 보관. 입력하지 않으면 시스템 기본값으로 설정됩니다.</p></td>
+          </tr>
+          <tr>
+            <th>받는사람 본인 제외</th>
+            <td><input type="checkbox">
+              받는 사람에서 본인 제외
+              <p class="dscr_tip">부서,그룹 또는 직위를 지정하여 메일을 보낼 때 받는사람에서 본인을 제외합니다.</p></td>
+          </tr>
+          <tr>
+            <th>답장받을 메일 주소</th>
+            <td><label class="pd_rt15">
+                <input type="radio" checked="checked">
+                보낸사람의 메일 주소로 답장받음</label>
+              <label>
+                <input type="radio">
+                <input type="text" readonly class="basic_inp" placeholder="답장받을 메일 주소를 입력합니다." style="width:290px">
+              </label></td>
+          </tr>
+          <tr>
+            <th>답장 원본 포함</th>
+            <td><input type="checkbox">
+              답장에 메일 원본 포함</td>
+          </tr>
+          <tr>
+            <th>포워딩 설정</th>
+            <td class="inp_ctt"><input type="text" class="basic_inp" style="width:506px"/>
+              <p class="dscr_tip">최대 2개의 메일로 포워딩할 수 있습니다. 쉽표(,)로 메일 주소를 구분합니다. </p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

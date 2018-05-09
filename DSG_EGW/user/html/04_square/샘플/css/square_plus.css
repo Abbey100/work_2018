@@ -1,0 +1,13 @@
+/* 협업룸 */
+
+/* 썸네일 */
+.thum_area {position:relative; margin: 8px 0;}
+.thum_wrap {position:relative; left:1px; min-width:410px; max-width: 630px; height:100px; overflow: hidden; }
+.thumnails {position:relative; display: block; width:2000px;}
+.thumnails .thumnail {display:inline-block; margin-right: 4px;}
+.thumnails .thumnail span {display: inline-block; width:154px; height:100px; overflow: hidden; cursor: pointer;}
+.thumnails .thumnail span img {object-fit: cover; object-position:center; }
+.thum_wrap .btn {position:absolute; width:18px; height:100px; display: block; background: url(../img/square_plus/btn_thumnails.png) 0 0 no-repeat; z-index: 999; font-size: 0; cursor: pointer; display: none;}
+.thum_wrap .btn.pre {top:0; left:0; background-position: 0 0;}
+.thum_wrap .btn.next {top:0; right:0; background-position: -16px 0;}
+.thum_wrap:hover .btn {display: block;}

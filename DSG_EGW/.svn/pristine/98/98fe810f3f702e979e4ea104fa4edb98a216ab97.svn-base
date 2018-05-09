@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 나의 정보 수정 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <!-- popup 577 x 485 -->
+    <body>
+        <div class="wrapper small">
+            <!-- header -->
+            <h1>나의 정보 수정</h1>
+            <!-- // header -->
+            <!-- body -->
+            <div class="cont_wrap container_area">				
+                <!-- 본문 영역 -->
+                <div class="scroll_area handy-scroll">
+                    <div class="form_table">
+
+                        <table>
+                            <colgroup>
+                                <col style="width:150px;">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th class="fnt_grey2">이름</th>
+                                    <td><p>홍길동</p></td>
+                                </tr>
+								<tr>
+                                    <th class="fnt_grey2">회원등급</th>
+                                    <td><p>운영자</p></td>
+                                </tr>
+								<tr>
+                                    <th class="fnt_grey2">가입일</th>
+                                    <td><p>2017-12-31</p></td>
+                                </tr>
+								<tr>
+                                    <th class="fnt_grey2">최근접속</th>
+                                    <td><p>2017-12-07 12:55</p></td>
+                                </tr>
+								<tr>
+                                    <th class="fnt_grey2">방문횟수</th>
+                                    <td><p>99회</p></td>
+                                </tr>
+								<tr>
+                                    <th class="fnt_grey2">질문1</th>
+                                    <td><p>당신의 성별은?</p>
+									<div class="input_group has_btn focused">
+                                            <!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+                                            <input type="text" class="basic_input" value="남성" />
+												<a class="cancel" href="#">삭제</a>
+                                        </div>
+									</td>
+                                </tr>
+								<tr>
+                                    <th>질문2</th>
+                                    <td><p>당신이 사는 지역은?</p>
+									<div class="input_group">
+                                            <!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+                                            <input type="text" class="basic_input" placeholder="내용을 입력하세요" />
+                                        </div>
+									</td>
+                                </tr>
+                               
+
+                            </tbody>
+                        </table>	
+
+                    </div>
+                </div>
+                <div class="btns_area bttm">
+                    <div class="align_rg">
+                        <!-- 등록 -->
+                        <a class="action_btn">완료</a>
+                        <a class="btn">취소</a>
+                    </div>
+                </div>            
+
+            </div>
+            <!-- // body -->		
+        </div>
+		<div class="note" style="">
+				<p>수정되었습니다.</p>
+				<a class="confirm" href="#">확인</a>
+			</div>
+    </body>
+</html>

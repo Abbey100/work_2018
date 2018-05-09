@@ -1,0 +1,128 @@
+@charset "utf-8";
+.cen{ text-align:center }
+/***** 결재암호 시작*****/
+#passwd_mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+    background-color: gray;
+    display: none;
+}
+
+.passwd_window {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background-color: white;
+    width: 400px;
+    box-shadow: 10px 10px 10px rgba(100, 100, 100, 0.7);
+}
+/***** 결재암호 끝 *****/
+
+/* 검색조건선택 DIV SELECT BOX 시작*/
+.divSelect .divSelectSub {
+    border: 1px solid silver;
+    height: 100px;
+    overflow: auto;
+}
+.divSelect .divSelectSub .optionList {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.divSelect .divSelectSub .optionList li:hover {
+    background-color: rgb(108, 108, 108);
+}
+.divSelect .divSelectSub .optionList li:hover div {
+    color: rgb(255, 255, 255);
+}
+.divSelect .divSelectSub .optionList li {
+    display: block;
+    width: 100%
+    height: 15px;
+    overflow: hidden;
+    margin-top: 2px;
+    font-size: 12px;
+}
+.divSelect .divSelectSub .optionList li:first-child {
+    margin-top: 5px;
+}
+.divSelect .divSelectSub .optionList li div {
+    *display: inline-block;
+    width: 100%
+    height: 16px;
+}
+.divSelect .divSelectSub .optionList li div:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.divSelect .divSelectSub .optionList li .optionName {
+    margin: 0px 0px 0px 5px;
+    float: left;
+    width: 97%;
+    height: 15px;
+    overflow: hidden;
+    line-height: 16px;
+}
+.divSelect .divSelectSub .optionList li .optionDelete {
+    margin: 0px 0px 0px 5px;
+    vertical-align: middle;
+    display: block;
+    left: 105px;
+    float: left;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    margin-left: -16px;
+}
+
+.divSelect .divSelectSub .optionList li .onOptionName {
+    margin: 0px 0px 0px 5px;
+    float: left;
+    width: 97%;
+    height: 15px;
+    overflow: hidden;
+    line-height: 16px;
+    background-color: rgb(108, 108, 108);
+    color: rgb(255, 255, 255);
+}
+/* 검색조건선택 DIV SELECT BOX 끝*/
+
+/* 결재플로우 다이어그램용 시작*/
+#m_body {border-left: 1px solid #d5d5d5;border-bottom: 1px solid #d5d5d5;border-right: 1px solid #d5d5d5;}
+.mcanvas{position:relative;border:0;padding:0;background:#fff;height:100%; width:100%;}
+.icon_progress {width:24px; height:24px; padding:2px;}
+.order {width:118px;}
+.order th {text-align:left; color:#2649a0; font-weight:normal;}/**1e33bf*/
+.order td {color:#333;}
+.bold {font-weight:bold;}
+.order .plmi{text-align:right;}
+.treecourse{float:left; padding:10px}
+
+
+
+#monitor {clear:both;}
+#nodeinfo {border: 2px solid #FFF;}
+
+
+
+.flow_horiz,.flow_horizon{width:36px; height:30px; display:block; float:left; background:url(/img/btn_treecourse.gif) top left no-repeat;}
+.flow_verti,.flow_vertion{width:36px; height:30px; display:block; float:left; background:url(/img/btn_treecourse.gif) top right no-repeat;}
+.flow_horizon{background-position:left -90px;}
+.flow_vertion{background-position:right -90px;}
+.flow_horiz:hover{background-position:left -30px;}
+.flow_horiz:active{background-position:left -60px;}
+.flow_verti:hover{background-position:right -30px;}
+.flow_verti:active{background-position:right -60px;}
+
+#50currentNodeArrow{position:absolute;z-index:1500; width:50px; height:50px}
+#currentNodeArrow{position:absolute;z-index:150; width:16px; height:16px}
+#currentNodeText{background-color:#ffddbb;text-align:center;font-size:12;position:absolute;z-index:150; width:48px; height:10px}
+#currentNodeBox{position:absolute;z-index:150; background-color: #788dea;}
+
+/* 결재플로우 다이어그램용 시작 끝*/

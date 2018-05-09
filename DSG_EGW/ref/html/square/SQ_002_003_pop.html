@@ -1,0 +1,196 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>square 그룹 정보보기 화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/fileUpload.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(function() {
+                $('.topic_sentence li p').dotdotdot();
+            });
+        </script>
+        </head>
+        <body>
+        <div class="pop_wrap co_work">
+          <div class="title_area">
+            <h1>업무요청 <span id="systemMessage" style="display: none;"></span></h1>
+          </div>
+          <div class="view_content_box">
+            <div class="inner_box">
+              <div class="view_body_contents" style="overflow-y: scroll; height: 576px;">
+                <div class="pop_container" style="padding-top:0px">
+                  <div class="write_box">
+                    <div class="write_form">
+                      <div class="write_form_box none_bar" style="padding-right:0;border-bottom-width:0px">
+                        <table class="" style="width: 100%;">
+                          <colgroup>
+                          <col style="width: 110px;">
+                          <col style="width: 30px;">
+                          <col style="width:*">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th class="pd_lft_0"><span class="tit">제목<span class="essntal">*</span></span></th>
+                              <td colspan="2"><input id="title" name="title" class="intxt" style="width: 100%; ime-mode: active;" onchange="isChanged=true;" value="" placeholder="제목을 입력하십시오." tabindex="1"></td>
+                            </tr>
+                            <tr>
+                              <th class="pd_lft_0"><span class="tit">그룹<span class="essntal">*</span></span></th>
+                                <td colspan="2"><select class="basic_select" style="width: 100%;" >
+                   <option>스퀘어 개발</option>                 
+                   <option selected>제품기획팀</option>                 <!--[D]
+1. 왼쪽 퀵버튼 > 레이어 > 신규 등록 으로 접근시 기본값은 현재위치의 그룹.
+2. 하단 인풋 > 레이어 > 보관내용 으로 접근시 기본값은 보관하였던 당시의 그룹. -->
+                   <option>나의업무팀</option>                 
+                                    
+                                    
+                                    </select></td>
+                            </tr>
+                            <tr>
+                              <th class="pd_lft_0">담당자<span class="essntal">*</span></th>
+                              <td class="detail_srch_form"><font class="inp_box"><a id="recipient_to" href="javascript:openMemberPopup();" style="position:static;" class="btn_human" onfocus="blur();">&nbsp;</a></font></td>
+                              <td><ul class="token-input-list-facebook ui-sortable">
+                                  <li class="token-input-input-token-facebook">
+                                  <input type="text" autocomplete="off" id="token-input-sqMember" tabindex="2" style="outline: none;">
+                                  <tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 12px; font-family: Dotum, Gulim, Arial, Verdana, 'MS Gothic', sans-serif; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+                                </li>
+                                </ul>
+                                <input class="intxt" id="sqMember" name="sqMember" onchange="isChanged=true;" value="" style="display: none;">
+                                <input type="hidden" id="member" name="member" value=""></td>
+                            </tr>
+                            <tr>
+                              <th class="pd_lft_0">업무기한<span class="essntal">*</span></th>
+                              <td colspan="2"><label class="pd_rgt_10">
+                                  <input id="workDate" onclick="javascript:renderDateVisible('workDate', 'datepic_box');"  name="workDate" type="checkbox">
+                                  설정</label>
+                                <span class="fnt_gray">선택하면 그룹 종료일을 설정할 수 있으며, 종료일 이후 종료된 그룹으로 이동됩니다.</span>
+                                <div id="datepic_box" class="datepic_box" style="display:none;">
+                                  <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                                  <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                            </tr>
+                            <tr>
+                              <th style="padding-left:0">파일첨부 <a href="javascript:;" onclick="toggleAtt(this);" id="attAnchor" name="attAnchor" class="btn_trig on">expand</a></th>
+                              <td colspan="2"><div class="tab_area pd_0">
+                                  <div class="tab_box mg_0 on">
+                                  <ul class="tab_menu inner_tab">
+                                      <a id="attechTab" name="attechTab" href="javascript:chkAtt();changeNormal();countAttachFile();">
+                                    <li class="tab selected">PC파일(<font id="attechCnt">0</font>)</li>
+                                    </a> 
+                                      
+                                      <!--a id="massDataTab" name="massDataTab" href="javascript:chkAtt();changeMassData();countAttachFile();">
+														<li class="tab">대용량(<font id="massCnt">0</font>)</li>
+													</a--> 
+                                      <a id="cloudTab" name="cloudTab" href="javascript:chkAtt();changeCloud();countAttachFile();">
+                                    <li class="tab">웹폴더(<font id="cloudCnt">0</font>)</li>
+                                    </a>
+                                    </ul>
+                                </div>
+                                </div></td>
+                            </tr>
+                            <tr id="attr_tr" style="display: table-row;">
+                              <td>&nbsp;</td>
+                              <td colspan="2"><div class="write_file_list" style="display:block;height:170px;overflow:hidden;"> 
+                                  <!--Attachment start-->
+                                  
+                                  <div id="fileUpload" name="fileUpload" class="fileUpload" style="margin-top: 0px; display: block;">
+                                  <div class="add_filebg">
+                                      <div id="wfw_file_box" class="wfw_file_box">
+                                      <form name="fileUploadForm" id="fileUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data">
+                                          <input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" multiple style="opacity: 0;">
+                                        </form>
+                                      <ul>
+                                          <li><a href="#" class="attach_add" style="color: rgb(68, 68, 68); text-decoration: none; font-size: 12px; font-family: Dotum;">찾아보기</a></li>
+                                        </ul>
+                                      <form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/servlet/FileUploadServlet?acton=upload" method="POST">
+                                          <input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;">
+                                        </form>
+                                    </div>
+                                    </div>
+                                  <ul>
+                                      <li class="theader_h1">파일이름</li>
+                                      <li class="theader_h2">파일크기</li>
+                                    </ul>
+                                  <div id="filelistlayer" class="filelistlayer" style="display: block;">
+                                      <ul id="filelist" class="filelist">
+                                    </ul>
+                                    </div>
+                                </div>
+                                  <div id="massUpload" name="massUpload" class="fileUpload" style="margin-top:0px;display:none">
+                                  <div class="add_filebg">
+                                      <div id="wfw_file_box" class="wfw_file_box">
+                                      <form name="massFileUploadForm" id="massFileUploadForm" action="/cloudfolder/servlet/FileUploadServlet?acton=upload" method="POST" enctype="multipart/form-data">
+                                          <input type="file" id="temporaryFile" name="undefined" class="filetag" value="file" size="1" multiple style="opacity: 0;">
+                                        </form>
+                                      <ul>
+                                          <li><a href="#" class="attach_add" style="color: rgb(68, 68, 68); text-decoration: none; font-size: 12px; font-family: Dotum;">찾아보기</a></li>
+                                        </ul>
+                                      <form name="fileUrlUploadForm" id="fileUrlUploadForm" action="/cloudfolder/servlet/FileUploadServlet?acton=upload" method="POST">
+                                          <input type="hidden" id="fileurl" name="fileurl" value="" style="opacity: 0;">
+                                        </form>
+                                    </div>
+                                    </div>
+                                  <ul>
+                                      <li class="theader_h1">파일이름</li>
+                                      <li class="theader_h2">파일크기</li>
+                                    </ul>
+                                  <div id="massFileListLayer" class="filelistlayer" style="display: block;">
+                                      <ul id="massFileList" class="filelist">
+                                    </ul>
+                                    </div>
+                                  <table id="table_filebox" border="0" cellspacing="0" cellpadding="0" width="100%" style="display:none;">
+                                      <tbody>
+                                    </tbody>
+                                    </table>
+                                </div>
+                                  <div id="cloudUpload" name="cloudUpload" class="fileUpload wbfldr" style="display:none;">
+                                  <div class="add_filebg"><span id="wfw_file_box" class="wfw_file_box">
+                                    <ul>
+                                    <li><a class="attach_add" href="javascript:openCloud()" style="color: rgb(68, 68, 68); text-decoration: none; font-size: 12px; font-family: Dotum;">찾아보기</a></li>
+                                  </ul>
+                                    </span></div>
+                                  <ul>
+                                      <li class="theader_h1">파일이름</li>
+                                      <li class="theader_h3">다운로드기간</li>
+                                      <li class="theader_h4">가능횟수</li>
+                                      <li class="theader_h2">파일크기</li>
+                                    </ul>
+                                  <div id="filelistlayer" class="filelistlayer">
+                                      <ul id="cloudFileList" class="filelist">
+                                    </ul>
+                                    </div>
+                                </div>
+                                  <br>
+                                  
+                                  <!--Attachment end--> 
+                                </div></td>
+                            </tr>
+                            <tr>
+                              <th class="pd_lft_0 pd_tp_15" style="vertical-align:top;">상세내용</th>
+                              <td colspan="2"><textarea name="body" id="body" class="mg_tp_10" style="width: 100%;height:210px;overflow:auto;" placeholder="내용을 입력하십시오." tabindex="3"></textarea></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer layout_bttm full_width">
+                <ul class="btns">
+                  <li><span><a href="#" onclick="setForm();" class="fnt_bold">등록</a></span></li>
+                  <li><span><a href="#" onclick="window.close();">취소</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box org_all"> 
+    <!-- 버튼 영역 -->
+    <div class="title_area">
+      <h1>결재경로 설정</h1>
+    </div>
+    <div class="pop_contents">
+    <!-- tab -->
+    <div class="tab_area">
+      <div class="tab_box">
+        <ul class="tab_menu">
+          <a href="#">
+          <li class="tab">조직도</li>
+          </a> <a href="#">
+          <li class="tab selected">나의 결재선</li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <!-- //tab -->
+    
+    <div class="tab_ctt"> 
+      <!-- left tree -->
+      <div class="left_tree_box list">
+        <div class="left_tree">
+          <div class="approval_lst">
+            <div class="content_lst content_lst_body" style="height: 334px !important;">
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="list_del line_slct"> 휴가신청 결재선<a class="approval_del" href="#">삭제</a></td>
+                  </tr>
+                  <tr>
+                    <td class="list_del"> 휴가신청 결재선<a class="approval_del" href="#">삭제</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //left tree --> 
+      
+      <!-- right tree -->
+      <div class="right_tree_box">
+        <div class="org_lst">
+          <div class="content_lst content_lst_head">
+            <table>
+              <colgroup>
+              <col style="width:20%;">
+              <col style="width:25%;">
+              <col style="width:20%;">
+              <col style="width:136px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>기관, 부서</th>
+                  <th>직위(직급)</th>
+                  <th>처리방법</th>
+                  <th>이름</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="content_lst content_lst_body" style="height:307px !important;">
+            <table>
+              <colgroup>
+              <col style="width:20%;">
+              <col style="width:25%;">
+              <col style="width:20%">
+              <col style="width:120px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>UX디자인팀</td>
+                  <td>책임연구위원</td>
+                  <td>결재</td>
+                  <td>정만소<span><a class="btn_absence">부재</a></span></td>
+                </tr>
+                <tr>
+                  <td>UX디자인팀</td>
+                  <td>선임연구위원</td>
+                  <td>참조</td>
+                  <td>김은이</td>
+                </tr>
+                <tr>
+                  <td>UX디자인팀</td>
+                  <td>주임연구위원</td>
+                  <td>기안</td>
+                  <td>김명필</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- //right tree --> 
+      
+      <!-- center button box : 버튼이 중앙에 오도록 -->
+      <div class="center_btn_box">
+        <ul>
+          <li class="btn_apply"><a>적용</a></li>
+        </ul>
+      </div>
+      <!--//center button box --> 
+      
+      <!-- center : 적용 영역 -->
+      <div class="center_accpt_box approval_lst">
+        <div class="btn_area"> 
+          <!-- 순서 조정 버튼 -->
+          <ul class="item_move layout_lft">
+            <a href="#" onclick="">
+            <li class="down">아래</li>
+            </a> <a href="#" onclick="">
+            <li class="up">위</li>
+            </a>
+          </ul>
+          <!-- 결재선관련 input -->
+          <div class="layout_rgt">
+            <select class="basic_select layout_lft" style="width:180px;">
+              <option>나의 결재선</option>
+            </select>
+            <div class="layout_lft mg_lft_5">
+              <input type="text" placeholder="현재 결재선 저장" class="basic_inp" style="width:180px;height:29px">
+              <span class="btn_config"><a href="#">저장</a></span> </div>
+          </div>
+        </div>
+        <!-- list TABLE -->
+        <div class="content_lst content_lst_head ">
+          <table style="min-width:656px">
+            <colgroup>
+            <col style="width:41px">
+            <col style="width:10%">
+            <col style="width:20%">
+            <col style="width:20%">
+            <col style="width:15%">
+            <col style="width:15%">
+            <col style="width:126px">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>순번</th>
+                <th>상태</th>
+                <th>기관, 부서</th>
+                <th>직위(직급)</th>
+                <th>처리방법</th>
+                <th>처리자</th>
+                <th>수정권한</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="content_lst content_lst_body">
+          <table style="min-width:640px">
+            <colgroup>
+            <col style="width:41px">
+            <col style="width:10%">
+            <col style="width:20%">
+            <col style="width:20%">
+            <col style="width:15%">
+            <col style="width:15%">
+            <col style="width:110px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td>5</td>
+                <td>진행</td>
+                <td>UX디자인팀</td>
+                <td>전문연구원</td>
+                <td><select class="basic_select" style="width:100%;">
+                    <option>결재</option>
+                    <option>참조</option>
+                    <option>전결</option>
+                  </select></td>
+                <td>김은하</td>
+                <td><input class="mg_lft_20" type="checkbox">
+                  <input class="mg_lft_20" type="checkbox"></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>진행</td>
+                <td>UX디자인팀</td>
+                <td>전문연구원</td>
+                <td><select class="basic_select" style="width:100%;">
+                    <option>결재</option>
+                    <option>참조</option>
+                    <option>전결</option>
+                  </select></td>
+                <td>김은하</td>
+                <td class="apprvl_modify"><a class="icon_modi doc off">문서수정</a> <a class="icon_modi line off">결재경로변경</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>진행</td>
+                <td>UX디자인팀</td>
+                <td>책임연구원</td>
+                <td class="apprvl_line"><span class="selected_authority">검토</span><span class="set_authority"></span></td>
+                <td>김은하</td>
+                <td class="apprvl_modify"><a class="icon_modi doc on">문서수정</a> <a class="icon_modi line on">결재경로변경</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>-</td>
+                <td>UX디자인팀</td>
+                <td>선임연구원</td>
+                <td class="apprvl_line"><span class="selected_authority">공석(특별휴가)</span><span class="set_authority"></span></td>
+                <td>김은하</td>
+                <td class="apprvl_modify"><a class="icon_modi doc">문서수정</a> <a class="icon_modi line">결재경로변경</a></td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>완료</td>
+                <td>UX디자인팀</td>
+                <td>주임연구원</td>
+                <td><select class="basic_select">
+                    <option>결재</option>
+                    <option>참조</option>
+                    <option>전결</option>
+                  </select></td>
+                <td>김은하</td>
+                <td class="apprvl_modify"><a class="icon_modi doc on">문서수정</a> <a class="icon_modi line">결재경로변경</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="apprvl_select two">
+          <ul class="select_ttl">
+            <!-- [D] sort 클래스는 현재 작업 일정에 따라 display: none으로 처리. sort와 reason에 대한 display 속성은 css 안에 있음.-->
+            <li class="sort">처리방법</li>
+            <li class="reason">공석사유</li>
+            <li class="btn_clse"><a href="#" >close</a></li>
+          </ul>
+          <div class="select_lst">
+            <dl class="sort">
+              <dt>처리방법</dt>
+              <!-- [D] 공석이 선택되었다면, 다른 dd들은 class="off" 공석은 class="on", 선택되지 않았다면 class는 "" 빈칸-->
+              <dd class="">전결</dd>
+              <dd class="off">대결</dd>
+              <dd class="off">결재</dd>
+              <dd class="off">확인</dd>
+              <dd class="off">협조</dd>
+              <dd class="off">병렬협조</dd>
+              <dd class="on">공석</dd>
+              <dd class="off">참조</dd>
+            </dl>
+            <dl class="reason">
+              <dt>공석사유</dt>
+              <dd>항목없음</dd>
+              <dd>교육</dd>
+              <dd>출장</dd>
+              <dd>외출</dd>
+              <dd>휴가</dd>
+              <dd>조퇴</dd>
+              <dd>연가</dd>
+              <dd>병가</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <!-- // center : 적용 영역 --> 
+    </div>
+    </div>
+    <!-- // tab content -->
+      <div class="footer layout_bttm full_width">
+            <ul class="btns layout_cnt">                
+                 <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <li><span><a href="#">취소</a></span></li>
+            </ul>
+        </div>     
+      
+      
+  </div>
+</div>
+</body>
+</html>

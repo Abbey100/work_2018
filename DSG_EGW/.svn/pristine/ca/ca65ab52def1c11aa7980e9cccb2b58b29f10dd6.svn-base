@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title>요약문서</title>
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" >
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- Size : 860 x 610 -->
+	<body>
+		<!-- header -->
+		<h1>요약문서</h1>
+		<!-- // header -->
+		<!-- body -->
+		<div class="container_area">
+			<div class="btns_area">
+				<div class="align_lf">
+					<!-- btns -->
+					<a class="action_btn" title="저장">저장</a>
+					<a class="btn" title="삭제">삭제</a>
+					<a class="btn" title="불러오기">불러오기</a>
+					<div class="selectbox noFirst">
+						<select> 
+							<option>추가기능</option>
+							<option>PC저장</option>
+							<option>EML업로드</option>
+							<option>엑셀다운로드</option>
+							<option>인쇄보기</option>
+							<option>일정으로 보내기</option>
+							<option>스퀘어로 보내기</option>
+							<option>동호회로 보내기</option>
+						</select>
+					</div>	
+				</div>
+			</div>
+			<!-- 본문 영역 -->
+			<div class="appr_pop_inner">
+				<div class="egw_editor" title="에디터영역 : 에디터로 대체됩니다.">
+					<img class="" src="../../img/community/img_editor.png" alt="에디터영역 : 에디터로 대체됩니다.">
+				</div>
+			</div>
+		</div>	
+		<div class="popup open">
+			<!--  open 추가시 모달-->
+			<div>
+				<div class="popup_container" style="width:620px;">
+					<!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+					<h2 class="title">
+						요약정보 불러오기
+					</h2>
+					<div class="form_table">
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<div class="file_box full"> 
+											<input type="text" class="file_name" id="file_name02" value="파일_불러오기_영역에_파일이름이_들어가는경우_가는경우_이렇게_됩니다.html" readonly/>
+											<p class="file_size">9,999KB</p>
+											<span class="cancel"></span>
+											<span class="ico file">
+												<input  type="file" id="file" style="" onchange="document.getElementById('file_name02').value=this.value;">
+											</span> 
+										</div>
+										<p class="description">html, htm, mht 파일만 가능합니다.</p>
+										<!--이미지 미리보기 삭제로 주석처리 180227-->
+										<!--<img class="img_signature" src="../../../img/sample/signature.png" />-->
+									</td>
+								</tr>
+								<tr>
+									<td class="attached_files two_btn">
+										<div class="">
+											<div class="group file_input">
+												<a class="btn small" >
+													<input type="file" onclick="blur()" >
+													내PC
+												</a>
+												<a class="btn small">내파일</a>
+											</div>
+											<a class="text_btn all_delete">전체삭제</a>
+											<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+											<div class="file_lst upload handy-scroll">
+												<ul class="">
+													<li>
+														<a class="move">항목이동</a>
+														<a class="file_name"><span class="badge my_file">내파일</span><span class="badge bigdata">대용량</span>IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+														<!-- 다운로드 횟수 및 기간 -->
+														<div class="download_info">(<em>~2017-09-30</em> / 잔여 <em>100회</em>)</div>
+														<span class="file_size">9,999 KB</span>
+														<a class="cancel" ></a></li>
+													<li>
+														<a class="move">항목이동</a>
+														<a class="file_name"><span class="badge my_file">내파일</span>EGW_GUI_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Conce_Visual_Concept_0804.ppt </a>	
+														<!--prograss -->
+														<div class="uploaded_file">
+															<div class="process_bar">
+																<span class="pr_per" style="width: 40%;">40%</span>
+																<span class="pr_bg">background</span>
+															</div>												
+														</div>
+														<!-- // prograss -->
+														<span class="file_size">28 KB</span>
+														<a class="cancel" ></a></li>
+													<li>
+														<a class="move">항목이동</a>
+														<a class="file_name"><span class="badge bigdata">대용량</span>EGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_VisuEGW_GUI_Visual_Concept_0804.ppt </a>	
+														<!--prograss -->
+														<div class="uploaded_file">
+															<div class="process_bar">
+																<span class="pr_per" style="width: 40%;">40%</span>
+																<span class="pr_bg">background</span>
+															</div>												
+														</div>
+														<!-- // prograss -->
+														<span class="file_size">284 KB</span>
+														<a class="cancel" ></a></li>
+													<li>
+														<a class="move">항목이동</a>
+														<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+														<!--prograss -->
+														<div class="uploaded_file">
+															<div class="process_bar">
+																<span class="pr_per" style="width: 40%;">40%</span>
+																<span class="pr_bg">background</span>
+															</div>												
+														</div>
+														<!-- // prograss -->
+														<span class="file_size">284 KB</span>
+														<a class="cancel" ></a></li>
+													<li>
+														<a class="move">항목이동</a>
+														<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+														<!--prograss -->
+														<div class="uploaded_file">
+															<div class="process_bar">
+																<span class="pr_per" style="width: 40%;">40%</span>
+																<span class="pr_bg">background</span>
+															</div>												
+														</div>
+														<!-- // prograss -->
+														<span class="file_size">284 KB</span>
+														<a class="cancel" ></a></li>
+												</ul>
+											</div></div>
+										<dl class="file_info">
+											<dt>일반첨부 </dt>
+											<dd>2(<em>7.93MB</em>/100MB)</dd>
+											<dt>대용량 </dt>
+											<dd>무제한</dd>
+										</dl>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btns_area bttm">
+						<div class="align_rg">
+							<!-- 등록 -->
+							<a class="action_btn">완료</a>
+							<a class="btn">취소</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

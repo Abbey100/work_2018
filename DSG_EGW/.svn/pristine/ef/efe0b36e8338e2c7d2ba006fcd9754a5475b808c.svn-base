@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 기본형 레이아웃 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../css/layout.css" >
+		<link rel="stylesheet" type="text/css" href="../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../js/common.js" ></script>		
+		<link rel="stylesheet" type="text/css" href="../css/sub.css" />
+	</head>
+	<body>  
+
+		<!-- header -->  
+			<div class="header">
+				<h1>영역메뉴</h1>
+				<div class="aside">
+					<fieldset>
+						<div class="selectbox">
+							<select>
+								<option selected>메뉴명</option>
+								<option>통합</option>
+							</select>
+						</div>
+						<input type="text" />
+						<a href="#" class="btn_srch">찾아보기</a>
+						<a href="#" class="btn_srch_more">상세</a>
+					</fieldset>				
+
+					<div class="util">
+						<a href="#" class="btn_admin">관리자</a>
+						<a href="#" class="btn_me"><img src="../img/profile_photo_blank.png" alt="홍길동"></a>
+						<a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+						<a href="#" class="btn_support">서포트</a> 
+					</div>
+				</div>	
+			</div>
+			<!-- //header -->
+	</body>
+</html>

@@ -1,0 +1,1037 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body class="calendar_body">
+<div class="left_wrap_content">
+  <div class="left_menu"> 왼쪽메뉴 </div>
+  <div class="container_box container_list_box">
+    <div class="title_area">
+      <h2 class="title dsp_inblck">2014. 03</h2>
+      <div class="btn_box_date">
+        <div class="btn_area_xs"> <span class="date_prev"><a href="#" title="이전">이전</a></span> <span class="date_next"><a href="#" title="다음">다음</a></span> <span><a href="#" title="오늘">오늘</a></span> </div>
+      </div>
+      <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+      <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+    </div>
+    <!-- 검색 영역 -->
+    <div class="srch_area">
+      <fieldset class="search">
+        <div class="btn_cal_srch"> <a href="#"><img src="../../img/btn_top_cal_srch.gif" alt="일정검색">일정검색</a></div>
+      </fieldset>
+    </div>
+    <!-- //검색 영역 --> 
+    <!-- 상세 검색 영역 -->
+    <div class="detail_srch_wrap">
+      <div class="detail_srch">
+        <div class="detail_srch_form">
+          <table style="width:750px">
+            <colgroup>
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="width:67px">
+            <col style="width:256px">
+            <col style="*">
+            <col style="width:93px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">기간</th>
+                <td colspan="3"><label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1주일</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    1개월</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    전체</label>
+                  <label class="pd_rgt_10">
+                    <input type="radio" name="ra01">
+                    지정</label>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                  <span>~</span>
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.17" style="width:100px;" readonly>
+                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div></td>
+                <td></td>
+                <td class="reset_td"><a href="#" class="btn_reset">초기화</a></td>
+              </tr>
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4"><div class="inp_box">
+                    <input type="text" class="basic_inp" style="width:471px">
+                    <label class="pd_lft_10">
+                      <input type="checkbox">
+                      제목없이 검색</label>
+                  </div></td>
+                <td rowspan="2"><span class="btn_sqr"><a href="#" >검색</a></span></td>
+              </tr>
+              <!-- [D] 제목없이 검색 체크했을경우 -->
+              <tr>
+                <th scope="row">제목</th>
+                <td colspan="4"><div class="inp_box">
+                    <input type="text" class="basic_inp none_subj" style="width:471px" readonly>
+                    <label class="pd_lft_10">
+                      <input type="checkbox" checked>
+                      제목없이 검색</label>
+                  </div></td>
+              </tr>
+              <!-- // [D] 제목없이 검색 체크했을경우 -->
+              <tr>
+                <th scope="row">달력</th>
+                <td><div class="inp_box">
+                    <select class="basic_select" style="min-width:165px">
+                      <option value="모든달력">모든달력</option>
+                    </select>
+                  </div></td>
+                <th scope="row">공유자</th>
+                <td><div class="inp_box"> <a href="#" class="btn_human">공유자검색</a>
+                    <div class="input_box" style="width:220px"> <span class="recipient"><em>홍길동</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" style="width:50px">
+                    </div>
+                  </div></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- //상세 검색 영역 --> 
+    <!-- 버튼 영역 -->
+    <div class="btn_area calendar_btn_area">
+      <ul class="btns">
+        <li><span><a href="#" title="일간" class="fnt_bold">일간</a></span></li>
+        <!--[D] del 클래스는 x 아이콘 -->
+        <li class="btn_lft"><span><a href="#" title="주간" class="fnt_bold">주간</a></span></li>
+        <li class="btn_lft"><span class="on"><a href="#" title="월간" class="fnt_bold">월간</a></span></li>
+        <li class="btn_lft"><span><a href="#" title="목록" class="fnt_bold">목록</a></span></li>
+        <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+          <!-- [D] 추가기능 레이어 팝업 -->
+          <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+            <ul>
+              <li><a href="#">인쇄하기</a></li>
+              <li><a href="#">PC저장</a></li>
+              <li><a href="#">PC저장</a></li>
+              <li><a href="#">Excel저장</a></li>
+            </ul>
+          </div>
+          <!-- // [D] 추가기능 레이어 팝업 --> 
+        </li>
+      </ul>
+      <div class="layout_rgt">
+        <select style="width:157px;">
+          <option value="전체일정">전체일정</option>
+          <option value="홍길동">홍길동</option>
+          <option value="난그래">난그래</option>
+        </select>
+        <p class="btn_prnt"><a href="#" title="인쇄하기">인쇄</a></p>
+      </div>
+    </div>
+    <!-- //버튼 영역 --> 
+    <!-- 메일 리스팅 기본형(좌측) -->
+    <div class="calendar_list_box">
+      <div class="event_contents">
+        <div class="event_month"> 
+          <!-- [D] 일정 표시 bar -->
+          <div class="events_entry_box"> 
+            <!-- [D] 첫째주 -->
+            <div id="allday_events_row_0">
+              <div class="lon color03" style="left:1px; top:52px; width:136px;">
+                <p>워크샵</p>
+              </div>
+              <div class="lon color12" style="left:1px; top:76px; width:136px;">
+                <p>오후 12:00 팀 회식</p>
+              </div>
+              <div class="lon color18" style="left:1px; top:100px; width:136px;">
+                <p>오전 07:00 UX 디자인 회의</p>
+              </div>
+              <div class="lon share_cal" style="left:1px; top:124px; width:136px;">
+                <p><img src="../../img/ico_share_cal.png" alt="공유일정">오후 13:00 Handy Soft</p>
+              </div>
+            </div>
+            <!-- [D] 두번째주 -->
+            <div id="allday_events_row_1">
+              <div class="lon color11" style="left:1px; top:204px; width:285px;">
+                <p>
+                  <input type="checkbox">
+                  일정,설비UX</p>
+              </div>
+            </div>
+            <!-- [D] 세번째주 -->
+            <div id="allday_events_row_2">
+              <div class="lon"><span></span></div>
+            </div>
+            <!-- [D] 네번째주 -->
+            <div id="allday_events_row_3">
+              <div class="lon"><span></span></div>
+            </div>
+            <!-- [D] 다섯번째주 -->
+            <div id="allday_events_row_4">
+              <div class="lon"><span></span></div>
+            </div>
+          </div>
+          <!-- // [D] 일정 표시 bar --> 
+          <!-- [D] 달력추가 -->
+          <div class="common_layer_pop cal_add" style="left:0px; top:300px; display: block;">
+            <div class="inner_box">
+              <div class="tit"> <b>달력추가</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+              <div class="cont_pop">
+                <dl>
+                  <dt><strong>달력명</strong></dt>
+                  <dd>
+                    <input type="text" class="basic_inp" style="width:352px" value="나의 달력">
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box"> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span> <span class="recipient"><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" value="">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>색상</strong></dt>
+                  <dd>
+                    <p class="btn_color"> <a href="#"><em></em>색상선택</a> </p>
+                    <div class="colorcheck">
+                      <ul>
+                        <li><a href="#" class="color01 on"></a></li>
+                        <!-- [D] 선택시 on 클래스 추가 -->
+                        <li><a href="#" class="color02"></a></li>
+                        <li><a href="#" class="color03"></a></li>
+                        <li><a href="#" class="color04"></a></li>
+                        <li><a href="#" class="color05"></a></li>
+                        <li><a href="#" class="color06"></a></li>
+                        <li><a href="#" class="color07"></a></li>
+                        <li><a href="#" class="color08"></a></li>
+                        <li><a href="#" class="color09"></a></li>
+                        <li><a href="#" class="color10"></a></li>
+                        <li></li>
+                        <li><a href="#" class="color11"></a></li>
+                        <li><a href="#" class="color12"></a></li>
+                        <li><a href="#" class="color13"></a></li>
+                        <li><a href="#" class="color14"></a></li>
+                        <li><a href="#" class="color15"></a></li>
+                        <li><a href="#" class="color16"></a></li>
+                        <li><a href="#" class="color17"></a></li>
+                        <li><a href="#" class="color18"></a></li>
+                        <li><a href="#" class="color19"></a></li>
+                        <li><a href="#" class="color20"></a></li>
+                        <li><a href="#" class="color21"></a></li>
+                      </ul>
+                      <p class="btn_close"><a href="#"><img src="../../img/btn_colorcheck_close.gif" alt="닫기"></a></p>
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>공유자</strong></dt>
+                  <dd> <a href="#" class="btn_human">사용자검색</a>
+                    <div class="input_box"> <span class="recipient"><a href="#"><img src="../../img/btn_read.gif" alt="읽기"></a><em>김용세</em><a href="#" class="btn_close">삭제</a></span> <span class="recipient"><a href="#"><img src="../../img/btn_write.gif" alt="쓰기"></a><em>김용세</em><a href="#" class="btn_close">삭제</a></span>
+                      <input type="text" value="">
+                    </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>달력명</strong></dt>
+                  <dd>
+                    <textarea cols="10" rows="3" class="info_textarea"></textarea>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <!-- // [D] 달력추가 --> 
+          <!-- [D] 전사달력 -->
+          <div class="common_layer_pop cal_view" style="left:600px; top:300px; display:block;">
+            <div class="inner_box">
+              <div class="tit"> <b>전사달력</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+              <div class="cont_pop">
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd>홍길동</dd>
+                </dl>
+                <dl>
+                  <dt><strong>관리자</strong></dt>
+                  <dd><em class="color_view color02"></em></dd>
+                </dl>
+                <dl>
+                  <dt><strong>공유자</strong></dt>
+                  <dd>$UX디자인팀</dd>
+                </dl>
+                <dl>
+                  <dt><strong>권한</strong></dt>
+                  <dd>
+                    <div class="chk_custom"> <a href="#" class="on">읽기</a> <a href="#">쓰기</a> </div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><strong>설명</strong></dt>
+                  <dd>
+                    <p class="desc">설명입니다. 여기에 설명이 들어가고 자세한 설명이 들어갑니다. 자세히 들어주세요</p>
+                  </dd>
+                </dl>
+                <div class="btn_area">
+                  <ul class="btns">
+                    <li><span><a href="#" class="fnt_bold">저장</a></span></li>
+                    <li><span><a href="#">취소</a></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // [D] 전사달력 --> 
+          <!-- [D] 달력(월) 리스트 -->
+          <div class="month_table">
+            <table>
+              <colgroup>
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.5%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="sunday">일</th>
+                  <th scope="col">월</th>
+                  <th scope="col">화</th>
+                  <th scope="col">수</th>
+                  <th scope="col">목</th>
+                  <th scope="col">금</th>
+                  <th scope="col" class="saturday">토</th>
+                </tr>
+              </thead>
+            </table>
+            <table>
+              <colgroup>
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.25%">
+              <col style="width:14.5%">
+              </colgroup>
+              <tbody>
+                <tr class="bg_on">
+                  <td class="day_hidden sunday"><!-- [D] day_hidden 은 비활성화 날짜 -->
+                    
+                    <div class="month_cell"> <span class="month_cell_date">30</span> <a href="#" class="schedule_add_on">일정등록</a>
+                      <p class="today"></p>
+                      <!--[D] class="today" 오늘날짜만 표시 --> 
+                    </div>
+                    <div class="allview on"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more on">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em><img src="../../img/ico_share_cal_list.png" alt="공유일정" class="btn_share">04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">1</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">2</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이 생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">3</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이 생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">4</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more on">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이 생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="friday"><div class="month_cell"> <span class="month_cell_date">5</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 friday left: -50px -->
+                    
+                    <div class="month_more on">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="saturday"><div class="month_cell"> <span class="month_cell_date">6</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                </tr>
+                <tr>
+                  <td class="sunday"><!-- [D] day_hidden 은 비활성화 날짜 -->
+                    
+                    <div class="month_cell"> <span class="month_cell_date">7</span> <a href="#" class="schedule_add_on">일정등록</a> </div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">8</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">9</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">10</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">11</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="friday"><div class="month_cell"> <span class="month_cell_date">12</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="saturday"><div class="month_cell"> <span class="month_cell_date">13</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                </tr>
+                <tr class="bg_on">
+                  <td class="sunday"><!-- [D] day_hidden 은 비활성화 날짜 -->
+                    
+                    <div class="month_cell"> <span class="month_cell_date">14</span> <a href="#" class="schedule_add_on">일정등록</a> </div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">15</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">16</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">17</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">18</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="friday"><div class="month_cell"> <span class="month_cell_date">19</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="saturday"><div class="month_cell"> <span class="month_cell_date">20</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                </tr>
+                <tr>
+                  <td class="sunday"><!-- [D] day_hidden 은 비활성화 날짜 -->
+                    
+                    <div class="month_cell"> <span class="month_cell_date">21</span> <a href="#" class="schedule_add_on">일정등록</a> </div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">22</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">23</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">24</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">25</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="friday"><div class="month_cell"> <span class="month_cell_date">26</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="saturday"><div class="month_cell"> <span class="month_cell_date">27</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                </tr>
+                <tr class="bg_on">
+                  <td class="sunday"><!-- [D] day_hidden 은 비활성화 날짜 -->
+                    
+                    <div class="month_cell"> <span class="month_cell_date">28</span> <a href="#" class="schedule_add_on">일정등록</a> </div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의</a></li>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅 앞으로 우리집에 오지마</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">29</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">30</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td><div class="month_cell"> <span class="month_cell_date">31</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="day_hidden"><div class="month_cell"> <span class="month_cell_date">4</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="day_hidden friday"><div class="month_cell"> <span class="month_cell_date">5</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                  <td class="day_hidden saturday"><div class="month_cell"> <span class="month_cell_date">6</span> <a href="#" class="schedule_add_on">일정등록</a></div>
+                    <div class="allview"><a href="#">
+                      <p><img src="../../img/bg_calendar_more.png" alt="전체일정">전체일정 126개</p>
+                      </a> </div>
+                    
+                    <!-- [D] 일정 자세히 보기 레이어 -->
+                    
+                    <div class="month_more">
+                      <div class="p_eventall">
+                        <div class="tit"> <b>전체일정</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기" title="닫기"></a></span> </div>
+                        <ul>
+                          <li><a href="#"><em style="background-color:#f4a368;"></em><img src="../../img/ico_repeat_gray.png" alt="반복일정" class="btn_repeat">03:00 주간회의 내용이 길어지면 당연히 말줄임이  생깁니다.</a></li>
+                          <li><a href="#"><em style="background-color:#e9b9ea;"></em>04:00 외부미팅</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <!-- // [D] 일정 자세히 보기 레이어 --></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- // [D] 달력(월) 리스트 --> 
+        </div>
+      </div>
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) --> 
+  </div>
+</div>
+</body>
+</html>

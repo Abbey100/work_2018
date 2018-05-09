@@ -1,0 +1,74 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko-kr">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<!--좌측 메뉴 영역-->
+<div class="left_menu"> 
+  <!--Action Btn start-->
+  <div class="btn_large"> <a href="javascript:postMTRL();" title="게시글 쓰기">게시글 쓰기</a> </div>
+  <!--// Action Btn END--> 
+  <!--Quick Btn start-->
+  <ul class="quickbtn_area two">
+    <li class="btn_recent"><a href="javascript:goNewBoard('new');" title="최근 게시글"> <span>최근</span></a></li>
+    <li class="btn_read"><a id="bbs_menu_read" href="javascript:goNewBoard('read');" title="최근 읽음"> <span>최근 읽음</span></a></li>
+  </ul>
+  <!--// Quick Btn END--> 
+  <!-- 게시판은 리스트 영역 없음 --> 
+  <!-- Book marked Tree Title Area-->
+  <div id=" " class="tree_area mg_tp_7"> 
+    <!-- Title Area-->
+    <div class="tree_ttl_area"> <span class="tree_ttl" onclick="javascript:toggle_div(this,'fav_tree_area');">즐겨찾는 게시판</span> </div>
+    <!--Tree Box-->
+    <div id="fav_tree_area" class="tree_cntnts_area">
+      <div class="tree_search_box" style="display:none;">
+        <form onSubmit="return false" id="SEARCHFORM" name="SEARCHFORM" METHOD="POST" action="/servlet/HIServlet?SLET=bbs.BBSUserBrdFolder.java&MET=SEARCH&K=009we2Krx" target="BBList">
+          <fieldset class="search">
+          <input id="BN" name="BN" type="text" value="" onfocus="this.value=''" onkeydown="if (event.keyCode == 13) { return goSearchBoardTree(); }"/>
+          <a name="BBSSearch" id="BBSSearch" title="검색" href='javascript:goSearchBoardTree();'>검색</a>
+          <fieldset>
+        </form>
+      </div>
+      <div class="fldr_none">게시판 제목에 <img src="../../img/ico_star_off.png"/> 아이콘을 클릭하시면 추가됩니다.</div>
+    </div>
+  </div>
+  
+  <!-- Tree Title Area-->
+  <div id ="bbstreeframe" class="tree_area bttm_ln"> 
+    <!--Tree Title Area-->
+    <div class="tree_ttl_area"> <span class="tree_ttl" id="bbs_menu_ALL" onclick="javascript:toggle_div(this,'tree_area');">다산그룹</span> </div>
+    <div id="tree_area" class="tree_cntnts_area">
+      <div class="tree_search_box">
+        <form onSubmit="return false" id="SEARCHFORM" name="SEARCHFORM" METHOD="POST" action="/servlet/HIServlet?SLET=bbs.BBSUserBrdFolder.java&MET=SEARCH&K=009we2Krx" target="BBList">
+          <fieldset class="search">
+          <input class="serch_input" id="BN" name="BN" type="text" value="" onfocus="this.value=''" onkeydown="if (event.keyCode == 13) { return goSearchBoardTree(); }"/>
+          <a name="BBSSearch" id="BBSSearch" title="검색" href='javascript:goSearchBoardTree();'>검색</a>
+          <fieldset>
+        </form>
+      </div>
+      <div id="webfx-tree-object-4-cont" class="webfx-tree-container" style="display: block;">
+        <div id="webfx-tree-object-5" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-5-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"> <img id="webfx-tree-object-5-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함.업무메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-5-anchor" onfocus="webFXTreeHandler.focus(this);" style="color: rgb(68, 68, 68); text-decoration: none;">업무메일업무메일업무메일업무메일업무메일업무메일업무메일</a> </div>
+        <div id="webfx-tree-object-5-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-6" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-6-plus" src="../../img/T.png" onclick="webFXTreeHandler.toggle(this);"> <img id="webfx-tree-object-6-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함.유용한메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-6-anchor" onfocus="webFXTreeHandler.focus(this);" style="color: rgb(68, 68, 68); text-decoration: none;">유용한메일</a> </div>
+        <div id="webfx-tree-object-6-cont" class="webfx-tree-container" style="display: none;"></div>
+        <div id="webfx-tree-object-7" ondblclick="webFXTreeHandler.toggle(this);" class="webfx-tree-item" onkeydown="return webFXTreeHandler.keydown(this, event)"> <img id="webfx-tree-object-7-plus" src="../../img/L.png" onclick="webFXTreeHandler.toggle(this);"> <img id="webfx-tree-object-7-icon" class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF" onclick="webFXTreeHandler.select(this);"> <a href="#" onclick="getMessages('개인 편지함.작업메일', true);selectFolder(null);webFXTreeHandler.select(this.parentNode);return false;" id="webfx-tree-object-7-anchor" onfocus="webFXTreeHandler.focus(this);" style="color: rgb(68, 68, 68); text-decoration: none;">작업메일</a> </div>
+        <div id="webfx-tree-object-7-cont" class="webfx-tree-container" style="display: none;"></div>
+      </div>
+    </div>
+  </div>
+  <ul class="snb_lst">
+    <li class="snb_apply"> <a id="menu_03" href="javascript:getMessages('지운 편지함', true);selectFolder('menu_03');" > <span id='신청 게시판'>신청 게시판</span></a> <a class="btn_apply" href="#">게시판 신청</a></li>
+    <li class="snb_tmp"> <a id=" " href="" > <span id='임시 저장함'>임시 저장함</span></a></li>
+  </ul>
+</div>
+</body>
+</html>

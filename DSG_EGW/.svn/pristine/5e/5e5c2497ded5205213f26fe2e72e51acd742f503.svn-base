@@ -1,0 +1,135 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap">
+  <div class="container_box">
+    <div class="title_area">
+      <h1>외부활동 추가</h1>
+    </div>   
+    <!-- 리스팅 기본형(좌측) -->
+    <div class="cmmt_pop" style="height: 270px;">
+      <div class="detail_form">
+        <!-- 사용자명 start-->
+        <dl>
+            <dt><span class="tit">사용자명</span></dt>
+            <dd><span style="line-height:2">최희선</span></dd>
+        </dl>
+        <!-- //사용자명 end-->
+        <!-- 제목 start --> 
+        <dl>
+          <dt><span class="tit">제목<em class="req">*</em></span></dt>
+          <dd>
+            <input type="text" class="basic_inp" style="width:150px">
+          </dd>
+        </dl>
+        <!-- //제목 end -->
+        <!-- 활동 start-->
+        <dl>
+            <dt><span class="tit">활동</span></dt>
+            <dd><select class="basic_select">
+                <option>외출</option>
+                <option>교육</option>
+                <option>출장</option>
+                <option>휴가</option>
+                </select>
+            </dd>
+        </dl>
+        <!-- //활동 end-->
+        <!-- 기간 start --> 
+        <dl>
+          <dt><span class="tit">기간<em class="req">*</em></span></dt>
+          <dd>
+              <div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a></div>
+              <select class="basic_select" disabled="disabled">
+                <option>00:00</option>
+                <option>01:00</option>
+                <option>02:00</option>
+                <option>03:00</option>
+                <option>04:00</option>
+                <option>05:00</option>
+                <option>06:00</option>
+                <option>07:00</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+                <option>18:00</option>
+                <option>19:00</option>
+                <option>20:00</option>
+                <option>21:00</option>
+                <option>22:00</option>
+                <option>23:00</option>
+              </select>
+              ~
+              <div class="datepic_box">
+                <input type="text" class="basic_inp" value="2014.03.02" style="width:102px;" readonly>
+                <a href="#" class="btn_date"><img src="../../img/btn_datepicker.gif" alt="달력"></a> </div>
+              <select class="basic_select" disabled="disabled">
+                <option>00:00</option>
+                <option>01:00</option>
+                <option>02:00</option>
+                <option>03:00</option>
+                <option>04:00</option>
+                <option>05:00</option>
+                <option>06:00</option>
+                <option>07:00</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+                <option>18:00</option>
+                <option>19:00</option>
+                <option>20:00</option>
+                <option>21:00</option>
+                <option>22:00</option>
+                <option>23:00</option>
+              </select>
+          </dd>
+        </dl>
+        <!-- //기간 end --> 
+        <!-- 내용 start --> 
+        <dl>
+          <dt><span class="tit">내용</span></dt>
+          <dd>
+            <textarea cols="3" rows="3" class="commt_detail_textarea"></textarea>
+          </dd>
+        </dl>
+        <!-- //내용 end --> 
+      
+    </div>
+    <!-- // 메일 리스팅 기본형(좌측) --> 
+    <!-- 하단 버튼 영역 -->
+    <div class="footer">
+      <ul class="btns">
+        <li><span><a href="#" class="fnt_bold">확인</a></span></li>
+        <!-- 포인트 버튼 fnt_bold 클래스 추가 -->
+        <li><span><a href="#">취소</a></span></li>
+      </ul>
+    </div>
+    <!-- // 하단 버튼 영역 -->
+  </div>
+</div>
+</body>
+</html>

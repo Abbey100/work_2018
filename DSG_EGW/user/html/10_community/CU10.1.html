@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>동호회_홈</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>		
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->
+            <div class="header">
+                <h1 class="">동호회</h1>
+                <div class="aside">
+                    <fieldset>
+                        <legend>search_box</legend>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>동호회</option>
+                                <option>통합</option>
+                            </select>
+
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a>
+                    </div>
+                </div>
+            </div>
+            <!-- //header -->
+
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->     
+            <!-- body -->
+            <div class="body">
+                <!-- content -->
+                <div class="container_area club" >
+                    <!-- 본문 영역 -->
+                    <div class="container_club">
+                        <!-- 타이틀 영역 -->
+                        <div class="hgroup_club">
+                            <ul class="tab_club">
+                                <li><a href="#" class="selected">홈</a></li>
+                                <li><a href="#">공지</a></li>
+                                <li><a href="#">우수</a></li>
+                                <li><a href="#">신규</a></li>
+                                <li><a href="#">홍보</a></li>
+                                <li><a href="#">토론</a></li>
+                            </ul>
+                        </div>	
+                        <div class="scroll_area handy-scroll pd_rg">
+                            <div class="area_club">
+                                <div class="section">
+                                    <!-- 공지사항 & 홍보 -->
+                                    <div class="news_club">
+                                        <div class="list_tbl">
+                                            <div class="list_header">
+                                                <h3><a href="#" title="공지사항 더보기">공지사항</a></h3>
+                                            </div>
+                                            <!-- 리스트 영역 -->
+                                            <div class="content_table community first_title">	
+                                                <div class="table_body">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:*;">
+                                                            <col style="width:100px;">
+                                                            <col style="width:100px;">
+                                                        </colgroup>
+                                                        <thead style="display: none;"></thead>
+                                                        <tbody>
+                                                            <!--읽지 않은 게시물일 경우 unread class추가-->
+                                                            <tr class="unread">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요? [설문] 협업 도구로 뭐가 제일 좋을까요? 제목이 길면 말줄임</a>
+                                                                    <!--새글일경우 ico_new추가-->
+                                                                    <span class="ico_new">new</span>
+                                                                </td>
+                                                                <td><a class="name" href="#">이름이긴 김핸디김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="unread">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                    <!--새글일경우 ico_new추가-->
+                                                                    <span class="ico_new">new</span>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- // 리스트 영역 -->
+                                        </div>
+                                        <div class="list_tbl">
+                                            <div class="list_header">
+                                                <h3><a href="#" title="홍보 더보기">홍보</a></h3>
+                                            </div>
+                                            <div class="content_table community first_title">	
+                                                <div class="table_body">
+                                                    <table>
+                                                        <colgroup>
+                                                            <col style="width:*;">
+                                                            <col style="width:100px;">
+                                                            <col style="width:100px;">
+                                                        </colgroup>
+                                                        <thead style="display: none;"></thead>
+                                                        <tbody>
+                                                            <!--읽지 않은 게시물일 경우 unread class추가-->
+                                                            <tr class="unread">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요? [설문] 협업 도구로 뭐가 제일 좋을까요? 제목이 길면 말줄임</a>
+                                                                    <!--새글일경우 ico_new추가-->
+                                                                    <span class="ico_new">new</span>
+                                                                </td>
+                                                                <td><a class="name" href="#">이름이긴 김핸디김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="unread">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                    <!--새글일경우 ico_new추가-->
+                                                                    <span class="ico_new">new</span>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                            <tr class="">
+                                                                <td class="title_area">
+                                                                    <a class="subject" href="#">[설문] 협업 도구로 뭐가 제일 좋을까요?</a>
+                                                                </td>
+                                                                <td><a class="name" href="#">김핸디</a></td>
+                                                                <td class="date">2017-08-10</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--//공지사항 & 홍보-->
+                                    <!--추천우수동호회 -->
+                                    <div class="list_tbl2">
+                                        <div class="list_header">											
+                                            <h3><span class="king">추천 우수동호회</span><a href="#" title="추천 우수 동호회 더보기">추천 우수동호회</a></h3>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#">
+                                                            <img src="../../img/cu_default.png" alt="등록된 이미지 없음">
+                                                        </a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">농구동호회</a></div>
+                                                    <p class="club_story">농구를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="../../img/community/thumb_club_02.png" alt="농구동호회"></a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">통기타동호회</a></div>
+                                                    <p class="club_story">통기타를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="../../img/community/thumb_club_03.png" alt="농구동호회"></a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">독서동호회</a></div>
+                                                    <p class="club_story">독서를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--추천우수동호회 -->
+                                    <div class="list_tbl2">
+                                        <div class="list_header">
+                                            <h3><a href="#" title="신규 동호회 더보기">신규 동호회</a></h3>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="../../img/community/thumb_club_04.png" alt="요리동호회"></a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">요리요리요리요리요리요리조리조리요리조리요리조리동호회</a></div>
+                                                    <p class="club_story">요리를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="../../img/community/thumb_club_05.png" alt="야구동호회"></a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">조기야구 동호회</a></div>
+                                                    <p class="club_story">조기야구를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="club_card">
+                                                    <div class="thumbnail">
+                                                        <a href="#"><img src="../../img/community/thumb_club_06.png" alt="농구동호회"></a>
+                                                    </div>
+                                                    <p class="open_day">Since  2016-08-10</p>
+                                                    <div class="club_title"><a href="#">사진동호회</a></div>
+                                                    <p class="club_story">사진를 좋아하는 사람들의 소모임입니다.
+                                                        실력과 상관없이 가입신청 받아요!</p>
+                                                    <div class="club_intro">
+                                                        <span class="club_admin">운영자</span>
+                                                        <span class="club_sysop">박민철 대리</span>
+                                                        <span class="club_member">참여인원 40명</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- aside-->
+                                <div class="aside">
+                                    <!-- 액션버튼 -->
+                                    <div class="make_club">
+                                        <a href="#" class="btn_club">동호회 만들기</a>
+                                    </div>
+                                    <!-- //액션버튼 -->
+                                    <!-- 그룹내용 -->
+                                    <div class="club_box">
+
+                                        <!-- 타이틀 & 탭버튼 -->
+                                        <div class="club_header">
+                                            <ul class="club_tab">
+                                                <li><a href="#" class="active">내 동호회</a></li>
+                                                <li><a href="#">전체동호회</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- //타이틀 & 탭버튼-->
+                                        <!-- 컨텐츠내용 -->
+                                        <div class="club_contents">
+                                            <!-- 즐겨찾기동호회 리스트 -->
+                                            <div class="club_list">
+                                                <h3>즐겨찾기 동호회</h3>
+                                                <ul class="type01">
+                                                    <li class="mine">
+                                                        <a href="#" class="club_img"><img src="../../img/login/bg_login.png" /></a>
+                                                        <div class="new_club">
+                                                            <a class="club_name">이름이 엄청나게 긴 신규 동호회</a>
+                                                            <span class="ico_new">new</span>
+                                                        </div>
+                                                        <span class="time">23시간 전</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+                                                        <div class="new_club">
+                                                            <a class="club_name">신규 동호회</a>
+                                                            <span class="ico_new">new</span>
+                                                        </div>
+                                                        <span class="time">12-23</span>
+                                                    </li>													
+                                                    <li>
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+                                                        <div>
+                                                            <a class="club_name">농구 동호회</a>
+                                                        </div>
+                                                        <span class="time">12-23</span>
+                                                    </li>	
+                                                    <li>
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+                                                        <div class="no_new">
+                                                            <a class="club_name">이름이 엄청나게 긴 농구 동호회</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- //즐겨찾기 동호회 리스트 -->
+                                            <!-- 기본 동호회 리스트 -->
+                                            <div class="club_list">
+                                                <h3>기본 동호회</h3>
+                                                <ul class="type01">
+                                                    <li class="mine">
+                                                        <a href="#" class="club_img">
+
+                                                        </a>
+                                                        <div class="new_club">
+                                                            <a class="club_name">이미지를 등록하지 않은 동호회</a>
+                                                            <span class="ico_new">new</span>
+                                                        </div>
+                                                        <span class="time">23시간 전</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb05.png" /></a>
+                                                        <div class="new_club">
+                                                            <a class="club_name">신규 동호회</a>
+                                                            <span class="ico_new">new</span>
+                                                        </div>
+                                                        <span class="time">12-23</span>
+                                                    </li>													
+                                                    <li class="mine">
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+                                                        <div>
+                                                            <a class="club_name">농구 동호회</a>
+                                                        </div>
+                                                        <span class="time">12-23</span>
+                                                    </li>	
+                                                    <li>
+                                                        <a href="#" class="club_img"><img src="../../img/community/img_thumb01.png" /></a>
+                                                        <div>
+                                                            <a class="club_name">이름이 엄청나게 긴 농구 동호회</a>
+                                                        </div>
+                                                        <span class="time">12-23</span>
+                                                    </li>													
+                                                </ul>
+                                            </div>
+                                            <!-- //기본 동호회 리스트 -->
+                                            <!-- 내 알림설정 리스트 -->
+                                            <div class="club_list no_border">
+                                                <h3>내 댓글 알림</h3>
+                                                <ul class="type02">
+                                                    <li>
+                                                        <a href="#" class="usr_img">
+                                                            <img src="../../img/profile_photo_blank.png" />
+                                                        </a>
+                                                        <div class="club_usr">
+                                                            <a href="#" class="member_name">김지지영영영</a>
+                                                            <a href="#" class="club_name">농구 동호동호동호동호동호회</a>							
+                                                        </div>				
+                                                        <p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+                                                        <span class="time">23시간 전</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="usr_img">
+                                                            <!--															<img src="../../img/community/img_thumb_s01.png" />-->
+                                                        </a>
+                                                        <div class="club_usr">
+                                                            <a href="#" class="member_name no_link">무명</a>
+                                                            <a href="#" class="club_name">농구 동호회</a>							
+                                                        </div>				
+                                                        <p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+                                                        <span class="time">23시간 전</span>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#" class="usr_img">
+                                                            <!--															<img src="../../img/community/img_thumb_s01.png" />-->
+                                                        </a>
+                                                        <div class="club_usr">
+                                                            <a href="#" class="member_name">김지영</a>
+                                                            <a href="#" class="club_name">이름이 매우많이 긴 동호회</a>							
+                                                        </div>				
+                                                        <p class="message">메일 확인바랍니다. 프로젝트에 참고많이 될 것 같네요~</p>
+                                                        <span class="time">23시간 전</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- //내 알림설정 리스트 -->
+                                        </div>
+                                        <!-- //컨텐츠내용 -->
+                                    </div>
+                                    <!-- //그룹내용 -->
+                                </div>
+                                <!-- //aside-->
+                            </div>
+                        </div>							
+
+                    </div>
+                    <!-- // 본문 영역 -->		
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

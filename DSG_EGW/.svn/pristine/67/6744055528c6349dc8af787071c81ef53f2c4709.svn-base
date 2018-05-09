@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 메일읽기 팝업_스레드 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<!-- popup 기본 사이즈는 800 x 680 -->
+	<body>
+		<div class="handy-scroll">
+			<div class="wrapper">
+				<!-- header -->
+				<h1 class="title">메일 읽기</h1>
+				<div class="util paginate">
+					<a class="prev">이전</a>
+					<a class="next">다음</a>
+				</div>
+				<!-- //header -->
+				<div class="container_area">
+					<!-- btn -->
+					<div class="btns_area">
+						<div class="align_lf">
+							<div class="group">
+								<a class="btn">답장</a>
+								<a class="btn">전체답장</a>
+								<a class="btn">전달</a>
+							</div>								
+							<div class="group_btn">
+								<a class="btn">삭제</a>
+								<a class="btn">완전삭제</a>
+							</div>
+							<a class="btn">안읽음</a>
+							<!-- 선택 위치로 이동 -->
+							<div class="group open"><!-- open 클래스 제거시 레이어 close -->	
+								<a href="#" class="btn">이동</a>
+								<div class="select_lst check_type" style="width:144px;">
+									<ul class="handy-scroll">
+										<li class="selected"><a href="" >가족</a></li>
+										<li class=""><a href="" >친구구구구</a></li>
+										<li class=""><a href="" >친구</a></li>
+										<li class=""><a href="" >EGW관련 프로젝트메일모음</a></li>
+										<li class=""><a href="" >EGW관련 프로젝트메일모음</a></li>
+									</ul>
+									<div class="btns_area align_rg border">
+										<a href="#" class="btn">이동</a>
+										<a href="#" class="btn">복사</a>
+									</div>
+								</div>
+							</div>		
+							<div class="group open"><!-- open 클래스 제거시 레이어 close -->
+								<a class="btn select">추가기능</a>
+								<ul class="select_lst">
+									<li><a href="#">PC저장</a></li>
+									<li><a href="#">인쇄보기</a></li>
+								</ul>
+							</div>		
+						</div>
+					</div>
+					<!-- contents -->
+					<div class="scroll_area handy-scroll">
+						<div class="">
+							<!-- thread  -->
+							<div class="thread_cont">
+								<div class="key_info">
+									<div class="sub">
+
+										<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+										<div class="usr_photo small"> 
+											<img src="../../img/profile_photo_blank.png" alt="">
+										</div>
+										<a class="name">김지영</a>
+										<span class="team">디자인팀</span>
+										<span class="date">2017-11-18 16:55</span>
+										<a class="text_btn">주소록추가</a>
+									</div>
+									<div class="title">
+										<span class="locate">받은편지함</span>
+										<h2>Re:협업 도구로 뭐가 제일 좋을까요?</h2>
+									</div>
+									<a class="thread_open">본문 열기</a>
+								</div>
+
+								<div class="additional_info">
+									<dl>
+										<dt><a class="btn_open open"></a>받는사람</dt><dd>정민영 선임, 조유현 팀장</dd></dl>
+									<dl class="sub open">
+										<dt>참조</dt><dd>양민영 팀장, 김현동&#60;hhtrading@psd.co.kr&#62;</dd>
+									</dl>
+									<dl class="file_info">
+										<dt><a class="btn_open open"></a>첨부파일</dt>
+										<dd>
+											<a class="text_btn">전체선택</a>
+											<a class="text_btn">저장</a>
+											&#40;<span class="txt">일반첨부 2</span>
+											<span class="divider"></span>
+											<span class="txt">대용량 1</span>&#41;
+										</dd>
+									</dl>
+									<div class="file_lst download">
+										<ul>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_downopt">
+													&#40;
+													<em>~2017-09-03</em>
+													/&nbsp;잔여
+													<em>100회</em>&#41;
+												</span>
+												<span class="file_size">311KB</span>
+
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content">
+									안녕하세요. 핸디소프트의 박책임입니다. <br>
+									본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+									간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+									<br>
+									EGW GUI컨셉 문서<br>
+									UI 프레임워크 <br>
+									Screen shot파일<br>
+									<br>
+									감사합니다.								
+								</div>
+							</div>
+							<!-- thread 2 -->
+							<div class="thread_cont close">
+								<div class="key_info">
+									<div class="sub">										
+										<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+										<div class="usr_photo small"> 
+											<img src="../../img/profile_photo_blank.png" alt="">
+										</div>
+										<a class="name">김지영</a>
+										<span class="team">디자인팀</span>
+										<span class="date">2017-11-18 16:55</span>
+										<a class="text_btn">주소록추가</a>
+									</div>
+									<div class="title">
+										<span class="locate">받은편지함</span>
+										<h2>Re:협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구로 뭐가 제일 좋을까요?</h2>
+									</div>
+									<a class="thread_open">본문 열기</a>
+								</div>
+								<div class="additional_info">
+									<dl>
+										<dt><a class="btn_open open"></a>받는사람</dt><dd>정민영 선임, 조유현 팀장</dd></dl>
+									<dl class="sub open">
+										<dt>참조</dt><dd>양민영 팀장, 김현동&#60;hhtrading@psd.co.kr&#62;</dd>
+									</dl>
+									<dl class="file_info">
+										<dt><a class="btn_open open"></a>첨부파일</dt>
+										<dd>
+											<a class="text_btn">전체선택</a>
+											<a class="text_btn">저장</a>
+											&#40;<span class="txt">일반첨부 2</span>
+											<span class="divider"></span>
+											<span class="txt">대용량 1</span>
+											<em>~2017-09-03</em>
+											/&nbsp;잔여
+											<em>100회</em>&#41;
+										</dd>
+									</dl>
+
+									<div class="file_lst download">
+										<ul>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content">
+									안녕하세요. 핸디소프트의 박책임입니다. <br>
+									본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+									간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+									<br>
+									EGW GUI컨셉 문서<br>
+									UI 프레임워크 <br>
+									Screen shot파일<br>
+									<br>
+									감사합니다.								
+								</div>
+							</div>
+							<!-- thread 3 -->
+							<div class="thread_cont selected">
+								<div class="key_info">
+									<div class="sub">										
+										<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>
+										<div class="usr_photo small"> 
+											<img src="../../img/profile_photo_blank.png" alt="">
+										</div>
+										<a class="name">김지영</a>
+										<span class="team">디자인팀</span>
+										<span class="date">2017-11-18 16:55</span>
+										<a class="text_btn">주소록추가</a>
+									</div>
+									<div class="title">
+										<span class="locate">받은편지함</span>
+										<h2>Re:협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구협업 도구로 뭐가 제일 좋을까요?</h2>
+									</div>
+									<a class="thread_open">본문 열기</a>
+								</div>
+								<div class="additional_info">
+									<dl>
+										<dt><a class="btn_open open"></a>받는사람</dt><dd>정민영 선임, 조유현 팀장</dd></dl>
+									<dl class="sub open">
+										<dt>참조</dt><dd>양민영 팀장, 김현동&#60;hhtrading@psd.co.kr&#62;</dd>
+									</dl>
+									<dl class="file_info">
+										<dt><a class="btn_open open"></a>첨부파일</dt>
+										<dd>
+											<a class="text_btn">전체선택</a>
+											<a class="text_btn">저장</a>
+											&#40;<span class="txt">일반첨부 2</span>
+											<span class="divider"></span>
+											<span class="txt">대용량 1</span>
+											<em>~2017-09-03</em>
+											/&nbsp;잔여
+											<em>100회</em>&#41;
+										</dd>
+									</dl>
+
+									<div class="file_lst download">
+										<ul>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name">EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+											<li>
+												<span class="form"><input type="checkbox" /><label class="blind">파일선택</label></span>
+												<a class="ico_btn small download">다운로드</a>
+												<a class="ico_btn small storage">스토리지로저장</a>
+												<a class="file_name"><span class="badge storage">대용량</span>EGW_GUI_Visual_Comcept_0804.ppt</a>
+												<span class="file_size">311KB</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content">
+									안녕하세요. 핸디소프트의 박책임입니다. <br>
+									본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+									간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+									<br>
+									EGW GUI컨셉 문서<br>
+									UI 프레임워크 <br>
+									Screen shot파일<br>
+									<br>
+									감사합니다.								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // body -->	
+	</body>
+</html>

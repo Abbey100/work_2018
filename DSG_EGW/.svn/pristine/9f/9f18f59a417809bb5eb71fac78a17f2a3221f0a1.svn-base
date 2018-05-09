@@ -1,0 +1,721 @@
+@charset "utf-8";
+@font-face {
+    font-family: Nanum_Gothic;
+    src: url(/font/NanumGothic-Bold.eot?#iefix) format("embedded-opentype"), url(/font/NanumGothic-Bold.woff2) format("woff2"), url(/font/NanumGothic-Bold.woff) format("woff"), url(/font/NanumGothic-Bold.ttf) format("truetype");
+    font-weight: 200;
+    font-style: normal;
+} /* Font */
+
+/***** 초기화 Initialize *****/
+html, body {  height: 100%; scrollbar-face-color: #F6F6F6; scrollbar-shadow-color: #AEAEAE; scrollbar-highlight-color: #AEAEAE; scrollbar-3dlight-color: #F6F6F6; scrollbar-darkshadow-color: #F6F6F6; scrollbar-track-color: #F6F6F6; scrollbar-arrow-color: #AEAEAE; }
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {margin:0;padding:0}
+body, input, textarea, select, button, table { font-family: Dotum, sans-serif, Arial, Gulim, Verdana, MS Gothic; font-size: 12px; color: #333; }
+textarea {line-height: 21px; }
+table {clear: both; border-collapse: collapse; } /* td 공백시에도 스타일(border..) 적용 */
+img, fieldset {	border: 0 }
+legend, caption { visibility: hidden; overflow: hidden; width: 0; height: 0; font-size: 0; line-height: 0 }
+ul, ol { list-style: none }
+address { font-style: normal }
+a { outline: 0; text-decoration: none; color: #444 }
+a:hover { text-decoration:underline }
+input { ime-mode: active; }
+select { min-width: 45px; padding: 4px; box-sizing: border-box;}
+input[type="checkbox"], input[type="radio"] {margin:0 6px 0 0;}
+
+
+/***** 초기화 끝 Initialize END *****/
+
+/*
+ * ##### BASIC.CSS 참고 #####
+ * 테이블 속성을 제외한 공통 스타일
+ * 1.window scrollbar에 대한 Style 정의
+ * 2.TEXT
+ * 3.LINK
+ * 4.Popup
+ * 5.Tab
+ * 6.Page navigation
+ * 7.TABLE
+ */
+
+/*
+ * 1.window scrollbar에 대한 Style 정의 -> 변경(2015/08/19)
+ 
+BODY {
+	scrollbar-face-color: #F6F6F6;
+	scrollbar-shadow-color: #AEAEAE;
+	scrollbar-highlight-color: #AEAEAE;
+	scrollbar-3dlight-color: #F6F6F6;
+	scrollbar-darkshadow-color: #F6F6F6;
+	scrollbar-track-color: #F6F6F6;
+	scrollbar-arrow-color: #AEAEAE;
+}
+*/
+/*
+ * 2.TEXT -> 변경(2015/08/19)
+
+.BscIndigo{line-height: 18px; color: #143679; font-size:12px; font-weight:bold; font-family:"굴림"; text-decoration: none}
+.BscTree {line-height: 14px; color: #000000; font-size:12px; font-family:"굴림"; text-decoration: none}
+.BscTopLogout {line-height: 18px; color: #222222; font-size:8pt; font-family:arial; text-decoration: none}
+.BscTopUser {line-height: 18px; color: #222222; font-size:12px; font-family:"굴림"; text-decoration: none}
+.BscWhite{line-height: 13px; color: white; font-size:8pt; font-family:"굴림"; text-decoration: none}
+.BscLeftWhite{line-height: 13px; color: white; font-size:8pt; font-family:"굴림"; text-decoration: none}
+.BscLeftWhite2{line-height: 18px; color: white; font-size:12px; font-weight:bold; font-family:"굴림"; text-decoration: none}
+.BscUnLinkableTreeNodeFont { color: #818181; font-family: "굴림"; font-size: 12px; }
+ */
+/*
+ * 3.LINK -> 변경(2015/08/19)
+
+a.Table:link{ color:#333; text-decoration:none; font-size: 12px;}
+a.Table:visited{ color:#333; text-decoration:none; font-size: 12px;}
+a.Table:active{ color:#333; text-decoration:none; font-size: 12px;}
+a.Table:hover{ color:#333; text-decoration:none; font-size: 12px;}
+
+a.Table_BK:link{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Table_BK:visited{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Table_BK:active{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Table_BK:hover{ color:#00A3D2; text-decoration:none; font-size: 12px;}
+
+a.Admin:link{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Admin:visited{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Admin:active{ color:#0058c5; text-decoration:none; font-size: 12px;}
+a.Admin:hover{ color:#00A3D2;  text-decoration:none; font-size: 12px;} 
+*/
+
+/* Upgrade site 일 경우 기존 양식이 최대한 자연스럽게 나와야 하므로 어쩔수 없이 넣아둔다 . jlimap */
+#THS {background-color:#ececec; color:black; text-align:center; font-size: 12px; 	height: 24px;}
+#TFS {background-color:white; color:black; font-size: 12px; 	height: 24px;}
+
+.BscFont { color: #333; font-family: "굴림"; font-size: 12px; }
+.MenuFont { font-family: "굴림"; font-size: 8pt; color: #005dcf; }
+.BscFontBold { color: #333; font-size: 12px; font-family: "굴림"; font-weight: bold; }
+
+/* 2003.04.29 국통사 요구사항 IME-MODE: ACTIVE -> IE 전용 스타일 (무조건 한글 우선) 
+input { color:black; font-family:"굴림"; font-size:12px; IME-MODE: ACTIVE; }
+
+select { color:black; font-family:"굴림"; font-size:12px; }
+body { color:black; background-color:white; font-family:"굴림"; font-size:12px; }
+body.MainMenu { margin-top:0px; margin-left:7px; margin-bottom:0px; font-size:12px; }
+body.MainBody { margin-top:0px; margin-left:7px; margin-right:30px; margin-bottom:0px; font-size:12px; }
+body.SubMenu { margin:0px; }
+body.WorkArea { margin-top:0px; margin-left:0px; font-size:12px; font-family:"굴림"; }
+--- 기본 셋팅 관련 속성 모두 수정 2015/08/19 */
+
+
+/*
+ * 4.Popup
+ */
+body.Pu { margin-top:0px; margin-left:0px; margin-right:0px; margin-bottom:20px; font-size:12px; font-family:"굴림"; }
+body.PuTtl { margin-top:0px; margin-left:0px; margin-right:0px; margin-bottom:0px; font-size:12px; font-family:"굴림"; }
+body.PuTab { margin-top:10px; margin-left:18px; margin-right:0px; margin-bottom:0px; font-size:12px; font-family:"굴림"; }
+body.PuList { margin-top:0px; margin-left:18px; margin-right:0px; margin-bottom:0px; font-size:12px; font-family:"굴림"; }
+body.PuBody { margin-top:10px; margin-left:10px; margin-right:0px; margin-bottom:20px; font-size:12px; font-family:"굴림"; }
+
+/*
+ * 5.Tab
+ * TabHead, Tab, TabOverlap, TabTail, TabEmpty, TabRightEnd는 td의 attribute를 반드시 nowrap으로 해야한다
+ */
+ /*
+ *  Tab의 머리 부분-활성 &nbsp;를 넣지 말것
+ * ex)<td class="TabHead-Active" nowrap></td>
+*/
+td.TabHeadLeftOn
+{
+	background-image: url(/img/TAB_LEFT_ACTIVE.GIF);
+	background-repeat: no-repeat;
+	font-size: 1px;
+	text-align: center;
+	height: 25px;
+	width: 4px;
+	border-style: none;
+}
+
+td.TabHeadRightOn
+{
+	background-image: url(/img/TAB_RIGHT_ACTIVE.GIF);
+	background-repeat: no-repeat;
+	font-size: 1px;
+	text-align: center;
+	height: 25px;
+	width: 4px;
+	border-style: none;
+}
+
+/* Tab의 머리 부분-비활성
+ * &nbsp;를 넣지 말것
+ * ex)<td class="TabHead-Active" nowrap></td>
+ */
+td.TabHeadLeftOff
+{
+	background-image: url(/img/TAB_LEFT.GIF);
+	background-repeat: no-repeat;
+	font-size: 1px;
+	text-align: center;
+	height: 25px;
+	width: 4px;
+	border-style: none;
+}
+
+td.TabHeadRightOff
+{
+	background-image: url(/img/TAB_RIGHT.GIF);
+	background-repeat: no-repeat;
+	font-size: 1px;
+	text-align: center;
+	height: 25px;
+	width: 4px;
+	border-style: none;
+}
+
+/* 선택된 Tab Item */
+td.TabOn { background-color: #C8DEF1; font-weight: bold; font-size: 12px; font-family:'굴림'; text-align: center; height: 25px; border-style: none; }
+
+/* 선택되지 않은 Tab Item */
+td.TabOff { background-color: #ECECEC; font-weight: bold; font-size: 12px; font-family:'굴림'; text-align: center; height: 25px; border-style:  none; }
+
+a.Tab:link { color: #000000; text-decoration: none; }
+a.Tab:active { color: #000000; text-decoration: none; }
+a.Tab:visited { color: #000000; text-decoration: none; }
+
+/*
+ * 6.Page navigation
+ */
+a.PageCrnt { color: #333; font-size: 10pt; font-family: Arial; font-weight: bold; }
+a.Page { color:#4b4b4b; font-size: 10pt; text-decoration: none; }
+a.Page:link { color:#4b4b4b; font-size: 10pt; text-decoration: none; }
+a.Page:active { font-size: 10pt; text-decoration: none; }
+a.Page:visited { font-size: 10pt; text-decoration: none; }
+a.Page:hover { font-size: 10pt; color: #00a3d2; text-decoration: none; }
+
+/*
+ * 7.TABLE
+ * 공통 테이블 스타일 모음
+ */
+/* 1.Popup상단장식 */
+td.PopupTop
+{
+	color: #ffffff;
+	font-size: 12pt;
+	font-family: "굴림";
+	font-weight: bold;
+	background: url(/img/POPUPBG.GIF);
+	height: 29px;
+}
+
+table,th,td { font-family:"굴림"; }
+
+th.Bsc, th.BscLeft, th.BscRght
+{   border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    height: 26px;
+    background: #f9f9f9;
+    padding-left: 9px;
+    color: #666;
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+
+th.Bsc {width:35px;}
+
+th.BscLeft
+{text-align: left;}
+
+th.BscRght
+{text-align: right;}
+
+/* 맨 앞의 Basic */
+th.BscHead
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	font-weight: normal;
+	height: 24px;
+	border-style:  none none none solid;
+	border-color: #ffffff;
+	border-width: 1px;
+	text-align: left;
+}
+
+/* th.BscHead -> td.BscHead
+ * (plain & left align & gray backgroud)
+ * 상단에 메인 header 가 있고 서브 header 를 왼쪽에 나열할때 사용한다.
+ * 헤더태그(th)가 아니지만 헤더 효과를 낼때 사용한다.
+ */
+td.BscHead
+{
+	color: #333;
+	background-color: #ececec;
+	font-weight: normal;
+	font-size: 12px;
+	height: 24px;
+	border-style:  none none none solid;
+	border-color: #ffffff;
+	border-width: 1px;
+	text-align: left;
+}
+
+/* BasicHead + BorderBottom */
+th.BscHeadBdrBtm
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-color: #ffffff;
+	border-bottom-color: #c6c6c6;
+	border-style: solid none solid solid;
+	border-width: 1px;
+}
+
+/* Basic + BorderBottom */
+th.BscBdrBtm
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-color: #c6c6c6;
+	border-top-color: #ffffff;
+	border-style: solid none solid none;
+	border-width: 1px;
+}
+
+th.WS
+{
+	color: #333;
+	font-size: 12px;
+	height: 24px;
+	border-style:  none;
+	border-width: 0px;
+	text-align: center;
+}
+
+/* 3D처리가 안된 Basic */
+th.Dark
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-style:  none;
+	border-width: 0px;
+	text-align: center;
+}
+
+/* 3D처리가 안된 Basic */
+th.DarkLeft
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-style: none;
+	border-width: 0px;
+	text-align: left;
+}
+
+/*
+ * TH 태그에 사용하는 보더스타일 : 기본적으로 보더가 있음.
+ * 보더를 없애야 하는 부분은 소스에서 아래처럼 따로 보더스타일을 줄 것.
+ * ex) style='border-style: solid none none none;'
+ * (상단, 우측, 하단, 좌측) 의 순서임
+ * 현재 4면 -> 3면으로 수정 border-style: none solid solid solid;
+ */
+th.BoxBdr
+{
+}
+
+/*
+* 위의 스타일을 왼쪽, 가운데, 오른쪽 TH로 할 수 있도록 한 것.
+*/
+th.BoxBdrLeft
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	text-align: center;
+	font-family: "굴림";
+	text-align: center;
+	border-color: #c6c6c6;
+	border-style: none none solid solid;
+	border-width: 1px;
+}
+
+th.BoxBdrCenter
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	text-align: left;
+	font-family: "굴림";
+	border-color: #c6c6c6;
+	border-style: none none solid none;
+	border-width: 1px;
+}
+
+th.BoxBdrRight
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	text-align: center;
+	font-family: "굴림";
+	text-align: center;
+	border-color: #c6c6c6;
+	border-style: none solid solid none;
+	border-width: 1px;
+}
+
+/* 상하좌우  border 있음 : 상단 이미지 장식 없는 테이블 헤더 부분에 사용 */
+th.BoxBdrAll
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+ 	font-family: "굴림";
+	text-align: center;
+	border-color: #c6c6c6;
+	border-style: solid;
+	border-width: 1px;
+}
+
+th.BoxBdrAllLeft
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+ 	font-family: "굴림";
+	text-align: center;
+	border-color: #c6c6c6;
+	border-style: solid none solid solid;;
+	border-width: 1px;
+}
+th.BoxBdrAllCenter
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+ 	font-family: "굴림";
+	text-align: left;
+	border-color: #c6c6c6;
+	border-style: solid none solid none;;
+	border-width: 1px;
+}
+th.BoxBdrAllRight
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+ 	font-family: "굴림";
+	text-align: center;
+	border-color: #c6c6c6;
+	border-style: solid solid solid none;;
+	border-width: 1px;
+}
+
+th.BoxBdrSmll
+{
+	background-color: #ececec;
+	height: 10px;
+	font-size: 7px;
+	border-color: #c6c6c6;
+	border-style: none solid solid solid;
+	border-width: 1px;
+}
+
+th.BscNoBdr
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 23px;
+	border-style: none;
+	border-width: 0px;
+}
+
+/* 세로분리선이 들어간 것, 세로로된 헤더영역에 사용한다. Bold, Left  - bold체도 left 정렬로 통일한다. */
+th.VSHead
+{
+	color: #333;
+	background-color: #f9f9f9;
+	font-size: 12px;
+	font-weight: bold;
+	height: 26px;
+	border-color: #ececec;
+	border-style:  none none solid none;
+	border-width: 1px;
+	text-align: left;
+    padding-left:18px;
+    box-sizing: border-box;
+}
+
+th.VSHeadCtr
+{
+	color: #333;
+	background-color: #f9f9f9;
+	font-size: 12px;
+	font-weight: bold;
+	height: 26px;
+	border-color: #ececec;
+	border-style:  none none solid none;
+	border-width: 1px;
+	text-align: center;
+}
+
+/* 세로분리선이 들어간 것, 세로로된 헤더영역에 사용한다. Normal, Left */
+th.VSSubHead
+{
+	color: #333;
+	background: #f9f9f9;
+	font-size: 12px;
+	font-weight: normal;
+	height: 26px;
+	border-color: #ececec;
+	border-top-color: #ffffff;
+	border-style:  solid none solid none;
+	border-width: 1px;
+	text-align: left;
+}
+
+/* 테이블의 가로 헤더의 분리선이 들어 간것 */
+th.HS
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-color: #ececec;
+	border-right-color: #ffffff;
+	border-style:  none solid solid none;
+	border-width: 1px;
+	text-align: center;
+}
+
+/* Table Border */
+/*
+ * TD 태그에 사용하는 보더스타일 : 기본적으로 보더가 있음.
+ * 보더를 없애야 하는 부분은 소스에서 아래처럼 따로 보더스타일을 줄 것.
+ * ex) style='border-style: solid none none none;'
+ * (상단, 우측, 하단, 좌측) 의 순서임
+ */
+td.BoxBdr
+{
+	color: #333;
+	background-color: #ffffff;
+	font-size: 12px;
+	font-family: "굴림";
+	border-color: #c6c6c6;
+	border-style: solid;
+	border-width: 1px;
+}
+
+td.Bsc, td.BscCntr
+{   padding: 11px 10px;
+    height: 34px;
+    box-sizing: border-box;
+    color: #333;
+    border-bottom: 1px solid #f4f4f4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+td.BscCntr
+{text-align: center;width:45px;}
+
+td.BscRght
+{   position: relative;
+	padding: 11px 10px;
+    height: 34px;
+    box-sizing: border-box;
+    color: #333;
+    border-bottom: 1px solid #f4f4f4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;    
+	text-align: Right;	
+	height: 24px;	
+}
+
+td.BscBG
+{
+	color: #333;
+	background-color: white;
+	font-size: 12px;
+	height: 24px;
+	border-color: #ececec;
+	border-style: none none solid none;
+	background-color: #ececec;
+	border-width: 1px;
+}
+
+td.BscNoBdr
+{
+	color: #333;
+	background-color: white;
+	font-size: 12px;
+	height: 23px;
+	border-style: none;
+	border-width: 0px;
+}
+
+td.BscCntrNoBdr
+{
+	color: #333;
+	background-color: white;
+	font-size: 12px;
+	height: 23px;
+	border-style: none;
+	border-width: 0px;
+	text-align: center;
+}
+
+td.BscRghtBG
+{
+	color: #333;
+	background-color: white;
+	font-size: 12px;
+	height: 24px;
+	border-color: #ececec;
+	border-style: none none solid none;
+	background-color: #ececec;
+	border-width: 1px;
+	text-align: Right;
+}
+
+/* td.basic에 오른쪽 속성 추가(하단보더없음)*/
+td.BscRghtNoBdr
+{
+	color: #333;
+	background-color: white;
+	font-size: 12px;
+	height: 24px;
+	border-style: none;
+	border-width: 0px;
+	text-align: Right;
+}
+
+td.WS
+{
+	color: #333;
+	font-size: 12px;
+	height: 24px;
+	border-style:  none;
+	border-width: 0px;
+}
+
+/* 3D처리가 안된 Basic */
+td.Dark
+{
+	color: #333;
+	background-color: #ececec;
+	font-size: 12px;
+	height: 24px;
+	border-style:  none;
+	border-width: 0px;
+}
+
+td.TtlOnTop { font-size: 13px; padding: 20px 0px 18px 18px; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: bold; box-sizing: border-box;}
+
+td.Ttl { font-size: 13px; padding: 20px 0px 18px 18px; color: #777; text-align: right; padding-right:18px; box-sizing: border-box;}
+
+/* Main Menu - 주 메뉴 각 항목 */
+td.MainMenu { background: white url(/img/TOPBG.GIF); }
+td.MainMenuRghtEnd { background: white url(/img/TOPBG.GIF); text-align: right; }
+
+/* 테이블 위 장식의 상단 영역 */
+td.TblTop { width: 100%; height: 7px; font-size: 7px; background: white url(/img/TBL_TOP_BG.GIF) repeat-x; }
+
+/* 이미지 없는 테이블 위 장식, 이미지 넣기 곤란한 곳에 TblTop대용으로 사용 */
+td.TblTopNoImg { width: 100%; height: 7px; font-size: 7px; background-color: #9FBCD9; }
+
+/*  테이블 아래 장식 */
+td.Btm { border: none; width: 100%; height: 6px; font-size: 5px; background: white url(/img/TBL_BOTTOM_BG.GIF) repeat-x; }
+
+/* Table Layout */
+table.Layout {   margin-left: 15px; }
+
+/* Popup Windows에서 Layout */
+table.LayoutPopup {   margin-left: 18px; }
+
+/* 기존 양식 호환용 TopLeft, TopMdl, TopRght */
+td.TopLeft { width: 3px; height: 8px; font-size: 7px; text-align: left; background: white url(/img/TBL_TOP_BG.GIF) repeat-x; }
+td.TopMdl { width: 100%; height: 8px; font-size: 7px; background: white url(/img/TBL_TOP_BG.GIF) repeat-x; }
+td.TopRght { width: 2px; height: 8px; font-size: 7px; text-align: right; background: white url(/img/TBL_TOP_BG.GIF) repeat-x; }
+
+
+/* 8.3 추가 스타일 */
+
+/*** 기본 버튼 영역 Button Area ***/
+.btn_area { position:relative; padding:10px 18px; clear:both; background:#f3f3f3; border-bottom:1px solid #dadada; min-height:29px }
+    .btn_area .btns { position:relative;margin:-15px 0 0 0; height: 29px;padding:0;}
+    .btn_area .btns li { list-style: none; display: inline-block;}
+        .btn_area .btns span { display:inline-block; height:29px; padding-left:1px; background:url(/img/btn_white.png) no-repeat left 0; vertical-align:top;  }
+        .btn_area .btns span:hover { background-position:left -29px; }
+            .btn_area .btns span a { display:block; height:29px; padding-right:10px; padding-left:9px; background:url(/img/btn_white.png) no-repeat right 0; text-align:center; color:#333; line-height:30px; font-size: 12px; text-decoration: none;}
+            .btn_area .btns a:hover { background-position:right -29px; text-decoration:none; position:relative; z-index:1000; border-right:1px }
+            .btn_area .btns a:active { background-position:right -58px; }
+            .btn_area .btns a.active {background-position:right -58px }
+            .btn_area .btns a.active span { background-position:left -58px }
+                      .btn_area .btns.first { padding-right:5px; margin-right:10px; background:url(/img/line_btn_area_top_btns.gif) no-repeat right 3px }
+
+
+
+.lst_move {vertical-align: middle;
+    width: 28px;
+    margin: 0 42px 0 4px;
+    float: left;}
+.lst_move a {
+    float: left;
+}
+.lst_move .add {
+    float: left;
+    text-indent: -999px;
+    width: 28px;
+    height: 26px;
+    display: inline-block;
+    background: url(/img/btn_lst_slct_move.png) no-repeat 0 -25px;
+    
+}
+.lst_move .del {
+    float: left;
+    text-indent: -999px;
+    width: 28px;
+    height: 26px;
+    display: inline-block;
+    background: url(/img/btn_lst_slct_move.png) no-repeat 0 0;margin-top: -1px;
+}
+
+/** 기본 버튼 **/
+
+/* left Menu */
+.Submenu {border-right:1px solid #bfbfbf;}
+.Submenu table.left tr td {padding:0 12px; box-sizing: border-box;}
+.Submenu table.left tr td a {color:#666; font-size: 12px; text-decoration: none; vertical-align: text-top;}
+.Submenu table.left tr td a:hover {color: #F26522;}
+.Submenu table.left tr:first-child td {padding-top:12px;}
+
+/* contents_area */
+.contents_area {margin:0; padding:0; }
+.contents_area .title_area {width:100%; background: #f3f3f3; position: relative; border-bottom: 1px solid #dadada;}
+.contents_area .contents_box {width:100%; padding:0; clear: both;}
+
+.contents_box tr td table:hover { }
+
+.inner_box {display: block; padding: 0 20px; position: relative; width:100%; box-sizing: border-box;}
+.inner_box td.TtlOnTop {padding:18px 0 10px !important;}
+.inner_box th {border-left:0 none;}
+.inner_box tr {padding: 4px 6px;}
+
+.btn_smll {font-size:12px;padding:6px 0;}
+.btn_smll span {display: inline-block; height: 21px; padding-left: 1px; background: url(/img/btn_white_xs.gif) no-repeat left 0; }
+.btn_smll span a {display: block; height: 21px; padding-right: 6px; padding-left: 5px; background:url(/img/btn_white_xs.gif) no-repeat right 0;line-height: 22px;color: #555;font-size: 11px;text-decoration: none;}
+
+.add_inp_table td.Bsc INPUT {height:21px; line-height: 21px; margin:5px 4px;}

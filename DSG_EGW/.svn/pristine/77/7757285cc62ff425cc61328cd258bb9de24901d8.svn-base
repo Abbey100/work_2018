@@ -1,0 +1,152 @@
+@charset "utf-8"; 
+/*! jQuery UI - v1.12.1 - 2016-09-14
+* http://jqueryui.com
+* Copyright jQuery Foundation and other contributors; Licensed MIT 
+- 2017.10.11 edited by ek100*/
+
+.ui-front {	z-index: 100; }
+.selectbox.page_num .ui-front {	z-index: 101; }
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; pointer-events: none; }
+
+
+/* Overlays */
+.ui-menu { list-style: none; padding: 0; margin: 1px 0 0 0;	display: block;	outline: 0;  }
+.ui-menu .ui-menu {	position: absolute; }
+.ui-menu .ui-menu-item { margin: 0;	cursor: pointer; white-space: nowrap}
+.slt_type2 .ui-menu .ui-menu-item { white-space:normal;}
+.ui-menu .ui-menu-item-wrapper { position: relative; line-height: 16px;	padding: 7px 19px 7px 9px; }
+.ui-menu .ui-menu-divider { margin: 5px 0; height: 0; font-size: 0;	line-height: 0;	border-width: 1px 0 0 0; }
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {	/*margin: -1px; */}
+
+/* icon support */
+.ui-menu-icons { position: relative; }
+.ui-menu-icons .ui-menu-item-wrapper { padding-left: 2em; }
+
+/* left-aligned */
+.ui-menu .ui-icon {	position: absolute;	top: 0;	bottom: 0; left: .2em;	margin: auto 0; }
+
+/* right-aligned */
+.ui-menu .ui-menu-icon { left: auto; right: 0; }
+.ui-button { position: relative; height:28px; line-height:24px; border: 1px solid #c2c2c2; padding: 0 6px; display: inline-block; cursor: pointer; vertical-align: middle; text-align: center; -webkit-user-select: none;	-moz-user-select: none;	-ms-user-select: none; user-select: none; /* Support: IE <= 11 */ overflow: visible; background: url(../img/btn_select.png) right 50% no-repeat; box-sizing: content-box;}
+.ui-button,
+.ui-button:link,
+.ui-button:visited,
+.ui-button:hover,
+.ui-button:active {	text-decoration: none; outline: none; }
+.ui-button:hover { background-color: transparent }
+.ui-button:active { color: #333; background-color: transparent;  }
+
+.input_group .ui-button:hover { background-color: transparent}
+.input_group .ui-button:active { color: #333; background-color: transparent; border: 0 none; }
+
+.ui-selectable { -ms-touch-action: none; touch-action: none; }
+/*.ui-selectable-helper {	position: absolute;	z-index: 100; border: 1px dotted black; }*/
+.ui-selectmenu-menu { padding: 0; margin: 0; position: absolute; top: 0; left: 0; display: none; border: 1px solid #969696; border-radius: 2px; overflow-x: visible; min-width: 100%;}
+.ui-selectmenu-menu .ui-menu { overflow: auto; overflow-x: hidden; padding-bottom: 1px; }
+.ui-selectmenu-menu .handy-scroll { max-height: 150px; }
+.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup { font-size: 12px; font-weight: bold; line-height: 1.5; padding: 2px 0.4em; margin: 0.5em 0 0 0; height: auto; border: 0; }
+.ui-selectmenu-open { display: block;}
+.ui-selectmenu-text { display: block; margin-right: 20px; overflow: hidden; text-overflow: ellipsis;}
+.d_srch_layer .selectbox.br_bttm .ui-selectmenu-text { width: calc(100% - 8px); word-break: break-all; display: block; margin-right: 20px; overflow: hidden; text-overflow: ellipsis;}
+
+.ui-selectmenu-button.ui-button { text-align: left;	white-space: nowrap; width:100%; box-sizing: border-box; }
+.ui-selectmenu-icon.ui-icon { float: right;	margin-top: 0; }
+
+/* Component containers
+----------------------------------*/
+.ui-widget { font-size: 12px }
+.ui-widget .ui-widget { font-size: 12px }
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {	font-size: 12px }
+.ui-widget.ui-widget-content { border: 0 none; border-radius: 0; width:100%; box-sizing: border-box;/* max-height: 150px;*/ }
+/*.selectbox .scroll-wrapper { border: 1px solid #969696; border-radius: 2px;}*/
+.ui-widget-content { width:100%; box-sizing: border-box;  background: #ffffff; color: #333333;}
+.ui-widget-content li { width:100%; }
+.ui-widget-content a { color: #333333; }
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button { font-weight: normal;	color: #454545; }
+.ui-button.ui-state-disabled,
+.ui-button.ui-state-disabled:hover,
+.ui-button.ui-state-disabled:active { font-weight: normal;	color: #969696; border: 1px solid #c2c2c2; background-image:url(../img/btn_select_ds.png); }
+.input_group .ui-button.ui-state-disabled,
+.input_group .ui-button.ui-state-disabled:hover,
+.input_group .ui-button.ui-state-disabled:active { border: 0 none;}
+
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+.ui-button { color: #454545; text-decoration: none; }
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+/*	border: 1px solid #cccccc;*/
+/*	background: #ededed;*/
+	font-weight: normal; color: #2b2b2b; }
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {	color: #2b2b2b;	text-decoration: none; outline: none; box-sizing: border-box; width: 100%;}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-button.ui-state-active:hover { background: #edf3ff;	text-decoration: none; outline: none;  font-weight: normal; color: #4c4c4c; box-sizing: border-box; width: 100%; }
+
+div.ui-menu-item-wrapper.selected { color: #3858ed !important; }
+
+.ui-icon-background,
+.ui-state-active .ui-icon-background { border: #003eff;	background-color: transparent; }
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited { color: #ffffff; text-decoration: none; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {	border-top-left-radius: 2px; }
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {	border-top-right-radius: 2px; }
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {	border-bottom-left-radius: 2px; }
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {	border-bottom-right-radius: 2px; }
+
+/* Overlays */
+.ui-widget-overlay { background: #aaaaaa; opacity: .3; filter: Alpha(Opacity=30); /* support: IE8 */ }
+.ui-widget-shadow {	-webkit-box-shadow: 0px 0px 5px #666666; box-shadow: 0px 0px 5px #666666; }

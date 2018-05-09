@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8">
+<title>결재선</title>
+
+<link href="../../css/common.css" rel="stylesheet" type="text/css">
+<link href="../../css/bms.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+
+
+<script type="text/javascript" src="/js/CALS.JS"></script>
+<script type="text/javascript" src="/bms/js/calendar.js"></script>
+<script type="text/javascript" src="/bms/js/dui_all.js"></script>
+<script type="text/javascript" src="/bms/js/common/common_all.js"></script>
+<script type="text/javascript" src="/bms/js/validator/validator.js"></script>
+<script type="text/javascript" src="/bms/js/comm/jquery.blockUI.js"></script>
+<script type="text/javaScript" language="javascript" defer="defer">
+// <![CDATA[
+    var szKEY = '001L11lZb';
+// ]]>
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+    $(document).ready(function(){
+        resizeEditorIFrame();
+        $(window).resize(resizeEditorIFrame);
+    });
+
+    var resizeEditorIFrame = function(){
+        var h = $(window).height();
+        var w = $(window).width();
+                        
+        $(".mcanvas").css("height", h-10);
+        $(".mcanvas").css("width", w-9);
+    };
+                        
+    
+</script>
+</head>
+<body id="m_body" style="overflow: hidden">
+<div id="dvMainBottom" class="report_area">
+                <iframe id="apprInfoWnd" frameborder="0" marginwidth="0" marginheight="0" width="100%" height="321px" scrolling="no" title="문서정보" src="../approval/monitor_test_box.html"></iframe>
+            </div>
+
+</body></html>

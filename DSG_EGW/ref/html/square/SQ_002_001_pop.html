@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>square 그룹 정보보기 화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/fileUpload.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" language="javascript" src="../../js/jquery.dotdotdot.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(function() {
+                $('.topic_sentence li p').dotdotdot();
+            });
+        </script>
+        </head>
+        <body>
+        <div class="pop_wrap co_work">
+          <div class="title_area">
+            <h1>복사할 그룹선택<span id="" style="display: none;"></span></h1>
+          </div>
+          <div class="pop_container" style="padding-top:0px">
+              <div class="write_form_box" style="">
+                        <table class="" style="width: 100%;">
+                          <colgroup>
+                          <col style="width: 110px;">
+                          <col style="width: 30px;">
+                          <col style="width:*">
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th class="pd_lft_0"><span class="tit">제목</span></th>
+                              <td colspan="2" class=""><input id="title" name="title" class="intxt disabled" style="width: 100%; ime-mode: active;" onchange="isChanged=true;" value="[스퀘어] Display를 DESC로 표시되도록 수정방법 문의결과 공유"  tabindex="1" disabled></td>
+                            </tr>
+                            <tr>
+                              <th class="pd_lft_0"><span class="tit">그룹선택<span class="essntal">*</span></span></th>
+                                <td colspan="2"><select class="basic_select" style="width: 100%;" >
+                   <option>스퀘어 개발</option>                 
+                   <option selected>제품기획팀</option>             
+                   <option>나의업무팀</option> 
+                   <option>나의 업무업무업무업무업무업무업무업무업무업무 팀</option>   
+                   <option>나의업무팀</option>                   
+                                    
+                                    </select></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td colspan="2"><label for="check_box"><input id="check_box" type="checkbox" checked> <span class="fnt_gray">등록 후, 복사된 그룹으로 이동</span></label></td></tr>
+                          </tbody>
+                        </table>
+                    <div class="footer ">
+                        <ul class="btns">
+                  <li><span><a href="#" onclick="setForm();" class="fnt_bold">등록</a></span></li>
+                  <li><span><a href="#" onclick="window.close();">취소</a></span></li>
+                        </ul>
+                    </div>
+              </div>
+       </div>
+             
+    </div>
+</body>
+</html>

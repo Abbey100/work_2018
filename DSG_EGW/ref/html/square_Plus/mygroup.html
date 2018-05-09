@@ -1,0 +1,343 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+  <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta charset="utf-8" />
+        <title>Square+ 워크피드 및 기본화면</title>
+        <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/square_plus.dynatree.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+        <!--[D] jqueryUI -->
+        <script src="../../js/jquery-latest.min.js"></script>
+        <script src="../../js/common.js"></script>
+        <script src="../../js/square_guide.js"></script>
+        
+		<!--link rel="stylesheet" type="text/css" href="js/dynatree-1.2.4/src/skin/ui.dynatree.css"/-->
+		<link rel="stylesheet" type="text/css" href="js/contextmenu/jquery.contextMenu.css">
+		
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.10.2.min.js"></script>
+		<script type="text/javascript" src="../../js/dynatree-1.2.4/jquery/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/dynatree-1.2.4/src/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/contextmenu/jquery.contextMenu.js"></script>
+		
+		<script type="text/javascript">
+			var uniqueID = 0;
+			var dragInfo = null;
+			var dragMessage = {
+				draggable : function() {
+					$(".ui-draggable").draggable({
+						containment: "document",
+						appendTo: "body",
+						cursorAt: { top: -2, left: -3 },
+						helper: function() {
+							dragInfo = [];
+							var id = $(this).attr("id");
+							var title = dragMessage.escapeHtml($(this).html());
+							dragInfo.push([id, title]);
+							return $("<div class='tooltip_move no_bg pd_lft_10'>" + title + "</div>");
+						},
+						connectToDynatree: true
+					});
+				},
+				escapeHtml : function(str) {
+					var charMap = {
+						'<' : '&lt;',
+						'>' : '&gt;',
+						'&' : '&amp;',
+						'"' : '&quot;',
+						"'" : '&#39;'
+					};
+					return str.replace(/[<>&"']/g, function(ch) {
+						return charMap[ch];
+					});
+				}
+			};
+			
+			var handleMessage = {
+				createFolder : function() {
+					var res = [
+						{"title": "", "isFolder": true}
+					];
+					var node = $("#tree").dynatree("getRoot").addChild(res);
+					var prevTitle = node.data.title;
+					
+					$(".dynatree-title", node.span).html("<input id='editNode' value='folder'>");
+					$("input#editNode").focus().keydown(function(event) {
+						switch( event.which ) {
+							case 27:	// esc
+								$("input#editNode").val(prevTitle);
+								$(this).blur();
+								break;
+							case 13:	// enter
+								$(this).blur();
+								break;
+							default:
+								break;
+						}
+					}).blur(function(event){
+						var title = $("input#editNode").val();
+						if(title == "") {
+							node.remove();
+							return;
+						}
+						// �������� ó�� �� id ��ȸ
+						node.data.key = "folder_"+uniqueID++;						
+						node.setTitle("<span class='node-folder' key='" + node.data.key + "'>" + title + "</span>");
+						node.render();
+						node.deactivate();
+					});
+				},
+				updateFolder : function(node) {
+					var prevTitle = $(node.data.title).html();
+					
+					// ���������϶� input�±׿� �齺���̽� Ű���� �������� �ʴ� ��������.
+					// jquery.dynatree.js -> bind() -> see 3009 line of "modify by Square Plus".
+					node.data.title = "";
+					
+					$(".dynatree-title", node.span).html("<input id='editNode' value='" + prevTitle + "'>");
+					$("input#editNode").focus().keydown(function(event) {
+						switch( event.which ) {
+							case 27:	// esc
+								$("input#editNode").val(prevTitle);
+								$(this).blur();
+								break;
+							case 13:	// enter
+								$(this).blur();
+								break;
+							default:
+								break;
+						}
+					}).blur(function(event){
+						var title = $("input#editNode").val();
+						if(title == "") {
+							title = prevTitle;
+						}
+						// �������� ó��
+						node.setTitle("<span class='node-folder' key='" + node.data.key + "'>" + title + "</span>");
+						node.render();
+						node.deactivate();
+					});
+				},
+				deleteFolder : function(node) {
+					var folderInfo = [];
+					var groupInfo = [];
+					// ��������ó��, �׷� -> ������ �̵�
+					node.visit(function(groupNode){
+						groupInfo.push(groupNode.data.key);
+					});
+					folderInfo.push(node.data.key);
+					node.remove();
+				},
+				deleteGroup : function(node) {
+					var groupInfo = [];
+					// �׷� -> ������ �̵�
+					groupInfo.push(node.data.key);
+					node.remove();
+				}
+			};
+			
+			$(document).ready(function() {
+				$("#tree").dynatree({
+					onActivate: function(node) {
+						return false;
+					},
+					children: [
+						{"title": "<span class='node-folder' key='2015'>2015</span>", "isFolder": true, "key": "2015", "isLazy": true},
+						{"title": "<span class='node-folder' key='2016'>2016</span>", "isFolder": true, "key": "2016", "isLazy": true},
+						{"title": "<span class='node-folder' key='2017'>2017</span>", "isFolder": true, "key": "2017"}
+					],
+					onLazyRead: function(node) {
+						if(node.data.key == "2015") {
+							var res = [
+								{"title": "<span class='node-group' key='file_1'>file_1</span>", "key": "file_1"},
+								{"title": "<span class='node-group' key='file_2'>file_2</span>", "key": "file_2"}
+							];
+							node.addChild(res);
+						}
+						if(node.data.key == "2016") {
+							var res = [
+								{"title": "<span class='node-group' key='group_1'>group_1</span>", "key": "group_1"},
+								{"title": "<span class='node-group' key='group_2'>group_2</span>", "key": "group_2"},
+								{"title": "<span class='node-group' key='group_3'>group_3</span>", "key": "group_3"},
+							];
+							node.addChild(res);
+						}
+					},
+					dnd: {
+						onDragStart: function(node) {
+							return true;
+						},
+						onDragStop: function(node) {
+						},
+						autoExpandMS: 1000,
+						preventVoidMoves: true,
+						onDragEnter: function(node, sourceNode) {
+							return true;
+						},
+						onDragOver: function(node, sourceNode, hitMode) {
+							// logMsg("tree.dnd.onDragOver", node, sourceNode, hitMode);
+							if(sourceNode != null && node.isDescendantOf(sourceNode)) {
+								return false;
+							}
+							
+							if(node.data.isFolder) {
+								if((sourceNode == null ||  !sourceNode.data.isFolder) && hitMode != "over") {
+									return "over"
+								}
+								if(sourceNode && sourceNode.data.isFolder && hitMode == "over") {
+									return "after";
+								}
+							}
+							
+							if(!node.data.isFolder) {
+								if(sourceNode && sourceNode.data.isFolder) {
+									return false;
+								}
+								if(hitMode == "over") {
+									return "after";
+								}
+							}
+						},
+						onDrop: function(node, sourceNode, hitMode, ui, draggable) {
+							// logMsg("tree.dnd.onDrop", node, sourceNode, hitMode);
+							if(node.data.isFolder) {
+								if((sourceNode == null ||  !sourceNode.data.isFolder) && hitMode != "over") {
+									hitMode = "over"
+								}
+								else if(sourceNode && sourceNode.data.isFolder && hitMode == "over") {
+									hitMode = "after";
+								}
+							}
+							else if(!node.data.isFolder && hitMode == "over") {
+								hitMode = "after";
+							}
+							
+							if(sourceNode == null) {
+								if(dragInfo == null || dragInfo.length < 1) {
+									return;
+								}
+								var res = [
+									{"title": "<span class='node-group' key='" + dragInfo[0][0] + "'>" + dragInfo[0][1] + "</span>", "key": dragInfo[0][0]}
+								];
+								if(node.data.isFolder) {
+									node.addChild(res);
+								} else {
+									var parentNode = node.getParent();
+									var newNode = parentNode.addChild(res);
+									newNode.move(node, hitMode);
+								}
+							} else {
+								sourceNode.move(node, hitMode);
+							}
+							
+							if(node.data.isFolder && hitMode == "over") {
+								node.expand(true);
+							}
+						},
+						onDragLeave: function(node, sourceNode) {
+						}
+					}
+				});
+				
+				dragMessage.draggable();
+				
+				$.contextMenu({
+			        selector: '.dynatree-title .node-folder',
+			        callback: function(key, options) {
+			        	var nodekey = $(this).attr("key");
+			        	var node = $("#tree").dynatree("getTree").getNodeByKey(nodekey);
+			        	if(key == "edit") {
+			        		handleMessage.updateFolder(node);
+			        	} else if(key == "delete") {
+			        		handleMessage.deleteFolder(node);
+			        	}
+			        },
+			        items: {
+			            "edit": {name: "Edit", icon: "edit"},
+			            "delete": {name: "Delete", icon: "delete"}
+			        }
+			    });
+				
+				$.contextMenu({
+			        selector: '.dynatree-title .node-group',
+			        callback: function(key, options) {
+			        	var nodekey = $(this).attr("key");
+			        	var node = $("#tree").dynatree("getTree").getNodeByKey(nodekey);
+			        	if(key == "recover") {
+			        		handleMessage.deleteGroup(node);
+			        	}
+			        },
+			        items: {
+			            "recover": {name: "Recover", icon: "recover"}
+			        }
+			    });
+				
+				$.contextMenu({
+			        selector: '.ui-draggable',
+			        callback: function(key, options) {
+			        	var id = $(this).attr("id");
+			            alert(key + ":" + id);
+			        },
+			        items: {
+			            "move": {name: "Move", icon: "move"}
+			        }
+			    });
+			});
+		</script>
+	</head>
+	<body class="sq_plus">
+	<div class="my_group">
+		<div>
+			ING GROUP
+			<div class="ui-draggable" id="baseball">baseball</div>
+			<div class="ui-draggable" id="soccer">soccer</div>
+		</div>
+		<br>
+		<div>
+			MY GROUP <a href="javascript:handleMessage.createFolder();">+</a>
+			<div id="tree"></div>
+		</div>
+    </div>
+        
+    <!-- 레이어팝 : 폴더선택 -->
+    
+    <div  class="layer_pop slct_fldr">
+		<div class="title_area">
+			<h1>폴더 선택</h1>
+		</div>
+		<div class="org_ctt_box">
+			<div class="org_ctt">
+				<div class="org_btn_area">
+                    <a><span>새 폴더 추가</span></a>
+				</div>
+				<div class="org_tree_area"> 
+                    <div class="webfx-tree-item selected"><img class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><a href="#">선택된 폴더</a></div>
+                    <div class="webfx-tree-item"><img class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><a href="#">스퀘어플러스 폴더</a></div>
+                    <div class="webfx-tree-item"><img class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><a href="#">UI/UX Desgin :)</a></div>
+                    <div class="webfx-tree-item"><img class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><a href="#">개인폴더</a></div>
+                    <div class="webfx-tree-item make"><img class="webfx-tree-icon" src="../../img/FOLDER_CLOSE.GIF"><input type="text" placeholder="새폴더"></div>
+				</di
+				</div>
+			</div>
+		</div>
+        	
+	<div class="footer">
+		<ul class="btns">
+			<li><span><a href="#">확인</a></span></li>
+			<li><span><a href="#">취소</a></span></li>
+		</ul>
+	</div>
+	</div>
+
+        
+    
+        
+        
+        
+        
+    
+
+	</body>
+</html>

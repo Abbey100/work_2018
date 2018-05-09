@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 일정 등록 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+	    <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+    <!-- popup 기본 사이즈는 800 x 680 -->
+    <body>
+        <!-- header -->
+        <h1>일정 등록</h1>
+        <!-- // header -->
+        <!-- body -->
+        <div class="container_area">
+            <!-- 본문 영역 -->
+            <div class="scroll_area">
+            <div class="handy-scroll">
+                <ul class="contents_tab has_bg">
+                    <!--[D] 메뉴는 최다(스퀘어)기준 5개, 최장(결재) 기준 5글자 -->
+                    <li><a class="selected">일정상세</a></li>
+                    <li><a class="">공유자 &middot; 설비일정확인</a></li>				
+                </ul>
+                <div>
+                    <div class="form_table">
+						<table>
+							<col style="width: 110px">
+							<col style="width:*">
+							<tbody>
+                                <tr>                
+                                    <th><span>제목</span></th>
+                                    <td>
+                                        <div class="input_group focused">
+                                            <input type="text" class="basic_input" placeholder="일정 제목을 입력하세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>달력</span></th>
+                                    <td>
+                                        <div class="input_group has_select">
+                                            <div class="selectbox" style="width:80px">
+                                                <select title="달력 선택">
+                                                    <option selected>달력선택</option>
+                                                    <option>내 일정</option>
+                                                    <option>UI팀 프로젝트 일정공유</option>
+                                                </select>
+                                            </div>
+                                            <div class="token-input sche_only_delete">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li class="token-input-token">
+                                                        <p>내 일정</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>UI팀 프로젝트 일정공유</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>자동차 UI개선</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>내 일정</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>UI팀 프로젝트 일정공유</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>자동차 UI개선</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>내 일정</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>UI팀 프로젝트 일정공유</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>일시</span></th>
+                                    <td>
+                                        <div class="input_group has_select sche_case1">
+                                            <div class="selectbox" style="width:58px">
+                                                <select title="양력, 음력 선택">
+                                                    <option selected>양력</option>
+                                                    <option>음력</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="datepic_area">
+                                                <div class="date_box">
+                                                    <input type="text" class="date_input" value="2017.11.02" style="width:92px;" readonly="">
+                                                    <a class="date_btn" title="">달력</a>
+                                                </div>
+                                                <div class="selectbox" style="width:92px;">
+                                                    <select> 
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                    </select>
+                                                </div>
+                                                ~
+                                                <div class="date_box">  
+                                                    <input type="text" class="date_input" value="2017.12.02" style="width:92px;" readonly="">
+                                                    <a class="date_btn" title="">달력</a>
+                                                </div>
+                                                <div class="selectbox" style="width:92px;">
+                                                    <select> 
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                        <option> 오전 11:00 </option>
+                                                    </select>
+                                                </div>
+                                                <a class="btn small" href="#">반복설정</a>
+                                            </div>
+
+                                            <div class="group">
+                                                <span class="form">
+                                                    <input type="checkbox" id="check001" />
+                                                    <label for="check001">종일</label></span>
+                                                <span class="form">
+                                                    <input type="checkbox" id="check002" />
+                                                    <label for="check002">기념일</label></span>
+                                            </div>
+                                        </div>
+                                        <p class="blue_txt">매월 4번째 목요일 반복</p>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>공유자</span></th>
+                                    <td>
+                                        <div class="input_group sche_case2">
+                                            <div class="token-input sche_only_delete">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>김핸디</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                </ul>
+                                                <input type="button" class="ico_btn small add">
+                                            </div>
+                                            <div class="posi_r">
+                                                <a class="btn">공유자일정확인</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>설비</span></th>
+                                    <td>
+                                        <div class="input_group sche_case3">
+                                            <div class="add_equip_wrap"> <!-- 펼치면 open 클래스 추가 -->
+                                                <a href="#" class="btn_equip">설비추가</a>
+                                                <div class="add_equip_cont">
+                                                    <div class="pos_l handy-scroll">
+                                                        <ul class="add_equip_list">
+                                                            <li class="selected"><a href="#">회의실</a></li>
+                                                            <li class="on"><a href="#">빔 프로젝터 내용이 길 경우</a></li>
+                                                            <li><a href="#">노트북</a></li>
+                                                            <li><a href="#">차량</a></li>
+                                                            <li><a href="#">설비A</a></li>
+                                                            <li><a href="#">노트북</a></li>
+                                                            <li><a href="#">차량</a></li>
+                                                            <li><a href="#">설비A</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <span class="bar">&nbsp;</span>
+                                                    <div class="pos_r handy-scroll">
+                                                        <ul class="add_equip_list">
+                                                            <li><span class="form"><input type="checkbox" id="a1"><label for="a1">1층 Bahama</label></span></li>
+                                                            <li class="on"><span class="form"><input type="checkbox" id="a2"><label for="a2">1층 회의실 이름 길어지면</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a3"><label for="a3">1층 Hawai</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a4"><label for="a4">1층 A회의실</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a5"><label for="a5">2층 A회의실</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a6"><label for="a6">3층 A회의실</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a7"><label for="a7">1층 A회의실</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a8"><label for="a8">2층 A회의실</label></span></li>
+                                                            <li><span class="form"><input type="checkbox" id="a9"><label for="a9">3층 A회의실</label></span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="pos_bt"><a class="btn">확인</a></div>
+                                                </div>
+                                            </div>
+                                            <div class="token-input sche_only_delete">
+                                                <ul class="token-input-list ui-sortable">
+                                                    <li class="token-input-token">
+                                                        <p>UI팀 프로젝트 일정공유</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>내 일정</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                    <li class="token-input-token">
+                                                        <p>UI팀 프로젝트 일정공유</p>
+                                                        <span class="token-input-delete-token">delete</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="posi_r">
+                                                <a class="btn">설비일정확인</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>알림</span></th>
+                                    <td>
+                                        <div class="has_select sche_case4">
+                                            <!-- 알림 한셋 -->
+                                            <div class="notify_wrap">
+                                                <div class="selectbox">
+                                                    <select title="알림 시간 선택"> 
+                                                        <option selected>10분 전</option>
+                                                        <option>20분 전</option>
+                                                    </select>
+                                                </div>
+                                                <div class="hgroup_btn">
+                                                    <div class="group">
+                                                        <a class="btn on">알림</a>
+                                                        <a class="btn">메일</a>
+                                                    </div>
+                                                    <a class="btn_delete">알림 삭제</a>
+                                                </div>
+                                            </div>
+                                            <!-- //알림 한셋 -->
+
+                                            <!-- 알림 한셋 -->
+                                            <div class="notify_wrap">
+                                                <div class="selectbox">
+                                                    <select title="알림 시간 선택"> 
+                                                        <option>10분 전</option>
+                                                        <option selected>20분 전</option>
+                                                    </select>
+                                                </div>
+                                                <div class="hgroup_btn">
+                                                    <div class="group">
+                                                        <a class="btn on">알림</a>
+                                                        <a class="btn">메일</a>
+                                                    </div>
+                                                    <a class="btn_delete">알림 삭제</a>
+                                                </div>
+                                            </div>
+                                            <!-- //알림 한셋 -->
+
+                                        </div>
+                                        <a class="text_btn add" href="#">알림추가</a>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>내용</span></th>
+                                    <td>
+                                        <div class="input_group">
+                                            <input type="text" class="basic_input" placeholder="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>                
+                                    <th><span>기타항목</span></th>
+                                    <td>
+                                        <div class="input_group sche_case5">
+                                            <div class="pos_l">
+                                                <input type="text" class="border_input" placeholder="제목을 입력하세요.">
+                                            </div>
+                                            <div class="pos_con">
+                                                <input type="text" class="border_input" placeholder="내용을 입력하세요.">
+                                                <a class="btn_delete">알림 삭제</a>
+                                            </div>
+                                        </div>
+                                        <a class="text_btn add" href="#">추가입력</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+                                    <td>
+                                        <div class="group file_input sche_case6">
+                                            <a class="btn small" >
+                                                <input type="file" onclick="blur()" >
+                                                내PC
+                                            </a>
+                                            <a class="btn small">스토리지</a>
+                                        </div>
+                                        <dl class="file_info">
+                                            <dt>일반첨부 </dt>
+                                            <dd>2(<em>7.93MB</em>/100MB)</dd>
+                                            <dt>대용량 </dt>
+                                            <dd>1(<em>2GB</em>)</dd>
+                                        </dl>
+                                        <a class="text_btn all_delete">전체삭제</a>
+                                        <!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+                                        <div class="file_lst upload">
+                                            <ul class="handy-scroll">
+                                                <li>
+                                                    <a class="move">항목이동</a>
+                                                    <a class="file_name">IMG_file.jpg </a>															
+                                                    <span class="file_size">44 KB</span>
+                                                    <a class="cancel" ></a></li>
+                                                <li>
+                                                    <a class="move">항목이동</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                    <span class="file_size">28 KB</span>
+                                                    <a class="cancel" ></a></li>
+                                                <li>
+                                                    <a class="move">항목이동</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                    <span class="file_size">284 KB</span>
+                                                    <a class="cancel" ></a></li>
+                                                <li>
+                                                    <a class="move">항목이동</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                    <span class="file_size">284 KB</span>
+                                                    <a class="cancel" ></a></li>
+                                                <li>
+                                                    <a class="move">항목이동</a>
+                                                    <a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+                                                    <span class="file_size">284 KB</span>
+                                                    <a class="cancel" ></a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+							</tbody>
+						</table>
+					</div>
+                </div>
+            </div>
+				
+            </div>
+			<div class="btns_area bttm">
+                <div class="align_rg">
+                    <!-- 등록 -->
+                    <a class="action_btn">등록</a>
+                    <a class="btn">취소</a>
+                </div>
+            </div>            
+        </div>
+        <!-- // body -->
+
+
+
+        <div class="popup open">
+            <!--  open 추가시 모달-->
+            <div>
+                <div class="popup_container" style="width:420px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        반복설정
+                    </h2>
+                    <div class="form_table sche_pop_sty2">
+                        <table>
+                            <colgroup>
+                                <col style="width:54px;">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>빈도</th>
+                                    <td>
+                                        <div class="selectbox" style="width:70px;">
+                                            <select title="반복 빈도 선택"> 
+                                                <option selected>매주</option>
+                                                <option>매주</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>주기</th>
+                                    <td>
+                                        <div class="selectbox" style="width:70px;">
+                                            <select title="반복 주기 선택"> 
+                                                <option selected>주기</option>
+                                                <option>주기</option>
+                                            </select>
+                                        </div>
+                                        <div class="group">
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check001" />
+                                                <label for="pop_check001">일</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check002" />
+                                                <label for="pop_check002">월</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check003" />
+                                                <label for="pop_check003">화</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check004" />
+                                                <label for="pop_check004">수</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check005" />
+                                                <label for="pop_check005">목</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check006" />
+                                                <label for="pop_check006">금</label>
+                                            </span>
+                                            <span class="form">
+                                                <input type="checkbox" id="pop_check007" />
+                                                <label for="pop_check007">토</label>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>범위</th>
+                                    <td>
+                                        <div class="datepic_area">
+                                            <div class="date_box">
+                                            <input type="text" class="date_input" value="2017.11.02" style="width:103px;" readonly="">
+                                            <a class="date_btn" title="">달력</a>
+                                            </div>
+                                            ~
+                                            <div class="date_box">  
+                                            <input type="text" class="date_input" value="2017.12.02" style="width:103px;" readonly="">
+                                            <a class="date_btn" title="">달력</a></div>
+                                        </div>
+                                        <span class="form">
+                                            <input type="checkbox" id="pop_check009" />
+                                            <label for="pop_check009">무한반복</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>요약</th>
+                                    <td>
+                                        <p class="description">3주마다 수요일에 반복</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>					
+                    <div class="btns_area bttm h68">
+                        <div class="align_rg">
+                            <!-- 등록 -->
+                            <a class="action_btn">확인</a>
+                            <a class="btn">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>HANDY GROUPWARE - GUIDE</title>		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" /><!-- 공통 css -->
+		<link rel="stylesheet" type="text/css" href="../../css/sub.css" /><!-- 공통 css -->
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+		<style>
+			body {overflow: auto}
+			.content_table {min-width: 960px}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="header">
+				<h1>Frameourk</h1>
+				<ul>
+					<li><a href="layout.html" target="_blank">layout</a></li>		
+					<li><a href="layout_vertical.html" target="_blank">layout-divided</a></li>	
+					<li><a href="layout_popup_write.html" target="_blank">popup write</a></li>
+					<li><a href="layout_popup_read.html" target="_blank">popup read</a></li>
+					<li><a href="../../html/99_common/datepicker.html" target="_blank">datepicker</a></li>	
+					<li><a href="#guide06">Table</a></li>
+				</ul>
+
+				<h1>Component</h1>
+				<ul>
+					<li><a href="#guide01">Button</a></li>
+					<li><a href="#guide02">Icon &amp; Badges</a></li>
+					<li><a href="#guide03">Form1 : check, radio</a></li>
+					<li><a href="#guide04">Paginate</a></li>
+					<li><a href="#guide05">Tabs</a></li>
+
+				</ul>
+			</div>
+
+			<div id="container">
+				<div id="guide01" class="guide_box">
+					<h1>#01. Button</h1>					
+					<h2>- 일반버튼</h2>
+					<div class="ex">
+						<a href="#" class="btn">버튼</a>
+						<a href="#" class="action_btn">액션버튼</a>		
+					</div>	
+
+					<h2>- 아이콘 버튼</h2>
+					<div class="ex">
+						<div class="groups">
+							<a href="#" class="gfrist">맨위로</a>
+							<a href="#" class="gprev">한칸위로</a>
+							<a href="#" class="gnext">한칸아래로</a>
+							<a href="#" class="glast">맨아래로</a>
+						</div>
+					</div>	
+
+					<h2>- 아이콘 버튼2</h2>
+					<div class="ex">
+						<a href="#" class="ico_btn view_lst on">리스트형</a>
+						<a href="#" class="ico_btn view_vertical">분할</a>
+						<a href="#" class="ico_btn grid on">분할</a>
+
+					</div>					
+				</div>
+
+				<div id="guide02" class="guide_box">
+					<h1>#02. Icon &amp; Badges</h1>
+
+					<h2>- 이메일 상태</h2>
+					<div class="ex">
+						<h4>(메일 상태 아이콘)</h4>
+						<span class="ico_mail" >안읽은메일</span>
+						<span class="ico_mail open" >읽은메일</span>
+						<span class="ico_mail reply" >답장메일</span>
+						<span class="ico_mail fw" >전달</span>   
+						<span class="ico_mail cc" >참조</span>   
+
+						<h4>(메일 상태 배너)</h4>
+						<span class="badge vip" >VIP</span>
+						<span class="badge emergency" >긴급</span>
+						<span class="badge security" >보안</span>
+
+					</div>
+					<h2>- 게시물 상태</h2>
+					<div class="ex">
+						<h4>(게시물 상태 아이콘)</h4>
+						<span class="ico_board read" >읽은 게시물</span>
+						<span class="ico_board unread" >안읽은 게시물</span>
+						<span class="ico_board new" >새로운 게시물</span>
+						<span class="ico_board fw" >전달</span>   
+						<span class="ico_board cc" >참조</span>  
+
+						<h4>(게시물 상태 배너)</h4>
+						<span class="badge emergency" >긴급</span>
+						<span class="badge security" >보안</span>
+						<span class="badge notice" >공지</span>
+					</div>
+				</div>
+
+
+				<div id="guide03" class="guide_box">
+					<h1>#03. Form 01 : CHECK & RADIO </h1>
+					<h2>- 기본 폼</h2>
+					<div class="ex">							
+						<span class="form"><input type="checkbox" /><label class="blind">선택</label></span>
+						<span class="form"><input type="checkbox" disabled="disabled" /><label class="blind">선택</label></span>  
+
+						<br /><br />
+
+						<span class="form"><input type="checkbox" id="a1" /><label for="a1">선택</label></span>
+						<span class="form"><input type="checkbox" disabled="disabled" id="a2"  /><label for="a2">선택</label></span>
+
+						<br /><br />
+
+						<span class="form"><input type="radio" id="a3" /><label for="a3">선택</label></span>
+						<span class="form"><input type="radio" disabled="disabled" id="a4"  /><label for="a4">선택</label></span>
+					</div>
+
+					<h2>- 예외 선택 폼</h2>
+
+					<div class="ex">						
+						<span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span>											
+						<span class="form flag"><input type="checkbox" disabled="disabled" /><label class="blind">플래그</label></span>											
+						<span class="form favorite"><input type="checkbox"/><label class="blind">플래그</label></span>								
+						<span class="form favorite"><input type="checkbox" disabled="disabled" /><label class="blind">플래그</label></span>								
+					</div>
+				</div>
+			</div>
+			<div id="guide04" class="guide_box">
+				<h1>#04. Pagination </h1>
+				<div class="ex">
+					<!-- 테이블 페이지네이션 -->
+					<div class="paginate_area">
+						<div class="paginate">	
+							<a class="first disabled" href="#">처음 페이지</a>
+							<a class="pre disabled" href="#">이전 페이지</a>	
+							<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+							<a class="selected" href="#">1</a>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>		
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>		
+							<a class="next" href="#">다음 페이지</a>
+							<a class="last" href="#">마지막 페이지</a>
+						</div>
+						<div class="page_num">
+							<input type="text" value="1"> / 118
+						</div>
+					</div>						
+				</div>
+			</div>
+
+			<div id="guide05" class="guide_box">
+				<h1>#05. Tabs </h1>
+
+				<h2>- 1depth Tab</h2>
+				<div class="ex">
+					<ul class="tab">
+						<li><a href="#" class="selected">Tab1</a></li>
+						<li><a href="#">Tab2</a></li>
+					</ul>
+				</div>
+				<h2>- 2depth Tab</h2>
+				<div class="ex">
+					<div class="content_table">
+						<ul class="tab">
+							<li><a href="#" class="selected">Tab1</a></li>
+							<li><a href="#">Tab2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="guide06" class="guide_box">
+				<h1>#06. Table </h1>
+
+				<h2>- Table type01</h2>
+				<div class="ex">
+					<div class="content_table">	
+						<div class="table_head">
+							<table>
+								<colgroup>
+									<col style="width:37px;">
+									<col style="width:44px;">
+									<col style="width:29px;">
+									<col style="width:29px;">
+									<col style="width:*;">
+									<col style="width:120px;">
+									<col style="width:137px;">
+									<col style="width:87px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th></th>
+										<th><span>번호</span></th>
+										<th><span class="blind">플래그</span></th>
+										<th><span class="blind">상태</span></th>
+										<th><span class="title">제목</span></th>
+										<th class="ascend"><a class="name" href="#">작성자</a></th>
+										<th class="descend"><a class="date" href="#">작성일</a></th>
+										<th><span>조회수</span></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table_body"><!-- scroll_area handy-scroll 사용시 스크롤 -->
+							<table>
+								<colgroup>
+									<col style="width:37px;">
+									<col style="width:44px;">
+									<col style="width:29px;">
+									<col style="width:29px;">
+									<col style="width:*;">
+									<col style="width:120px;">
+									<col style="width:137px;">
+									<col style="width:87px;">
+								</colgroup>
+								<tbody>
+									<!-- 공지는 항상 상단 -->
+									<tr class="unread">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>88888</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board unread">안읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="badge notice">공지</span>
+												<!-- // 뱃지 -->
+												<a class="subject" href="#">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<tr class="commented modified">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>2</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="badge notice">공지</span>
+												<span class="ico file">첨부</span>	
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<a class="subject" href="#">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<span class="badge_comment">99+</span>
+													<!-- // 의견 -->
+													<span class="badge_modify">수정됨</span>
+													<!-- // 수정 -->
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>	
+									<!-- 기본 : 안읽음 -->
+									<tr class="unread">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>8888</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board new">안읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<!--														<span class="badge notice">공지</span>-->
+												<!-- // 뱃지 -->
+												<a class="subject" href="#">
+													기본 제목의 안읽음(중 새글) 형태</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸핸핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 기본 : 읽음 -->
+									<tr>
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>8888</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<!--														<span class="badge notice">공지</span>-->
+												<!-- // 뱃지 -->
+												<a class="subject" href="#">
+													기본 제목의 읽음 형태</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸핸핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 첨부 -->
+									<tr>
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>88</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>
+												<a class="subject" href="#">
+													읽음형태에 첨부가 있는 형태</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 첨부 + 뱃지 -->											
+									<tr>
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>88</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>
+												<a class="subject" href="#">
+													첨부도 있고 뱃지도 있는 형태</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 첨부 + 뱃지 + 의견(의견 디자인은 추후 변경 예정) -->
+									<tr class="commented">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>2</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<span class="badge security">보안</span>
+												<a class="subject" href="#">
+													추가로 의견이 붙은 경우</a>
+												<div class="info">
+													<span class="badge_comment">99+</span>
+													<!-- // 의견 -->
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>	
+									<!-- 첨부 + 의견 + 수정 -->
+									<tr class="commented modified">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td>2</td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">	
+												<span class="badge emergency">긴급</span>
+												<a class="subject" href="#">
+													글이 수정된 경우, 의견 옆에 '수정됨'도 추가로 붙음</a>
+												<div class="info">
+													<span class="badge_comment">99+</span>
+													<!-- // 의견 -->
+													<span class="badge_modify">수정됨</span>
+													<!-- // 수정 -->
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>			
+									<!-- 답글 : 기본 -->
+									<tr class="thread th_1">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td></td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<a class="subject" href="#">
+													답글의 경우, title영역의 padding이 추가, bg가 추가</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 답글: 첨부 -->
+									<tr class="thread th_1">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td></td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<a class="subject" href="#">
+													[답글] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 답글: 첨부 + 의견 -->
+									<tr class="thread th_1 commented">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td></td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<a class="subject" href="#">
+													협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<span class="badge_comment">9</span>
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">10-31 21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 답글의 답글: 첨부 + 뱃지 + 의견 -->
+									<tr class="thread th_2 commented">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td></td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>	
+												<a class="subject" href="#">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<span class="badge_comment">99+</span>
+													<!-- // 의견 -->
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">09-21 21:55</td>
+										<td class="count">153</td>
+									</tr>
+									<!-- 답글의 답글의 답글: 첨부 + 뱃지 + 의견 + 수정됨 -->
+									<tr class="thread th_3 commented modified">
+										<td> 
+											<span class="form"><input type="checkbox" /><label class="blind">게시물선택</label></span>
+										</td>
+										<td></td>
+										<td><span class="form flag"><input type="checkbox"/><label class="blind">플래그</label></span></td>
+										<td><span class="ico_board read">읽은 게시물</span></td>
+										<td>
+											<div class="title">
+												<span class="ico file">첨부</span>	
+												<span class="badge emergency">긴급</span>
+												<span class="badge security">보안</span>	
+												<a class="subject" href="#">
+													[설문] 협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로협업 도구로 뭐가 제일 좋을까요?</a>
+												<div class="info">
+													<span class="badge_comment">99+</span>
+													<!-- // 의견 -->
+													<span class="badge_modify">수정됨</span>
+													<!-- // 수정 -->
+													<a class="ico pop_up" href="#">새창으로 보기</a>
+												</div>
+											</div>			
+										</td>
+										<td>
+											<a class="name" href="#">김핸디</a>
+										</td>
+										<td class="date">2016-12-28 21:55</td>
+										<td class="count">898988888</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<div class="paginate_area">
+							<div class="paginate">	
+								<a class="first disabled" href="#">처음 페이지</a>
+								<a class="pre disabled"  href="#">이전 페이지</a>	
+								<!-- // 1페이지가 아닌경우, disabled 삭제 -->
+								<a class="selected"  href="#">1</a>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>		
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>		
+								<a class="next" href="#">다음 페이지</a>
+								<a class="last" href="#">마지막 페이지</a>
+							</div>
+							<div class="page_num">
+								<input type="text" value="1"> / 118
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<h2>- Table type02 : form 쓰기</h2>
+				<div class="ex">
+					<div class="form_table">
+						<table>
+							<colgroup>
+								<col style="width:160px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th class="important">체크버튼</th>
+									<td>
+										<span class="form">
+											<input type="checkbox" id="from_check01" />
+											<label for="from_check01">체크1</label></span>
+										<span class="form">
+											<input type="checkbox" id="from_check02" />
+											<label for="from_check02">체크2</label></span>
+										<span class="form">
+											<input type="checkbox" id="from_check03" />
+											<label for="from_check03">체크3</label></span>
+										<span class="form">
+											<input type="checkbox" id="from_check04" />
+											<label for="from_check04">체크4</label></span>
+									</td>
+								</tr>
+								<tr>
+									<th>라디오버튼</th>
+									<td>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio01" />
+											<label for="from_radio01">라디오1</label></span>
+										<span class="form">
+											<input type="radio" name="from_radio" id="from_radio02" />
+											<label for="from_radio02">라디오2 + </label></span>
+										<div class="datepic_area">
+											<div class="date_box">
+												<input type="text" class="date_input" value="2017.11.02" style="width:118px;" readonly="">
+												<a class="date_btn" title="">달력</a>
+											</div>
+											~
+											<div class="date_box">  
+												<input type="text" class="date_input" value="2017.12.02" style="width:118px;" readonly="">
+												<a class="date_btn" title="">달력</a></div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>단일첨부:첨부전</th>
+									<td>
+										<div class="file_box"> 
+											<input type="text" class="file_name" id="file_name" value="파일 불러오기" readonly/>
+											<span class="ico file">
+												<input  type="file" id="file" style="" onchange="document.getElementById('file_name').value=this.value;">
+											</span> 
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>단일첨부:첨부후</th>
+									<td>
+										<div class="file_box"> 
+											<input type="text" class="file_name" id="file_name02" value="파일_불러오기_영역에_파일이름이_들어가는경우_이렇게_말줄임됩니다.pdf" readonly/>
+											<span class="ico file">
+												<input  type="file" id="file" style="" onchange="document.getElementById('file_name02').value=this.value;">
+											</span> 
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>멀티첨부:첨부전</th>
+									<td>
+										<div class="group file_input">
+											<a class="btn small" href="#">
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small" href="#">스토리지</a>
+										</div>
+										<p class="file_info">
+											일반첨부 총 용량<em>100MB</em> 파일 <em>10개</em>까지 첨부할 수 있습니다.
+										</p>										
+										<div class="file_lst upload">
+											<div class="description">
+												<p class="">메일 쓰기창으로 파일을 드래그하여 첨부할 수 있습니다.</p>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><span>파일첨부</span><a class="btn_open open">파일리스트 열기</a></th>
+									<td>
+										<div class="group file_input">
+											<a class="btn small" >
+												<input type="file" onclick="blur()" >
+												내PC
+											</a>
+											<a class="btn small">스토리지</a>
+										</div>
+										<dl class="file_info">
+											<dt>일반첨부 </dt>
+											<dd>2(<em>7.93MB</em>/100MB)</dd>
+											<dt>대용량 </dt>
+											<dd>1(<em>2GB</em>)</dd>
+										</dl>
+										<a class="text_btn all_delete">전체삭제</a>
+										<!-- 파일리스트의 기본 상태는 class="file_lst blind" 사용, open 버튼을 통해 열었을 경우, blind 클래스 삭제 -->
+										<div class="file_lst upload handy-scroll">
+											<ul class="">
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">IMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_fileIMG_file.jpg </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">9,999 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">28 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+												<li>
+													<a class="move">항목이동</a>
+													<a class="file_name">EGW_GUI_Visual_Concept_0804.ppt </a>	
+													<!--prograss -->
+													<div class="uploaded_file">
+														<div class="process_bar">
+															<span class="pr_per" style="width: 40%;">40%</span>
+															<span class="pr_bg">background</span>
+														</div>												
+													</div>
+													<!-- // prograss -->
+													<span class="file_size">284 KB</span>
+													<a class="cancel" ></a></li>
+											</ul>
+										</div>
+
+									</td>
+								</tr>
+								<tr>
+									<th><span>셀렉트</span></th>
+									<td>
+										<div class="selectbox">
+											<select> 
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+												<option> 전체 </option>
+												<option> 안읽은 </option>
+												<option> 수신 </option>
+												<option> 참조 </option>
+												<option> 첨부 </option>
+											</select>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Input</th>
+									<td class="text_input">
+										<input type="text" class="border_input" id="input" placeholder="Input Basic">
+									</td>
+								</tr>
+								<tr>
+									<th>Input Focused	</th>
+									<td class="text_input">
+										<input type="text" class="border_input focused" id="inputFocused" placeholder="Input Focused">
+									</td>
+								</tr>
+								<tr>
+									<th>Input Help text</th>
+									<td class="text_input">
+										<input type="text" class="border_input" id="input" placeholder="Input Help Text">	
+										<p class="help_txt">헬프텍스트 메시지입니다.</p>
+									</td>
+								</tr>
+								<tr>
+									<th>Input Error</th>
+									<td class="text_input">
+										<input type="text" class="border_input error" id="inputError" placeholder="Input Error">	
+										<p class="validation">에러 메시지입니다.</p>
+									</td>
+								</tr>
+								<tr>
+											<th>텍스트제한input</th>
+											<td>
+												<div class="input_group multi">			
+													<input type="text" class="basic_input" value="카운트" />
+													<span class="size_txt">
+														<span class="count ">60</span>/60bytes</span>
+												</div>
+											</td>
+										</tr>
+								<tr>
+											<th>텍스트제한input</th>
+											<td>
+												<div class="input_group multi error">
+													<!-- 인풋에 포커스 되면 focued 클래스 추가 -->
+													<input type="text" class="basic_input" value="제한된 텍스트" />
+													<span class="size_txt">
+														<span class="count over">60</span>/60bytes</span>
+												</div>
+											</td>
+										</tr>
+								<tr>
+									<th>Input+check</th>
+									<td>
+										<div class="input_group multi">
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요" />
+											<div class="group">
+												<span class="form">
+													<input type="checkbox" id="check001" />
+													<label for="check001" class="emergency">체크</label></span>
+												<span class="form">
+													<input type="checkbox" id="check002" />
+													<label for="check002">체크</label></span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Inp+add1</th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요">
+											<a class="ico_btn small add"  href="#">조직도</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Inp+add2</th>
+									<td>
+										<div class="input_group has_btn">
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요">
+											<a class="ico group"  href="#">조직도</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Inp+add2:border-type</th>
+									<td>
+										<div class="input_group box has_btn">
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요">
+											<a class="ico group"  href="#">조직도</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>Inp+chk+add</th>
+									<td>
+										<div class="input_group multi">
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요">
+											<div class="group">
+												<span class="form">
+													<input type="checkbox" name="from_check" id="check003" />
+													<label for="check003">내게쓰기</label></span>
+												<a class="ico_btn small add"  href="#">조직도</a>
+											</div>
+										</div>
+									</td>
+								</tr>								
+								<tr>
+									<th>자동완성input</th>
+									<td>
+										<div class="input_group has_btn">
+											<div class="token-input modify">
+												<ul class="token-input-list ui-sortable">
+													<li title="" class="token-input-token">
+														<p>$개발1팀</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token invalid">
+														<p>기획</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li title="" class="token-input-token">
+														<p>김핸디</p>
+														<span class="token-input-modi-token">modify</span>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+													<li class="token-input-input-token-directory ui-sortable-handle">
+														<input type="text" style="outline: none; width: 110px;">
+														<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester>
+													</li>
+												</ul>
+												<input type="text" style="display: none;">
+												<tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 13.3333px; font-family: Arial; font-weight: normal; letter-spacing: normal; white-space: nowrap;"></tester>
+												<a class="ico_btn small add" href="#">조직도</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>select+input</label></th>
+									<td>
+										<div class="input_group has_select">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>EGW프로젝트</option>
+													<option selected>카드프로젝트</option>
+													<option>UI 설계 모음I 설계 모음I 설계 모음I 설계 모음</option>
+												</select>
+											</div>
+
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요" />
+
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>select+input+btn</label></th>
+									<td>
+										<div class="input_group has_select multi">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>EGW프로젝트</option>
+													<option selected>카드프로젝트</option>
+													<option>UI 설계 모음I 설계 모음I 설계 모음I 설계 모음</option>
+												</select>
+											</div>
+
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요" />
+											<a class="ico_btn small add" href="#">조직도</a>
+
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>기간달력</label></th>
+									<td>
+										<div class="input_group has_select has_btn">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>1년</option>
+													<option selected>최근 3개월</option>
+													<option>최근 6개월</option>
+												</select>
+											</div>
+											<input type="text" class="basic_input" value="2017-8-14 ~ 2017-11-14" readonly />
+											<a class="date_btn" href="#">달력</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>select+input텍스트</label></th>
+									<td>
+										<div class="input_group has_select">
+												<div class="select group">
+													<!-- // open 클래스 제거시 레이어 close -->
+													<a class="" onclick="javascript:$(this).parent().toggleClass('open');">메일함 선택</a>
+													<div class="select_lst">
+														<ul class="multi_opt">
+															<li>
+																<span class="form"><input type="checkbox" id="project01"/><label for="project01">EGW 프로젝트</label></span>
+															</li>
+															<li>
+																<span class="form"><input type="checkbox" id="project02" checked/><label for="project02">카드 프로젝트</label></span>
+															</li>
+															<li>
+																<span class="form"><input type="checkbox" id="project03" checked/><label for="project03">완료프로젝트</label></span>
+															</li>								
+															<li>
+																<span class="form"><input type="checkbox" id="project04" /><label for="project04">이름이 매우매우매우 긴 프로젝트</label></span>
+															</li>									
+														</ul>
+														<div class="btns_area">
+															<a class="btn align_rg">확인</a>
+														</div>
+													</div>
+												</div>										<input class="basic_input" type="text" value="카드프로젝트, 완료프로젝트, 완료프로젝트, 완료프로젝트, 완료프로젝트, 완료프로젝트, 완료프로젝트, 완료프로젝트" onfocus="blur();" readonly>		
+											</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>select+input</label></th>
+									<td>
+										<div class="input_group has_select">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>EGW프로젝트</option>
+													<option selected>카드프로젝트</option>
+													<option>UI 설계 모음I 설계 모음I 설계 모음I 설계 모음</option>
+												</select>
+											</div>
+											<div class="token-input">
+												<!-- 자동완성 ui와 동일한 요소 사용 -->                          
+												<ul class="token-input-list ui-sortable">
+													<li title="" class="token-input-token">
+														<p>EGW프로젝트</p>
+														<span class="token-input-delete-token">delete</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label>select+input+check</label></th>
+									<td>
+										<div class="input_group has_select multi">
+											<div class="selectbox" style="width:114px">
+												<select>
+													<option>EGW프로젝트</option>
+													<option selected>카드프로젝트</option>
+													<option>UI 설계 모음I 설계 모음I 설계 모음I 설계 모음</option>
+												</select>
+											</div>
+
+											<input type="text" class="basic_input" placeholder="글을 입력해 주세요" />
+											<div class="group">
+												<span class="form">
+													<input type="checkbox" id="check001" />
+													<label for="check001" class="emergency">체크</label></span>
+												<span class="form">
+													<input type="checkbox" id="check002" />
+													<label for="check002">체크</label></span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>텍스트영역</th>
+									<td class="">
+										<textarea class="border_textarea" placeholder="텍스트를 입력해 주세요" rows='1'></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th>텍스트영역2</th>
+									<td>
+										<textarea type="text" class="box_textarea" rows="1">박스형 텍스트에리어.</textarea>
+									</td>
+								</tr>
+								<tr>
+									<th>텍스트영역3</th>
+									<td>
+									<textarea class="border_textarea" placeholder="텍스트를 입력해 주세요" rows='1'></textarea>
+									<span class="align_rg size_txt"><span class="count">0</span>/500</span>
+								</td>
+								</tr>
+								<tr>
+									<th>디스크립션</th>
+									<td>
+										<p class="description">
+											form의 예시는 주소록에서 볼 수 있습니다.
+										</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h2>- Table type02 : form 읽기</h2>
+				<div class="ex">
+					<div class="form_table read">
+						<table>
+							<colgroup>
+								<col style="width:100px;">
+								<col width="*">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>성별</th>
+									<td>여</td>
+								</tr>
+								<tr>
+									<th>휴대폰</th>
+									<td>010-1234-5678</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td>
+										<ul>
+											<li><a href="#">handy@handy.com</a></li>
+											<li><a href="#">handy@handy.com</a></li>
+										</ul>							
+									</td>
+								</tr>
+								<tr>
+									<th>홈페이지</th>
+									<td>
+										<a class="url" href="#">www.handysoft.com</a>
+									</td>
+								</tr>
+								<tr>
+									<th>메모</th>
+									<td>
+										<p>지난 12월 부터 A통신, B금융, C전자 담당<br>
+											현재 A은행, B은행, C은행 진행 중<br>
+											자리는 6층 사무실</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<h2>- vTable type03 : 읽기 </h2>
+				<div class="ex">
+					<div class="vertical_table">	
+						<div class="">
+							<table>
+								<colgroup>
+									<col style="width:120px;">
+									<col style="width:*;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><span>예시</span></th>
+										<td>
+											<a href="../../html/02_board/BO7.4.1.1.html">게시판 신청정보</a>
+										</td>
+									</tr>
+									<tr>
+										<th><span>항목</span></th>
+										<td>
+											<span>내용</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title> 일괄 결재 </title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" >
+        <link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+        <link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+        <!-- Jquery UI -->
+        <script type="text/javascript" src="../../js/lib/jquery.js"></script>
+        <script type="text/javascript" src="../../js/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+        <!-- Dynatree -->
+        <script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+        <!-- Autocomplete-->
+        <script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+        <!-- Common UI Guide -->  
+        <script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <div class="popup open handy-scroll">
+            <div class="">
+                <div class="popup_container" style="width:600px; ">
+                    <!-- // width 는 화면 마다 다를 수 있으므로 각 영역에 개별 입력 -->
+                    <h2 class="title">
+                        일괄 결재
+                    </h2>
+                    <div class="vertical_table">	
+                        <table>
+                            <colgroup>
+                                <col style="width:80px;">
+                                <col style="width:*;">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="necessary">의견</span></th>
+                                    <td>
+                                        <textarea type="text" style="height: 150px;" class="box_textarea" rows="5"></textarea>
+                                        <span class="align_rg size_txt"><span class="count">0</span>/4000</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="popup_table">
+                        <div class="table_head">
+                            <table>
+                                <colgroup>
+                                    <col style="width:*">
+                                    <col style="width:110px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>문서명</th>
+                                        <th>처리상태</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="table_body handy-scroll" >
+                            <div class="" style="max-height:175px;">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:*">
+                                        <col style="width:110px;">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                        <tr>
+                                            <td>휴가신청서(홍길동, 연차, 01/29~01/30, 2일)</td>
+                                            <td>대기</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="btns_area bttm">
+                        <div class="align_rg">
+                            <!-- 등록 -->
+                            <a class="action_btn">확인</a>
+                            <a class="btn">취소</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

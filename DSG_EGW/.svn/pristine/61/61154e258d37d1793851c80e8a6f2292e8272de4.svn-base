@@ -1,0 +1,408 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">주소록 가져오기</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- 상세 검색 영역 -->
+  <div class="detail_srch_wrap contact_import_box" style="display:block; height:auto;">
+    <div class="detail_srch">
+      <div class="detail_srch_form">
+        <div class="contact_srch_box">
+          <div class="contact_import">
+            <ul>
+              <li><a href="#"><img src="../../img/ico_contact01.gif" alt="파일"> 파일가져오기</a></li>
+              <li><a href="#"><img src="../../img/ico_contact02.png" alt="구글"> 구글주소록 가져오기</a></li>
+              <span class="file_slect">등록된 구글 계정이 없습니다.</span>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#">선택저장</a></span></li>
+      <li class="m_a_lft"><span><a href="#">전체저장</a></span></li>
+    </ul>
+    <div class="layout_rgt">
+      <div class="contact_kind">
+        <label class="pd_rgt_10">
+          <input type="radio" name="ra01" checked>
+          <strong>신규 연락처 (150)</strong></label>
+        <label class="pd_rgt_10">
+          <input type="radio" name="ra01">
+          중복된 연락처 (10)</label>
+        <label class="pd_rgt_10">
+          <input type="radio" name="ra01">
+          잘못된 연락처 (10)</label>
+        <label>
+          <input type="radio" name="ra01">
+          전체 연락처 (190)</label>
+      </div>
+    </div>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 메일 리스팅 기본형(좌측) -->
+  <div class="contact_list_wrap"> 
+    <!-- 게시판 header -->
+    <div class="content_lst content_lst_head">
+      <table>
+        <colgroup>
+        <col style="width:127px">
+        <col style="width:196px">
+        <col style="width:200px">
+        <col style="width:*">
+        <col style="width:200px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th> <input type="checkbox">
+              <span class="pd_lt15">구분</span> </th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>메일</th>
+            <th>그룹</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- // 게시판 header --> 
+    <!-- 게시판 list -->
+    <div class="content_lst content_lst_body">
+      <table>
+        <colgroup>
+        <col style="width:127px">
+        <col style="width:196px">
+        <col style="width:200px">
+        <col style="width:*">
+        <col style="width:182px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr <a href="#"><img src="../../img/btn_fly.gif" alt="날리기"></a></td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <span class="pd_lt15">신규</span></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td>0011@handysoft.co.kr</td>
+            <td>개인 주소록 01</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- // 게시판 list --> 
+  </div>
+  <!-- // 메일 리스팅 기본형(좌측) --> 
+</div>
+<div class="common_layer_pop contact_send_pop" style="display:block; top: 150px; left: 100px;">
+  <div class="inner_box">
+    <div class="tit"> <b>주소록 가져오기</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" title="닫기" alt="닫기"></a></span> </div>
+    <div class="cont_pop">
+      <div class="slt_box">
+        <select class="basic_select" style="width:230px">
+          <option value="vCard 연락처" selected>vCard 연락처</option>
+          <option value="CSV 연락처">CSV 연락처</option>
+        </select>
+        <span class="inline_btn"> <a href="#">내 PC</a> </span> <span class="file_slect"><img src="../../img/ico_clip.gif" alt="첨부파일">2014년주소록.vcf</span> </div>
+      <p> - 구글 주소록등 주소록 저장 표준 규격(vCard) 파일형식 입니다.<br>
+        <span> * MS Outlook계열 메일(Live메일 제외)에서 내보내기한 vCard(vcf확장자)의 경우 파일을 편집기(노트패드등)을 이용하여 연후 다른이름으로 저장, 인코딩을 "UTF-8"로 저장후 가져오기를 실행하세요. 사용자 컴퓨터에 저장된 주소록 파일을 이용하여 주소록을 추가합니다.
+        1. 각 주소 사이는 쉼표로 항목을 구분한 텍스트 파일형식(CSV) 입니다.
+        2. 주소록의 CSV 파일 데이타 제목은 아래 칼럼명을 가지고 있어야 합니다.
+        이름, 회사, 부서, 직함, 근무지 주소 번지, 근무지 우편 번호, 집 번지, 집 주소 우편 번호, 근무지 팩스, 근무처 전화, 집 전화 번호, 휴대폰, 메모, 개인 웹 페이지, 전자 메일 주소, 전자 메일 2 주소, 전자 메일 3 주소, 회사 웹 페이지, 기타 전화</span></p>
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span><a href="#" class="fnt_bold" title="가져오기">가져오기</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="common_layer_pop contact_send_pop" style="display:block; top: 500px; left: 100px;">
+  <div class="inner_box">
+    <div class="tit"> <b>주소록 가져오기</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" title="닫기" alt="닫기"></a></span> </div>
+    <div class="cont_pop">
+      <div class="slt_box">
+        <select class="basic_select" style="width:230px">
+          <option value="vCard 연락처">vCard 연락처</option>
+          <option value="CSV 연락처" selected>CSV 연락처</option>
+        </select>
+        <span class="inline_btn"> <a href="#">내 PC</a> </span> <span class="file_slect">2014년주소록.csv 파일명이 길어지면 당연히 말줄임표시가 나옵니다.</span> </div>
+      <p> 1. 각 주소 사이는 쉼표로 항목을 구분한 텍스트 파일형식(CSV) 입니다. <br>
+        2. 주소록의 CSV 파일 데이타 제목은 아래 칼럼명을 가지고 있어야 합니다.<br>
+        <span> * 이름, 회사, 부서, 직함, 근무지 주소 번지, 근무지 우편 번호, 집 번지, 집 주소 우편 번호, 근무지 팩스, 근무처 전화, 집 전화 번호, 휴대폰, 메모, 개인 웹 페이지, 전자 메일 주소, 전자 메일 2 주소, 전자 메일 3 주소, 회사 웹 페이지, 기타 전화</span></p>
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span><a href="#" class="fnt_bold" title="가져오기">가져오기</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="common_layer_pop contact_send_pop" style="display:block; top: 500px; left: 100px;">
+  <div class="inner_box">
+    <div class="tit"> <b>주소록 가져오기</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+    <div class="cont_pop">
+      <div class="slt_box">
+        <select class="basic_select" style="width:230px">
+          <option value="vCard 연락처">vCard 연락처</option>
+          <option value="CSV 연락처" selected>CSV 연락처</option>
+        </select>
+        <span class="inline_btn"> <a href="#">내 PC</a> </span> <span class="file_slect"><img src="../../img/ico_clip.gif" alt="첨부파일">2014년주소록.csv 파일명이 길어지면 당연히 말줄임표시가 나옵니다.</span> </div>
+      <p> 1. 각 주소 사이는 쉼표로 항목을 구분한 텍스트 파일형식(CSV) 입니다. <br>
+        2. 주소록의 CSV 파일 데이타 제목은 아래 칼럼명을 가지고 있어야 합니다.<br>
+        <span> * 이름, 회사, 부서, 직함, 근무지 주소 번지, 근무지 우편 번호, 집 번지, 집 주소 우편 번호, 근무지 팩스, 근무처 전화, 집 전화 번호, 휴대폰, 메모, 개인 웹 페이지, 전자 메일 주소, 전자 메일 2 주소, 전자 메일 3 주소, 회사 웹 페이지, 기타 전화</span></p>
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span><a href="#" class="fnt_bold">가져오기</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

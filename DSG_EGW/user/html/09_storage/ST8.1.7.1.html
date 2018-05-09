@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+        <title>환경설정 일반설정</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+        <link rel="stylesheet" type="text/css" href="../../css/sub.css" />
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div class="wrapper">    
+            <!-- header -->  
+            <div class="header">
+                <h1>스토리지</h1>
+                <ul class="tab">
+					<li><a class="selected">내파일</a></li>
+					<li><a class="">문서함</a></li>	
+				</ul>
+                <div class="aside">
+                    <fieldset>
+                        <div class="selectbox">
+                            <select>
+                                <option selected>메일</option>
+                                <option>통합</option>
+                            </select>
+                        </div>
+                        <input type="text" />
+                        <a href="#" class="btn_srch">찾아보기</a>
+                        <a href="#" class="btn_srch_more">상세</a>
+                    </fieldset>				
+
+                    <div class="util">
+                        <a href="#" class="btn_admin">관리자</a>
+                        <a href="#" class="btn_me"><img src="../../img/profile_photo_blank.png" alt="홍길동"></a>
+                        <a href="#" class="btn_noti"><span class="on">새로운</span>알림</a><!--새로운 알림이 없을 경우 span class="on"을 빼주세요-->
+                        <a href="#" class="btn_support">서포트</a> 
+                    </div>
+                </div>	
+            </div>
+            <!-- //header -->
+
+            <!-- 메뉴영역 -->
+            <div class="gnb_area">    
+                <div class="home_area">
+                    <a href="#">
+                        <i class="icon home">홈</i>
+                        <span>홈</span>
+                    </a>
+                </div>
+                <div class="gnb_menu">           
+                    <ul class="menus"> 
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon mail">메일</i>
+                                <span class="menu_name">메일</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon board">게시판</i>
+                                <span class="menu_name">게시판</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon square">스퀘어</i>
+                                <span class="menu_name">스퀘어</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon approval">결재</i>
+                                <span class="menu_name">결재</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon schedule">일정</i>
+                                <span class="menu_name">일정</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon equipment">설비예약</i>
+                                <span class="menu_name">설비예약</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn selected new">
+                            <a href="#">
+                                <i class="icon storage">스토리지</i>
+                                <span class="menu_name">스토리지</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon contact">주소록</i>
+                                <span class="menu_name">주소록</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon community">동호회</i>
+                                <span class="menu_name">동호회</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn">
+                            <a href="#">
+                                <i class="icon research">설문</i>
+                                <span class="menu_name">설문</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                        <li class="nav_btn linked_menu">
+                            <a href="#" title="연결된 기능 목록">
+                                <i class="icon linked">링크</i>
+                                <span class="menu_name">링크</span>
+                                <span class="dot_new">New</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>    
+                <div class="controll_area">
+                    <div class="controller">
+                        <a class="down_btn">down_btn</a>
+                        <a class="up_btn">up_btn</a>
+                    </div>
+                </div> 
+                <!-- SNS 링크보기 -->
+                <div class="link_wrap">
+                    <!-- (레이어팝업) 링크SNS 보기 펼침 시작 -->
+                    <div class="link"><!-- 레이어팝업 보이기 open 클래스 -->
+                        <span class="arrow">방향</span>
+                        <div class="sns_head">
+                            <a href="#" class="sns_head_close">팝업 닫기</a>
+                        </div>
+                        <div class="sns_cont_wrap">
+                            <!-- 팝업 컨텐츠 영역 -->
+                            <div class="sns_cont handy-scroll">
+                                <ul class="sns_cont_list">
+                                    <li><a href="#" class="txt_wrap"><i class="icon facebook"></i><span class="sns_name">페이스북</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon naver"></i><span class="sns_name">네이버</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon twitter"></i><span class="sns_name">트위터</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon instagram"></i><span class="sns_name">인스타그램</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon google"></i><span class="sns_name">Google 드라이브</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">스토리채널</span></a></li>
+                                    <li><a href="#" class="txt_wrap"><i class="icon default"></i><span class="sns_name">라이브리</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- //팝업 컨텐츠 영역 -->
+                        </div>
+                    </div>
+                    <!-- // (레이어팝업) 링크SNS 보기 펼침 끝 -->
+                </div>
+                <!-- SNS 링크보기 -->
+            </div>
+            <!-- //메뉴영역 -->    
+            <!-- body -->
+            <div class="body"> 
+                <!-- LnB-->
+                <div class="lnb_area">   
+                    <div class="lnb_lst">
+                        <!-- Action Button Area -->
+                        <div class="big_action">
+                            <a class="action_btn">파일올리기</a>
+                        </div>
+                        <!-- basic list menu area -->   
+                        <div class="lnb_menu_area">
+                            <div class="handy-scroll">
+                                <!-- 플래그 -->
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title">플래그 파일</a>	
+                                </div>
+                                <!-- 즐겨찾기 -->
+                                <div class="lnb_menu">
+                                    <a class="menu_title category">즐겨찾는 폴더</a>
+                                    <div class="folder">									
+                                        <ul class="dynatree-container handy-scroll">
+                                            <li class="">
+                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                    <span class="dynatree-expander"></span>
+                                                    <span class="dynatree-icon"></span>
+                                                    <a href="#" class="dynatree-title">
+                                                        <span class="node-folder" >EGW As-Is</span>
+                                                    </a>
+                                                </div>
+                                                <ul style="">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">회의 내용</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="dynatree-lastsib">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                            </a>
+                                                        </div></li>
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span></a></span>			
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </div>                
+                                <div class="lnb_menu tree divide open">
+                                    <a class="menu_title category">내 폴더</a>	
+                                    <div class="group">
+                                        <a class="ico_btn small add">추가</a>
+                                        <a class="ico_btn small setting">내 그룹 설정</a>
+                                    </div>
+                                    <div class="folder">									
+                                        <ul class="dynatree-container handy-scroll">
+                                            <li class="">
+                                                <div class="dynatree-node dynatree-folder dynatree-expanded dynatree-has-children dynatree-exp-e dynatree-ico-ef">
+                                                    <span class="dynatree-expander"></span>
+                                                    <span class="dynatree-icon"></span>
+                                                    <a href="#" class="dynatree-title">
+                                                        <span class="node-folder" >EGW As-Is</span>
+                                                        <span class="shared">공유된폴더</span>
+                                                        <!-- //공유된 폴더 형 -->
+                                                    </a>
+                                                </div>
+                                                <ul style="">
+                                                    <li class="">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">회의 내용</span>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="dynatree-lastsib">
+                                                        <div class="dynatree-node dynatree-folder dynatree-active dynatree-exp-c dynatree-ico-cf">
+                                                            <span class="dynatree-connector"></span>
+                                                            <span class="dynatree-icon"></span>
+                                                            <a href="#" class="dynatree-title">
+                                                                <span class="node-folder">EGW 프로젝트 커뮤니케이션 협의체</span>
+                                                            </a>
+                                                        </div></li>
+                                                </ul>
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >동영상</span></a></span>			
+                                            </li>
+                                            <li class="">
+                                                <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf"><span class="dynatree-expander"></span><span class="dynatree-icon"></span><a href="#" class="dynatree-title"><span class="node-folder" >앨범</span>
+                                                    <span class="shared">공유된폴더</span>
+                                                    </a></span>			
+                                            </li>
+                                        </ul>
+                                    </div>	
+                                </div>                
+                                <div class="lnb_menu">
+                                    <a class="menu_title">공유받은 폴더</a>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="menu_title">공유중인 폴더</a>
+                                </div>
+                                <div class="lnb_menu divide open">
+                                    <a class="menu_title category">스퀘어 폴더</a>
+                                    <ul class="sub_lst">
+                                        <li><a href="#">MFC 프로젝트</a></li>
+                                        <li><a href="#">UI 설계모음</a></li>
+                                    </ul>
+                                </div>
+                                <div class="lnb_menu">
+                                    <a class="">휴지통</a>
+                                    <a class="ico trash">휴지통 비우기</a>
+                                    <!-- // 비울 항목이 있을 때만 노출 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- setting menu area -->
+                        <div class="setting_area">
+                            <a class="btn_setting">설정</a>
+                            <div class="mail_capacity">
+                                <span class="now_num">2.31GB</span>
+                                <span class="total_num">5GB</span>
+                            </div>
+                        </div>
+                        <!-- // setting menu area -->
+                    </div>
+                </div>
+                <!-- content -->
+                <div class="container_area handy-scroll" >
+                    <div class="">
+                        <!-- 본문 영역 -->
+                        <div class="container">
+                            <!-- 타이틀 영역 -->
+                            <div class="hgroup border">
+                                <h2>설정</h2>	
+                                <ul class="tab">
+                                    <li><a class="selected">일반설정</a></li>
+                                    <li><a class="">용량 정보</a></li>	
+                                </ul>
+                            </div>
+                            <!-- // 타이틀 영역 -->
+                            <!-- form -->
+                            <div class="form_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width:170px;">
+                                        <col width="*">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>목록 유형</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="type" id="type_recieve" checked />
+                                                        <label for="type_recieve">앨범형</label></span>
+                                                    <div class="group">
+                                                        <span class="form">
+                                                            <input type="radio" name="type" id="type_new" />
+                                                            <label for="type_new">리스트형</label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>목록 개수</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="list_set" id="" checked />
+                                                        <label for="">15개</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="list_set" id="" />
+                                                        <label for="">20개</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="list_set" id="" />
+                                                        <label for="">30개</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="list_set" id="" />
+                                                        <label for="">40개</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="list_set" id="" />
+                                                        <label for="">50개</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>폴더 설명</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="folder" id="type_recieve" checked />
+                                                        <label for="type_recieve">사용함</label></span>
+                                                    <div class="group">
+                                                        <span class="form">
+                                                            <input type="radio" name="folder" id="type_new" />
+                                                            <label for="type_new">시용 안함</label>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>대용량 첨부 폴더 설정</th>
+                                            <td>
+                                                <div class="input_group has_btn">
+                                                    <input type="text" class="basic_input" value="대용량 첨부 폴더" readonly="readonly">
+                                                    <a class="ico group" href="#">조직도</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>다운로드 가능 기간</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="period" id="" checked />
+                                                        <label for="">10일</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="period" id="" />
+                                                        <label for="">20일</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="period" id="" />
+                                                        <label for="">30일</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="period" id="" />
+                                                        <label for="">무제한</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>다운로드 가능 횟수</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="set_number" id="" checked />
+                                                        <label for="">5회</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="set_number" id="" />
+                                                        <label for="">10회</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="set_number" id="" />
+                                                        <label for="">20회</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="set_number" id="" />
+                                                        <label for="">30회</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="set_number" id="" />
+                                                        <label for="">무제한</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>대용량 첨부 자동 삭제</th>
+                                            <td>
+                                                <div class="selectbox" style="width:300px;">
+                                                    <select title="반복 빈도 선택"> 
+                                                        <option selected>자동삭제 안함</option>
+                                                        <option>다운로드 기간 또는 횟수 초과시 휴지통 이동</option>
+                                                        <option>다운로드 기간 초과시 휴지통 이동</option>
+                                                        <option>다운로드 횟수 초과시 휴지통 이동</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>휴지통 자동 삭제 기간</th>
+                                            <td>
+                                                <div class="option">
+                                                    <span class="form">
+                                                        <input type="radio" name="del_time" id="" checked />
+                                                        <label for="">1주일 후</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="del_time" id="" />
+                                                        <label for="">1달 후</label></span>
+                                                    <span class="form">
+                                                        <input type="radio" name="del_time" id="" />
+                                                        <label for="">자동 삭제 안함</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="btns_area">
+                                    <a class="action_btn" href="#">저장</a>
+                                    <a class="btn">취소</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 본문 영역 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //body -->
+        </div>
+        <!-- //wrapper -->
+    </body>
+</html>

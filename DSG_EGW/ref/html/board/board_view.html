@@ -1,0 +1,215 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="container_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">공지사항<span class="doc"><img src="../../img/ico_tit_doc.gif" alt="문서"></span><a href="#" class="btn_star on">즐겨찾기</a><!--[D] btn_star 에 on 클래스 추가 하면 활성화--></h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns first">
+      <li><span><a href="#" class="f_bold">답글</a></span></li>
+      <li class="m_a_lft"><span><a href="#">전달</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span><a href="#">찬성</a></span></li>
+      <li class="m_a_lft"><span><a href="#">반대</a></span></li>
+      <!-- [D] 버튼끼리 붙이기 -->
+      <li><span class="send"><a href="#">보내기</a></span>
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">인쇄하기</a></li>
+            <li><a href="#">PC저장</a></li>
+            <li><a href="#">Excel저장</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- [D] slt 는 셀렉트형태의 버튼 -->
+    </ul>
+    <ul class="btns">
+      <li><span class="ico_del"><a href="#" class="f_bold">삭제</a></span></li>
+      <!--[D] del 클래스는 x 아이콘 -->
+      <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+        <!-- [D] 추가기능 레이어 팝업 -->
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">인쇄하기</a></li>
+            <li><a href="#">PC저장</a></li>
+            <li><a href="#">Excel저장</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 --> 
+      </li>
+    </ul>
+    <div class="section_r">
+      <div class="array_sort"> <span class="array_all"><a href="#">목록</a></span> <span class="array_up"><a href="#">위</a></span> <span class="array_down"><a href="#">아래</a></span> </div>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  <div class="view_cont"> 
+    <!-- 메일 리스팅 확장(우측) -->
+    <div class="view_content_box">
+      <div class="inner_box">
+        <div class="view_body_contents">
+          <div class="view_subj_box">
+            <p class="view_subj"> [공지] 메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다.메일 제목입니다. <img src="../../img/ico_w.gif" alt="느낌표"> </p>
+            <div class="mail_sender">
+              <p>핸 사원(다산그룹,핸디소프트)</p>
+              <p class="date">2014.04.04</p>
+            </div>
+            <p class="btn_print"><a href="#">프린트</a></p>
+            <div class="view_etc_list">
+              <ul>
+                <li>조회 <strong>169</strong></li>
+                <li>찬성 <strong>100</strong></li>
+                <li>반대 <strong>3</strong></li>
+                <li>의견 <strong>4</strong></li>
+                <li>조회/의견권한 <strong>실명</strong></li>
+              </ul>
+              <p class="desc">- 영구 게시</p>
+            </div>
+          </div>
+          <div class="add_file_list"> <span class="list_num"><strong>일반 첨부파일</strong> <em>8개</em> (14.27kb)<a href="#" class="btn_trig">리스트펴기,닫기</a></span> <a href="#" class="file_save">첨부저장</a>
+            <div class="file_list">
+              <ul>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                <li>
+                  <input type="checkbox" checked>
+                  <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="view_area"> 메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+            메일 내용이 들어갈 공간입니다.<br>
+          </div>
+          <div class="comment_area"> <span class="comment_bg_ttl">의견</span>
+            <div class="comment_write">
+              <textarea name="new_comment" id="new_comment" cols='20' rows='4' onkeyup='javascript:fc_chk_byte(this,400);' onkeypress='javascript:fc_chk2();' onblur='' class="txtarea"></textarea>
+              <input type='button' width='68' height='51' border='0' name='submitBtn' value="덧글입력" class="inp">
+            </div>
+            <div class="comment_view">
+              <div class="comment_info"> <a href="">김진호</a> <span class="date">2014.04.02</span>
+                <ul>
+                  <a href="">
+                  <li class="cmmt">댓글</li>
+                  </a> <a href="">
+                  <li class="cmmt_modi">수정</li>
+                  </a> <a href="">
+                  <li class="cmmt_del">삭제</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨
+                꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨</div>
+            </div>
+            <div class="comment_view comment2">
+              <div class="comment_info"> <a href="">박나래</a> <span class="date">2014.04.02</span>
+                <ul>
+                  <a href="">
+                  <li class="cmmt">댓글</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨</div>
+            </div>
+            <div class="comment_view comment2 modi">
+              <div class="comment_info"> <a href="">박나래</a> <span class="date">2014.04.02</span>
+                <ul>
+                  <a href="">
+                  <li class="cmmt">댓글</li>
+                  </a> <a href="">
+                  <li class="cmmt_cncl">수정취소</li>
+                  </a>
+                </ul>
+              </div>
+              <textarea class="txtarea">댓글 수정 중입니다.</textarea>
+              <input type='button' width='68' height='51' border='0' name='submitBtn' value="덧글입력" class="inp">
+            </div>
+            <div class="comment_view comment2">
+              <div class="comment_info"> <a href="">댓글다는 자</a> <span class="date">2014.04.02</span>
+                <ul>
+                  <a href="">
+                  <li class="cmmt_cncl">댓글취소</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="comment_ctt">꽃등인 양 창 앞에 한 그루 피어 오른 살구꽃 연분홍 그늘 가지 새로
+                작은 멧새 하나 찾아와 무심히 놀다 가나니 적말한 겨우내 들녘 끝 어디에서 작은 깃 얽고
+                다리 오르기로 지내다가 이 보오얀 봄 길을 찾아 문안하여 나왔느뇨 </div>
+            </div>
+            <div class="comment_repl">
+              <textarea name="new_comment" id="new_comment" cols='20' rows='4' onkeyup='javascript:fc_chk_byte(this,400);' onkeypress='javascript:fc_chk2();' onblur='' class="txtarea"></textarea>
+              <input type='button' width='68' height='51' border='0' name='submitBtn' value="덧글입력" class="inp">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- //메일 리스팅 확장(우측) --> 
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" >
+		<meta http-equiv= "X-UA-Compatible" content= "IE=edge" />
+		<title> 팝업형 세로 레이아웃 </title>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/popup.css" /> <!-- 팝업용 CSS -->
+	<link rel="stylesheet" type="text/css" href="../../css/dynatree-1.2.8.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery.contextMenu.css">
+		<link rel="stylesheet" type="text/css" href="../../css/token-input.css">
+		<link rel="stylesheet" type="text/css" href="../../css/jquery-select.css">
+		<!-- Jquery UI -->
+		<script type="text/javascript" src="../../js/lib/jquery-1.12.3.js"></script> 
+		<!-- 스크롤 js가 jquery ui 이전에 있어야 동작 -->
+		<script type="text/javascript" src="../../js/lib/jquery.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.scrollbar.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery-ui-1.12.1.min.js"></script> 
+		<!-- Dynatree -->
+		<script type="text/javascript" src="../../js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.dynatree.js"></script>
+		<script type="text/javascript" src="../../js/lib/jquery.contextMenu.js"></script>
+		<!-- Autocomplete-->
+		<script type="text/javascript" src="../../js/lib/jquery/jquery.tokeninput.js" ></script> 
+		<!-- Common UI Guide -->  
+		<script type="text/javascript" src="../../js/common.js" ></script>	
+	</head>
+	<body>
+		<!-- header -->
+		<h1 class="title">타이틀</h1>
+		<div class="util paginate">
+			<a class="prev">이전</a>
+			<a class="next">다음</a>
+		</div>
+		<!-- //header -->
+		<div class="container_area">
+			<!-- btn -->
+			<div class="btns_area">
+				<div class="align_lf">
+					<div class="group">
+						<a class="btn">답장</a>
+						<a class="btn">전체답장</a>
+						<a class="btn">전달</a>
+					</div>								
+					<div class="group_btn">
+						<a class="btn">삭제</a>
+						<a class="btn">완전삭제</a>
+					</div>
+					<a class="btn">읽음</a>
+					<!-- 선택 위치로 이동 -->
+					<div class="group open">	
+						<a href="#" class="btn">이동</a>	
+						<a href="#" class="btn_more noTxt">더보기</a>
+						<ul class="select_lst">
+							<li><a href="#">이동</a></li>
+							<li><a href="#">복사</a></li>
+						</ul>							
+					</div>
+					<!-- 추가기능 : 리스트 인쇄 등의 추가기능 & 보내기 : 각 어플리케이션으로 보내기 -->
+					<div class="selectbox noFirst">
+						<select> 
+							<option>추가기능</option>
+							<option>PC저장</option>
+							<option>EML업로드</option>
+							<option>엑셀다운로드</option>
+							<option>인쇄보기</option>
+							<option>일정으로 보내기</option>
+							<option>스퀘어로 보내기</option>
+							<option>동호회로 보내기</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		<!-- contents -->
+		<div class="vertical_ui ">
+			<div class="vertical_lf scroll_area">
+			<div class="handy-scroll">
+				<div class="important_inform">
+					제목, 보낸사람
+				</div>
+				<div class="inform_area">
+					받는 사람, 참조, 파일첨부
+				</div>
+				<div class="content">
+					안녕하세요. 핸디소프트의 박책임입니다. <br>
+					본 메일의 수신인은 이번  EGW 프로젝트 2타 투입 인력들입니다. <br>
+					간단하게 1차 때 작업했던 파일들을 공유해 드리니, 아래 문서를 확인바랍니다. <br>
+					<br>
+					EGW GUI컨셉 문서<br>
+					UI 프레임워크 <br>
+					Screen shot파일<br>
+					<br>
+					감사합니다.								
+				</div>
+			</div>
+			</div>
+			<div class="vertical_rg scroll_area">
+			<div class="handy_scroll">
+
+			</div>
+			</div>
+		</div>		
+		<!-- // body -->			
+			</div>
+	</body>
+</html>

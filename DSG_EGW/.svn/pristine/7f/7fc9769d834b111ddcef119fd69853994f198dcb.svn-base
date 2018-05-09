@@ -1,0 +1,97 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../css/jquery-ui-1.10.4.custom.min.css" type="text/css" />
+<!--[D] jqueryUI -->
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="pop_wrap"> 
+  <!-- 버튼 영역 -->
+  <div class="title_area">
+    <h1>게시물쓰기</h1>
+  </div>
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span><a href="#" class="fnt_bold">게시하기</a></span></li>
+      <li><span><a href="#" >임시저장</a></span></li>
+    </ul>
+    <div class="layout_rgt">
+      <select style="min-width:120px">
+        <option value="일반양식">일반양식</option>
+      </select>
+    </div>
+  </div>
+  <!-- //버튼 영역 -->
+  
+  <div class="writting">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <form>
+      
+      <SAVEBODYHEAD></SAVEBODYHEAD>
+      <ISBBSINFOSTART></ISBBSINFOSTART>
+      <ISBBSINFOEND></ISBBSINFOEND>
+      <TR>
+        <TD><BBSINFO></BBSINFO>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="box_table">
+            <tr>
+              <td nowrap class="ttl"><span res="RC_SUBJECT" >제목</span></td>
+              <td colspan="3"><input class="intxt" name="SUBJECT" type="text" style="width:99%;" maxlength="100"/></td>
+            </tr>
+            <tr>
+              <td nowrap class="ttl"><span res="RC_POSTER" >게시자</span></td>
+              <td colspan="3"><SENDER></SENDER></td>
+            </tr>
+            <tr>
+              <td nowrap class="ttl"><span res="RC_BOARD" >게시판</span></td>
+              <td><input  class="intxt" type="text" name="BOARDNAME" style="width:99%;" readonly onfocus="blur()"/>
+                <input type="button" name="bButton" resv="RC_BOARD" value="게시판" onclick="BBSView()"/></td>
+              <td nowrap class="ttl"><span res="RC_POSTDATE" >게시일</span></td>
+              <td><bbspostdate name="BBSPOSTDATE"></bbspostdate>
+                <div class="wr_form_td">
+                  <div class="datepic_box">
+                    <input type="text" class="basic_inp" value="2014.03.10" style="width:100px;" readonly>
+                    <a href="#"><img src="../../img/btn_datepicker.gif" alt="달력" class="btn_date"></a> </div>
+                  <select class="basic_select">
+                    <option value="12">12</option>
+                  </select>
+                  <span class="pd_rgt_7_lft_1">시</span>
+                  <select class="basic_select">
+                    <option value="31">31</option>
+                  </select>
+                  <span class="pd_rgt_7_lft_1">분</span> </div></td>
+            </tr>
+            <tr>
+              <td nowrap class="ttl"><span res="RC_OPTION" >옵션</span></td>
+              <td class="check_box"><BBSREPONSETYPE>
+                <BBSRESPONSEVIEW>
+                <bbssecurity>
+                <input type='checkbox' name='BBSEXPRESS' value='1'>
+                <span res="RC_EMERGENCY">긴급</span>
+                <bbsannounce></td>
+              <td nowrap class="ttl"><span res="RC_EXPIREDDATE" >종료일</span></td>
+              <td><bbsenddate name=BBSENDDATE></bbsenddate></td>
+            </tr>
+          </table>
+          <table height="100%" border="0" cellspacing="0" cellpadding="0" class="box_view">
+            <tr>
+              <td id="contentbody" style="vertical-align:top;word-break:break-all"><TEXTAREA class="input02" name="BODY" rows="16"></TEXTAREA></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table>
+    <FIRSTATTACHVIEW>
+    <BBSATTACH>
+    <WEBDOCATTACH>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="/jsp/bbs/form/FORMLANGS.jsp"></script>
+</body>
+</html>

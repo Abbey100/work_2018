@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<link rel="stylesheet" href="../../../../hdocs/jquery.fileUpload/fileUpload.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript">
+        // 참조자
+        $(document).ready(function(e) {
+            $('.request .btn_trig').on('click', function(){
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                    $('.reference').hide();
+                }else{
+                    $(this).addClass('on');
+                    $('.reference').show();
+                }
+            });
+            // 수정,삭제       
+            $('.go_modify .set').on('click', function(){
+                $('.go_modify').toggleClass('on')                 
+            });
+            // 즐겨찾기       
+            $('.reading .subject span.btn_star').on('click', function(){
+                $('.btn_star').toggleClass('on')                 
+            });
+          // 파일첨부
+            $('.file_box .btn_trig').on('click', function(){
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                    $('.add_file_list').hide();
+                    $('.file_list').hide();
+                }else{
+                    $(this).addClass('on');
+                    $('.add_file_list').show();
+                    $('.file_list').show();
+                }
+            });
+            // 처리자박스
+            $('.collab_box .btn_trig').on('click', function(){
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                    $('.collab_area').hide();
+                }else{
+                    $(this).addClass('on');
+                    $('.collab_area').show();
+                }
+            });
+            // 추가업무 박스
+            $('.add_work_box .btn_trig').on('click', function(){
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');
+                    $('.add_work_area').hide();
+                }else{
+                    $(this).addClass('on');
+                    $('.add_work_area').show();
+                }
+            });
+           // 우측접기 
+             $('.btn_flip_left').on('click', function(){     
+                if($(this).hasClass('on')){
+                    $(this).removeClass('on');                          $('.popup_lft').css('width','100%'); 
+                    $('.popup_rgt').hide();
+                }else{
+                    $(this).addClass('on');                                $('.popup_lft').css('width','65%');
+                    $('.popup_rgt').show();
+                }
+            }); 
+        });
+</script>
+</head>
+<!-- 뷰포트 사이즈 : 984px(w) x 768px(h) 고정 -->
+<body>
+<div class="pop_gray_layer" style="display: block">
+  <div class="pop_wrap reply_all">
+    <div class="container_box">
+      <div class="title_area">
+        <h1>업무답변 전체보기</h1>
+        <div class="btn_clse"></div>
+      </div>
+      <div class="pop_contents reply_box">
+          <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 모든 쓰기, 읽기 팝업 유형 공통 사항 -->
+<div class="pop_wrap">
+  <div class="container_box">
+    <div class="title_area">
+      <h1>업무 상세정보</h1>
+    </div>
+    <!-- 버튼 영역 -->
+    <div class="btn_area">
+      <ul class="btns">
+        <li><span><a href="#">완료</a></span></li>
+        <li><span><a href="#">반송</a></span></li>
+        <li><span><a href="#">복사</a></span></li>
+        <li><span class="slt_btn"><a href="#">처리</a></span><span class="slt_solo"><a href="#">셀렉트</a></span>
+          <div class="layer_pop" style="width:80px; display:none;">
+            <ul>
+              <li><a href="#">처리</a></li>
+              <li><a href="#">전달</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><span class="monitor"><a href="#">복사</a></span></li>
+      </ul>
+    </div>
+    <!-- // 모든 쓰기, 읽기 팝업 유형 공통 사항 --> 
+    <!-- 팝업의 본문영역(padding 값 17px 20px을 가지고 있음) -->
+    <div class="pop_container pd_0" style="height:100%;" > 
+      <!-- ** LEFT AREA ** -->
+      <div class="popup_lft"> 
+        <!-- 접고 펴기 버튼 -->
+        <div id="right_btn_close" class="btn_flip_left on" > <a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+        <!-- // 접고 펴기 버튼 --> 
+        <!-- 게시판용 table 인용 -->
+        <div class="view_body_contents reading">
+          <div class="subj_box">
+            <table class="">
+              <colgroup>
+              <col style="width:70px;">
+              <col style="width:*;">
+              <col style="width:80px;">
+              <col style="width:110px;">
+              </colgroup>
+              <tbody>
+                <tr class="subject">
+                  <th><span>제목</span></th>
+                  <td colspan="3" class="title"><span class="btn_star"></span> <span class="text"><span class="work_status running">진행중</span>업무보고 팝업화면 퍼블리싱입니다. 현 제목 부분의 넓이와 상관없이 제목이 길면 긴대로 2줄, 3줄 길게 그냥 보여야 합니다</span></td>
+                  <td class="progress"><span class="info"> 25% </span> <span class="bar"> <img src="../../img/BAR_BG_ON.GIF" style="width: 25%;"> <img src="../../img/BAR_BG.GIF" style="width: 75%;"> </span></td>
+                </tr>
+                <tr class="request">
+                  <th><a href="#" class="btn_trig">열기</a><span>요청자</span></th>
+                  <td id="fromNameTd" class="name"><span id="fromName"><a href="">김민우</a></span></td>
+                  <th id="fromDateTh" class="date"><span>요청일</span></th>
+                  <td id="fromDateTd" class="date"><span id="fromDate">2015.06.12 10:37</span></td>
+                </tr>
+                <tr class="incharge">
+                  <th><span>담당자</span></th>
+                  <td class="name"><span><a href="">김이름긴사람</a></span><span><a href="">이름아주아주아주아주긴사람</a></span><span><a href="">강감찬</a></span><span><a href="">강감찬</a></span><span><a href="">강감찬</a></span><span><a href="">김이름긴사람</a></span><span><a href="">이름아주아주아주아주긴사람</a></span><span><a href="">강감찬</a></span><span><a href="">강감찬</a></span><span><a href="">마지막강감찬</a></span><span class="btn_all"><a href="#">외 <em>480명</em></a></span></td>
+                  <th class="date"><span>기한일</span></th>
+                  <td class="date"><span>2015.06.12 10:37</span></td>
+                </tr>
+                <tr class="reference">
+                  <th><span>참조자</span></th>
+                  <td class="name" colspan="3"><span><a href="">김참조</a></span><span><a href="">이참조</a></span><span><a href="">박참조</a></span><span><a href="">김참조</a></span><span><a href="">이참조</a></span><span><a href="">박참조</a></span><span><a href="">김참조</a></span><span><a href="">이참조</a></span><span><a href="">박참조</a></span><span><a href="">강참조</a></span><span class="btn_all"><a href="#">외 <em>42명</em></a></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="view_area">
+            <div class="artcl_box">
+              <p> 본문이 들어가는 공간입니다.<br>
+                본문이 너무 길더라도 전문 다 보여주는것을 기본으로 합니다.
+                기본적으로 스크롤 영역은 위의 제목 + 작성자, 담당자, 참조자 들의 정보가 있는 영역(div class="view_subj_box" 영역) 이하부터 생깁니다. <br>
+                해당 내용은 common.js의 <br>
+                /*  업무상세정보 세로 사이즈 조절 */ 부분을 참고해 주세요.<br>
+                <br>
+                제목영역 상단우측의, "본문영역 넓게 보기" 영역은 일단 버튼을 위치 시켰으나, <br>
+                기획의도에 따라 생략 가능합니다.<br>
+                <br>
+                생략시는 <br>
+                "!-- 접고 펴기 버튼 -- " 부터 <br>
+                "!-- // 접고 펴기 버튼 -- " 까지<br>
+                삭제 하고 사용하시면 됩니다. </p>
+            </div>
+            <div class="reply_box">
+              <div class="title">
+                <h3>업무답변</h3>
+                <p>최근 20개까지의 업무답변이 표시됩니다.</p>
+                <span class="btn_replay_all"><a>전체보기</a></span> </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status fix">답변완료</span><span> 답변의 내용은 무조건 말줄임 없이 다 보여주도록 합니다. 본문 역시 말줄임 없이 전문 표시 하고, 이로인해 길어지는 길이에 대해서는 스크롤을 사용합니다. 의견은 답변 이하로 위치합니다. 그리고 답변은 수정 삭제(현재 기능 참고)가 안됩니다. </span></p>
+                <li class="attached_list">
+                  <ul>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type etc">psd</span> <span class="file_name"><a href="">첨부파일이름이 많이 길면 당연히 말줄임이 되는 것이 아니라, 아래로 아래로 보입니다.psd</a></span> <span class="file_size">0.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type images">jpg</span> <span class="file_name"><a href="">첨부파일.jpg</a></span> <span class="file_size">123.3 MB</span> </li>
+                    <!-- 첨부파일 1-->
+                    <li> <span class="file_type txts">txts</span> <span class="file_name"><a href="">첨부파일.txt</a></span> <span class="file_size">0.3 MB</span> </li>
+                  </ul>
+                </li>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">김이름긴사람</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015.06.16 17:26</li>
+                </ul>
+                <p> <span class="work_status reject">반송</span><span>답변자의경우- '답변완료(.fix), 반송(.reject), 위임(.delegate)을 할 수 있으며, 작성자의 경우- '반려(.return), 회수(.withdrawed)' 할 수 있습니다. 이떄의 상태정보가 답변 앞에 위치합니다. 만약 답변 상태에 대한 표시를 사용하지 않으실 경우, "span class="work_status reject" 반송 span"부분을 걷어내고 사용하시면 됩니다. </span></p>
+              </div>
+              <div class="replay">
+                <ul class="replay_info">
+                  <li class="name"><span><a href="">작성자</a></span></li>
+                  <li class="team">(품질관리팀 연구원)</li>
+                  <li class="date">2015-06-16 17:26</li>
+                </ul>
+                <p> <span class="work_status withdrawed">회수</span><span>그런데, 궁금한 것 하나가...회수는-답변이 아니라 의견으로 들어가는게 아니었는지...기억이 잘 안나네요. 업무넷을 잘 사용하는 것이 아니라서요. 만약 회수에 대한 것이 답변이 아니라, 의견으로 들어가게 된다면 "div class="comment_ctt" 박스에 회수-상태 관련된 span을 넣고 '회수'를 명명한 후, 스팬 밖에 해당 텍스트를 넣어주시면 될 듯 합니다. </span></p>
+              </div>
+            </div>
+            <!--// Reply box -->
+            <div class="comment_area"> <span class="comment_bg_ttl">의견</span>
+              <div class="comment_write">
+                <textarea class="txtarea"></textarea>
+                <input class="basic_inp" type="file" name="comment_file">
+                <input type="button" style="height: 96px;" name="submitBtn" value="의견입력" class="inp">
+              </div>
+              <div class="comment_view">
+                <div class="comment_info"> <a href="">김이름긴사람</a> <span class="date">2015.06.22</span>
+                  <div class="go_modify on"> <span class="set"></span> <span class="layer_pop">
+                    <ul>
+                      <a href="#">
+                      <li>수정</li>
+                      </a> <a href="#">
+                      <li>삭제</li>
+                      </a>
+                    </ul>
+                    </span> </div>
+                </div>
+                <div class="comment_ctt">의견은 기본적으로 게시판의 의견과 99퍼 동일합니다. 다만, 답글의 개념이 없어서 모든 의견은 DEPTH가 같습니다. </div>
+              </div>
+              <div class="comment_view">
+                <div class="comment_info mine"> <a href="">의견입력자</a> <span class="date">2015.06.21</span>
+                  <div class="go_modify"> <span class="set"></span> <span class="layer_pop">
+                    <ul>
+                      <a href="#">
+                      <li>수정</li>
+                      </a> <a href="#">
+                      <li>삭제</li>
+                      </a>
+                    </ul>
+                    </span> </div>
+                </div>
+                <div class="comment_ctt"> 자신의 의견이라면(.comment_info 에 .mine 함께 사용) 의견박스(.comment_view영역)위에 마우스 오버시 세팅 아이콘이 보여지고, 세팅아이콘을 클릭하면 .go_modify에 on이 add되어-수정/삭제의 레이어 팝업이 보여집니다. 현재 참고용 스크립트는 html 본문에 첨부되어 있습니다. </div>
+              </div>
+              <div class="comment_view modi">
+                <div class="comment_info mine"> <a href="">의견입력자</a> <span class="date">2014.04.02</span>
+                  <div class="go_modify"> <span class="set"></span> <span class="layer_pop">
+                    <ul>
+                      <a href="#">
+                      <li>수정</li>
+                      </a> <a href="#">
+                      <li>삭제</li>
+                      </a>
+                    </ul>
+                    </span> </div>
+                </div>
+                <form>
+                  <textarea class="txtarea">댓글 수정 중입니다.</textarea>
+                  <input type="button" width="68" height="51" border="0" name="submitBtn" value="저장" class="inp">
+                  <div class="ing_modify"> <span class="inp cncl">취소</span> </div>
+                </form>
+                <div class="file_list">
+                  <ul>
+                    <li> <img src="../../img/ico_clip.gif" alt="01_work_list_상세UI개선.jpg"> <a href="#">01_work_list_상세UI개선.jpg <em> (363kb) </em> </a> <span> <a href="#"><img src="../../img/comment_cancel.png" alt="첨부삭제"></a> </span> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // View AREA : 스크롤은 여기까지--> 
+        </div>
+        <!-- // view_body_contents --> 
+      </div>
+      <!-- //// ** LEFT AREA ** --> 
+      
+      <!-- **  RIGHT AREA ** -->
+      <div class="popup_rgt" >
+        <div class="tab_box">
+          <ul class="tab_menu">
+            <a href="#">
+            <li class="tab selected">업무정보</li>
+            </a> <a href="#">
+            <li class="tab">처리현황</li>
+            </a> <a href="#">
+            <li class="tab">업무이력</li>
+            </a>
+          </ul>
+        </div>
+        <div class="contents"> 
+          <!-- 파일 첨부 박스 -->
+          <div class="file_box" >
+            <div><a href="#" class="btn_trig on">리스트펴기,닫기</a> <span class="fnt_bold">첨부파일</span></div>
+            <!-- 파일 용량 및 첨부 정보 -->
+            <div class="add_file_list">
+              <ul class="filelist_popup">
+                <li class="" > <strong> <span>8 개</span></strong> 의 첨부파일이 있습니다.</li>
+                <li class="" > <span ><b>0 KB</b> /  100 MB</span></li>
+              </ul>
+              <div class="file_list">
+                <ul>
+                  <li class="thead">
+                    <input type="checkbox" checked="">
+                    <span><a href="#" class="file_all_save">모두저장</a></span><span><a href="#" class="file_save">선택저장</a></span><span><a href="#" class="file_save">웹폴더저장</a></span> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                  <li>
+                    <input type="checkbox" checked="">
+                    <img src="../../img/ico_clip.gif" alt="파일"> <a href="#">1 전산장비재물조사.xls <em>(53kb)</em></a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--// 파일 첨부 박스 --> 
+          <!-- 처리자 정보 -->
+          <div class="collab_box" >
+            <div><a href="#" class="btn_trig on">리스트펴기,닫기</a> <span class="fnt_bold">처리자 정보</span><span class="fnt_bold">(2/8)</span> </div>
+            <div class="collab_area">
+              <div class="collab">
+                <div class="fin">처리완료</div>
+                <div class="pic"> <img class="mask" src="../../img/pic_mask_40.png" /> <img class="photo" src="../../img/thmb_nopic_mini.png" /> </div>
+                <ul class="info">
+                  <li class="name_area"><span class="name"><a href="">김이름긴사람</a></span> <span class="team"><span>품질관리팀</span><span>책임연구원</span></span> </li>
+                  <li><span class="state">처리완료</span><span class="date">2015.06.16 17:26</span></li>
+                </ul>
+              </div>
+              <div class="collab">
+                <div class="cc">참조완료</div>
+                <div class="pic"> <img class="mask" src="../../img/pic_mask_40.png" /> <img class="photo" src="../../img/thmb_nopic_mini.png" /> </div>
+                <ul class="info">
+                  <li class="name_area"><span class="name"><a href="">이참조</a></span> <span class="team"><span>품질관리팀</span><span>책임연구원</span></span> </li>
+                  <li><span class="state">참조완료</span><span class="date">2015.06.16 17:26</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--// 처리자 박스 --> 
+          <!-- 추가업무 박스 -->
+          <div class="add_work_box" >
+            <div><a href="#" class="btn_trig on">리스트펴기,닫기</a> <span class="fnt_bold">추가업무 정보</span> </div>
+            <!-- 추가업무 1 -->
+            <div class="add_work_area">
+              <ul class="add_work">
+                <li> <span class="num">1.</span> <span class="work_status running">진행중</span> <span class="title">하위업무 자리인거지요?</span> </li>
+                <li class="due"> <span class="start">시작일 : 2015.06.16</span> <span class="d_day caution"> ~ 기한일 : 2015.06.20</span> 
+                  <!-- d_day : 완료했으면 caution 빼고 --> 
+                </li>
+                <li class="due" style="display:none;"> <span class="date" >완료일 : 2015.06.16 12:30</span> <!-- 완료시간 : 완료 못했으면 display:none; --> 
+                </li>
+              </ul>
+            </div>
+            <!-- 추가업무 2 -->
+            <div class="add_work_area">
+              <ul class="add_work">
+                <li> <span class="num">2.</span> <span class="work_status completed">완료</span> <span class="title">하위업무 자리인거지요?</span> </li>
+                <li class="due"> <span class="start">시작일 : 2015.06.16</span> <span class="d_day"> ~ 기한일 : 2015.06.20</span> 
+                  <!-- d_day : 완료했으면 caution 빼고 --> 
+                </li>
+                <li class="due" style="display:;"> <span class="date" >완료일 : 2015.06.16 12:30</span> <!-- 완료시간 : 완료 못했으면 display:none; --> 
+                </li>
+              </ul>
+            </div>
+            <!-- 추가업무 3 -->
+            <div class="add_work_area">
+              <ul class="add_work">
+                <li> <span class="num">3.</span> <span class="work_status completed">완료</span> <span class="title">하위업무 자리인거지요?</span> </li>
+                <li class="due"> <span class="start">시작일 : 2015.06.16</span> <span class="d_day"> ~ 기한일 : 2015.06.20</span> 
+                  <!-- d_day : 완료했으면 caution 빼고 --> 
+                </li>
+                <li class="due" style="display:;"> <span class="date" >완료일 : 2015.06.16 12:30</span> 
+                  <!-- 완료시간 : 완료 못했으면 display:none; --> 
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--// 추가업무 박스 --> 
+        </div>
+        <!--// 업무정보 탭 끝 --> 
+      </div>
+      <!-- //// ** RIGHT AREA ** --> 
+    </div>
+    <!-- //// 팝업의 본문영역 --> 
+  </div>
+  <!-- //// container_box --> 
+</div>
+<!-- //// pop_wrap -->
+</body>
+</html>

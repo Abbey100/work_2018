@@ -1,0 +1,261 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko-kr">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8" />
+<title>HANDY GROUPWARE</title>
+<link rel="stylesheet" href="../../css/common.css" type="text/css" />
+<script type="text/javascript" src="../../js/jquery-latest.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+</head>
+<body>
+<div class="container_box container_list_box mg_lft_0">
+  <div class="title_area">
+    <h2 class="title">개인 주소록</h2>
+    <div id="left_btn_close" class="btn_flip_left" ><a href="javascript:toggle_LFrame()" >좌측 영역 접기 토글</a></div>
+    <div id="right_btn_close" class="btn_flip_right" ><a href="javascript:toggle_RFrame();" >우측 영역 접기 토글</a></div>
+  </div>
+  <!-- 검색 영역 -->
+  <div class="srch_area">
+    <select>
+      <option value="이름">이름</option>
+      <option value="회사명">회사명</option>
+      <option value="전화번호">전화번호</option>
+    </select>
+    <fieldset class="search">
+      <input type="text" id="term" name="term" size="15" value="">
+      <a href="#" title="검색" class="srch_btn" alt="검색">검색</a>
+    </fieldset>
+  </div>
+  <!-- //검색 영역 --> 
+  <!-- 상세 검색 영역 -->
+  
+  <div class="contact_add_area">
+    <div class="contact_add">
+      <input type="text" class="basic_inp" placeholder="이름" style="width:108px;">
+      <input type="text" class="basic_inp" placeholder="전자우편" style="width:248px;">
+      <input type="text" class="basic_inp" placeholder="휴대번호" style="width:188px;">
+      <select class="basic_select" style="width:188px">
+        <option value="그룹선택">그룹선택</option>
+      </select>
+      <div class="btn_area">
+        <ul class="btns">
+          <li><span><a href="#">주소추가</a></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="filter_area"> <a href="#" class="on">전체</a> <a href="#">ㄱ</a> <a href="#">ㄴ</a> <a href="#">ㄷ</a> <a href="#">ㄹ</a> <a href="#">ㅁ</a> <a href="#">ㅂ</a> <a href="#">ㅅ</a> <a href="#">ㅇ</a> <a href="#">ㅈ</a> <a href="#">ㅊ</a> <a href="#">ㅋ</a> <a href="#">ㅌ</a> <a href="#">ㅍ</a> <a href="#">ㅎ</a> <a href="#">A ~ Z</a> <a href="#">0 ~ 9</a> <a href="#">기타</a> <a href="#">이름없음</a> </div>
+  </div>
+  
+  <!-- //상세 검색 영역 --> 
+  <!-- 버튼 영역 -->
+  <div class="btn_area">
+    <ul class="btns">
+      <li><span class="ico_del"><a href="#" class="f_bold">삭제</a></span></li>
+      <li><span><a href="#">편지쓰기</a></span></li>
+      <li><span><a href="#">SMS보내기</a></span></li>
+      <li class="add_slct"><span><a href="#" class="none_bg">추가기능</a></span> 
+        <!-- [D] 추가기능 레이어 팝업 -->
+        <div class="layer_pop"><!-- [D] layer_pop 는 기본 레이어 팝업 클래스 -->
+          <ul>
+            <li><a href="#">인쇄하기</a></li>
+            <li><a href="#">PC저장</a></li>
+            <li><a href="#">Excel저장</a></li>
+          </ul>
+        </div>
+        <!-- // [D] 추가기능 레이어 팝업 --> 
+      </li>
+    </ul>
+    <div class="layout_rgt">
+      <select>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <p class="btn_rfrsh"><a href="#">새로고침</a></p>
+    </div>
+  </div>
+  <!-- //버튼 영역 --> 
+  <!-- 주소록 기본리스트 -->
+  <div class="contact_list_wrap"> 
+    <!-- 게시판 header -->
+    <div class="content_lst content_lst_head">
+      <table>
+        <colgroup>
+        <col style="width:60px">
+        <col style="width:108px">
+        <col style="width:*">
+        <col style="width:120px">
+        <col style="width:120px">
+        <col style="width:120px">
+        <col style="width:70px">
+        <col style="width:92px">
+        </colgroup>
+        <thead>
+          <tr>
+            <th> <input type="checkbox">
+              
+              <!--상태
+							<img src="../../img/ico_q.gif">
+							--> </th>
+            <th>이름</th>
+            <th>메일</th>
+            <th>회사명</th>
+            <th>회사 전화번호</th>
+            <th>휴대 전화번호</th>
+            <th>공유자</th>
+            <th>메모</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- // 리스트 header --> 
+    <!-- 주소록 기본리스트 list -->
+    <div class="content_lst content_lst_body">
+      <table>
+        <colgroup>
+        <col style="width:60px">
+        <col style="width:108px">
+        <col style="width:*">
+        <col style="width:120px">
+        <col style="width:120px">
+        <col style="width:120px">
+        <col style="width:74px">
+        <col style="width:70px">
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#" class="btn_star on">즐겨찾기 토글</a><!-- [D] 클릭시 on 클래스 추가 --></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="subj"><a href="#">abcdef@naver.com</a></td>
+            <td><a href="#" class="f_gray">핸디소프트</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td class="f_gray">010-1234-5678</td>
+            <td class="share_area">
+               <div class="share_box">
+                   <span>김핸디</span>
+                   <div class="grey_tooltip">
+                       <span>
+                       <p class="date">2017.04.06</p></span>
+                   </div>
+               </div>
+                
+            </td>
+            <td class="memo_area">
+               <div class="memo_box">
+               <a href="#" class="btn_memo"><img src="../../img/ico_doc5.gif" alt="메모"></a>
+                <div class="common_layer_pop" style="display:none;">
+                  <div class="inner_box">
+                    <div class="tit"> <b>메모</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+                    <div class="cont_pop"> 주소 추가 시 작성한 메모를 팝업에서 확인할 수 있습니다. </div>
+                  </div>
+                </div>
+              </div></td>
+            
+          </tr>
+          <tr class="td_list_bold">
+            <td><input type="checkbox">
+              <a href="#" class="btn_star on">즐겨찾기 토글</a></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="subj"><a href="#">abcdef@naver.com</a></td>
+            <td><a href="#" class="f_gray">핸디소프트</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td class="f_gray">010-1234-5678</td>
+            <td class="share_area">
+               <div class="share_box">
+                   <span>김핸디</span>
+                   <div class="grey_tooltip">
+                       <span>
+                       <p class="date">2017.04.06</p></span>
+                   </div>
+               </div>
+                
+            </td>
+            <td class="memo_area">
+               <div class="memo_box">
+               <a href="#" class="btn_memo"><img src="../../img/ico_doc5.gif" alt="메모"></a>
+                <div class="common_layer_pop" style="display:none;">
+                  <div class="inner_box">
+                    <div class="tit"> <b>메모</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+                    <div class="cont_pop"> 주소 추가 시 작성한 메모를 팝업에서 확인할 수 있습니다. </div>
+                  </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr class="chk_on">
+            <td><input type="checkbox" checked>
+              <a href="#" class="btn_star">즐겨찾기 토글</a></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="subj"><a href="#">abcdef@naver.com</a></td>
+            <td><a href="#" class="f_gray">핸디소프트</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td class="f_gray">010-1234-5678</td>
+            <td class="share_area">
+               <div class="share_box">
+                   <span>김핸디</span>
+                   <div class="grey_tooltip">
+                       <span>
+                       <p class="date">2017.04.06</p></span>
+                   </div>
+               </div>
+                
+            </td>
+            <td class="memo_area">
+               <div class="memo_box">
+               <a href="#" class="btn_memo"><img src="../../img/ico_doc5.gif" alt="메모"></a>
+                <div class="common_layer_pop" style="display:none;">
+                  <div class="inner_box">
+                    <div class="tit"> <b>메모</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+                    <div class="cont_pop"> 주소 추가 시 작성한 메모를 팝업에서 확인할 수 있습니다. </div>
+                  </div>
+                </div>
+              </div></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox">
+              <a href="#" class="btn_star">즐겨찾기 토글</a></td>
+            <td><a href="#">홍길동</a></td>
+            <td class="subj"><a href="#">abcdef@naver.com</a></td>
+            <td><a href="#" class="f_gray">핸디소프트</a></td>
+            <td class="f_gray">02-1234-5678</td>
+            <td class="f_gray">010-1234-5678</td>
+            <td class="share_area">
+               <div class="share_box">
+                   <span>김핸디</span>
+                   <div class="grey_tooltip">
+                       <span>
+                       <p class="date">2017.04.06</p></span>
+                   </div>
+               </div>
+                
+            </td>
+            <td class="memo_area">
+               <div class="memo_box">
+               <a href="#" class="btn_memo"><img src="../../img/ico_doc5.gif" alt="메모"></a>
+                <div class="common_layer_pop" style="display:none;">
+                  <div class="inner_box">
+                    <div class="tit"> <b>메모</b> <span><a href="#"><img src="../../img/btn_layer_close.gif" alt="닫기"></a></span> </div>
+                    <div class="cont_pop"> 주소 추가 시 작성한 메모를 팝업에서 확인할 수 있습니다. </div>
+                  </div>
+                </div>
+              </div></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- // 주소록 기본 list -->
+    <div class="paginate_box"><!-- [D] 사파리 여백 버그때문에 a 태그는 붙여야 합니다 -->
+      <div class="paginate"><a href="#" class="first">맨뒤로</a><a href="#" class="prev">뒤로</a><a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#" class="next on">앞으로</a><a href="#" class="last on">맨앞으로</a></div>
+      <div class="pagi_num">
+        <input type="text" value="1">
+        / 123 </div>
+    </div>
+  </div>
+  <!-- // 주소록 리스트 --> 
+</div>
+</body>
+</html>
